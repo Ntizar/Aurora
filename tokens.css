@@ -101,7 +101,7 @@
   --nz-font: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   --nz-font-mono: ui-monospace, "Cascadia Code", "SF Mono", Consolas, monospace;
   /* Escala fluida mobile-first (clamp: móvil → escritorio) */
-  --nz-text-2xs: 0.6875rem;                       /* 11px */
+  --nz-text-2xs: 0.75rem;                         /* 12px en movil: la escala de 11px no se lee en un telefono */
   --nz-text-xs:  0.75rem;                         /* 12px */
   --nz-text-sm:  0.8125rem;                       /* 13px */
   --nz-text-base: 0.9375rem;                      /* 15px */
@@ -260,3 +260,11 @@
    md    ≥ 960px   3 columnas / sidebar
    lg    ≥ 1200px  layout completo
 ---- */
+
+/* ---- Suelo tipografico (mobile-first) ----
+   La escala 2xs es 12px en movil (los avisos, badges y contadores son la mitad
+   de la interfaz y con 11px no se leen). Desde 960px vuelve la densidad fina
+   de 11px de escritorio. Vive aqui: tokens.css es la fuente unica de tokens. */
+@media (min-width: 960px) {
+  :root { --nz-text-2xs: 0.6875rem; }
+}

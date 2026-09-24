@@ -27,7 +27,7 @@ sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
 bc = import_module("build-catalog")
 
 ROOT = bc.ROOT
-VERSION = "7.2.1"
+VERSION = "7.2.2"
 CDN = f"https://cdn.jsdelivr.net/gh/Ntizar/Aurora7@v{VERSION}/"
 
 # ---------------------------------------------------------------------------

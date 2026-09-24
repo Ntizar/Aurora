@@ -1,14 +1,14 @@
 ---
 name: aurora-design-system
 description: "Usa al construir o tocar cualquier web con Aurora 7 (Ntizar/Aurora7). El repo manda: resuelve la versión vigente y pide LLM.md + components.json antes de escribir CSS."
-version: "7.2.1"
+version: "7.2.2"
 tags: [css, design-system, aurora, ntizar, agent-ready, movil]
 ---
 
 # Aurora 7 — doctrina única (el repo es la orden máxima)
 
 Design system CSS puro, sin build, sin dependencias, namespaced bajo `.nz-`.
-**v7.2.1 · 1.900 objetos · 349 familias · 576 demos · 15 packs · 145 tokens.**
+**v7.2.2 · 1.900 objetos · 349 familias · 576 demos · 15 packs · 145 tokens.**
 *(Cabecera de testigo, no de autoridad: resuélvela con el PASO 0.)*
 
 > ⚠️ `Ntizar/Aurora7` **manda sobre esta skill**. Esta skill es un puntero; el repo
@@ -27,7 +27,7 @@ procedimiento. Resuélvela en cada tarea:
 ```bash
 # a) con el repo clonado (lo normal en esta máquina) — la vía rápida
 git -C C:/Users/d_ant/Projects/Aurora-7 fetch --tags -q
-V=$(git -C C:/Users/d_ant/Projects/Aurora-7 describe --tags --abbrev=0)   # p.ej. v7.2.1
+V=$(git -C C:/Users/d_ant/Projects/Aurora-7 describe --tags --abbrev=0)   # p.ej. v7.2.2
 
 # b) sin repo — pregunta a GitHub
 curl -s https://api.github.com/repos/Ntizar/Aurora7/tags | grep -m1 '"name"'
@@ -89,13 +89,13 @@ nueva del sistema no te deja ciego: solo obliga a refrescar la cabecera.
 ```html
 <html lang="es" data-nz-theme="light">   <!-- o "dark" -->
 <head>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Ntizar/Aurora7@v7.2.1/tokens.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Ntizar/Aurora7@v7.2.1/packs/all.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Ntizar/Aurora7@v7.2.2/tokens.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Ntizar/Aurora7@v7.2.2/packs/all.css">
 </head>
 <body class="nz">
 ```
 
-Sustituye `v7.2.1` por **`$V`** (el tag que resolviste en el PASO 0): el ejemplo es de la
+Sustituye `v7.2.2` por **`$V`** (el tag que resolviste en el PASO 0): el ejemplo es de la
 última vez que se tocó esta cabecera. `all.css` solo para prototipos; en producción enlaza
 los packs que uses (12-40 KB cada uno). Purga: `curl https://purge.jsdelivr.net/gh/Ntizar/Aurora7@$V/<fichero>`.
 

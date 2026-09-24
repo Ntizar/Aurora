@@ -1,10 +1,10 @@
 {
  "name": "Aurora 7",
- "version": "7.2.1",
+ "version": "7.2.2",
  "type": "css-only design system",
  "namespace": ".nz-",
  "tokens": "tokens.css",
- "cdn": "https://cdn.jsdelivr.net/gh/Ntizar/Aurora7@v7.2.1/",
+ "cdn": "https://cdn.jsdelivr.net/gh/Ntizar/Aurora7@v7.2.2/",
  "manifiesto": {
   "gradientes": 0,
   "glass": 0,
@@ -731,7 +731,7 @@
   },
   {
    "nombre": "--nz-text-2xs",
-   "valor": "0.6875rem",
+   "valor": "0.75rem",
    "seccion": "TIPOGRAFÍA "
   },
   {
