@@ -1,14 +1,14 @@
 ---
 name: aurora-design-system
-description: "Usa al construir o tocar cualquier web con Aurora 7 (Ntizar/Aurora7). El repo manda: resuelve la versión vigente y pide LLM.md + components.json antes de escribir CSS."
-version: "7.2.2"
+description: "Usa al construir o tocar cualquier web con Aurora 8 (Ntizar/Aurora7). El repo manda: resuelve la versión vigente y pide LLM.md + components.json antes de escribir CSS."
+version: "8.0.0"
 tags: [css, design-system, aurora, ntizar, agent-ready, movil]
 ---
 
-# Aurora 7 — doctrina única (el repo es la orden máxima)
+# Aurora 8 — doctrina única (el repo es la orden máxima)
 
 Design system CSS puro, sin build, sin dependencias, namespaced bajo `.nz-`.
-**v7.2.2 · 1.900 objetos · 349 familias · 576 demos · 15 packs · 145 tokens.**
+**v8.0.0 · 1907 objetos · 350 familias · 578 demos · 15 packs · 170 tokens.**
 *(Cabecera de testigo, no de autoridad: resuélvela con el PASO 0.)*
 
 > ⚠️ `Ntizar/Aurora7` **manda sobre esta skill**. Esta skill es un puntero; el repo
@@ -27,7 +27,7 @@ procedimiento. Resuélvela en cada tarea:
 ```bash
 # a) con el repo clonado (lo normal en esta máquina) — la vía rápida
 git -C C:/Users/d_ant/Projects/Aurora-7 fetch --tags -q
-V=$(git -C C:/Users/d_ant/Projects/Aurora-7 describe --tags --abbrev=0)   # p.ej. v7.2.2
+V=$(git -C C:/Users/d_ant/Projects/Aurora-7 describe --tags --abbrev=0)   # p.ej. v8.0.0
 
 # b) sin repo — pregunta a GitHub
 curl -s https://api.github.com/repos/Ntizar/Aurora7/tags | grep -m1 '"name"'
@@ -89,13 +89,13 @@ nueva del sistema no te deja ciego: solo obliga a refrescar la cabecera.
 ```html
 <html lang="es" data-nz-theme="light">   <!-- o "dark" -->
 <head>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Ntizar/Aurora7@v7.2.2/tokens.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Ntizar/Aurora7@v7.2.2/packs/all.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Ntizar/Aurora7@v8.0.0/tokens.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Ntizar/Aurora7@v8.0.0/packs/all.css">
 </head>
 <body class="nz">
 ```
 
-Sustituye `v7.2.2` por **`$V`** (el tag que resolviste en el PASO 0): el ejemplo es de la
+Sustituye `v8.0.0` por **`$V`** (el tag que resolviste en el PASO 0): el ejemplo es de la
 última vez que se tocó esta cabecera. `all.css` solo para prototipos; en producción enlaza
 los packs que uses (12-40 KB cada uno). Purga: `curl https://purge.jsdelivr.net/gh/Ntizar/Aurora7@$V/<fichero>`.
 
@@ -139,7 +139,7 @@ Regla de dedo: **ancho intrínseco → scroll**; **datos tabulares → apilable*
 8. Footer exacto: `Hecho con ❤️ por David Antizar` (emoji U+2764, sin variantes).
 9. Todo en castellano (clases incluidas cuando toca: `nz-arbol`, `nz-filezona`, `nz-fieldset__leyenda`).
 
-## 6. Flujo del agente para generar HTML con Aurora 7
+## 6. Flujo del agente para generar HTML con Aurora 8
 
 1. **PASO 0**: resuelve `$V` y lee `LLM.md` + `components.json` del repo.
 2. **Copia una receta de `examples/`** y quítale lo que no uses.
@@ -208,7 +208,7 @@ Criterio de admisión: (a) resuelve un problema real y repetido, (b) es mobile-f
 - ❌ `white-space: nowrap` en una tabla que se apila: mata el apilado y fuerza scroll.
 - ❌ Dejar el patrón resuelto en el proyecto y no subirlo al repo.
 
-## 11. Excepciones vigentes (cuándo NO usar Aurora 7)
+## 11. Excepciones vigentes (cuándo NO usar Aurora 8)
 
 - **Design systems corporativos**: si un equipo pide un CSS con los colores de SU marca (ej. Kaizen/Ineco #1A4488), se crea un sistema propio alineado con su manual, no Aurora.
 - **Presentaciones consulting / informes ejecutivos** (estilo McKinsey/BCG): fondo blanco elegante, sin estética tech. David rechazó Aurora para esos entregables.
@@ -223,6 +223,6 @@ mesh/orbs/3D desaparecen). Receta y script de medición en `references/migracion
 
 - **`Ntizar/Aurora7`** — la orden máxima. `LLM.md`, `components.json`, `AGENTS.md`, `examples/`, `specs/`, `paginas/`, `audit/`, `scripts/auditar-uso.py`.
 - Este mismo `SKILL.md` **dentro del repo** (la CI valida que no se separe).
-- `references/migracion-v6-a-v7.md` y el caso Aurora 7 en la skill `design-system-coherence-audit`.
+- `references/migracion-v6-a-v7.md` y el caso Aurora 8 en la skill `design-system-coherence-audit`.
 
 Hecho con ❤️ por David Antizar

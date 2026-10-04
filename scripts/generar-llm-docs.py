@@ -27,7 +27,7 @@ sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
 bc = import_module("build-catalog")
 
 ROOT = bc.ROOT
-VERSION = "7.2.2"
+VERSION = "8.0.0"
 CDN = f"https://cdn.jsdelivr.net/gh/Ntizar/Aurora7@v{VERSION}/"
 
 # ---------------------------------------------------------------------------
@@ -174,7 +174,7 @@ def main():
         sys.exit(f"INVENTARIO DE TOKENS SOSPECHOSO: solo {len(tokens)} en :root")
 
     datos = {
-        "name": "Aurora 7",
+        "name": "Aurora 8",
         "version": VERSION,
         "type": "css-only design system",
         "namespace": ".nz-",
@@ -247,7 +247,7 @@ def main():
         for ingles, clase in sorted(alias_validos.items())
         if ingles != clase)
 
-    llm = f"""# Aurora 7 — guía de decisión para agentes
+    llm = f"""# Aurora 8 — guía de decisión para agentes
 
 Design system CSS puro, sin dependencias ni build. {total_clases} objetos en {len(censo_cat)} categorías.
 **No pegues el CSS en el prompt**: enlaza por CDN y usa las clases de esta guía.
@@ -341,7 +341,7 @@ completas listas para copiar en `recetas/`.
 
 ## 5. Buscas un nombre en inglés y no existe
 
-Aurora 7 usa nombres en castellano en algunas familias. Aliases verificados:
+Aurora 8 usa nombres en castellano en algunas familias. Aliases verificados:
 
 | Buscas | Usa |
 |---|---|
@@ -390,7 +390,7 @@ Los {len(tokens)} tokens están inventariados en `components.json` (sección
 ## 8. Anti-patrones (NO lo hagas)
 
 - ❌ Pegar el CSS de los packs en el prompt (250 KB ≈ 60.000 tokens). Enlaza por CDN.
-- ❌ Inventar clases (`nz-gradient-text`, `nz-btn--glass-liquid-brand`, `nz-card--glass`): no existen aquí. Es la doctrina de Aurora v6, **jubilada**: Aurora 7 es sólido, sin glass ni gradientes.
+- ❌ Inventar clases (`nz-gradient-text`, `nz-btn--glass-liquid-brand`, `nz-card--glass`): no existen aquí. Es la doctrina de Aurora v6, **jubilada**: Aurora 8 es sólido, sin glass ni gradientes.
 - ❌ Escribir colores a mano (`#2563eb`, `rgb(...)`): usa tokens `var(--nz-*)`.
 - ❌ Gradientes, `backdrop-filter` o `!important`: prohibidos por el manifiesto y la CI los detecta.
 - ❌ Clases globales sin `.nz-`: romperías la convivencia con otros frameworks.

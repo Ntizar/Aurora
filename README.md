@@ -8,7 +8,7 @@
 
 [![CI — validación del manifiesto](https://github.com/Ntizar/Aurora7/actions/workflows/validar.yml/badge.svg)](https://github.com/Ntizar/Aurora7/actions/workflows/validar.yml)
 [![GitHub Pages](https://github.com/Ntizar/Aurora7/actions/workflows/pages.yml/badge.svg)](https://github.com/Ntizar/Aurora7/actions/workflows/pages.yml)
-![versión](https://img.shields.io/badge/versi%C3%B3n-7.2.1-2563eb)
+![versión](https://img.shields.io/badge/versi%C3%B3n-8.0.0-2563eb)
 ![objetos](https://img.shields.io/badge/objetos-1.900-2563eb)
 ![demos](https://img.shields.io/badge/demos-576-f97316)
 
@@ -59,16 +59,16 @@ Aurora 7 no es una colección de snippets: es un **sistema con contrato**. Cada 
 **En una página real** — enlaza los tokens y solo los packs que necesites:
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Ntizar/Aurora7@v7.2.2/tokens.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Ntizar/Aurora7@v7.2.2/packs/p4-actions.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Ntizar/Aurora7@v7.2.2/packs/p5-forms.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Ntizar/Aurora7@v8.0.0/tokens.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Ntizar/Aurora7@v8.0.0/packs/p4-actions.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Ntizar/Aurora7@v8.0.0/packs/p5-forms.css">
 ```
 
 **Todo de golpe** — para prototipar:
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Ntizar/Aurora7@v7.2.2/tokens.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Ntizar/Aurora7@v7.2.2/packs/all.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Ntizar/Aurora7@v8.0.0/tokens.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Ntizar/Aurora7@v8.0.0/packs/all.css">
 ```
 
 El `body` lleva `class="nz"` y el tema se fija en el `<html>`:

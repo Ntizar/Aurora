@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es" data-nz-theme="light" data-nz-marca="aurora">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Recetas canónicas y criterio de composición</title>
+<!-- Galería de las recetas + el «así sí / así no». Ver COMPOSICION.md. -->
+<link rel="stylesheet" href="../tokens.css">
+<link rel="stylesheet" href="../packs/p1-layout.css">
+<link rel="stylesheet" href="../packs/p3-typography.css">
+<link rel="stylesheet" href="../packs/p4-actions.css">
+<link rel="stylesheet" href="../packs/p6-feedback.css">
+<link rel="stylesheet" href="../packs/p8-data.css">
+<link rel="stylesheet" href="../packs/p9-media.css">
+</head>
+<body class="nz">
+
+<main class="nz-main nz-main--wide">
+  <div class="nz-container">
+
+    <p class="nz-eyebrow">Recetas</p>
+    <h1 class="nz-h1">Páginas canónicas</h1>
+    <p class="nz-lead">Cada tipo de página tiene una forma correcta, y está escrita. Cópialas como punto de partida en vez de improvisar la composición.</p>
+
+    <section class="nz-section" aria-label="Recetas">
+      <div class="nz-grid-auto">
+
+        <article class="nz-article nz-article--bordered">
+          <h2 class="nz-h3">Admin y gestión</h2>
+          <p>Barra lateral, KPIs, tabla ancha con estados y acciones por fila. El panel que más se ensucia cuando se improvisa.</p>
+          <p><span class="nz-badge nz-badge--neutral">Ancho completo</span></p>
+          <a class="nz-btn nz-btn--outline nz-btn--sm" href="admin.html">Ver receta</a>
+        </article>
+
+        <article class="nz-article nz-article--bordered">
+          <h2 class="nz-h3">Dashboard</h2>
+          <p>App shell, rejilla de indicadores, gráficos en CSS puro y tabla apilable. Con los tres estados: vacío, carga y error.</p>
+          <p><span class="nz-badge nz-badge--neutral">Ancho completo</span></p>
+          <a class="nz-btn nz-btn--outline nz-btn--sm" href="dashboard.html">Ver receta</a>
+        </article>
+
+        <article class="nz-article nz-article--bordered">
+          <h2 class="nz-h3">Ajustes</h2>
+          <p>Navegación lateral, secciones numeradas y formularios con etiquetas visibles, ayudas y errores de campo.</p>
+          <p><span class="nz-badge nz-badge--neutral">Ancho medio</span></p>
+          <a class="nz-btn nz-btn--outline nz-btn--sm" href="ajustes.html">Ver receta</a>
+        </article>
+
+        <article class="nz-article nz-article--bordered">
+          <h2 class="nz-h3">Acceso</h2>
+          <p>Tarjeta centrada, un solo CTA, y el error del formulario donde se mira: encima de los campos.</p>
+          <p><span class="nz-badge nz-badge--neutral">Columna estrecha</span></p>
+          <a class="nz-btn nz-btn--outline nz-btn--sm" href="login.html">Ver receta</a>
+        </article>
+
+        <article class="nz-article nz-article--bordered">
+          <h2 class="nz-h3">Informe</h2>
+          <p>Prosa a una columna, tablas anchas con scroll propio y estilos de impresión. Aquí lo estrecho sí es lo correcto.</p>
+          <p><span class="nz-badge nz-badge--neutral">Columna estrecha</span></p>
+          <a class="nz-btn nz-btn--outline nz-btn--sm" href="informe.html">Ver receta</a>
+        </article>
+
+      </div>
+    </section>
+
+    <section class="nz-section" aria-label="Criterio">
+      <h2 class="nz-h2">Así sí, así no</h2>
+      <div class="nz-table-wrap">
+        <table class="nz-table nz-table--striped">
+          <thead>
+            <tr>
+              <th scope="col">Detalle</th>
+              <th scope="col">Así no</th>
+              <th scope="col">Así sí</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row" class="nz-table__strong">Iconos</th>
+              <td>Un emoji haciendo de icono en cada título</td>
+              <td><svg class="nz-icon nz-icon--sm nz-icon--brand" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> SVG en línea con <code>currentColor</code></td>
+            </tr>
+            <tr>
+              <th scope="row" class="nz-table__strong">Color</th>
+              <td>Azul, naranja, verde y rojo a la vez</td>
+              <td>Marca como protagonista y, como mucho, cinco acentos</td>
+            </tr>
+            <tr>
+              <th scope="row" class="nz-table__strong">Ancho</th>
+              <td>Un panel de gestión en columna de 700&nbsp;px</td>
+              <td>Ancho completo; estrecho solo para prosa</td>
+            </tr>
+            <tr>
+              <th scope="row" class="nz-table__strong">Tamaño</th>
+              <td>Todo a 12&nbsp;px para «que quepa»</td>
+              <td>16 base, 14 interfaz, 12 solo micro</td>
+            </tr>
+            <tr>
+              <th scope="row" class="nz-table__strong">Etiquetas</th>
+              <td>El <em>placeholder</em> haciendo de etiqueta</td>
+              <td>Etiqueta visible y el <em>placeholder</em> como ejemplo</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p><a class="nz-link" href="../COMPOSICION.md">Las 12 leyes, con el porqué, en COMPOSICION.md</a></p>
+    </section>
+
+  </div>
+</main>
+
+<footer class="nz-footer">
+  <p>Hecho con ❤️ por David Antizar</p>
+</footer>
+
+</body>
+</html>
