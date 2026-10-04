@@ -1,0 +1,28 @@
+/* Aurora 7 · marca «carmesi» — generado por scripts/generar-marca.py
+   marca #dc2626 · acento #0891b2 · rampas OKLCH de luz uniforme
+   marca y acento tal cual se pidieron
+   Activa con: <html data-nz-marca="carmesi">
+   Hecho con ❤️ por David Antizar */
+
+[data-nz-marca="carmesi"] {
+  /* rampa de marca (primario) */
+  --nz-marca-50: #fff2f0;
+  --nz-marca-100: #ffe3df;
+  --nz-marca-200: #ffcec7;
+  --nz-marca-300: #ffaba0;
+  --nz-marca-400: #ff7468;
+  --nz-marca-500: #f6453d;
+  --nz-marca-600: #dc2626;
+  --nz-marca-700: #c40012;
+  --nz-marca-800: #a1000c;
+  --nz-marca-900: #801e1a;
+  /* rampa de acento (secundario) */
+  --nz-acento-50: #c1e7f5;
+  --nz-acento-100: #b7ddeb;
+  --nz-acento-200: #96d3e8;
+  --nz-acento-300: #69c1de;
+  --nz-acento-400: #32a7c8;
+  --nz-acento-500: #0891b2;
+  --nz-acento-600: #007590;
+  --nz-acento-700: #006178;
+}

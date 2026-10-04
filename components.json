@@ -23,7 +23,7 @@
   "familias": 349,
   "categorias": 15,
   "demos": 576,
-  "tokens": 145,
+  "tokens": 169,
   "tokensDark": 43
  },
  "packs": {
@@ -325,94 +325,184 @@
  },
  "tokens_def": [
   {
+   "nombre": "--nz-marca-50",
+   "valor": "#f0f5ff",
+   "seccion": "general"
+  },
+  {
+   "nombre": "--nz-marca-100",
+   "valor": "#dfeaff",
+   "seccion": "general"
+  },
+  {
+   "nombre": "--nz-marca-200",
+   "valor": "#c6daff",
+   "seccion": "general"
+  },
+  {
+   "nombre": "--nz-marca-300",
+   "valor": "#a0c0ff",
+   "seccion": "general"
+  },
+  {
+   "nombre": "--nz-marca-400",
+   "valor": "#6b9dff",
+   "seccion": "general"
+  },
+  {
+   "nombre": "--nz-marca-500",
+   "valor": "#417eff",
+   "seccion": "general"
+  },
+  {
+   "nombre": "--nz-marca-600",
+   "valor": "#2563eb",
+   "seccion": "general"
+  },
+  {
+   "nombre": "--nz-marca-700",
+   "valor": "#1350d7",
+   "seccion": "general"
+  },
+  {
+   "nombre": "--nz-marca-800",
+   "valor": "#1041b0",
+   "seccion": "general"
+  },
+  {
+   "nombre": "--nz-marca-900",
+   "valor": "#193c88",
+   "seccion": "general"
+  },
+  {
+   "nombre": "--nz-acento-50",
+   "valor": "#ffddcd",
+   "seccion": "general"
+  },
+  {
+   "nombre": "--nz-acento-100",
+   "valor": "#ffd4be",
+   "seccion": "general"
+  },
+  {
+   "nombre": "--nz-acento-200",
+   "valor": "#ffc5a9",
+   "seccion": "general"
+  },
+  {
+   "nombre": "--nz-acento-300",
+   "valor": "#ffae85",
+   "seccion": "general"
+  },
+  {
+   "nombre": "--nz-acento-400",
+   "valor": "#ff8c4e",
+   "seccion": "general"
+  },
+  {
+   "nombre": "--nz-acento-500",
+   "valor": "#f97316",
+   "seccion": "general"
+  },
+  {
+   "nombre": "--nz-acento-600",
+   "valor": "#cb5a00",
+   "seccion": "general"
+  },
+  {
+   "nombre": "--nz-acento-700",
+   "valor": "#a84900",
+   "seccion": "general"
+  },
+  {
    "nombre": "--nz-blue-50",
-   "valor": "#eff6ff",
-   "seccion": "COLOR · Azul (primario) "
+   "valor": "var(--nz-marca-50)",
+   "seccion": "general"
   },
   {
    "nombre": "--nz-blue-100",
-   "valor": "#dbeafe",
-   "seccion": "COLOR · Azul (primario) "
+   "valor": "var(--nz-marca-100)",
+   "seccion": "general"
   },
   {
    "nombre": "--nz-blue-200",
-   "valor": "#bfdbfe",
-   "seccion": "COLOR · Azul (primario) "
+   "valor": "var(--nz-marca-200)",
+   "seccion": "general"
   },
   {
    "nombre": "--nz-blue-300",
-   "valor": "#93c5fd",
-   "seccion": "COLOR · Azul (primario) "
+   "valor": "var(--nz-marca-300)",
+   "seccion": "general"
   },
   {
    "nombre": "--nz-blue-400",
-   "valor": "#60a5fa",
-   "seccion": "COLOR · Azul (primario) "
+   "valor": "var(--nz-marca-400)",
+   "seccion": "general"
   },
   {
    "nombre": "--nz-blue-500",
-   "valor": "#3b82f6",
-   "seccion": "COLOR · Azul (primario) "
+   "valor": "var(--nz-marca-500)",
+   "seccion": "general"
   },
   {
    "nombre": "--nz-blue-600",
-   "valor": "#2563eb",
-   "seccion": "COLOR · Azul (primario) "
+   "valor": "var(--nz-marca-600)",
+   "seccion": "general"
   },
   {
    "nombre": "--nz-blue-700",
-   "valor": "#1d4ed8",
-   "seccion": "COLOR · Azul (primario) "
+   "valor": "var(--nz-marca-700)",
+   "seccion": "general"
   },
   {
    "nombre": "--nz-blue-800",
-   "valor": "#1e40af",
-   "seccion": "COLOR · Azul (primario) "
+   "valor": "var(--nz-marca-800)",
+   "seccion": "general"
   },
   {
    "nombre": "--nz-blue-900",
-   "valor": "#1e3a8a",
-   "seccion": "COLOR · Azul (primario) "
+   "valor": "var(--nz-marca-900)",
+   "seccion": "general"
   },
   {
    "nombre": "--nz-orange-50",
-   "valor": "#fff7ed",
-   "seccion": "COLOR · Naranja (acento, secundario) "
+   "valor": "var(--nz-acento-50)",
+   "seccion": "general"
   },
   {
    "nombre": "--nz-orange-100",
-   "valor": "#ffedd5",
-   "seccion": "COLOR · Naranja (acento, secundario) "
+   "valor": "var(--nz-acento-100)",
+   "seccion": "general"
   },
   {
    "nombre": "--nz-orange-200",
-   "valor": "#fed7aa",
-   "seccion": "COLOR · Naranja (acento, secundario) "
+   "valor": "var(--nz-acento-200)",
+   "seccion": "general"
   },
   {
    "nombre": "--nz-orange-300",
-   "valor": "#fdba74",
-   "seccion": "COLOR · Naranja (acento, secundario) "
+   "valor": "var(--nz-acento-300)",
+   "seccion": "general"
   },
   {
    "nombre": "--nz-orange-400",
-   "valor": "#fb923c",
-   "seccion": "COLOR · Naranja (acento, secundario) "
+   "valor": "var(--nz-acento-400)",
+   "seccion": "general"
   },
   {
    "nombre": "--nz-orange-500",
-   "valor": "#f97316",
-   "seccion": "COLOR · Naranja (acento, secundario) "
+   "valor": "var(--nz-acento-500)",
+   "seccion": "general"
   },
   {
    "nombre": "--nz-orange-600",
-   "valor": "#ea580c",
-   "seccion": "COLOR · Naranja (acento, secundario) "
+   "valor": "var(--nz-acento-600)",
+   "seccion": "general"
   },
   {
    "nombre": "--nz-orange-700",
-   "valor": "#c2410c",
-   "seccion": "COLOR · Naranja (acento, secundario) "
+   "valor": "var(--nz-acento-700)",
+   "seccion": "general"
   },
   {
    "nombre": "--nz-green-50",
@@ -552,417 +642,447 @@
   {
    "nombre": "--nz-bg",
    "valor": "var(--nz-gray-0)",
-   "seccion": "TOKENS TEMÁTICOS (light por defecto) "
+   "seccion": "ROLES TEMÁTICOS (light). Todo color de interfaz sale de aquí. "
   },
   {
    "nombre": "--nz-bg-soft",
    "valor": "var(--nz-gray-50)",
-   "seccion": "TOKENS TEMÁTICOS (light por defecto) "
+   "seccion": "ROLES TEMÁTICOS (light). Todo color de interfaz sale de aquí. "
   },
   {
    "nombre": "--nz-bg-inset",
    "valor": "var(--nz-gray-100)",
-   "seccion": "TOKENS TEMÁTICOS (light por defecto) "
+   "seccion": "ROLES TEMÁTICOS (light). Todo color de interfaz sale de aquí. "
   },
   {
    "nombre": "--nz-surface",
    "valor": "var(--nz-gray-0)",
-   "seccion": "TOKENS TEMÁTICOS (light por defecto) "
+   "seccion": "ROLES TEMÁTICOS (light). Todo color de interfaz sale de aquí. "
   },
   {
    "nombre": "--nz-surface-2",
    "valor": "var(--nz-gray-50)",
-   "seccion": "TOKENS TEMÁTICOS (light por defecto) "
+   "seccion": "ROLES TEMÁTICOS (light). Todo color de interfaz sale de aquí. "
   },
   {
    "nombre": "--nz-border",
    "valor": "var(--nz-gray-200)",
-   "seccion": "TOKENS TEMÁTICOS (light por defecto) "
+   "seccion": "ROLES TEMÁTICOS (light). Todo color de interfaz sale de aquí. "
   },
   {
    "nombre": "--nz-border-soft",
    "valor": "var(--nz-gray-100)",
-   "seccion": "TOKENS TEMÁTICOS (light por defecto) "
+   "seccion": "ROLES TEMÁTICOS (light). Todo color de interfaz sale de aquí. "
   },
   {
    "nombre": "--nz-border-strong",
    "valor": "var(--nz-gray-300)",
-   "seccion": "TOKENS TEMÁTICOS (light por defecto) "
+   "seccion": "ROLES TEMÁTICOS (light). Todo color de interfaz sale de aquí. "
   },
   {
    "nombre": "--nz-text",
    "valor": "var(--nz-gray-900)",
-   "seccion": "TOKENS TEMÁTICOS (light por defecto) "
+   "seccion": "ROLES TEMÁTICOS (light). Todo color de interfaz sale de aquí. "
   },
   {
    "nombre": "--nz-text-soft",
    "valor": "var(--nz-gray-600)",
-   "seccion": "TOKENS TEMÁTICOS (light por defecto) "
+   "seccion": "ROLES TEMÁTICOS (light). Todo color de interfaz sale de aquí. "
   },
   {
    "nombre": "--nz-text-mute",
    "valor": "var(--nz-gray-500)",
-   "seccion": "TOKENS TEMÁTICOS (light por defecto) "
+   "seccion": "ROLES TEMÁTICOS (light). Todo color de interfaz sale de aquí. "
   },
   {
    "nombre": "--nz-text-faint",
    "valor": "var(--nz-gray-400)",
-   "seccion": "TOKENS TEMÁTICOS (light por defecto) "
+   "seccion": "ROLES TEMÁTICOS (light). Todo color de interfaz sale de aquí. "
   },
   {
    "nombre": "--nz-text-invert",
    "valor": "var(--nz-gray-0)",
-   "seccion": "TOKENS TEMÁTICOS (light por defecto) "
+   "seccion": "ROLES TEMÁTICOS (light). Todo color de interfaz sale de aquí. "
   },
   {
    "nombre": "--nz-brand",
-   "valor": "var(--nz-blue-600)",
-   "seccion": "TOKENS TEMÁTICOS (light por defecto) "
+   "valor": "var(--nz-marca-600)",
+   "seccion": "ROLES TEMÁTICOS (light). Todo color de interfaz sale de aquí. "
   },
   {
    "nombre": "--nz-brand-strong",
-   "valor": "var(--nz-blue-700)",
-   "seccion": "TOKENS TEMÁTICOS (light por defecto) "
+   "valor": "var(--nz-marca-700)",
+   "seccion": "ROLES TEMÁTICOS (light). Todo color de interfaz sale de aquí. "
   },
   {
    "nombre": "--nz-brand-soft",
-   "valor": "var(--nz-blue-50)",
-   "seccion": "TOKENS TEMÁTICOS (light por defecto) "
+   "valor": "var(--nz-marca-50)",
+   "seccion": "ROLES TEMÁTICOS (light). Todo color de interfaz sale de aquí. "
   },
   {
    "nombre": "--nz-brand-tint",
-   "valor": "var(--nz-blue-100)",
-   "seccion": "TOKENS TEMÁTICOS (light por defecto) "
+   "valor": "var(--nz-marca-100)",
+   "seccion": "ROLES TEMÁTICOS (light). Todo color de interfaz sale de aquí. "
   },
   {
    "nombre": "--nz-accent",
-   "valor": "var(--nz-orange-500)",
-   "seccion": "TOKENS TEMÁTICOS (light por defecto) "
+   "valor": "var(--nz-acento-500)",
+   "seccion": "ROLES TEMÁTICOS (light). Todo color de interfaz sale de aquí. "
   },
   {
    "nombre": "--nz-accent-strong",
-   "valor": "var(--nz-orange-600)",
-   "seccion": "TOKENS TEMÁTICOS (light por defecto) "
+   "valor": "var(--nz-acento-600)",
+   "seccion": "ROLES TEMÁTICOS (light). Todo color de interfaz sale de aquí. "
   },
   {
    "nombre": "--nz-accent-soft",
-   "valor": "var(--nz-orange-50)",
-   "seccion": "TOKENS TEMÁTICOS (light por defecto) "
+   "valor": "var(--nz-acento-50)",
+   "seccion": "ROLES TEMÁTICOS (light). Todo color de interfaz sale de aquí. "
   },
   {
    "nombre": "--nz-accent-tint",
-   "valor": "var(--nz-orange-100)",
-   "seccion": "TOKENS TEMÁTICOS (light por defecto) "
+   "valor": "var(--nz-acento-100)",
+   "seccion": "ROLES TEMÁTICOS (light). Todo color de interfaz sale de aquí. "
   },
   {
    "nombre": "--nz-success",
    "valor": "var(--nz-green-600)",
-   "seccion": "TOKENS TEMÁTICOS (light por defecto) "
+   "seccion": "ROLES TEMÁTICOS (light). Todo color de interfaz sale de aquí. "
   },
   {
    "nombre": "--nz-success-soft",
    "valor": "var(--nz-green-50)",
-   "seccion": "TOKENS TEMÁTICOS (light por defecto) "
+   "seccion": "ROLES TEMÁTICOS (light). Todo color de interfaz sale de aquí. "
   },
   {
    "nombre": "--nz-success-tint",
    "valor": "var(--nz-green-100)",
-   "seccion": "TOKENS TEMÁTICOS (light por defecto) "
+   "seccion": "ROLES TEMÁTICOS (light). Todo color de interfaz sale de aquí. "
   },
   {
    "nombre": "--nz-danger",
    "valor": "var(--nz-red-600)",
-   "seccion": "TOKENS TEMÁTICOS (light por defecto) "
+   "seccion": "ROLES TEMÁTICOS (light). Todo color de interfaz sale de aquí. "
   },
   {
    "nombre": "--nz-danger-soft",
    "valor": "var(--nz-red-50)",
-   "seccion": "TOKENS TEMÁTICOS (light por defecto) "
+   "seccion": "ROLES TEMÁTICOS (light). Todo color de interfaz sale de aquí. "
   },
   {
    "nombre": "--nz-danger-tint",
    "valor": "var(--nz-red-100)",
-   "seccion": "TOKENS TEMÁTICOS (light por defecto) "
+   "seccion": "ROLES TEMÁTICOS (light). Todo color de interfaz sale de aquí. "
   },
   {
    "nombre": "--nz-warning",
    "valor": "var(--nz-amber-600)",
-   "seccion": "TOKENS TEMÁTICOS (light por defecto) "
+   "seccion": "ROLES TEMÁTICOS (light). Todo color de interfaz sale de aquí. "
   },
   {
    "nombre": "--nz-warning-soft",
    "valor": "var(--nz-amber-50)",
-   "seccion": "TOKENS TEMÁTICOS (light por defecto) "
+   "seccion": "ROLES TEMÁTICOS (light). Todo color de interfaz sale de aquí. "
   },
   {
    "nombre": "--nz-warning-tint",
    "valor": "var(--nz-amber-100)",
-   "seccion": "TOKENS TEMÁTICOS (light por defecto) "
+   "seccion": "ROLES TEMÁTICOS (light). Todo color de interfaz sale de aquí. "
   },
   {
    "nombre": "--nz-info",
-   "valor": "var(--nz-blue-600)",
-   "seccion": "TOKENS TEMÁTICOS (light por defecto) "
+   "valor": "var(--nz-marca-600)",
+   "seccion": "ROLES TEMÁTICOS (light). Todo color de interfaz sale de aquí. "
   },
   {
    "nombre": "--nz-info-soft",
-   "valor": "var(--nz-blue-50)",
-   "seccion": "TOKENS TEMÁTICOS (light por defecto) "
+   "valor": "var(--nz-marca-50)",
+   "seccion": "ROLES TEMÁTICOS (light). Todo color de interfaz sale de aquí. "
   },
   {
    "nombre": "--nz-info-tint",
-   "valor": "var(--nz-blue-100)",
-   "seccion": "TOKENS TEMÁTICOS (light por defecto) "
+   "valor": "var(--nz-marca-100)",
+   "seccion": "ROLES TEMÁTICOS (light). Todo color de interfaz sale de aquí. "
   },
   {
    "nombre": "--nz-overlay",
    "valor": "rgba(17, 24, 39, 0.48)",
-   "seccion": "TOKENS TEMÁTICOS (light por defecto) "
+   "seccion": "ROLES TEMÁTICOS (light). Todo color de interfaz sale de aquí. "
   },
   {
    "nombre": "--nz-font",
    "valor": "system-ui, -apple-system, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, sans-serif",
-   "seccion": "TIPOGRAFÍA "
+   "seccion": "ROLES TEMÁTICOS (light). Todo color de interfaz sale de aquí. "
   },
   {
    "nombre": "--nz-font-mono",
    "valor": "ui-monospace, \"Cascadia Code\", \"SF Mono\", Consolas, monospace",
-   "seccion": "TIPOGRAFÍA "
+   "seccion": "ROLES TEMÁTICOS (light). Todo color de interfaz sale de aquí. "
   },
   {
    "nombre": "--nz-text-2xs",
    "valor": "0.75rem",
-   "seccion": "TIPOGRAFÍA "
+   "seccion": "ROLES TEMÁTICOS (light). Todo color de interfaz sale de aquí. "
   },
   {
    "nombre": "--nz-text-xs",
-   "valor": "0.75rem",
-   "seccion": "TIPOGRAFÍA "
+   "valor": "0.8125rem",
+   "seccion": "ROLES TEMÁTICOS (light). Todo color de interfaz sale de aquí. "
   },
   {
    "nombre": "--nz-text-sm",
-   "valor": "0.8125rem",
-   "seccion": "TIPOGRAFÍA "
+   "valor": "0.875rem",
+   "seccion": "ROLES TEMÁTICOS (light). Todo color de interfaz sale de aquí. "
   },
   {
    "nombre": "--nz-text-base",
-   "valor": "0.9375rem",
-   "seccion": "TIPOGRAFÍA "
+   "valor": "1rem",
+   "seccion": "ROLES TEMÁTICOS (light). Todo color de interfaz sale de aquí. "
   },
   {
    "nombre": "--nz-text-md",
-   "valor": "1rem",
-   "seccion": "TIPOGRAFÍA "
+   "valor": "var(--nz-text-base)",
+   "seccion": "ROLES TEMÁTICOS (light). Todo color de interfaz sale de aquí. "
   },
   {
    "nombre": "--nz-text-lg",
    "valor": "1.125rem",
-   "seccion": "TIPOGRAFÍA "
+   "seccion": "ROLES TEMÁTICOS (light). Todo color de interfaz sale de aquí. "
   },
   {
    "nombre": "--nz-text-xl",
-   "valor": "clamp(1.25rem, 1.1rem + 0.6vw, 1.5rem)",
-   "seccion": "TIPOGRAFÍA "
+   "valor": "clamp(1.25rem, 1.18rem + 0.35vw, 1.375rem)",
+   "seccion": "ROLES TEMÁTICOS (light). Todo color de interfaz sale de aquí. "
   },
   {
    "nombre": "--nz-text-2xl",
-   "valor": "clamp(1.5rem, 1.25rem + 1vw, 1.875rem)",
-   "seccion": "TIPOGRAFÍA "
+   "valor": "clamp(1.5rem, 1.36rem + 0.7vw, 1.75rem)",
+   "seccion": "ROLES TEMÁTICOS (light). Todo color de interfaz sale de aquí. "
   },
   {
    "nombre": "--nz-text-3xl",
-   "valor": "clamp(1.875rem, 1.4rem + 1.8vw, 2.5rem)",
-   "seccion": "TIPOGRAFÍA "
+   "valor": "clamp(1.875rem, 1.62rem + 1.3vw, 2.375rem)",
+   "seccion": "ROLES TEMÁTICOS (light). Todo color de interfaz sale de aquí. "
   },
   {
    "nombre": "--nz-text-4xl",
-   "valor": "clamp(2.25rem, 1.6rem + 2.8vw, 3.25rem)",
-   "seccion": "TIPOGRAFÍA "
+   "valor": "clamp(2.5rem, 2rem + 2.4vw, 3.5rem)",
+   "seccion": "ROLES TEMÁTICOS (light). Todo color de interfaz sale de aquí. "
   },
   {
    "nombre": "--nz-leading-tight",
    "valor": "1.2",
-   "seccion": "TIPOGRAFÍA "
+   "seccion": "ROLES TEMÁTICOS (light). Todo color de interfaz sale de aquí. "
   },
   {
    "nombre": "--nz-leading-snug",
    "valor": "1.375",
-   "seccion": "TIPOGRAFÍA "
+   "seccion": "ROLES TEMÁTICOS (light). Todo color de interfaz sale de aquí. "
   },
   {
    "nombre": "--nz-leading-normal",
    "valor": "1.6",
-   "seccion": "TIPOGRAFÍA "
+   "seccion": "ROLES TEMÁTICOS (light). Todo color de interfaz sale de aquí. "
   },
   {
    "nombre": "--nz-tracking-tight",
    "valor": "-0.02em",
-   "seccion": "TIPOGRAFÍA "
+   "seccion": "ROLES TEMÁTICOS (light). Todo color de interfaz sale de aquí. "
   },
   {
    "nombre": "--nz-tracking-caps",
    "valor": "0.08em",
-   "seccion": "TIPOGRAFÍA "
+   "seccion": "ROLES TEMÁTICOS (light). Todo color de interfaz sale de aquí. "
   },
   {
    "nombre": "--nz-space-0",
    "valor": "0",
-   "seccion": "ESPACIO (escala 4px) "
+   "seccion": "ESPACIO (escala 4px) + RITMO VERTICAL "
   },
   {
    "nombre": "--nz-space-1",
    "valor": "0.25rem",
-   "seccion": "ESPACIO (escala 4px) "
+   "seccion": "ESPACIO (escala 4px) + RITMO VERTICAL "
   },
   {
    "nombre": "--nz-space-2",
    "valor": "0.5rem",
-   "seccion": "ESPACIO (escala 4px) "
+   "seccion": "ESPACIO (escala 4px) + RITMO VERTICAL "
   },
   {
    "nombre": "--nz-space-3",
    "valor": "0.75rem",
-   "seccion": "ESPACIO (escala 4px) "
+   "seccion": "ESPACIO (escala 4px) + RITMO VERTICAL "
   },
   {
    "nombre": "--nz-space-4",
    "valor": "1rem",
-   "seccion": "ESPACIO (escala 4px) "
+   "seccion": "ESPACIO (escala 4px) + RITMO VERTICAL "
   },
   {
    "nombre": "--nz-space-5",
    "valor": "1.25rem",
-   "seccion": "ESPACIO (escala 4px) "
+   "seccion": "ESPACIO (escala 4px) + RITMO VERTICAL "
   },
   {
    "nombre": "--nz-space-6",
    "valor": "1.5rem",
-   "seccion": "ESPACIO (escala 4px) "
+   "seccion": "ESPACIO (escala 4px) + RITMO VERTICAL "
   },
   {
    "nombre": "--nz-space-7",
    "valor": "1.75rem",
-   "seccion": "ESPACIO (escala 4px) "
+   "seccion": "ESPACIO (escala 4px) + RITMO VERTICAL "
   },
   {
    "nombre": "--nz-space-8",
    "valor": "2rem",
-   "seccion": "ESPACIO (escala 4px) "
+   "seccion": "ESPACIO (escala 4px) + RITMO VERTICAL "
   },
   {
    "nombre": "--nz-space-9",
    "valor": "2.25rem",
-   "seccion": "ESPACIO (escala 4px) "
+   "seccion": "ESPACIO (escala 4px) + RITMO VERTICAL "
   },
   {
    "nombre": "--nz-space-10",
    "valor": "2.5rem",
-   "seccion": "ESPACIO (escala 4px) "
+   "seccion": "ESPACIO (escala 4px) + RITMO VERTICAL "
+  },
+  {
+   "nombre": "--nz-space-11",
+   "valor": "2.75rem",
+   "seccion": "ESPACIO (escala 4px) + RITMO VERTICAL "
   },
   {
    "nombre": "--nz-space-12",
    "valor": "3rem",
-   "seccion": "ESPACIO (escala 4px) "
+   "seccion": "ESPACIO (escala 4px) + RITMO VERTICAL "
+  },
+  {
+   "nombre": "--nz-space-14",
+   "valor": "3.5rem",
+   "seccion": "ESPACIO (escala 4px) + RITMO VERTICAL "
   },
   {
    "nombre": "--nz-space-16",
    "valor": "4rem",
-   "seccion": "ESPACIO (escala 4px) "
+   "seccion": "ESPACIO (escala 4px) + RITMO VERTICAL "
   },
   {
    "nombre": "--nz-space-20",
    "valor": "5rem",
-   "seccion": "ESPACIO (escala 4px) "
+   "seccion": "ESPACIO (escala 4px) + RITMO VERTICAL "
   },
   {
    "nombre": "--nz-gutter",
    "valor": "var(--nz-space-4)",
-   "seccion": "ESPACIO (escala 4px) "
+   "seccion": "ESPACIO (escala 4px) + RITMO VERTICAL "
+  },
+  {
+   "nombre": "--nz-rh-bloque",
+   "valor": "var(--nz-space-6)",
+   "seccion": "ESPACIO (escala 4px) + RITMO VERTICAL "
+  },
+  {
+   "nombre": "--nz-rh-seccion",
+   "valor": "var(--nz-space-10)",
+   "seccion": "ESPACIO (escala 4px) + RITMO VERTICAL "
   },
   {
    "nombre": "--nz-container-max",
    "valor": "72rem",
-   "seccion": "ESPACIO (escala 4px) "
+   "seccion": "ESPACIO (escala 4px) + RITMO VERTICAL "
   },
   {
    "nombre": "--nz-container-narrow",
    "valor": "44rem",
-   "seccion": "ESPACIO (escala 4px) "
+   "seccion": "ESPACIO (escala 4px) + RITMO VERTICAL "
   },
   {
    "nombre": "--nz-radius-xs",
    "valor": "4px",
-   "seccion": "RADIOS Y BORDES "
+   "seccion": "GEOMETRÍA · radios, objetivo táctil y alturas de control "
   },
   {
    "nombre": "--nz-radius-sm",
-   "valor": "6px",
-   "seccion": "RADIOS Y BORDES "
+   "valor": "8px",
+   "seccion": "GEOMETRÍA · radios, objetivo táctil y alturas de control "
   },
   {
    "nombre": "--nz-radius-md",
-   "valor": "10px",
-   "seccion": "RADIOS Y BORDES "
+   "valor": "12px",
+   "seccion": "GEOMETRÍA · radios, objetivo táctil y alturas de control "
   },
   {
    "nombre": "--nz-radius-lg",
-   "valor": "14px",
-   "seccion": "RADIOS Y BORDES "
+   "valor": "16px",
+   "seccion": "GEOMETRÍA · radios, objetivo táctil y alturas de control "
   },
   {
    "nombre": "--nz-radius-xl",
-   "valor": "20px",
-   "seccion": "RADIOS Y BORDES "
+   "valor": "24px",
+   "seccion": "GEOMETRÍA · radios, objetivo táctil y alturas de control "
   },
   {
    "nombre": "--nz-radius-full",
    "valor": "999px",
-   "seccion": "RADIOS Y BORDES "
+   "seccion": "GEOMETRÍA · radios, objetivo táctil y alturas de control "
   },
   {
    "nombre": "--nz-border-w",
    "valor": "1px",
-   "seccion": "RADIOS Y BORDES "
+   "seccion": "GEOMETRÍA · radios, objetivo táctil y alturas de control "
   },
   {
    "nombre": "--nz-border-w-strong",
    "valor": "1.5px",
-   "seccion": "RADIOS Y BORDES "
+   "seccion": "GEOMETRÍA · radios, objetivo táctil y alturas de control "
+  },
+  {
+   "nombre": "--nz-tactil",
+   "valor": "2.75rem",
+   "seccion": "GEOMETRÍA · radios, objetivo táctil y alturas de control "
+  },
+  {
+   "nombre": "--nz-control-sm",
+   "valor": "2rem",
+   "seccion": "GEOMETRÍA · radios, objetivo táctil y alturas de control "
+  },
+  {
+   "nombre": "--nz-control-md",
+   "valor": "2.5rem",
+   "seccion": "GEOMETRÍA · radios, objetivo táctil y alturas de control "
+  },
+  {
+   "nombre": "--nz-control-lg",
+   "valor": "2.75rem",
+   "seccion": "GEOMETRÍA · radios, objetivo táctil y alturas de control "
   },
   {
    "nombre": "--nz-shadow-xs",
    "valor": "0 1px 2px rgba(17, 24, 39, 0.05)",
-   "seccion": "SOMBRAS (multicapa sutiles, sin bordes duros) "
+   "seccion": "GEOMETRÍA · radios, objetivo táctil y alturas de control "
   },
   {
    "nombre": "--nz-shadow-sm",
    "valor": "0 1px 2px rgba(17, 24, 39, 0.05), 0 2px 6px rgba(17, 24, 39, 0.04)",
-   "seccion": "SOMBRAS (multicapa sutiles, sin bordes duros) "
+   "seccion": "GEOMETRÍA · radios, objetivo táctil y alturas de control "
   },
   {
    "nombre": "--nz-shadow-md",
    "valor": "0 2px 4px rgba(17, 24, 39, 0.04), 0 6px 16px rgba(17, 24, 39, 0.07)",
-   "seccion": "SOMBRAS (multicapa sutiles, sin bordes duros) "
+   "seccion": "GEOMETRÍA · radios, objetivo táctil y alturas de control "
   },
   {
    "nombre": "--nz-shadow-lg",
    "valor": "0 4px 8px rgba(17, 24, 39, 0.04), 0 14px 32px rgba(17, 24, 39, 0.10)",
-   "seccion": "SOMBRAS (multicapa sutiles, sin bordes duros) "
+   "seccion": "GEOMETRÍA · radios, objetivo táctil y alturas de control "
   },
   {
    "nombre": "--nz-shadow-xl",
    "valor": "0 8px 16px rgba(17, 24, 39, 0.06), 0 24px 56px rgba(17, 24, 39, 0.14)",
-   "seccion": "SOMBRAS (multicapa sutiles, sin bordes duros) "
-  },
-  {
-   "nombre": "--nz-shadow-brand",
-   "valor": "0 2px 4px rgba(37, 99, 235, 0.10), 0 8px 20px rgba(37, 99, 235, 0.14)",
-   "seccion": "SOMBRAS (multicapa sutiles, sin bordes duros) "
-  },
-  {
-   "nombre": "--nz-shadow-accent",
-   "valor": "0 2px 4px rgba(249, 115, 22, 0.10), 0 8px 20px rgba(249, 115, 22, 0.14)",
-   "seccion": "SOMBRAS (multicapa sutiles, sin bordes duros) "
+   "seccion": "GEOMETRÍA · radios, objetivo táctil y alturas de control "
   },
   {
    "nombre": "--nz-z-base",
@@ -1012,42 +1132,42 @@
   {
    "nombre": "--nz-dur-fast",
    "valor": "120ms",
-   "seccion": "MOVIMIENTO (ui-animation-taste) "
+   "seccion": "MOVIMIENTO "
   },
   {
    "nombre": "--nz-dur-base",
    "valor": "180ms",
-   "seccion": "MOVIMIENTO (ui-animation-taste) "
+   "seccion": "MOVIMIENTO "
   },
   {
    "nombre": "--nz-dur-slow",
    "valor": "260ms",
-   "seccion": "MOVIMIENTO (ui-animation-taste) "
+   "seccion": "MOVIMIENTO "
   },
   {
    "nombre": "--nz-ease-out",
    "valor": "cubic-bezier(0.16, 1, 0.3, 1)",
-   "seccion": "MOVIMIENTO (ui-animation-taste) "
+   "seccion": "MOVIMIENTO "
   },
   {
    "nombre": "--nz-ease-in",
    "valor": "cubic-bezier(0.7, 0, 0.84, 0)",
-   "seccion": "MOVIMIENTO (ui-animation-taste) "
+   "seccion": "MOVIMIENTO "
   },
   {
    "nombre": "--nz-ease-soft",
    "valor": "cubic-bezier(0.33, 1, 0.68, 1)",
-   "seccion": "MOVIMIENTO (ui-animation-taste) "
+   "seccion": "MOVIMIENTO "
   },
   {
    "nombre": "--nz-focus-ring",
-   "valor": "0 0 0 3px var(--nz-blue-200)",
-   "seccion": "FOCUS "
+   "valor": "0 0 0 3px color-mix(in oklab, var(--nz-marca-500) 38%, transparent)",
+   "seccion": "FOCUS (deriva de la marca) "
   },
   {
    "nombre": "--nz-focus-ring-accent",
-   "valor": "0 0 0 3px var(--nz-orange-200)",
-   "seccion": "FOCUS "
+   "valor": "0 0 0 3px color-mix(in oklab, var(--nz-acento-500) 42%, transparent)",
+   "seccion": "FOCUS (deriva de la marca) "
   }
  ],
  "tokens_dark": [

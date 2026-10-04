@@ -1,36 +1,60 @@
 /* ============================================================
-   AURORA 7 — tokens.css
-   Design System Ntizar · Fuente única de verdad de tokens
+   AURORA 8 — tokens.css · Fuente única de verdad de tokens
+   Design System Ntizar · 2026
    Reglas: cero gradientes, cero glass, cero IA-slop.
-   Azul #2563eb primario · Naranja #f97316 acento (nunca fundidos).
-   Mobile-first · Sombras multicapa sutiles · Light + Dark.
-   Hecho con ❤️ por David Antizar
+   Color por ROL (marca + acento), rampas OKLCH de luz uniforme: se elige la
+   marca con <html data-nz-marca="…"> y TODO el sistema se rehace solo.
+   Mobile-first · Light + Dark · Hecho con ❤️ por David Antizar
    ============================================================ */
 
 :root {
-  /* ---- 1. COLOR · Azul (primario) ---- */
-  --nz-blue-50:  #eff6ff;
-  --nz-blue-100: #dbeafe;
-  --nz-blue-200: #bfdbfe;
-  --nz-blue-300: #93c5fd;
-  --nz-blue-400: #60a5fa;
-  --nz-blue-500: #3b82f6;
-  --nz-blue-600: #2563eb;   /* brand principal */
-  --nz-blue-700: #1d4ed8;
-  --nz-blue-800: #1e40af;
-  --nz-blue-900: #1e3a8a;
+  /* ---- 1. MARCA · rampa por defecto = preset «aurora» (azul).
+     Tu color SIEMPRE cae en el paso 600 (el primario). Las demás marcas las
+     escribe scripts/generar-marca.py en marcas/<nombre>.css. ---- */
+  --nz-marca-50:  #f0f5ff;
+  --nz-marca-100: #dfeaff;
+  --nz-marca-200: #c6daff;
+  --nz-marca-300: #a0c0ff;
+  --nz-marca-400: #6b9dff;
+  --nz-marca-500: #417eff;
+  --nz-marca-600: #2563eb;   /* primario */
+  --nz-marca-700: #1350d7;
+  --nz-marca-800: #1041b0;
+  --nz-marca-900: #193c88;
 
-  /* ---- 2. COLOR · Naranja (acento, secundario) ---- */
-  --nz-orange-50:  #fff7ed;
-  --nz-orange-100: #ffedd5;
-  --nz-orange-200: #fed7aa;
-  --nz-orange-300: #fdba74;
-  --nz-orange-400: #fb923c;
-  --nz-orange-500: #f97316;  /* acento principal */
-  --nz-orange-600: #ea580c;
-  --nz-orange-700: #c2410c;
+  /* ---- 2. ACENTO · secundario (nunca fundido con el primario).
+     Tu color cae en el paso 500. ---- */
+  --nz-acento-50:  #ffddcd;
+  --nz-acento-100: #ffd4be;
+  --nz-acento-200: #ffc5a9;
+  --nz-acento-300: #ffae85;
+  --nz-acento-400: #ff8c4e;
+  --nz-acento-500: #f97316;  /* acento principal */
+  --nz-acento-600: #cb5a00;
+  --nz-acento-700: #a84900;
 
-  /* ---- 3. COLOR · Semánticos ---- */
+  /* ---- 3. COMPATIBILIDAD (v7 nombraba el color por su tono). No usar en
+     código nuevo: existen para no romper packs antiguos. ---- */
+  --nz-blue-50: var(--nz-marca-50);
+  --nz-blue-100: var(--nz-marca-100);
+  --nz-blue-200: var(--nz-marca-200);
+  --nz-blue-300: var(--nz-marca-300);
+  --nz-blue-400: var(--nz-marca-400);
+  --nz-blue-500: var(--nz-marca-500);
+  --nz-blue-600: var(--nz-marca-600);
+  --nz-blue-700: var(--nz-marca-700);
+  --nz-blue-800: var(--nz-marca-800);
+  --nz-blue-900: var(--nz-marca-900);
+  --nz-orange-50: var(--nz-acento-50);
+  --nz-orange-100: var(--nz-acento-100);
+  --nz-orange-200: var(--nz-acento-200);
+  --nz-orange-300: var(--nz-acento-300);
+  --nz-orange-400: var(--nz-acento-400);
+  --nz-orange-500: var(--nz-acento-500);
+  --nz-orange-600: var(--nz-acento-600);
+  --nz-orange-700: var(--nz-acento-700);
+
+  /* ---- 4. COLOR · Semánticos ---- */
   --nz-green-50:  #f0fdf4;
   --nz-green-100: #dcfce7;
   --nz-green-500: #22c55e;
@@ -47,7 +71,7 @@
   --nz-amber-600: #d97706;
   --nz-amber-700: #b45309;
 
-  /* ---- 4. COLOR · Neutros ---- */
+  /* ---- 5. COLOR · Neutros ---- */
   --nz-gray-0:   #ffffff;
   --nz-gray-50:  #f9fafb;
   --nz-gray-100: #f3f4f6;
@@ -61,7 +85,7 @@
   --nz-gray-900: #111827;
   --nz-gray-950: #030712;
 
-  /* ---- 5. TOKENS TEMÁTICOS (light por defecto) ---- */
+  /* ---- 6. ROLES TEMÁTICOS (light). Todo color de interfaz sale de aquí. ---- */
   --nz-bg:          var(--nz-gray-0);
   --nz-bg-soft:     var(--nz-gray-50);
   --nz-bg-inset:    var(--nz-gray-100);
@@ -75,14 +99,14 @@
   --nz-text-mute:   var(--nz-gray-500);
   --nz-text-faint:  var(--nz-gray-400);
   --nz-text-invert: var(--nz-gray-0);
-  --nz-brand:       var(--nz-blue-600);
-  --nz-brand-strong: var(--nz-blue-700);
-  --nz-brand-soft:  var(--nz-blue-50);
-  --nz-brand-tint:  var(--nz-blue-100);
-  --nz-accent:      var(--nz-orange-500);
-  --nz-accent-strong: var(--nz-orange-600);
-  --nz-accent-soft: var(--nz-orange-50);
-  --nz-accent-tint: var(--nz-orange-100);
+  --nz-brand:       var(--nz-marca-600);
+  --nz-brand-strong: var(--nz-marca-700);
+  --nz-brand-soft:  var(--nz-marca-50);
+  --nz-brand-tint:  var(--nz-marca-100);
+  --nz-accent:      var(--nz-acento-500);
+  --nz-accent-strong: var(--nz-acento-600);
+  --nz-accent-soft: var(--nz-acento-50);
+  --nz-accent-tint: var(--nz-acento-100);
   --nz-success:     var(--nz-green-600);
   --nz-success-soft: var(--nz-green-50);
   --nz-success-tint: var(--nz-green-100);
@@ -92,32 +116,32 @@
   --nz-warning:     var(--nz-amber-600);
   --nz-warning-soft: var(--nz-amber-50);
   --nz-warning-tint: var(--nz-amber-100);
-  --nz-info:        var(--nz-blue-600);
-  --nz-info-soft:   var(--nz-blue-50);
-  --nz-info-tint:   var(--nz-blue-100);
+  --nz-info:        var(--nz-marca-600);
+  --nz-info-soft:   var(--nz-marca-50);
+  --nz-info-tint:   var(--nz-marca-100);
   --nz-overlay:     rgba(17, 24, 39, 0.48);
 
-  /* ---- 6. TIPOGRAFÍA ---- */
+  /* ---- 7. TIPOGRAFÍA · escala modular v8 (monótona: sin duplicados ni solapes).
+     12 · 13 · 14 · 16 · 18 · 20-22 · 24-28 · 30-38 · 40-56 ---- */
   --nz-font: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   --nz-font-mono: ui-monospace, "Cascadia Code", "SF Mono", Consolas, monospace;
-  /* Escala fluida mobile-first (clamp: móvil → escritorio) */
-  --nz-text-2xs: 0.75rem;                         /* 12px en movil: la escala de 11px no se lee en un telefono */
-  --nz-text-xs:  0.75rem;                         /* 12px */
-  --nz-text-sm:  0.8125rem;                       /* 13px */
-  --nz-text-base: 0.9375rem;                      /* 15px */
-  --nz-text-md:  1rem;                            /* 16px */
-  --nz-text-lg:  1.125rem;                        /* 18px */
-  --nz-text-xl:  clamp(1.25rem, 1.1rem + 0.6vw, 1.5rem);
-  --nz-text-2xl: clamp(1.5rem, 1.25rem + 1vw, 1.875rem);
-  --nz-text-3xl: clamp(1.875rem, 1.4rem + 1.8vw, 2.5rem);
-  --nz-text-4xl: clamp(2.25rem, 1.6rem + 2.8vw, 3.25rem);
+  --nz-text-2xs:  0.75rem;    /* 12px — micro: contadores, tags */
+  --nz-text-xs:   0.8125rem;  /* 13px — etiquetas */
+  --nz-text-sm:   0.875rem;   /* 14px — interfaz secundaria */
+  --nz-text-base: 1rem;       /* 16px — BASE de interfaz y prosa */
+  --nz-text-md:   var(--nz-text-base);   /* alias deprecado de base */
+  --nz-text-lg:   1.125rem;   /* 18px — subtítulo */
+  --nz-text-xl:   clamp(1.25rem, 1.18rem + 0.35vw, 1.375rem);   /* 20 → 22 */
+  --nz-text-2xl:  clamp(1.5rem, 1.36rem + 0.7vw, 1.75rem);      /* 24 → 28 */
+  --nz-text-3xl:  clamp(1.875rem, 1.62rem + 1.3vw, 2.375rem);   /* 30 → 38 */
+  --nz-text-4xl:  clamp(2.5rem, 2rem + 2.4vw, 3.5rem);          /* 40 → 56 */
   --nz-leading-tight: 1.2;
   --nz-leading-snug: 1.375;
   --nz-leading-normal: 1.6;
   --nz-tracking-tight: -0.02em;
   --nz-tracking-caps: 0.08em;
 
-  /* ---- 7. ESPACIO (escala 4px) ---- */
+  /* ---- 8. ESPACIO (escala 4px) + RITMO VERTICAL ---- */
   --nz-space-0: 0;
   --nz-space-1: 0.25rem;   /* 4 */
   --nz-space-2: 0.5rem;    /* 8 */
@@ -129,33 +153,44 @@
   --nz-space-8: 2rem;      /* 32 */
   --nz-space-9: 2.25rem;   /* 36 */
   --nz-space-10: 2.5rem;   /* 40 */
+  --nz-space-11: 2.75rem;  /* 44 — objetivo táctil */
   --nz-space-12: 3rem;     /* 48 */
+  --nz-space-14: 3.5rem;   /* 56 */
   --nz-space-16: 4rem;     /* 64 */
   --nz-space-20: 5rem;     /* 80 */
   --nz-gutter: var(--nz-space-4);                    /* gutter móvil */
+  --nz-rh-bloque: var(--nz-space-6);                 /* ritmo entre bloques (24) */
+  --nz-rh-seccion: var(--nz-space-10);               /* ritmo entre secciones (40) */
   --nz-container-max: 72rem;                         /* 1152px */
   --nz-container-narrow: 44rem;                      /* 704px, prose */
 
-  /* ---- 8. RADIOS Y BORDES ---- */
+  /* ---- 9. GEOMETRÍA · radios, objetivo táctil y alturas de control ---- */
   --nz-radius-xs: 4px;
-  --nz-radius-sm: 6px;
-  --nz-radius-md: 10px;
-  --nz-radius-lg: 14px;
-  --nz-radius-xl: 20px;
+  --nz-radius-sm: 8px;
+  --nz-radius-md: 12px;
+  --nz-radius-lg: 16px;
+  --nz-radius-xl: 24px;
   --nz-radius-full: 999px;
   --nz-border-w: 1px;
   --nz-border-w-strong: 1.5px;
+  --nz-tactil: 2.75rem;      /* 44px — el objetivo táctil, ahora es token */
+  --nz-control-sm: 2rem;     /* 32px */
+  --nz-control-md: 2.5rem;   /* 40px */
+  --nz-control-lg: 2.75rem;  /* 44px */
 
-  /* ---- 9. SOMBRAS (multicapa sutiles, sin bordes duros) ---- */
+  /* ---- 10. SOMBRAS. Las de marca/acento se derivan del color elegido:
+     cambian solas con la marca. ---- */
   --nz-shadow-xs: 0 1px 2px rgba(17, 24, 39, 0.05);
   --nz-shadow-sm: 0 1px 2px rgba(17, 24, 39, 0.05), 0 2px 6px rgba(17, 24, 39, 0.04);
   --nz-shadow-md: 0 2px 4px rgba(17, 24, 39, 0.04), 0 6px 16px rgba(17, 24, 39, 0.07);
   --nz-shadow-lg: 0 4px 8px rgba(17, 24, 39, 0.04), 0 14px 32px rgba(17, 24, 39, 0.10);
   --nz-shadow-xl: 0 8px 16px rgba(17, 24, 39, 0.06), 0 24px 56px rgba(17, 24, 39, 0.14);
-  --nz-shadow-brand: 0 2px 4px rgba(37, 99, 235, 0.10), 0 8px 20px rgba(37, 99, 235, 0.14);
-  --nz-shadow-accent: 0 2px 4px rgba(249, 115, 22, 0.10), 0 8px 20px rgba(249, 115, 22, 0.14);
+  --nz-shadow-brand: 0 2px 4px color-mix(in oklab, var(--nz-marca-600) 12%, transparent),
+                     0 8px 20px color-mix(in oklab, var(--nz-marca-600) 18%, transparent);
+  --nz-shadow-accent: 0 2px 4px color-mix(in oklab, var(--nz-acento-500) 12%, transparent),
+                      0 8px 20px color-mix(in oklab, var(--nz-acento-500) 18%, transparent);
 
-  /* ---- 10. Z-INDEX ---- */
+  /* ---- 11. Z-INDEX ---- */
   --nz-z-base: 0;
   --nz-z-raised: 10;
   --nz-z-sticky: 100;
@@ -166,7 +201,7 @@
   --nz-z-toast: 600;
   --nz-z-tooltip: 700;
 
-  /* ---- 11. MOVIMIENTO (ui-animation-taste) ---- */
+  /* ---- 12. MOVIMIENTO ---- */
   --nz-dur-fast: 120ms;
   --nz-dur-base: 180ms;
   --nz-dur-slow: 260ms;
@@ -174,12 +209,13 @@
   --nz-ease-in:  cubic-bezier(0.7, 0, 0.84, 0);   /* salidas, más cortas */
   --nz-ease-soft: cubic-bezier(0.33, 1, 0.68, 1);
 
-  /* ---- 12. FOCUS ---- */
-  --nz-focus-ring: 0 0 0 3px var(--nz-blue-200);
-  --nz-focus-ring-accent: 0 0 0 3px var(--nz-orange-200);
+  /* ---- 13. FOCUS (deriva de la marca) ---- */
+  --nz-focus-ring: 0 0 0 3px color-mix(in oklab, var(--nz-marca-500) 38%, transparent);
+  --nz-focus-ring-accent: 0 0 0 3px color-mix(in oklab, var(--nz-acento-500) 42%, transparent);
 }
 
-/* ---- TEMA OSCURO (opt-in vía data-nz-theme="dark") ---- */
+/* ---- TEMA OSCURO (opt-in vía data-nz-theme="dark").
+   Todo se deriva de las MISMAS rampas: un preset nuevo funciona en oscuro solo. ---- */
 [data-nz-theme="dark"] {
   --nz-bg:          #0b1220;
   --nz-bg-soft:     #0f172a;
@@ -194,36 +230,38 @@
   --nz-text-mute:   #7d8fa9;
   --nz-text-faint:  #5b6b85;
   --nz-text-invert: #0b1220;
-  --nz-brand:       #4f8ef7;
-  --nz-brand-strong: #6ba3ff;
-  --nz-brand-soft:  rgba(79, 142, 247, 0.12);
-  --nz-brand-tint:  rgba(79, 142, 247, 0.22);
-  --nz-accent:      #fb923c;
-  --nz-accent-strong: #fdba74;
-  --nz-accent-soft: rgba(251, 146, 60, 0.12);
-  --nz-accent-tint: rgba(251, 146, 60, 0.22);
+  --nz-brand:       var(--nz-marca-400);
+  --nz-brand-strong: var(--nz-marca-300);
+  --nz-brand-soft:  color-mix(in oklab, var(--nz-marca-500) 14%, transparent);
+  --nz-brand-tint:  color-mix(in oklab, var(--nz-marca-500) 24%, transparent);
+  --nz-accent:      var(--nz-acento-400);
+  --nz-accent-strong: var(--nz-acento-300);
+  --nz-accent-soft: color-mix(in oklab, var(--nz-acento-500) 14%, transparent);
+  --nz-accent-tint: color-mix(in oklab, var(--nz-acento-500) 24%, transparent);
   --nz-success:     #4ade80;
-  --nz-success-soft: rgba(34, 197, 94, 0.14);
-  --nz-success-tint: rgba(34, 197, 94, 0.24);
+  --nz-success-soft: color-mix(in oklab, var(--nz-green-500) 16%, transparent);
+  --nz-success-tint: color-mix(in oklab, var(--nz-green-500) 26%, transparent);
   --nz-danger:      #f87171;
-  --nz-danger-soft: rgba(239, 68, 68, 0.14);
-  --nz-danger-tint: rgba(239, 68, 68, 0.24);
+  --nz-danger-soft: color-mix(in oklab, var(--nz-red-500) 16%, transparent);
+  --nz-danger-tint: color-mix(in oklab, var(--nz-red-500) 26%, transparent);
   --nz-warning:     #fbbf24;
-  --nz-warning-soft: rgba(245, 158, 11, 0.14);
-  --nz-warning-tint: rgba(245, 158, 11, 0.24);
-  --nz-info:        #4f8ef7;
-  --nz-info-soft:   rgba(79, 142, 247, 0.12);
-  --nz-info-tint:   rgba(79, 142, 247, 0.22);
+  --nz-warning-soft: color-mix(in oklab, var(--nz-amber-500) 16%, transparent);
+  --nz-warning-tint: color-mix(in oklab, var(--nz-amber-500) 26%, transparent);
+  --nz-info:        var(--nz-marca-400);
+  --nz-info-soft:   color-mix(in oklab, var(--nz-marca-500) 14%, transparent);
+  --nz-info-tint:   color-mix(in oklab, var(--nz-marca-500) 24%, transparent);
   --nz-overlay:     rgba(3, 7, 18, 0.62);
   --nz-shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.35);
   --nz-shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.35), 0 2px 6px rgba(0, 0, 0, 0.30);
   --nz-shadow-md: 0 2px 4px rgba(0, 0, 0, 0.30), 0 6px 16px rgba(0, 0, 0, 0.38);
   --nz-shadow-lg: 0 4px 8px rgba(0, 0, 0, 0.30), 0 14px 32px rgba(0, 0, 0, 0.45);
   --nz-shadow-xl: 0 8px 16px rgba(0, 0, 0, 0.35), 0 24px 56px rgba(0, 0, 0, 0.55);
-  --nz-shadow-brand: 0 2px 4px rgba(0, 0, 0, 0.30), 0 8px 20px rgba(79, 142, 247, 0.20);
-  --nz-shadow-accent: 0 2px 4px rgba(0, 0, 0, 0.30), 0 8px 20px rgba(251, 146, 60, 0.20);
-  --nz-focus-ring: 0 0 0 3px rgba(79, 142, 247, 0.45);
-  --nz-focus-ring-accent: 0 0 0 3px rgba(251, 146, 60, 0.45);
+  --nz-shadow-brand: 0 2px 4px rgba(0, 0, 0, 0.30),
+                     0 8px 20px color-mix(in oklab, var(--nz-marca-400) 22%, transparent);
+  --nz-shadow-accent: 0 2px 4px rgba(0, 0, 0, 0.30),
+                      0 8px 20px color-mix(in oklab, var(--nz-acento-400) 22%, transparent);
+  --nz-focus-ring: 0 0 0 3px color-mix(in oklab, var(--nz-marca-400) 45%, transparent);
+  --nz-focus-ring-accent: 0 0 0 3px color-mix(in oklab, var(--nz-acento-400) 45%, transparent);
 }
 
 /* ---- Base compartida ---- */
@@ -232,7 +270,7 @@
   color: var(--nz-text);
   background: var(--nz-bg);
   line-height: var(--nz-leading-normal);
-  font-size: var(--nz-text-md);
+  font-size: var(--nz-text-base);
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
@@ -261,10 +299,15 @@
    lg    ≥ 1200px  layout completo
 ---- */
 
-/* ---- Suelo tipografico (mobile-first) ----
-   La escala 2xs es 12px en movil (los avisos, badges y contadores son la mitad
-   de la interfaz y con 11px no se leen). Desde 960px vuelve la densidad fina
-   de 11px de escritorio. Vive aqui: tokens.css es la fuente unica de tokens. */
+/* ---- Ritmo vertical en escritorio: las secciones respiran más ---- */
 @media (min-width: 960px) {
-  :root { --nz-text-2xs: 0.6875rem; }
+  :root { --nz-rh-seccion: var(--nz-space-16); }
 }
+
+/* ---- MARCAS (presets de color) ----
+   marcas/<nombre>.css redefine --nz-marca-50…900 y --nz-acento-50…700.
+   Se activan con <html data-nz-marca="indigo"> (junto a data-nz-theme).
+   Incluidas: aurora (defecto) · indigo · esmeralda · violeta · carmesí.
+   Un data-nz-marca desconocido cae en los defaults de :root sin romper nada.
+   Genera las tuyas:  python scripts/generar-marca.py miweb "#0ea5e9" "#f43f5e"
+   Hecho con ❤️ por David Antizar */

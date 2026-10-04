@@ -153,7 +153,7 @@ aparece en `components.json`, **no la inventes**.
 }
 ```
 
-Los 145 tokens están inventariados en `components.json` (sección
+Los 169 tokens están inventariados en `components.json` (sección
 `tokens_def`, con nombre, valor y sección). Nada fuera de ese catálogo.
 
 ## 8. Anti-patrones (NO lo hagas)

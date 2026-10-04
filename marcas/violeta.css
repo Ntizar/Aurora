@@ -1,0 +1,28 @@
+/* Aurora 7 · marca «violeta» — generado por scripts/generar-marca.py
+   marca #7c3aed · acento #ec4899 · rampas OKLCH de luz uniforme
+   marca y acento tal cual se pidieron
+   Activa con: <html data-nz-marca="violeta">
+   Hecho con ❤️ por David Antizar */
+
+[data-nz-marca="violeta"] {
+  /* rampa de marca (primario) */
+  --nz-marca-50: #f4f2ff;
+  --nz-marca-100: #e9e4ff;
+  --nz-marca-200: #d9d0ff;
+  --nz-marca-300: #c1b2ff;
+  --nz-marca-400: #a485ff;
+  --nz-marca-500: #905dff;
+  --nz-marca-600: #7c3aed;
+  --nz-marca-700: #6d20d9;
+  --nz-marca-800: #581cb1;
+  --nz-marca-900: #482789;
+  /* rampa de acento (secundario) */
+  --nz-acento-50: #ffd5e5;
+  --nz-acento-100: #ffc8dd;
+  --nz-acento-200: #ffb5d2;
+  --nz-acento-300: #ff95c1;
+  --nz-acento-400: #ff61ab;
+  --nz-acento-500: #ec4899;
+  --nz-acento-600: #ca217c;
+  --nz-acento-700: #a61e66;
+}

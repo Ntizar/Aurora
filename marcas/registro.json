@@ -1,0 +1,157 @@
+[
+  {
+    "nombre": "aurora",
+    "marca": "#2563eb",
+    "acento": "#f97316",
+    "marca_rampa": {
+      "50": "#f0f5ff",
+      "100": "#dfeaff",
+      "200": "#c6daff",
+      "300": "#a0c0ff",
+      "400": "#6b9dff",
+      "500": "#417eff",
+      "600": "#2563eb",
+      "700": "#1350d7",
+      "800": "#1041b0",
+      "900": "#193c88"
+    },
+    "acento_rampa": {
+      "50": "#ffddcd",
+      "100": "#ffd4be",
+      "200": "#ffc5a9",
+      "300": "#ffae85",
+      "400": "#ff8c4e",
+      "500": "#f97316",
+      "600": "#cb5a00",
+      "700": "#a84900"
+    },
+    "marca_original": "#2563eb",
+    "marca_ajustada_aa": false,
+    "contraste_marca_600": 5.17,
+    "contraste_ok": true
+  },
+  {
+    "nombre": "indigo",
+    "marca": "#4f46e5",
+    "acento": "#06b6d4",
+    "marca_rampa": {
+      "50": "#e4e8ff",
+      "100": "#d5dcff",
+      "200": "#c1caff",
+      "300": "#a2aeff",
+      "400": "#7c86ff",
+      "500": "#6261ff",
+      "600": "#4f46e5",
+      "700": "#4332d2",
+      "800": "#362aac",
+      "900": "#2e2d84"
+    },
+    "acento_rampa": {
+      "50": "#c1effb",
+      "100": "#bae8f4",
+      "200": "#98e3f5",
+      "300": "#69d8f2",
+      "400": "#2fc6e4",
+      "500": "#06b6d4",
+      "600": "#0092ab",
+      "700": "#00798d"
+    },
+    "marca_original": "#4f46e5",
+    "marca_ajustada_aa": false,
+    "contraste_marca_600": 6.29,
+    "contraste_ok": true
+  },
+  {
+    "nombre": "esmeralda",
+    "marca": "#00875e",
+    "acento": "#f59e0b",
+    "marca_rampa": {
+      "50": "#dcffed",
+      "100": "#cef5e1",
+      "200": "#bee4d1",
+      "300": "#95d0b4",
+      "400": "#5fb58f",
+      "500": "#2f9e74",
+      "600": "#00875e",
+      "700": "#007350",
+      "800": "#005f41",
+      "900": "#114f38"
+    },
+    "acento_rampa": {
+      "50": "#ffe4c7",
+      "100": "#ffddb8",
+      "200": "#ffd3a1",
+      "300": "#ffc37c",
+      "400": "#ffac39",
+      "500": "#f59e0b",
+      "600": "#c67e00",
+      "700": "#a36700"
+    },
+    "marca_original": "#059669",
+    "marca_ajustada_aa": true,
+    "contraste_marca_600": 4.54,
+    "contraste_ok": true
+  },
+  {
+    "nombre": "violeta",
+    "marca": "#7c3aed",
+    "acento": "#ec4899",
+    "marca_rampa": {
+      "50": "#f4f2ff",
+      "100": "#e9e4ff",
+      "200": "#d9d0ff",
+      "300": "#c1b2ff",
+      "400": "#a485ff",
+      "500": "#905dff",
+      "600": "#7c3aed",
+      "700": "#6d20d9",
+      "800": "#581cb1",
+      "900": "#482789"
+    },
+    "acento_rampa": {
+      "50": "#ffd5e5",
+      "100": "#ffc8dd",
+      "200": "#ffb5d2",
+      "300": "#ff95c1",
+      "400": "#ff61ab",
+      "500": "#ec4899",
+      "600": "#ca217c",
+      "700": "#a61e66"
+    },
+    "marca_original": "#7c3aed",
+    "marca_ajustada_aa": false,
+    "contraste_marca_600": 5.7,
+    "contraste_ok": true
+  },
+  {
+    "nombre": "carmesi",
+    "marca": "#dc2626",
+    "acento": "#0891b2",
+    "marca_rampa": {
+      "50": "#fff2f0",
+      "100": "#ffe3df",
+      "200": "#ffcec7",
+      "300": "#ffaba0",
+      "400": "#ff7468",
+      "500": "#f6453d",
+      "600": "#dc2626",
+      "700": "#c40012",
+      "800": "#a1000c",
+      "900": "#801e1a"
+    },
+    "acento_rampa": {
+      "50": "#c1e7f5",
+      "100": "#b7ddeb",
+      "200": "#96d3e8",
+      "300": "#69c1de",
+      "400": "#32a7c8",
+      "500": "#0891b2",
+      "600": "#007590",
+      "700": "#006178"
+    },
+    "marca_original": "#dc2626",
+    "marca_ajustada_aa": false,
+    "contraste_marca_600": 4.83,
+    "contraste_ok": true
+  }
+]

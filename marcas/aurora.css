@@ -1,0 +1,28 @@
+/* Aurora 7 · marca «aurora» — generado por scripts/generar-marca.py
+   marca #2563eb · acento #f97316 · rampas OKLCH de luz uniforme
+   marca y acento tal cual se pidieron
+   Activa con: <html data-nz-marca="aurora">
+   Hecho con ❤️ por David Antizar */
+
+[data-nz-marca="aurora"] {
+  /* rampa de marca (primario) */
+  --nz-marca-50: #f0f5ff;
+  --nz-marca-100: #dfeaff;
+  --nz-marca-200: #c6daff;
+  --nz-marca-300: #a0c0ff;
+  --nz-marca-400: #6b9dff;
+  --nz-marca-500: #417eff;
+  --nz-marca-600: #2563eb;
+  --nz-marca-700: #1350d7;
+  --nz-marca-800: #1041b0;
+  --nz-marca-900: #193c88;
+  /* rampa de acento (secundario) */
+  --nz-acento-50: #ffddcd;
+  --nz-acento-100: #ffd4be;
+  --nz-acento-200: #ffc5a9;
+  --nz-acento-300: #ffae85;
+  --nz-acento-400: #ff8c4e;
+  --nz-acento-500: #f97316;
+  --nz-acento-600: #cb5a00;
+  --nz-acento-700: #a84900;
+}

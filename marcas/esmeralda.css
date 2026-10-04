@@ -1,0 +1,28 @@
+/* Aurora 7 · marca «esmeralda» — generado por scripts/generar-marca.py
+   marca #00875e · acento #f59e0b · rampas OKLCH de luz uniforme
+   (marca ajustada de #059669 a #00875e para cumplir AA)
+   Activa con: <html data-nz-marca="esmeralda">
+   Hecho con ❤️ por David Antizar */
+
+[data-nz-marca="esmeralda"] {
+  /* rampa de marca (primario) */
+  --nz-marca-50: #dcffed;
+  --nz-marca-100: #cef5e1;
+  --nz-marca-200: #bee4d1;
+  --nz-marca-300: #95d0b4;
+  --nz-marca-400: #5fb58f;
+  --nz-marca-500: #2f9e74;
+  --nz-marca-600: #00875e;
+  --nz-marca-700: #007350;
+  --nz-marca-800: #005f41;
+  --nz-marca-900: #114f38;
+  /* rampa de acento (secundario) */
+  --nz-acento-50: #ffe4c7;
+  --nz-acento-100: #ffddb8;
+  --nz-acento-200: #ffd3a1;
+  --nz-acento-300: #ffc37c;
+  --nz-acento-400: #ffac39;
+  --nz-acento-500: #f59e0b;
+  --nz-acento-600: #c67e00;
+  --nz-acento-700: #a36700;
+}

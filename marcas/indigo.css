@@ -1,0 +1,28 @@
+/* Aurora 7 · marca «indigo» — generado por scripts/generar-marca.py
+   marca #4f46e5 · acento #06b6d4 · rampas OKLCH de luz uniforme
+   marca y acento tal cual se pidieron
+   Activa con: <html data-nz-marca="indigo">
+   Hecho con ❤️ por David Antizar */
+
+[data-nz-marca="indigo"] {
+  /* rampa de marca (primario) */
+  --nz-marca-50: #e4e8ff;
+  --nz-marca-100: #d5dcff;
+  --nz-marca-200: #c1caff;
+  --nz-marca-300: #a2aeff;
+  --nz-marca-400: #7c86ff;
+  --nz-marca-500: #6261ff;
+  --nz-marca-600: #4f46e5;
+  --nz-marca-700: #4332d2;
+  --nz-marca-800: #362aac;
+  --nz-marca-900: #2e2d84;
+  /* rampa de acento (secundario) */
+  --nz-acento-50: #c1effb;
+  --nz-acento-100: #bae8f4;
+  --nz-acento-200: #98e3f5;
+  --nz-acento-300: #69d8f2;
+  --nz-acento-400: #2fc6e4;
+  --nz-acento-500: #06b6d4;
+  --nz-acento-600: #0092ab;
+  --nz-acento-700: #00798d;
+}

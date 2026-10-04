@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es" data-nz-theme="light" data-nz-marca="aurora">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Marcas de Aurora — elige 2 colores y todo cambia</title>
+<link rel="stylesheet" href="../tokens.css">
+<link rel="stylesheet" href="./aurora.css">
+<link rel="stylesheet" href="./indigo.css">
+<link rel="stylesheet" href="./esmeralda.css">
+<link rel="stylesheet" href="./violeta.css">
+<link rel="stylesheet" href="./carmesi.css">
+<style>
+  /* Shell de ESTA página de demostración (no son clases del sistema). */
+  .de { max-width: 72rem; margin-inline: auto; padding: var(--nz-space-6) var(--nz-gutter) var(--nz-space-16); }
+  .de-titulo { font-size: var(--nz-text-3xl); font-weight: 800; letter-spacing: var(--nz-tracking-tight); margin: 0 0 var(--nz-space-2); }
+  .de-sub { color: var(--nz-text-soft); margin: 0 0 var(--nz-space-8); max-width: 60ch; }
+  .de-barra { display: flex; flex-wrap: wrap; gap: var(--nz-space-2); align-items: center; margin-bottom: var(--nz-space-8); }
+  .de-marca { min-height: var(--nz-tactil); padding: 0 var(--nz-space-4); border-radius: var(--nz-radius-full);
+    border: var(--nz-border-w) solid var(--nz-border); background: var(--nz-surface); color: var(--nz-text);
+    font: inherit; font-weight: 600; cursor: pointer; display: inline-flex; align-items: center; gap: var(--nz-space-2); }
+  .de-marca[aria-pressed="true"] { border-color: var(--nz-brand); box-shadow: var(--nz-focus-ring); }
+  .de-punto { width: 14px; height: 14px; border-radius: var(--nz-radius-full); display: inline-block; }
+  .de-rampa { display: grid; grid-template-columns: repeat(10, 1fr); border-radius: var(--nz-radius-md); overflow: hidden; margin-bottom: var(--nz-space-8); }
+  .de-rampa span { height: 56px; display: grid; place-items: center; font-size: var(--nz-text-2xs); font-family: var(--nz-font-mono); }
+  .de-rejilla { display: grid; gap: var(--nz-space-4); grid-template-columns: 1fr; }
+  @media (min-width: 640px) { .de-rejilla { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 960px) { .de-rejilla { grid-template-columns: repeat(3, 1fr); } }
+  .de-caja { background: var(--nz-surface); border: var(--nz-border-w) solid var(--nz-border); border-radius: var(--nz-radius-lg); padding: var(--nz-space-5); }
+  .de-caja h2 { font-size: var(--nz-text-sm); text-transform: uppercase; letter-spacing: var(--nz-tracking-caps); color: var(--nz-text-mute); margin: 0 0 var(--nz-space-3); }
+  .de-fila { display: flex; flex-wrap: wrap; gap: var(--nz-space-2); }
+  .de-btn { min-height: var(--nz-tactil); padding: 0 var(--nz-space-5); border-radius: var(--nz-radius-md); border: 0;
+    font: inherit; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; }
+  .de-btn--marca { background: var(--nz-brand); color: #fff; }
+  .de-btn--acento { background: var(--nz-accent); color: var(--nz-text); }
+  .de-btn--suave { background: var(--nz-brand-soft); color: var(--nz-brand-strong); }
+  .de-btn--borde { background: transparent; color: var(--nz-text); border: var(--nz-border-w) solid var(--nz-border-strong); }
+  .de-badge { display: inline-flex; align-items: center; min-height: 24px; padding: 0 var(--nz-space-3); border-radius: var(--nz-radius-full); font-size: var(--nz-text-2xs); font-weight: 700; }
+  .de-kpi__v { font-size: var(--nz-text-3xl); font-weight: 800; letter-spacing: var(--nz-tracking-tight); line-height: 1.1; }
+  .de-kpi__l { color: var(--nz-text-mute); font-size: var(--nz-text-sm); }
+  .de-tabla { width: 100%; border-collapse: collapse; font-size: var(--nz-text-sm); }
+  .de-tabla th, .de-tabla td { text-align: left; padding: var(--nz-space-2) var(--nz-space-2); border-bottom: var(--nz-border-w) solid var(--nz-border-soft); }
+  .de-input { min-height: var(--nz-tactil); width: 100%; border-radius: var(--nz-radius-md); border: var(--nz-border-w) solid var(--nz-border-strong); padding: 0 var(--nz-space-3); font: inherit; background: var(--nz-bg); color: var(--nz-text); }
+  .de-a { color: var(--nz-brand-strong); }
+  .de-pie { margin-top: var(--nz-space-16); color: var(--nz-text-mute); font-size: var(--nz-text-sm); }
+</style>
+</head>
+<body class="nz">
+<main class="de">
+  <h1 class="de-titulo">Una base, tu color</h1>
+  <p class="de-sub">Elige una marca: solo cambian <code>--nz-marca-*</code> y <code>--nz-acento-*</code>.
+     Botones, foco, sombras, fondos suaves y modo oscuro se rehacen solos. Ningún componente sabe de qué color es.</p>
+
+  <div class="de-barra" id="selector">
+    <button class="de-marca" data-marca="aurora"    aria-pressed="true"><span class="de-punto" style="background:#2563eb"></span>Aurora</button>
+    <button class="de-marca" data-marca="indigo"    aria-pressed="false"><span class="de-punto" style="background:#4f46e5"></span>Índigo</button>
+    <button class="de-marca" data-marca="esmeralda" aria-pressed="false"><span class="de-punto" style="background:#00875e"></span>Esmeralda</button>
+    <button class="de-marca" data-marca="violeta"   aria-pressed="false"><span class="de-punto" style="background:#7c3aed"></span>Violeta</button>
+    <button class="de-marca" data-marca="carmesi"   aria-pressed="false"><span class="de-punto" style="background:#dc2626"></span>Carmesí</button>
+    <button class="de-marca" id="btn-tema" aria-pressed="false">🌗 Claro / oscuro</button>
+  </div>
+
+  <div class="de-rampa" id="rampa" aria-hidden="true"></div>
+
+  <div class="de-rejilla">
+    <section class="de-caja">
+      <h2>Acciones</h2>
+      <div class="de-fila">
+        <button class="de-btn de-btn--marca">Guardar</button>
+        <button class="de-btn de-btn--acento">Destacar</button>
+        <button class="de-btn de-btn--suave">Suave</button>
+        <button class="de-btn de-btn--borde">Borde</button>
+      </div>
+    </section>
+
+    <section class="de-caja">
+      <h2>Estados y etiquetas</h2>
+      <div class="de-fila">
+        <span class="de-badge" style="background:var(--nz-brand-soft);color:var(--nz-brand-strong)">Marca</span>
+        <span class="de-badge" style="background:var(--nz-success-soft);color:var(--nz-success)">Correcto</span>
+        <span class="de-badge" style="background:var(--nz-warning-soft);color:var(--nz-warning)">Aviso</span>
+        <span class="de-badge" style="background:var(--nz-danger-soft);color:var(--nz-danger)">Error</span>
+      </div>
+      <p style="margin:var(--nz-space-4) 0 0">Enlace activo: <a class="de-a" href="#">ver detalle</a></p>
+    </section>
+
+    <section class="de-caja">
+      <h2>Cifra destacada</h2>
+      <div class="de-kpi__l">Facturación del mes</div>
+      <div class="de-kpi__v">48.320 €</div>
+      <div style="color:var(--nz-success);font-size:var(--nz-text-sm);font-weight:700">▲ 6,2 % vs. mes anterior</div>
+    </section>
+
+    <section class="de-caja">
+      <h2>Formulario</h2>
+      <label for="correo" style="display:block;font-size:var(--nz-text-sm);font-weight:600;margin-bottom:var(--nz-space-2)">Correo</label>
+      <input id="correo" class="de-input" type="email" placeholder="tu@correo.com">
+    </section>
+
+    <section class="de-caja">
+      <h2>Tabla</h2>
+      <table class="de-tabla">
+        <thead><tr><th>Entrega</th><th>Estado</th><th style="text-align:right">Horas</th></tr></thead>
+        <tbody>
+          <tr><td>Requisitos</td><td>Hecho</td><td style="text-align:right">32 h</td></tr>
+          <tr><td>Diseño</td><td>En curso</td><td style="text-align:right">18 h</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="de-caja">
+      <h2>Aviso</h2>
+      <div style="border-left:4px solid var(--nz-brand);background:var(--nz-brand-soft);border-radius:var(--nz-radius-md);padding:var(--nz-space-3) var(--nz-space-4);font-size:var(--nz-text-sm)">
+        La marca cambia el acento, el foco y las sombras. El texto sigue legible en claro y oscuro.
+      </div>
+    </section>
+  </div>
+
+  <p class="de-pie">Hecho con ❤️ por David Antizar</p>
+</main>
+<script>
+  (function () {
+    var raiz = document.documentElement;
+    var rampa = document.getElementById('rampa');
+    function pinta() {
+      var cs = getComputedStyle(raiz);
+      var html = '';
+      for (var i = 50; i <= 900; i += (i < 100 ? 50 : 100)) {
+        if (![50,100,200,300,400,500,600,700,800,900].includes(i)) continue;
+        var c = cs.getPropertyValue('--nz-marca-' + i).trim();
+        var tinta = i >= 500 ? '#fff' : '#111827';
+        html += '<span style="background:' + c + ';color:' + tinta + '">' + i + '</span>';
+      }
+      rampa.innerHTML = html;
+    }
+    document.getElementById('selector').addEventListener('click', function (e) {
+      var b = e.target.closest('.de-marca'); if (!b) return;
+      if (b.id === 'btn-tema') return;
+      raiz.setAttribute('data-nz-marca', b.dataset.marca);
+      Array.prototype.forEach.call(document.querySelectorAll('.de-marca[data-marca]'), function (o) {
+        o.setAttribute('aria-pressed', String(o === b));
+      });
+      pinta();
+    });
+    document.getElementById('btn-tema').addEventListener('click', function () {
+      var oscuro = raiz.getAttribute('data-nz-theme') === 'dark';
+      raiz.setAttribute('data-nz-theme', oscuro ? 'light' : 'dark');
+      this.setAttribute('aria-pressed', String(!oscuro));
+      pinta();
+    });
+    pinta();
+  })();
+</script>
+</body>
+</html>
