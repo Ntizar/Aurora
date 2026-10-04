@@ -121,6 +121,20 @@ def base_de(clase):
     return m.group(1) if m else clase
 
 
+def _version():
+    """La versión vive en components.json (generado). Sin números duplicados."""
+    p = ROOT / "components.json"
+    if p.exists():
+        try:
+            return json.loads(p.read_text(encoding="utf-8")).get("version", "8.0.0")
+        except Exception:
+            pass
+    return "8.0.0"
+
+
+VERSION = _version()
+
+
 def inyecta_packs(html_txt, packs, prefijo):
     """Sustituye el marcador <!--PACKS--> por los packs que la página USA de verdad.
 
@@ -378,6 +392,38 @@ PORTADA_JS = """
       pinta(q);
     });
   })();
+
+  /* Selector de marca en vivo: cambia --nz-marca-* y todo el sistema se rehace. */
+  (function () {
+    var raiz = document.documentElement;
+    var barra = document.getElementById('marcasBarra');
+    var rampa = document.getElementById('marcasRampa');
+    if (!barra || !rampa) return;
+    function pinta() {
+      var cs = getComputedStyle(raiz), html = '';
+      [50, 100, 200, 300, 400, 500, 600, 700, 800, 900].forEach(function (i) {
+        var c = cs.getPropertyValue('--nz-marca-' + i).trim();
+        html += '<span style="background:' + c + ';color:' + (i >= 500 ? '#fff' : '#111827') + '">' + i + '</span>';
+      });
+      rampa.innerHTML = html;
+    }
+    function marca(n) {
+      raiz.setAttribute('data-nz-marca', n);
+      [].forEach.call(barra.querySelectorAll('.cat-marca'), function (o) {
+        o.setAttribute('aria-pressed', String(o.getAttribute('data-marca') === n));
+      });
+      try { localStorage.setItem('nz-marca', n); } catch (e) { /* irrelevante */ }
+      pinta();
+    }
+    barra.addEventListener('click', function (e) {
+      var b = e.target.closest('.cat-marca');
+      if (b) marca(b.getAttribute('data-marca'));
+    });
+    try { var g = localStorage.getItem('nz-marca'); if (g) marca(g); } catch (e) { /* irrelevante */ }
+    var bt = document.getElementById('btnTheme');
+    if (bt) bt.addEventListener('click', function () { setTimeout(pinta, 40); });
+    pinta();
+  })();
 """
 
 
@@ -388,6 +434,30 @@ CSS_PORTADA = """
   .objr:hover { background: var(--nz-brand-soft); }
   .objr code { font-family: var(--nz-font-mono); font-size: var(--nz-text-xs); color: var(--nz-brand); }
   .objr span { margin-left: auto; font-size: var(--nz-text-xs); color: var(--nz-text-mute); }
+
+  /* --- Portada: showcase del sistema (shell, solo clases .cat-*) --- */
+  .cat-h2 { font-size: var(--nz-text-xl); letter-spacing: var(--nz-tracking-tight); margin-bottom: var(--nz-space-3); }
+  .cat-p { color: var(--nz-text-soft); max-width: 62ch; margin-bottom: var(--nz-space-4); }
+  .cat-marcas { display: flex; flex-wrap: wrap; gap: var(--nz-space-2); margin-bottom: var(--nz-space-4); }
+  .cat-marca { min-height: var(--nz-tactil); padding: 0 var(--nz-space-4); display: inline-flex; align-items: center; gap: var(--nz-space-2);
+    border: var(--nz-border-w) solid var(--nz-border); border-radius: var(--nz-radius-full); background: var(--nz-surface);
+    color: var(--nz-text); font: inherit; font-weight: 600; cursor: pointer; }
+  .cat-marca i { width: 14px; height: 14px; border-radius: var(--nz-radius-full); display: inline-block; }
+  .cat-marca[aria-pressed="true"] { border-color: var(--nz-brand); box-shadow: var(--nz-focus-ring); }
+  .cat-rampa { display: grid; grid-template-columns: repeat(10, 1fr); border-radius: var(--nz-radius-md); overflow: hidden; margin-bottom: var(--nz-space-3); }
+  .cat-rampa span { height: 44px; display: grid; place-items: center; font-size: var(--nz-text-2xs); font-family: var(--nz-font-mono); }
+  .cat-ideas { display: grid; gap: var(--nz-space-3); grid-template-columns: 1fr; }
+  @media (min-width: 640px) { .cat-ideas { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 960px) { .cat-ideas { grid-template-columns: repeat(4, 1fr); } }
+  .cat-idea { display: grid; gap: var(--nz-space-1); padding: var(--nz-space-4); border: var(--nz-border-w) solid var(--nz-border);
+    border-radius: var(--nz-radius-lg); background: var(--nz-surface); box-shadow: var(--nz-shadow-xs); text-decoration: none; color: var(--nz-text); }
+  .cat-idea:hover { border-color: var(--nz-brand); }
+  .cat-idea b { font-size: var(--nz-text-base); }
+  .cat-idea span { font-size: var(--nz-text-sm); color: var(--nz-text-soft); }
+  .cat-muestra { display: grid; gap: var(--nz-space-4); grid-template-columns: 1fr; }
+  @media (min-width: 960px) { .cat-muestra { grid-template-columns: repeat(3, 1fr); align-items: start; } }
+  .cat-muestra__col { display: grid; gap: var(--nz-space-2); align-content: start; }
+  .cat-muestra__t { font-size: var(--nz-text-2xs); font-weight: 800; letter-spacing: var(--nz-tracking-caps); text-transform: uppercase; color: var(--nz-text-faint); }
 """
 
 
@@ -415,6 +485,11 @@ def portada(specs, censo_cat, totales, packs):
 <link rel="stylesheet" href="tokens.css">
 <link rel="stylesheet" href="packs/{PACK_SHELL}">
 <!--PACKS-->
+<link rel="stylesheet" href="marcas/aurora.css">
+<link rel="stylesheet" href="marcas/indigo.css">
+<link rel="stylesheet" href="marcas/esmeralda.css">
+<link rel="stylesheet" href="marcas/violeta.css">
+<link rel="stylesheet" href="marcas/carmesi.css">
 <style>{CSS_PORTADA}</style>
 </head>
 <body class="nz">
@@ -427,7 +502,7 @@ def portada(specs, censo_cat, totales, packs):
 
   <header class="cat-topbar">
     <span class="cat-brandmark"><i></i><i></i> Aurora</span>
-    <span class="cat-count">v7.2 · constelación</span>
+    <span class="cat-count">v{VERSION} · motor de temas</span>
     <span class="cat-topbar__tools">
       <a class="cat-icobtn" href="audit/index.html" title="Auditoría del sistema" aria-label="Auditoría del sistema">✓</a>
       <button class="cat-icobtn" id="btnTheme" aria-label="Cambiar tema" title="Light / Dark">◐</button>
@@ -436,13 +511,13 @@ def portada(specs, censo_cat, totales, packs):
 
   <section class="cat-hero cat-in">
     <p class="cat-eyebrow">Design System Ntizar</p>
-    <h1>Aurora <em>7</em></h1>
-    <p class="cat-hero__sub">{t['clases']} objetos de frontend para montar cualquier web. Azul y naranja, sólidos y con sombras de verdad. Sin gradientes, sin glass, sin IA-slop. Mobile-first de verdad.</p>
+    <h1>Aurora</h1>
+    <p class="cat-hero__sub">{t['clases']} objetos de frontend para montar cualquier web. Elige dos colores y el sistema entero se rehace. Sólido y con sombras de verdad: sin gradientes, sin glass, sin IA-slop. Mobile-first de verdad.</p>
     <div class="cat-ctas">
-      <a class="nz-btn nz-btn--primary" href="paginas/01-layout.html">Explorar el catálogo →</a>
-      <a class="nz-btn nz-btn--ghost" href="tokens.css">Ver tokens</a>
-      <a class="nz-btn nz-btn--soft" href="packs/all.css">Todo en un CSS</a>
-      <span class="cat-hint">psst… pulsa en cualquier parte 💥</span>
+      <a class="nz-btn nz-btn--primary" href="recetas/index.html">Ver las recetas</a>
+      <a class="nz-btn nz-btn--soft" href="paginas/01-layout.html">Explorar el catálogo</a>
+      <a class="nz-btn nz-btn--ghost" href="COMPOSICION.md">Contrato de composición</a>
+      <span class="cat-hint">psst… pulsa en cualquier parte para las chispas</span>
     </div>
     <div class="objBuscar">
       <div class="cat-search">
@@ -479,6 +554,88 @@ def portada(specs, censo_cat, totales, packs):
         <span class="cat-pill cat-pill--no"><i></i> Sin gradientes</span>
         <span class="cat-pill cat-pill--no"><i></i> Sin glass</span>
         <span class="cat-pill cat-pill--no"><i></i> Sin IA-slop</span>
+      </div>
+    </section>
+
+    <section class="cat-in" style="--d:.05s;margin-block:var(--nz-space-12)">
+      <h2 class="cat-h2">Tu marca, en una línea</h2>
+      <p class="cat-p">Elige el color del proyecto y el sistema entero se rehace: botones, foco, sombras, fondos suaves y modo oscuro. Pruébalo aquí mismo.</p>
+      <div class="cat-marcas" id="marcasBarra">
+        <button class="cat-marca" data-marca="aurora" aria-pressed="true"><i style="background:#2563eb"></i>Aurora</button>
+        <button class="cat-marca" data-marca="indigo" aria-pressed="false"><i style="background:#4f46e5"></i>Índigo</button>
+        <button class="cat-marca" data-marca="esmeralda" aria-pressed="false"><i style="background:#00875e"></i>Esmeralda</button>
+        <button class="cat-marca" data-marca="violeta" aria-pressed="false"><i style="background:#7c3aed"></i>Violeta</button>
+        <button class="cat-marca" data-marca="carmesi" aria-pressed="false"><i style="background:#dc2626"></i>Carmesí</button>
+      </div>
+      <div class="cat-rampa" id="marcasRampa" aria-hidden="true"></div>
+      <p class="cat-hint">Se activa con <code>data-nz-marca</code> en el <code>&lt;html&gt;</code>. Comparador completo en <a class="nz-link" href="marcas/index.html">marcas</a> · tu marca desde dos hex: <code>python scripts/generar-marca.py miweb "#0ea5e9" "#f43f5e"</code></p>
+    </section>
+
+    <section class="cat-in" style="--d:.07s;margin-block:var(--nz-space-12)">
+      <h2 class="cat-h2">El sistema, en cuatro ideas</h2>
+      <div class="cat-ideas">
+        <a class="cat-idea" href="marcas/index.html"><b>Motor de temas</b><span>Dos colores y cambia todo. Cinco marcas listas y generador OKLCH con contraste AA.</span></a>
+        <a class="cat-idea" href="COMPOSICION.md"><b>Contrato de composición</b><span>Doce leyes: cero emojis, presupuesto de color, ancho por tipo de página.</span></a>
+        <a class="cat-idea" href="recetas/index.html"><b>Recetas canónicas</b><span>Admin, dashboard, ajustes, acceso e informe. Cópialas y adapta.</span></a>
+        <a class="cat-idea" href="audit/index.html"><b>Arnés de verificación</b><span>El lint caza emojis, jerarquía, presupuesto de color y tipografía mínima.</span></a>
+      </div>
+    </section>
+
+    <section class="cat-in" style="--d:.08s;margin-block:var(--nz-space-12)">
+      <h2 class="cat-h2">Muestra viva</h2>
+      <div class="cat-muestra">
+        <div class="nz-kpi nz-kpi--brand">
+          <span class="nz-kpi__label">Usuarios activos</span>
+          <span class="nz-kpi__value">1 284</span>
+          <span class="nz-kpi__delta nz-kpi__delta--up">+6,2 % este mes</span>
+        </div>
+        <div class="cat-muestra__col">
+          <span class="cat-muestra__t">Acciones</span>
+          <div class="nz-cluster">
+            <button class="nz-btn nz-btn--primary" type="button">Guardar</button>
+            <button class="nz-btn nz-btn--soft" type="button">Suave</button>
+            <button class="nz-btn nz-btn--outline" type="button">Borde</button>
+          </div>
+          <span class="cat-muestra__t">Estados</span>
+          <div class="nz-cluster">
+            <span class="nz-badge nz-badge--brand">Nuevo</span>
+            <span class="nz-badge nz-badge--success">Correcto</span>
+            <span class="nz-badge nz-badge--warning">Pendiente</span>
+          </div>
+          <span class="cat-muestra__t">Formulario</span>
+          <div class="nz-field">
+            <label class="nz-field__label" for="muestraCorreo">Correo</label>
+            <input class="nz-input" id="muestraCorreo" type="email" placeholder="tu@correo.com">
+            <span class="nz-field__help">La etiqueta siempre visible; el recuadro de ejemplo no sustituye al nombre.</span>
+          </div>
+        </div>
+        <div class="cat-muestra__col">
+          <span class="cat-muestra__t">Aviso</span>
+          <div class="nz-alert nz-alert--info" role="status">
+            <div class="nz-alert__body"><p class="nz-alert__msg">Los colores de este aviso también salen de la marca que elijas arriba.</p></div>
+          </div>
+          <span class="cat-muestra__t">Iconos (no emojis)</span>
+          <div class="nz-cluster">
+            <svg class="nz-icon nz-icon--lg nz-icon--brand" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+            <svg class="nz-icon nz-icon--lg" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+            <svg class="nz-icon nz-icon--lg" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 8a6 6 0 1 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/></svg>
+            <svg class="nz-icon nz-icon--lg" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>
+          </div>
+          <span class="cat-muestra__t">Un objeto del catálogo</span>
+          <div class="nz-progress"><div class="nz-progress__bar" style="width:76%"></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cat-in" style="--d:.09s;margin-block:var(--nz-space-12)">
+      <h2 class="cat-h2">Recetas canónicas</h2>
+      <p class="cat-p">Cada tipo de página tiene una forma correcta, y está escrita: cero emojis, presupuesto de color y ancho adecuado.</p>
+      <div class="cat-ideas">
+        <a class="cat-idea" href="recetas/admin.html"><b>Admin</b><span>Barra lateral, KPIs y tabla ancha con estados.</span></a>
+        <a class="cat-idea" href="recetas/dashboard.html"><b>Dashboard</b><span>Indicadores, gráficos CSS y los tres estados.</span></a>
+        <a class="cat-idea" href="recetas/ajustes.html"><b>Ajustes</b><span>Secciones y formularios con etiquetas visibles.</span></a>
+        <a class="cat-idea" href="recetas/login.html"><b>Acceso</b><span>Tarjeta centrada, un CTA y el error donde se mira.</span></a>
+        <a class="cat-idea" href="recetas/informe.html"><b>Informe</b><span>Prosa a una columna y tablas anchas.</span></a>
       </div>
     </section>
 
