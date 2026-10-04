@@ -1,0 +1,110 @@
+/* ============================================================
+   Paquete 16 · CRISTAL (capa de estilo, opt-in)
+   ------------------------------------------------------------
+   Es la ÚNICA excepción al manifiesto «0 glass, 0 gradientes» del sistema, y
+   existe a propósito: el vidrio líquido es una textura, no un atajo.
+
+   Reglas de esta capa:
+   1. Sigue prohibido escribir colores a mano: todo sale de tokens (color-mix
+      incluido), así que el cristal también cambia con la marca elegida.
+   2. Es opt-in: no toca ningún componente por su cuenta. Se aplica con
+      `.nz-cristal` (o activando el modo con `data-nz-estilo="cristal"`).
+   3. Nunca tapa contenido: si el navegador no sabe desenfocar, cae a superficie
+      sólida y la página sigue siendo legible.
+   4. La accesibilidad manda: el desenfoque no puede ser la única diferencia
+      entre dos estados.
+
+   Hecho con ❤️ por David Antizar
+   ============================================================ */
+
+/* ---- 1. Superficie de vidrio ---- */
+.nz-cristal {
+  position: relative;
+  background: var(--nz-cristal-fondo);
+  -webkit-backdrop-filter: blur(var(--nz-cristal-blur)) saturate(var(--nz-cristal-sat));
+  backdrop-filter: blur(var(--nz-cristal-blur)) saturate(var(--nz-cristal-sat));
+  border: var(--nz-border-w) solid var(--nz-cristal-borde);
+  border-radius: var(--nz-radius-lg);
+  box-shadow: var(--nz-cristal-sombra);
+}
+
+/* El brillo especular es lo que hace que se lea como vidrio y no como un panel gris. */
+.nz-cristal::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(165deg, var(--nz-cristal-brillo), transparent 46%);
+  pointer-events: none;
+}
+
+.nz-cristal > * { position: relative; }
+
+/* ---- 2. Modificadores de intensidad ---- */
+.nz-cristal--fuerte { background: var(--nz-cristal-fondo-fuerte); }
+.nz-cristal--suave { background: var(--nz-cristal-fondo-suave); }
+.nz-cristal--plano { box-shadow: none; }
+.nz-cristal--borde-marca { border-color: color-mix(in oklab, var(--nz-brand) 42%, transparent); }
+
+/* ---- 3. Formas y piezas ---- */
+.nz-cristal--pill { border-radius: var(--nz-radius-full); }
+.nz-cristal__brillo {
+  position: absolute;
+  inset-inline: 0;
+  top: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--nz-cristal-brillo), transparent);
+  pointer-events: none;
+}
+
+/* Barra de vidrio: pensada para navbars y cabeceras pegadas. */
+.nz-cristal-barra {
+  position: sticky;
+  top: 0;
+  z-index: var(--nz-z-header);
+  padding: var(--nz-space-3) var(--nz-gutter);
+  background: var(--nz-cristal-fondo-fuerte);
+  -webkit-backdrop-filter: blur(var(--nz-cristal-blur)) saturate(var(--nz-cristal-sat));
+  backdrop-filter: blur(var(--nz-cristal-blur)) saturate(var(--nz-cristal-sat));
+  border-bottom: var(--nz-border-w) solid var(--nz-cristal-borde);
+}
+
+/* ---- 4. Modo cristal: superficies translúcidas en todo el sistema ----
+   Actívalo con <html data-nz-estilo="cristal">. Cambia los TOKENS de superficie,
+   así que todos los componentes que ya usan var(--nz-surface) se vuelven vidrio
+   sin que nadie toque su CSS. Después se le pone el desenfoque donde interesa
+   con `.nz-cristal` o `.nz-cristal-barra`. */
+[data-nz-estilo="cristal"] {
+  --nz-surface: color-mix(in oklab, var(--nz-gray-0) 72%, transparent);
+  --nz-surface-2: color-mix(in oklab, var(--nz-gray-50) 64%, transparent);
+  --nz-bg-soft: color-mix(in oklab, var(--nz-gray-50) 72%, transparent);
+  --nz-border: color-mix(in oklab, var(--nz-gray-300) 62%, transparent);
+  --nz-border-soft: color-mix(in oklab, var(--nz-gray-200) 55%, transparent);
+}
+
+[data-nz-estilo="cristal"][data-nz-theme="dark"] {
+  --nz-surface: color-mix(in oklab, var(--nz-gray-0) 10%, transparent);
+  --nz-surface-2: color-mix(in oklab, var(--nz-gray-0) 16%, transparent);
+  --nz-bg-soft: color-mix(in oklab, var(--nz-gray-0) 8%, transparent);
+  --nz-border: color-mix(in oklab, var(--nz-gray-0) 20%, transparent);
+  --nz-border-soft: color-mix(in oklab, var(--nz-gray-0) 14%, transparent);
+  --nz-cristal-borde: color-mix(in oklab, var(--nz-gray-0) 18%, transparent);
+  --nz-cristal-brillo: color-mix(in oklab, var(--nz-gray-0) 14%, transparent);
+  --nz-cristal-sombra: 0 1px 2px rgba(0, 0, 0, 0.35), 0 12px 40px rgba(0, 0, 0, 0.45);
+}
+
+/* ---- 5. Sin soporte o con movimiento reducido: superficie sólida, nunca roto ---- */
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .nz-cristal,
+  .nz-cristal-barra { background: var(--nz-surface); }
+  [data-nz-estilo="cristal"] {
+    --nz-surface: var(--nz-gray-0);
+    --nz-surface-2: var(--nz-gray-50);
+    --nz-bg-soft: var(--nz-gray-50);
+  }
+}
+
+@media (prefers-reduced-transparency: reduce) {
+  .nz-cristal,
+  .nz-cristal-barra { background: var(--nz-surface); }
+}

@@ -100,13 +100,15 @@ def main():
         if not crudo.lstrip().startswith("/*"):
             aviso(f"{pack}: sin cabecera de comentario")
 
-        # 2. manifiesto
-        for pat, etiqueta in [(r"\b(?:linear|radial|conic)-gradient\(", "gradiente"),
-                              (r"backdrop-filter", "glass (backdrop-filter)")]:
-            m = re.search(pat, limpio)
-            if m:
-                linea = limpio[:m.start()].count("\n") + 1
-                fallo(f"{pack}:{linea}: {etiqueta} prohibido por el manifiesto")
+        # 2. manifiesto (la capa de cristal es la única excepción: declara su
+        #    propio manifiesto y usa SOLO tokens, nunca literales)
+        if pack not in bc.PACKS_CRISTAL:
+            for pat, etiqueta in [(r"\b(?:linear|radial|conic)-gradient\(", "gradiente"),
+                                  (r"backdrop-filter", "glass (backdrop-filter)")]:
+                m = re.search(pat, limpio)
+                if m:
+                    linea = limpio[:m.start()].count("\n") + 1
+                    fallo(f"{pack}:{linea}: {etiqueta} prohibido por el manifiesto")
 
         for m in HEX.finditer(limpio):
             linea = limpio[:m.start()].count("\n") + 1

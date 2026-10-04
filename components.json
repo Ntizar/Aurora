@@ -1,10 +1,10 @@
 {
  "name": "Aurora",
- "version": "8.0.0",
+ "version": "8.1.0",
  "type": "css-only design system",
  "namespace": ".nz-",
  "tokens": "tokens.css",
- "cdn": "https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v8.0.0/",
+ "cdn": "https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v8.1.0/",
  "manifiesto": {
   "gradientes": 0,
   "glass": 0,
@@ -19,11 +19,11 @@
   "objetivoTactil": "44px"
  },
  "resumen": {
-  "objetos": 1907,
-  "familias": 350,
-  "categorias": 15,
-  "demos": 578,
-  "tokens": 170,
+  "objetos": 2145,
+  "familias": 399,
+  "categorias": 17,
+  "demos": 632,
+  "tokens": 179,
   "tokensDark": 43
  },
  "packs": {
@@ -139,9 +139,9 @@
    "categoria": 13,
    "nombre": "Gráficos y visualización",
    "descripcion": "Barras, línea, área, donut, medidor, mapa de calor, calendario, treemap, embudo, bullet, radar, dispersión, cascada y flujo. Todo con CSS y SVG estilizado por clases: sin librerías y sin una sola imagen.",
-   "objetos": 210,
-   "familias": 21,
-   "demos": 36,
+   "objetos": 216,
+   "familias": 22,
+   "demos": 38,
    "pagina": "paginas/13-charts.html"
   },
   "p14-ai.css": {
@@ -161,6 +161,24 @@
    "familias": 30,
    "demos": 37,
    "pagina": "paginas/15-apps.html"
+  },
+  "p16-cristal.css": {
+   "categoria": 16,
+   "nombre": "Cristal (capa de estilo)",
+   "descripcion": "Vidrio líquido como capa opt-in: superficies translúcidas con desenfoque real, brillo especular, barra pegada y modo cristal del sistema. Es la única excepción al manifiesto «0 glass» y usa solo tokens, así que también cambia con la marca. Si el navegador no sabe desenfocar, cae a superficie sólida: nunca rompe la lectura.",
+   "objetos": 8,
+   "familias": 2,
+   "demos": 5,
+   "pagina": "paginas/16-cristal.html"
+  },
+  "p17-patrones.css": {
+   "categoria": 17,
+   "nombre": "Patrones compuestos",
+   "descripcion": "Bloques de nivel superior hechos solo con primitivas: cabecera de página, barra de filtros, tabla con acciones en lote, ficha de entidad, asistente por pasos, resumen de pedido, centro de notificaciones y 40 más. Aquí viven los patrones que antes había que recomponer en cada proyecto.",
+   "objetos": 224,
+   "familias": 46,
+   "demos": 47,
+   "pagina": "paginas/17-patrones.html"
   }
  },
  "lexico": {
@@ -811,12 +829,17 @@
   },
   {
    "nombre": "--nz-font",
-   "valor": "system-ui, -apple-system, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, sans-serif",
+   "valor": "\"Inter\", \"Inter Variable\", system-ui, -apple-system, \"Segoe UI\", Roboto, sans-serif",
+   "seccion": "ROLES TEMÁTICOS (light). Todo color de interfaz sale de aquí. "
+  },
+  {
+   "nombre": "--nz-font-titulo",
+   "valor": "\"Inter\", \"Inter Variable\", system-ui, -apple-system, \"Segoe UI\", sans-serif",
    "seccion": "ROLES TEMÁTICOS (light). Todo color de interfaz sale de aquí. "
   },
   {
    "nombre": "--nz-font-mono",
-   "valor": "ui-monospace, \"Cascadia Code\", \"SF Mono\", Consolas, monospace",
+   "valor": "\"JetBrains Mono\", ui-monospace, \"Cascadia Code\", \"SF Mono\", Consolas, monospace",
    "seccion": "ROLES TEMÁTICOS (light). Todo color de interfaz sale de aquí. "
   },
   {
@@ -1172,6 +1195,46 @@
   {
    "nombre": "--nz-focus-ring-accent",
    "valor": "0 0 0 3px color-mix(in oklab, var(--nz-acento-500) 42%, transparent)",
+   "seccion": "FOCUS (deriva de la marca) "
+  },
+  {
+   "nombre": "--nz-cristal-blur",
+   "valor": "18px",
+   "seccion": "FOCUS (deriva de la marca) "
+  },
+  {
+   "nombre": "--nz-cristal-sat",
+   "valor": "1.7",
+   "seccion": "FOCUS (deriva de la marca) "
+  },
+  {
+   "nombre": "--nz-cristal-fondo",
+   "valor": "color-mix(in oklab, var(--nz-surface) 58%, transparent)",
+   "seccion": "FOCUS (deriva de la marca) "
+  },
+  {
+   "nombre": "--nz-cristal-fondo-fuerte",
+   "valor": "color-mix(in oklab, var(--nz-surface) 76%, transparent)",
+   "seccion": "FOCUS (deriva de la marca) "
+  },
+  {
+   "nombre": "--nz-cristal-fondo-suave",
+   "valor": "color-mix(in oklab, var(--nz-surface) 36%, transparent)",
+   "seccion": "FOCUS (deriva de la marca) "
+  },
+  {
+   "nombre": "--nz-cristal-borde",
+   "valor": "color-mix(in oklab, var(--nz-gray-0) 46%, transparent)",
+   "seccion": "FOCUS (deriva de la marca) "
+  },
+  {
+   "nombre": "--nz-cristal-brillo",
+   "valor": "color-mix(in oklab, var(--nz-gray-0) 34%, transparent)",
+   "seccion": "FOCUS (deriva de la marca) "
+  },
+  {
+   "nombre": "--nz-cristal-sombra",
+   "valor": "0 1px 2px rgba(17, 24, 39, 0.04), 0 10px 34px rgba(17, 24, 39, 0.10)",
    "seccion": "FOCUS (deriva de la marca) "
   }
  ],
@@ -6729,6 +6792,7 @@
     "nz-chart",
     "nz-chart--bordered",
     "nz-chart--flat",
+    "nz-chart--interactivo",
     "nz-chart--lg",
     "nz-chart--sm",
     "nz-chart__actions",
@@ -6752,6 +6816,7 @@
    "modificadores": [
     "bordered",
     "flat",
+    "interactivo",
     "lg",
     "sm",
     "accent"
@@ -7160,6 +7225,26 @@
     "num",
     "row",
     "track"
+   ]
+  },
+  "nz-chart-tip": {
+   "pack": "p13-charts.css",
+   "categoria": 13,
+   "demo": "paginas/13-charts.html",
+   "clases": [
+    "nz-chart-tip",
+    "nz-chart-tip--arriba",
+    "nz-chart-tip--inline",
+    "nz-chart-tip__label",
+    "nz-chart-tip__value"
+   ],
+   "modificadores": [
+    "arriba",
+    "inline"
+   ],
+   "partes": [
+    "label",
+    "value"
    ]
   },
   "nz-chart-waterfall": {
@@ -8463,6 +8548,904 @@
    "modificadores": [],
    "partes": [
     "count"
+   ]
+  },
+  "nz-cristal": {
+   "pack": "p16-cristal.css",
+   "categoria": 16,
+   "demo": "paginas/16-cristal.html",
+   "clases": [
+    "nz-cristal",
+    "nz-cristal--borde-marca",
+    "nz-cristal--fuerte",
+    "nz-cristal--pill",
+    "nz-cristal--plano",
+    "nz-cristal--suave",
+    "nz-cristal__brillo"
+   ],
+   "modificadores": [
+    "borde-marca",
+    "fuerte",
+    "pill",
+    "plano",
+    "suave"
+   ],
+   "partes": [
+    "brillo"
+   ]
+  },
+  "nz-cristal-barra": {
+   "pack": "p16-cristal.css",
+   "categoria": 16,
+   "demo": "paginas/16-cristal.html",
+   "clases": [
+    "nz-cristal-barra"
+   ],
+   "modificadores": [],
+   "partes": []
+  },
+  "nz-agenda-disponibilidad": {
+   "pack": "p17-patrones.css",
+   "categoria": 17,
+   "demo": "paginas/17-patrones.html",
+   "clases": [
+    "nz-agenda-disponibilidad",
+    "nz-agenda-disponibilidad__dia",
+    "nz-agenda-disponibilidad__fecha",
+    "nz-agenda-disponibilidad__franja",
+    "nz-agenda-disponibilidad__franjas"
+   ],
+   "modificadores": [],
+   "partes": [
+    "dia",
+    "fecha",
+    "franja",
+    "franjas"
+   ]
+  },
+  "nz-asistente-pasos": {
+   "pack": "p17-patrones.css",
+   "categoria": 17,
+   "demo": "paginas/17-patrones.html",
+   "clases": [
+    "nz-asistente-pasos",
+    "nz-asistente-pasos__acciones",
+    "nz-asistente-pasos__cabecera",
+    "nz-asistente-pasos__cuerpo",
+    "nz-asistente-pasos__pie"
+   ],
+   "modificadores": [],
+   "partes": [
+    "acciones",
+    "cabecera",
+    "cuerpo",
+    "pie"
+   ]
+  },
+  "nz-aviso-accion": {
+   "pack": "p17-patrones.css",
+   "categoria": 17,
+   "demo": "paginas/17-patrones.html",
+   "clases": [
+    "nz-aviso-accion",
+    "nz-aviso-accion__acciones",
+    "nz-aviso-accion__cuerpo",
+    "nz-aviso-accion__icono",
+    "nz-aviso-accion__texto",
+    "nz-aviso-accion__titulo"
+   ],
+   "modificadores": [],
+   "partes": [
+    "acciones",
+    "cuerpo",
+    "icono",
+    "texto",
+    "titulo"
+   ]
+  },
+  "nz-aviso-sistema": {
+   "pack": "p17-patrones.css",
+   "categoria": 17,
+   "demo": "paginas/17-patrones.html",
+   "clases": [
+    "nz-aviso-sistema",
+    "nz-aviso-sistema__acciones",
+    "nz-aviso-sistema__texto",
+    "nz-aviso-sistema__titulo"
+   ],
+   "modificadores": [],
+   "partes": [
+    "acciones",
+    "texto",
+    "titulo"
+   ]
+  },
+  "nz-bandeja-avisos": {
+   "pack": "p17-patrones.css",
+   "categoria": 17,
+   "demo": "paginas/17-patrones.html",
+   "clases": [
+    "nz-bandeja-avisos",
+    "nz-bandeja-avisos__cuerpo",
+    "nz-bandeja-avisos__hora",
+    "nz-bandeja-avisos__item",
+    "nz-bandeja-avisos__texto",
+    "nz-bandeja-avisos__titulo"
+   ],
+   "modificadores": [],
+   "partes": [
+    "cuerpo",
+    "hora",
+    "item",
+    "texto",
+    "titulo"
+   ]
+  },
+  "nz-barra-filtros": {
+   "pack": "p17-patrones.css",
+   "categoria": 17,
+   "demo": "paginas/17-patrones.html",
+   "clases": [
+    "nz-barra-filtros",
+    "nz-barra-filtros__buscar",
+    "nz-barra-filtros__chips",
+    "nz-barra-filtros__conteo",
+    "nz-barra-filtros__fila"
+   ],
+   "modificadores": [],
+   "partes": [
+    "buscar",
+    "chips",
+    "conteo",
+    "fila"
+   ]
+  },
+  "nz-bloque-carga": {
+   "pack": "p17-patrones.css",
+   "categoria": 17,
+   "demo": "paginas/17-patrones.html",
+   "clases": [
+    "nz-bloque-carga",
+    "nz-bloque-carga__lineas",
+    "nz-bloque-carga__pie"
+   ],
+   "modificadores": [],
+   "partes": [
+    "lineas",
+    "pie"
+   ]
+  },
+  "nz-bloque-precios": {
+   "pack": "p17-patrones.css",
+   "categoria": 17,
+   "demo": "paginas/17-patrones.html",
+   "clases": [
+    "nz-bloque-precios",
+    "nz-bloque-precios__cabecera",
+    "nz-bloque-precios__importe",
+    "nz-bloque-precios__lista",
+    "nz-bloque-precios__pie"
+   ],
+   "modificadores": [],
+   "partes": [
+    "cabecera",
+    "importe",
+    "lista",
+    "pie"
+   ]
+  },
+  "nz-bloque-testimonio": {
+   "pack": "p17-patrones.css",
+   "categoria": 17,
+   "demo": "paginas/17-patrones.html",
+   "clases": [
+    "nz-bloque-testimonio",
+    "nz-bloque-testimonio__autor",
+    "nz-bloque-testimonio__cita",
+    "nz-bloque-testimonio__nombre",
+    "nz-bloque-testimonio__rol"
+   ],
+   "modificadores": [],
+   "partes": [
+    "autor",
+    "cita",
+    "nombre",
+    "rol"
+   ]
+  },
+  "nz-buscador-facetas": {
+   "pack": "p17-patrones.css",
+   "categoria": 17,
+   "demo": "paginas/17-patrones.html",
+   "clases": [
+    "nz-buscador-facetas",
+    "nz-buscador-facetas__barra",
+    "nz-buscador-facetas__facetas",
+    "nz-buscador-facetas__resultado",
+    "nz-buscador-facetas__resultados"
+   ],
+   "modificadores": [],
+   "partes": [
+    "barra",
+    "facetas",
+    "resultado",
+    "resultados"
+   ]
+  },
+  "nz-cabecera-informe": {
+   "pack": "p17-patrones.css",
+   "categoria": 17,
+   "demo": "paginas/17-patrones.html",
+   "clases": [
+    "nz-cabecera-informe",
+    "nz-cabecera-informe__marca",
+    "nz-cabecera-informe__meta",
+    "nz-cabecera-informe__titulo",
+    "nz-cabecera-informe__top"
+   ],
+   "modificadores": [],
+   "partes": [
+    "marca",
+    "meta",
+    "titulo",
+    "top"
+   ]
+  },
+  "nz-cabecera-pagina": {
+   "pack": "p17-patrones.css",
+   "categoria": 17,
+   "demo": "paginas/17-patrones.html",
+   "clases": [
+    "nz-cabecera-pagina",
+    "nz-cabecera-pagina__acciones",
+    "nz-cabecera-pagina__principal",
+    "nz-cabecera-pagina__texto"
+   ],
+   "modificadores": [],
+   "partes": [
+    "acciones",
+    "principal",
+    "texto"
+   ]
+  },
+  "nz-caja-comentarios": {
+   "pack": "p17-patrones.css",
+   "categoria": 17,
+   "demo": "paginas/17-patrones.html",
+   "clases": [
+    "nz-caja-comentarios",
+    "nz-caja-comentarios__autor",
+    "nz-caja-comentarios__comentario",
+    "nz-caja-comentarios__cuerpo",
+    "nz-caja-comentarios__form",
+    "nz-caja-comentarios__form-acciones",
+    "nz-caja-comentarios__texto"
+   ],
+   "modificadores": [],
+   "partes": [
+    "autor",
+    "comentario",
+    "cuerpo",
+    "form",
+    "form-acciones",
+    "texto"
+   ]
+  },
+  "nz-centro-notificaciones": {
+   "pack": "p17-patrones.css",
+   "categoria": 17,
+   "demo": "paginas/17-patrones.html",
+   "clases": [
+    "nz-centro-notificaciones",
+    "nz-centro-notificaciones__cabecera",
+    "nz-centro-notificaciones__cuerpo",
+    "nz-centro-notificaciones__icono",
+    "nz-centro-notificaciones__item",
+    "nz-centro-notificaciones__lista",
+    "nz-centro-notificaciones__pie"
+   ],
+   "modificadores": [],
+   "partes": [
+    "cabecera",
+    "cuerpo",
+    "icono",
+    "item",
+    "lista",
+    "pie"
+   ]
+  },
+  "nz-checklist-entrega": {
+   "pack": "p17-patrones.css",
+   "categoria": 17,
+   "demo": "paginas/17-patrones.html",
+   "clases": [
+    "nz-checklist-entrega",
+    "nz-checklist-entrega__item",
+    "nz-checklist-entrega__texto"
+   ],
+   "modificadores": [],
+   "partes": [
+    "item",
+    "texto"
+   ]
+  },
+  "nz-comparador-planes": {
+   "pack": "p17-patrones.css",
+   "categoria": 17,
+   "demo": "paginas/17-patrones.html",
+   "clases": [
+    "nz-comparador-planes",
+    "nz-comparador-planes__nota",
+    "nz-comparador-planes__planes"
+   ],
+   "modificadores": [],
+   "partes": [
+    "nota",
+    "planes"
+   ]
+  },
+  "nz-comparativa-productos": {
+   "pack": "p17-patrones.css",
+   "categoria": 17,
+   "demo": "paginas/17-patrones.html",
+   "clases": [
+    "nz-comparativa-productos",
+    "nz-comparativa-productos__tabla"
+   ],
+   "modificadores": [],
+   "partes": [
+    "tabla"
+   ]
+  },
+  "nz-desglose-precio": {
+   "pack": "p17-patrones.css",
+   "categoria": 17,
+   "demo": "paginas/17-patrones.html",
+   "clases": [
+    "nz-desglose-precio",
+    "nz-desglose-precio__fila",
+    "nz-desglose-precio__total"
+   ],
+   "modificadores": [],
+   "partes": [
+    "fila",
+    "total"
+   ]
+  },
+  "nz-editor-campos": {
+   "pack": "p17-patrones.css",
+   "categoria": 17,
+   "demo": "paginas/17-patrones.html",
+   "clases": [
+    "nz-editor-campos",
+    "nz-editor-campos__acciones",
+    "nz-editor-campos__ayuda",
+    "nz-editor-campos__cabecera",
+    "nz-editor-campos__campo",
+    "nz-editor-campos__etiqueta"
+   ],
+   "modificadores": [],
+   "partes": [
+    "acciones",
+    "ayuda",
+    "cabecera",
+    "campo",
+    "etiqueta"
+   ]
+  },
+  "nz-estado-vacio": {
+   "pack": "p17-patrones.css",
+   "categoria": 17,
+   "demo": "paginas/17-patrones.html",
+   "clases": [
+    "nz-estado-vacio",
+    "nz-estado-vacio__acciones",
+    "nz-estado-vacio__icono",
+    "nz-estado-vacio__texto",
+    "nz-estado-vacio__titulo"
+   ],
+   "modificadores": [],
+   "partes": [
+    "acciones",
+    "icono",
+    "texto",
+    "titulo"
+   ]
+  },
+  "nz-facturacion-estados": {
+   "pack": "p17-patrones.css",
+   "categoria": 17,
+   "demo": "paginas/17-patrones.html",
+   "clases": [
+    "nz-facturacion-estados",
+    "nz-facturacion-estados__cifra",
+    "nz-facturacion-estados__etiqueta",
+    "nz-facturacion-estados__importe",
+    "nz-facturacion-estados__resumen"
+   ],
+   "modificadores": [],
+   "partes": [
+    "cifra",
+    "etiqueta",
+    "importe",
+    "resumen"
+   ]
+  },
+  "nz-ficha-entidad": {
+   "pack": "p17-patrones.css",
+   "categoria": 17,
+   "demo": "paginas/17-patrones.html",
+   "clases": [
+    "nz-ficha-entidad",
+    "nz-ficha-entidad__acciones",
+    "nz-ficha-entidad__cabecera",
+    "nz-ficha-entidad__datos",
+    "nz-ficha-entidad__identidad",
+    "nz-ficha-entidad__meta",
+    "nz-ficha-entidad__nombre"
+   ],
+   "modificadores": [],
+   "partes": [
+    "acciones",
+    "cabecera",
+    "datos",
+    "identidad",
+    "meta",
+    "nombre"
+   ]
+  },
+  "nz-ficha-producto": {
+   "pack": "p17-patrones.css",
+   "categoria": 17,
+   "demo": "paginas/17-patrones.html",
+   "clases": [
+    "nz-ficha-producto",
+    "nz-ficha-producto__acciones",
+    "nz-ficha-producto__cuerpo",
+    "nz-ficha-producto__media",
+    "nz-ficha-producto__nombre",
+    "nz-ficha-producto__variantes"
+   ],
+   "modificadores": [],
+   "partes": [
+    "acciones",
+    "cuerpo",
+    "media",
+    "nombre",
+    "variantes"
+   ]
+  },
+  "nz-filtro-rango": {
+   "pack": "p17-patrones.css",
+   "categoria": 17,
+   "demo": "paginas/17-patrones.html",
+   "clases": [
+    "nz-filtro-rango",
+    "nz-filtro-rango__cabecera",
+    "nz-filtro-rango__pie",
+    "nz-filtro-rango__valor"
+   ],
+   "modificadores": [],
+   "partes": [
+    "cabecera",
+    "pie",
+    "valor"
+   ]
+  },
+  "nz-formulario-seccion": {
+   "pack": "p17-patrones.css",
+   "categoria": 17,
+   "demo": "paginas/17-patrones.html",
+   "clases": [
+    "nz-formulario-seccion",
+    "nz-formulario-seccion__cabecera",
+    "nz-formulario-seccion__desc",
+    "nz-formulario-seccion__pie",
+    "nz-formulario-seccion__titulo"
+   ],
+   "modificadores": [],
+   "partes": [
+    "cabecera",
+    "desc",
+    "pie",
+    "titulo"
+   ]
+  },
+  "nz-galeria-filtros": {
+   "pack": "p17-patrones.css",
+   "categoria": 17,
+   "demo": "paginas/17-patrones.html",
+   "clases": [
+    "nz-galeria-filtros",
+    "nz-galeria-filtros__barra",
+    "nz-galeria-filtros__pieza",
+    "nz-galeria-filtros__rejilla"
+   ],
+   "modificadores": [],
+   "partes": [
+    "barra",
+    "pieza",
+    "rejilla"
+   ]
+  },
+  "nz-linea-pasos": {
+   "pack": "p17-patrones.css",
+   "categoria": 17,
+   "demo": "paginas/17-patrones.html",
+   "clases": [
+    "nz-linea-pasos",
+    "nz-linea-pasos__cuerpo",
+    "nz-linea-pasos__marca",
+    "nz-linea-pasos__nota",
+    "nz-linea-pasos__paso",
+    "nz-linea-pasos__titulo"
+   ],
+   "modificadores": [],
+   "partes": [
+    "cuerpo",
+    "marca",
+    "nota",
+    "paso",
+    "titulo"
+   ]
+  },
+  "nz-lista-tareas": {
+   "pack": "p17-patrones.css",
+   "categoria": 17,
+   "demo": "paginas/17-patrones.html",
+   "clases": [
+    "nz-lista-tareas",
+    "nz-lista-tareas__cuerpo",
+    "nz-lista-tareas__meta",
+    "nz-lista-tareas__tarea",
+    "nz-lista-tareas__titulo"
+   ],
+   "modificadores": [],
+   "partes": [
+    "cuerpo",
+    "meta",
+    "tarea",
+    "titulo"
+   ]
+  },
+  "nz-menu-cuenta": {
+   "pack": "p17-patrones.css",
+   "categoria": 17,
+   "demo": "paginas/17-patrones.html",
+   "clases": [
+    "nz-menu-cuenta",
+    "nz-menu-cuenta__cabecera",
+    "nz-menu-cuenta__correo",
+    "nz-menu-cuenta__lista",
+    "nz-menu-cuenta__nombre"
+   ],
+   "modificadores": [],
+   "partes": [
+    "cabecera",
+    "correo",
+    "lista",
+    "nombre"
+   ]
+  },
+  "nz-metrica-tendencia": {
+   "pack": "p17-patrones.css",
+   "categoria": 17,
+   "demo": "paginas/17-patrones.html",
+   "clases": [
+    "nz-metrica-tendencia",
+    "nz-metrica-tendencia__cabecera",
+    "nz-metrica-tendencia__etiqueta",
+    "nz-metrica-tendencia__pie",
+    "nz-metrica-tendencia__tendencia",
+    "nz-metrica-tendencia__valor"
+   ],
+   "modificadores": [],
+   "partes": [
+    "cabecera",
+    "etiqueta",
+    "pie",
+    "tendencia",
+    "valor"
+   ]
+  },
+  "nz-panel": {
+   "pack": "p17-patrones.css",
+   "categoria": 17,
+   "demo": "paginas/17-patrones.html",
+   "clases": [
+    "nz-panel",
+    "nz-panel--compact",
+    "nz-panel--marca",
+    "nz-panel--sin-borde",
+    "nz-panel__acciones",
+    "nz-panel__cabecera",
+    "nz-panel__cuerpo",
+    "nz-panel__pie",
+    "nz-panel__sub",
+    "nz-panel__titulo"
+   ],
+   "modificadores": [
+    "compact",
+    "marca",
+    "sin-borde"
+   ],
+   "partes": [
+    "acciones",
+    "cabecera",
+    "cuerpo",
+    "pie",
+    "sub",
+    "titulo"
+   ]
+  },
+  "nz-panel-actividad": {
+   "pack": "p17-patrones.css",
+   "categoria": 17,
+   "demo": "paginas/17-patrones.html",
+   "clases": [
+    "nz-panel-actividad",
+    "nz-panel-actividad__cabecera",
+    "nz-panel-actividad__lista"
+   ],
+   "modificadores": [],
+   "partes": [
+    "cabecera",
+    "lista"
+   ]
+  },
+  "nz-panel-filtros": {
+   "pack": "p17-patrones.css",
+   "categoria": 17,
+   "demo": "paginas/17-patrones.html",
+   "clases": [
+    "nz-panel-filtros",
+    "nz-panel-filtros__grupo",
+    "nz-panel-filtros__pie",
+    "nz-panel-filtros__titulo"
+   ],
+   "modificadores": [],
+   "partes": [
+    "grupo",
+    "pie",
+    "titulo"
+   ]
+  },
+  "nz-perfil-pestanas": {
+   "pack": "p17-patrones.css",
+   "categoria": 17,
+   "demo": "paginas/17-patrones.html",
+   "clases": [
+    "nz-perfil-pestanas",
+    "nz-perfil-pestanas__cabecera",
+    "nz-perfil-pestanas__cuerpo",
+    "nz-perfil-pestanas__identidad",
+    "nz-perfil-pestanas__meta",
+    "nz-perfil-pestanas__nombre"
+   ],
+   "modificadores": [],
+   "partes": [
+    "cabecera",
+    "cuerpo",
+    "identidad",
+    "meta",
+    "nombre"
+   ]
+  },
+  "nz-pie-acciones": {
+   "pack": "p17-patrones.css",
+   "categoria": 17,
+   "demo": "paginas/17-patrones.html",
+   "clases": [
+    "nz-pie-acciones",
+    "nz-pie-acciones__botones",
+    "nz-pie-acciones__info"
+   ],
+   "modificadores": [],
+   "partes": [
+    "botones",
+    "info"
+   ]
+  },
+  "nz-preguntas-frecuentes": {
+   "pack": "p17-patrones.css",
+   "categoria": 17,
+   "demo": "paginas/17-patrones.html",
+   "clases": [
+    "nz-preguntas-frecuentes",
+    "nz-preguntas-frecuentes__item",
+    "nz-preguntas-frecuentes__pregunta",
+    "nz-preguntas-frecuentes__respuesta"
+   ],
+   "modificadores": [],
+   "partes": [
+    "item",
+    "pregunta",
+    "respuesta"
+   ]
+  },
+  "nz-rejilla-estadisticas": {
+   "pack": "p17-patrones.css",
+   "categoria": 17,
+   "demo": "paginas/17-patrones.html",
+   "clases": [
+    "nz-rejilla-estadisticas",
+    "nz-rejilla-estadisticas__dato",
+    "nz-rejilla-estadisticas__etiqueta",
+    "nz-rejilla-estadisticas__valor"
+   ],
+   "modificadores": [],
+   "partes": [
+    "dato",
+    "etiqueta",
+    "valor"
+   ]
+  },
+  "nz-resumen-pedido": {
+   "pack": "p17-patrones.css",
+   "categoria": 17,
+   "demo": "paginas/17-patrones.html",
+   "clases": [
+    "nz-resumen-pedido",
+    "nz-resumen-pedido__cabecera",
+    "nz-resumen-pedido__linea",
+    "nz-resumen-pedido__lineas",
+    "nz-resumen-pedido__pie",
+    "nz-resumen-pedido__total"
+   ],
+   "modificadores": [],
+   "partes": [
+    "cabecera",
+    "linea",
+    "lineas",
+    "pie",
+    "total"
+   ]
+  },
+  "nz-selector-vista": {
+   "pack": "p17-patrones.css",
+   "categoria": 17,
+   "demo": "paginas/17-patrones.html",
+   "clases": [
+    "nz-selector-vista",
+    "nz-selector-vista__opcion"
+   ],
+   "modificadores": [],
+   "partes": [
+    "opcion"
+   ]
+  },
+  "nz-tabla-lote": {
+   "pack": "p17-patrones.css",
+   "categoria": 17,
+   "demo": "paginas/17-patrones.html",
+   "clases": [
+    "nz-tabla-lote",
+    "nz-tabla-lote__lote",
+    "nz-tabla-lote__lote-acciones",
+    "nz-tabla-lote__seleccion"
+   ],
+   "modificadores": [],
+   "partes": [
+    "lote",
+    "lote-acciones",
+    "seleccion"
+   ]
+  },
+  "nz-tabla-resumen": {
+   "pack": "p17-patrones.css",
+   "categoria": 17,
+   "demo": "paginas/17-patrones.html",
+   "clases": [
+    "nz-tabla-resumen",
+    "nz-tabla-resumen__pie"
+   ],
+   "modificadores": [],
+   "partes": [
+    "pie"
+   ]
+  },
+  "nz-tarjeta-contenido": {
+   "pack": "p17-patrones.css",
+   "categoria": 17,
+   "demo": "paginas/17-patrones.html",
+   "clases": [
+    "nz-tarjeta-contenido",
+    "nz-tarjeta-contenido--interactiva",
+    "nz-tarjeta-contenido__cuerpo",
+    "nz-tarjeta-contenido__etiqueta",
+    "nz-tarjeta-contenido__media",
+    "nz-tarjeta-contenido__pie",
+    "nz-tarjeta-contenido__texto",
+    "nz-tarjeta-contenido__titulo"
+   ],
+   "modificadores": [
+    "interactiva"
+   ],
+   "partes": [
+    "cuerpo",
+    "etiqueta",
+    "media",
+    "pie",
+    "texto",
+    "titulo"
+   ]
+  },
+  "nz-tarjeta-curso": {
+   "pack": "p17-patrones.css",
+   "categoria": 17,
+   "demo": "paginas/17-patrones.html",
+   "clases": [
+    "nz-tarjeta-curso",
+    "nz-tarjeta-curso__cuerpo",
+    "nz-tarjeta-curso__meta",
+    "nz-tarjeta-curso__pie",
+    "nz-tarjeta-curso__portada",
+    "nz-tarjeta-curso__titulo"
+   ],
+   "modificadores": [],
+   "partes": [
+    "cuerpo",
+    "meta",
+    "pie",
+    "portada",
+    "titulo"
+   ]
+  },
+  "nz-tarjeta-equipo": {
+   "pack": "p17-patrones.css",
+   "categoria": 17,
+   "demo": "paginas/17-patrones.html",
+   "clases": [
+    "nz-tarjeta-equipo",
+    "nz-tarjeta-equipo__miembro",
+    "nz-tarjeta-equipo__nombre",
+    "nz-tarjeta-equipo__rol"
+   ],
+   "modificadores": [],
+   "partes": [
+    "miembro",
+    "nombre",
+    "rol"
+   ]
+  },
+  "nz-tarjeta-servicio": {
+   "pack": "p17-patrones.css",
+   "categoria": 17,
+   "demo": "paginas/17-patrones.html",
+   "clases": [
+    "nz-tarjeta-servicio",
+    "nz-tarjeta-servicio__cuerpo",
+    "nz-tarjeta-servicio__icono",
+    "nz-tarjeta-servicio__pie",
+    "nz-tarjeta-servicio__texto",
+    "nz-tarjeta-servicio__titulo"
+   ],
+   "modificadores": [],
+   "partes": [
+    "cuerpo",
+    "icono",
+    "pie",
+    "texto",
+    "titulo"
+   ]
+  },
+  "nz-tarjeta-suscripcion": {
+   "pack": "p17-patrones.css",
+   "categoria": 17,
+   "demo": "paginas/17-patrones.html",
+   "clases": [
+    "nz-tarjeta-suscripcion",
+    "nz-tarjeta-suscripcion__acciones",
+    "nz-tarjeta-suscripcion__cabecera",
+    "nz-tarjeta-suscripcion__datos",
+    "nz-tarjeta-suscripcion__plan"
+   ],
+   "modificadores": [],
+   "partes": [
+    "acciones",
+    "cabecera",
+    "datos",
+    "plan"
    ]
   }
  }

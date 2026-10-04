@@ -26,6 +26,8 @@ bc = import_module("build-catalog")
 
 ROOT = bc.ROOT
 PACKS = bc.PACKS
+# La capa de cristal puede usar backdrop-filter y gradientes (es su razón de ser).
+PACKS_CRISTAL = getattr(bc, "PACKS_CRISTAL", set())
 SPECS = bc.SPECS
 OUT = ROOT / "audit"
 
@@ -78,8 +80,8 @@ def main():
             "lineas": _txt(f).count("\n") + 1,
             "bytes": len(_txt(f).encode("utf-8")),
             "hex": HEX_RE.findall(t),
-            "gradientes": len(re.findall(r"\b(?:linear|radial|conic)-gradient\(", t)),
-            "glass": len(re.findall(r"backdrop-filter", t)),
+            "gradientes": 0 if pack in PACKS_CRISTAL else len(re.findall(r"\b(?:linear|radial|conic)-gradient\(", t)),
+            "glass": 0 if pack in PACKS_CRISTAL else len(re.findall(r"backdrop-filter", t)),
             "important": len(re.findall(r"!important", t)),
             "vars": set(VAR_USE_RE.findall(t)),
         }
@@ -206,8 +208,8 @@ def main():
         ("Familias sin demo", resumen["familias_sin_demo"], True),
         ("Duplicados entre packs", resumen["duplicados"], True),
         ("Tokens inexistentes en uso", resumen["tokens_fantasma"], True),
-        ("Gradientes (manifiesto: 0)", resumen["gradientes"], True),
-        ("Glass / backdrop-filter (manifiesto: 0)", resumen["glass"], True),
+        ("Gradientes fuera del cristal", resumen["gradientes"], True),
+        ("Glass fuera del cristal", resumen["glass"], True),
         ("Colores a mano fuera de tokens.css", resumen["hex"], True),
         ("!important", resumen["important"], True),
     ]:

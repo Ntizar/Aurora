@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>Aurora · 13 Gráficos y visualización · 210 objetos</title>
+<title>Aurora · 13 Gráficos y visualización · 216 objetos</title>
 <meta name="description" content="Barras, línea, área, donut, medidor, mapa de calor, calendario, treemap, embudo, bullet, radar, dispersión, cascada y flujo. Todo con CSS y SVG estilizado por clases: sin librerías y sin una sola imagen.">
 <link rel="stylesheet" href="../tokens.css">
 <link rel="stylesheet" href="../packs/p0-catalog.css">
@@ -18,7 +18,7 @@
 <a class="nz-skip-link" href="#contenido">Saltar al contenido</a>
 <header class="cat-topbar">
 <a class="cat-brandmark" href="../index.html"><i></i><i></i> Aurora</a>
-<span class="cat-count">13 · 210 objetos · 36 demos</span>
+<span class="cat-count">13 · 216 objetos · 38 demos</span>
 <span class="cat-topbar__tools">
 <a class="cat-icobtn" href="../index.html" title="Portada" aria-label="Volver a la portada">⌂</a>
 <button class="cat-icobtn" id="btnTheme" aria-label="Cambiar tema" title="Light / Dark">◐</button>
@@ -40,17 +40,19 @@
   <a href="13-charts.html" aria-current="page">13 Gráficos y visualización</a>
   <a href="14-ai.html">14 IA y agentes</a>
   <a href="15-apps.html">15 Apps y escritorio</a>
+  <a href="16-cristal.html">16 Cristal (capa de estilo)</a>
+  <a href="17-patrones.html">17 Patrones compuestos</a>
 </nav>
 <main class="nz-container cat-main" id="contenido">
   <div class="cat-pagehead">
-    <p class="cat-pagehead__over">Categoría 13 de 15 · 210 objetos · 36 demos</p>
+    <p class="cat-pagehead__over">Categoría 13 de 17 · 216 objetos · 38 demos</p>
     <h1>Gráficos y visualización</h1>
     <p>Barras, línea, área, donut, medidor, mapa de calor, calendario, treemap, embudo, bullet, radar, dispersión, cascada y flujo. Todo con CSS y SVG estilizado por clases: sin librerías y sin una sola imagen.</p>
     <div class="cat-pagehead__stats">
-      <span class="nz-badge nz-badge--brand"><i></i>210 objetos</span>
-      <span class="nz-badge nz-badge--neutral">21 familias</span>
-      <span class="nz-badge nz-badge--accent">36 demos en vivo</span>
-      <span class="nz-badge nz-badge--neutral">27 clases distintas usadas</span>
+      <span class="nz-badge nz-badge--brand"><i></i>216 objetos</span>
+      <span class="nz-badge nz-badge--neutral">22 familias</span>
+      <span class="nz-badge nz-badge--accent">38 demos en vivo</span>
+      <span class="nz-badge nz-badge--neutral">28 clases distintas usadas</span>
       <a class="nz-badge nz-badge--brand" href="../packs/p13-charts.css">p13-charts.css</a>
     </div>
   </div>
@@ -58,7 +60,7 @@
     <div class="cat-search">
       <span class="cat-search__icon" aria-hidden="true">⌕</span>
       <input class="cat-search__input" id="catBuscar" type="search" placeholder="Buscar en esta categoría… (pulsa /)" aria-label="Buscar objeto en esta categoría">
-      <span class="cat-search__count" id="catContador">36 objetos</span>
+      <span class="cat-search__count" id="catContador">38 objetos</span>
     </div>
     <div class="cat-filters" role="group" aria-label="Filtrar por familia de objeto"><button type="button" class="cat-filters__chip" data-filtro="todo" aria-pressed="true">Todo</button>
       <button type="button" class="cat-filters__chip" data-filtro="nz-btn" aria-pressed="false">.btn</button>
@@ -76,9 +78,9 @@
       <button type="button" class="cat-filters__chip" data-filtro="nz-chart-scatter" aria-pressed="false">.chart-scatter</button>
       <button type="button" class="cat-filters__chip" data-filtro="nz-chart-stat" aria-pressed="false">.chart-stat</button>
       <button type="button" class="cat-filters__chip" data-filtro="nz-chart-tablebar" aria-pressed="false">.chart-tablebar</button>
+      <button type="button" class="cat-filters__chip" data-filtro="nz-chart-tip" aria-pressed="false">.chart-tip</button>
       <button type="button" class="cat-filters__chip" data-filtro="nz-chart-waterfall" aria-pressed="false">.chart-waterfall</button>
-      <button type="button" class="cat-filters__chip" data-filtro="nz-cluster" aria-pressed="false">.cluster</button>
-      <button type="button" class="cat-filters__chip" data-filtro="nz-funnel" aria-pressed="false">.funnel</button></div>
+      <button type="button" class="cat-filters__chip" data-filtro="nz-cluster" aria-pressed="false">.cluster</button></div>
   </div>
   <section class="cat-demo cat-in" data-cat="nz-btn nz-chart nz-chart-bar">
     <div class="cat-demo__title"><span class="cat-demo__num">1</span><span class="cat-demo__name">Tarjeta de gráfico</span><span class="cat-demo__tag">.nz-chart · __head/__title/__sub/__actions/__body/__foot/__source</span></div>
@@ -155,7 +157,7 @@
   <section class="cat-demo cat-in" data-cat="nz-chart-line">
     <div class="cat-demo__title"><span class="cat-demo__num">13</span><span class="cat-demo__name">Línea y área</span><span class="cat-demo__tag">.nz-chart-line__svg · __area · __path · __dot · __dot--active</span></div>
     <div class="cat-stage">
-      <div class="nz-chart-line"><svg class="nz-chart-line__svg" viewBox="0 0 300 100" preserveAspectRatio="none" role="img" aria-label="Serie de visitas"><path class="nz-chart-line__area" d="M0,70 L60,50 L120,60 L180,30 L240,40 L300,18 L300,100 L0,100 Z"></path><path class="nz-chart-line__path" d="M0,70 L60,50 L120,60 L180,30 L240,40 L300,18"></path><circle class="nz-chart-line__dot" cx="60" cy="50" r="3"></circle><circle class="nz-chart-line__dot nz-chart-line__dot--active" cx="180" cy="30" r="4"></circle></svg></div>
+      <div class="nz-chart-line"><svg class="nz-chart-line__svg" viewBox="0 0 300 100" preserveAspectRatio="none" role="img" aria-label="Serie de visitas"><path class="nz-chart-line__area" d="M0,70 L60,50 L120,60 L180,30 L240,40 L300,18 L300,100 L0,100 Z"></path><path class="nz-chart-line__path" d="M0,70 L60,50 L120,60 L180,30 L240,40 L300,18"></path><circle class="nz-chart-line__dot" cx="60" cy="50" r="3" data-etiqueta="Abr" data-valor="120 visitas"></circle><circle class="nz-chart-line__dot nz-chart-line__dot--active" cx="180" cy="30" r="4" data-etiqueta="Jun" data-valor="205 visitas"></circle></svg></div>
     </div>
   </section>
   <section class="cat-demo cat-in" data-cat="nz-chart-line nz-stack">
@@ -296,6 +298,18 @@
       <div class="nz-chart nz-chart-line nz-chart-line--accent"><i style="left:10%;top:55%"></i><i style="left:50%;top:35%"></i><i style="left:90%;top:15%"></i></div>
     </div>
   </section>
+  <section class="cat-demo cat-in" data-cat="nz-chart nz-chart-bar nz-chart-tip">
+    <div class="cat-demo__title"><span class="cat-demo__num">37</span><span class="cat-demo__name">Gráfico interactivo con tooltip</span><span class="cat-demo__tag">.nz-chart--interactivo · .nz-chart-tip · __label/__value · --inline/--arriba (lo activa js/graficos.js)</span></div>
+    <div class="cat-stage">
+      <figure class="nz-chart nz-chart--interactivo"><div class="nz-chart__head"><div><span class="nz-chart__title">Pedidos por mes</span><span class="nz-chart__sub">Pasa el ratón o enfoca cada barra</span></div></div><div class="nz-chart__body"><div class="nz-chart-bar"><div class="nz-chart-bar__col"><span class="nz-chart-bar__value">45</span><div class="nz-chart-bar__bar" data-serie="pedidos" data-valor="45 pedidos" style="height:45%"></div><span class="nz-chart-bar__label">Ene</span></div><div class="nz-chart-bar__col"><span class="nz-chart-bar__value">70</span><div class="nz-chart-bar__bar" data-serie="pedidos" data-valor="70 pedidos" style="height:70%"></div><span class="nz-chart-bar__label">Feb</span></div><div class="nz-chart-bar__col"><span class="nz-chart-bar__value">58</span><div class="nz-chart-bar__bar" data-serie="pedidos" data-valor="58 pedidos" style="height:58%"></div><span class="nz-chart-bar__label">Mar</span></div></div></div><div class="nz-chart-tip nz-chart-tip--inline nz-chart-tip--arriba is-active"><span class="nz-chart-tip__label">Ene</span><span class="nz-chart-tip__value">45 pedidos</span></div></figure>
+    </div>
+  </section>
+  <section class="cat-demo cat-in" data-cat="nz-chart nz-chart-bar nz-legend">
+    <div class="cat-demo__title"><span class="cat-demo__num">38</span><span class="cat-demo__name">Leyenda clicable que filtra series</span><span class="cat-demo__tag">.nz-chart--interactivo · .nz-legend__item[aria-pressed] · .is-selected · data-serie (lo activa js/graficos.js)</span></div>
+    <div class="cat-stage">
+      <div class="nz-chart nz-chart--interactivo"><div class="nz-chart__body"><div class="nz-chart-bar"><div class="nz-chart-bar__col"><div class="nz-chart-bar__bar nz-chart-bar__bar--brand" data-serie="ingresos" data-valor="64" style="height:64%"></div><span class="nz-chart-bar__label">T1</span></div><div class="nz-chart-bar__col"><div class="nz-chart-bar__bar nz-chart-bar__bar--accent" data-serie="gastos" data-valor="38" style="height:38%"></div><span class="nz-chart-bar__label">T2</span></div><div class="nz-chart-bar__col"><div class="nz-chart-bar__bar nz-chart-bar__bar--brand" data-serie="ingresos" data-valor="70" style="height:70%"></div><span class="nz-chart-bar__label">T3</span></div><div class="nz-chart-bar__col"><div class="nz-chart-bar__bar nz-chart-bar__bar--accent is-selected" data-serie="gastos" data-valor="44" style="height:44%"></div><span class="nz-chart-bar__label">T4</span></div></div></div><div class="nz-legend"><span class="nz-legend__item" role="button" tabindex="0" aria-pressed="true" data-serie="ingresos"><i class="nz-legend__swatch nz-legend__swatch--brand"></i>Ingresos</span><span class="nz-legend__item" role="button" tabindex="0" aria-pressed="false" data-serie="gastos"><i class="nz-legend__swatch nz-legend__swatch--accent"></i>Gastos</span></div></div>
+    </div>
+  </section>
   <div class="cat-empty" id="catVacio" hidden><b>Nada por aquí</b>Prueba con otro término o quita el filtro.</div>
 </main>
 <div class="cat-nav-pages" style="justify-content:center;border-top:1px solid var(--nz-border-soft)">
@@ -303,8 +317,9 @@
   <a href="14-ai.html">14 IA y agentes →</a>
 </div>
 <footer class="cat-footer">
-  Aurora · Design System Ntizar · Categoría 13 de 15 · 1907 objetos · 578 demos · Hecho con ❤️ por David Antizar
+  Aurora · Design System Ntizar · Categoría 13 de 17 · 2145 objetos · 632 demos · Hecho con ❤️ por David Antizar
 </footer>
 <script src="../js/catalog.js"></script>
+<script src="../js/graficos.js"></script>
 </body>
 </html>

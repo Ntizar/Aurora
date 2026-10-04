@@ -1,189 +1,199 @@
 {
-  "cat": 13,
-  "nombre": "Gráficos y visualización",
-  "desc": "Barras, línea, área, donut, medidor, mapa de calor, calendario, treemap, embudo, bullet, radar, dispersión, cascada y flujo. Todo con CSS y SVG estilizado por clases: sin librerías y sin una sola imagen.",
-  "pack": "p13-charts.css",
-  "fichero": "13-charts.html",
-  "demos": [
-    {
-      "titulo": "Tarjeta de gráfico",
-      "tag": ".nz-chart · __head/__title/__sub/__actions/__body/__foot/__source",
-      "markup": "<figure class=\"nz-chart\"><div class=\"nz-chart__head\"><div><span class=\"nz-chart__title\">Ingresos por mes</span><span class=\"nz-chart__sub\">Últimos 6 meses</span></div><div class=\"nz-chart__actions\"><button class=\"nz-btn nz-btn--ghost nz-btn--sm\">Exportar</button></div></div><div class=\"nz-chart__body\"><div class=\"nz-chart-bar nz-chart-bar--sm\"><div class=\"nz-chart-bar__col\"><div class=\"nz-chart-bar__bar\" style=\"height:45%\"></div><span class=\"nz-chart-bar__label\">Ene</span></div><div class=\"nz-chart-bar__col\"><div class=\"nz-chart-bar__bar\" style=\"height:70%\"></div><span class=\"nz-chart-bar__label\">Feb</span></div><div class=\"nz-chart-bar__col\"><div class=\"nz-chart-bar__bar\" style=\"height:58%\"></div><span class=\"nz-chart-bar__label\">Mar</span></div></div></div><figcaption class=\"nz-chart__foot\"><span class=\"nz-chart__source\">Fuente: facturación interna</span></figcaption></figure>"
-    },
-    {
-      "titulo": "Tamaños y estilos de tarjeta",
-      "tag": ".nz-chart--sm · --lg · --bordered · --flat",
-      "markup": "<div class=\"nz-stack nz-stack--sm\"><div class=\"nz-chart nz-chart--sm\"><span class=\"nz-chart__title\">Pequeña</span></div><div class=\"nz-chart nz-chart--lg\"><span class=\"nz-chart__title\">Grande</span></div><div class=\"nz-chart nz-chart--bordered\"><span class=\"nz-chart__title\">Con borde</span></div><div class=\"nz-chart nz-chart--flat\"><span class=\"nz-chart__title\">Plana</span></div></div>"
-    },
-    {
-      "titulo": "Rejilla y ejes",
-      "tag": ".nz-chart__grid · __grid-line · __axis · __axis-label",
-      "markup": "<div class=\"nz-chart\"><div class=\"nz-chart__body\"><div class=\"nz-chart__grid\"><span class=\"nz-chart__grid-line\"></span><span class=\"nz-chart__grid-line\"></span><span class=\"nz-chart__grid-line\"></span><span class=\"nz-chart__grid-line\"></span></div><div class=\"nz-chart-bar nz-chart-bar--sm\" style=\"position:relative\"><div class=\"nz-chart-bar__col\"><div class=\"nz-chart-bar__bar\" style=\"height:60%\"></div></div><div class=\"nz-chart-bar__col\"><div class=\"nz-chart-bar__bar nz-chart-bar__bar--accent\" style=\"height:85%\"></div></div></div></div><div class=\"nz-chart__axis\"><span class=\"nz-chart__axis-label\">0</span><span class=\"nz-chart__axis-label\">50</span><span class=\"nz-chart__axis-label\">100</span></div></div>"
-    },
-    {
-      "titulo": "Objetivo y marcador",
-      "tag": ".nz-chart__target · --accent · __mark · __mark-label",
-      "markup": "<div class=\"nz-chart\"><div class=\"nz-chart__body\"><div class=\"nz-chart__grid\"><span class=\"nz-chart__grid-line\"></span><span class=\"nz-chart__grid-line\"></span></div><div class=\"nz-chart__target\" style=\"top:30%\"></div><div class=\"nz-chart__target nz-chart__target--accent\" style=\"top:65%\"></div><div class=\"nz-chart__mark\" style=\"left:42%\"></div><span class=\"nz-chart__mark-label\" style=\"left:42%\">Campaña</span><div class=\"nz-chart-bar nz-chart-bar--sm\"><div class=\"nz-chart-bar__col\"><div class=\"nz-chart-bar__bar\" style=\"height:40%\"></div></div><div class=\"nz-chart-bar__col\"><div class=\"nz-chart-bar__bar\" style=\"height:72%\"></div></div><div class=\"nz-chart-bar__col\"><div class=\"nz-chart-bar__bar\" style=\"height:55%\"></div></div></div></div></div>"
-    },
-    {
-      "titulo": "Gráfico vacío y cargando",
-      "tag": ".nz-chart__empty · .nz-chart__loading",
-      "markup": "<div class=\"nz-stack nz-stack--sm\"><div class=\"nz-chart\"><div class=\"nz-chart__empty\"><b>Sin datos todavía</b><span>Cuando llegue el primer pedido aparecerá aquí.</span></div></div><div class=\"nz-chart\"><div class=\"nz-chart__loading\"><span class=\"nz-spinner nz-spinner--sm\"></span> Cargando serie…</div></div></div>"
-    },
-    {
-      "titulo": "Leyenda",
-      "tag": ".nz-legend · __item · __swatch · --brand/--accent/--success/--warning/--danger/--muted · --vertical",
-      "markup": "<div class=\"nz-stack nz-stack--sm\"><div class=\"nz-legend\"><span class=\"nz-legend__item\"><i class=\"nz-legend__swatch nz-legend__swatch--brand\"></i>Ingresos</span><span class=\"nz-legend__item\"><i class=\"nz-legend__swatch nz-legend__swatch--accent\"></i>Gastos</span><span class=\"nz-legend__item\"><i class=\"nz-legend__swatch nz-legend__swatch--success\"></i>Cobrado</span><span class=\"nz-legend__item\"><i class=\"nz-legend__swatch nz-legend__swatch--warning\"></i>Pendiente</span><span class=\"nz-legend__item\"><i class=\"nz-legend__swatch nz-legend__swatch--danger\"></i>Impagado</span><span class=\"nz-legend__item\"><i class=\"nz-legend__swatch nz-legend__swatch--muted\"></i>Otros</span></div><div class=\"nz-legend nz-legend--vertical\"><span class=\"nz-legend__item\"><i class=\"nz-legend__swatch nz-legend__swatch--brand\"></i>Enero</span><span class=\"nz-legend__item\"><i class=\"nz-legend__swatch nz-legend__swatch--accent\"></i>Febrero</span></div></div>"
-    },
-    {
-      "titulo": "Barras verticales y tonos",
-      "tag": ".nz-chart-bar__bar--brand/_accent/_success/_warning/_danger/_muted",
-      "markup": "<div class=\"nz-chart-bar\"><div class=\"nz-chart-bar__col\"><span class=\"nz-chart-bar__value\">24</span><div class=\"nz-chart-bar__bar nz-chart-bar__bar--brand\" style=\"height:50%\"></div><span class=\"nz-chart-bar__label\">Marca</span></div><div class=\"nz-chart-bar__col\"><span class=\"nz-chart-bar__value\">31</span><div class=\"nz-chart-bar__bar nz-chart-bar__bar--accent\" style=\"height:65%\"></div><span class=\"nz-chart-bar__label\">Acento</span></div><div class=\"nz-chart-bar__col\"><span class=\"nz-chart-bar__value\">28</span><div class=\"nz-chart-bar__bar nz-chart-bar__bar--success\" style=\"height:58%\"></div><span class=\"nz-chart-bar__label\">Bien</span></div><div class=\"nz-chart-bar__col\"><span class=\"nz-chart-bar__value\">17</span><div class=\"nz-chart-bar__bar nz-chart-bar__bar--warning\" style=\"height:36%\"></div><span class=\"nz-chart-bar__label\">Aviso</span></div><div class=\"nz-chart-bar__col\"><span class=\"nz-chart-bar__value\">9</span><div class=\"nz-chart-bar__bar nz-chart-bar__bar--danger\" style=\"height:20%\"></div><span class=\"nz-chart-bar__label\">Mal</span></div><div class=\"nz-chart-bar__col\"><span class=\"nz-chart-bar__value\">12</span><div class=\"nz-chart-bar__bar nz-chart-bar__bar--muted\" style=\"height:26%\"></div><span class=\"nz-chart-bar__label\">Otros</span></div></div>"
-    },
-    {
-      "titulo": "Alturas de gráfico de barras",
-      "tag": ".nz-chart-bar--sm · --lg",
-      "markup": "<div class=\"nz-stack nz-stack--sm\"><div class=\"nz-chart-bar nz-chart-bar--sm\"><div class=\"nz-chart-bar__col\"><div class=\"nz-chart-bar__bar\" style=\"height:60%\"></div></div><div class=\"nz-chart-bar__col\"><div class=\"nz-chart-bar__bar\" style=\"height:90%\"></div></div></div><div class=\"nz-chart-bar nz-chart-bar--lg\"><div class=\"nz-chart-bar__col\"><div class=\"nz-chart-bar__bar\" style=\"height:35%\"></div></div><div class=\"nz-chart-bar__col\"><div class=\"nz-chart-bar__bar\" style=\"height:78%\"></div></div></div></div>"
-    },
-    {
-      "titulo": "Barras horizontales",
-      "tag": ".nz-chart-bar--horizontal",
-      "markup": "<div class=\"nz-chart-bar nz-chart-bar--horizontal\"><div class=\"nz-chart-bar__col\"><span class=\"nz-chart-bar__label\">Madrid</span><div class=\"nz-chart-bar__bar\" style=\"width:78%\"></div></div><div class=\"nz-chart-bar__col\"><span class=\"nz-chart-bar__label\">Barcelona</span><div class=\"nz-chart-bar__bar\" style=\"width:62%\"></div></div><div class=\"nz-chart-bar__col\"><span class=\"nz-chart-bar__label\">Valencia</span><div class=\"nz-chart-bar__bar\" style=\"width:41%\"></div></div></div>"
-    },
-    {
-      "titulo": "Barras agrupadas",
-      "tag": ".nz-chart-bar--grouped · __group",
-      "markup": "<div class=\"nz-chart-bar nz-chart-bar--grouped\"><div class=\"nz-chart-bar__col\"><div class=\"nz-chart-bar__group\"><div class=\"nz-chart-bar__bar nz-chart-bar__bar--brand\" style=\"height:55%\"></div><div class=\"nz-chart-bar__bar nz-chart-bar__bar--accent\" style=\"height:35%\"></div></div><span class=\"nz-chart-bar__label\">T1</span></div><div class=\"nz-chart-bar__col\"><div class=\"nz-chart-bar__group\"><div class=\"nz-chart-bar__bar nz-chart-bar__bar--brand\" style=\"height:72%\"></div><div class=\"nz-chart-bar__bar nz-chart-bar__bar--accent\" style=\"height:48%\"></div></div><span class=\"nz-chart-bar__label\">T2</span></div><div class=\"nz-chart-bar__col\"><div class=\"nz-chart-bar__group\"><div class=\"nz-chart-bar__bar nz-chart-bar__bar--brand\" style=\"height:64%\"></div><div class=\"nz-chart-bar__bar nz-chart-bar__bar--accent\" style=\"height:58%\"></div></div><span class=\"nz-chart-bar__label\">T3</span></div></div>"
-    },
-    {
-      "titulo": "Barras apiladas",
-      "tag": ".nz-chart-bar--stacked · __seg · __seg--brand/_accent/_muted",
-      "markup": "<div class=\"nz-chart-bar nz-chart-bar--stacked\"><div class=\"nz-chart-bar__col\"><div class=\"nz-chart-bar__bar\" style=\"height:80%\"><span class=\"nz-chart-bar__seg nz-chart-bar__seg--brand\" style=\"height:45%\"></span><span class=\"nz-chart-bar__seg nz-chart-bar__seg--accent\" style=\"height:30%\"></span><span class=\"nz-chart-bar__seg nz-chart-bar__seg--muted\" style=\"height:25%\"></span></div><span class=\"nz-chart-bar__label\">Web</span></div><div class=\"nz-chart-bar__col\"><div class=\"nz-chart-bar__bar\" style=\"height:60%\"><span class=\"nz-chart-bar__seg nz-chart-bar__seg--brand\" style=\"height:60%\"></span><span class=\"nz-chart-bar__seg nz-chart-bar__seg--muted\" style=\"height:40%\"></span></div><span class=\"nz-chart-bar__label\">App</span></div></div>"
-    },
-    {
-      "titulo": "Barras con valores negativos",
-      "tag": ".nz-chart-bar--neg · __zero",
-      "markup": "<div class=\"nz-chart-bar nz-chart-bar--neg\" style=\"min-height:9rem;flex-direction:column\"><div class=\"nz-chart-bar nz-chart-bar--sm\" style=\"min-height:4rem\"><div class=\"nz-chart-bar__col\"><div class=\"nz-chart-bar__bar nz-chart-bar__bar--success\" style=\"height:70%\"></div><span class=\"nz-chart-bar__label\">Mar</span></div><div class=\"nz-chart-bar__col\"><div class=\"nz-chart-bar__bar nz-chart-bar__bar--success\" style=\"height:40%\"></div><span class=\"nz-chart-bar__label\">Abr</span></div></div><div class=\"nz-chart-bar__zero\"></div><div class=\"nz-chart-bar nz-chart-bar--sm\" style=\"min-height:4rem;align-items:flex-start\"><div class=\"nz-chart-bar__col\"><div class=\"nz-chart-bar__bar nz-chart-bar__bar--danger\" style=\"height:35%\"></div><span class=\"nz-chart-bar__label\">May</span></div><div class=\"nz-chart-bar__col\"><div class=\"nz-chart-bar__bar nz-chart-bar__bar--danger\" style=\"height:60%\"></div><span class=\"nz-chart-bar__label\">Jun</span></div></div></div>"
-    },
-    {
-      "titulo": "Línea y área",
-      "tag": ".nz-chart-line__svg · __area · __path · __dot · __dot--active",
-      "markup": "<div class=\"nz-chart-line\"><svg class=\"nz-chart-line__svg\" viewBox=\"0 0 300 100\" preserveAspectRatio=\"none\" role=\"img\" aria-label=\"Serie de visitas\"><path class=\"nz-chart-line__area\" d=\"M0,70 L60,50 L120,60 L180,30 L240,40 L300,18 L300,100 L0,100 Z\"></path><path class=\"nz-chart-line__path\" d=\"M0,70 L60,50 L120,60 L180,30 L240,40 L300,18\"></path><circle class=\"nz-chart-line__dot\" cx=\"60\" cy=\"50\" r=\"3\"></circle><circle class=\"nz-chart-line__dot nz-chart-line__dot--active\" cx=\"180\" cy=\"30\" r=\"4\"></circle></svg></div>"
-    },
-    {
-      "titulo": "Línea con objetivo y serie comparada",
-      "tag": ".nz-chart-line__path--accent · --muted · --dashed · __dot--accent · --sm · --lg · --multi",
-      "markup": "<div class=\"nz-stack nz-stack--sm\"><div class=\"nz-chart-line nz-chart-line--sm\"><svg class=\"nz-chart-line__svg\" viewBox=\"0 0 300 100\" preserveAspectRatio=\"none\" role=\"img\" aria-label=\"Comparativa\"><path class=\"nz-chart-line__path nz-chart-line__path--dashed\" d=\"M0,40 L300,40\"></path><path class=\"nz-chart-line__path nz-chart-line__path--accent\" d=\"M0,80 L75,60 L150,66 L225,34 L300,26\"></path><circle class=\"nz-chart-line__dot nz-chart-line__dot--accent\" cx=\"225\" cy=\"34\" r=\"3\"></circle></svg></div><div class=\"nz-chart-line nz-chart-line--lg nz-chart-line--multi\"><svg class=\"nz-chart-line__svg\" viewBox=\"0 0 300 100\" preserveAspectRatio=\"none\" role=\"img\" aria-label=\"Dos series\"><path class=\"nz-chart-line__path\" d=\"M0,60 L100,45 L200,50 L300,25\"></path><path class=\"nz-chart-line__path nz-chart-line__path--muted\" d=\"M0,85 L100,78 L200,70 L300,64\"></path></svg></div></div>"
-    },
-    {
-      "titulo": "Sparkline",
-      "tag": ".nz-sparkline · __bar · --brand · --accent · --area · --lg",
-      "markup": "<div class=\"nz-stack nz-stack--sm\"><div class=\"nz-sparkline\"><span class=\"nz-sparkline__bar\" style=\"height:40%\"></span><span class=\"nz-sparkline__bar\" style=\"height:65%\"></span><span class=\"nz-sparkline__bar\" style=\"height:35%\"></span><span class=\"nz-sparkline__bar\" style=\"height:80%\"></span><span class=\"nz-sparkline__bar\" style=\"height:55%\"></span></div><div class=\"nz-sparkline nz-sparkline--brand nz-sparkline--lg nz-sparkline--area\"><span class=\"nz-sparkline__bar\" style=\"height:30%\"></span><span class=\"nz-sparkline__bar\" style=\"height:52%\"></span><span class=\"nz-sparkline__bar\" style=\"height:74%\"></span><span class=\"nz-sparkline__bar\" style=\"height:48%\"></span><span class=\"nz-sparkline__bar\" style=\"height:90%\"></span></div><div class=\"nz-sparkline nz-sparkline--accent\"><span class=\"nz-sparkline__bar\" style=\"height:20%\"></span><span class=\"nz-sparkline__bar\" style=\"height:60%\"></span><span class=\"nz-sparkline__bar\" style=\"height:45%\"></span></div></div>"
-    },
-    {
-      "titulo": "Donut con centro",
-      "tag": ".nz-chart-donut · __svg · __track · __seg · __center · __value · __label",
-      "markup": "<div class=\"nz-chart-donut\"><svg class=\"nz-chart-donut__svg\" viewBox=\"0 0 42 42\" role=\"img\" aria-label=\"Ocupación del 72 por ciento\"><circle class=\"nz-chart-donut__track\" cx=\"21\" cy=\"21\" r=\"15.9\"></circle><circle class=\"nz-chart-donut__seg nz-chart-donut__seg--brand\" cx=\"21\" cy=\"21\" r=\"15.9\" stroke-dasharray=\"72 28\"></circle></svg><div class=\"nz-chart-donut__center\"><span class=\"nz-chart-donut__value\">72%</span><span class=\"nz-chart-donut__label\">ocupación</span></div></div>"
-    },
-    {
-      "titulo": "Donut por segmentos y tamaños",
-      "tag": ".nz-chart-donut__seg--accent/_success/_muted · --sm · --lg",
-      "markup": "<div class=\"nz-cluster\"><div class=\"nz-chart-donut nz-chart-donut--sm\"><svg class=\"nz-chart-donut__svg\" viewBox=\"0 0 42 42\" role=\"img\" aria-label=\"Reparto pequeño\"><circle class=\"nz-chart-donut__track\" cx=\"21\" cy=\"21\" r=\"15.9\"></circle><circle class=\"nz-chart-donut__seg nz-chart-donut__seg--accent\" cx=\"21\" cy=\"21\" r=\"15.9\" stroke-dasharray=\"45 55\"></circle></svg></div><div class=\"nz-chart-donut nz-chart-donut--lg\"><svg class=\"nz-chart-donut__svg\" viewBox=\"0 0 42 42\" role=\"img\" aria-label=\"Reparto grande\"><circle class=\"nz-chart-donut__track\" cx=\"21\" cy=\"21\" r=\"15.9\"></circle><circle class=\"nz-chart-donut__seg nz-chart-donut__seg--success\" cx=\"21\" cy=\"21\" r=\"15.9\" stroke-dasharray=\"40 60\"></circle><circle class=\"nz-chart-donut__seg nz-chart-donut__seg--muted\" cx=\"21\" cy=\"21\" r=\"15.9\" stroke-dasharray=\"25 75\" stroke-dashoffset=\"-40\"></circle></svg><div class=\"nz-chart-donut__center\"><span class=\"nz-chart-donut__value\">3</span><span class=\"nz-chart-donut__label\">series</span></div></div></div>"
-    },
-    {
-      "titulo": "Medidor semicircular",
-      "tag": ".nz-chart-gauge · __svg · __track · __fill · __value · __label",
-      "markup": "<div class=\"nz-chart-gauge\"><svg class=\"nz-chart-gauge__svg\" viewBox=\"0 0 100 55\" role=\"img\" aria-label=\"Rendimiento del 68 por ciento\"><path class=\"nz-chart-gauge__track\" d=\"M8,50 A42,42 0 0 1 92,50\"></path><path class=\"nz-chart-gauge__fill\" d=\"M8,50 A42,42 0 0 1 92,50\" stroke-dasharray=\"100 100\" stroke-dashoffset=\"32\"></path></svg><span class=\"nz-chart-gauge__value\">68%</span><span class=\"nz-chart-gauge__label\">rendimiento</span></div>"
-    },
-    {
-      "titulo": "Medidores por tono y tamaño",
-      "tag": ".nz-chart-gauge__fill--accent/_success/_warning/_danger · --lg",
-      "markup": "<div class=\"nz-cluster\"><div class=\"nz-chart-gauge\"><svg class=\"nz-chart-gauge__svg\" viewBox=\"0 0 100 55\" role=\"img\" aria-label=\"Uso del 80 por ciento\"><path class=\"nz-chart-gauge__track\" d=\"M8,50 A42,42 0 0 1 92,50\"></path><path class=\"nz-chart-gauge__fill nz-chart-gauge__fill--accent\" d=\"M8,50 A42,42 0 0 1 92,50\" stroke-dasharray=\"100 100\" stroke-dashoffset=\"20\"></path></svg></div><div class=\"nz-chart-gauge nz-chart-gauge--lg\"><svg class=\"nz-chart-gauge__svg\" viewBox=\"0 0 100 55\" role=\"img\" aria-label=\"Uso del 25 por ciento\"><path class=\"nz-chart-gauge__track\" d=\"M8,50 A42,42 0 0 1 92,50\"></path><path class=\"nz-chart-gauge__fill nz-chart-gauge__fill--success\" d=\"M8,50 A42,42 0 0 1 92,50\" stroke-dasharray=\"100 100\" stroke-dashoffset=\"75\"></path></svg><span class=\"nz-chart-gauge__value\">25%</span><span class=\"nz-chart-gauge__label\">holgura</span></div><div class=\"nz-chart-gauge\"><svg class=\"nz-chart-gauge__svg\" viewBox=\"0 0 100 55\" role=\"img\" aria-label=\"Uso del 91 por ciento\"><path class=\"nz-chart-gauge__track\" d=\"M8,50 A42,42 0 0 1 92,50\"></path><path class=\"nz-chart-gauge__fill nz-chart-gauge__fill--warning\" d=\"M8,50 A42,42 0 0 1 92,50\" stroke-dasharray=\"100 100\" stroke-dashoffset=\"9\"></path></svg></div><div class=\"nz-chart-gauge\"><svg class=\"nz-chart-gauge__svg\" viewBox=\"0 0 100 55\" role=\"img\" aria-label=\"Uso del 97 por ciento\"><path class=\"nz-chart-gauge__track\" d=\"M8,50 A42,42 0 0 1 92,50\"></path><path class=\"nz-chart-gauge__fill nz-chart-gauge__fill--danger\" d=\"M8,50 A42,42 0 0 1 92,50\" stroke-dasharray=\"100 100\" stroke-dashoffset=\"3\"></path></svg></div></div>"
-    },
-    {
-      "titulo": "Mapa de calor con escala",
-      "tag": ".nz-heatmap · __row · __row-label · __cell · __cell--0..4 · __col-label · __scale · __scale-step",
-      "markup": "<div class=\"nz-stack nz-stack--sm\"><div class=\"nz-heatmap\"><div class=\"nz-heatmap__row\"><span class=\"nz-heatmap__row-label\"></span><span class=\"nz-heatmap__col-label\">L</span><span class=\"nz-heatmap__col-label\">M</span><span class=\"nz-heatmap__col-label\">X</span><span class=\"nz-heatmap__col-label\">J</span><span class=\"nz-heatmap__col-label\">V</span><span class=\"nz-heatmap__col-label\">S</span><span class=\"nz-heatmap__col-label\">D</span></div><div class=\"nz-heatmap__row\"><span class=\"nz-heatmap__row-label\">Mañana</span><span class=\"nz-heatmap__cell nz-heatmap__cell--1\"></span><span class=\"nz-heatmap__cell nz-heatmap__cell--2\"></span><span class=\"nz-heatmap__cell nz-heatmap__cell--4\"></span><span class=\"nz-heatmap__cell nz-heatmap__cell--3\"></span><span class=\"nz-heatmap__cell nz-heatmap__cell--4\"></span><span class=\"nz-heatmap__cell nz-heatmap__cell--0\"></span><span class=\"nz-heatmap__cell nz-heatmap__cell--0\"></span></div><div class=\"nz-heatmap__row\"><span class=\"nz-heatmap__row-label\">Tarde</span><span class=\"nz-heatmap__cell nz-heatmap__cell--2\"></span><span class=\"nz-heatmap__cell nz-heatmap__cell--3\"></span><span class=\"nz-heatmap__cell nz-heatmap__cell--1\"></span><span class=\"nz-heatmap__cell nz-heatmap__cell--2\"></span><span class=\"nz-heatmap__cell nz-heatmap__cell--1\"></span><span class=\"nz-heatmap__cell nz-heatmap__cell--0\"></span><span class=\"nz-heatmap__cell nz-heatmap__cell--0\"></span></div></div><div class=\"nz-heatmap__scale\"><span>menos</span><i class=\"nz-heatmap__scale-step nz-heatmap__cell--1\"></i><i class=\"nz-heatmap__scale-step nz-heatmap__cell--2\"></i><i class=\"nz-heatmap__scale-step nz-heatmap__cell--3\"></i><i class=\"nz-heatmap__scale-step nz-heatmap__cell--4\"></i><span>más</span></div></div>"
-    },
-    {
-      "titulo": "Calendario de calor",
-      "tag": ".nz-heatcalendar · __months · __grid · __day · __day--0..4 · __day--hoy · __legend",
-      "markup": "<div class=\"nz-heatcalendar\"><div class=\"nz-heatcalendar__months\"><span>Ene</span><span>Feb</span><span>Mar</span><span>Abr</span></div><div class=\"nz-heatcalendar__grid\"><span class=\"nz-heatcalendar__day nz-heatcalendar__day--1\"></span><span class=\"nz-heatcalendar__day nz-heatcalendar__day--0\"></span><span class=\"nz-heatcalendar__day nz-heatcalendar__day--3\"></span><span class=\"nz-heatcalendar__day nz-heatcalendar__day--2\"></span><span class=\"nz-heatcalendar__day nz-heatcalendar__day--4\"></span><span class=\"nz-heatcalendar__day nz-heatcalendar__day--0\"></span><span class=\"nz-heatcalendar__day nz-heatcalendar__day--2\"></span><span class=\"nz-heatcalendar__day nz-heatcalendar__day--1\"></span><span class=\"nz-heatcalendar__day nz-heatcalendar__day--4\"></span><span class=\"nz-heatcalendar__day nz-heatcalendar__day--3\"></span><span class=\"nz-heatcalendar__day nz-heatcalendar__day--1\"></span><span class=\"nz-heatcalendar__day nz-heatcalendar__day--0\"></span><span class=\"nz-heatcalendar__day nz-heatcalendar__day--2\"></span><span class=\"nz-heatcalendar__day nz-heatcalendar__day--hoy\"></span><span class=\"nz-heatcalendar__day nz-heatcalendar__day--1\"></span></div><div class=\"nz-heatcalendar__legend\"><span>menos</span><i class=\"nz-heatcalendar__day nz-heatcalendar__day--1\"></i><i class=\"nz-heatcalendar__day nz-heatcalendar__day--3\"></i><i class=\"nz-heatcalendar__day nz-heatcalendar__day--4\"></i><span>más</span></div></div>"
-    },
-    {
-      "titulo": "Treemap",
-      "tag": ".nz-treemap · __cell · __cell--lg · __cell--brand/_accent/_muted · __label · __value",
-      "markup": "<div class=\"nz-treemap\"><div class=\"nz-treemap__cell nz-treemap__cell--lg nz-treemap__cell--brand\"><span class=\"nz-treemap__label\">Madrid</span><span class=\"nz-treemap__value\">42%</span></div><div class=\"nz-treemap__cell nz-treemap__cell--accent\"><span class=\"nz-treemap__label\">Barcelona</span><span class=\"nz-treemap__value\">28%</span></div><div class=\"nz-treemap__cell nz-treemap__cell--muted\"><span class=\"nz-treemap__label\">Valencia</span><span class=\"nz-treemap__value\">13%</span></div><div class=\"nz-treemap__cell\"><span class=\"nz-treemap__label\">Sevilla</span><span class=\"nz-treemap__value\">9%</span></div><div class=\"nz-treemap__cell nz-treemap__cell--muted\"><span class=\"nz-treemap__label\">Bilbao</span><span class=\"nz-treemap__value\">8%</span></div></div>"
-    },
-    {
-      "titulo": "Embudo de conversión",
-      "tag": ".nz-funnel · __step · __bar · __bar--brand/_accent/_muted · __label · __value",
-      "markup": "<div class=\"nz-funnel\"><div class=\"nz-funnel__step\"><div class=\"nz-funnel__bar nz-funnel__bar--brand\" style=\"width:92%\"></div><span class=\"nz-funnel__value\">1.840 visitas</span><span class=\"nz-funnel__label\">Visita la web</span></div><div class=\"nz-funnel__step\"><div class=\"nz-funnel__bar nz-funnel__bar--brand\" style=\"width:64%\"></div><span class=\"nz-funnel__value\">1.180</span><span class=\"nz-funnel__label\">Ve el producto</span></div><div class=\"nz-funnel__step\"><div class=\"nz-funnel__bar nz-funnel__bar--accent\" style=\"width:38%\"></div><span class=\"nz-funnel__value\">700</span><span class=\"nz-funnel__label\">Añade al carro</span></div><div class=\"nz-funnel__step\"><div class=\"nz-funnel__bar nz-funnel__bar--muted\" style=\"width:16%\"></div><span class=\"nz-funnel__value\">294</span><span class=\"nz-funnel__label\">Compra</span></div></div>"
-    },
-    {
-      "titulo": "Bullet chart",
-      "tag": ".nz-bullet · __label · __track · __ranges · __value · __value--brand/_accent/_success · __target · __num",
-      "markup": "<div class=\"nz-stack nz-stack--sm\"><div class=\"nz-bullet\"><span class=\"nz-bullet__label\">Ventas</span><div class=\"nz-bullet__track\"><span class=\"nz-bullet__ranges\"></span><span class=\"nz-bullet__value nz-bullet__value--brand\" style=\"width:72%\"></span><span class=\"nz-bullet__target\" style=\"left:80%\"></span></div><span class=\"nz-bullet__num\">72/100</span></div><div class=\"nz-bullet\"><span class=\"nz-bullet__label\">Margen</span><div class=\"nz-bullet__track\"><span class=\"nz-bullet__ranges\"></span><span class=\"nz-bullet__value nz-bullet__value--success\" style=\"width:54%\"></span><span class=\"nz-bullet__target\" style=\"left:60%\"></span></div><span class=\"nz-bullet__num\">54/100</span></div><div class=\"nz-bullet\"><span class=\"nz-bullet__label\">Devoluciones</span><div class=\"nz-bullet__track\"><span class=\"nz-bullet__ranges\"></span><span class=\"nz-bullet__value nz-bullet__value--accent\" style=\"width:31%\"></span><span class=\"nz-bullet__target\" style=\"left:40%\"></span></div><span class=\"nz-bullet__num\">31/100</span></div></div>"
-    },
-    {
-      "titulo": "Tabla de barras",
-      "tag": ".nz-chart-tablebar · __row · __name · __track · __bar · __num",
-      "markup": "<div class=\"nz-chart-tablebar\"><div class=\"nz-chart-tablebar__row\"><span class=\"nz-chart-tablebar__name\">Teclados</span><span class=\"nz-chart-tablebar__track\"><span class=\"nz-chart-tablebar__bar\" style=\"width:84%\"></span></span><span class=\"nz-chart-tablebar__num\">842</span></div><div class=\"nz-chart-tablebar__row\"><span class=\"nz-chart-tablebar__name\">Ratones</span><span class=\"nz-chart-tablebar__track\"><span class=\"nz-chart-tablebar__bar\" style=\"width:61%\"></span></span><span class=\"nz-chart-tablebar__num\">618</span></div><div class=\"nz-chart-tablebar__row\"><span class=\"nz-chart-tablebar__name\">Monitores</span><span class=\"nz-chart-tablebar__track\"><span class=\"nz-chart-tablebar__bar\" style=\"width:32%\"></span></span><span class=\"nz-chart-tablebar__num\">320</span></div></div>"
-    },
-    {
-      "titulo": "Comparativa de dos series",
-      "tag": ".nz-chart-compare · __row · __name · __pair · __bar · __bar--a · __bar--b · __num",
-      "markup": "<div class=\"nz-chart-compare\"><div class=\"nz-chart-compare__row\"><span class=\"nz-chart-compare__name\">Madrid</span><span class=\"nz-chart-compare__pair\"><span class=\"nz-chart-compare__bar nz-chart-compare__bar--a\" style=\"width:80px\"></span><span class=\"nz-chart-compare__bar nz-chart-compare__bar--b\" style=\"width:52px\"></span></span><span class=\"nz-chart-compare__num\">+8%</span></div><div class=\"nz-chart-compare__row\"><span class=\"nz-chart-compare__name\">Barcelona</span><span class=\"nz-chart-compare__pair\"><span class=\"nz-chart-compare__bar nz-chart-compare__bar--a\" style=\"width:64px\"></span><span class=\"nz-chart-compare__bar nz-chart-compare__bar--b\" style=\"width:58px\"></span></span><span class=\"nz-chart-compare__num\">+2%</span></div><div class=\"nz-chart-compare__row\"><span class=\"nz-chart-compare__name\">Valencia</span><span class=\"nz-chart-compare__pair\"><span class=\"nz-chart-compare__bar nz-chart-compare__bar--a\" style=\"width:38px\"></span><span class=\"nz-chart-compare__bar nz-chart-compare__bar--b\" style=\"width:44px\"></span></span><span class=\"nz-chart-compare__num\">−4%</span></div></div>"
-    },
-    {
-      "titulo": "Radar",
-      "tag": ".nz-chart-radar · __svg · __web · __axis · __area · __label",
-      "markup": "<div class=\"nz-chart-radar\"><svg class=\"nz-chart-radar__svg\" viewBox=\"0 0 100 100\" role=\"img\" aria-label=\"Perfil de competencias\"><polygon class=\"nz-chart-radar__web\" points=\"50,10 90,40 75,85 25,85 10,40\"></polygon><polygon class=\"nz-chart-radar__web\" points=\"50,30 70,45 62,67 38,67 30,45\"></polygon><line class=\"nz-chart-radar__axis\" x1=\"50\" y1=\"50\" x2=\"50\" y2=\"10\"></line><line class=\"nz-chart-radar__axis\" x1=\"50\" y1=\"50\" x2=\"90\" y2=\"40\"></line><line class=\"nz-chart-radar__axis\" x1=\"50\" y1=\"50\" x2=\"25\" y2=\"85\"></line><polygon class=\"nz-chart-radar__area\" points=\"50,20 82,42 66,78 32,74 18,44\"></polygon><text class=\"nz-chart-radar__label\" x=\"50\" y=\"7\">Diseño</text><text class=\"nz-chart-radar__label\" x=\"92\" y=\"40\">Código</text><text class=\"nz-chart-radar__label\" x=\"20\" y=\"93\">Datos</text></svg></div>"
-    },
-    {
-      "titulo": "Dispersión",
-      "tag": ".nz-chart-scatter · __area · __dot · __dot--brand · __dot--accent · __x · __y",
-      "markup": "<div class=\"nz-chart-scatter\"><div class=\"nz-chart-scatter__area\"><span class=\"nz-chart-scatter__dot nz-chart-scatter__dot--brand\" style=\"left:22%;bottom:30%\"></span><span class=\"nz-chart-scatter__dot nz-chart-scatter__dot--brand\" style=\"left:38%;bottom:54%\"></span><span class=\"nz-chart-scatter__dot nz-chart-scatter__dot--accent\" style=\"left:58%;bottom:42%\"></span><span class=\"nz-chart-scatter__dot nz-chart-scatter__dot--accent\" style=\"left:74%;bottom:76%\"></span><span class=\"nz-chart-scatter__dot\" style=\"left:46%;bottom:22%\"></span><span class=\"nz-chart-scatter__dot\" style=\"left:86%;bottom:60%\"></span></div><span class=\"nz-chart-scatter__x\">Inversión</span><span class=\"nz-chart-scatter__y\">Retorno</span></div>"
-    },
-    {
-      "titulo": "Cascada",
-      "tag": ".nz-chart-waterfall · __col · __bar · __bar--up/_down/_total · __label",
-      "markup": "<div class=\"nz-chart-waterfall\"><div class=\"nz-chart-waterfall__col\"><div class=\"nz-chart-waterfall__bar nz-chart-waterfall__bar--total\" style=\"height:100%\"></div><span class=\"nz-chart-waterfall__label\">Inicio</span></div><div class=\"nz-chart-waterfall__col\"><div class=\"nz-chart-waterfall__bar nz-chart-waterfall__bar--up\" style=\"height:28%\"></div><span class=\"nz-chart-waterfall__label\">+Altas</span></div><div class=\"nz-chart-waterfall__col\"><div class=\"nz-chart-waterfall__bar nz-chart-waterfall__bar--down\" style=\"height:18%\"></div><span class=\"nz-chart-waterfall__label\">−Bajas</span></div><div class=\"nz-chart-waterfall__col\"><div class=\"nz-chart-waterfall__bar nz-chart-waterfall__bar--up\" style=\"height:22%\"></div><span class=\"nz-chart-waterfall__label\">+Upsell</span></div><div class=\"nz-chart-waterfall__col\"><div class=\"nz-chart-waterfall__bar nz-chart-waterfall__bar--total\" style=\"height:82%\"></div><span class=\"nz-chart-waterfall__label\">Final</span></div></div>"
-    },
-    {
-      "titulo": "Diagrama de flujo",
-      "tag": ".nz-chart-flow · __node · __node--brand/_accent/_muted · __link · __label",
-      "markup": "<div class=\"nz-chart-flow\"><div class=\"nz-stack nz-stack--sm\"><span class=\"nz-chart-flow__node nz-chart-flow__node--brand\">Visitas<br>1.840</span><span class=\"nz-chart-flow__node nz-chart-flow__node--accent\">Registro<br>610</span><span class=\"nz-chart-flow__node nz-chart-flow__node--muted\">Solo lectura<br>980</span></div><div class=\"nz-stack nz-stack--sm\"><span class=\"nz-chart-flow__link\" style=\"width:100%\"></span><span class=\"nz-chart-flow__link\" style=\"width:60%\"></span></div><div class=\"nz-stack nz-stack--sm\"><span class=\"nz-chart-flow__node\">Compran 294</span><span class=\"nz-chart-flow__node\">Abandonan 316</span><span class=\"nz-chart-flow__label\">Embudo de julio</span></div></div>"
-    },
-    {
-      "titulo": "Selector de rango temporal",
-      "tag": ".nz-chart-range · __btn",
-      "markup": "<div class=\"nz-chart-range\" role=\"group\" aria-label=\"Rango temporal\"><button class=\"nz-chart-range__btn\" aria-pressed=\"true\">7 días</button><button class=\"nz-chart-range__btn\" aria-pressed=\"false\">30 días</button><button class=\"nz-chart-range__btn\" aria-pressed=\"false\">12 meses</button><button class=\"nz-chart-range__btn\" aria-pressed=\"false\">Todo</button></div>"
-    },
-    {
-      "titulo": "Cifra con sparkline y variación",
-      "tag": ".nz-chart-stat · __label · __value · __unit · __delta · __delta--up/_down/_flat · __spark",
-      "markup": "<div class=\"nz-cluster\"><div class=\"nz-chart-stat\"><span class=\"nz-chart-stat__label\">Ingresos</span><span class=\"nz-chart-stat__value\">48.210<span class=\"nz-chart-stat__unit\">€</span></span><span class=\"nz-chart-stat__delta nz-chart-stat__delta--up\">+12,4%</span><div class=\"nz-chart-stat__spark\"><div class=\"nz-sparkline nz-sparkline--brand\"><span class=\"nz-sparkline__bar\" style=\"height:35%\"></span><span class=\"nz-sparkline__bar\" style=\"height:58%\"></span><span class=\"nz-sparkline__bar\" style=\"height:44%\"></span><span class=\"nz-sparkline__bar\" style=\"height:82%\"></span></div></div></div><div class=\"nz-chart-stat\"><span class=\"nz-chart-stat__label\">Devoluciones</span><span class=\"nz-chart-stat__value\">312</span><span class=\"nz-chart-stat__delta nz-chart-stat__delta--down\">−3,1%</span></div><div class=\"nz-chart-stat\"><span class=\"nz-chart-stat__label\">Ticket medio</span><span class=\"nz-chart-stat__value\">64,80<span class=\"nz-chart-stat__unit\">€</span></span><span class=\"nz-chart-stat__delta nz-chart-stat__delta--flat\">0,0%</span></div></div>"
-    },
-    {
-      "titulo": "Mini barras en tabla",
-      "tag": ".nz-chart-mini · __bar · __bar--brand · __bar--accent",
-      "markup": "<div class=\"nz-table-wrap\"><table class=\"nz-table\"><tbody><tr><td>Lunes</td><td><span class=\"nz-chart-mini\"><span class=\"nz-chart-mini__bar nz-chart-mini__bar--brand\" style=\"height:40%\"></span><span class=\"nz-chart-mini__bar nz-chart-mini__bar--brand\" style=\"height:70%\"></span><span class=\"nz-chart-mini__bar nz-chart-mini__bar--brand\" style=\"height:55%\"></span></span></td><td class=\"nz-table__num\">412</td></tr><tr><td>Martes</td><td><span class=\"nz-chart-mini\"><span class=\"nz-chart-mini__bar nz-chart-mini__bar--accent\" style=\"height:60%\"></span><span class=\"nz-chart-mini__bar nz-chart-mini__bar--accent\" style=\"height:35%\"></span><span class=\"nz-chart-mini__bar\" style=\"height:80%\"></span></span></td><td class=\"nz-table__num\">358</td></tr></tbody></table></div>"
-    },
-    {
-      "titulo": "Linea · tono de serie",
-      "tag": ".nz-chart-line--brand / --success / --danger",
-      "markup": "<div class=\"nz-chart nz-chart-line nz-chart-line--brand\"><i style=\"left:10%;top:60%\"></i><i style=\"left:50%;top:30%\"></i><i style=\"left:90%;top:45%\"></i></div><div class=\"nz-chart nz-chart-line nz-chart-line--success\"><i style=\"left:10%;top:70%\"></i><i style=\"left:50%;top:50%\"></i><i style=\"left:90%;top:20%\"></i></div><div class=\"nz-chart nz-chart-line nz-chart-line--danger\"><i style=\"left:10%;top:20%\"></i><i style=\"left:50%;top:40%\"></i><i style=\"left:90%;top:80%\"></i></div>"
-    },
-    {
-      "titulo": "Minigráfico · tono",
-      "tag": ".nz-chart-mini__bar--brand / --success / --warning / --danger",
-      "markup": "<div class=\"nz-chart-mini\"><span class=\"nz-chart-mini__bar\" style=\"height:40%\"></span><span class=\"nz-chart-mini__bar\" style=\"height:40%\"></span><span class=\"nz-chart-mini__bar nz-chart-mini__bar--brand\" style=\"height:40%\"></span><span class=\"nz-chart-mini__bar nz-chart-mini__bar--brand\" style=\"height:40%\"></span></div><div class=\"nz-chart-mini\"><span class=\"nz-chart-mini__bar\" style=\"height:40%\"></span><span class=\"nz-chart-mini__bar nz-chart-mini__bar--success\" style=\"height:40%\"></span><span class=\"nz-chart-mini__bar nz-chart-mini__bar--success\" style=\"height:40%\"></span></div><div class=\"nz-chart-mini\"><span class=\"nz-chart-mini__bar\" style=\"height:40%\"></span><span class=\"nz-chart-mini__bar nz-chart-mini__bar--warning\" style=\"height:40%\"></span><span class=\"nz-chart-mini__bar nz-chart-mini__bar--warning\" style=\"height:40%\"></span></div><div class=\"nz-chart-mini\"><span class=\"nz-chart-mini__bar\" style=\"height:40%\"></span><span class=\"nz-chart-mini__bar nz-chart-mini__bar--danger\" style=\"height:40%\"></span><span class=\"nz-chart-mini__bar nz-chart-mini__bar--danger\" style=\"height:40%\"></span></div>"
-    },
-    {
-      "titulo": "Linea · tono acento",
-      "tag": ".nz-chart-line--accent",
-      "markup": "<div class=\"nz-chart nz-chart-line nz-chart-line--accent\"><i style=\"left:10%;top:55%\"></i><i style=\"left:50%;top:35%\"></i><i style=\"left:90%;top:15%\"></i></div>"
-    }
-  ]
+ "cat": 13,
+ "nombre": "Gráficos y visualización",
+ "desc": "Barras, línea, área, donut, medidor, mapa de calor, calendario, treemap, embudo, bullet, radar, dispersión, cascada y flujo. Todo con CSS y SVG estilizado por clases: sin librerías y sin una sola imagen.",
+ "pack": "p13-charts.css",
+ "fichero": "13-charts.html",
+ "demos": [
+  {
+   "titulo": "Tarjeta de gráfico",
+   "tag": ".nz-chart · __head/__title/__sub/__actions/__body/__foot/__source",
+   "markup": "<figure class=\"nz-chart\"><div class=\"nz-chart__head\"><div><span class=\"nz-chart__title\">Ingresos por mes</span><span class=\"nz-chart__sub\">Últimos 6 meses</span></div><div class=\"nz-chart__actions\"><button class=\"nz-btn nz-btn--ghost nz-btn--sm\">Exportar</button></div></div><div class=\"nz-chart__body\"><div class=\"nz-chart-bar nz-chart-bar--sm\"><div class=\"nz-chart-bar__col\"><div class=\"nz-chart-bar__bar\" style=\"height:45%\"></div><span class=\"nz-chart-bar__label\">Ene</span></div><div class=\"nz-chart-bar__col\"><div class=\"nz-chart-bar__bar\" style=\"height:70%\"></div><span class=\"nz-chart-bar__label\">Feb</span></div><div class=\"nz-chart-bar__col\"><div class=\"nz-chart-bar__bar\" style=\"height:58%\"></div><span class=\"nz-chart-bar__label\">Mar</span></div></div></div><figcaption class=\"nz-chart__foot\"><span class=\"nz-chart__source\">Fuente: facturación interna</span></figcaption></figure>"
+  },
+  {
+   "titulo": "Tamaños y estilos de tarjeta",
+   "tag": ".nz-chart--sm · --lg · --bordered · --flat",
+   "markup": "<div class=\"nz-stack nz-stack--sm\"><div class=\"nz-chart nz-chart--sm\"><span class=\"nz-chart__title\">Pequeña</span></div><div class=\"nz-chart nz-chart--lg\"><span class=\"nz-chart__title\">Grande</span></div><div class=\"nz-chart nz-chart--bordered\"><span class=\"nz-chart__title\">Con borde</span></div><div class=\"nz-chart nz-chart--flat\"><span class=\"nz-chart__title\">Plana</span></div></div>"
+  },
+  {
+   "titulo": "Rejilla y ejes",
+   "tag": ".nz-chart__grid · __grid-line · __axis · __axis-label",
+   "markup": "<div class=\"nz-chart\"><div class=\"nz-chart__body\"><div class=\"nz-chart__grid\"><span class=\"nz-chart__grid-line\"></span><span class=\"nz-chart__grid-line\"></span><span class=\"nz-chart__grid-line\"></span><span class=\"nz-chart__grid-line\"></span></div><div class=\"nz-chart-bar nz-chart-bar--sm\" style=\"position:relative\"><div class=\"nz-chart-bar__col\"><div class=\"nz-chart-bar__bar\" style=\"height:60%\"></div></div><div class=\"nz-chart-bar__col\"><div class=\"nz-chart-bar__bar nz-chart-bar__bar--accent\" style=\"height:85%\"></div></div></div></div><div class=\"nz-chart__axis\"><span class=\"nz-chart__axis-label\">0</span><span class=\"nz-chart__axis-label\">50</span><span class=\"nz-chart__axis-label\">100</span></div></div>"
+  },
+  {
+   "titulo": "Objetivo y marcador",
+   "tag": ".nz-chart__target · --accent · __mark · __mark-label",
+   "markup": "<div class=\"nz-chart\"><div class=\"nz-chart__body\"><div class=\"nz-chart__grid\"><span class=\"nz-chart__grid-line\"></span><span class=\"nz-chart__grid-line\"></span></div><div class=\"nz-chart__target\" style=\"top:30%\"></div><div class=\"nz-chart__target nz-chart__target--accent\" style=\"top:65%\"></div><div class=\"nz-chart__mark\" style=\"left:42%\"></div><span class=\"nz-chart__mark-label\" style=\"left:42%\">Campaña</span><div class=\"nz-chart-bar nz-chart-bar--sm\"><div class=\"nz-chart-bar__col\"><div class=\"nz-chart-bar__bar\" style=\"height:40%\"></div></div><div class=\"nz-chart-bar__col\"><div class=\"nz-chart-bar__bar\" style=\"height:72%\"></div></div><div class=\"nz-chart-bar__col\"><div class=\"nz-chart-bar__bar\" style=\"height:55%\"></div></div></div></div></div>"
+  },
+  {
+   "titulo": "Gráfico vacío y cargando",
+   "tag": ".nz-chart__empty · .nz-chart__loading",
+   "markup": "<div class=\"nz-stack nz-stack--sm\"><div class=\"nz-chart\"><div class=\"nz-chart__empty\"><b>Sin datos todavía</b><span>Cuando llegue el primer pedido aparecerá aquí.</span></div></div><div class=\"nz-chart\"><div class=\"nz-chart__loading\"><span class=\"nz-spinner nz-spinner--sm\"></span> Cargando serie…</div></div></div>"
+  },
+  {
+   "titulo": "Leyenda",
+   "tag": ".nz-legend · __item · __swatch · --brand/--accent/--success/--warning/--danger/--muted · --vertical",
+   "markup": "<div class=\"nz-stack nz-stack--sm\"><div class=\"nz-legend\"><span class=\"nz-legend__item\"><i class=\"nz-legend__swatch nz-legend__swatch--brand\"></i>Ingresos</span><span class=\"nz-legend__item\"><i class=\"nz-legend__swatch nz-legend__swatch--accent\"></i>Gastos</span><span class=\"nz-legend__item\"><i class=\"nz-legend__swatch nz-legend__swatch--success\"></i>Cobrado</span><span class=\"nz-legend__item\"><i class=\"nz-legend__swatch nz-legend__swatch--warning\"></i>Pendiente</span><span class=\"nz-legend__item\"><i class=\"nz-legend__swatch nz-legend__swatch--danger\"></i>Impagado</span><span class=\"nz-legend__item\"><i class=\"nz-legend__swatch nz-legend__swatch--muted\"></i>Otros</span></div><div class=\"nz-legend nz-legend--vertical\"><span class=\"nz-legend__item\"><i class=\"nz-legend__swatch nz-legend__swatch--brand\"></i>Enero</span><span class=\"nz-legend__item\"><i class=\"nz-legend__swatch nz-legend__swatch--accent\"></i>Febrero</span></div></div>"
+  },
+  {
+   "titulo": "Barras verticales y tonos",
+   "tag": ".nz-chart-bar__bar--brand/_accent/_success/_warning/_danger/_muted",
+   "markup": "<div class=\"nz-chart-bar\"><div class=\"nz-chart-bar__col\"><span class=\"nz-chart-bar__value\">24</span><div class=\"nz-chart-bar__bar nz-chart-bar__bar--brand\" style=\"height:50%\"></div><span class=\"nz-chart-bar__label\">Marca</span></div><div class=\"nz-chart-bar__col\"><span class=\"nz-chart-bar__value\">31</span><div class=\"nz-chart-bar__bar nz-chart-bar__bar--accent\" style=\"height:65%\"></div><span class=\"nz-chart-bar__label\">Acento</span></div><div class=\"nz-chart-bar__col\"><span class=\"nz-chart-bar__value\">28</span><div class=\"nz-chart-bar__bar nz-chart-bar__bar--success\" style=\"height:58%\"></div><span class=\"nz-chart-bar__label\">Bien</span></div><div class=\"nz-chart-bar__col\"><span class=\"nz-chart-bar__value\">17</span><div class=\"nz-chart-bar__bar nz-chart-bar__bar--warning\" style=\"height:36%\"></div><span class=\"nz-chart-bar__label\">Aviso</span></div><div class=\"nz-chart-bar__col\"><span class=\"nz-chart-bar__value\">9</span><div class=\"nz-chart-bar__bar nz-chart-bar__bar--danger\" style=\"height:20%\"></div><span class=\"nz-chart-bar__label\">Mal</span></div><div class=\"nz-chart-bar__col\"><span class=\"nz-chart-bar__value\">12</span><div class=\"nz-chart-bar__bar nz-chart-bar__bar--muted\" style=\"height:26%\"></div><span class=\"nz-chart-bar__label\">Otros</span></div></div>"
+  },
+  {
+   "titulo": "Alturas de gráfico de barras",
+   "tag": ".nz-chart-bar--sm · --lg",
+   "markup": "<div class=\"nz-stack nz-stack--sm\"><div class=\"nz-chart-bar nz-chart-bar--sm\"><div class=\"nz-chart-bar__col\"><div class=\"nz-chart-bar__bar\" style=\"height:60%\"></div></div><div class=\"nz-chart-bar__col\"><div class=\"nz-chart-bar__bar\" style=\"height:90%\"></div></div></div><div class=\"nz-chart-bar nz-chart-bar--lg\"><div class=\"nz-chart-bar__col\"><div class=\"nz-chart-bar__bar\" style=\"height:35%\"></div></div><div class=\"nz-chart-bar__col\"><div class=\"nz-chart-bar__bar\" style=\"height:78%\"></div></div></div></div>"
+  },
+  {
+   "titulo": "Barras horizontales",
+   "tag": ".nz-chart-bar--horizontal",
+   "markup": "<div class=\"nz-chart-bar nz-chart-bar--horizontal\"><div class=\"nz-chart-bar__col\"><span class=\"nz-chart-bar__label\">Madrid</span><div class=\"nz-chart-bar__bar\" style=\"width:78%\"></div></div><div class=\"nz-chart-bar__col\"><span class=\"nz-chart-bar__label\">Barcelona</span><div class=\"nz-chart-bar__bar\" style=\"width:62%\"></div></div><div class=\"nz-chart-bar__col\"><span class=\"nz-chart-bar__label\">Valencia</span><div class=\"nz-chart-bar__bar\" style=\"width:41%\"></div></div></div>"
+  },
+  {
+   "titulo": "Barras agrupadas",
+   "tag": ".nz-chart-bar--grouped · __group",
+   "markup": "<div class=\"nz-chart-bar nz-chart-bar--grouped\"><div class=\"nz-chart-bar__col\"><div class=\"nz-chart-bar__group\"><div class=\"nz-chart-bar__bar nz-chart-bar__bar--brand\" style=\"height:55%\"></div><div class=\"nz-chart-bar__bar nz-chart-bar__bar--accent\" style=\"height:35%\"></div></div><span class=\"nz-chart-bar__label\">T1</span></div><div class=\"nz-chart-bar__col\"><div class=\"nz-chart-bar__group\"><div class=\"nz-chart-bar__bar nz-chart-bar__bar--brand\" style=\"height:72%\"></div><div class=\"nz-chart-bar__bar nz-chart-bar__bar--accent\" style=\"height:48%\"></div></div><span class=\"nz-chart-bar__label\">T2</span></div><div class=\"nz-chart-bar__col\"><div class=\"nz-chart-bar__group\"><div class=\"nz-chart-bar__bar nz-chart-bar__bar--brand\" style=\"height:64%\"></div><div class=\"nz-chart-bar__bar nz-chart-bar__bar--accent\" style=\"height:58%\"></div></div><span class=\"nz-chart-bar__label\">T3</span></div></div>"
+  },
+  {
+   "titulo": "Barras apiladas",
+   "tag": ".nz-chart-bar--stacked · __seg · __seg--brand/_accent/_muted",
+   "markup": "<div class=\"nz-chart-bar nz-chart-bar--stacked\"><div class=\"nz-chart-bar__col\"><div class=\"nz-chart-bar__bar\" style=\"height:80%\"><span class=\"nz-chart-bar__seg nz-chart-bar__seg--brand\" style=\"height:45%\"></span><span class=\"nz-chart-bar__seg nz-chart-bar__seg--accent\" style=\"height:30%\"></span><span class=\"nz-chart-bar__seg nz-chart-bar__seg--muted\" style=\"height:25%\"></span></div><span class=\"nz-chart-bar__label\">Web</span></div><div class=\"nz-chart-bar__col\"><div class=\"nz-chart-bar__bar\" style=\"height:60%\"><span class=\"nz-chart-bar__seg nz-chart-bar__seg--brand\" style=\"height:60%\"></span><span class=\"nz-chart-bar__seg nz-chart-bar__seg--muted\" style=\"height:40%\"></span></div><span class=\"nz-chart-bar__label\">App</span></div></div>"
+  },
+  {
+   "titulo": "Barras con valores negativos",
+   "tag": ".nz-chart-bar--neg · __zero",
+   "markup": "<div class=\"nz-chart-bar nz-chart-bar--neg\" style=\"min-height:9rem;flex-direction:column\"><div class=\"nz-chart-bar nz-chart-bar--sm\" style=\"min-height:4rem\"><div class=\"nz-chart-bar__col\"><div class=\"nz-chart-bar__bar nz-chart-bar__bar--success\" style=\"height:70%\"></div><span class=\"nz-chart-bar__label\">Mar</span></div><div class=\"nz-chart-bar__col\"><div class=\"nz-chart-bar__bar nz-chart-bar__bar--success\" style=\"height:40%\"></div><span class=\"nz-chart-bar__label\">Abr</span></div></div><div class=\"nz-chart-bar__zero\"></div><div class=\"nz-chart-bar nz-chart-bar--sm\" style=\"min-height:4rem;align-items:flex-start\"><div class=\"nz-chart-bar__col\"><div class=\"nz-chart-bar__bar nz-chart-bar__bar--danger\" style=\"height:35%\"></div><span class=\"nz-chart-bar__label\">May</span></div><div class=\"nz-chart-bar__col\"><div class=\"nz-chart-bar__bar nz-chart-bar__bar--danger\" style=\"height:60%\"></div><span class=\"nz-chart-bar__label\">Jun</span></div></div></div>"
+  },
+  {
+   "titulo": "Línea y área",
+   "tag": ".nz-chart-line__svg · __area · __path · __dot · __dot--active",
+   "markup": "<div class=\"nz-chart-line\"><svg class=\"nz-chart-line__svg\" viewBox=\"0 0 300 100\" preserveAspectRatio=\"none\" role=\"img\" aria-label=\"Serie de visitas\"><path class=\"nz-chart-line__area\" d=\"M0,70 L60,50 L120,60 L180,30 L240,40 L300,18 L300,100 L0,100 Z\"></path><path class=\"nz-chart-line__path\" d=\"M0,70 L60,50 L120,60 L180,30 L240,40 L300,18\"></path><circle class=\"nz-chart-line__dot\" cx=\"60\" cy=\"50\" r=\"3\" data-etiqueta=\"Abr\" data-valor=\"120 visitas\"></circle><circle class=\"nz-chart-line__dot nz-chart-line__dot--active\" cx=\"180\" cy=\"30\" r=\"4\" data-etiqueta=\"Jun\" data-valor=\"205 visitas\"></circle></svg></div>"
+  },
+  {
+   "titulo": "Línea con objetivo y serie comparada",
+   "tag": ".nz-chart-line__path--accent · --muted · --dashed · __dot--accent · --sm · --lg · --multi",
+   "markup": "<div class=\"nz-stack nz-stack--sm\"><div class=\"nz-chart-line nz-chart-line--sm\"><svg class=\"nz-chart-line__svg\" viewBox=\"0 0 300 100\" preserveAspectRatio=\"none\" role=\"img\" aria-label=\"Comparativa\"><path class=\"nz-chart-line__path nz-chart-line__path--dashed\" d=\"M0,40 L300,40\"></path><path class=\"nz-chart-line__path nz-chart-line__path--accent\" d=\"M0,80 L75,60 L150,66 L225,34 L300,26\"></path><circle class=\"nz-chart-line__dot nz-chart-line__dot--accent\" cx=\"225\" cy=\"34\" r=\"3\"></circle></svg></div><div class=\"nz-chart-line nz-chart-line--lg nz-chart-line--multi\"><svg class=\"nz-chart-line__svg\" viewBox=\"0 0 300 100\" preserveAspectRatio=\"none\" role=\"img\" aria-label=\"Dos series\"><path class=\"nz-chart-line__path\" d=\"M0,60 L100,45 L200,50 L300,25\"></path><path class=\"nz-chart-line__path nz-chart-line__path--muted\" d=\"M0,85 L100,78 L200,70 L300,64\"></path></svg></div></div>"
+  },
+  {
+   "titulo": "Sparkline",
+   "tag": ".nz-sparkline · __bar · --brand · --accent · --area · --lg",
+   "markup": "<div class=\"nz-stack nz-stack--sm\"><div class=\"nz-sparkline\"><span class=\"nz-sparkline__bar\" style=\"height:40%\"></span><span class=\"nz-sparkline__bar\" style=\"height:65%\"></span><span class=\"nz-sparkline__bar\" style=\"height:35%\"></span><span class=\"nz-sparkline__bar\" style=\"height:80%\"></span><span class=\"nz-sparkline__bar\" style=\"height:55%\"></span></div><div class=\"nz-sparkline nz-sparkline--brand nz-sparkline--lg nz-sparkline--area\"><span class=\"nz-sparkline__bar\" style=\"height:30%\"></span><span class=\"nz-sparkline__bar\" style=\"height:52%\"></span><span class=\"nz-sparkline__bar\" style=\"height:74%\"></span><span class=\"nz-sparkline__bar\" style=\"height:48%\"></span><span class=\"nz-sparkline__bar\" style=\"height:90%\"></span></div><div class=\"nz-sparkline nz-sparkline--accent\"><span class=\"nz-sparkline__bar\" style=\"height:20%\"></span><span class=\"nz-sparkline__bar\" style=\"height:60%\"></span><span class=\"nz-sparkline__bar\" style=\"height:45%\"></span></div></div>"
+  },
+  {
+   "titulo": "Donut con centro",
+   "tag": ".nz-chart-donut · __svg · __track · __seg · __center · __value · __label",
+   "markup": "<div class=\"nz-chart-donut\"><svg class=\"nz-chart-donut__svg\" viewBox=\"0 0 42 42\" role=\"img\" aria-label=\"Ocupación del 72 por ciento\"><circle class=\"nz-chart-donut__track\" cx=\"21\" cy=\"21\" r=\"15.9\"></circle><circle class=\"nz-chart-donut__seg nz-chart-donut__seg--brand\" cx=\"21\" cy=\"21\" r=\"15.9\" stroke-dasharray=\"72 28\"></circle></svg><div class=\"nz-chart-donut__center\"><span class=\"nz-chart-donut__value\">72%</span><span class=\"nz-chart-donut__label\">ocupación</span></div></div>"
+  },
+  {
+   "titulo": "Donut por segmentos y tamaños",
+   "tag": ".nz-chart-donut__seg--accent/_success/_muted · --sm · --lg",
+   "markup": "<div class=\"nz-cluster\"><div class=\"nz-chart-donut nz-chart-donut--sm\"><svg class=\"nz-chart-donut__svg\" viewBox=\"0 0 42 42\" role=\"img\" aria-label=\"Reparto pequeño\"><circle class=\"nz-chart-donut__track\" cx=\"21\" cy=\"21\" r=\"15.9\"></circle><circle class=\"nz-chart-donut__seg nz-chart-donut__seg--accent\" cx=\"21\" cy=\"21\" r=\"15.9\" stroke-dasharray=\"45 55\"></circle></svg></div><div class=\"nz-chart-donut nz-chart-donut--lg\"><svg class=\"nz-chart-donut__svg\" viewBox=\"0 0 42 42\" role=\"img\" aria-label=\"Reparto grande\"><circle class=\"nz-chart-donut__track\" cx=\"21\" cy=\"21\" r=\"15.9\"></circle><circle class=\"nz-chart-donut__seg nz-chart-donut__seg--success\" cx=\"21\" cy=\"21\" r=\"15.9\" stroke-dasharray=\"40 60\"></circle><circle class=\"nz-chart-donut__seg nz-chart-donut__seg--muted\" cx=\"21\" cy=\"21\" r=\"15.9\" stroke-dasharray=\"25 75\" stroke-dashoffset=\"-40\"></circle></svg><div class=\"nz-chart-donut__center\"><span class=\"nz-chart-donut__value\">3</span><span class=\"nz-chart-donut__label\">series</span></div></div></div>"
+  },
+  {
+   "titulo": "Medidor semicircular",
+   "tag": ".nz-chart-gauge · __svg · __track · __fill · __value · __label",
+   "markup": "<div class=\"nz-chart-gauge\"><svg class=\"nz-chart-gauge__svg\" viewBox=\"0 0 100 55\" role=\"img\" aria-label=\"Rendimiento del 68 por ciento\"><path class=\"nz-chart-gauge__track\" d=\"M8,50 A42,42 0 0 1 92,50\"></path><path class=\"nz-chart-gauge__fill\" d=\"M8,50 A42,42 0 0 1 92,50\" stroke-dasharray=\"100 100\" stroke-dashoffset=\"32\"></path></svg><span class=\"nz-chart-gauge__value\">68%</span><span class=\"nz-chart-gauge__label\">rendimiento</span></div>"
+  },
+  {
+   "titulo": "Medidores por tono y tamaño",
+   "tag": ".nz-chart-gauge__fill--accent/_success/_warning/_danger · --lg",
+   "markup": "<div class=\"nz-cluster\"><div class=\"nz-chart-gauge\"><svg class=\"nz-chart-gauge__svg\" viewBox=\"0 0 100 55\" role=\"img\" aria-label=\"Uso del 80 por ciento\"><path class=\"nz-chart-gauge__track\" d=\"M8,50 A42,42 0 0 1 92,50\"></path><path class=\"nz-chart-gauge__fill nz-chart-gauge__fill--accent\" d=\"M8,50 A42,42 0 0 1 92,50\" stroke-dasharray=\"100 100\" stroke-dashoffset=\"20\"></path></svg></div><div class=\"nz-chart-gauge nz-chart-gauge--lg\"><svg class=\"nz-chart-gauge__svg\" viewBox=\"0 0 100 55\" role=\"img\" aria-label=\"Uso del 25 por ciento\"><path class=\"nz-chart-gauge__track\" d=\"M8,50 A42,42 0 0 1 92,50\"></path><path class=\"nz-chart-gauge__fill nz-chart-gauge__fill--success\" d=\"M8,50 A42,42 0 0 1 92,50\" stroke-dasharray=\"100 100\" stroke-dashoffset=\"75\"></path></svg><span class=\"nz-chart-gauge__value\">25%</span><span class=\"nz-chart-gauge__label\">holgura</span></div><div class=\"nz-chart-gauge\"><svg class=\"nz-chart-gauge__svg\" viewBox=\"0 0 100 55\" role=\"img\" aria-label=\"Uso del 91 por ciento\"><path class=\"nz-chart-gauge__track\" d=\"M8,50 A42,42 0 0 1 92,50\"></path><path class=\"nz-chart-gauge__fill nz-chart-gauge__fill--warning\" d=\"M8,50 A42,42 0 0 1 92,50\" stroke-dasharray=\"100 100\" stroke-dashoffset=\"9\"></path></svg></div><div class=\"nz-chart-gauge\"><svg class=\"nz-chart-gauge__svg\" viewBox=\"0 0 100 55\" role=\"img\" aria-label=\"Uso del 97 por ciento\"><path class=\"nz-chart-gauge__track\" d=\"M8,50 A42,42 0 0 1 92,50\"></path><path class=\"nz-chart-gauge__fill nz-chart-gauge__fill--danger\" d=\"M8,50 A42,42 0 0 1 92,50\" stroke-dasharray=\"100 100\" stroke-dashoffset=\"3\"></path></svg></div></div>"
+  },
+  {
+   "titulo": "Mapa de calor con escala",
+   "tag": ".nz-heatmap · __row · __row-label · __cell · __cell--0..4 · __col-label · __scale · __scale-step",
+   "markup": "<div class=\"nz-stack nz-stack--sm\"><div class=\"nz-heatmap\"><div class=\"nz-heatmap__row\"><span class=\"nz-heatmap__row-label\"></span><span class=\"nz-heatmap__col-label\">L</span><span class=\"nz-heatmap__col-label\">M</span><span class=\"nz-heatmap__col-label\">X</span><span class=\"nz-heatmap__col-label\">J</span><span class=\"nz-heatmap__col-label\">V</span><span class=\"nz-heatmap__col-label\">S</span><span class=\"nz-heatmap__col-label\">D</span></div><div class=\"nz-heatmap__row\"><span class=\"nz-heatmap__row-label\">Mañana</span><span class=\"nz-heatmap__cell nz-heatmap__cell--1\"></span><span class=\"nz-heatmap__cell nz-heatmap__cell--2\"></span><span class=\"nz-heatmap__cell nz-heatmap__cell--4\"></span><span class=\"nz-heatmap__cell nz-heatmap__cell--3\"></span><span class=\"nz-heatmap__cell nz-heatmap__cell--4\"></span><span class=\"nz-heatmap__cell nz-heatmap__cell--0\"></span><span class=\"nz-heatmap__cell nz-heatmap__cell--0\"></span></div><div class=\"nz-heatmap__row\"><span class=\"nz-heatmap__row-label\">Tarde</span><span class=\"nz-heatmap__cell nz-heatmap__cell--2\"></span><span class=\"nz-heatmap__cell nz-heatmap__cell--3\"></span><span class=\"nz-heatmap__cell nz-heatmap__cell--1\"></span><span class=\"nz-heatmap__cell nz-heatmap__cell--2\"></span><span class=\"nz-heatmap__cell nz-heatmap__cell--1\"></span><span class=\"nz-heatmap__cell nz-heatmap__cell--0\"></span><span class=\"nz-heatmap__cell nz-heatmap__cell--0\"></span></div></div><div class=\"nz-heatmap__scale\"><span>menos</span><i class=\"nz-heatmap__scale-step nz-heatmap__cell--1\"></i><i class=\"nz-heatmap__scale-step nz-heatmap__cell--2\"></i><i class=\"nz-heatmap__scale-step nz-heatmap__cell--3\"></i><i class=\"nz-heatmap__scale-step nz-heatmap__cell--4\"></i><span>más</span></div></div>"
+  },
+  {
+   "titulo": "Calendario de calor",
+   "tag": ".nz-heatcalendar · __months · __grid · __day · __day--0..4 · __day--hoy · __legend",
+   "markup": "<div class=\"nz-heatcalendar\"><div class=\"nz-heatcalendar__months\"><span>Ene</span><span>Feb</span><span>Mar</span><span>Abr</span></div><div class=\"nz-heatcalendar__grid\"><span class=\"nz-heatcalendar__day nz-heatcalendar__day--1\"></span><span class=\"nz-heatcalendar__day nz-heatcalendar__day--0\"></span><span class=\"nz-heatcalendar__day nz-heatcalendar__day--3\"></span><span class=\"nz-heatcalendar__day nz-heatcalendar__day--2\"></span><span class=\"nz-heatcalendar__day nz-heatcalendar__day--4\"></span><span class=\"nz-heatcalendar__day nz-heatcalendar__day--0\"></span><span class=\"nz-heatcalendar__day nz-heatcalendar__day--2\"></span><span class=\"nz-heatcalendar__day nz-heatcalendar__day--1\"></span><span class=\"nz-heatcalendar__day nz-heatcalendar__day--4\"></span><span class=\"nz-heatcalendar__day nz-heatcalendar__day--3\"></span><span class=\"nz-heatcalendar__day nz-heatcalendar__day--1\"></span><span class=\"nz-heatcalendar__day nz-heatcalendar__day--0\"></span><span class=\"nz-heatcalendar__day nz-heatcalendar__day--2\"></span><span class=\"nz-heatcalendar__day nz-heatcalendar__day--hoy\"></span><span class=\"nz-heatcalendar__day nz-heatcalendar__day--1\"></span></div><div class=\"nz-heatcalendar__legend\"><span>menos</span><i class=\"nz-heatcalendar__day nz-heatcalendar__day--1\"></i><i class=\"nz-heatcalendar__day nz-heatcalendar__day--3\"></i><i class=\"nz-heatcalendar__day nz-heatcalendar__day--4\"></i><span>más</span></div></div>"
+  },
+  {
+   "titulo": "Treemap",
+   "tag": ".nz-treemap · __cell · __cell--lg · __cell--brand/_accent/_muted · __label · __value",
+   "markup": "<div class=\"nz-treemap\"><div class=\"nz-treemap__cell nz-treemap__cell--lg nz-treemap__cell--brand\"><span class=\"nz-treemap__label\">Madrid</span><span class=\"nz-treemap__value\">42%</span></div><div class=\"nz-treemap__cell nz-treemap__cell--accent\"><span class=\"nz-treemap__label\">Barcelona</span><span class=\"nz-treemap__value\">28%</span></div><div class=\"nz-treemap__cell nz-treemap__cell--muted\"><span class=\"nz-treemap__label\">Valencia</span><span class=\"nz-treemap__value\">13%</span></div><div class=\"nz-treemap__cell\"><span class=\"nz-treemap__label\">Sevilla</span><span class=\"nz-treemap__value\">9%</span></div><div class=\"nz-treemap__cell nz-treemap__cell--muted\"><span class=\"nz-treemap__label\">Bilbao</span><span class=\"nz-treemap__value\">8%</span></div></div>"
+  },
+  {
+   "titulo": "Embudo de conversión",
+   "tag": ".nz-funnel · __step · __bar · __bar--brand/_accent/_muted · __label · __value",
+   "markup": "<div class=\"nz-funnel\"><div class=\"nz-funnel__step\"><div class=\"nz-funnel__bar nz-funnel__bar--brand\" style=\"width:92%\"></div><span class=\"nz-funnel__value\">1.840 visitas</span><span class=\"nz-funnel__label\">Visita la web</span></div><div class=\"nz-funnel__step\"><div class=\"nz-funnel__bar nz-funnel__bar--brand\" style=\"width:64%\"></div><span class=\"nz-funnel__value\">1.180</span><span class=\"nz-funnel__label\">Ve el producto</span></div><div class=\"nz-funnel__step\"><div class=\"nz-funnel__bar nz-funnel__bar--accent\" style=\"width:38%\"></div><span class=\"nz-funnel__value\">700</span><span class=\"nz-funnel__label\">Añade al carro</span></div><div class=\"nz-funnel__step\"><div class=\"nz-funnel__bar nz-funnel__bar--muted\" style=\"width:16%\"></div><span class=\"nz-funnel__value\">294</span><span class=\"nz-funnel__label\">Compra</span></div></div>"
+  },
+  {
+   "titulo": "Bullet chart",
+   "tag": ".nz-bullet · __label · __track · __ranges · __value · __value--brand/_accent/_success · __target · __num",
+   "markup": "<div class=\"nz-stack nz-stack--sm\"><div class=\"nz-bullet\"><span class=\"nz-bullet__label\">Ventas</span><div class=\"nz-bullet__track\"><span class=\"nz-bullet__ranges\"></span><span class=\"nz-bullet__value nz-bullet__value--brand\" style=\"width:72%\"></span><span class=\"nz-bullet__target\" style=\"left:80%\"></span></div><span class=\"nz-bullet__num\">72/100</span></div><div class=\"nz-bullet\"><span class=\"nz-bullet__label\">Margen</span><div class=\"nz-bullet__track\"><span class=\"nz-bullet__ranges\"></span><span class=\"nz-bullet__value nz-bullet__value--success\" style=\"width:54%\"></span><span class=\"nz-bullet__target\" style=\"left:60%\"></span></div><span class=\"nz-bullet__num\">54/100</span></div><div class=\"nz-bullet\"><span class=\"nz-bullet__label\">Devoluciones</span><div class=\"nz-bullet__track\"><span class=\"nz-bullet__ranges\"></span><span class=\"nz-bullet__value nz-bullet__value--accent\" style=\"width:31%\"></span><span class=\"nz-bullet__target\" style=\"left:40%\"></span></div><span class=\"nz-bullet__num\">31/100</span></div></div>"
+  },
+  {
+   "titulo": "Tabla de barras",
+   "tag": ".nz-chart-tablebar · __row · __name · __track · __bar · __num",
+   "markup": "<div class=\"nz-chart-tablebar\"><div class=\"nz-chart-tablebar__row\"><span class=\"nz-chart-tablebar__name\">Teclados</span><span class=\"nz-chart-tablebar__track\"><span class=\"nz-chart-tablebar__bar\" style=\"width:84%\"></span></span><span class=\"nz-chart-tablebar__num\">842</span></div><div class=\"nz-chart-tablebar__row\"><span class=\"nz-chart-tablebar__name\">Ratones</span><span class=\"nz-chart-tablebar__track\"><span class=\"nz-chart-tablebar__bar\" style=\"width:61%\"></span></span><span class=\"nz-chart-tablebar__num\">618</span></div><div class=\"nz-chart-tablebar__row\"><span class=\"nz-chart-tablebar__name\">Monitores</span><span class=\"nz-chart-tablebar__track\"><span class=\"nz-chart-tablebar__bar\" style=\"width:32%\"></span></span><span class=\"nz-chart-tablebar__num\">320</span></div></div>"
+  },
+  {
+   "titulo": "Comparativa de dos series",
+   "tag": ".nz-chart-compare · __row · __name · __pair · __bar · __bar--a · __bar--b · __num",
+   "markup": "<div class=\"nz-chart-compare\"><div class=\"nz-chart-compare__row\"><span class=\"nz-chart-compare__name\">Madrid</span><span class=\"nz-chart-compare__pair\"><span class=\"nz-chart-compare__bar nz-chart-compare__bar--a\" style=\"width:80px\"></span><span class=\"nz-chart-compare__bar nz-chart-compare__bar--b\" style=\"width:52px\"></span></span><span class=\"nz-chart-compare__num\">+8%</span></div><div class=\"nz-chart-compare__row\"><span class=\"nz-chart-compare__name\">Barcelona</span><span class=\"nz-chart-compare__pair\"><span class=\"nz-chart-compare__bar nz-chart-compare__bar--a\" style=\"width:64px\"></span><span class=\"nz-chart-compare__bar nz-chart-compare__bar--b\" style=\"width:58px\"></span></span><span class=\"nz-chart-compare__num\">+2%</span></div><div class=\"nz-chart-compare__row\"><span class=\"nz-chart-compare__name\">Valencia</span><span class=\"nz-chart-compare__pair\"><span class=\"nz-chart-compare__bar nz-chart-compare__bar--a\" style=\"width:38px\"></span><span class=\"nz-chart-compare__bar nz-chart-compare__bar--b\" style=\"width:44px\"></span></span><span class=\"nz-chart-compare__num\">−4%</span></div></div>"
+  },
+  {
+   "titulo": "Radar",
+   "tag": ".nz-chart-radar · __svg · __web · __axis · __area · __label",
+   "markup": "<div class=\"nz-chart-radar\"><svg class=\"nz-chart-radar__svg\" viewBox=\"0 0 100 100\" role=\"img\" aria-label=\"Perfil de competencias\"><polygon class=\"nz-chart-radar__web\" points=\"50,10 90,40 75,85 25,85 10,40\"></polygon><polygon class=\"nz-chart-radar__web\" points=\"50,30 70,45 62,67 38,67 30,45\"></polygon><line class=\"nz-chart-radar__axis\" x1=\"50\" y1=\"50\" x2=\"50\" y2=\"10\"></line><line class=\"nz-chart-radar__axis\" x1=\"50\" y1=\"50\" x2=\"90\" y2=\"40\"></line><line class=\"nz-chart-radar__axis\" x1=\"50\" y1=\"50\" x2=\"25\" y2=\"85\"></line><polygon class=\"nz-chart-radar__area\" points=\"50,20 82,42 66,78 32,74 18,44\"></polygon><text class=\"nz-chart-radar__label\" x=\"50\" y=\"7\">Diseño</text><text class=\"nz-chart-radar__label\" x=\"92\" y=\"40\">Código</text><text class=\"nz-chart-radar__label\" x=\"20\" y=\"93\">Datos</text></svg></div>"
+  },
+  {
+   "titulo": "Dispersión",
+   "tag": ".nz-chart-scatter · __area · __dot · __dot--brand · __dot--accent · __x · __y",
+   "markup": "<div class=\"nz-chart-scatter\"><div class=\"nz-chart-scatter__area\"><span class=\"nz-chart-scatter__dot nz-chart-scatter__dot--brand\" style=\"left:22%;bottom:30%\"></span><span class=\"nz-chart-scatter__dot nz-chart-scatter__dot--brand\" style=\"left:38%;bottom:54%\"></span><span class=\"nz-chart-scatter__dot nz-chart-scatter__dot--accent\" style=\"left:58%;bottom:42%\"></span><span class=\"nz-chart-scatter__dot nz-chart-scatter__dot--accent\" style=\"left:74%;bottom:76%\"></span><span class=\"nz-chart-scatter__dot\" style=\"left:46%;bottom:22%\"></span><span class=\"nz-chart-scatter__dot\" style=\"left:86%;bottom:60%\"></span></div><span class=\"nz-chart-scatter__x\">Inversión</span><span class=\"nz-chart-scatter__y\">Retorno</span></div>"
+  },
+  {
+   "titulo": "Cascada",
+   "tag": ".nz-chart-waterfall · __col · __bar · __bar--up/_down/_total · __label",
+   "markup": "<div class=\"nz-chart-waterfall\"><div class=\"nz-chart-waterfall__col\"><div class=\"nz-chart-waterfall__bar nz-chart-waterfall__bar--total\" style=\"height:100%\"></div><span class=\"nz-chart-waterfall__label\">Inicio</span></div><div class=\"nz-chart-waterfall__col\"><div class=\"nz-chart-waterfall__bar nz-chart-waterfall__bar--up\" style=\"height:28%\"></div><span class=\"nz-chart-waterfall__label\">+Altas</span></div><div class=\"nz-chart-waterfall__col\"><div class=\"nz-chart-waterfall__bar nz-chart-waterfall__bar--down\" style=\"height:18%\"></div><span class=\"nz-chart-waterfall__label\">−Bajas</span></div><div class=\"nz-chart-waterfall__col\"><div class=\"nz-chart-waterfall__bar nz-chart-waterfall__bar--up\" style=\"height:22%\"></div><span class=\"nz-chart-waterfall__label\">+Upsell</span></div><div class=\"nz-chart-waterfall__col\"><div class=\"nz-chart-waterfall__bar nz-chart-waterfall__bar--total\" style=\"height:82%\"></div><span class=\"nz-chart-waterfall__label\">Final</span></div></div>"
+  },
+  {
+   "titulo": "Diagrama de flujo",
+   "tag": ".nz-chart-flow · __node · __node--brand/_accent/_muted · __link · __label",
+   "markup": "<div class=\"nz-chart-flow\"><div class=\"nz-stack nz-stack--sm\"><span class=\"nz-chart-flow__node nz-chart-flow__node--brand\">Visitas<br>1.840</span><span class=\"nz-chart-flow__node nz-chart-flow__node--accent\">Registro<br>610</span><span class=\"nz-chart-flow__node nz-chart-flow__node--muted\">Solo lectura<br>980</span></div><div class=\"nz-stack nz-stack--sm\"><span class=\"nz-chart-flow__link\" style=\"width:100%\"></span><span class=\"nz-chart-flow__link\" style=\"width:60%\"></span></div><div class=\"nz-stack nz-stack--sm\"><span class=\"nz-chart-flow__node\">Compran 294</span><span class=\"nz-chart-flow__node\">Abandonan 316</span><span class=\"nz-chart-flow__label\">Embudo de julio</span></div></div>"
+  },
+  {
+   "titulo": "Selector de rango temporal",
+   "tag": ".nz-chart-range · __btn",
+   "markup": "<div class=\"nz-chart-range\" role=\"group\" aria-label=\"Rango temporal\"><button class=\"nz-chart-range__btn\" aria-pressed=\"true\">7 días</button><button class=\"nz-chart-range__btn\" aria-pressed=\"false\">30 días</button><button class=\"nz-chart-range__btn\" aria-pressed=\"false\">12 meses</button><button class=\"nz-chart-range__btn\" aria-pressed=\"false\">Todo</button></div>"
+  },
+  {
+   "titulo": "Cifra con sparkline y variación",
+   "tag": ".nz-chart-stat · __label · __value · __unit · __delta · __delta--up/_down/_flat · __spark",
+   "markup": "<div class=\"nz-cluster\"><div class=\"nz-chart-stat\"><span class=\"nz-chart-stat__label\">Ingresos</span><span class=\"nz-chart-stat__value\">48.210<span class=\"nz-chart-stat__unit\">€</span></span><span class=\"nz-chart-stat__delta nz-chart-stat__delta--up\">+12,4%</span><div class=\"nz-chart-stat__spark\"><div class=\"nz-sparkline nz-sparkline--brand\"><span class=\"nz-sparkline__bar\" style=\"height:35%\"></span><span class=\"nz-sparkline__bar\" style=\"height:58%\"></span><span class=\"nz-sparkline__bar\" style=\"height:44%\"></span><span class=\"nz-sparkline__bar\" style=\"height:82%\"></span></div></div></div><div class=\"nz-chart-stat\"><span class=\"nz-chart-stat__label\">Devoluciones</span><span class=\"nz-chart-stat__value\">312</span><span class=\"nz-chart-stat__delta nz-chart-stat__delta--down\">−3,1%</span></div><div class=\"nz-chart-stat\"><span class=\"nz-chart-stat__label\">Ticket medio</span><span class=\"nz-chart-stat__value\">64,80<span class=\"nz-chart-stat__unit\">€</span></span><span class=\"nz-chart-stat__delta nz-chart-stat__delta--flat\">0,0%</span></div></div>"
+  },
+  {
+   "titulo": "Mini barras en tabla",
+   "tag": ".nz-chart-mini · __bar · __bar--brand · __bar--accent",
+   "markup": "<div class=\"nz-table-wrap\"><table class=\"nz-table\"><tbody><tr><td>Lunes</td><td><span class=\"nz-chart-mini\"><span class=\"nz-chart-mini__bar nz-chart-mini__bar--brand\" style=\"height:40%\"></span><span class=\"nz-chart-mini__bar nz-chart-mini__bar--brand\" style=\"height:70%\"></span><span class=\"nz-chart-mini__bar nz-chart-mini__bar--brand\" style=\"height:55%\"></span></span></td><td class=\"nz-table__num\">412</td></tr><tr><td>Martes</td><td><span class=\"nz-chart-mini\"><span class=\"nz-chart-mini__bar nz-chart-mini__bar--accent\" style=\"height:60%\"></span><span class=\"nz-chart-mini__bar nz-chart-mini__bar--accent\" style=\"height:35%\"></span><span class=\"nz-chart-mini__bar\" style=\"height:80%\"></span></span></td><td class=\"nz-table__num\">358</td></tr></tbody></table></div>"
+  },
+  {
+   "titulo": "Linea · tono de serie",
+   "tag": ".nz-chart-line--brand / --success / --danger",
+   "markup": "<div class=\"nz-chart nz-chart-line nz-chart-line--brand\"><i style=\"left:10%;top:60%\"></i><i style=\"left:50%;top:30%\"></i><i style=\"left:90%;top:45%\"></i></div><div class=\"nz-chart nz-chart-line nz-chart-line--success\"><i style=\"left:10%;top:70%\"></i><i style=\"left:50%;top:50%\"></i><i style=\"left:90%;top:20%\"></i></div><div class=\"nz-chart nz-chart-line nz-chart-line--danger\"><i style=\"left:10%;top:20%\"></i><i style=\"left:50%;top:40%\"></i><i style=\"left:90%;top:80%\"></i></div>"
+  },
+  {
+   "titulo": "Minigráfico · tono",
+   "tag": ".nz-chart-mini__bar--brand / --success / --warning / --danger",
+   "markup": "<div class=\"nz-chart-mini\"><span class=\"nz-chart-mini__bar\" style=\"height:40%\"></span><span class=\"nz-chart-mini__bar\" style=\"height:40%\"></span><span class=\"nz-chart-mini__bar nz-chart-mini__bar--brand\" style=\"height:40%\"></span><span class=\"nz-chart-mini__bar nz-chart-mini__bar--brand\" style=\"height:40%\"></span></div><div class=\"nz-chart-mini\"><span class=\"nz-chart-mini__bar\" style=\"height:40%\"></span><span class=\"nz-chart-mini__bar nz-chart-mini__bar--success\" style=\"height:40%\"></span><span class=\"nz-chart-mini__bar nz-chart-mini__bar--success\" style=\"height:40%\"></span></div><div class=\"nz-chart-mini\"><span class=\"nz-chart-mini__bar\" style=\"height:40%\"></span><span class=\"nz-chart-mini__bar nz-chart-mini__bar--warning\" style=\"height:40%\"></span><span class=\"nz-chart-mini__bar nz-chart-mini__bar--warning\" style=\"height:40%\"></span></div><div class=\"nz-chart-mini\"><span class=\"nz-chart-mini__bar\" style=\"height:40%\"></span><span class=\"nz-chart-mini__bar nz-chart-mini__bar--danger\" style=\"height:40%\"></span><span class=\"nz-chart-mini__bar nz-chart-mini__bar--danger\" style=\"height:40%\"></span></div>"
+  },
+  {
+   "titulo": "Linea · tono acento",
+   "tag": ".nz-chart-line--accent",
+   "markup": "<div class=\"nz-chart nz-chart-line nz-chart-line--accent\"><i style=\"left:10%;top:55%\"></i><i style=\"left:50%;top:35%\"></i><i style=\"left:90%;top:15%\"></i></div>"
+  },
+  {
+   "titulo": "Gráfico interactivo con tooltip",
+   "tag": ".nz-chart--interactivo · .nz-chart-tip · __label/__value · --inline/--arriba (lo activa js/graficos.js)",
+   "markup": "<figure class=\"nz-chart nz-chart--interactivo\"><div class=\"nz-chart__head\"><div><span class=\"nz-chart__title\">Pedidos por mes</span><span class=\"nz-chart__sub\">Pasa el ratón o enfoca cada barra</span></div></div><div class=\"nz-chart__body\"><div class=\"nz-chart-bar\"><div class=\"nz-chart-bar__col\"><span class=\"nz-chart-bar__value\">45</span><div class=\"nz-chart-bar__bar\" data-serie=\"pedidos\" data-valor=\"45 pedidos\" style=\"height:45%\"></div><span class=\"nz-chart-bar__label\">Ene</span></div><div class=\"nz-chart-bar__col\"><span class=\"nz-chart-bar__value\">70</span><div class=\"nz-chart-bar__bar\" data-serie=\"pedidos\" data-valor=\"70 pedidos\" style=\"height:70%\"></div><span class=\"nz-chart-bar__label\">Feb</span></div><div class=\"nz-chart-bar__col\"><span class=\"nz-chart-bar__value\">58</span><div class=\"nz-chart-bar__bar\" data-serie=\"pedidos\" data-valor=\"58 pedidos\" style=\"height:58%\"></div><span class=\"nz-chart-bar__label\">Mar</span></div></div></div><div class=\"nz-chart-tip nz-chart-tip--inline nz-chart-tip--arriba is-active\"><span class=\"nz-chart-tip__label\">Ene</span><span class=\"nz-chart-tip__value\">45 pedidos</span></div></figure>"
+  },
+  {
+   "titulo": "Leyenda clicable que filtra series",
+   "tag": ".nz-chart--interactivo · .nz-legend__item[aria-pressed] · .is-selected · data-serie (lo activa js/graficos.js)",
+   "markup": "<div class=\"nz-chart nz-chart--interactivo\"><div class=\"nz-chart__body\"><div class=\"nz-chart-bar\"><div class=\"nz-chart-bar__col\"><div class=\"nz-chart-bar__bar nz-chart-bar__bar--brand\" data-serie=\"ingresos\" data-valor=\"64\" style=\"height:64%\"></div><span class=\"nz-chart-bar__label\">T1</span></div><div class=\"nz-chart-bar__col\"><div class=\"nz-chart-bar__bar nz-chart-bar__bar--accent\" data-serie=\"gastos\" data-valor=\"38\" style=\"height:38%\"></div><span class=\"nz-chart-bar__label\">T2</span></div><div class=\"nz-chart-bar__col\"><div class=\"nz-chart-bar__bar nz-chart-bar__bar--brand\" data-serie=\"ingresos\" data-valor=\"70\" style=\"height:70%\"></div><span class=\"nz-chart-bar__label\">T3</span></div><div class=\"nz-chart-bar__col\"><div class=\"nz-chart-bar__bar nz-chart-bar__bar--accent is-selected\" data-serie=\"gastos\" data-valor=\"44\" style=\"height:44%\"></div><span class=\"nz-chart-bar__label\">T4</span></div></div></div><div class=\"nz-legend\"><span class=\"nz-legend__item\" role=\"button\" tabindex=\"0\" aria-pressed=\"true\" data-serie=\"ingresos\"><i class=\"nz-legend__swatch nz-legend__swatch--brand\"></i>Ingresos</span><span class=\"nz-legend__item\" role=\"button\" tabindex=\"0\" aria-pressed=\"false\" data-serie=\"gastos\"><i class=\"nz-legend__swatch nz-legend__swatch--accent\"></i>Gastos</span></div></div>"
+  }
+ ]
 }

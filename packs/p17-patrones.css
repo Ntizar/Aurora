@@ -1,0 +1,658 @@
+/* ============================================================
+   Paquete 17 · PATRONES compuestos
+   ------------------------------------------------------------
+   Piezas de nivel superior: bloques hechos SOLO con primitivas del sistema, para
+   que nadie tenga que re-componer el mismo patrón dos veces.
+
+   Reglas (las mismas que el resto del sistema):
+   - Todo lo público vive bajo `.nz-` y usa tokens; cero literales, cero glass,
+     cero gradientes, cero !important.
+   - Cada familia nace con su demo en specs/17.json (CSS sin demostrar es deuda).
+   - Mobile-first: base 1 columna y se crece con min-width.
+   - Una familia, un pack: aquí solo se declara lo que es patrón compuesto.
+
+   Hecho con ❤️ por David Antizar
+   ============================================================ */
+
+/* ---- Panel de sección: cabecera + cuerpo + acciones (el patrón base) ---- */
+.nz-panel {
+  display: flex;
+  flex-direction: column;
+  background: var(--nz-surface);
+  border: var(--nz-border-w) solid var(--nz-border);
+  border-radius: var(--nz-radius-lg);
+  overflow: hidden;
+}
+.nz-panel__cabecera {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--nz-space-2);
+  padding: var(--nz-space-4);
+  border-bottom: var(--nz-border-w) solid var(--nz-border-soft);
+}
+.nz-panel__titulo { font-size: var(--nz-text-base); font-weight: 700; margin: 0; }
+.nz-panel__sub { font-size: var(--nz-text-sm); color: var(--nz-text-soft); margin: 0; }
+.nz-panel__cuerpo { padding: var(--nz-space-4); }
+.nz-panel__acciones { display: flex; flex-wrap: wrap; gap: var(--nz-space-2); margin-left: auto; }
+.nz-panel__pie { padding: var(--nz-space-3) var(--nz-space-4); border-top: var(--nz-border-w) solid var(--nz-border-soft); background: var(--nz-bg-soft); }
+.nz-panel--compact .nz-panel__cabecera,
+.nz-panel--compact .nz-panel__cuerpo { padding: var(--nz-space-3); }
+.nz-panel--sin-borde { border: 0; }
+.nz-panel--marca { border-color: color-mix(in oklab, var(--nz-brand) 35%, transparent); }
+
+/* ---- P02 Cabecera de página: migas + título + acciones ---- */
+.nz-cabecera-pagina {
+  display: grid;
+  gap: var(--nz-space-3);
+  padding-bottom: var(--nz-space-4);
+  border-bottom: var(--nz-border-w) solid var(--nz-border-soft);
+}
+.nz-cabecera-pagina__principal {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--nz-space-4);
+}
+.nz-cabecera-pagina__texto { display: grid; gap: var(--nz-space-1); min-width: 0; }
+.nz-cabecera-pagina__acciones { display: flex; flex-wrap: wrap; align-items: center; gap: var(--nz-space-2); }
+
+/* ---- P03 Barra de filtros: buscador + chips activos + conteo ---- */
+.nz-barra-filtros {
+  display: grid;
+  gap: var(--nz-space-3);
+  padding: var(--nz-space-3) var(--nz-space-4);
+  border: var(--nz-border-w) solid var(--nz-border-soft);
+  border-radius: var(--nz-radius-lg);
+  background: var(--nz-surface);
+}
+.nz-barra-filtros__fila { display: flex; flex-wrap: wrap; align-items: center; gap: var(--nz-space-2); }
+.nz-barra-filtros__buscar { flex: 1 1 14rem; min-width: 0; }
+.nz-barra-filtros__chips { display: flex; flex-wrap: wrap; gap: var(--nz-space-2); }
+.nz-barra-filtros__conteo { margin-left: auto; font-size: var(--nz-text-xs); color: var(--nz-text-mute); }
+
+/* ---- P04 Tabla con selección y acciones en lote ---- */
+.nz-tabla-lote { display: grid; gap: var(--nz-space-3); }
+.nz-tabla-lote__lote {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--nz-space-3);
+  padding: var(--nz-space-2) var(--nz-space-3);
+  border-radius: var(--nz-radius-md);
+  background: var(--nz-brand-soft);
+  color: var(--nz-text);
+}
+.nz-tabla-lote__seleccion { font-size: var(--nz-text-sm); font-weight: 700; }
+.nz-tabla-lote__lote-acciones { display: flex; flex-wrap: wrap; gap: var(--nz-space-2); margin-left: auto; }
+
+/* ---- P05 Ficha de entidad: avatar + identidad + metadatos + acciones ---- */
+.nz-ficha-entidad {
+  display: grid;
+  gap: var(--nz-space-4);
+  padding: var(--nz-space-4);
+  border: var(--nz-border-w) solid var(--nz-border);
+  border-radius: var(--nz-radius-lg);
+  background: var(--nz-surface);
+}
+.nz-ficha-entidad__cabecera { display: flex; align-items: center; gap: var(--nz-space-3); }
+.nz-ficha-entidad__identidad { display: grid; gap: var(--nz-space-0); min-width: 0; }
+.nz-ficha-entidad__nombre { font-size: var(--nz-text-base); font-weight: 700; }
+.nz-ficha-entidad__meta { font-size: var(--nz-text-xs); color: var(--nz-text-mute); }
+.nz-ficha-entidad__datos { display: grid; gap: var(--nz-space-2); }
+.nz-ficha-entidad__acciones { display: flex; flex-wrap: wrap; gap: var(--nz-space-2); }
+
+/* ---- P06 Línea de tiempo de pasos ---- */
+.nz-linea-pasos { display: grid; gap: var(--nz-space-3); margin: 0; padding: 0; list-style: none; }
+.nz-linea-pasos__paso { display: flex; align-items: flex-start; gap: var(--nz-space-3); }
+.nz-linea-pasos__marca {
+  flex: none;
+  width: 28px;
+  height: 28px;
+  display: grid;
+  place-items: center;
+  border-radius: var(--nz-radius-full);
+  background: var(--nz-bg-inset);
+  color: var(--nz-text-mute);
+  font-size: var(--nz-text-xs);
+  font-weight: 800;
+}
+.nz-linea-pasos__cuerpo { display: grid; gap: var(--nz-space-0); min-width: 0; padding-bottom: var(--nz-space-3); border-bottom: var(--nz-border-w) solid var(--nz-border-soft); }
+.nz-linea-pasos__titulo { font-size: var(--nz-text-sm); font-weight: 700; }
+.nz-linea-pasos__nota { font-size: var(--nz-text-xs); color: var(--nz-text-mute); }
+.nz-linea-pasos__paso.is-done .nz-linea-pasos__marca { background: var(--nz-success); color: var(--nz-text-invert); }
+.nz-linea-pasos__paso.is-active .nz-linea-pasos__marca { background: var(--nz-brand); color: var(--nz-text-invert); }
+.nz-linea-pasos__paso:last-child .nz-linea-pasos__cuerpo { padding-bottom: 0; border-bottom: 0; }
+
+/* ---- P07 Asistente por pasos (wizard) ---- */
+.nz-asistente-pasos { display: grid; gap: var(--nz-space-5); }
+.nz-asistente-pasos__cabecera { display: grid; gap: var(--nz-space-3); }
+.nz-asistente-pasos__cuerpo {
+  padding: var(--nz-space-4);
+  border: var(--nz-border-w) solid var(--nz-border-soft);
+  border-radius: var(--nz-radius-lg);
+  background: var(--nz-surface);
+}
+.nz-asistente-pasos__pie { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--nz-space-2); }
+.nz-asistente-pasos__acciones { display: flex; flex-wrap: wrap; gap: var(--nz-space-2); }
+
+/* ---- P08 Comparador de planes ---- */
+.nz-comparador-planes { display: grid; gap: var(--nz-space-4); }
+.nz-comparador-planes__planes { display: grid; gap: var(--nz-space-4); grid-template-columns: 1fr; align-items: stretch; }
+.nz-comparador-planes__nota { font-size: var(--nz-text-xs); color: var(--nz-text-mute); text-align: center; }
+@media (min-width: 640px) { .nz-comparador-planes__planes { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 960px) { .nz-comparador-planes__planes { grid-template-columns: repeat(3, 1fr); } }
+
+/* ---- P09 Resumen de pedido con totales ---- */
+.nz-resumen-pedido {
+  display: grid;
+  gap: var(--nz-space-3);
+  padding: var(--nz-space-4);
+  border: var(--nz-border-w) solid var(--nz-border);
+  border-radius: var(--nz-radius-lg);
+  background: var(--nz-surface);
+}
+.nz-resumen-pedido__cabecera { display: flex; align-items: center; justify-content: space-between; gap: var(--nz-space-2); }
+.nz-resumen-pedido__lineas { display: grid; gap: var(--nz-space-1); }
+.nz-resumen-pedido__linea { display: flex; justify-content: space-between; gap: var(--nz-space-3); font-size: var(--nz-text-sm); color: var(--nz-text-soft); }
+.nz-resumen-pedido__total {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--nz-space-3);
+  padding-top: var(--nz-space-3);
+  border-top: var(--nz-border-w) solid var(--nz-border);
+  font-size: var(--nz-text-md);
+  font-weight: 800;
+}
+.nz-resumen-pedido__pie { display: flex; flex-wrap: wrap; gap: var(--nz-space-2); }
+
+/* ---- P10 Tarjeta de métrica con tendencia ---- */
+.nz-metrica-tendencia {
+  display: grid;
+  gap: var(--nz-space-2);
+  padding: var(--nz-space-4);
+  border: var(--nz-border-w) solid var(--nz-border);
+  border-radius: var(--nz-radius-lg);
+  background: var(--nz-surface);
+}
+.nz-metrica-tendencia__cabecera { display: flex; align-items: center; justify-content: space-between; gap: var(--nz-space-2); }
+.nz-metrica-tendencia__etiqueta { font-size: var(--nz-text-2xs); font-weight: 800; letter-spacing: var(--nz-tracking-caps); text-transform: uppercase; color: var(--nz-text-mute); }
+.nz-metrica-tendencia__valor { font-size: var(--nz-text-2xl); font-weight: 800; font-variant-numeric: tabular-nums; }
+.nz-metrica-tendencia__tendencia { display: inline-flex; align-items: center; gap: var(--nz-space-1); font-size: var(--nz-text-xs); font-weight: 700; }
+.nz-metrica-tendencia__pie { font-size: var(--nz-text-xs); color: var(--nz-text-mute); }
+
+/* ---- P11 Bandeja de avisos ---- */
+.nz-bandeja-avisos {
+  display: grid;
+  gap: 0;
+  border: var(--nz-border-w) solid var(--nz-border);
+  border-radius: var(--nz-radius-lg);
+  background: var(--nz-surface);
+  overflow: hidden;
+}
+.nz-bandeja-avisos__item { display: flex; align-items: flex-start; gap: var(--nz-space-3); padding: var(--nz-space-3) var(--nz-space-4); border-bottom: var(--nz-border-w) solid var(--nz-border-soft); }
+.nz-bandeja-avisos__item:last-child { border-bottom: 0; }
+.nz-bandeja-avisos__cuerpo { flex: 1; min-width: 0; display: grid; gap: var(--nz-space-0); }
+.nz-bandeja-avisos__titulo { font-size: var(--nz-text-sm); font-weight: 700; }
+.nz-bandeja-avisos__texto { font-size: var(--nz-text-xs); color: var(--nz-text-mute); }
+.nz-bandeja-avisos__hora { font-size: var(--nz-text-2xs); color: var(--nz-text-faint); white-space: nowrap; }
+.nz-bandeja-avisos__item.is-nuevo { background: var(--nz-brand-soft); }
+
+/* ---- P12 Panel de filtros lateral ---- */
+.nz-panel-filtros {
+  display: grid;
+  gap: var(--nz-space-4);
+  padding: var(--nz-space-4);
+  border: var(--nz-border-w) solid var(--nz-border);
+  border-radius: var(--nz-radius-lg);
+  background: var(--nz-surface);
+}
+.nz-panel-filtros__grupo { display: grid; gap: var(--nz-space-2); }
+.nz-panel-filtros__titulo { font-size: var(--nz-text-2xs); font-weight: 800; letter-spacing: var(--nz-tracking-caps); text-transform: uppercase; color: var(--nz-text-faint); }
+.nz-panel-filtros__pie { display: flex; flex-wrap: wrap; gap: var(--nz-space-2); }
+
+/* ---- P13 Estado vacío guiado con acción ---- */
+.nz-estado-vacio {
+  display: grid;
+  justify-items: center;
+  gap: var(--nz-space-3);
+  padding: var(--nz-space-10) var(--nz-space-5);
+  text-align: center;
+  border: var(--nz-border-w-strong) dashed var(--nz-border-strong);
+  border-radius: var(--nz-radius-lg);
+  background: var(--nz-surface);
+}
+.nz-estado-vacio__icono {
+  display: inline-grid;
+  place-items: center;
+  width: 56px;
+  height: 56px;
+  border-radius: var(--nz-radius-full);
+  background: var(--nz-brand-soft);
+  color: var(--nz-brand);
+}
+.nz-estado-vacio__titulo { margin: 0; font-size: var(--nz-text-lg); font-weight: 700; }
+.nz-estado-vacio__texto { max-width: 42ch; margin: 0; font-size: var(--nz-text-sm); color: var(--nz-text-soft); }
+.nz-estado-vacio__acciones { display: flex; flex-wrap: wrap; justify-content: center; gap: var(--nz-space-2); }
+
+/* ---- P14 Tarjeta de curso / lección ---- */
+.nz-tarjeta-curso {
+  display: grid;
+  gap: 0;
+  border: var(--nz-border-w) solid var(--nz-border);
+  border-radius: var(--nz-radius-lg);
+  background: var(--nz-surface);
+  overflow: hidden;
+}
+.nz-tarjeta-curso__portada { display: grid; place-items: center; aspect-ratio: 16 / 9; background: var(--nz-bg-inset); color: var(--nz-text-faint); }
+.nz-tarjeta-curso__cuerpo { display: grid; gap: var(--nz-space-2); padding: var(--nz-space-4); }
+.nz-tarjeta-curso__meta { display: flex; flex-wrap: wrap; align-items: center; gap: var(--nz-space-2); }
+.nz-tarjeta-curso__titulo { font-size: var(--nz-text-base); font-weight: 700; }
+.nz-tarjeta-curso__pie { display: flex; align-items: center; justify-content: space-between; gap: var(--nz-space-2); }
+
+/* ---- P15 Agenda de disponibilidad ---- */
+.nz-agenda-disponibilidad { display: grid; gap: var(--nz-space-4); }
+.nz-agenda-disponibilidad__dia { display: grid; gap: var(--nz-space-2); }
+.nz-agenda-disponibilidad__fecha { font-size: var(--nz-text-sm); font-weight: 700; color: var(--nz-text); }
+.nz-agenda-disponibilidad__franjas { display: flex; flex-wrap: wrap; gap: var(--nz-space-2); }
+.nz-agenda-disponibilidad__franja {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  padding: 0 var(--nz-space-4);
+  border: var(--nz-border-w) solid var(--nz-border);
+  border-radius: var(--nz-radius-full);
+  background: var(--nz-surface);
+  color: var(--nz-text-soft);
+  font: inherit;
+  font-size: var(--nz-text-sm);
+  font-weight: 600;
+  cursor: pointer;
+}
+.nz-agenda-disponibilidad__franja:hover { border-color: var(--nz-border-strong); color: var(--nz-text); }
+.nz-agenda-disponibilidad__franja.is-selected { background: var(--nz-brand); border-color: var(--nz-brand); color: var(--nz-text-invert); }
+.nz-agenda-disponibilidad__franja.is-ocupada { color: var(--nz-text-faint); text-decoration: line-through; pointer-events: none; }
+
+/* ---- P16 Buscador con facetas ---- */
+.nz-buscador-facetas { display: grid; gap: var(--nz-space-3); }
+.nz-buscador-facetas__barra { display: flex; flex-wrap: wrap; align-items: center; gap: var(--nz-space-2); }
+.nz-buscador-facetas__facetas { display: flex; flex-wrap: wrap; gap: var(--nz-space-2); }
+.nz-buscador-facetas__resultados { display: grid; gap: var(--nz-space-2); }
+.nz-buscador-facetas__resultado {
+  display: flex;
+  align-items: center;
+  gap: var(--nz-space-3);
+  padding: var(--nz-space-3);
+  border: var(--nz-border-w) solid var(--nz-border-soft);
+  border-radius: var(--nz-radius-md);
+  background: var(--nz-surface);
+}
+
+/* ---- P17 Galería con filtros ---- */
+.nz-galeria-filtros { display: grid; gap: var(--nz-space-3); }
+.nz-galeria-filtros__barra { display: flex; flex-wrap: wrap; align-items: center; gap: var(--nz-space-2); }
+.nz-galeria-filtros__rejilla { display: grid; gap: var(--nz-space-2); grid-template-columns: repeat(2, 1fr); }
+.nz-galeria-filtros__pieza { aspect-ratio: 1 / 1; border-radius: var(--nz-radius-md); background: var(--nz-bg-inset); overflow: hidden; }
+@media (min-width: 640px) { .nz-galeria-filtros__rejilla { grid-template-columns: repeat(3, 1fr); } }
+@media (min-width: 960px) { .nz-galeria-filtros__rejilla { grid-template-columns: repeat(4, 1fr); } }
+
+/* ---- P18 Editor de campos con etiqueta y ayuda ---- */
+.nz-editor-campos { display: grid; gap: var(--nz-space-4); }
+.nz-editor-campos__campo { display: grid; gap: var(--nz-space-1); grid-template-columns: minmax(0, 1fr); }
+.nz-editor-campos__cabecera { display: flex; align-items: center; justify-content: space-between; gap: var(--nz-space-2); }
+.nz-editor-campos__etiqueta { font-size: var(--nz-text-sm); font-weight: 700; color: var(--nz-text); }
+.nz-editor-campos__ayuda { font-size: var(--nz-text-xs); color: var(--nz-text-mute); }
+.nz-editor-campos__acciones { display: flex; gap: var(--nz-space-1); }
+@media (min-width: 640px) { .nz-editor-campos__campo { grid-template-columns: 14rem minmax(0, 1fr); align-items: start; gap: var(--nz-space-4); } }
+
+/* ---- P19 Bloque de carga (esqueleto) ---- */
+.nz-bloque-carga {
+  display: grid;
+  gap: var(--nz-space-3);
+  padding: var(--nz-space-4);
+  border: var(--nz-border-w) solid var(--nz-border-soft);
+  border-radius: var(--nz-radius-lg);
+  background: var(--nz-surface);
+}
+.nz-bloque-carga__lineas { display: grid; gap: var(--nz-space-2); }
+.nz-bloque-carga__pie { display: flex; align-items: center; gap: var(--nz-space-2); font-size: var(--nz-text-xs); color: var(--nz-text-mute); }
+
+/* ---- P20 Cabecera de informe ---- */
+.nz-cabecera-informe {
+  display: grid;
+  gap: var(--nz-space-3);
+  padding-bottom: var(--nz-space-4);
+  border-bottom: var(--nz-border-w-strong) solid var(--nz-border-strong);
+}
+.nz-cabecera-informe__top { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--nz-space-3); }
+.nz-cabecera-informe__marca { display: inline-flex; align-items: center; gap: var(--nz-space-2); font-weight: 800; }
+.nz-cabecera-informe__meta { display: flex; flex-wrap: wrap; gap: var(--nz-space-1) var(--nz-space-4); font-size: var(--nz-text-xs); color: var(--nz-text-mute); }
+.nz-cabecera-informe__titulo { font-size: var(--nz-text-2xl); font-weight: 800; letter-spacing: var(--nz-tracking-tight); }
+
+/* ---- P21 Pie de acciones pegajoso ---- */
+.nz-pie-acciones {
+  position: sticky;
+  bottom: 0;
+  z-index: var(--nz-z-sticky);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--nz-space-3);
+  padding: var(--nz-space-3) var(--nz-space-4);
+  border-top: var(--nz-border-w) solid var(--nz-border);
+  background: var(--nz-surface);
+}
+.nz-pie-acciones__info { font-size: var(--nz-text-sm); color: var(--nz-text-soft); }
+.nz-pie-acciones__botones { display: flex; flex-wrap: wrap; gap: var(--nz-space-2); margin-left: auto; }
+
+/* ---- P22 Lista de tareas con estado ---- */
+.nz-lista-tareas { display: grid; gap: var(--nz-space-2); margin: 0; padding: 0; list-style: none; }
+.nz-lista-tareas__tarea {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--nz-space-3);
+  padding: var(--nz-space-3);
+  border: var(--nz-border-w) solid var(--nz-border-soft);
+  border-radius: var(--nz-radius-md);
+  background: var(--nz-surface);
+}
+.nz-lista-tareas__cuerpo { flex: 1; min-width: 0; display: grid; gap: var(--nz-space-0); }
+.nz-lista-tareas__titulo { font-size: var(--nz-text-sm); font-weight: 700; }
+.nz-lista-tareas__meta { font-size: var(--nz-text-xs); color: var(--nz-text-mute); }
+.nz-lista-tareas__tarea.is-done .nz-lista-tareas__titulo { color: var(--nz-text-mute); text-decoration: line-through; }
+
+/* ---- P23 Bloque de precios (plan único destacado) ---- */
+.nz-bloque-precios {
+  display: grid;
+  gap: var(--nz-space-3);
+  padding: var(--nz-space-5);
+  border: var(--nz-border-w-strong) solid var(--nz-brand);
+  border-radius: var(--nz-radius-xl);
+  background: var(--nz-surface);
+  box-shadow: var(--nz-shadow-lg);
+}
+.nz-bloque-precios__cabecera { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: var(--nz-space-2); }
+.nz-bloque-precios__importe { font-size: var(--nz-text-3xl); font-weight: 800; letter-spacing: var(--nz-tracking-tight); font-variant-numeric: tabular-nums; }
+.nz-bloque-precios__lista { display: grid; gap: var(--nz-space-2); margin: 0; padding: 0; list-style: none; }
+.nz-bloque-precios__pie { display: flex; flex-wrap: wrap; gap: var(--nz-space-2); }
+
+/* ---- P24 Banner de aviso con acción ---- */
+.nz-aviso-accion {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--nz-space-3);
+  padding: var(--nz-space-3) var(--nz-space-4);
+  border: var(--nz-border-w) solid var(--nz-border);
+  border-left: var(--nz-border-w-strong) solid var(--nz-brand);
+  border-radius: var(--nz-radius-md);
+  background: var(--nz-surface);
+}
+.nz-aviso-accion__icono { flex: none; display: inline-grid; place-items: center; width: 40px; height: 40px; border-radius: var(--nz-radius-full); background: var(--nz-brand-soft); color: var(--nz-brand); }
+.nz-aviso-accion__cuerpo { flex: 1; min-width: 0; display: grid; gap: var(--nz-space-0); }
+.nz-aviso-accion__titulo { font-size: var(--nz-text-sm); font-weight: 700; }
+.nz-aviso-accion__texto { font-size: var(--nz-text-xs); color: var(--nz-text-mute); }
+.nz-aviso-accion__acciones { display: flex; flex-wrap: wrap; gap: var(--nz-space-2); }
+
+/* ---- P25 Perfil de usuario con pestañas ---- */
+.nz-perfil-pestanas { display: grid; gap: var(--nz-space-4); }
+.nz-perfil-pestanas__cabecera { display: flex; flex-wrap: wrap; align-items: center; gap: var(--nz-space-4); }
+.nz-perfil-pestanas__identidad { display: grid; gap: var(--nz-space-0); min-width: 0; }
+.nz-perfil-pestanas__nombre { font-size: var(--nz-text-lg); font-weight: 800; letter-spacing: var(--nz-tracking-tight); }
+.nz-perfil-pestanas__meta { font-size: var(--nz-text-sm); color: var(--nz-text-mute); }
+.nz-perfil-pestanas__cuerpo { min-width: 0; }
+
+/* ---- P26 Tabla de facturación con estados ---- */
+.nz-facturacion-estados { display: grid; gap: var(--nz-space-4); }
+.nz-facturacion-estados__resumen { display: flex; flex-wrap: wrap; gap: var(--nz-space-4); }
+.nz-facturacion-estados__importe { min-width: 10rem; display: grid; gap: var(--nz-space-0); }
+.nz-facturacion-estados__etiqueta { font-size: var(--nz-text-2xs); font-weight: 800; letter-spacing: var(--nz-tracking-caps); text-transform: uppercase; color: var(--nz-text-mute); }
+.nz-facturacion-estados__cifra { font-size: var(--nz-text-xl); font-weight: 800; font-variant-numeric: tabular-nums; }
+
+/* ---- P27 Centro de notificaciones ---- */
+.nz-centro-notificaciones {
+  display: grid;
+  gap: 0;
+  border: var(--nz-border-w) solid var(--nz-border);
+  border-radius: var(--nz-radius-lg);
+  background: var(--nz-surface);
+  overflow: hidden;
+}
+.nz-centro-notificaciones__cabecera { display: flex; flex-wrap: wrap; align-items: center; gap: var(--nz-space-2); padding: var(--nz-space-3) var(--nz-space-4); border-bottom: var(--nz-border-w) solid var(--nz-border-soft); }
+.nz-centro-notificaciones__lista { display: grid; gap: 0; }
+.nz-centro-notificaciones__item { display: flex; align-items: flex-start; gap: var(--nz-space-3); padding: var(--nz-space-3) var(--nz-space-4); border-bottom: var(--nz-border-w) solid var(--nz-border-soft); }
+.nz-centro-notificaciones__item:last-child { border-bottom: 0; }
+.nz-centro-notificaciones__icono { flex: none; display: inline-grid; place-items: center; width: 36px; height: 36px; border-radius: var(--nz-radius-full); background: var(--nz-bg-inset); color: var(--nz-text-mute); }
+.nz-centro-notificaciones__cuerpo { flex: 1; min-width: 0; display: grid; gap: var(--nz-space-0); }
+.nz-centro-notificaciones__pie { padding: var(--nz-space-2) var(--nz-space-4); border-top: var(--nz-border-w) solid var(--nz-border-soft); background: var(--nz-bg-soft); }
+
+/* ---- P28 Sección de preguntas frecuentes ---- */
+.nz-preguntas-frecuentes { display: grid; gap: var(--nz-space-2); }
+.nz-preguntas-frecuentes__item { padding: 0 var(--nz-space-4); border: var(--nz-border-w) solid var(--nz-border-soft); border-radius: var(--nz-radius-md); background: var(--nz-surface); }
+.nz-preguntas-frecuentes__pregunta { display: flex; align-items: center; gap: var(--nz-space-2); min-height: 44px; padding: var(--nz-space-3) 0; font-size: var(--nz-text-sm); font-weight: 700; color: var(--nz-text); cursor: pointer; }
+.nz-preguntas-frecuentes__respuesta { padding-bottom: var(--nz-space-3); font-size: var(--nz-text-sm); color: var(--nz-text-soft); }
+
+/* ---- P29 Tarjeta de suscripción ---- */
+.nz-tarjeta-suscripcion {
+  display: grid;
+  gap: var(--nz-space-3);
+  padding: var(--nz-space-4);
+  border: var(--nz-border-w) solid var(--nz-border);
+  border-radius: var(--nz-radius-lg);
+  background: var(--nz-surface);
+}
+.nz-tarjeta-suscripcion__cabecera { display: flex; flex-wrap: wrap; align-items: center; gap: var(--nz-space-2); }
+.nz-tarjeta-suscripcion__plan { font-size: var(--nz-text-base); font-weight: 700; }
+.nz-tarjeta-suscripcion__datos { display: grid; gap: var(--nz-space-2); }
+.nz-tarjeta-suscripcion__acciones { display: flex; flex-wrap: wrap; gap: var(--nz-space-2); }
+
+/* ---- P30 Bloque de estadísticas en rejilla ---- */
+.nz-rejilla-estadisticas { display: grid; gap: var(--nz-space-3); grid-template-columns: 1fr; }
+.nz-rejilla-estadisticas__dato {
+  display: grid;
+  gap: var(--nz-space-1);
+  padding: var(--nz-space-4);
+  border: var(--nz-border-w) solid var(--nz-border-soft);
+  border-radius: var(--nz-radius-md);
+  background: var(--nz-surface);
+}
+.nz-rejilla-estadisticas__valor { font-size: var(--nz-text-2xl); font-weight: 800; font-variant-numeric: tabular-nums; }
+.nz-rejilla-estadisticas__etiqueta { font-size: var(--nz-text-xs); color: var(--nz-text-mute); }
+@media (min-width: 640px) { .nz-rejilla-estadisticas { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 960px) { .nz-rejilla-estadisticas { grid-template-columns: repeat(4, 1fr); } }
+
+/* ---- P31 Ficha de producto con variantes ---- */
+.nz-ficha-producto { display: grid; gap: var(--nz-space-4); grid-template-columns: minmax(0, 1fr); }
+.nz-ficha-producto__media { aspect-ratio: 4 / 3; border-radius: var(--nz-radius-lg); background: var(--nz-bg-inset); overflow: hidden; }
+.nz-ficha-producto__cuerpo { display: grid; align-content: start; gap: var(--nz-space-2); min-width: 0; }
+.nz-ficha-producto__nombre { font-size: var(--nz-text-xl); font-weight: 800; letter-spacing: var(--nz-tracking-tight); }
+.nz-ficha-producto__variantes { display: flex; flex-wrap: wrap; gap: var(--nz-space-1); }
+.nz-ficha-producto__acciones { display: flex; flex-wrap: wrap; gap: var(--nz-space-2); }
+@media (min-width: 640px) { .nz-ficha-producto { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: start; } }
+
+/* ---- P32 Caja de comentarios ---- */
+.nz-caja-comentarios { display: grid; gap: var(--nz-space-4); }
+.nz-caja-comentarios__comentario { display: flex; align-items: flex-start; gap: var(--nz-space-3); padding: var(--nz-space-3) 0; border-bottom: var(--nz-border-w) solid var(--nz-border-soft); }
+.nz-caja-comentarios__cuerpo { flex: 1; min-width: 0; display: grid; gap: var(--nz-space-1); }
+.nz-caja-comentarios__autor { font-size: var(--nz-text-sm); font-weight: 700; }
+.nz-caja-comentarios__texto { font-size: var(--nz-text-sm); color: var(--nz-text-soft); }
+.nz-caja-comentarios__form { display: grid; gap: var(--nz-space-2); }
+.nz-caja-comentarios__form-acciones { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: var(--nz-space-2); }
+
+/* ---- P33 Tarjeta de contenido con media ---- */
+.nz-tarjeta-contenido {
+  display: grid;
+  gap: 0;
+  border: var(--nz-border-w) solid var(--nz-border);
+  border-radius: var(--nz-radius-lg);
+  background: var(--nz-surface);
+  overflow: hidden;
+}
+.nz-tarjeta-contenido__media { aspect-ratio: 16 / 9; background: var(--nz-bg-inset); }
+.nz-tarjeta-contenido__cuerpo { display: grid; gap: var(--nz-space-2); padding: var(--nz-space-4); }
+.nz-tarjeta-contenido__etiqueta { font-size: var(--nz-text-2xs); font-weight: 800; letter-spacing: var(--nz-tracking-caps); text-transform: uppercase; color: var(--nz-text-faint); }
+.nz-tarjeta-contenido__titulo { font-size: var(--nz-text-base); font-weight: 700; line-height: var(--nz-leading-snug); }
+.nz-tarjeta-contenido__texto { font-size: var(--nz-text-sm); color: var(--nz-text-soft); }
+.nz-tarjeta-contenido__pie { display: flex; align-items: center; gap: var(--nz-space-2); }
+.nz-tarjeta-contenido--interactiva { transition: box-shadow var(--nz-dur-base) var(--nz-ease-out); }
+.nz-tarjeta-contenido--interactiva:hover { box-shadow: var(--nz-shadow-lg); }
+
+/* ---- P34 Selector de vista (lista / rejilla) ---- */
+.nz-selector-vista { display: inline-flex; gap: var(--nz-space-1); padding: var(--nz-space-1); border-radius: var(--nz-radius-full); background: var(--nz-bg-inset); }
+.nz-selector-vista__opcion {
+  min-width: 44px;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--nz-space-1);
+  padding: 0 var(--nz-space-3);
+  border: 0;
+  border-radius: var(--nz-radius-full);
+  background: transparent;
+  color: var(--nz-text-soft);
+  font: inherit;
+  font-size: var(--nz-text-sm);
+  font-weight: 600;
+  cursor: pointer;
+}
+.nz-selector-vista__opcion.is-active { background: var(--nz-surface); color: var(--nz-text); box-shadow: var(--nz-shadow-sm); }
+@media (min-width: 960px) { .nz-selector-vista__opcion { min-height: 36px; } }
+
+/* ---- P35 Tabla de resumen con pie ---- */
+.nz-tabla-resumen { display: grid; gap: var(--nz-space-3); }
+.nz-tabla-resumen__pie { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--nz-space-3); font-size: var(--nz-text-xs); color: var(--nz-text-mute); }
+
+/* ---- P36 Panel de actividad reciente ---- */
+.nz-panel-actividad { display: grid; gap: var(--nz-space-2); }
+.nz-panel-actividad__cabecera { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--nz-space-2); }
+.nz-panel-actividad__lista { display: grid; gap: var(--nz-space-1); margin: 0; padding: 0; list-style: none; }
+
+/* ---- P37 Desglose de precio ---- */
+.nz-desglose-precio { display: grid; gap: var(--nz-space-2); }
+.nz-desglose-precio__fila { display: flex; justify-content: space-between; gap: var(--nz-space-3); font-size: var(--nz-text-sm); color: var(--nz-text-soft); }
+.nz-desglose-precio__total {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--nz-space-3);
+  padding-top: var(--nz-space-2);
+  border-top: var(--nz-border-w) solid var(--nz-border);
+  font-size: var(--nz-text-md);
+  font-weight: 800;
+}
+
+/* ---- P38 Tarjeta de equipo ---- */
+.nz-tarjeta-equipo { display: grid; gap: var(--nz-space-3); grid-template-columns: 1fr; }
+.nz-tarjeta-equipo__miembro {
+  display: grid;
+  justify-items: center;
+  gap: var(--nz-space-2);
+  padding: var(--nz-space-4);
+  border: var(--nz-border-w) solid var(--nz-border-soft);
+  border-radius: var(--nz-radius-lg);
+  background: var(--nz-surface);
+  text-align: center;
+}
+.nz-tarjeta-equipo__nombre { font-size: var(--nz-text-base); font-weight: 700; }
+.nz-tarjeta-equipo__rol { font-size: var(--nz-text-xs); color: var(--nz-text-mute); }
+@media (min-width: 640px) { .nz-tarjeta-equipo { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 960px) { .nz-tarjeta-equipo { grid-template-columns: repeat(3, 1fr); } }
+
+/* ---- P39 Comparativa de productos ---- */
+.nz-comparativa-productos { display: grid; gap: var(--nz-space-3); }
+.nz-comparativa-productos__tabla { overflow-x: auto; overscroll-behavior-x: contain; }
+
+/* ---- P40 Checklist de entrega ---- */
+.nz-checklist-entrega { display: grid; gap: var(--nz-space-2); }
+.nz-checklist-entrega__item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--nz-space-3);
+  padding: var(--nz-space-3);
+  border: var(--nz-border-w) solid var(--nz-border-soft);
+  border-radius: var(--nz-radius-md);
+  background: var(--nz-surface);
+}
+.nz-checklist-entrega__texto { flex: 1; min-width: 0; font-size: var(--nz-text-sm); color: var(--nz-text-soft); }
+
+/* ---- P41 Sección de formulario ---- */
+.nz-formulario-seccion {
+  display: grid;
+  gap: var(--nz-space-4);
+  padding: var(--nz-space-5);
+  border: var(--nz-border-w) solid var(--nz-border-soft);
+  border-radius: var(--nz-radius-lg);
+  background: var(--nz-surface);
+}
+.nz-formulario-seccion__cabecera { display: grid; gap: var(--nz-space-1); }
+.nz-formulario-seccion__titulo { font-size: var(--nz-text-lg); font-weight: 700; }
+.nz-formulario-seccion__desc { font-size: var(--nz-text-sm); color: var(--nz-text-mute); }
+.nz-formulario-seccion__pie { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: var(--nz-space-2); }
+
+/* ---- P42 Filtro por rango ---- */
+.nz-filtro-rango { display: grid; gap: var(--nz-space-2); }
+.nz-filtro-rango__cabecera { display: flex; align-items: baseline; justify-content: space-between; gap: var(--nz-space-2); }
+.nz-filtro-rango__valor { font-size: var(--nz-text-sm); font-weight: 700; font-variant-numeric: tabular-nums; }
+.nz-filtro-rango__pie { display: flex; justify-content: space-between; font-size: var(--nz-text-2xs); color: var(--nz-text-faint); }
+
+/* ---- P43 Aviso de sistema / mantenimiento ---- */
+.nz-aviso-sistema {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--nz-space-3);
+  padding: var(--nz-space-3) var(--nz-space-4);
+  border-left: var(--nz-border-w-strong) solid var(--nz-warning);
+  border-radius: var(--nz-radius-md);
+  background: var(--nz-warning-soft);
+}
+.nz-aviso-sistema__titulo { font-size: var(--nz-text-sm); font-weight: 800; color: var(--nz-text); }
+.nz-aviso-sistema__texto { font-size: var(--nz-text-xs); color: var(--nz-text-soft); }
+.nz-aviso-sistema__acciones { display: flex; flex-wrap: wrap; gap: var(--nz-space-2); margin-left: auto; }
+
+/* ---- P44 Tarjeta de servicio ---- */
+.nz-tarjeta-servicio {
+  display: flex;
+  gap: var(--nz-space-3);
+  padding: var(--nz-space-4);
+  border: var(--nz-border-w) solid var(--nz-border);
+  border-radius: var(--nz-radius-lg);
+  background: var(--nz-surface);
+}
+.nz-tarjeta-servicio__icono { flex: none; }
+.nz-tarjeta-servicio__cuerpo { flex: 1; min-width: 0; display: grid; gap: var(--nz-space-1); }
+.nz-tarjeta-servicio__titulo { font-size: var(--nz-text-base); font-weight: 700; }
+.nz-tarjeta-servicio__texto { font-size: var(--nz-text-sm); color: var(--nz-text-soft); }
+.nz-tarjeta-servicio__pie { display: flex; flex-wrap: wrap; align-items: center; gap: var(--nz-space-2); }
+
+/* ---- P45 Bloque de testimonio ---- */
+.nz-bloque-testimonio {
+  display: grid;
+  gap: var(--nz-space-3);
+  padding: var(--nz-space-5);
+  border: var(--nz-border-w) solid var(--nz-border-soft);
+  border-radius: var(--nz-radius-lg);
+  background: var(--nz-bg-soft);
+}
+.nz-bloque-testimonio__cita { font-size: var(--nz-text-md); color: var(--nz-text); line-height: var(--nz-leading-snug); }
+.nz-bloque-testimonio__autor { display: flex; align-items: center; gap: var(--nz-space-3); }
+.nz-bloque-testimonio__nombre { font-size: var(--nz-text-sm); font-weight: 700; }
+.nz-bloque-testimonio__rol { font-size: var(--nz-text-xs); color: var(--nz-text-mute); }
+
+/* ---- P46 Menú de cuenta con cabecera ---- */
+.nz-menu-cuenta {
+  display: grid;
+  gap: var(--nz-space-1);
+  width: 100%;
+  max-width: 18rem;
+  padding: var(--nz-space-2);
+  border: var(--nz-border-w) solid var(--nz-border);
+  border-radius: var(--nz-radius-lg);
+  background: var(--nz-surface);
+  box-shadow: var(--nz-shadow-lg);
+}
+.nz-menu-cuenta__cabecera { display: flex; align-items: center; gap: var(--nz-space-3); padding: var(--nz-space-2); }
+.nz-menu-cuenta__nombre { font-size: var(--nz-text-sm); font-weight: 700; }
+.nz-menu-cuenta__correo { font-size: var(--nz-text-xs); color: var(--nz-text-mute); }
+.nz-menu-cuenta__lista { display: grid; gap: var(--nz-space-1); }

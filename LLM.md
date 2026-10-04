@@ -1,6 +1,6 @@
 # Aurora — guía de decisión para agentes
 
-Design system CSS puro, sin dependencias ni build. 1907 objetos en 15 categorías.
+Design system CSS puro, sin dependencias ni build. 2145 objetos en 17 categorías.
 **No pegues el CSS en el prompt**: enlaza por CDN y usa las clases de esta guía.
 
 ## 1. Mínimo obligatorio
@@ -8,8 +8,8 @@ Design system CSS puro, sin dependencias ni build. 1907 objetos en 15 categoría
 ```html
 <html lang="es" data-nz-theme="light">
 <head>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v8.0.0/tokens.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v8.0.0/packs/all.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v8.1.0/tokens.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v8.1.0/packs/all.css">
 </head>
 <body class="nz">
 ```
@@ -52,6 +52,8 @@ Carga **solo los packs que uses** en producción (cada uno pesa 12-40 KB) o
 | 13 · Gráficos y visualización | `p13-charts.css` | `nz-bullet`, `nz-chart`, `nz-chart-bar`, `nz-chart-compare`… |
 | 14 · IA y agentes | `p14-ai.css` | `nz-agent-card`, `nz-approval`, `nz-attach`, `nz-chat`… |
 | 15 · Apps y escritorio | `p15-apps.css` | `nz-actbar`, `nz-agenda`, `nz-appempty`, `nz-appnav`… |
+| 16 · Cristal (capa de estilo) | `p16-cristal.css` | `nz-cristal`, `nz-cristal-barra` |
+| 17 · Patrones compuestos | `p17-patrones.css` | `nz-agenda-disponibilidad`, `nz-asistente-pasos`, `nz-aviso-accion`, `nz-aviso-sistema`… |
 
 ## 4. Necesito X → uso Y
 
@@ -186,7 +188,7 @@ Solo si necesitas afinar algo suelto (fuente, radio, ancho):
 }
 ```
 
-Los 170 tokens están inventariados en `components.json` (sección
+Los 179 tokens están inventariados en `components.json` (sección
 `tokens_def`, con nombre, valor y sección). Nada fuera de ese catálogo.
 
 ## 8. Anti-patrones (NO lo hagas)
@@ -197,7 +199,7 @@ Los 170 tokens están inventariados en `components.json` (sección
 - ❌ Gradientes, `backdrop-filter` o `!important`: prohibidos por el manifiesto y la CI los detecta.
 - ❌ Clases globales sin `.nz-`: romperías la convivencia con otros frameworks.
 - ❌ Desktop-first: el sistema es mobile-first (base 1 columna, `min-width` para crecer).
-- ❌ Enlazar `@master` en producción: pinea la versión (`@v8.0.0`) o jsDelivr te servirá CSS viejo desde su caché.
+- ❌ Enlazar `@master` en producción: pinea la versión (`@v8.1.0`) o jsDelivr te servirá CSS viejo desde su caché.
 
 ## 9. Verificar antes de entregar
 

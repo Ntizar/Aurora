@@ -290,3 +290,73 @@
 @media (min-width: 960px) {
   .nz-chart-range__btn { min-height: 32px; }
 }
+
+/* ============================================================
+   Interactividad de gráficos (opt-in · la activa js/graficos.js)
+   El motor añade .nz-chart--interactivo al contenedor y crea UN tooltip
+   compartido .nz-chart-tip. Sin JS, el HTML sigue mostrando sus valores:
+   el tooltip SOLO amplía lo que ya está escrito. Estado de serie apagada:
+   .is-selected se reutiliza del léxico cerrado para el filtro de leyenda.
+   ============================================================ */
+.nz-chart--interactivo { position: relative; }
+/* Puntos de interacción: cursor de mano y centro de transformación. */
+.nz-chart--interactivo .nz-chart-bar__col,
+.nz-chart--interactivo .nz-chart-waterfall__col,
+.nz-chart--interactivo .nz-chart-line__dot,
+.nz-chart--interactivo .nz-chart-donut__seg,
+.nz-chart--interactivo .nz-chart-scatter__dot,
+.nz-chart--interactivo .nz-heatmap__cell { cursor: pointer; }
+/* El punto de línea necesita área de acierto táctil cómoda en SVG. */
+.nz-chart--interactivo .nz-chart-line__dot { pointer-events: all; }
+
+/* Elemento atenuado por el filtro de leyenda (clica una serie para apagarla). */
+.nz-chart--interactivo .is-selected { opacity: .35; filter: none; }
+.is-selected .nz-chart-bar__bar,
+.is-selected .nz-chart-bar__seg,
+.is-selected .nz-chart-waterfall__bar,
+.is-selected .nz-chart-mini__bar { opacity: .35; }
+
+/* Leyenda clicable: cada item es un botón (afordancía + foco visible). */
+.nz-chart--interactivo .nz-legend__item { cursor: pointer; border-radius: var(--nz-radius-xs); }
+.nz-chart--interactivo .nz-legend__item[aria-pressed="false"] { opacity: .45; }
+.nz-chart--interactivo .nz-legend__item:focus-visible { outline: none; box-shadow: var(--nz-focus-ring); }
+
+/* ---- Tooltip flotante (lo crea el JS; estilo por tokens) ---- */
+.nz-chart-tip { position: fixed; z-index: var(--nz-z-tooltip); max-width: 16rem; padding: var(--nz-space-2) var(--nz-space-3); border-radius: var(--nz-radius-md); background: var(--nz-surface); color: var(--nz-text); box-shadow: var(--nz-shadow-md); border: var(--nz-border-w) solid var(--nz-border); font-size: var(--nz-text-xs); line-height: var(--nz-leading-snug); pointer-events: none; opacity: 0; transform: translateY(2px); transition: opacity var(--nz-dur-fast) var(--nz-ease-out), transform var(--nz-dur-fast) var(--nz-ease-out); }
+.nz-chart-tip--arriba { transform: translateY(-2px); }
+.nz-chart-tip.is-active { opacity: 1; transform: translateY(0); }
+.nz-chart-tip--inline { position: static; opacity: 1; transform: none; }
+.nz-chart-tip__label { display: block; color: var(--nz-text-mute); font-size: var(--nz-text-2xs); }
+.nz-chart-tip__value { display: block; font-weight: 700; font-variant-numeric: tabular-nums; }
+
+/* ---- Animación de entrada (la activa el motor con IntersectionObserver) ----
+   data-nz-anim lo pone el JS en <html>: sin JS nada se esconde nunca.
+   REGLA DE ORO: el estado inicial NUNCA es 0. Si la animación se congela (captura
+   headless, pestaña en segundo plano, JS a medias), el dato sigue leyéndose: las
+   barras arrancan al 55% y las series al 55% de opacidad, no a cero. El estado
+   inicial desaparece en cuanto el elemento recibe data-nz-crecido, así que el
+   :hover normal del componente vuelve a mandar al terminar. Las series SVG
+   (línea, donut, medidor) crecen con un fundido, no con trazo, para no depender
+   de la longitud real del path. */
+[data-nz-anim] .nz-chart-bar__bar, [data-nz-anim] .nz-chart-bar__seg,
+[data-nz-anim] .nz-chart-waterfall__bar, [data-nz-anim] .nz-sparkline__bar,
+[data-nz-anim] .nz-chart-mini__bar, [data-nz-anim] .nz-funnel__bar,
+[data-nz-anim] .nz-chart-tablebar__bar, [data-nz-anim] .nz-bullet__value,
+[data-nz-anim] .nz-chart-line__svg, [data-nz-anim] .nz-chart-donut__svg,
+[data-nz-anim] .nz-chart-gauge__svg, [data-nz-anim] .nz-heatmap__cell { transition: transform var(--nz-dur-slow) var(--nz-ease-out), opacity var(--nz-dur-slow) var(--nz-ease-out); }
+[data-nz-anim] .nz-chart-bar__bar:not([data-nz-crecido]), [data-nz-anim] .nz-chart-bar__seg:not([data-nz-crecido]),
+[data-nz-anim] .nz-chart-waterfall__bar:not([data-nz-crecido]) { transform: scaleY(0.55); transform-origin: bottom; }
+[data-nz-anim] .nz-chart-bar--horizontal .nz-chart-bar__bar:not([data-nz-crecido]),
+[data-nz-anim] .nz-sparkline__bar:not([data-nz-crecido]), [data-nz-anim] .nz-chart-mini__bar:not([data-nz-crecido]),
+[data-nz-anim] .nz-funnel__bar:not([data-nz-crecido]), [data-nz-anim] .nz-chart-tablebar__bar:not([data-nz-crecido]),
+[data-nz-anim] .nz-bullet__value:not([data-nz-crecido]) { transform: scaleX(0.55); transform-origin: left; }
+[data-nz-anim] .nz-chart-line__svg:not([data-nz-crecido]), [data-nz-anim] .nz-chart-donut__svg:not([data-nz-crecido]),
+[data-nz-anim] .nz-chart-gauge__svg:not([data-nz-crecido]), [data-nz-anim] .nz-heatmap__cell:not([data-nz-crecido]) { opacity: 0.55; }
+@media (prefers-reduced-motion: reduce) {
+  [data-nz-anim] .nz-chart-bar__bar, [data-nz-anim] .nz-chart-bar__seg,
+  [data-nz-anim] .nz-chart-waterfall__bar, [data-nz-anim] .nz-sparkline__bar,
+  [data-nz-anim] .nz-chart-mini__bar, [data-nz-anim] .nz-funnel__bar,
+  [data-nz-anim] .nz-chart-tablebar__bar, [data-nz-anim] .nz-bullet__value { transform: none; transition: none; }
+  [data-nz-anim] .nz-chart-line__svg, [data-nz-anim] .nz-chart-donut__svg,
+  [data-nz-anim] .nz-chart-gauge__svg, [data-nz-anim] .nz-heatmap__cell { opacity: 1; transition: none; }
+}

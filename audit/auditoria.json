@@ -1,10 +1,10 @@
 {
  "resumen": {
-  "objetos_declarados": 1907,
-  "familias": 350,
-  "demos": 578,
-  "categorias": 15,
-  "clases_usadas_en_demos": 1907,
+  "objetos_declarados": 2145,
+  "familias": 399,
+  "demos": 632,
+  "categorias": 17,
+  "clases_usadas_en_demos": 2145,
   "clases_sin_demo": 0,
   "familias_sin_demo": 0,
   "fantasmas": 0,
@@ -14,8 +14,8 @@
   "glass": 0,
   "gradientes": 0,
   "important": 1,
-  "familias_sin_variantes": 116,
-  "packs": 15
+  "familias_sin_variantes": 161,
+  "packs": 17
  },
  "packs": {
   "p1-layout.css": {
@@ -59,10 +59,10 @@
    "important": 1
   },
   "p13-charts.css": {
-   "lineas": 293,
-   "bytes": 22844,
-   "clases": 210,
-   "familias": 21,
+   "lineas": 363,
+   "bytes": 28259,
+   "clases": 216,
+   "familias": 22,
    "hex": 0,
    "gradientes": 0,
    "glass": 0,
@@ -83,6 +83,26 @@
    "bytes": 41564,
    "clases": 74,
    "familias": 30,
+   "hex": 0,
+   "gradientes": 0,
+   "glass": 0,
+   "important": 0
+  },
+  "p16-cristal.css": {
+   "lineas": 111,
+   "bytes": 4807,
+   "clases": 8,
+   "familias": 2,
+   "hex": 0,
+   "gradientes": 0,
+   "glass": 0,
+   "important": 0
+  },
+  "p17-patrones.css": {
+   "lineas": 659,
+   "bytes": 34113,
+   "clases": 224,
+   "familias": 46,
    "hex": 0,
    "gradientes": 0,
    "glass": 0,
@@ -281,9 +301,9 @@
   "13": {
    "nombre": "Gráficos y visualización",
    "pack": "p13-charts.css",
-   "demos": 36,
-   "objetos": 210,
-   "familias": 21,
+   "demos": 38,
+   "objetos": 216,
+   "familias": 22,
    "sin_demo": [],
    "familias_sin_demo": []
   },
@@ -302,6 +322,24 @@
    "demos": 37,
    "objetos": 74,
    "familias": 30,
+   "sin_demo": [],
+   "familias_sin_demo": []
+  },
+  "16": {
+   "nombre": "Cristal (capa de estilo)",
+   "pack": "p16-cristal.css",
+   "demos": 5,
+   "objetos": 8,
+   "familias": 2,
+   "sin_demo": [],
+   "familias_sin_demo": []
+  },
+  "17": {
+   "nombre": "Patrones compuestos",
+   "pack": "p17-patrones.css",
+   "demos": 47,
+   "objetos": 224,
+   "familias": 46,
    "sin_demo": [],
    "familias_sin_demo": []
   }
@@ -398,6 +436,19 @@
    "mods": [],
    "partes": [
     "slot"
+   ],
+   "demostrado": true
+  },
+  "nz-agenda-disponibilidad": {
+   "cat": 17,
+   "pack": "p17-patrones.css",
+   "n_clases": 5,
+   "mods": [],
+   "partes": [
+    "dia",
+    "fecha",
+    "franja",
+    "franjas"
    ],
    "demostrado": true
   },
@@ -560,6 +611,19 @@
    "partes": [],
    "demostrado": true
   },
+  "nz-asistente-pasos": {
+   "cat": 17,
+   "pack": "p17-patrones.css",
+   "n_clases": 5,
+   "mods": [],
+   "partes": [
+    "acciones",
+    "cabecera",
+    "cuerpo",
+    "pie"
+   ],
+   "demostrado": true
+  },
   "nz-aspect": {
    "cat": 1,
    "pack": "p1-layout.css",
@@ -650,6 +714,32 @@
    ],
    "demostrado": true
   },
+  "nz-aviso-accion": {
+   "cat": 17,
+   "pack": "p17-patrones.css",
+   "n_clases": 6,
+   "mods": [],
+   "partes": [
+    "acciones",
+    "cuerpo",
+    "icono",
+    "texto",
+    "titulo"
+   ],
+   "demostrado": true
+  },
+  "nz-aviso-sistema": {
+   "cat": 17,
+   "pack": "p17-patrones.css",
+   "n_clases": 4,
+   "mods": [],
+   "partes": [
+    "acciones",
+    "texto",
+    "titulo"
+   ],
+   "demostrado": true
+  },
   "nz-backdrop": {
    "cat": 7,
    "pack": "p7-overlays.css",
@@ -689,6 +779,20 @@
    "partes": [],
    "demostrado": true
   },
+  "nz-bandeja-avisos": {
+   "cat": 17,
+   "pack": "p17-patrones.css",
+   "n_clases": 6,
+   "mods": [],
+   "partes": [
+    "cuerpo",
+    "hora",
+    "item",
+    "texto",
+    "titulo"
+   ],
+   "demostrado": true
+  },
   "nz-banner": {
    "cat": 6,
    "pack": "p6-feedback.css",
@@ -701,6 +805,19 @@
     "action",
     "body",
     "close"
+   ],
+   "demostrado": true
+  },
+  "nz-barra-filtros": {
+   "cat": 17,
+   "pack": "p17-patrones.css",
+   "n_clases": 5,
+   "mods": [],
+   "partes": [
+    "buscar",
+    "chips",
+    "conteo",
+    "fila"
    ],
    "demostrado": true
   },
@@ -751,6 +868,43 @@
     "sm"
    ],
    "partes": [],
+   "demostrado": true
+  },
+  "nz-bloque-carga": {
+   "cat": 17,
+   "pack": "p17-patrones.css",
+   "n_clases": 3,
+   "mods": [],
+   "partes": [
+    "lineas",
+    "pie"
+   ],
+   "demostrado": true
+  },
+  "nz-bloque-precios": {
+   "cat": 17,
+   "pack": "p17-patrones.css",
+   "n_clases": 5,
+   "mods": [],
+   "partes": [
+    "cabecera",
+    "importe",
+    "lista",
+    "pie"
+   ],
+   "demostrado": true
+  },
+  "nz-bloque-testimonio": {
+   "cat": 17,
+   "pack": "p17-patrones.css",
+   "n_clases": 5,
+   "mods": [],
+   "partes": [
+    "autor",
+    "cita",
+    "nombre",
+    "rol"
+   ],
    "demostrado": true
   },
   "nz-brand": {
@@ -874,6 +1028,59 @@
    ],
    "demostrado": true
   },
+  "nz-buscador-facetas": {
+   "cat": 17,
+   "pack": "p17-patrones.css",
+   "n_clases": 5,
+   "mods": [],
+   "partes": [
+    "barra",
+    "facetas",
+    "resultado",
+    "resultados"
+   ],
+   "demostrado": true
+  },
+  "nz-cabecera-informe": {
+   "cat": 17,
+   "pack": "p17-patrones.css",
+   "n_clases": 5,
+   "mods": [],
+   "partes": [
+    "marca",
+    "meta",
+    "titulo",
+    "top"
+   ],
+   "demostrado": true
+  },
+  "nz-cabecera-pagina": {
+   "cat": 17,
+   "pack": "p17-patrones.css",
+   "n_clases": 4,
+   "mods": [],
+   "partes": [
+    "acciones",
+    "principal",
+    "texto"
+   ],
+   "demostrado": true
+  },
+  "nz-caja-comentarios": {
+   "cat": 17,
+   "pack": "p17-patrones.css",
+   "n_clases": 7,
+   "mods": [],
+   "partes": [
+    "autor",
+    "comentario",
+    "cuerpo",
+    "form",
+    "form-acciones",
+    "texto"
+   ],
+   "demostrado": true
+  },
   "nz-callout": {
    "cat": 6,
    "pack": "p6-feedback.css",
@@ -969,14 +1176,30 @@
    "partes": [],
    "demostrado": true
   },
+  "nz-centro-notificaciones": {
+   "cat": 17,
+   "pack": "p17-patrones.css",
+   "n_clases": 7,
+   "mods": [],
+   "partes": [
+    "cabecera",
+    "cuerpo",
+    "icono",
+    "item",
+    "lista",
+    "pie"
+   ],
+   "demostrado": true
+  },
   "nz-chart": {
    "cat": 13,
    "pack": "p13-charts.css",
-   "n_clases": 22,
+   "n_clases": 23,
    "mods": [
     "accent",
     "bordered",
     "flat",
+    "interactivo",
     "lg",
     "sm"
    ],
@@ -1259,6 +1482,20 @@
    ],
    "demostrado": true
   },
+  "nz-chart-tip": {
+   "cat": 13,
+   "pack": "p13-charts.css",
+   "n_clases": 5,
+   "mods": [
+    "arriba",
+    "inline"
+   ],
+   "partes": [
+    "label",
+    "value"
+   ],
+   "demostrado": true
+  },
   "nz-chart-waterfall": {
    "cat": 13,
    "pack": "p13-charts.css",
@@ -1339,6 +1576,17 @@
    "partes": [
     "box",
     "box--indeterminate"
+   ],
+   "demostrado": true
+  },
+  "nz-checklist-entrega": {
+   "cat": 17,
+   "pack": "p17-patrones.css",
+   "n_clases": 3,
+   "mods": [],
+   "partes": [
+    "item",
+    "texto"
    ],
    "demostrado": true
   },
@@ -1511,6 +1759,27 @@
    ],
    "demostrado": true
   },
+  "nz-comparador-planes": {
+   "cat": 17,
+   "pack": "p17-patrones.css",
+   "n_clases": 3,
+   "mods": [],
+   "partes": [
+    "nota",
+    "planes"
+   ],
+   "demostrado": true
+  },
+  "nz-comparativa-productos": {
+   "cat": 17,
+   "pack": "p17-patrones.css",
+   "n_clases": 2,
+   "mods": [],
+   "partes": [
+    "tabla"
+   ],
+   "demostrado": true
+  },
   "nz-compare": {
    "cat": 8,
    "pack": "p8-data.css",
@@ -1660,6 +1929,30 @@
    "partes": [],
    "demostrado": true
   },
+  "nz-cristal": {
+   "cat": 16,
+   "pack": "p16-cristal.css",
+   "n_clases": 7,
+   "mods": [
+    "borde-marca",
+    "fuerte",
+    "pill",
+    "plano",
+    "suave"
+   ],
+   "partes": [
+    "brillo"
+   ],
+   "demostrado": true
+  },
+  "nz-cristal-barra": {
+   "cat": 16,
+   "pack": "p16-cristal.css",
+   "n_clases": 1,
+   "mods": [],
+   "partes": [],
+   "demostrado": true
+  },
   "nz-cta": {
    "cat": 4,
    "pack": "p4-actions.css",
@@ -1743,6 +2036,17 @@
    "n_clases": 1,
    "mods": [],
    "partes": [],
+   "demostrado": true
+  },
+  "nz-desglose-precio": {
+   "cat": 17,
+   "pack": "p17-patrones.css",
+   "n_clases": 3,
+   "mods": [],
+   "partes": [
+    "fila",
+    "total"
+   ],
    "demostrado": true
   },
   "nz-diff": {
@@ -1900,6 +2204,20 @@
    ],
    "demostrado": true
   },
+  "nz-editor-campos": {
+   "cat": 17,
+   "pack": "p17-patrones.css",
+   "n_clases": 6,
+   "mods": [],
+   "partes": [
+    "acciones",
+    "ayuda",
+    "cabecera",
+    "campo",
+    "etiqueta"
+   ],
+   "demostrado": true
+  },
   "nz-embed-grid": {
    "cat": 14,
    "pack": "p14-ai.css",
@@ -1964,6 +2282,19 @@
    ],
    "demostrado": true
   },
+  "nz-estado-vacio": {
+   "cat": 17,
+   "pack": "p17-patrones.css",
+   "n_clases": 5,
+   "mods": [],
+   "partes": [
+    "acciones",
+    "icono",
+    "texto",
+    "titulo"
+   ],
+   "demostrado": true
+  },
   "nz-eyebrow": {
    "cat": 3,
    "pack": "p3-typography.css",
@@ -1984,6 +2315,19 @@
     "sm"
    ],
    "partes": [],
+   "demostrado": true
+  },
+  "nz-facturacion-estados": {
+   "cat": 17,
+   "pack": "p17-patrones.css",
+   "n_clases": 5,
+   "mods": [],
+   "partes": [
+    "cifra",
+    "etiqueta",
+    "importe",
+    "resumen"
+   ],
    "demostrado": true
   },
   "nz-feed": {
@@ -2011,6 +2355,35 @@
    "partes": [
     "btn",
     "btn--on"
+   ],
+   "demostrado": true
+  },
+  "nz-ficha-entidad": {
+   "cat": 17,
+   "pack": "p17-patrones.css",
+   "n_clases": 7,
+   "mods": [],
+   "partes": [
+    "acciones",
+    "cabecera",
+    "datos",
+    "identidad",
+    "meta",
+    "nombre"
+   ],
+   "demostrado": true
+  },
+  "nz-ficha-producto": {
+   "cat": 17,
+   "pack": "p17-patrones.css",
+   "n_clases": 6,
+   "mods": [],
+   "partes": [
+    "acciones",
+    "cuerpo",
+    "media",
+    "nombre",
+    "variantes"
    ],
    "demostrado": true
   },
@@ -2089,6 +2462,18 @@
    ],
    "demostrado": true
   },
+  "nz-filtro-rango": {
+   "cat": 17,
+   "pack": "p17-patrones.css",
+   "n_clases": 4,
+   "mods": [],
+   "partes": [
+    "cabecera",
+    "pie",
+    "valor"
+   ],
+   "demostrado": true
+  },
   "nz-focus-accent": {
    "cat": 12,
    "pack": "p12-system.css",
@@ -2129,6 +2514,19 @@
    "partes": [],
    "demostrado": true
   },
+  "nz-formulario-seccion": {
+   "cat": 17,
+   "pack": "p17-patrones.css",
+   "n_clases": 5,
+   "mods": [],
+   "partes": [
+    "cabecera",
+    "desc",
+    "pie",
+    "titulo"
+   ],
+   "demostrado": true
+  },
   "nz-funnel": {
    "cat": 13,
    "pack": "p13-charts.css",
@@ -2162,6 +2560,18 @@
    "partes": [
     "item",
     "item--tall"
+   ],
+   "demostrado": true
+  },
+  "nz-galeria-filtros": {
+   "cat": 17,
+   "pack": "p17-patrones.css",
+   "n_clases": 4,
+   "mods": [],
+   "partes": [
+    "barra",
+    "pieza",
+    "rejilla"
    ],
    "demostrado": true
   },
@@ -2810,6 +3220,20 @@
    ],
    "demostrado": true
   },
+  "nz-linea-pasos": {
+   "cat": 17,
+   "pack": "p17-patrones.css",
+   "n_clases": 6,
+   "mods": [],
+   "partes": [
+    "cuerpo",
+    "marca",
+    "nota",
+    "paso",
+    "titulo"
+   ],
+   "demostrado": true
+  },
   "nz-link": {
    "cat": 3,
    "pack": "p3-typography.css",
@@ -2859,6 +3283,19 @@
     "body",
     "meta",
     "title"
+   ],
+   "demostrado": true
+  },
+  "nz-lista-tareas": {
+   "cat": 17,
+   "pack": "p17-patrones.css",
+   "n_clases": 5,
+   "mods": [],
+   "partes": [
+    "cuerpo",
+    "meta",
+    "tarea",
+    "titulo"
    ],
    "demostrado": true
   },
@@ -3075,6 +3512,19 @@
    ],
    "demostrado": true
   },
+  "nz-menu-cuenta": {
+   "cat": 17,
+   "pack": "p17-patrones.css",
+   "n_clases": 5,
+   "mods": [],
+   "partes": [
+    "cabecera",
+    "correo",
+    "lista",
+    "nombre"
+   ],
+   "demostrado": true
+  },
   "nz-menu-pop": {
    "cat": 7,
    "pack": "p7-overlays.css",
@@ -3109,6 +3559,20 @@
    "partes": [
     "bar",
     "label"
+   ],
+   "demostrado": true
+  },
+  "nz-metrica-tendencia": {
+   "cat": 17,
+   "pack": "p17-patrones.css",
+   "n_clases": 6,
+   "mods": [],
+   "partes": [
+    "cabecera",
+    "etiqueta",
+    "pie",
+    "tendencia",
+    "valor"
    ],
    "demostrado": true
   },
@@ -3430,6 +3894,48 @@
    ],
    "demostrado": true
   },
+  "nz-panel": {
+   "cat": 17,
+   "pack": "p17-patrones.css",
+   "n_clases": 10,
+   "mods": [
+    "compact",
+    "marca",
+    "sin-borde"
+   ],
+   "partes": [
+    "acciones",
+    "cabecera",
+    "cuerpo",
+    "pie",
+    "sub",
+    "titulo"
+   ],
+   "demostrado": true
+  },
+  "nz-panel-actividad": {
+   "cat": 17,
+   "pack": "p17-patrones.css",
+   "n_clases": 3,
+   "mods": [],
+   "partes": [
+    "cabecera",
+    "lista"
+   ],
+   "demostrado": true
+  },
+  "nz-panel-filtros": {
+   "cat": 17,
+   "pack": "p17-patrones.css",
+   "n_clases": 4,
+   "mods": [],
+   "partes": [
+    "grupo",
+    "pie",
+    "titulo"
+   ],
+   "demostrado": true
+  },
   "nz-password": {
    "cat": 5,
    "pack": "p5-forms.css",
@@ -3477,6 +3983,31 @@
     "method",
     "method--selected",
     "note"
+   ],
+   "demostrado": true
+  },
+  "nz-perfil-pestanas": {
+   "cat": 17,
+   "pack": "p17-patrones.css",
+   "n_clases": 6,
+   "mods": [],
+   "partes": [
+    "cabecera",
+    "cuerpo",
+    "identidad",
+    "meta",
+    "nombre"
+   ],
+   "demostrado": true
+  },
+  "nz-pie-acciones": {
+   "cat": 17,
+   "pack": "p17-patrones.css",
+   "n_clases": 3,
+   "mods": [],
+   "partes": [
+    "botones",
+    "info"
    ],
    "demostrado": true
   },
@@ -3586,6 +4117,18 @@
    "partes": [
     "control",
     "row"
+   ],
+   "demostrado": true
+  },
+  "nz-preguntas-frecuentes": {
+   "cat": 17,
+   "pack": "p17-patrones.css",
+   "n_clases": 4,
+   "mods": [],
+   "partes": [
+    "item",
+    "pregunta",
+    "respuesta"
    ],
    "demostrado": true
   },
@@ -3914,6 +4457,18 @@
    "partes": [],
    "demostrado": true
   },
+  "nz-rejilla-estadisticas": {
+   "cat": 17,
+   "pack": "p17-patrones.css",
+   "n_clases": 4,
+   "mods": [],
+   "partes": [
+    "dato",
+    "etiqueta",
+    "valor"
+   ],
+   "demostrado": true
+  },
   "nz-resmon": {
    "cat": 15,
    "pack": "p15-apps.css",
@@ -3921,6 +4476,20 @@
    "mods": [],
    "partes": [
     "row"
+   ],
+   "demostrado": true
+  },
+  "nz-resumen-pedido": {
+   "cat": 17,
+   "pack": "p17-patrones.css",
+   "n_clases": 6,
+   "mods": [],
+   "partes": [
+    "cabecera",
+    "linea",
+    "lineas",
+    "pie",
+    "total"
    ],
    "demostrado": true
   },
@@ -4118,6 +4687,16 @@
     "sm"
    ],
    "partes": [],
+   "demostrado": true
+  },
+  "nz-selector-vista": {
+   "cat": 17,
+   "pack": "p17-patrones.css",
+   "n_clases": 2,
+   "mods": [],
+   "partes": [
+    "opcion"
+   ],
    "demostrado": true
   },
   "nz-share": {
@@ -4727,6 +5306,28 @@
    "partes": [],
    "demostrado": true
   },
+  "nz-tabla-lote": {
+   "cat": 17,
+   "pack": "p17-patrones.css",
+   "n_clases": 4,
+   "mods": [],
+   "partes": [
+    "lote",
+    "lote-acciones",
+    "seleccion"
+   ],
+   "demostrado": true
+  },
+  "nz-tabla-resumen": {
+   "cat": 17,
+   "pack": "p17-patrones.css",
+   "n_clases": 2,
+   "mods": [],
+   "partes": [
+    "pie"
+   ],
+   "demostrado": true
+  },
   "nz-table": {
    "cat": 8,
    "pack": "p8-data.css",
@@ -4817,6 +5418,76 @@
    "n_clases": 1,
    "mods": [],
    "partes": [],
+   "demostrado": true
+  },
+  "nz-tarjeta-contenido": {
+   "cat": 17,
+   "pack": "p17-patrones.css",
+   "n_clases": 8,
+   "mods": [
+    "interactiva"
+   ],
+   "partes": [
+    "cuerpo",
+    "etiqueta",
+    "media",
+    "pie",
+    "texto",
+    "titulo"
+   ],
+   "demostrado": true
+  },
+  "nz-tarjeta-curso": {
+   "cat": 17,
+   "pack": "p17-patrones.css",
+   "n_clases": 6,
+   "mods": [],
+   "partes": [
+    "cuerpo",
+    "meta",
+    "pie",
+    "portada",
+    "titulo"
+   ],
+   "demostrado": true
+  },
+  "nz-tarjeta-equipo": {
+   "cat": 17,
+   "pack": "p17-patrones.css",
+   "n_clases": 4,
+   "mods": [],
+   "partes": [
+    "miembro",
+    "nombre",
+    "rol"
+   ],
+   "demostrado": true
+  },
+  "nz-tarjeta-servicio": {
+   "cat": 17,
+   "pack": "p17-patrones.css",
+   "n_clases": 6,
+   "mods": [],
+   "partes": [
+    "cuerpo",
+    "icono",
+    "pie",
+    "texto",
+    "titulo"
+   ],
+   "demostrado": true
+  },
+  "nz-tarjeta-suscripcion": {
+   "cat": 17,
+   "pack": "p17-patrones.css",
+   "n_clases": 5,
+   "mods": [],
+   "partes": [
+    "acciones",
+    "cabecera",
+    "datos",
+    "plan"
+   ],
    "demostrado": true
   },
   "nz-taskplan": {
@@ -5315,6 +5986,7 @@
   "nz-actbar",
   "nz-activity",
   "nz-agenda",
+  "nz-agenda-disponibilidad",
   "nz-align-justify",
   "nz-align-left",
   "nz-align-right",
@@ -5323,31 +5995,57 @@
   "nz-appstatus",
   "nz-arbol",
   "nz-aside",
+  "nz-asistente-pasos",
   "nz-atajo-teclado",
   "nz-attach",
+  "nz-aviso-accion",
+  "nz-aviso-sistema",
   "nz-balance",
+  "nz-bandeja-avisos",
+  "nz-barra-filtros",
+  "nz-bloque-carga",
+  "nz-bloque-precios",
+  "nz-bloque-testimonio",
+  "nz-buscador-facetas",
+  "nz-cabecera-informe",
+  "nz-cabecera-pagina",
+  "nz-caja-comentarios",
   "nz-caps",
   "nz-center",
   "nz-center-x",
   "nz-center-xy",
   "nz-center-y",
+  "nz-centro-notificaciones",
   "nz-chart-radar",
   "nz-chart-range",
   "nz-chart-tablebar",
   "nz-chat-empty",
+  "nz-checklist-entrega",
   "nz-cite",
   "nz-codepad",
   "nz-col",
   "nz-collapsible",
   "nz-columns-2",
   "nz-columns-3",
+  "nz-comparador-planes",
+  "nz-comparativa-productos",
+  "nz-cristal-barra",
   "nz-dateline",
+  "nz-desglose-precio",
   "nz-docs",
+  "nz-editor-campos",
+  "nz-estado-vacio",
   "nz-eyebrow",
+  "nz-facturacion-estados",
+  "nz-ficha-entidad",
+  "nz-ficha-producto",
   "nz-figura",
   "nz-filezona",
+  "nz-filtro-rango",
   "nz-focus-accent",
   "nz-focus-ring",
+  "nz-formulario-seccion",
+  "nz-galeria-filtros",
   "nz-hide-escritorio",
   "nz-hide-movil",
   "nz-high-contrast-note",
@@ -5357,7 +6055,11 @@
   "nz-inspector",
   "nz-kanban",
   "nz-launcher",
+  "nz-linea-pasos",
+  "nz-lista-tareas",
   "nz-maintenance-banner",
+  "nz-menu-cuenta",
+  "nz-metrica-tendencia",
   "nz-min-target",
   "nz-month",
   "nz-nav-landmark",
@@ -5365,11 +6067,16 @@
   "nz-offline-bar",
   "nz-overflow-x",
   "nz-overflow-y",
+  "nz-panel-actividad",
+  "nz-panel-filtros",
   "nz-password",
   "nz-pathbar",
   "nz-pay",
+  "nz-perfil-pestanas",
+  "nz-pie-acciones",
   "nz-preferencias",
   "nz-prefs",
+  "nz-preguntas-frecuentes",
   "nz-pretty",
   "nz-print-hide",
   "nz-prompt",
@@ -5377,13 +6084,16 @@
   "nz-ptemplate",
   "nz-reason",
   "nz-reduced-motion-ok",
+  "nz-rejilla-estadisticas",
   "nz-resmon",
+  "nz-resumen-pedido",
   "nz-ribbon",
   "nz-root",
   "nz-route",
   "nz-rtl",
   "nz-safe",
   "nz-safe-x",
+  "nz-selector-vista",
   "nz-show-escritorio",
   "nz-show-movil",
   "nz-skip-links-group",
@@ -5410,7 +6120,13 @@
   "nz-sysinfo",
   "nz-sysnotif",
   "nz-tabfocus-visible",
+  "nz-tabla-lote",
+  "nz-tabla-resumen",
   "nz-tap-44",
+  "nz-tarjeta-curso",
+  "nz-tarjeta-equipo",
+  "nz-tarjeta-servicio",
+  "nz-tarjeta-suscripcion",
   "nz-taskwin",
   "nz-term",
   "nz-tokens",

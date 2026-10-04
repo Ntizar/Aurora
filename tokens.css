@@ -123,8 +123,12 @@
 
   /* ---- 7. TIPOGRAFÍA · escala modular v8 (monótona: sin duplicados ni solapes).
      12 · 13 · 14 · 16 · 18 · 20-22 · 24-28 · 30-38 · 40-56 ---- */
-  --nz-font: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  --nz-font-mono: ui-monospace, "Cascadia Code", "SF Mono", Consolas, monospace;
+  /* Tipografía moderna por defecto (Inter variable). Si no se carga la web,
+     cae al stack del sistema sin romper nada: --nz-font es un token, el proyecto
+     puede cambiarlo a la familia que quiera. */
+  --nz-font: "Inter", "Inter Variable", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --nz-font-titulo: "Inter", "Inter Variable", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --nz-font-mono: "JetBrains Mono", ui-monospace, "Cascadia Code", "SF Mono", Consolas, monospace;
   --nz-text-2xs:  0.75rem;    /* 12px — micro: contadores, tags */
   --nz-text-xs:   0.8125rem;  /* 13px — etiquetas */
   --nz-text-sm:   0.875rem;   /* 14px — interfaz secundaria */
@@ -213,6 +217,18 @@
   /* ---- 13. FOCUS (deriva de la marca) ---- */
   --nz-focus-ring: 0 0 0 3px color-mix(in oklab, var(--nz-marca-500) 38%, transparent);
   --nz-focus-ring-accent: 0 0 0 3px color-mix(in oklab, var(--nz-acento-500) 42%, transparent);
+
+  /* ---- 14. CRISTAL · capa de estilo opt-in (packs/p16-cristal.css)
+     El vidrio es translúcido por definición: se apoya en el fondo, nunca lo tapa.
+     Todo sale de tokens, así que también cambia con la marca elegida. ---- */
+  --nz-cristal-blur: 18px;
+  --nz-cristal-sat: 1.7;
+  --nz-cristal-fondo: color-mix(in oklab, var(--nz-surface) 58%, transparent);
+  --nz-cristal-fondo-fuerte: color-mix(in oklab, var(--nz-surface) 76%, transparent);
+  --nz-cristal-fondo-suave: color-mix(in oklab, var(--nz-surface) 36%, transparent);
+  --nz-cristal-borde: color-mix(in oklab, var(--nz-gray-0) 46%, transparent);
+  --nz-cristal-brillo: color-mix(in oklab, var(--nz-gray-0) 34%, transparent);
+  --nz-cristal-sombra: 0 1px 2px rgba(17, 24, 39, 0.04), 0 10px 34px rgba(17, 24, 39, 0.10);
 }
 
 /* ---- TEMA OSCURO (opt-in vía data-nz-theme="dark").

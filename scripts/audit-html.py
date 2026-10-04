@@ -43,8 +43,8 @@ def main():
         ("Familias sin demo", r["familias_sin_demo"], r["familias_sin_demo"] == 0),
         ("Clases declaradas por 2+ packs", r["duplicados"], r["duplicados"] == 0),
         ("Tokens inexistentes en uso", r["tokens_fantasma"], r["tokens_fantasma"] == 0),
-        ("Gradientes (manifiesto: 0)", r["gradientes"], r["gradientes"] == 0),
-        ("Glass / backdrop-filter (manifiesto: 0)", r["glass"], r["glass"] == 0),
+        ("Gradientes fuera de la capa de cristal", r["gradientes"], r["gradientes"] == 0),
+        ("Glass fuera de la capa de cristal", r["glass"], r["glass"] == 0),
         ("Colores a mano fuera de tokens.css", r["hex"], r["hex"] == 0),
         ("!important", r["important"], r["important"] <= 3),
     ]

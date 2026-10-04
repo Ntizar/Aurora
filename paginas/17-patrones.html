@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="es" data-nz-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Aurora · 17 Patrones compuestos · 224 objetos</title>
+<meta name="description" content="Bloques de nivel superior hechos solo con primitivas: cabecera de página, barra de filtros, tabla con acciones en lote, ficha de entidad, asistente por pasos, resumen de pedido, centro de notificaciones y 40 más. Aquí viven los patrones que antes había que recomponer en cada proyecto.">
+<link rel="stylesheet" href="../tokens.css">
+<link rel="stylesheet" href="../packs/p0-catalog.css">
+<link rel="stylesheet" href="../packs/p1-layout.css">
+<link rel="stylesheet" href="../packs/p2-navigation.css">
+<link rel="stylesheet" href="../packs/p3-typography.css">
+<link rel="stylesheet" href="../packs/p4-actions.css">
+<link rel="stylesheet" href="../packs/p5-forms.css">
+<link rel="stylesheet" href="../packs/p6-feedback.css">
+<link rel="stylesheet" href="../packs/p8-data.css">
+<link rel="stylesheet" href="../packs/p9-media.css">
+<link rel="stylesheet" href="../packs/p10-commerce.css">
+<link rel="stylesheet" href="../packs/p11-social.css">
+<link rel="stylesheet" href="../packs/p12-system.css">
+<link rel="stylesheet" href="../packs/p17-patrones.css">
+</head>
+<body class="nz">
+<a class="nz-skip-link" href="#contenido">Saltar al contenido</a>
+<header class="cat-topbar">
+<a class="cat-brandmark" href="../index.html"><i></i><i></i> Aurora</a>
+<span class="cat-count">17 · 224 objetos · 47 demos</span>
+<span class="cat-topbar__tools">
+<a class="cat-icobtn" href="../index.html" title="Portada" aria-label="Volver a la portada">⌂</a>
+<button class="cat-icobtn" id="btnTheme" aria-label="Cambiar tema" title="Light / Dark">◐</button>
+</span>
+</header>
+<nav class="cat-nav-pages" aria-label="Categorías del catálogo">
+  <a href="01-layout.html">01 Layout y estructura</a>
+  <a href="02-navigation.html">02 Navegación</a>
+  <a href="03-typography.html">03 Tipografía</a>
+  <a href="04-actions.html">04 Acciones y botones</a>
+  <a href="05-forms.html">05 Formularios e inputs</a>
+  <a href="06-feedback.html">06 Feedback y estados</a>
+  <a href="07-overlays.html">07 Overlays y diálogo</a>
+  <a href="08-data.html">08 Datos, tablas y listas</a>
+  <a href="09-media.html">09 Media e iconografía</a>
+  <a href="10-commerce.html">10 Comercio y producto</a>
+  <a href="11-social.html">11 Social y marketing</a>
+  <a href="12-system.html">12 Accesibilidad y sistema</a>
+  <a href="13-charts.html">13 Gráficos y visualización</a>
+  <a href="14-ai.html">14 IA y agentes</a>
+  <a href="15-apps.html">15 Apps y escritorio</a>
+  <a href="16-cristal.html">16 Cristal (capa de estilo)</a>
+  <a href="17-patrones.html" aria-current="page">17 Patrones compuestos</a>
+</nav>
+<main class="nz-container cat-main" id="contenido">
+  <div class="cat-pagehead">
+    <p class="cat-pagehead__over">Categoría 17 de 17 · 224 objetos · 47 demos</p>
+    <h1>Patrones compuestos</h1>
+    <p>Bloques de nivel superior hechos solo con primitivas: cabecera de página, barra de filtros, tabla con acciones en lote, ficha de entidad, asistente por pasos, resumen de pedido, centro de notificaciones y 40 más. Aquí viven los patrones que antes había que recomponer en cada proyecto.</p>
+    <div class="cat-pagehead__stats">
+      <span class="nz-badge nz-badge--brand"><i></i>224 objetos</span>
+      <span class="nz-badge nz-badge--neutral">46 familias</span>
+      <span class="nz-badge nz-badge--accent">47 demos en vivo</span>
+      <span class="nz-badge nz-badge--neutral">86 clases distintas usadas</span>
+      <a class="nz-badge nz-badge--brand" href="../packs/p17-patrones.css">p17-patrones.css</a>
+    </div>
+  </div>
+  <div class="cat-tools">
+    <div class="cat-search">
+      <span class="cat-search__icon" aria-hidden="true">⌕</span>
+      <input class="cat-search__input" id="catBuscar" type="search" placeholder="Buscar en esta categoría… (pulsa /)" aria-label="Buscar objeto en esta categoría">
+      <span class="cat-search__count" id="catContador">47 objetos</span>
+    </div>
+    <div class="cat-filters" role="group" aria-label="Filtrar por familia de objeto"><button type="button" class="cat-filters__chip" data-filtro="todo" aria-pressed="true">Todo</button>
+      <button type="button" class="cat-filters__chip" data-filtro="nz-activity" aria-pressed="false">.activity</button>
+      <button type="button" class="cat-filters__chip" data-filtro="nz-agenda-disponibilidad" aria-pressed="false">.agenda-disponibilidad</button>
+      <button type="button" class="cat-filters__chip" data-filtro="nz-asistente-pasos" aria-pressed="false">.asistente-pasos</button>
+      <button type="button" class="cat-filters__chip" data-filtro="nz-avatar" aria-pressed="false">.avatar</button>
+      <button type="button" class="cat-filters__chip" data-filtro="nz-aviso-accion" aria-pressed="false">.aviso-accion</button>
+      <button type="button" class="cat-filters__chip" data-filtro="nz-aviso-sistema" aria-pressed="false">.aviso-sistema</button>
+      <button type="button" class="cat-filters__chip" data-filtro="nz-badge" aria-pressed="false">.badge</button>
+      <button type="button" class="cat-filters__chip" data-filtro="nz-bandeja-avisos" aria-pressed="false">.bandeja-avisos</button>
+      <button type="button" class="cat-filters__chip" data-filtro="nz-barra-filtros" aria-pressed="false">.barra-filtros</button>
+      <button type="button" class="cat-filters__chip" data-filtro="nz-bloque-carga" aria-pressed="false">.bloque-carga</button>
+      <button type="button" class="cat-filters__chip" data-filtro="nz-bloque-precios" aria-pressed="false">.bloque-precios</button>
+      <button type="button" class="cat-filters__chip" data-filtro="nz-bloque-testimonio" aria-pressed="false">.bloque-testimonio</button>
+      <button type="button" class="cat-filters__chip" data-filtro="nz-breadcrumb" aria-pressed="false">.breadcrumb</button>
+      <button type="button" class="cat-filters__chip" data-filtro="nz-btn" aria-pressed="false">.btn</button>
+      <button type="button" class="cat-filters__chip" data-filtro="nz-buscador-facetas" aria-pressed="false">.buscador-facetas</button>
+      <button type="button" class="cat-filters__chip" data-filtro="nz-cabecera-informe" aria-pressed="false">.cabecera-informe</button>
+      <button type="button" class="cat-filters__chip" data-filtro="nz-cabecera-pagina" aria-pressed="false">.cabecera-pagina</button>
+      <button type="button" class="cat-filters__chip" data-filtro="nz-caja-comentarios" aria-pressed="false">.caja-comentarios</button></div>
+  </div>
+  <section class="cat-demo cat-in" data-cat="nz-btn nz-lbl nz-panel">
+    <div class="cat-demo__title"><span class="cat-demo__num">1</span><span class="cat-demo__name">Panel de sección</span><span class="cat-demo__tag">.nz-panel · __cabecera · __titulo · __sub · __cuerpo · __acciones · __pie</span></div>
+    <div class="cat-stage">
+      <div class="nz-panel" style="max-width:36rem"><div class="nz-panel__cabecera"><div><p class="nz-panel__titulo">Datos de facturación</p><p class="nz-panel__sub">Última sincronización: hoy, 09:14</p></div><div class="nz-panel__acciones"><button class="nz-btn nz-btn--outline nz-btn--sm" type="button">Exportar</button><button class="nz-btn nz-btn--primary nz-btn--sm" type="button">Guardar</button></div></div><div class="nz-panel__cuerpo"><p style="margin:0">El panel agrupa cabecera, contenido y acciones con el mismo aire en toda la interfaz.</p></div><div class="nz-panel__pie"><span class="nz-lbl">Sin cambios pendientes</span></div></div>
+    </div>
+  </section>
+  <section class="cat-demo cat-in" data-cat="nz-lbl nz-panel nz-stack">
+    <div class="cat-demo__title"><span class="cat-demo__num">2</span><span class="cat-demo__name">Panel compacto, sin borde y con marca</span><span class="cat-demo__tag">.nz-panel--compact · --sin-borde · --marca</span></div>
+    <div class="cat-stage">
+      <div class="nz-stack nz-stack--sm"><div class="nz-panel nz-panel--compact" style="max-width:26rem"><div class="nz-panel__cabecera"><p class="nz-panel__titulo">Compacto</p></div><div class="nz-panel__cuerpo"><span class="nz-lbl">Menos aire, misma estructura</span></div></div><div class="nz-panel nz-panel--sin-borde nz-panel--marca" style="max-width:26rem"><div class="nz-panel__cabecera"><p class="nz-panel__titulo">De marca</p></div><div class="nz-panel__cuerpo"><span class="nz-lbl">Borde derivado del color elegido</span></div></div></div>
+    </div>
+  </section>
+  <section class="cat-demo cat-in" data-cat="nz-breadcrumb nz-btn nz-cabecera-pagina nz-eyebrow nz-h2 nz-icon nz-lead">
+    <div class="cat-demo__title"><span class="cat-demo__num">3</span><span class="cat-demo__name">Cabecera de página con migas y acciones</span><span class="cat-demo__tag">.nz-cabecera-pagina · __principal · __texto · __acciones</span></div>
+    <div class="cat-stage">
+      <div class="nz-cabecera-pagina" style="max-width:48rem"><nav class="nz-breadcrumb" aria-label="Migas de pan"><a href="#">Panel</a><span class="nz-breadcrumb__sep">/</span><a href="#">Clientes</a><span class="nz-breadcrumb__sep">/</span><span aria-current="page">Ficha</span></nav><div class="nz-cabecera-pagina__principal"><div class="nz-cabecera-pagina__texto"><p class="nz-eyebrow">Administración</p><h2 class="nz-h2">Clientes</h2><p class="nz-lead">1 284 cuentas activas y 14 invitaciones pendientes.</p></div><div class="nz-cabecera-pagina__acciones"><button class="nz-btn nz-btn--outline" type="button"><svg class="nz-icon nz-icon--sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v12M7 11l5 5 5-5M5 20h14"/></svg>Exportar</button><button class="nz-btn nz-btn--primary" type="button"><svg class="nz-icon nz-icon--sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>Invitar</button></div></div></div>
+    </div>
+  </section>
+  <section class="cat-demo cat-in" data-cat="nz-barra-filtros nz-chip nz-icon nz-input nz-search">
+    <div class="cat-demo__title"><span class="cat-demo__num">4</span><span class="cat-demo__name">Barra de filtros con buscador y chips activos</span><span class="cat-demo__tag">.nz-barra-filtros · __fila · __buscar · __chips · __conteo</span></div>
+    <div class="cat-stage">
+      <div class="nz-barra-filtros" style="max-width:46rem"><div class="nz-barra-filtros__fila"><span class="nz-barra-filtros__buscar"><span class="nz-search"><svg class="nz-icon nz-icon--sm nz-search__icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input class="nz-input" type="search" placeholder="Buscar pedido o cliente"><button class="nz-search__clear" type="button" aria-label="Limpiar"><svg class="nz-icon nz-icon--sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button></span></span><span class="nz-barra-filtros__conteo">128 resultados</span></div><div class="nz-barra-filtros__chips"><span class="nz-chip nz-chip--sm nz-chip--removable">Últimos 30 días<span class="nz-chip__x" aria-hidden="true">×</span></span><span class="nz-chip nz-chip--sm nz-chip--removable">Impagados<span class="nz-chip__x" aria-hidden="true">×</span></span><button class="nz-chip nz-chip--sm" type="button">+ Añadir filtro</button></div></div>
+    </div>
+  </section>
+  <section class="cat-demo cat-in" data-cat="nz-btn nz-checkbox nz-tabla-lote nz-table nz-table-wrap">
+    <div class="cat-demo__title"><span class="cat-demo__num">5</span><span class="cat-demo__name">Tabla con selección y acciones en lote</span><span class="cat-demo__tag">.nz-tabla-lote · __lote · __seleccion · __lote-acciones</span></div>
+    <div class="cat-stage">
+      <div class="nz-tabla-lote" style="max-width:52rem"><div class="nz-tabla-lote__lote"><span class="nz-tabla-lote__seleccion">2 pedidos seleccionados</span><div class="nz-tabla-lote__lote-acciones"><button class="nz-btn nz-btn--outline nz-btn--sm" type="button">Facturar</button><button class="nz-btn nz-btn--danger nz-btn--sm" type="button">Cancelar</button></div></div><div class="nz-table-wrap nz-table-wrap--apilable"><table class="nz-table nz-table--apilable"><thead><tr><th scope="col" class="nz-table__cell--checkbox"><span class="nz-checkbox"><input type="checkbox" aria-label="Seleccionar todo"><span class="nz-checkbox__box"></span></span></th><th scope="col">Pedido</th><th scope="col">Cliente</th><th scope="col" class="nz-table__right">Importe</th><th scope="col">Estado</th></tr></thead><tbody><tr><td><span class="nz-checkbox"><input type="checkbox" checked aria-label="Pedido 4188"><span class="nz-checkbox__box"></span></span></td><td data-etiqueta="Pedido"><span class="nz-table__strong">#4188</span></td><td data-etiqueta="Cliente">Marta Ruiz</td><td data-etiqueta="Importe" class="nz-table__num nz-table__right">1 240,00 €</td><td data-etiqueta="Estado"><span class="nz-table__status nz-table__status--ok">Pagado</span></td></tr><tr><td><span class="nz-checkbox"><input type="checkbox" checked aria-label="Pedido 4189"><span class="nz-checkbox__box"></span></span></td><td data-etiqueta="Pedido"><span class="nz-table__strong">#4189</span></td><td data-etiqueta="Cliente">Javier Vela</td><td data-etiqueta="Importe" class="nz-table__num nz-table__right">860,00 €</td><td data-etiqueta="Estado"><span class="nz-table__status nz-table__status--warn">Pendiente</span></td></tr><tr><td><span class="nz-checkbox"><input type="checkbox" aria-label="Pedido 4190"><span class="nz-checkbox__box"></span></span></td><td data-etiqueta="Pedido"><span class="nz-table__strong">#4190</span></td><td data-etiqueta="Cliente">Ana Beltrán</td><td data-etiqueta="Importe" class="nz-table__num nz-table__right">2 015,00 €</td><td data-etiqueta="Estado"><span class="nz-table__status nz-table__status--err">Vencido</span></td></tr></tbody></table></div></div>
+    </div>
+  </section>
+  <section class="cat-demo cat-in" data-cat="nz-avatar nz-badge nz-btn nz-dl nz-ficha-entidad">
+    <div class="cat-demo__title"><span class="cat-demo__num">6</span><span class="cat-demo__name">Ficha de entidad con avatar y metadatos</span><span class="cat-demo__tag">.nz-ficha-entidad · __cabecera · __identidad · __nombre · __meta · __datos · __acciones</span></div>
+    <div class="cat-stage">
+      <div class="nz-ficha-entidad" style="max-width:24rem"><div class="nz-ficha-entidad__cabecera"><span class="nz-avatar nz-avatar--lg nz-avatar--ring" aria-hidden="true">AE</span><div class="nz-ficha-entidad__identidad"><span class="nz-ficha-entidad__nombre">Astilleros del Ebro S.A.</span><span class="nz-ficha-entidad__meta">Cliente desde marzo de 2019</span></div></div><dl class="nz-ficha-entidad__datos nz-dl nz-dl--2col"><div class="nz-dl__row"><dt class="nz-dl__dt">CIF</dt><dd class="nz-dl__dd">B-50012345</dd></div><div class="nz-dl__row"><dt class="nz-dl__dt">Contacto</dt><dd class="nz-dl__dd">Elena Puig</dd></div><div class="nz-dl__row"><dt class="nz-dl__dt">Facturación</dt><dd class="nz-dl__dd">42 900 €</dd></div><div class="nz-dl__row"><dt class="nz-dl__dt">Estado</dt><dd class="nz-dl__dd"><span class="nz-badge nz-badge--success">Activo</span></dd></div></dl><div class="nz-ficha-entidad__acciones"><button class="nz-btn nz-btn--primary nz-btn--sm" type="button">Ver ficha</button><button class="nz-btn nz-btn--outline nz-btn--sm" type="button">Editar</button></div></div>
+    </div>
+  </section>
+  <section class="cat-demo cat-in" data-cat="nz-icon nz-linea-pasos">
+    <div class="cat-demo__title"><span class="cat-demo__num">7</span><span class="cat-demo__name">Línea de tiempo de pasos</span><span class="cat-demo__tag">.nz-linea-pasos · __paso · __marca · __cuerpo · __titulo · __nota</span></div>
+    <div class="cat-stage">
+      <ol class="nz-linea-pasos" style="max-width:34rem"><li class="nz-linea-pasos__paso is-done"><span class="nz-linea-pasos__marca"><svg class="nz-icon nz-icon--sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span><div class="nz-linea-pasos__cuerpo"><span class="nz-linea-pasos__titulo">Solicitud recibida</span><span class="nz-linea-pasos__nota">12 sep · 09:14</span></div></li><li class="nz-linea-pasos__paso is-active"><span class="nz-linea-pasos__marca">2</span><div class="nz-linea-pasos__cuerpo"><span class="nz-linea-pasos__titulo">En revisión por el equipo legal</span><span class="nz-linea-pasos__nota">En curso desde el 14 sep</span></div></li><li class="nz-linea-pasos__paso"><span class="nz-linea-pasos__marca">3</span><div class="nz-linea-pasos__cuerpo"><span class="nz-linea-pasos__titulo">Aprobación y alta</span><span class="nz-linea-pasos__nota">Pendiente</span></div></li></ol>
+    </div>
+  </section>
+  <section class="cat-demo cat-in" data-cat="nz-asistente-pasos nz-btn nz-field nz-formgrid nz-input nz-stepper">
+    <div class="cat-demo__title"><span class="cat-demo__num">8</span><span class="cat-demo__name">Asistente por pasos (wizard)</span><span class="cat-demo__tag">.nz-asistente-pasos · __cabecera · __cuerpo · __pie · __acciones</span></div>
+    <div class="cat-stage">
+      <div class="nz-asistente-pasos" style="max-width:40rem"><div class="nz-asistente-pasos__cabecera"><ol class="nz-stepper"><li class="nz-stepper__step is-done"><span class="nz-stepper__num">1</span>Cuenta</li><li class="nz-stepper__step is-active"><span class="nz-stepper__num">2</span>Empresa</li><li class="nz-stepper__step"><span class="nz-stepper__num">3</span>Pago</li></ol></div><div class="nz-asistente-pasos__cuerpo"><div class="nz-formgrid nz-formgrid--2"><span class="nz-field"><label class="nz-field__label" for="wz1">Razón social</label><input class="nz-input" id="wz1" value="Astilleros del Ebro S.A."></span><span class="nz-field"><label class="nz-field__label" for="wz2">CIF</label><input class="nz-input" id="wz2" value="B-50012345"></span></div><p class="nz-field__help" style="margin-top:var(--nz-space-3)">Estos datos aparecerán en las facturas.</p></div><div class="nz-asistente-pasos__pie"><button class="nz-btn nz-btn--ghost" type="button">Atrás</button><div class="nz-asistente-pasos__acciones"><button class="nz-btn nz-btn--outline" type="button">Guardar borrador</button><button class="nz-btn nz-btn--primary" type="button">Continuar</button></div></div></div>
+    </div>
+  </section>
+  <section class="cat-demo cat-in" data-cat="nz-badge nz-btn nz-comparador-planes nz-plan">
+    <div class="cat-demo__title"><span class="cat-demo__num">9</span><span class="cat-demo__name">Comparador de planes</span><span class="cat-demo__tag">.nz-comparador-planes · __planes · __nota</span></div>
+    <div class="cat-stage">
+      <div class="nz-comparador-planes" style="max-width:52rem"><div class="nz-comparador-planes__planes"><article class="nz-plan"><p class="nz-plan__name">Básico</p><p class="nz-plan__desc">Para empezar</p><p class="nz-plan__price">19 €<small>/mes</small></p><ul class="nz-plan__features"><li class="nz-plan__feature">1 usuario</li><li class="nz-plan__feature">5 GB de almacenamiento</li><li class="nz-plan__feature nz-plan__feature--no">Soporte prioritario</li></ul><div class="nz-plan__cta"><button class="nz-btn nz-btn--outline" type="button">Elegir Básico</button></div></article><article class="nz-plan nz-plan--featured"><span class="nz-plan__flag nz-badge nz-badge--accent">Recomendado</span><p class="nz-plan__name">Equipo</p><p class="nz-plan__desc">El más elegido</p><p class="nz-plan__price">228 €<small>/mes</small></p><span class="nz-plan__badge">Más popular</span><ul class="nz-plan__features"><li class="nz-plan__feature">10 usuarios</li><li class="nz-plan__feature">100 GB de almacenamiento</li><li class="nz-plan__feature">Soporte prioritario</li></ul><div class="nz-plan__cta"><button class="nz-btn nz-btn--primary" type="button">Elegir Equipo</button></div></article><article class="nz-plan"><p class="nz-plan__name">Avanzado</p><p class="nz-plan__desc">Sin límites</p><p class="nz-plan__price">490 €<small>/mes</small></p><ul class="nz-plan__features"><li class="nz-plan__feature">Usuarios ilimitados</li><li class="nz-plan__feature">1 TB de almacenamiento</li><li class="nz-plan__feature">Soporte dedicado</li></ul><div class="nz-plan__cta"><button class="nz-btn nz-btn--outline" type="button">Elegir Avanzado</button></div></article></div><p class="nz-comparador-planes__nota">Precios sin IVA. Cancela cuando quieras.</p></div>
+    </div>
+  </section>
+  <section class="cat-demo cat-in" data-cat="nz-badge nz-btn nz-h5 nz-resumen-pedido">
+    <div class="cat-demo__title"><span class="cat-demo__num">10</span><span class="cat-demo__name">Resumen de pedido con totales</span><span class="cat-demo__tag">.nz-resumen-pedido · __cabecera · __lineas · __linea · __total · __pie</span></div>
+    <div class="cat-stage">
+      <div class="nz-resumen-pedido" style="max-width:24rem"><div class="nz-resumen-pedido__cabecera"><span class="nz-h5">Resumen del pedido</span><span class="nz-badge nz-badge--neutral">#4188</span></div><div class="nz-resumen-pedido__lineas"><span class="nz-resumen-pedido__linea">Plan Equipo (anual)<b>2 280,00 €</b></span><span class="nz-resumen-pedido__linea">Asientos adicionales ×3<b>360,00 €</b></span><span class="nz-resumen-pedido__linea">Descuento fidelidad<b>−120,00 €</b></span></div><div class="nz-resumen-pedido__total"><span>Total</span><span>2 520,00 €</span></div><div class="nz-resumen-pedido__pie"><button class="nz-btn nz-btn--primary nz-btn--block" type="button">Confirmar y pagar</button></div></div>
+    </div>
+  </section>
+  <section class="cat-demo cat-in" data-cat="nz-icon nz-icon-tile nz-metrica-tendencia nz-spark nz-text">
+    <div class="cat-demo__title"><span class="cat-demo__num">11</span><span class="cat-demo__name">Tarjeta de métrica con tendencia</span><span class="cat-demo__tag">.nz-metrica-tendencia · __cabecera · __etiqueta · __valor · __tendencia · __pie</span></div>
+    <div class="cat-stage">
+      <div class="nz-metrica-tendencia" style="max-width:20rem"><div class="nz-metrica-tendencia__cabecera"><span class="nz-metrica-tendencia__etiqueta">Ingresos recurrentes</span><span class="nz-icon-tile nz-icon-tile--sm"><svg class="nz-icon nz-icon--sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5v14h16"/><path d="M8 16v-5M13 16V8M18 16v-3"/></svg></span></div><span class="nz-metrica-tendencia__valor">48 320 €</span><span class="nz-metrica-tendencia__tendencia nz-text--success"><svg class="nz-icon nz-icon--sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"/></svg>+8,4 % este mes</span><div class="nz-spark"><span class="nz-spark__bar" style="height:40%"></span><span class="nz-spark__bar" style="height:62%"></span><span class="nz-spark__bar" style="height:55%"></span><span class="nz-spark__bar" style="height:80%"></span><span class="nz-spark__bar" style="height:96%"></span></div><span class="nz-metrica-tendencia__pie">Comparado con el mes anterior</span></div>
+    </div>
+  </section>
+  <section class="cat-demo cat-in" data-cat="nz-bandeja-avisos">
+    <div class="cat-demo__title"><span class="cat-demo__num">12</span><span class="cat-demo__name">Bandeja de avisos</span><span class="cat-demo__tag">.nz-bandeja-avisos · __item · __cuerpo · __titulo · __texto · __hora</span></div>
+    <div class="cat-stage">
+      <div class="nz-bandeja-avisos" style="max-width:32rem"><div class="nz-bandeja-avisos__item is-nuevo"><div class="nz-bandeja-avisos__cuerpo"><span class="nz-bandeja-avisos__titulo">Factura 2026-041 emitida</span><span class="nz-bandeja-avisos__texto">Se ha enviado a m.ruiz@astilleros.es.</span></div><span class="nz-bandeja-avisos__hora">09:14</span></div><div class="nz-bandeja-avisos__item"><div class="nz-bandeja-avisos__cuerpo"><span class="nz-bandeja-avisos__titulo">Invitación aceptada</span><span class="nz-bandeja-avisos__texto">Javier Vela se ha unido al espacio de trabajo.</span></div><span class="nz-bandeja-avisos__hora">Ayer</span></div><div class="nz-bandeja-avisos__item"><div class="nz-bandeja-avisos__cuerpo"><span class="nz-bandeja-avisos__titulo">Pago recibido</span><span class="nz-bandeja-avisos__texto">2 520,00 € de Astilleros del Ebro S.A.</span></div><span class="nz-bandeja-avisos__hora">2 oct</span></div></div>
+    </div>
+  </section>
+  <section class="cat-demo cat-in" data-cat="nz-btn nz-checkbox nz-panel-filtros nz-radio">
+    <div class="cat-demo__title"><span class="cat-demo__num">13</span><span class="cat-demo__name">Panel de filtros lateral</span><span class="cat-demo__tag">.nz-panel-filtros · __grupo · __titulo · __pie</span></div>
+    <div class="cat-stage">
+      <div class="nz-panel-filtros" style="max-width:16rem"><div class="nz-panel-filtros__grupo"><span class="nz-panel-filtros__titulo">Categoría</span><label class="nz-checkbox nz-checkbox--sm"><input type="checkbox" checked><span class="nz-checkbox__box"></span>Electrónica</label><label class="nz-checkbox nz-checkbox--sm"><input type="checkbox"><span class="nz-checkbox__box"></span>Hogar</label><label class="nz-checkbox nz-checkbox--sm"><input type="checkbox"><span class="nz-checkbox__box"></span>Deporte</label></div><div class="nz-panel-filtros__grupo"><span class="nz-panel-filtros__titulo">Disponibilidad</span><label class="nz-radio"><input type="radio" name="disp" checked><span class="nz-radio__dot"></span>En stock</label><label class="nz-radio"><input type="radio" name="disp"><span class="nz-radio__dot"></span>Todos</label></div><div class="nz-panel-filtros__pie"><button class="nz-btn nz-btn--primary nz-btn--sm" type="button">Aplicar</button><button class="nz-btn nz-btn--ghost nz-btn--sm" type="button">Limpiar</button></div></div>
+    </div>
+  </section>
+  <section class="cat-demo cat-in" data-cat="nz-btn nz-estado-vacio nz-icon">
+    <div class="cat-demo__title"><span class="cat-demo__num">14</span><span class="cat-demo__name">Estado vacío guiado con acción</span><span class="cat-demo__tag">.nz-estado-vacio · __icono · __titulo · __texto · __acciones</span></div>
+    <div class="cat-stage">
+      <div class="nz-estado-vacio" style="max-width:34rem"><span class="nz-estado-vacio__icono"><svg class="nz-icon nz-icon--lg" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h6l2 2h10v11H3z"/></svg></span><h3 class="nz-estado-vacio__titulo">Aún no hay informes</h3><p class="nz-estado-vacio__texto">Genera tu primer informe trimestral y aparecerá aquí, listo para descargar en PDF.</p><div class="nz-estado-vacio__acciones"><button class="nz-btn nz-btn--primary" type="button">Crear informe</button><button class="nz-btn nz-btn--ghost" type="button">Ver ejemplo</button></div></div>
+    </div>
+  </section>
+  <section class="cat-demo cat-in" data-cat="nz-avatar nz-badge nz-hstack nz-icon nz-lbl nz-progress nz-tarjeta-curso nz-text">
+    <div class="cat-demo__title"><span class="cat-demo__num">15</span><span class="cat-demo__name">Tarjeta de curso / lección</span><span class="cat-demo__tag">.nz-tarjeta-curso · __portada · __cuerpo · __meta · __titulo · __pie</span></div>
+    <div class="cat-stage">
+      <article class="nz-tarjeta-curso" style="max-width:22rem"><div class="nz-tarjeta-curso__portada"><svg class="nz-icon nz-icon--xl" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></div><div class="nz-tarjeta-curso__cuerpo"><div class="nz-tarjeta-curso__meta"><span class="nz-badge nz-badge--brand">Programación</span><span class="nz-lbl nz-lbl--neutral">Nivel inicial</span></div><p class="nz-tarjeta-curso__titulo">Introducción a CSS moderno</p><div class="nz-progress"><div class="nz-progress__bar" style="width:62%"></div></div><div class="nz-tarjeta-curso__pie"><span class="nz-hstack nz-hstack--compact"><span class="nz-avatar nz-avatar--xs" aria-hidden="true">LP</span><span class="nz-text--small nz-text--muted">Lucía Prado</span></span><span class="nz-text--small nz-text--muted">62 % completado</span></div></div></article>
+    </div>
+  </section>
+  <section class="cat-demo cat-in" data-cat="nz-agenda-disponibilidad">
+    <div class="cat-demo__title"><span class="cat-demo__num">16</span><span class="cat-demo__name">Agenda de disponibilidad</span><span class="cat-demo__tag">.nz-agenda-disponibilidad · __dia · __fecha · __franjas · __franja</span></div>
+    <div class="cat-stage">
+      <div class="nz-agenda-disponibilidad" style="max-width:34rem"><div class="nz-agenda-disponibilidad__dia"><span class="nz-agenda-disponibilidad__fecha">Lunes, 6 de octubre</span><div class="nz-agenda-disponibilidad__franjas"><button class="nz-agenda-disponibilidad__franja is-selected" type="button">09:00 – 10:00</button><button class="nz-agenda-disponibilidad__franja" type="button">10:30 – 11:30</button><button class="nz-agenda-disponibilidad__franja is-ocupada" type="button" disabled>12:00 – 13:00</button></div></div><div class="nz-agenda-disponibilidad__dia"><span class="nz-agenda-disponibilidad__fecha">Martes, 7 de octubre</span><div class="nz-agenda-disponibilidad__franjas"><button class="nz-agenda-disponibilidad__franja" type="button">16:00 – 17:00</button><button class="nz-agenda-disponibilidad__franja" type="button">17:30 – 18:30</button></div></div></div>
+    </div>
+  </section>
+  <section class="cat-demo cat-in" data-cat="nz-badge nz-btn nz-buscador-facetas nz-chip nz-h5 nz-icon nz-icon-tile nz-input nz-search nz-text">
+    <div class="cat-demo__title"><span class="cat-demo__num">17</span><span class="cat-demo__name">Buscador con facetas</span><span class="cat-demo__tag">.nz-buscador-facetas · __barra · __facetas · __resultados · __resultado</span></div>
+    <div class="cat-stage">
+      <div class="nz-buscador-facetas" style="max-width:44rem"><div class="nz-buscador-facetas__barra"><span class="nz-search nz-search--full"><svg class="nz-icon nz-icon--sm nz-search__icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input class="nz-input" type="search" placeholder="Buscar libro, autor o ISBN"></span><button class="nz-btn nz-btn--primary" type="button">Buscar</button></div><div class="nz-buscador-facetas__facetas"><button class="nz-chip nz-chip--sm is-active" type="button" aria-pressed="true">Ficción</button><button class="nz-chip nz-chip--sm" type="button" aria-pressed="false">Ensayo</button><button class="nz-chip nz-chip--sm" type="button" aria-pressed="false">Infantil</button><button class="nz-chip nz-chip--sm" type="button" aria-pressed="false">Disponibles</button></div><div class="nz-buscador-facetas__resultados"><article class="nz-buscador-facetas__resultado"><span class="nz-icon-tile"><svg class="nz-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h7a3 3 0 0 1 3 3v13a2 2 0 0 0-2-2H4z"/><path d="M20 4h-3a3 3 0 0 0-3 3v13a2 2 0 0 1 2-2h4z"/></svg></span><div><span class="nz-h5">La sombra del viento</span><br><span class="nz-text--small nz-text--muted">Carlos Ruiz Zafón · 2001</span></div><span class="nz-badge nz-badge--success" style="margin-left:auto">Disponible</span></article><article class="nz-buscador-facetas__resultado"><span class="nz-icon-tile"><svg class="nz-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h7a3 3 0 0 1 3 3v13a2 2 0 0 0-2-2H4z"/><path d="M20 4h-3a3 3 0 0 0-3 3v13a2 2 0 0 1 2-2h4z"/></svg></span><div><span class="nz-h5">Patria</span><br><span class="nz-text--small nz-text--muted">Fernando Aramburu · 2016</span></div><span class="nz-badge nz-badge--warning" style="margin-left:auto">Última unidad</span></article></div></div>
+    </div>
+  </section>
+  <section class="cat-demo cat-in" data-cat="nz-btn nz-galeria-filtros nz-segmented">
+    <div class="cat-demo__title"><span class="cat-demo__num">18</span><span class="cat-demo__name">Galería con filtros</span><span class="cat-demo__tag">.nz-galeria-filtros · __barra · __rejilla · __pieza</span></div>
+    <div class="cat-stage">
+      <div class="nz-galeria-filtros" style="max-width:44rem"><div class="nz-galeria-filtros__barra"><span class="nz-segmented"><button type="button" aria-selected="true">Todo</button><button type="button" aria-selected="false">Fotos</button><button type="button" aria-selected="false">Vídeo</button></span><button class="nz-btn nz-btn--outline nz-btn--sm" style="margin-left:auto" type="button">Subir</button></div><div class="nz-galeria-filtros__rejilla"><div class="nz-galeria-filtros__pieza"></div><div class="nz-galeria-filtros__pieza"></div><div class="nz-galeria-filtros__pieza"></div><div class="nz-galeria-filtros__pieza"></div><div class="nz-galeria-filtros__pieza"></div><div class="nz-galeria-filtros__pieza"></div><div class="nz-galeria-filtros__pieza"></div><div class="nz-galeria-filtros__pieza"></div></div></div>
+    </div>
+  </section>
+  <section class="cat-demo cat-in" data-cat="nz-btn nz-editor-campos nz-icon nz-input nz-textarea">
+    <div class="cat-demo__title"><span class="cat-demo__num">19</span><span class="cat-demo__name">Editor de campos con etiqueta y ayuda</span><span class="cat-demo__tag">.nz-editor-campos · __campo · __cabecera · __etiqueta · __ayuda · __acciones</span></div>
+    <div class="cat-stage">
+      <div class="nz-editor-campos" style="max-width:36rem"><div class="nz-editor-campos__campo"><div class="nz-editor-campos__cabecera"><label class="nz-editor-campos__etiqueta" for="ec1">Nombre visible</label><div class="nz-editor-campos__acciones"><button class="nz-btn nz-btn--ghost nz-btn--icon-sm" type="button" aria-label="Restablecer"><svg class="nz-icon nz-icon--sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12a8 8 0 0 1 13-6l3 3"/><path d="M20 5v4h-4"/><path d="M20 12a8 8 0 0 1-13 6l-3-3"/><path d="M4 19v-4h4"/></svg></button></div></div><div><input class="nz-input" id="ec1" value="Astilleros del Ebro"><span class="nz-editor-campos__ayuda">Así aparecerá en la web y en las facturas.</span></div></div><div class="nz-editor-campos__campo"><label class="nz-editor-campos__etiqueta" for="ec2">Descripción</label><div><textarea class="nz-textarea" id="ec2" rows="3">Taller naval fundado en 1974.</textarea><span class="nz-editor-campos__ayuda">Máximo 240 caracteres.</span></div></div></div>
+    </div>
+  </section>
+  <section class="cat-demo cat-in" data-cat="nz-bloque-carga nz-skeleton nz-spinner">
+    <div class="cat-demo__title"><span class="cat-demo__num">20</span><span class="cat-demo__name">Bloque de carga / esqueleto</span><span class="cat-demo__tag">.nz-bloque-carga · __lineas · __pie</span></div>
+    <div class="cat-stage">
+      <div class="nz-bloque-carga" style="max-width:30rem"><div class="nz-bloque-carga__lineas"><span class="nz-skeleton__line nz-skeleton__line--title"></span><span class="nz-skeleton__line"></span><span class="nz-skeleton__line nz-skeleton__line--wide"></span><span class="nz-skeleton__line nz-skeleton__line--muted"></span></div><div class="nz-bloque-carga__pie"><span class="nz-spinner nz-spinner--sm"></span>Cargando el informe trimestral…</div></div>
+    </div>
+  </section>
+  <section class="cat-demo cat-in" data-cat="nz-badge nz-cabecera-informe nz-icon">
+    <div class="cat-demo__title"><span class="cat-demo__num">21</span><span class="cat-demo__name">Cabecera de informe</span><span class="cat-demo__tag">.nz-cabecera-informe · __top · __marca · __meta · __titulo</span></div>
+    <div class="cat-stage">
+      <header class="nz-cabecera-informe" style="max-width:46rem"><div class="nz-cabecera-informe__top"><span class="nz-cabecera-informe__marca"><svg class="nz-icon nz-icon--brand" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5v14h16"/><path d="M8 16v-5M13 16V8M18 16v-3"/></svg>Aurora Analytics</span><span class="nz-badge nz-badge--neutral">Confidencial</span></div><h2 class="nz-cabecera-informe__titulo">Informe trimestral Q3 · 2026</h2><div class="nz-cabecera-informe__meta"><span>Periodo: 1 jul – 30 sep</span><span>Emitido: 2 oct 2026</span><span>Autor: David Antizar</span></div></header>
+    </div>
+  </section>
+  <section class="cat-demo cat-in" data-cat="nz-btn nz-pie-acciones nz-text">
+    <div class="cat-demo__title"><span class="cat-demo__num">22</span><span class="cat-demo__name">Pie de acciones pegajoso</span><span class="cat-demo__tag">.nz-pie-acciones · __info · __botones</span></div>
+    <div class="cat-stage">
+      <div style="max-width:40rem"><p class="nz-text--small nz-text--muted" style="margin:0 0 var(--nz-space-3)">Ajustes del espacio de trabajo</p><div class="nz-pie-acciones"><span class="nz-pie-acciones__info">Última edición: hoy, 11:02</span><div class="nz-pie-acciones__botones"><button class="nz-btn nz-btn--ghost" type="button">Descartar</button><button class="nz-btn nz-btn--primary" type="button">Guardar cambios</button></div></div></div>
+    </div>
+  </section>
+  <section class="cat-demo cat-in" data-cat="nz-checkbox nz-lista-tareas">
+    <div class="cat-demo__title"><span class="cat-demo__num">23</span><span class="cat-demo__name">Lista de tareas con estado</span><span class="cat-demo__tag">.nz-lista-tareas · __tarea · __cuerpo · __titulo · __meta</span></div>
+    <div class="cat-stage">
+      <ul class="nz-lista-tareas" style="max-width:34rem"><li class="nz-lista-tareas__tarea is-done"><label class="nz-checkbox"><input type="checkbox" checked aria-label="Hecha"><span class="nz-checkbox__box"></span></label><div class="nz-lista-tareas__cuerpo"><span class="nz-lista-tareas__titulo">Revisar el contrato marco</span><span class="nz-lista-tareas__meta">Vence el 9 de octubre · Ana Beltrán</span></div></li><li class="nz-lista-tareas__tarea"><label class="nz-checkbox"><input type="checkbox" aria-label="Pendiente"><span class="nz-checkbox__box"></span></label><div class="nz-lista-tareas__cuerpo"><span class="nz-lista-tareas__titulo">Enviar la propuesta a Elena Puig</span><span class="nz-lista-tareas__meta">Hoy · David Antizar</span></div></li><li class="nz-lista-tareas__tarea"><label class="nz-checkbox"><input type="checkbox" aria-label="Pendiente"><span class="nz-checkbox__box"></span></label><div class="nz-lista-tareas__cuerpo"><span class="nz-lista-tareas__titulo">Cerrar el trimestre fiscal</span><span class="nz-lista-tareas__meta">Vence el 15 de octubre · Contabilidad</span></div></li></ul>
+    </div>
+  </section>
+  <section class="cat-demo cat-in" data-cat="nz-badge nz-bloque-precios nz-btn nz-plan nz-text">
+    <div class="cat-demo__title"><span class="cat-demo__num">24</span><span class="cat-demo__name">Bloque de precios</span><span class="cat-demo__tag">.nz-bloque-precios · __cabecera · __importe · __lista · __pie</span></div>
+    <div class="cat-stage">
+      <div class="nz-bloque-precios" style="max-width:22rem"><div class="nz-bloque-precios__cabecera"><span class="nz-badge nz-badge--accent">Anual</span><span class="nz-bloque-precios__importe">228 €<span class="nz-text--small nz-text--muted">/mes</span></span></div><ul class="nz-bloque-precios__lista"><li class="nz-plan__feature">Usuarios ilimitados</li><li class="nz-plan__feature">Soporte prioritario 24/7</li><li class="nz-plan__feature">99,9 % de disponibilidad</li></ul><div class="nz-bloque-precios__pie"><button class="nz-btn nz-btn--primary nz-btn--block" type="button">Empezar ahora</button></div></div>
+    </div>
+  </section>
+  <section class="cat-demo cat-in" data-cat="nz-aviso-accion nz-btn nz-icon">
+    <div class="cat-demo__title"><span class="cat-demo__num">25</span><span class="cat-demo__name">Banner de aviso con acción</span><span class="cat-demo__tag">.nz-aviso-accion · __icono · __cuerpo · __titulo · __texto · __acciones</span></div>
+    <div class="cat-stage">
+      <div class="nz-aviso-accion" style="max-width:40rem"><span class="nz-aviso-accion__icono"><svg class="nz-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 8a6 6 0 1 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 0 1-3.4 0"/></svg></span><div class="nz-aviso-accion__cuerpo"><span class="nz-aviso-accion__titulo">Tu prueba termina en 3 días</span><span class="nz-aviso-accion__texto">Activa un plan para no perder los informes guardados.</span></div><div class="nz-aviso-accion__acciones"><button class="nz-btn nz-btn--ghost nz-btn--sm" type="button">Más tarde</button><button class="nz-btn nz-btn--primary nz-btn--sm" type="button">Ver planes</button></div></div>
+    </div>
+  </section>
+  <section class="cat-demo cat-in" data-cat="nz-avatar nz-btn nz-perfil-pestanas nz-tabs">
+    <div class="cat-demo__title"><span class="cat-demo__num">26</span><span class="cat-demo__name">Perfil de usuario con pestañas</span><span class="cat-demo__tag">.nz-perfil-pestanas · __cabecera · __identidad · __nombre · __meta · __cuerpo</span></div>
+    <div class="cat-stage">
+      <div class="nz-perfil-pestanas" style="max-width:40rem"><div class="nz-perfil-pestanas__cabecera"><span class="nz-avatar nz-avatar--xl nz-avatar--status" aria-hidden="true">MR</span><div class="nz-perfil-pestanas__identidad"><span class="nz-perfil-pestanas__nombre">Marta Ruiz</span><span class="nz-perfil-pestanas__meta">Directora de operaciones · Madrid</span></div><button class="nz-btn nz-btn--outline" style="margin-left:auto" type="button">Seguir</button></div><div class="nz-perfil-pestanas__cuerpo"><div class="nz-tabs"><button class="nz-tabs__tab is-active" type="button" aria-selected="true">Actividad</button><button class="nz-tabs__tab" type="button" aria-selected="false">Proyectos</button><button class="nz-tabs__tab" type="button" aria-selected="false">Ajustes</button></div><div class="nz-tabs__panel">Última conexión: hoy, 08:40. 42 tareas completadas este trimestre.</div></div></div>
+    </div>
+  </section>
+  <section class="cat-demo cat-in" data-cat="nz-facturacion-estados nz-table nz-table-wrap">
+    <div class="cat-demo__title"><span class="cat-demo__num">27</span><span class="cat-demo__name">Tabla de facturación con estados</span><span class="cat-demo__tag">.nz-facturacion-estados · __resumen · __importe · __etiqueta · __cifra</span></div>
+    <div class="cat-stage">
+      <div class="nz-facturacion-estados" style="max-width:52rem"><div class="nz-facturacion-estados__resumen"><div class="nz-facturacion-estados__importe"><span class="nz-facturacion-estados__etiqueta">Facturado</span><span class="nz-facturacion-estados__cifra">184 200 €</span></div><div class="nz-facturacion-estados__importe"><span class="nz-facturacion-estados__etiqueta">Cobrado</span><span class="nz-facturacion-estados__cifra">161 400 €</span></div><div class="nz-facturacion-estados__importe"><span class="nz-facturacion-estados__etiqueta">Pendiente</span><span class="nz-facturacion-estados__cifra">22 800 €</span></div></div><div class="nz-table-wrap nz-table-wrap--apilable"><table class="nz-table nz-table--apilable"><thead><tr><th scope="col">Factura</th><th scope="col">Cliente</th><th scope="col">Vencimiento</th><th scope="col" class="nz-table__right">Importe</th><th scope="col">Estado</th></tr></thead><tbody><tr><td data-etiqueta="Factura"><span class="nz-table__strong">2026-041</span></td><td data-etiqueta="Cliente">Astilleros del Ebro</td><td data-etiqueta="Vencimiento">12 oct 2026</td><td data-etiqueta="Importe" class="nz-table__num nz-table__right">18 400,00 €</td><td data-etiqueta="Estado"><span class="nz-table__status nz-table__status--warn">Pendiente</span></td></tr><tr><td data-etiqueta="Factura"><span class="nz-table__strong">2026-040</span></td><td data-etiqueta="Cliente">Marta Ruiz</td><td data-etiqueta="Vencimiento">28 sep 2026</td><td data-etiqueta="Importe" class="nz-table__num nz-table__right">1 240,00 €</td><td data-etiqueta="Estado"><span class="nz-table__status nz-table__status--ok">Pagado</span></td></tr><tr><td data-etiqueta="Factura"><span class="nz-table__strong">2026-038</span></td><td data-etiqueta="Cliente">Javier Vela</td><td data-etiqueta="Vencimiento">5 sep 2026</td><td data-etiqueta="Importe" class="nz-table__num nz-table__right">860,00 €</td><td data-etiqueta="Estado"><span class="nz-table__status nz-table__status--err">Vencido</span></td></tr></tbody></table></div></div>
+    </div>
+  </section>
+  <section class="cat-demo cat-in" data-cat="nz-badge nz-centro-notificaciones nz-h5 nz-icon nz-link nz-text">
+    <div class="cat-demo__title"><span class="cat-demo__num">28</span><span class="cat-demo__name">Centro de notificaciones</span><span class="cat-demo__tag">.nz-centro-notificaciones · __cabecera · __lista · __item · __icono · __cuerpo · __pie</span></div>
+    <div class="cat-stage">
+      <section class="nz-centro-notificaciones" style="max-width:32rem"><div class="nz-centro-notificaciones__cabecera"><span class="nz-h5">Notificaciones</span><span class="nz-badge nz-badge--brand" style="margin-left:auto">3 nuevas</span></div><div class="nz-centro-notificaciones__lista"><div class="nz-centro-notificaciones__item"><span class="nz-centro-notificaciones__icono"><svg class="nz-icon nz-icon--sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 8a6 6 0 1 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 0 1-3.4 0"/></svg></span><div class="nz-centro-notificaciones__cuerpo"><span class="nz-h5">Nuevo comentario</span><span class="nz-text--small nz-text--muted">Ana comentó en «Informe Q3».</span></div></div><div class="nz-centro-notificaciones__item"><span class="nz-centro-notificaciones__icono"><svg class="nz-icon nz-icon--sm" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 10h18"/></svg></span><div class="nz-centro-notificaciones__cuerpo"><span class="nz-h5">Pago recibido</span><span class="nz-text--small nz-text--muted">2 520,00 € de Astilleros del Ebro.</span></div></div><div class="nz-centro-notificaciones__item"><span class="nz-centro-notificaciones__icono"><svg class="nz-icon nz-icon--sm" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg></span><div class="nz-centro-notificaciones__cuerpo"><span class="nz-h5">Nueva invitación</span><span class="nz-text--small nz-text--muted">Javier Vela quiere unirse.</span></div></div></div><div class="nz-centro-notificaciones__pie"><a class="nz-link" href="#">Marcar todas como leídas</a></div></section>
+    </div>
+  </section>
+  <section class="cat-demo cat-in" data-cat="nz-preguntas-frecuentes">
+    <div class="cat-demo__title"><span class="cat-demo__num">29</span><span class="cat-demo__name">Sección de preguntas frecuentes</span><span class="cat-demo__tag">.nz-preguntas-frecuentes · __item · __pregunta · __respuesta</span></div>
+    <div class="cat-stage">
+      <div class="nz-preguntas-frecuentes" style="max-width:40rem"><details class="nz-preguntas-frecuentes__item" open><summary class="nz-preguntas-frecuentes__pregunta">¿Cómo cambio de plan?</summary><div class="nz-preguntas-frecuentes__respuesta">Desde Ajustes → Facturación, elige el nuevo plan y el cambio es inmediato.</div></details><details class="nz-preguntas-frecuentes__item"><summary class="nz-preguntas-frecuentes__pregunta">¿Puedo exportar mis datos?</summary><div class="nz-preguntas-frecuentes__respuesta">Sí, en CSV o JSON desde el menú de cada tabla.</div></details><details class="nz-preguntas-frecuentes__item"><summary class="nz-preguntas-frecuentes__pregunta">¿Qué pasa si supero los asientos?</summary><div class="nz-preguntas-frecuentes__respuesta">Se factura el exceso a 12 € por asiento y mes.</div></details></div>
+    </div>
+  </section>
+  <section class="cat-demo cat-in" data-cat="nz-badge nz-btn nz-dl nz-tarjeta-suscripcion">
+    <div class="cat-demo__title"><span class="cat-demo__num">30</span><span class="cat-demo__name">Tarjeta de suscripción</span><span class="cat-demo__tag">.nz-tarjeta-suscripcion · __cabecera · __plan · __datos · __acciones</span></div>
+    <div class="cat-stage">
+      <div class="nz-tarjeta-suscripcion" style="max-width:26rem"><div class="nz-tarjeta-suscripcion__cabecera"><span class="nz-tarjeta-suscripcion__plan">Plan Equipo</span><span class="nz-badge nz-badge--success">Activo</span></div><dl class="nz-tarjeta-suscripcion__datos nz-dl"><div class="nz-dl__row"><dt class="nz-dl__dt">Renovación</dt><dd class="nz-dl__dd">1 nov 2026</dd></div><div class="nz-dl__row"><dt class="nz-dl__dt">Asientos</dt><dd class="nz-dl__dd">12 de 20</dd></div><div class="nz-dl__row"><dt class="nz-dl__dt">Importe</dt><dd class="nz-dl__dd">228 € / mes</dd></div></dl><div class="nz-tarjeta-suscripcion__acciones"><button class="nz-btn nz-btn--outline nz-btn--sm" type="button">Cambiar plan</button><button class="nz-btn nz-btn--ghost nz-btn--sm" type="button">Cancelar</button></div></div>
+    </div>
+  </section>
+  <section class="cat-demo cat-in" data-cat="nz-rejilla-estadisticas">
+    <div class="cat-demo__title"><span class="cat-demo__num">31</span><span class="cat-demo__name">Bloque de estadísticas en rejilla</span><span class="cat-demo__tag">.nz-rejilla-estadisticas · __dato · __valor · __etiqueta</span></div>
+    <div class="cat-stage">
+      <div class="nz-rejilla-estadisticas" style="max-width:52rem"><div class="nz-rejilla-estadisticas__dato"><span class="nz-rejilla-estadisticas__valor">1 284</span><span class="nz-rejilla-estadisticas__etiqueta">Usuarios activos</span></div><div class="nz-rejilla-estadisticas__dato"><span class="nz-rejilla-estadisticas__valor">96</span><span class="nz-rejilla-estadisticas__etiqueta">Altas del mes</span></div><div class="nz-rejilla-estadisticas__dato"><span class="nz-rejilla-estadisticas__valor">312</span><span class="nz-rejilla-estadisticas__etiqueta">Licencias libres</span></div><div class="nz-rejilla-estadisticas__dato"><span class="nz-rejilla-estadisticas__valor">8,4 %</span><span class="nz-rejilla-estadisticas__etiqueta">Crecimiento mensual</span></div></div>
+    </div>
+  </section>
+  <section class="cat-demo cat-in" data-cat="nz-btn nz-ficha-producto nz-lbl nz-price nz-stock">
+    <div class="cat-demo__title"><span class="cat-demo__num">32</span><span class="cat-demo__name">Ficha de producto con variantes</span><span class="cat-demo__tag">.nz-ficha-producto · __media · __cuerpo · __nombre · __variantes · __acciones</span></div>
+    <div class="cat-stage">
+      <div class="nz-ficha-producto" style="max-width:44rem"><div class="nz-ficha-producto__media"></div><div class="nz-ficha-producto__cuerpo"><span class="nz-lbl nz-lbl--brand">Novedad</span><h3 class="nz-ficha-producto__nombre">Cafetera de émbolo Acero 1 L</h3><span class="nz-price nz-price--sm"><span class="nz-price__amount">34,90 €</span><span class="nz-price__old">49,00 €</span></span><div class="nz-ficha-producto__variantes"><span class="nz-lbl nz-lbl--outline">0,6 L</span><span class="nz-lbl nz-lbl--outline">1 L</span><span class="nz-lbl nz-lbl--outline">1,5 L</span></div><span class="nz-stock nz-stock--low"><i></i>Últimas 4 unidades</span><div class="nz-ficha-producto__acciones"><button class="nz-btn nz-btn--primary" type="button">Añadir al carrito</button><button class="nz-btn nz-btn--outline" type="button">Guardar</button></div></div></div>
+    </div>
+  </section>
+  <section class="cat-demo cat-in" data-cat="nz-avatar nz-btn nz-caja-comentarios nz-field nz-textarea">
+    <div class="cat-demo__title"><span class="cat-demo__num">33</span><span class="cat-demo__name">Caja de comentarios</span><span class="cat-demo__tag">.nz-caja-comentarios · __comentario · __cuerpo · __autor · __texto · __form · __form-acciones</span></div>
+    <div class="cat-stage">
+      <div class="nz-caja-comentarios" style="max-width:36rem"><div class="nz-caja-comentarios__comentario"><span class="nz-avatar nz-avatar--sm" aria-hidden="true">AB</span><div class="nz-caja-comentarios__cuerpo"><span class="nz-caja-comentarios__autor">Ana Beltrán</span><span class="nz-caja-comentarios__texto">¿Aplicamos el descuento también a los asientos adicionales?</span></div></div><div class="nz-caja-comentarios__comentario"><span class="nz-avatar nz-avatar--sm" aria-hidden="true">DA</span><div class="nz-caja-comentarios__cuerpo"><span class="nz-caja-comentarios__autor">David Antizar</span><span class="nz-caja-comentarios__texto">Sí, a partir del tercer asiento.</span></div></div><div class="nz-caja-comentarios__form"><label class="nz-field__label" for="cmt">Añadir comentario</label><textarea class="nz-textarea" id="cmt" rows="2" placeholder="Escribe tu comentario"></textarea><div class="nz-caja-comentarios__form-acciones"><button class="nz-btn nz-btn--ghost nz-btn--sm" type="button">Cancelar</button><button class="nz-btn nz-btn--primary nz-btn--sm" type="button">Publicar</button></div></div></div>
+    </div>
+  </section>
+  <section class="cat-demo cat-in" data-cat="nz-avatar nz-tarjeta-contenido nz-text">
+    <div class="cat-demo__title"><span class="cat-demo__num">34</span><span class="cat-demo__name">Tarjeta de contenido con media</span><span class="cat-demo__tag">.nz-tarjeta-contenido · __media · __cuerpo · __etiqueta · __titulo · __texto · __pie · --interactiva</span></div>
+    <div class="cat-stage">
+      <article class="nz-tarjeta-contenido nz-tarjeta-contenido--interactiva" style="max-width:22rem"><div class="nz-tarjeta-contenido__media"></div><div class="nz-tarjeta-contenido__cuerpo"><span class="nz-tarjeta-contenido__etiqueta">Guía</span><h3 class="nz-tarjeta-contenido__titulo">Cómo montar un panel de datos en una tarde</h3><p class="nz-tarjeta-contenido__texto">Patrones, tablas y estados vacíos que ya vienen resueltos.</p><div class="nz-tarjeta-contenido__pie"><span class="nz-avatar nz-avatar--xs" aria-hidden="true">DA</span><span class="nz-text--small nz-text--muted">David Antizar · 6 min</span></div></div></article>
+    </div>
+  </section>
+  <section class="cat-demo cat-in" data-cat="nz-icon nz-selector-vista">
+    <div class="cat-demo__title"><span class="cat-demo__num">35</span><span class="cat-demo__name">Selector de vista (rejilla / lista)</span><span class="cat-demo__tag">.nz-selector-vista · __opcion</span></div>
+    <div class="cat-stage">
+      <div class="nz-selector-vista" role="group" aria-label="Modo de vista"><button class="nz-selector-vista__opcion is-active" type="button"><svg class="nz-icon nz-icon--sm" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="7" height="7"/><rect x="13" y="4" width="7" height="7"/><rect x="4" y="13" width="7" height="7"/><rect x="13" y="13" width="7" height="7"/></svg>Rejilla</button><button class="nz-selector-vista__opcion" type="button"><svg class="nz-icon nz-icon--sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/></svg>Lista</button></div>
+    </div>
+  </section>
+  <section class="cat-demo cat-in" data-cat="nz-link nz-tabla-resumen nz-table nz-table-wrap">
+    <div class="cat-demo__title"><span class="cat-demo__num">36</span><span class="cat-demo__name">Tabla de resumen con pie</span><span class="cat-demo__tag">.nz-tabla-resumen · __pie</span></div>
+    <div class="cat-stage">
+      <div class="nz-tabla-resumen" style="max-width:46rem"><div class="nz-table-wrap nz-table-wrap--apilable"><table class="nz-table nz-table--apilable"><thead><tr><th scope="col">Proyecto</th><th scope="col">Responsable</th><th scope="col" class="nz-table__right">Avance</th></tr></thead><tbody><tr><td data-etiqueta="Proyecto"><span class="nz-table__strong">Portal del cliente</span></td><td data-etiqueta="Responsable">Marta Ruiz</td><td data-etiqueta="Avance" class="nz-table__num nz-table__right">76 %</td></tr><tr><td data-etiqueta="Proyecto"><span class="nz-table__strong">Migración de datos</span></td><td data-etiqueta="Responsable">Javier Vela</td><td data-etiqueta="Avance" class="nz-table__num nz-table__right">42 %</td></tr><tr><td data-etiqueta="Proyecto"><span class="nz-table__strong">App móvil</span></td><td data-etiqueta="Responsable">Ana Beltrán</td><td data-etiqueta="Avance" class="nz-table__num nz-table__right">18 %</td></tr></tbody></table></div><div class="nz-tabla-resumen__pie"><span>3 de 128 proyectos</span><a class="nz-link" href="#">Ver todos</a></div></div>
+    </div>
+  </section>
+  <section class="cat-demo cat-in" data-cat="nz-activity nz-h5 nz-icon nz-link nz-panel-actividad">
+    <div class="cat-demo__title"><span class="cat-demo__num">37</span><span class="cat-demo__name">Panel de actividad reciente</span><span class="cat-demo__tag">.nz-panel-actividad · __cabecera · __lista</span></div>
+    <div class="cat-stage">
+      <div class="nz-panel-actividad" style="max-width:30rem"><div class="nz-panel-actividad__cabecera"><span class="nz-h5">Actividad reciente</span><a class="nz-link" href="#">Ver todo</a></div><ul class="nz-panel-actividad__lista nz-activity"><li class="nz-activity__item"><span class="nz-activity__icon"><svg class="nz-icon nz-icon--sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span>Marta actualizó la ficha de cliente<span class="nz-activity__time">hace 12 min</span></li><li class="nz-activity__item"><span class="nz-activity__icon"><svg class="nz-icon nz-icon--sm" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 10h18"/></svg></span>Se emitió la factura 2026-041<span class="nz-activity__time">hace 1 h</span></li><li class="nz-activity__item"><span class="nz-activity__icon"><svg class="nz-icon nz-icon--sm" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg></span>Javier Vela aceptó la invitación<span class="nz-activity__time">ayer</span></li></ul></div>
+    </div>
+  </section>
+  <section class="cat-demo cat-in" data-cat="nz-desglose-precio">
+    <div class="cat-demo__title"><span class="cat-demo__num">38</span><span class="cat-demo__name">Desglose de precio</span><span class="cat-demo__tag">.nz-desglose-precio · __fila · __total</span></div>
+    <div class="cat-stage">
+      <div class="nz-desglose-precio" style="max-width:22rem"><span class="nz-desglose-precio__fila">Plan Equipo (mensual)<b>228,00 €</b></span><span class="nz-desglose-precio__fila">Asientos adicionales ×3<b>36,00 €</b></span><span class="nz-desglose-precio__fila">IVA (21 %)<b>55,44 €</b></span><span class="nz-desglose-precio__total"><span>Total a pagar</span><span>319,44 €</span></span></div>
+    </div>
+  </section>
+  <section class="cat-demo cat-in" data-cat="nz-avatar nz-tarjeta-equipo">
+    <div class="cat-demo__title"><span class="cat-demo__num">39</span><span class="cat-demo__name">Tarjeta de equipo</span><span class="cat-demo__tag">.nz-tarjeta-equipo · __miembro · __nombre · __rol</span></div>
+    <div class="cat-stage">
+      <div class="nz-tarjeta-equipo" style="max-width:44rem"><div class="nz-tarjeta-equipo__miembro"><span class="nz-avatar nz-avatar--lg" aria-hidden="true">DA</span><span class="nz-tarjeta-equipo__nombre">David Antizar</span><span class="nz-tarjeta-equipo__rol">Director de producto</span></div><div class="nz-tarjeta-equipo__miembro"><span class="nz-avatar nz-avatar--lg" aria-hidden="true">MR</span><span class="nz-tarjeta-equipo__nombre">Marta Ruiz</span><span class="nz-tarjeta-equipo__rol">Directora de operaciones</span></div><div class="nz-tarjeta-equipo__miembro"><span class="nz-avatar nz-avatar--lg" aria-hidden="true">LP</span><span class="nz-tarjeta-equipo__nombre">Lucía Prado</span><span class="nz-tarjeta-equipo__rol">CTO</span></div></div>
+    </div>
+  </section>
+  <section class="cat-demo cat-in" data-cat="nz-comparativa-productos nz-pricetable">
+    <div class="cat-demo__title"><span class="cat-demo__num">40</span><span class="cat-demo__name">Comparativa de productos</span><span class="cat-demo__tag">.nz-comparativa-productos · __tabla</span></div>
+    <div class="cat-stage">
+      <div class="nz-comparativa-productos" style="max-width:44rem"><div class="nz-comparativa-productos__tabla"><table class="nz-pricetable"><thead><tr><th>Característica</th><th class="nz-pricetable__col">Básico</th><th class="nz-pricetable__col is-selected">Equipo</th><th class="nz-pricetable__col">Avanzado</th></tr></thead><tbody><tr><td class="nz-pricetable__rowhead">Usuarios</td><td>1</td><td class="is-selected">10</td><td>Ilimitados</td></tr><tr><td class="nz-pricetable__rowhead">Almacenamiento</td><td>5 GB</td><td class="is-selected">100 GB</td><td>1 TB</td></tr><tr><td class="nz-pricetable__rowhead">Soporte</td><td>Correo</td><td class="is-selected">Prioritario</td><td>Dedicado</td></tr></tbody></table></div></div>
+    </div>
+  </section>
+  <section class="cat-demo cat-in" data-cat="nz-checkbox nz-checklist-entrega">
+    <div class="cat-demo__title"><span class="cat-demo__num">41</span><span class="cat-demo__name">Checklist de entrega</span><span class="cat-demo__tag">.nz-checklist-entrega · __item · __texto</span></div>
+    <div class="cat-stage">
+      <div class="nz-checklist-entrega" style="max-width:34rem"><div class="nz-checklist-entrega__item"><label class="nz-checkbox"><input type="checkbox" checked aria-label="Hecho"><span class="nz-checkbox__box"></span></label><span class="nz-checklist-entrega__texto">Contrato firmado por ambas partes</span></div><div class="nz-checklist-entrega__item"><label class="nz-checkbox"><input type="checkbox" checked aria-label="Hecho"><span class="nz-checkbox__box"></span></label><span class="nz-checklist-entrega__texto">CIF verificado en el registro mercantil</span></div><div class="nz-checklist-entrega__item"><label class="nz-checkbox"><input type="checkbox" aria-label="Pendiente"><span class="nz-checkbox__box"></span></label><span class="nz-checklist-entrega__texto">Domiciliación bancaria confirmada</span></div></div>
+    </div>
+  </section>
+  <section class="cat-demo cat-in" data-cat="nz-btn nz-field nz-formgrid nz-formulario-seccion nz-input">
+    <div class="cat-demo__title"><span class="cat-demo__num">42</span><span class="cat-demo__name">Sección de formulario</span><span class="cat-demo__tag">.nz-formulario-seccion · __cabecera · __titulo · __desc · __pie</span></div>
+    <div class="cat-stage">
+      <section class="nz-formulario-seccion" style="max-width:40rem"><div class="nz-formulario-seccion__cabecera"><h3 class="nz-formulario-seccion__titulo">Datos de facturación</h3><p class="nz-formulario-seccion__desc">Se usarán en todas las facturas del espacio de trabajo.</p></div><div class="nz-formgrid nz-formgrid--2"><span class="nz-field"><label class="nz-field__label" for="fs1">Razón social</label><input class="nz-input" id="fs1" value="Astilleros del Ebro S.A."></span><span class="nz-field"><label class="nz-field__label" for="fs2">CIF</label><input class="nz-input" id="fs2" value="B-50012345"></span><span class="nz-field"><label class="nz-field__label" for="fs3">Correo de facturación</label><input class="nz-input" id="fs3" type="email" value="facturacion@astilleros.es"></span></div><div class="nz-formulario-seccion__pie"><button class="nz-btn nz-btn--primary" type="button">Guardar</button></div></section>
+    </div>
+  </section>
+  <section class="cat-demo cat-in" data-cat="nz-field nz-filtro-rango nz-range">
+    <div class="cat-demo__title"><span class="cat-demo__num">43</span><span class="cat-demo__name">Filtro por rango</span><span class="cat-demo__tag">.nz-filtro-rango · __cabecera · __valor · __pie</span></div>
+    <div class="cat-stage">
+      <div class="nz-filtro-rango" style="max-width:22rem"><div class="nz-filtro-rango__cabecera"><label class="nz-field__label" for="fr1">Precio máximo</label><span class="nz-filtro-rango__valor">450 €</span></div><input class="nz-range" id="fr1" type="range" min="0" max="1000" value="450"><div class="nz-filtro-rango__pie"><span>0 €</span><span>1 000 €</span></div></div>
+    </div>
+  </section>
+  <section class="cat-demo cat-in" data-cat="nz-aviso-sistema nz-btn nz-icon">
+    <div class="cat-demo__title"><span class="cat-demo__num">44</span><span class="cat-demo__name">Aviso de sistema / mantenimiento</span><span class="cat-demo__tag">.nz-aviso-sistema · __titulo · __texto · __acciones</span></div>
+    <div class="cat-stage">
+      <div class="nz-aviso-sistema" style="max-width:42rem"><svg class="nz-icon nz-icon--brand" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 2 20h20z"/><path d="M12 9v5M12 17h.01"/></svg><span class="nz-aviso-sistema__titulo">Mantenimiento programado</span><span class="nz-aviso-sistema__texto">El sábado 10, de 02:00 a 04:00, el servicio estará en modo lectura.</span><div class="nz-aviso-sistema__acciones"><button class="nz-btn nz-btn--outline nz-btn--sm" type="button">Más información</button></div></div>
+    </div>
+  </section>
+  <section class="cat-demo cat-in" data-cat="nz-badge nz-icon nz-icon-tile nz-link nz-tarjeta-servicio">
+    <div class="cat-demo__title"><span class="cat-demo__num">45</span><span class="cat-demo__name">Tarjeta de servicio</span><span class="cat-demo__tag">.nz-tarjeta-servicio · __icono · __cuerpo · __titulo · __texto · __pie</span></div>
+    <div class="cat-stage">
+      <article class="nz-tarjeta-servicio" style="max-width:34rem"><span class="nz-tarjeta-servicio__icono nz-icon-tile nz-icon-tile--brand"><svg class="nz-icon nz-icon--lg" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/></svg></span><div class="nz-tarjeta-servicio__cuerpo"><span class="nz-tarjeta-servicio__titulo">Copias de seguridad diarias</span><span class="nz-tarjeta-servicio__texto">Retención de 30 días y restauración en un clic.</span><div class="nz-tarjeta-servicio__pie"><span class="nz-badge nz-badge--success">Incluido</span><a class="nz-link" href="#">Configurar</a></div></div></article>
+    </div>
+  </section>
+  <section class="cat-demo cat-in" data-cat="nz-avatar nz-bloque-testimonio">
+    <div class="cat-demo__title"><span class="cat-demo__num">46</span><span class="cat-demo__name">Bloque de testimonio</span><span class="cat-demo__tag">.nz-bloque-testimonio · __cita · __autor · __nombre · __rol</span></div>
+    <div class="cat-stage">
+      <figure class="nz-bloque-testimonio" style="max-width:34rem"><blockquote class="nz-bloque-testimonio__cita">Pasamos de montar paneles a mano a copiar un patrón. Lo que antes eran dos días, ahora es una tarde.</blockquote><figcaption class="nz-bloque-testimonio__autor"><span class="nz-avatar nz-avatar--md" aria-hidden="true">LP</span><span><span class="nz-bloque-testimonio__nombre">Lucía Prado</span><br><span class="nz-bloque-testimonio__rol">CTO, Astilleros del Ebro</span></span></figcaption></figure>
+    </div>
+  </section>
+  <section class="cat-demo cat-in" data-cat="nz-avatar nz-icon nz-menu nz-menu-cuenta">
+    <div class="cat-demo__title"><span class="cat-demo__num">47</span><span class="cat-demo__name">Menú de cuenta con cabecera</span><span class="cat-demo__tag">.nz-menu-cuenta · __cabecera · __nombre · __correo · __lista</span></div>
+    <div class="cat-stage">
+      <div class="nz-menu-cuenta"><div class="nz-menu-cuenta__cabecera"><span class="nz-avatar nz-avatar--md" aria-hidden="true">MR</span><div><span class="nz-menu-cuenta__nombre">Marta Ruiz</span><br><span class="nz-menu-cuenta__correo">m.ruiz@astilleros.es</span></div></div><div class="nz-menu-cuenta__lista"><a class="nz-menu__item" href="#"><svg class="nz-icon nz-icon--sm" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>Mi perfil</a><a class="nz-menu__item" href="#"><svg class="nz-icon nz-icon--sm" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>Ajustes de seguridad</a><div class="nz-menu__sep"></div><a class="nz-menu__item nz-menu__item--danger" href="#">Cerrar sesión</a></div></div>
+    </div>
+  </section>
+  <div class="cat-empty" id="catVacio" hidden><b>Nada por aquí</b>Prueba con otro término o quita el filtro.</div>
+</main>
+<div class="cat-nav-pages" style="justify-content:center;border-top:1px solid var(--nz-border-soft)">
+  <a href="16-cristal.html">← 16 Cristal (capa de estilo)</a>
+  <a href="01-layout.html">01 Layout y estructura →</a>
+</div>
+<footer class="cat-footer">
+  Aurora · Design System Ntizar · Categoría 17 de 17 · 2145 objetos · 632 demos · Hecho con ❤️ por David Antizar
+</footer>
+<script src="../js/catalog.js"></script>
+<script src="../js/graficos.js"></script>
+</body>
+</html>

@@ -34,7 +34,12 @@ PACKS_COMPONENTES = [f"p{i}-{n}.css" for i, n in [
     (5, "forms"), (6, "feedback"), (7, "overlays"), (8, "data"), (9, "media"),
     (10, "commerce"), (11, "social"), (12, "system"),
     (13, "charts"), (14, "ai"), (15, "apps"),
+    (16, "cristal"), (17, "patrones"),
 ]]
+
+# Packs con permiso para usar backdrop-filter y gradientes (capa de cristal).
+# Son la única excepción al manifiesto «0 glass, 0 gradientes», y usan SOLO tokens.
+PACKS_CRISTAL = {"p16-cristal.css"}
 
 
 # ------------------------------------------------------------------
@@ -270,6 +275,7 @@ def pagina(spec, censo_cat, totales, nav, packs):
       f'Hecho con ❤️ por David Antizar')
     A("</footer>")
     A('<script src="../js/catalog.js"></script>')
+    A('<script src="../js/graficos.js"></script>')
     A("</body>")
     A("</html>")
     html_txt, packs_pagina = inyecta_packs("\n".join(L) + "\n", packs, "../packs/")
@@ -280,84 +286,6 @@ def pagina(spec, censo_cat, totales, nav, packs):
 # Portada
 # ------------------------------------------------------------------
 PORTADA_JS = """
-  /* Constelación: deriva azul + chispas naranjas + explosión al pulsar.
-     Canvas = fondo; todo el texto vive en DOM encima. reduced-motion → fotograma estático. */
-  (function () {
-    var cv = document.getElementById('sky'); if (!cv) return;
-    var cx = cv.getContext('2d');
-    var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
-    var W, H, pts = [], parts = [], running = false;
-    function palette() {
-      return document.documentElement.getAttribute('data-nz-theme') === 'dark'
-        ? { dot: '125,165,255', line: '79,142,247', spark: '251,146,60' }
-        : { dot: '37,99,235', line: '37,99,235', spark: '249,115,22' };
-    }
-    function size() {
-      var dpr = Math.min(window.devicePixelRatio || 1, 2);
-      W = innerWidth; H = innerHeight;
-      cv.width = W * dpr; cv.height = H * dpr;
-      cx.setTransform(dpr, 0, 0, dpr, 0, 0);
-    }
-    function seed() {
-      pts = [];
-      var n = W < 640 ? 42 : 90;
-      for (var i = 0; i < n; i++) pts.push({
-        x: Math.random() * W, y: Math.random() * H,
-        vx: (Math.random() - .5) * .35, vy: (Math.random() - .5) * .35,
-        r: 1.2 + Math.random() * 1.3, a: .18 + Math.random() * .4,
-        spark: Math.random() < .08
-      });
-    }
-    function step() {
-      cx.clearRect(0, 0, W, H);
-      var p = palette(), LINK = 110, i, j, d;
-      for (i = 0; i < pts.length; i++) {
-        d = pts[i]; d.x += d.vx; d.y += d.vy;
-        if (d.x < -10) d.x = W + 10; if (d.x > W + 10) d.x = -10;
-        if (d.y < -10) d.y = H + 10; if (d.y > H + 10) d.y = -10;
-      }
-      cx.lineWidth = 1;
-      for (i = 0; i < pts.length; i++) for (j = i + 1; j < pts.length; j++) {
-        var dist = Math.hypot(pts[i].x - pts[j].x, pts[i].y - pts[j].y);
-        if (dist < LINK) {
-          cx.strokeStyle = 'rgba(' + p.line + ',' + ((1 - dist / LINK) * .16).toFixed(3) + ')';
-          cx.beginPath(); cx.moveTo(pts[i].x, pts[i].y); cx.lineTo(pts[j].x, pts[j].y); cx.stroke();
-        }
-      }
-      for (i = 0; i < pts.length; i++) {
-        d = pts[i];
-        cx.fillStyle = d.spark ? 'rgba(' + p.spark + ',' + (d.a + .2).toFixed(2) + ')' : 'rgba(' + p.dot + ',' + d.a.toFixed(2) + ')';
-        cx.beginPath(); cx.arc(d.x, d.y, d.spark ? d.r + .6 : d.r, 0, 6.283); cx.fill();
-      }
-      for (i = parts.length - 1; i >= 0; i--) {
-        var b = parts[i], alive = false;
-        for (var k = 0; k < b.length; k++) {
-          var q = b[k];
-          if (q.life <= 0) continue;
-          alive = true;
-          q.x += q.vx; q.y += q.vy; q.vy += .12; q.vx *= .985; q.life--;
-          cx.fillStyle = 'rgba(' + q.c + ',' + Math.max(q.life / 60, 0).toFixed(2) + ')';
-          cx.beginPath(); cx.arc(q.x, q.y, 1.6 + (q.life / 60) * 1.4, 0, 6.283); cx.fill();
-        }
-        if (!alive) parts.splice(i, 1);
-      }
-    }
-    function loop() { step(); if (running) requestAnimationFrame(loop); }
-    size(); seed();
-    if (reduce) { step(); return; }
-    running = true; requestAnimationFrame(loop);
-    document.addEventListener('visibilitychange', function () { running = !document.hidden; if (running) requestAnimationFrame(loop); });
-    window.addEventListener('resize', function () { size(); seed(); });
-    window.addEventListener('pointerdown', function (e) {
-      var p = palette(), ps = [];
-      for (var i = 0; i < 18; i++) {
-        var ang = Math.random() * 6.283, sp = 1.5 + Math.random() * 3.2;
-        ps.push({ x: e.clientX, y: e.clientY, vx: Math.cos(ang) * sp, vy: Math.sin(ang) * sp - 1, life: 40 + (Math.random() * 25 | 0), c: Math.random() < .3 ? p.spark : p.dot });
-      }
-      parts.push(ps);
-    });
-  })();
-
   /* Buscador global de objetos: carga el índice y ofrece resultados con enlace. */
   (function () {
     var inp = document.getElementById('objBuscar');
@@ -458,6 +386,18 @@ CSS_PORTADA = """
   @media (min-width: 960px) { .cat-muestra { grid-template-columns: repeat(3, 1fr); align-items: start; } }
   .cat-muestra__col { display: grid; gap: var(--nz-space-2); align-content: start; }
   .cat-muestra__t { font-size: var(--nz-text-2xs); font-weight: 800; letter-spacing: var(--nz-tracking-caps); text-transform: uppercase; color: var(--nz-text-faint); }
+  .cat-panel { display: grid; gap: var(--nz-space-3); padding: var(--nz-space-4); border: var(--nz-border-w) solid var(--nz-border);
+    border-radius: var(--nz-radius-lg); background: var(--nz-surface); box-shadow: var(--nz-shadow-xs); margin-bottom: var(--nz-space-4); }
+  .cat-controles { display: flex; flex-wrap: wrap; gap: var(--nz-space-3); align-items: end; }
+  .cat-campo { display: grid; gap: var(--nz-space-1); font-size: var(--nz-text-2xs); font-weight: 800;
+    letter-spacing: var(--nz-tracking-caps); text-transform: uppercase; color: var(--nz-text-faint); }
+  .cat-campo input[type="color"] { width: 76px; height: var(--nz-tactil); padding: 2px; border: var(--nz-border-w) solid var(--nz-border);
+    border-radius: var(--nz-radius-md); background: var(--nz-surface); cursor: pointer; }
+  .cat-select { min-height: var(--nz-tactil); padding: 0 var(--nz-space-3); border: var(--nz-border-w) solid var(--nz-border);
+    border-radius: var(--nz-radius-md); background: var(--nz-surface); color: var(--nz-text); font: inherit; font-size: var(--nz-text-sm); }
+  .cat-previa { display: grid; gap: var(--nz-space-4); grid-template-columns: 1fr; }
+  @media (min-width: 640px) { .cat-previa { grid-template-columns: 2fr 1fr; align-items: start; } }
+  @media (min-width: 960px) { .cat-muestra { grid-template-columns: repeat(3, 1fr); } }
 """
 
 
@@ -481,7 +421,10 @@ def portada(specs, censo_cat, totales, packs):
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Aurora · Design System Ntizar · {t['clases']} objetos de frontend</title>
-<meta name="description" content="Design system CSS de Ntizar: {t['clases']} objetos en {t['categorias']} categorías. Sólido, mobile-first, táctil 44px, light y dark. Sin gradientes, sin glass.">
+<meta name="description" content="Design system CSS de Ntizar: {t['clases']} objetos en {t['categorias']} categorías. Elige dos colores y el sistema entero se rehace. Mobile-first, táctil 44px, light y dark.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400..800&display=swap">
 <link rel="stylesheet" href="tokens.css">
 <link rel="stylesheet" href="packs/{PACK_SHELL}">
 <!--PACKS-->
@@ -493,8 +436,6 @@ def portada(specs, censo_cat, totales, packs):
 <style>{CSS_PORTADA}</style>
 </head>
 <body class="nz">
-
-<canvas id="sky" class="cat-sky" aria-hidden="true"></canvas>
 
 <div class="cat-above">
 
@@ -517,7 +458,7 @@ def portada(specs, censo_cat, totales, packs):
       <a class="nz-btn nz-btn--primary" href="recetas/index.html">Ver las recetas</a>
       <a class="nz-btn nz-btn--soft" href="paginas/01-layout.html">Explorar el catálogo</a>
       <a class="nz-btn nz-btn--ghost" href="COMPOSICION.md">Contrato de composición</a>
-      <span class="cat-hint">psst… pulsa en cualquier parte para las chispas</span>
+      <span class="cat-hint">Y abajo puedes cambiar los colores, la tipografía y el acabado en vivo</span>
     </div>
     <div class="objBuscar">
       <div class="cat-search">
@@ -558,17 +499,55 @@ def portada(specs, censo_cat, totales, packs):
     </section>
 
     <section class="cat-in" style="--d:.05s;margin-block:var(--nz-space-12)">
-      <h2 class="cat-h2">Tu marca, en una línea</h2>
-      <p class="cat-p">Elige el color del proyecto y el sistema entero se rehace: botones, foco, sombras, fondos suaves y modo oscuro. Pruébalo aquí mismo.</p>
-      <div class="cat-marcas" id="marcasBarra">
-        <button class="cat-marca" data-marca="aurora" aria-pressed="true"><i style="background:#2563eb"></i>Aurora</button>
-        <button class="cat-marca" data-marca="indigo" aria-pressed="false"><i style="background:#4f46e5"></i>Índigo</button>
-        <button class="cat-marca" data-marca="esmeralda" aria-pressed="false"><i style="background:#00875e"></i>Esmeralda</button>
-        <button class="cat-marca" data-marca="violeta" aria-pressed="false"><i style="background:#7c3aed"></i>Violeta</button>
-        <button class="cat-marca" data-marca="carmesi" aria-pressed="false"><i style="background:#dc2626"></i>Carmesí</button>
+      <h2 class="cat-h2">Pruébalo: tu color, tu tipografía, tu acabado</h2>
+      <p class="cat-p">Aurora es <b>azul <code>#2563eb</code></b> y <b>naranja <code>#f97316</code></b> por defecto. Cambia esos dos —o cualquiera— y el sistema entero se rehace: botones, foco, sombras, fondos suaves y modo oscuro. Sin tocar una línea de CSS.</p>
+
+      <div class="cat-panel">
+        <div class="cat-controles">
+          <label class="cat-campo" for="inputMarca"><span>Color de marca</span>
+            <input id="inputMarca" type="color" value="#2563eb"></label>
+          <label class="cat-campo" for="inputAcento"><span>Color de acento</span>
+            <input id="inputAcento" type="color" value="#f97316"></label>
+          <label class="cat-campo" for="selFuente"><span>Tipografía</span>
+            <select id="selFuente" class="cat-select">
+              <option value="inter" selected>Inter</option>
+              <option value="geist">Geist</option>
+              <option value="manrope">Manrope</option>
+              <option value="jakarta">Plus Jakarta Sans</option>
+              <option value="grotesk">Space Grotesk</option>
+              <option value="system">La del sistema</option>
+            </select></label>
+          <label class="cat-campo" for="selEstilo"><span>Acabado</span>
+            <select id="selEstilo" class="cat-select">
+              <option value="solido" selected>Sólido</option>
+              <option value="cristal">Cristal líquido</option>
+            </select></label>
+          <button class="cat-marca" id="btnAurora" type="button">Volver a azul y naranja</button>
+        </div>
+        <div class="cat-rampa" id="marcasRampa" aria-hidden="true"></div>
+        <p class="cat-hint" id="marcaAviso" role="status"></p>
       </div>
-      <div class="cat-rampa" id="marcasRampa" aria-hidden="true"></div>
-      <p class="cat-hint">Se activa con <code>data-nz-marca</code> en el <code>&lt;html&gt;</code>. Comparador completo en <a class="nz-link" href="marcas/index.html">marcas</a> · tu marca desde dos hex: <code>python scripts/generar-marca.py miweb "#0ea5e9" "#f43f5e"</code></p>
+
+      <div class="cat-previa">
+        <div class="nz-cristal" id="previaVidrio" style="padding:var(--nz-space-5)">
+          <span class="nz-cristal__brillo"></span>
+          <p class="cat-muestra__t">Vista previa</p>
+          <div class="nz-cluster">
+            <button class="nz-btn nz-btn--primary" type="button">Guardar</button>
+            <button class="nz-btn nz-btn--soft" type="button">Suave</button>
+            <span class="nz-badge nz-badge--brand">Nuevo</span>
+            <span class="nz-badge nz-badge--success">Correcto</span>
+          </div>
+          <p class="cat-hint" style="margin-top:var(--nz-space-4)">Con el acabado «Cristal líquido» esta tarjeta desenfoca lo que tiene detrás.</p>
+        </div>
+        <div class="nz-kpi nz-kpi--brand">
+          <span class="nz-kpi__label">Con tu color</span>
+          <span class="nz-kpi__value">1 284</span>
+          <span class="nz-kpi__delta nz-kpi__delta--up">+6,2 %</span>
+        </div>
+      </div>
+
+      <p class="cat-hint">En tus proyectos se usa igual: <code>&lt;html data-nz-marca="indigo"&gt;</code>, tu propia rampa con <code>python scripts/generar-marca.py</code>, el vidrio con <code>data-nz-estilo="cristal"</code> (categoría 16) y la tipografía con <code>--nz-font</code>.</p>
     </section>
 
     <section class="cat-in" style="--d:.07s;margin-block:var(--nz-space-12)">
@@ -621,8 +600,23 @@ def portada(specs, censo_cat, totales, packs):
             <svg class="nz-icon nz-icon--lg" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 8a6 6 0 1 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/></svg>
             <svg class="nz-icon nz-icon--lg" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>
           </div>
-          <span class="cat-muestra__t">Un objeto del catálogo</span>
-          <div class="nz-progress"><div class="nz-progress__bar" style="width:76%"></div></div>
+          <span class="cat-muestra__t">Gráfico interactivo</span>
+          <div class="nz-chart nz-chart--interactivo">
+            <div class="nz-chart__head">
+              <div>
+                <span class="nz-chart__title">Pedidos por mes</span>
+                <span class="nz-chart__sub">Pasa el ratón por las barras</span>
+              </div>
+            </div>
+            <div class="nz-chart__body">
+              <div class="nz-chart-bar nz-chart-bar--sm">
+                <div class="nz-chart-bar__col" data-etiqueta="Enero"><div class="nz-chart-bar__bar" data-valor="45 pedidos" style="height:45%"></div><span class="nz-chart-bar__label">Ene</span></div>
+                <div class="nz-chart-bar__col" data-etiqueta="Febrero"><div class="nz-chart-bar__bar" data-valor="70 pedidos" style="height:70%"></div><span class="nz-chart-bar__label">Feb</span></div>
+                <div class="nz-chart-bar__col" data-etiqueta="Marzo"><div class="nz-chart-bar__bar" data-valor="58 pedidos" style="height:58%"></div><span class="nz-chart-bar__label">Mar</span></div>
+                <div class="nz-chart-bar__col" data-etiqueta="Abril"><div class="nz-chart-bar__bar" data-valor="82 pedidos" style="height:82%"></div><span class="nz-chart-bar__label">Abr</span></div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -677,6 +671,8 @@ def portada(specs, censo_cat, totales, packs):
 </div>
 
 <script src="js/catalog.js"></script>
+<script src="js/personalizar.js"></script>
+<script src="js/graficos.js"></script>
 <script>{PORTADA_JS}</script>
 </body>
 </html>

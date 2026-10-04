@@ -1,0 +1,34 @@
+{
+  "cat": 16,
+  "nombre": "Cristal (capa de estilo)",
+  "desc": "Vidrio líquido como capa opt-in: superficies translúcidas con desenfoque real, brillo especular, barra pegada y modo cristal del sistema. Es la única excepción al manifiesto «0 glass» y usa solo tokens, así que también cambia con la marca. Si el navegador no sabe desenfocar, cae a superficie sólida: nunca rompe la lectura.",
+  "pack": "p16-cristal.css",
+  "fichero": "16-cristal.html",
+  "demos": [
+    {
+      "titulo": "Superficie de vidrio",
+      "tag": ".nz-cristal",
+      "markup": "<div style=\"position:relative;padding:var(--nz-space-8) var(--nz-space-4);border-radius:var(--nz-radius-lg);background:var(--nz-brand-soft)\"><p style=\"margin:0 0 var(--nz-space-6);font-size:var(--nz-text-2xl);font-weight:800;color:var(--nz-brand-strong)\">Contenido detrás del vidrio</p><div class=\"nz-cristal\" style=\"padding:var(--nz-space-4);max-width:22rem\"><p style=\"margin:0\">El panel no tapa lo que hay detrás: lo desenfoca. Por eso se lee como vidrio y no como un bloque gris.</p></div><p style=\"margin:var(--nz-space-6) 0 0;font-size:var(--nz-text-sm);color:var(--nz-text-soft)\">Sigue leyéndose el texto del fondo: es translúcido, no opaco.</p></div>"
+    },
+    {
+      "titulo": "Intensidades del cristal",
+      "tag": ".nz-cristal--fuerte · --suave · --plano",
+      "markup": "<div style=\"padding:var(--nz-space-4);border-radius:var(--nz-radius-lg);background:var(--nz-accent-soft)\"><div class=\"nz-cluster\"><div class=\"nz-cristal nz-cristal--suave\" style=\"padding:var(--nz-space-3)\">--suave</div><div class=\"nz-cristal\" style=\"padding:var(--nz-space-3)\">por defecto</div><div class=\"nz-cristal nz-cristal--fuerte\" style=\"padding:var(--nz-space-3)\">--fuerte</div><div class=\"nz-cristal nz-cristal--plano\" style=\"padding:var(--nz-space-3)\">--plano</div></div></div>"
+    },
+    {
+      "titulo": "Borde de marca y forma pastilla",
+      "tag": ".nz-cristal--borde-marca · --pill",
+      "markup": "<div class=\"nz-cluster\"><div class=\"nz-cristal nz-cristal--pill nz-cristal--borde-marca\" style=\"padding:var(--nz-space-2) var(--nz-space-4)\"><span class=\"nz-badge nz-badge--brand\">Nuevo</span> el borde sale del color de marca</div><div class=\"nz-cristal nz-cristal--pill\" style=\"padding:var(--nz-space-2) var(--nz-space-4)\">pastilla de vidrio</div></div>"
+    },
+    {
+      "titulo": "Barra de vidrio pegada",
+      "tag": ".nz-cristal-barra · .nz-cristal__brillo",
+      "markup": "<div style=\"position:relative;height:9rem;overflow:hidden;border-radius:var(--nz-radius-md);background:var(--nz-bg-inset)\"><p style=\"margin:0;padding:var(--nz-space-4);color:var(--nz-text-soft)\">Contenido que hace scroll por debajo de la barra pegada…</p><p style=\"margin:0;padding:var(--nz-space-4);color:var(--nz-text-soft)\">…y se ve desenfocado al pasar por detrás.</p><div class=\"nz-cristal-barra nz-cristal\"><span class=\"nz-cristal__brillo\"></span><strong>Aurora</strong> <span class=\"nz-lbl\">barra de vidrio</span></div></div>"
+    },
+    {
+      "titulo": "Modo cristal del sistema",
+      "tag": "[data-nz-estilo=\"cristal\"]",
+      "markup": "<div data-nz-estilo=\"cristal\" style=\"padding:var(--nz-space-6);border-radius:var(--nz-radius-lg);background:var(--nz-brand-soft)\"><p style=\"margin:0 0 var(--nz-space-3);font-size:var(--nz-text-sm);color:var(--nz-text-soft)\">Con el modo activo, todo lo que ya usa var(--nz-surface) se vuelve translúcido sin tocar su CSS:</p><div class=\"nz-cluster\"><div class=\"nz-kpi\" style=\"max-width:12rem\"><span class=\"nz-kpi__label\">Usuarios</span><span class=\"nz-kpi__value\">1 284</span></div><div class=\"nz-badge nz-badge--neutral\">insignia</div></div></div>"
+    }
+  ]
+}
