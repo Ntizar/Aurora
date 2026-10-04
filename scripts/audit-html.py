@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Genera audit/index.html: el informe de auditoría, contado con Aurora 7.
+"""Genera audit/index.html: el informe de auditoría, contado con Aurora.
 
 La idea: si el sistema sirve, sirve también para documentarse a sí mismo. El
 informe se construye con las clases reales del design system (.nz-*), así que
@@ -79,7 +79,7 @@ def main():
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>Auditoría · Aurora 7</title>
+<title>Auditoría · Aurora</title>
 <link rel="stylesheet" href="../tokens.css">
 <link rel="stylesheet" href="../packs/p0-catalog.css">
 <!--PACKS-->
@@ -87,7 +87,7 @@ def main():
 <body class="nz">
 <a class="nz-skip-link" href="#contenido">Saltar al contenido</a>
 <header class="cat-topbar">
-  <a class="cat-brandmark" href="../index.html"><i></i><i></i> Aurora 7</a>
+  <a class="cat-brandmark" href="../index.html"><i></i><i></i> Aurora</a>
   <span class="cat-count">auditoría del sistema</span>
   <span class="cat-topbar__tools">
     <a class="cat-icobtn" href="../index.html" title="Portada" aria-label="Volver a la portada">⌂</a>
@@ -171,7 +171,7 @@ def main():
 </main>
 
 <footer class="cat-footer">
-  Aurora 7 · Informe de auditoría · {r['objetos_declarados']} objetos, {r['demos']} demos ·
+  Aurora · Informe de auditoría · {r['objetos_declarados']} objetos, {r['demos']} demos ·
   Hecho con ❤️ por David Antizar
 </footer>
 <script src="../js/catalog.js"></script>

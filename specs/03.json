@@ -188,7 +188,7 @@
   {
    "titulo": "Letra capital",
    "tag": ".nz-initial",
-   "markup": "<p class=\"nz-initial\">Aurora 7 empieza con una letra capital que abraza la primera línea del texto, un recurso clásico de editorial que aquí se resuelve con un solo ::first-letter.</p>"
+   "markup": "<p class=\"nz-initial\">Aurora empieza con una letra capital que abraza la primera línea del texto, un recurso clásico de editorial que aquí se resuelve con un solo ::first-letter.</p>"
   },
   {
    "titulo": "Resaltado de marcador",

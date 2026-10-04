@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Auditoría campo a campo de Aurora 7 (v2).
+"""Auditoría campo a campo de Aurora (v2).
 
 Cruza objeto por objeto:
   · clases DECLARADAS por cada pack (declaraciones propias, no contextos del shell)
@@ -191,7 +191,7 @@ def main():
     L = []
     A = L.append
     sem = lambda n: "🟢" if n == 0 else "🟡"
-    A("# Auditoría campo a campo · Aurora 7\n")
+    A("# Auditoría campo a campo · Aurora\n")
     A("Generada por `scripts/audit-catalog.py` a partir de los packs CSS y de `specs/*.json`.\n")
     A("## Veredicto\n")
     A("| Comprobación | Valor | |")

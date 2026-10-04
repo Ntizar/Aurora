@@ -1,10 +1,10 @@
-# Plan Aurora 8 — Coherencia y modernidad del sistema de diseño
+# Plan Aurora — Coherencia y modernidad del sistema de diseño
 
 > **Objetivo:** que Aurora deje de producir webs que "no pegan" (tamaños raros, colores
 > sueltos, emojis a mansalva) y pase a ser un sistema **coherente, con opinión y moderno**,
 > que se vea bien por defecto — no por suerte del agente que lo usa.
 >
-> **Alcance:** `Ntizar/Aurora7` (v7.2.2, el vigente) y sus consumidores (NtizarKey, kit72h,
+> **Alcance:** `Ntizar/Aurora` (v7.2.2, el vigente) y sus consumidores (NtizarKey, kit72h,
 > farosspain, espanatlas…). `Ntizar-Aurora` (v6, glass/mesh) queda **jubilado**, no se toca.
 >
 > **Fecha:** 2026-10-04 · Autor: Mastermind · Estado: **propuesta, pendiente de ✅**

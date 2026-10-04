@@ -2,7 +2,7 @@
 """Genera components.json y LLM.md a partir de los packs, los specs y los tokens.
 
 La idea (patrón «design system infalible para LLMs»): un agente NO debe leer
-250 KB de CSS para usar Aurora 7. Con estos dos archivos sabe qué packs cargar,
+250 KB de CSS para usar Aurora. Con estos dos archivos sabe qué packs cargar,
 qué clases existen de verdad, qué tokens hay disponibles y cómo encajan los
 packs en una página real, sin inventarse nada.
 
@@ -28,7 +28,7 @@ bc = import_module("build-catalog")
 
 ROOT = bc.ROOT
 VERSION = "8.0.0"
-CDN = f"https://cdn.jsdelivr.net/gh/Ntizar/Aurora7@v{VERSION}/"
+CDN = f"https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v{VERSION}/"
 
 # ---------------------------------------------------------------------------
 # Alias: concepto en inglés → clase real. Solo entradas verificadas contra el
@@ -174,7 +174,7 @@ def main():
         sys.exit(f"INVENTARIO DE TOKENS SOSPECHOSO: solo {len(tokens)} en :root")
 
     datos = {
-        "name": "Aurora 8",
+        "name": "Aurora",
         "version": VERSION,
         "type": "css-only design system",
         "namespace": ".nz-",
@@ -247,7 +247,7 @@ def main():
         for ingles, clase in sorted(alias_validos.items())
         if ingles != clase)
 
-    llm = f"""# Aurora 8 — guía de decisión para agentes
+    llm = f"""# Aurora — guía de decisión para agentes
 
 Design system CSS puro, sin dependencias ni build. {total_clases} objetos en {len(censo_cat)} categorías.
 **No pegues el CSS en el prompt**: enlaza por CDN y usa las clases de esta guía.
@@ -341,7 +341,7 @@ completas listas para copiar en `recetas/`.
 
 ## 5. Buscas un nombre en inglés y no existe
 
-Aurora 8 usa nombres en castellano en algunas familias. Aliases verificados:
+Aurora usa nombres en castellano en algunas familias. Aliases verificados:
 
 | Buscas | Usa |
 |---|---|
@@ -390,7 +390,7 @@ Los {len(tokens)} tokens están inventariados en `components.json` (sección
 ## 8. Anti-patrones (NO lo hagas)
 
 - ❌ Pegar el CSS de los packs en el prompt (250 KB ≈ 60.000 tokens). Enlaza por CDN.
-- ❌ Inventar clases (`nz-gradient-text`, `nz-btn--glass-liquid-brand`, `nz-card--glass`): no existen aquí. Es la doctrina de Aurora v6, **jubilada**: Aurora 8 es sólido, sin glass ni gradientes.
+- ❌ Inventar clases (`nz-gradient-text`, `nz-btn--glass-liquid-brand`, `nz-card--glass`): no existen aquí. Es la doctrina de Aurora v6, **jubilada**: Aurora es sólido, sin glass ni gradientes.
 - ❌ Escribir colores a mano (`#2563eb`, `rgb(...)`): usa tokens `var(--nz-*)`.
 - ❌ Gradientes, `backdrop-filter` o `!important`: prohibidos por el manifiesto y la CI los detecta.
 - ❌ Clases globales sin `.nz-`: romperías la convivencia con otros frameworks.

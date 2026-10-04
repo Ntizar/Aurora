@@ -1,4 +1,4 @@
-# Auditoría móvil — Aurora 7
+# Auditoría móvil — Aurora
 
 Fecha: 2026-09-25 · Navegador real headless · Viewports: 320, 360, 390
 

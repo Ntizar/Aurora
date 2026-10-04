@@ -83,12 +83,12 @@
     {
       "titulo": "Logo marca",
       "tag": ".nz-brand · __mark",
-      "markup": "<span class=\"nz-brand\"><span class=\"nz-brand__mark\">A7</span> Aurora 7</span>"
+      "markup": "<span class=\"nz-brand\"><span class=\"nz-brand__mark\">A7</span> Aurora</span>"
     },
     {
       "titulo": "Marca grande, pequeña y de acento",
       "tag": ".nz-brand--lg · --sm · --accent · __mark--accent",
-      "markup": "<div class=\"nz-cluster\"><span class=\"nz-brand nz-brand--lg\"><span class=\"nz-brand__mark\">A7</span> Aurora 7</span><span class=\"nz-brand nz-brand--sm\"><span class=\"nz-brand__mark\">A7</span> Aurora 7</span><span class=\"nz-brand nz-brand--accent\"><span class=\"nz-brand__mark nz-brand__mark--accent\">7</span> Pro</span></div>"
+      "markup": "<div class=\"nz-cluster\"><span class=\"nz-brand nz-brand--lg\"><span class=\"nz-brand__mark\">A7</span> Aurora</span><span class=\"nz-brand nz-brand--sm\"><span class=\"nz-brand__mark\">A7</span> Aurora</span><span class=\"nz-brand nz-brand--accent\"><span class=\"nz-brand__mark nz-brand__mark--accent\">7</span> Pro</span></div>"
     },
     {
       "titulo": "Marca monoespaciada y marca oscura",

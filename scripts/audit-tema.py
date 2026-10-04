@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-"""Auditoría de tema de Aurora 7: ¿todo sobrevive al modo oscuro?
+"""Auditoría de tema de Aurora: ¿todo sobrevive al modo oscuro?
 
 El modo oscuro solo redefine los tokens semánticos (--nz-bg, --nz-text, --nz-surface...).
 Si un pack usa directamente un token de la PALETA (--nz-gray-900, --nz-blue-100...)
@@ -83,7 +83,7 @@ def main() -> int:
     tokens = TOKENS.read_text(encoding="utf-8")
     declarados = set(re.findall(r"(--nz-[a-z0-9-]+)\s*:", tokens))
     total_f = total_a = 0
-    print("Aurora 7 · auditoría de tema (supervivencia al modo oscuro)\n")
+    print("Aurora · auditoría de tema (supervivencia al modo oscuro)\n")
     for pack in sorted(PACKS.glob("p[0-9]*.css")):
         if pack.name.startswith("p0"):
             continue

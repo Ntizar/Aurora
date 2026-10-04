@@ -1,17 +1,17 @@
 ---
 name: aurora-design-system
-description: "Usa al construir o tocar cualquier web con Aurora 8 (Ntizar/Aurora7). El repo manda: resuelve la versión vigente y pide LLM.md + components.json antes de escribir CSS."
+description: "Usa al construir o tocar cualquier web con Aurora (Ntizar/Aurora). El repo manda: resuelve la versión vigente y pide LLM.md + components.json antes de escribir CSS."
 version: "8.0.0"
 tags: [css, design-system, aurora, ntizar, agent-ready, movil]
 ---
 
-# Aurora 8 — doctrina única (el repo es la orden máxima)
+# Aurora — doctrina única (el repo es la orden máxima)
 
 Design system CSS puro, sin build, sin dependencias, namespaced bajo `.nz-`.
 **v8.0.0 · 1907 objetos · 350 familias · 578 demos · 15 packs · 170 tokens.**
 *(Cabecera de testigo, no de autoridad: resuélvela con el PASO 0.)*
 
-> ⚠️ `Ntizar/Aurora7` **manda sobre esta skill**. Esta skill es un puntero; el repo
+> ⚠️ `Ntizar/Aurora` **manda sobre esta skill**. Esta skill es un puntero; el repo
 > es la fuente de verdad, porque es ahí donde se añade todo el CSS bueno. Si lo que
 > dice esta página y lo que dice el repo no coinciden, **gana el repo** — sin dudar
 > y sin preguntar. Versión nueva del repo ⇒ se reescribe el primer bloque, nada más.
@@ -30,18 +30,18 @@ git -C C:/Users/d_ant/Projects/Aurora-7 fetch --tags -q
 V=$(git -C C:/Users/d_ant/Projects/Aurora-7 describe --tags --abbrev=0)   # p.ej. v8.0.0
 
 # b) sin repo — pregunta a GitHub
-curl -s https://api.github.com/repos/Ntizar/Aurora7/tags | grep -m1 '"name"'
+curl -s https://api.github.com/repos/Ntizar/Aurora/tags | grep -m1 '"name"'
 ```
 
 Y lee los **documentos generados** (el repo los produce solo, no los escribas tú):
 
 ```bash
 # LEER la verdad viva: master / latest (no hay caché que te estorbe, no se sirve a nadie)
-curl -s https://cdn.jsdelivr.net/gh/Ntizar/Aurora7@master/LLM.md           # ~10 KB
-curl -s https://cdn.jsdelivr.net/gh/Ntizar/Aurora7@master/components.json  # API completa
+curl -s https://cdn.jsdelivr.net/gh/Ntizar/Aurora@master/LLM.md           # ~10 KB
+curl -s https://cdn.jsdelivr.net/gh/Ntizar/Aurora@master/components.json  # API completa
 
 # PUBLICAR: siempre el tag resuelto en $V (jsDelivr cachea @master por edge)
-#   https://cdn.jsdelivr.net/gh/Ntizar/Aurora7@$V/tokens.css
+#   https://cdn.jsdelivr.net/gh/Ntizar/Aurora@$V/tokens.css
 ```
 
 Con el repo clonado, tira de disco (más rápido, sin red):
@@ -61,7 +61,7 @@ cuesta ~250 KB. Nunca pegues CSS de packs en el prompt.
 | Qué packs enlazar y qué clases usar | `@master/LLM.md` (o `@$V/LLM.md` si quieres la foto exacta de una release) |
 | API exacta: familias, partes, modificadores, tokens, alias EN→ES | `@master/components.json` |
 | Página completa que ya funciona | `@master/examples/` (login, dashboard, landing, chat-ia, forms) |
-| Demo viva de un objeto | `https://ntizar.github.io/Aurora7/paginas/NN-*.html` |
+| Demo viva de un objeto | `https://ntizar.github.io/Aurora/paginas/NN-*.html` |
 | Reglas duras y estado del repo | `@master/AGENTS.md` · `@master/SKILL.md` |
 
 **Corolario:** si algo no está en `components.json`, no existe. No lo inventes: o usas
@@ -89,15 +89,15 @@ nueva del sistema no te deja ciego: solo obliga a refrescar la cabecera.
 ```html
 <html lang="es" data-nz-theme="light">   <!-- o "dark" -->
 <head>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Ntizar/Aurora7@v8.0.0/tokens.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Ntizar/Aurora7@v8.0.0/packs/all.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v8.0.0/tokens.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v8.0.0/packs/all.css">
 </head>
 <body class="nz">
 ```
 
 Sustituye `v8.0.0` por **`$V`** (el tag que resolviste en el PASO 0): el ejemplo es de la
 última vez que se tocó esta cabecera. `all.css` solo para prototipos; en producción enlaza
-los packs que uses (12-40 KB cada uno). Purga: `curl https://purge.jsdelivr.net/gh/Ntizar/Aurora7@$V/<fichero>`.
+los packs que uses (12-40 KB cada uno). Purga: `curl https://purge.jsdelivr.net/gh/Ntizar/Aurora@$V/<fichero>`.
 
 ## 4. Móvil: ya viene resuelto — no lo reinventes por proyecto
 
@@ -139,7 +139,7 @@ Regla de dedo: **ancho intrínseco → scroll**; **datos tabulares → apilable*
 8. Footer exacto: `Hecho con ❤️ por David Antizar` (emoji U+2764, sin variantes).
 9. Todo en castellano (clases incluidas cuando toca: `nz-arbol`, `nz-filezona`, `nz-fieldset__leyenda`).
 
-## 6. Flujo del agente para generar HTML con Aurora 8
+## 6. Flujo del agente para generar HTML con Aurora
 
 1. **PASO 0**: resuelve `$V` y lee `LLM.md` + `components.json` del repo.
 2. **Copia una receta de `examples/`** y quítale lo que no uses.
@@ -210,7 +210,7 @@ Criterio de admisión: (a) resuelve un problema real y repetido, (b) es mobile-f
 - ❌ Desborde horizontal: nada puede dejar `scrollWidth > clientWidth` en el documento. Si pasa, es un fallo de entrega, no un detalle.
 - ❌ Arreglar el móvil con `max-width` como estrategia, con `overflow-x` a lo bruto en el `body`, o escondiendo columnas con `display:none` (se pierde el dato).
 - ❌ `white-space: nowrap` en una tabla que se apila: mata el apilado y fuerza scroll.
-- ❌ Pinear un tag que existe **solo en local** y no está pusheado a GitHub: el CDN da 404 y la página sale sin CSS (bug real: `@v7.2.2` local sin pushear → 404 en todos los packs → HTML crudo). Tras resolver `$V`, **comprueba que el tag está publicado**: `git ls-remote --tags origin | grep vX.Y.Z`, y verifica el 200 del CDN: `curl -o /dev/null -w "%{http_code}" https://cdn.jsdelivr.net/gh/Ntizar/Aurora7@$V/tokens.css`. Si solo existe en local, o se pushea el tag o se usa el último **publicado**.
+- ❌ Pinear un tag que existe **solo en local** y no está pusheado a GitHub: el CDN da 404 y la página sale sin CSS (bug real: `@v7.2.2` local sin pushear → 404 en todos los packs → HTML crudo). Tras resolver `$V`, **comprueba que el tag está publicado**: `git ls-remote --tags origin | grep vX.Y.Z`, y verifica el 200 del CDN: `curl -o /dev/null -w "%{http_code}" https://cdn.jsdelivr.net/gh/Ntizar/Aurora@$V/tokens.css`. Si solo existe en local, o se pushea el tag o se usa el último **publicado**.
 - ❌ Verificar el CSS por las **clases en el DOM** en vez de por los **estilos computados**: las clases `nz-*` aparecen en el markup aunque el `<link>` al CDN dé 404 (el HTML se sirve igual, sin CSS). Prueba real: `getComputedStyle` de `.nz-navbar` debe dar `display:flex`, no el default; y `document.styleSheets` debe listar las 7 hojas.
 - ❌ Enlazar un tag que NO está pusheado a origin: si el tag solo existe en local, jsDelivr da 404 y la página se ve pelada (pasó con v7.2.2). Tras resolver $V, verificar `git ls-remote --tags origin` o `curl -o /dev/null -w %{http_code}` del tokens.css del tag; si 404, usar el último tag publicado. Verificar visual con computed styles (getComputedStyle), no solo con el lint: el lint no ve el CSS caído.
 - ❌ Comparar órdenes de magnitud en `.nz-chart-bar`/`.nz-bullet` de una sola escala (29.262 € junto a 109 €: las barras pequeñas desaparecen y el gráfico miente). Para mezclas dispares, `.nz-chart-tablebar`; para presupuestos, bullet con pista escalonada.
@@ -218,7 +218,7 @@ Criterio de admisión: (a) resuelve un problema real y repetido, (b) es mobile-f
 - ❌ **Dejar una familia declarada en dos packs** aunque sea por un modificador suelto: el censo asigna la familia al pack de la primera clase que encuentra, y un agente que siga `components.json` enlaza el pack equivocado → el componente sale **sin estilos**. Bug real: `.nz-sidebar--sticky` vivía en `p1-layout.css` mientras la familia estaba en `p2-navigation.css`, y la barra lateral salía pelada. **Una familia, un pack**; auditarlo cruzando el censo con las declaraciones reales (no solo por clase, por FAMILIA).
 - ❌ Dejar el patrón resuelto en el proyecto y no subirlo al repo.
 
-## 11. Excepciones vigentes (cuándo NO usar Aurora 8)
+## 11. Excepciones vigentes (cuándo NO usar Aurora)
 
 - **Design systems corporativos**: si un equipo pide un CSS con los colores de SU marca (ej. Kaizen/Ineco #1A4488), se crea un sistema propio alineado con su manual, no Aurora.
 - **Presentaciones consulting / informes ejecutivos** (estilo McKinsey/BCG): fondo blanco elegante, sin estética tech. David rechazó Aurora para esos entregables.
@@ -231,8 +231,8 @@ mesh/orbs/3D desaparecen). Receta y script de medición en `references/migracion
 
 ## 13. Referencias
 
-- **`Ntizar/Aurora7`** — la orden máxima. `LLM.md`, `components.json`, `AGENTS.md`, `examples/`, `specs/`, `paginas/`, `audit/`, `scripts/auditar-uso.py`.
+- **`Ntizar/Aurora`** — la orden máxima. `LLM.md`, `components.json`, `AGENTS.md`, `examples/`, `specs/`, `paginas/`, `audit/`, `scripts/auditar-uso.py`.
 - Este mismo `SKILL.md` **dentro del repo** (la CI valida que no se separe).
-- `references/migracion-v6-a-v7.md` y el caso Aurora 8 en la skill `design-system-coherence-audit`.
+- `references/migracion-v6-a-v7.md` y el caso Aurora en la skill `design-system-coherence-audit`.
 
 Hecho con ❤️ por David Antizar

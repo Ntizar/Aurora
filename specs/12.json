@@ -113,7 +113,7 @@
     {
       "titulo": "Versión y tema activo",
       "tag": ".nz-tema-badge",
-      "markup": "<div class=\"nz-cluster\"><span class=\"nz-version-badge\">Aurora 7.1</span><span class=\"nz-tema-badge nz-tema-badge--light\">Tema claro</span><span class=\"nz-tema-badge nz-tema-badge--dark\">Tema oscuro</span><span class=\"nz-tema-badge nz-tema-badge--system\">Según el sistema</span></div>"
+      "markup": "<div class=\"nz-cluster\"><span class=\"nz-version-badge\">Aurora.1</span><span class=\"nz-tema-badge nz-tema-badge--light\">Tema claro</span><span class=\"nz-tema-badge nz-tema-badge--dark\">Tema oscuro</span><span class=\"nz-tema-badge nz-tema-badge--system\">Según el sistema</span></div>"
     },
     {
       "titulo": "Preferencias de accesibilidad",

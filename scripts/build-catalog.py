@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Generador del catálogo Aurora 7.
+"""Generador del catálogo Aurora.
 
 Fuente única de verdad: specs/NN.json (declarativos) + los packs CSS.
 Genera:
@@ -25,7 +25,7 @@ PACKS = ROOT / "packs"
 SPECS = ROOT / "specs"
 DATOS = ROOT / "datos"
 
-SITIO = "https://ntizar.github.io/Aurora7/"
+SITIO = "https://ntizar.github.io/Aurora/"
 PACK_SHELL = "p0-catalog.css"
 
 # Packs de componentes en orden. Añadir un pack = añadir una línea aquí.
@@ -184,7 +184,7 @@ def pagina(spec, censo_cat, totales, nav, packs):
     A("<head>")
     A('<meta charset="UTF-8">')
     A('<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">')
-    A(f"<title>Aurora 7 · {n:02d} {html.escape(spec['nombre'])} · {len(clases_pack)} objetos</title>")
+    A(f"<title>Aurora · {n:02d} {html.escape(spec['nombre'])} · {len(clases_pack)} objetos</title>")
     A(f'<meta name="description" content="{html.escape(spec["desc"])}">')
     A('<link rel="stylesheet" href="../tokens.css">')
     A('<link rel="stylesheet" href="../packs/' + PACK_SHELL + '">')
@@ -193,7 +193,7 @@ def pagina(spec, censo_cat, totales, nav, packs):
     A('<body class="nz">')
     A('<a class="nz-skip-link" href="#contenido">Saltar al contenido</a>')
     A('<header class="cat-topbar">')
-    A('<a class="cat-brandmark" href="../index.html"><i></i><i></i> Aurora 7</a>')
+    A('<a class="cat-brandmark" href="../index.html"><i></i><i></i> Aurora</a>')
     A(f'<span class="cat-count">{n:02d} · {len(clases_pack)} objetos · {len(demos)} demos</span>')
     A('<span class="cat-topbar__tools">')
     A('<a class="cat-icobtn" href="../index.html" title="Portada" aria-label="Volver a la portada">⌂</a>')
@@ -251,7 +251,7 @@ def pagina(spec, censo_cat, totales, nav, packs):
     A(f'  <a href="{nf}">{next_n:02d} {html.escape(nn)} →</a>')
     A("</div>")
     A('<footer class="cat-footer">')
-    A(f'  Aurora 7 · Design System Ntizar · Categoría {n:02d} de {len(nav)} · '
+    A(f'  Aurora · Design System Ntizar · Categoría {n:02d} de {len(nav)} · '
       f'{totales["clases"]} objetos · {totales["demos"]} demos · '
       f'Hecho con ❤️ por David Antizar')
     A("</footer>")
@@ -410,7 +410,7 @@ def portada(specs, censo_cat, totales, packs):
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>Aurora 7 · Design System Ntizar · {t['clases']} objetos de frontend</title>
+<title>Aurora · Design System Ntizar · {t['clases']} objetos de frontend</title>
 <meta name="description" content="Design system CSS de Ntizar: {t['clases']} objetos en {t['categorias']} categorías. Sólido, mobile-first, táctil 44px, light y dark. Sin gradientes, sin glass.">
 <link rel="stylesheet" href="tokens.css">
 <link rel="stylesheet" href="packs/{PACK_SHELL}">
@@ -426,7 +426,7 @@ def portada(specs, censo_cat, totales, packs):
   <a class="nz-skip-link" href="#contenido">Saltar al contenido</a>
 
   <header class="cat-topbar">
-    <span class="cat-brandmark"><i></i><i></i> Aurora 7</span>
+    <span class="cat-brandmark"><i></i><i></i> Aurora</span>
     <span class="cat-count">v7.2 · constelación</span>
     <span class="cat-topbar__tools">
       <a class="cat-icobtn" href="audit/index.html" title="Auditoría del sistema" aria-label="Auditoría del sistema">✓</a>
@@ -514,7 +514,7 @@ def portada(specs, censo_cat, totales, packs):
   </main>
 
   <footer class="cat-footer">
-    Aurora 7 · Hecho con ❤️ por David Antizar · {t['clases']} objetos, {t['demos']} demos, 1 sistema
+    Aurora · Hecho con ❤️ por David Antizar · {t['clases']} objetos, {t['demos']} demos, 1 sistema
   </footer>
 
 </div>
@@ -550,7 +550,7 @@ def main():
     # bundle para consumidores
     imp = "\n".join(f'@import url("{p}");' for p in PACKS_COMPONENTES if (PACKS / p).exists())
     (PACKS / "all.css").write_text(
-        "/* Aurora 7 — todos los packs en un solo enlace.\n"
+        "/* Aurora — todos los packs en un solo enlace.\n"
         "   Para producción se recomienda enlazar solo los packs que uses.\n"
         "   Orden: components primero, shell del catálogo al final (no necesario fuera del catálogo). */\n"
         '/* No incluye p0-catalog.css: ese es el shell del catálogo, no del sistema. */\n'

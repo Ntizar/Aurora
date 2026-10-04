@@ -1,4 +1,4 @@
-name: Validar Aurora 7
+name: Validar Aurora
 
 on:
   push:
@@ -46,7 +46,7 @@ jobs:
 
       - name: Resumen de la auditoría
         run: |
-          echo "### Aurora 7 · auditoría" >> $GITHUB_STEP_SUMMARY
+          echo "### Aurora · auditoría" >> $GITHUB_STEP_SUMMARY
           sed -n '1,20p' audit/AUDITORIA.md >> $GITHUB_STEP_SUMMARY
 
       - name: Publicar el informe de auditoría

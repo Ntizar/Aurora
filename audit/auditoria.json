@@ -20,7 +20,7 @@
  "packs": {
   "p1-layout.css": {
    "lineas": 360,
-   "bytes": 21503,
+   "bytes": 21501,
    "clases": 177,
    "familias": 66,
    "hex": 0,
@@ -30,7 +30,7 @@
   },
   "p10-commerce.css": {
    "lineas": 258,
-   "bytes": 26426,
+   "bytes": 26424,
    "clases": 156,
    "familias": 22,
    "hex": 0,
@@ -40,7 +40,7 @@
   },
   "p11-social.css": {
    "lineas": 189,
-   "bytes": 18248,
+   "bytes": 18246,
    "clases": 107,
    "familias": 15,
    "hex": 0,
@@ -50,7 +50,7 @@
   },
   "p12-system.css": {
    "lineas": 143,
-   "bytes": 13647,
+   "bytes": 13645,
    "clases": 80,
    "familias": 25,
    "hex": 0,
@@ -60,7 +60,7 @@
   },
   "p13-charts.css": {
    "lineas": 293,
-   "bytes": 22846,
+   "bytes": 22844,
    "clases": 210,
    "familias": 21,
    "hex": 0,
@@ -70,7 +70,7 @@
   },
   "p14-ai.css": {
    "lineas": 287,
-   "bytes": 24123,
+   "bytes": 24121,
    "clases": 180,
    "familias": 28,
    "hex": 0,
@@ -80,7 +80,7 @@
   },
   "p15-apps.css": {
    "lineas": 364,
-   "bytes": 41566,
+   "bytes": 41564,
    "clases": 74,
    "familias": 30,
    "hex": 0,
@@ -90,7 +90,7 @@
   },
   "p2-navigation.css": {
    "lineas": 179,
-   "bytes": 18259,
+   "bytes": 18257,
    "clases": 78,
    "familias": 10,
    "hex": 0,
@@ -100,7 +100,7 @@
   },
   "p3-typography.css": {
    "lineas": 198,
-   "bytes": 15225,
+   "bytes": 15223,
    "clases": 130,
    "familias": 41,
    "hex": 0,
@@ -110,7 +110,7 @@
   },
   "p4-actions.css": {
    "lineas": 172,
-   "bytes": 12788,
+   "bytes": 12786,
    "clases": 78,
    "familias": 7,
    "hex": 0,
@@ -120,7 +120,7 @@
   },
   "p5-forms.css": {
    "lineas": 278,
-   "bytes": 22984,
+   "bytes": 22982,
    "clases": 102,
    "familias": 20,
    "hex": 0,
@@ -130,7 +130,7 @@
   },
   "p6-feedback.css": {
    "lineas": 267,
-   "bytes": 24175,
+   "bytes": 24173,
    "clases": 153,
    "familias": 19,
    "hex": 0,
@@ -140,7 +140,7 @@
   },
   "p7-overlays.css": {
    "lineas": 207,
-   "bytes": 23378,
+   "bytes": 23376,
    "clases": 118,
    "familias": 12,
    "hex": 0,
@@ -150,7 +150,7 @@
   },
   "p8-data.css": {
    "lineas": 286,
-   "bytes": 23046,
+   "bytes": 23044,
    "clases": 145,
    "familias": 16,
    "hex": 0,
@@ -160,7 +160,7 @@
   },
   "p9-media.css": {
    "lineas": 205,
-   "bytes": 15179,
+   "bytes": 15177,
    "clases": 119,
    "familias": 18,
    "hex": 0,

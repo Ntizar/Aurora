@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Aurora 7 — generador de marcas (presets de color)
+Aurora — generador de marcas (presets de color)
 =================================================
 
 Das 1-2 colores (hex) y saca la rampa completa del sistema en OKLCH: pasos de
@@ -247,7 +247,7 @@ def generar(nombre: str, marca: str, acento: str, verboso: bool = True) -> dict:
     aviso = (f"   (marca ajustada de {marca_original} a {marca_ajustada} para cumplir AA)"
              if ajustada else "")
     cabecera = (
-        f"/* Aurora 7 · marca «{nombre}» — generado por scripts/generar-marca.py\n"
+        f"/* Aurora · marca «{nombre}» — generado por scripts/generar-marca.py\n"
         f"   marca {marca_ajustada} · acento {acento} · rampas OKLCH de luz uniforme\n"
         f"   {aviso.strip() or 'marca y acento tal cual se pidieron'}\n"
         f"   Activa con: <html data-nz-marca=\"{nombre}\">\n"

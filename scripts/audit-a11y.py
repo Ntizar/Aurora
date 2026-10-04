@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-"""Auditoría de accesibilidad de las demos de Aurora 7.
+"""Auditoría de accesibilidad de las demos de Aurora.
 
 Revisa el markup real de los 15 specs (lo que el visitante ve y puede tocar) con
 un parser de verdad, contando el texto que cuelga de cada elemento:
@@ -136,7 +136,7 @@ def revisa(markup: str):
 
 def main() -> int:
     total = 0
-    print("Aurora 7 · auditoría de accesibilidad de las demos\n")
+    print("Aurora · auditoría de accesibilidad de las demos\n")
     for spec_f in sorted(SPECS.glob("*.json")):
         spec = json.loads(spec_f.read_text(encoding="utf-8"))
         problemas = []

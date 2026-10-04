@@ -18,7 +18,7 @@
     {
       "titulo": "Navbar de marca (azul sólido) y marca grande",
       "tag": ".nz-navbar--brand · __brand--lg",
-      "markup": "<div class=\"nz-navbar nz-navbar--brand\"><span class=\"nz-navbar__brand nz-navbar__brand--lg\"><i></i>Aurora 7</span><span class=\"nz-navbar__links\"><a href=\"#contenido\" class=\"nz-navbar__link\" aria-current=\"page\">Panel</a><a href=\"#contenido\" class=\"nz-navbar__link\">Informes</a><a href=\"#contenido\" class=\"nz-navbar__link\">Equipo</a></span></div>"
+      "markup": "<div class=\"nz-navbar nz-navbar--brand\"><span class=\"nz-navbar__brand nz-navbar__brand--lg\"><i></i>Aurora</span><span class=\"nz-navbar__links\"><a href=\"#contenido\" class=\"nz-navbar__link\" aria-current=\"page\">Panel</a><a href=\"#contenido\" class=\"nz-navbar__link\">Informes</a><a href=\"#contenido\" class=\"nz-navbar__link\">Equipo</a></span></div>"
     },
     {
       "titulo": "Menú con hamburguesa (sin JS)",

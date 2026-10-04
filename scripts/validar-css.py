@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Validador de Aurora 7.
+"""Validador de Aurora.
 
 Comprueba lo que promete el manifiesto y lo que promete el catálogo. Devuelve
 código de salida 1 si algo falla, así que sirve tal cual en CI: el sistema no
@@ -327,7 +327,7 @@ def main():
                     + (ROOT / "AGENTS.md").read_text(encoding="utf-8")
                     + (ROOT / "LLM.md").read_text(encoding="utf-8"))
     if version_tag is not None:
-        for m2 in re.finditer(r"Ntizar/Aurora7@([^/)\s\"']+)", docu):
+        for m2 in re.finditer(r"Ntizar/Aurora@([^/)\s\"']+)", docu):
             if m2.group(1) != f"v{version_tag}":
                 fallo(f"CDN sin pinear o con versión vieja (@{m2.group(1)}) en la doc; "
                       f"debe ser @v{version_tag} (jsDelivr sirve caché vieja de @master)")
@@ -358,7 +358,7 @@ def main():
         fallo("el auto-test de scripts/auditar-uso.py falla:\n"
               + (st.stdout + st.stderr).strip()[-400:])
 
-    print(f"\nAurora 7 · validación de {len(packs)} packs · {total} objetos declarados\n")
+    print(f"\nAurora · validación de {len(packs)} packs · {total} objetos declarados\n")
     if avisos:
         print(f"AVISOS ({len(avisos)}):")
         for a in avisos[:40]:

@@ -88,7 +88,7 @@
     {
       "titulo": "Agenda del día (franjas horarias)",
       "tag": ".nz-agenda__slot · span.is-free",
-      "markup": "<div class=\"nz-agenda\"><div class=\"nz-agenda__slot\"><b>09:00</b><span>Revisión de diseño con el equipo</span></div><div class=\"nz-agenda__slot is-now\"><b>10:00</b><span class=\"is-accent\">Demo interna de Aurora 7</span></div><div class=\"nz-agenda__slot\"><b>11:00</b><span class=\"is-free\">Libre</span></div><div class=\"nz-agenda__slot\"><b>12:00</b><span>Comida de equipo</span></div></div>"
+      "markup": "<div class=\"nz-agenda\"><div class=\"nz-agenda__slot\"><b>09:00</b><span>Revisión de diseño con el equipo</span></div><div class=\"nz-agenda__slot is-now\"><b>10:00</b><span class=\"is-accent\">Demo interna de Aurora</span></div><div class=\"nz-agenda__slot\"><b>11:00</b><span class=\"is-free\">Libre</span></div><div class=\"nz-agenda__slot\"><b>12:00</b><span>Comida de equipo</span></div></div>"
     },
     {
       "titulo": "Ajustes de aplicación",

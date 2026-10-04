@@ -1,4 +1,4 @@
-# Auditoría campo a campo · Aurora 7
+# Auditoría campo a campo · Aurora
 
 Generada por `scripts/audit-catalog.py` a partir de los packs CSS y de `specs/*.json`.
 

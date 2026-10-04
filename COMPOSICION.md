@@ -1,4 +1,4 @@
-# Composición — cómo se monta una página con Aurora 8
+# Composición — cómo se monta una página con Aurora
 
 > El sistema te da las piezas; **este documento es el contrato de cómo se montan**.
 > Un HTML que usa las clases correctas pero incumple esto **no está terminado**, aunque
@@ -171,7 +171,7 @@ No lo reinventes: las tablas apilan, la navbar y las pestañas envuelven y nada 
 
 ## 12. Antes / después (el caso real que originó el plan)
 
-Un panel de admin generado con Aurora 7, frente al mismo panel compuesto con este contrato
+Un panel de admin generado con Aurora, frente al mismo panel compuesto con este contrato
 (receta `recetas/admin.html`):
 
 | | Antes | Después |

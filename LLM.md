@@ -1,4 +1,4 @@
-# Aurora 8 — guía de decisión para agentes
+# Aurora — guía de decisión para agentes
 
 Design system CSS puro, sin dependencias ni build. 1907 objetos en 15 categorías.
 **No pegues el CSS en el prompt**: enlaza por CDN y usa las clases de esta guía.
@@ -8,8 +8,8 @@ Design system CSS puro, sin dependencias ni build. 1907 objetos en 15 categoría
 ```html
 <html lang="es" data-nz-theme="light">
 <head>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Ntizar/Aurora7@v8.0.0/tokens.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Ntizar/Aurora7@v8.0.0/packs/all.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v8.0.0/tokens.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v8.0.0/packs/all.css">
 </head>
 <body class="nz">
 ```
@@ -112,7 +112,7 @@ completas listas para copiar en `recetas/`.
 
 ## 5. Buscas un nombre en inglés y no existe
 
-Aurora 8 usa nombres en castellano en algunas familias. Aliases verificados:
+Aurora usa nombres en castellano en algunas familias. Aliases verificados:
 
 | Buscas | Usa |
 |---|---|
@@ -192,7 +192,7 @@ Los 170 tokens están inventariados en `components.json` (sección
 ## 8. Anti-patrones (NO lo hagas)
 
 - ❌ Pegar el CSS de los packs en el prompt (250 KB ≈ 60.000 tokens). Enlaza por CDN.
-- ❌ Inventar clases (`nz-gradient-text`, `nz-btn--glass-liquid-brand`, `nz-card--glass`): no existen aquí. Es la doctrina de Aurora v6, **jubilada**: Aurora 8 es sólido, sin glass ni gradientes.
+- ❌ Inventar clases (`nz-gradient-text`, `nz-btn--glass-liquid-brand`, `nz-card--glass`): no existen aquí. Es la doctrina de Aurora v6, **jubilada**: Aurora es sólido, sin glass ni gradientes.
 - ❌ Escribir colores a mano (`#2563eb`, `rgb(...)`): usa tokens `var(--nz-*)`.
 - ❌ Gradientes, `backdrop-filter` o `!important`: prohibidos por el manifiesto y la CI los detecta.
 - ❌ Clases globales sin `.nz-`: romperías la convivencia con otros frameworks.

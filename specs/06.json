@@ -223,7 +223,7 @@
     {
       "titulo": "Banner a ancho completo",
       "tag": ".nz-banner · __body · --brand/--accent",
-      "markup": "<div class=\"nz-stack nz-stack--sm\"><div class=\"nz-banner\"><div class=\"nz-banner__body\">🎉 Ya está disponible Aurora 7.1</div></div><div class=\"nz-banner nz-banner--brand\"><div class=\"nz-banner__body\">Nuevo pack de gráficos incluido</div></div><div class=\"nz-banner nz-banner--accent\"><div class=\"nz-banner__body\">Prueba el modo oscuro desde la portada</div></div></div>"
+      "markup": "<div class=\"nz-stack nz-stack--sm\"><div class=\"nz-banner\"><div class=\"nz-banner__body\">🎉 Ya está disponible Aurora.1</div></div><div class=\"nz-banner nz-banner--brand\"><div class=\"nz-banner__body\">Nuevo pack de gráficos incluido</div></div><div class=\"nz-banner nz-banner--accent\"><div class=\"nz-banner__body\">Prueba el modo oscuro desde la portada</div></div></div>"
     },
     {
       "titulo": "Banner con acción y cierre",

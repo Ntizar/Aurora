@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Auditoria movil REAL de Aurora 7: navegador headless, no lint.
+"""Auditoria movil REAL de Aurora: navegador headless, no lint.
 
 Para cada pagina del catalogo y cada viewport movil (320/360/390):
   1. Overflow horizontal de la pagina: scrollingElement.scrollWidth vs clientWidth.
@@ -131,7 +131,7 @@ def main():
         json.dumps(resultados, ensure_ascii=False, indent=1), encoding="utf-8")
 
     # Informe
-    lineas = ["# Auditoría móvil — Aurora 7", "",
+    lineas = ["# Auditoría móvil — Aurora", "",
               f"Fecha: {date.today().isoformat()} · Navegador real headless · Viewports: {', '.join(map(str, VIEWPORTS))}", ""]
     fallos = 0
     for pag, por_vp in resultados.items():

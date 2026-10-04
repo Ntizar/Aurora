@@ -1,4 +1,4 @@
-/* Aurora 7 — todos los packs en un solo enlace.
+/* Aurora — todos los packs en un solo enlace.
    Para producción se recomienda enlazar solo los packs que uses.
    Orden: components primero, shell del catálogo al final (no necesario fuera del catálogo). */
 /* No incluye p0-catalog.css: ese es el shell del catálogo, no del sistema. */

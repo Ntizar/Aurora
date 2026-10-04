@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
-"""Audita el USO de Aurora 7 en páginas consumidoras (el lint del agente).
+"""Audita el USO de Aurora en páginas consumidoras (el lint del agente).
 
 El validador del sistema (`validar-css.py`) comprueba los packs desde dentro.
-Este comprueba las páginas que CONSUMEN Aurora 7 desde fuera: el HTML que un
+Este comprueba las páginas que CONSUMEN Aurora desde fuera: el HTML que un
 agente (o una persona) genera enlazando el CDN. Es el paso que falta en el
 bucle: la IA verifica su propio output antes de entregarlo.
 
@@ -39,7 +39,7 @@ import sys
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 CDN_RE = re.compile(
-    r'href="(https://cdn\.jsdelivr\.net/gh/Ntizar/Aurora7@([^/"]+)/([^"]+))"')
+    r'href="(https://cdn\.jsdelivr\.net/gh/Ntizar/Aurora@([^/"]+)/([^"]+))"')
 CLASE_RE = re.compile(r'class="([^"]*)"')
 # enlaces locales (recetas/ y páginas del propio repo): ../tokens.css, ../packs/x.css
 LOCAL_RE = re.compile(r'href="(?:\.\./)?(tokens\.css|packs/[a-z0-9-]+\.css)"')
@@ -190,7 +190,7 @@ def auditar(html, clase_a_familia, packs_conocidos):
                 avisos.append(
                     f"{len(toques)} color(es) {etiqueta} a mano en {nombre}: usa var(--nz-*) ({', '.join(toques[:3])}…)")
     if "@media" in bloques and re.search(r"@media[^{]*max-width", bloques):
-        avisos.append("@media (max-width) detectado: Aurora 7 es mobile-first (base 1 columna + min-width)")
+        avisos.append("@media (max-width) detectado: Aurora es mobile-first (base 1 columna + min-width)")
 
     # --- 5. Estructura mínima -------------------------------------------------
     if not re.search(r'<html[^>]*lang="es"', html):
@@ -269,15 +269,15 @@ def selftest():
     # Ojo: esta página mala enlaza tokens.css pero NO p1-layout.css, para que
     # el lint cace también el pack que falta por enlazar.
     mala = f"""<!DOCTYPE html><html lang="es"><head>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Ntizar/Aurora7@master/tokens.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Ntizar/Aurora@master/tokens.css">
 <style>.x {{ background: linear-gradient(90deg, red, blue); color: #ff0000; font-size: 11px }}</style>
 </head><body><h1>Uno</h1><h1>Dos</h1><main class="nz-container nz-card nz-boton">\U0001F511 Hola</main></body></html>"""
 
     # Y una página BUENA: debe salir con 0 fallos (si no, hay falso positivo).
     buena = """<!DOCTYPE html><html lang="es" data-nz-theme="light"><head>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Ntizar/Aurora7@v7.2.2/tokens.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Ntizar/Aurora7@v7.2.2/packs/p1-layout.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Ntizar/Aurora7@v7.2.2/packs/p3-typography.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v7.2.2/tokens.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v7.2.2/packs/p1-layout.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v7.2.2/packs/p3-typography.css">
 </head><body class="nz"><main class="nz-container"><h1 class="nz-h1">Panel</h1>
 <p class="nz-lead">Datos de ejemplo.</p></main>
 <footer>Hecho con \u2764\ufe0f por David Antizar</footer></body></html>"""

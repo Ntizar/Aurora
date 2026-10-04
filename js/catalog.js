@@ -1,5 +1,5 @@
 /* ============================================================
-   AURORA 7 — js/catalog.js · Comportamiento del catálogo
+   AURORA — js/catalog.js · Comportamiento del catálogo
    Sin dependencias. Trozo de JS real, no decorativo:
      1. Tema light/dark persistente (localStorage).
      2. Buscador en vivo sobre las demos (título, clase, contenido).
