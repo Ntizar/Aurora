@@ -106,7 +106,7 @@ Esto es lo que se rompía una y otra vez. Ahora lo garantiza el sistema, sin JS.
 
 | Problema clásico | Objeto del sistema |
 |---|---|
-| Tabla de datos que se aplasta o desborda la página | `.nz-table-wrap--apilable` > `.nz-table--apilable` con `data-etiqueta="Columna"` en cada `td`. En móvil cada fila es una tarjeta con el nombre de su columna delante; desde 640 px vuelve a ser tabla |
+| Tabla que debe caber entera (p8) | `.nz-table-wrap--apilable` > `.nz-table--apilable` con `data-etiqueta="Columna"` en cada `td`. En móvil cada fila es una tarjeta con el nombre de su columna delante; desde 640 px vuelve a ser tabla. **Las DOS clases van juntas**: el wrap apilable quita su overflow a móvil a propósito (el marco lo llevan las tarjetas); si la `<table>` no lleva `nz-table--apilable`, la tabla nativa desborda la página |
 | Tabla ancha de verdad (Gantt, calendario) | `.nz-table-wrap` (scroll propio). **Nunca** una tabla ancha suelta fuera de un wrap: su `min-width: 30rem` estira la página entera |
 | Pestañas que se cortan | `.nz-tabs` **envuelve** en varias líneas (todas alcanzables). Una sola línea a propósito: `.nz-tabs--scroll` |
 | Acciones de la navbar inalcanzables | `.nz-navbar` y `.nz-navbar__links` **envuelven**: ninguna acción se corta |
@@ -161,6 +161,10 @@ Regla de dedo: **ancho intrínseco → scroll**; **datos tabulares → apilable*
 | Tabla que debe caber entera (p8) | `.nz-table-wrap--apilable` > `.nz-table--apilable` + `data-etiqueta` |
 | KPI (p8) | `.nz-kpi` (`__label/__value/__delta`) |
 | Gráfico (p13) | `.nz-chart` + `.nz-chart-bar/-line/-donut/-gauge`, `.nz-heatmap` |
+| Magnitudes dispares en una comparativa (p13) | `.nz-chart-tablebar` (barras alineadas por fila, cada una con su cifra) — no barras de una sola escala |
+| Presupuesto real vs objetivo (p13) | `.nz-bullet`: escalona la pista ×1,5 y fija la línea de objetivo al 66,7% (barra=real, línea=objeto); tonos reales: brand/accent/success (sin danger) |
+| Desglose desde un total (nómina→colchón) (p13) | `.nz-chart-waterfall`: tramos `--down` como altura acumulada % del total, cierre `--up` (verde) o `--total` |
+| Métrica con tendencia (p13) | `.nz-chart-stat` + `.nz-sparkline` (7-9 barras, meses completos; excluye el mes en curso parcial) |
 | Diálogo (p7) | `.nz-modal` (sin JS), `.nz-drawer`, `.nz-sheet` |
 | Layout (p1) | `.nz-appshell`, `.nz-with-sidebar`, `.nz-split`, `.nz-dash-grid`, `.nz-container` |
 | Navegación (p2) | `.nz-navbar`, `.nz-tabs` (+ `--scroll`, `--pill`), `.nz-breadcrumb`, `.nz-stepper`, `.nz-pagination` |
@@ -206,6 +210,10 @@ Criterio de admisión: (a) resuelve un problema real y repetido, (b) es mobile-f
 - ❌ Desborde horizontal: nada puede dejar `scrollWidth > clientWidth` en el documento. Si pasa, es un fallo de entrega, no un detalle.
 - ❌ Arreglar el móvil con `max-width` como estrategia, con `overflow-x` a lo bruto en el `body`, o escondiendo columnas con `display:none` (se pierde el dato).
 - ❌ `white-space: nowrap` en una tabla que se apila: mata el apilado y fuerza scroll.
+- ❌ Pinear un tag que existe **solo en local** y no está pusheado a GitHub: el CDN da 404 y la página sale sin CSS (bug real: `@v7.2.2` local sin pushear → 404 en todos los packs → HTML crudo). Tras resolver `$V`, **comprueba que el tag está publicado**: `git ls-remote --tags origin | grep vX.Y.Z`, y verifica el 200 del CDN: `curl -o /dev/null -w "%{http_code}" https://cdn.jsdelivr.net/gh/Ntizar/Aurora7@$V/tokens.css`. Si solo existe en local, o se pushea el tag o se usa el último **publicado**.
+- ❌ Verificar el CSS por las **clases en el DOM** en vez de por los **estilos computados**: las clases `nz-*` aparecen en el markup aunque el `<link>` al CDN dé 404 (el HTML se sirve igual, sin CSS). Prueba real: `getComputedStyle` de `.nz-navbar` debe dar `display:flex`, no el default; y `document.styleSheets` debe listar las 7 hojas.
+- ❌ Enlazar un tag que NO está pusheado a origin: si el tag solo existe en local, jsDelivr da 404 y la página se ve pelada (pasó con v7.2.2). Tras resolver $V, verificar `git ls-remote --tags origin` o `curl -o /dev/null -w %{http_code}` del tokens.css del tag; si 404, usar el último tag publicado. Verificar visual con computed styles (getComputedStyle), no solo con el lint: el lint no ve el CSS caído.
+- ❌ Comparar órdenes de magnitud en `.nz-chart-bar`/`.nz-bullet` de una sola escala (29.262 € junto a 109 €: las barras pequeñas desaparecen y el gráfico miente). Para mezclas dispares, `.nz-chart-tablebar`; para presupuestos, bullet con pista escalonada.
 - ❌ Dejar el patrón resuelto en el proyecto y no subirlo al repo.
 
 ## 11. Excepciones vigentes (cuándo NO usar Aurora 8)
