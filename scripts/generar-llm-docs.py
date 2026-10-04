@@ -319,6 +319,26 @@ JS ni media queries propias:
   `.nz-bento`, `.nz-grid-12`, `.nz-holy` y `.nz-article` nacen con `min-width: 0`,
   así que una tabla ancha encoge a su contenedor en vez de estirar la página.
 
+## 4c. Composición: cómo se monta (contrato obligatorio)
+
+Usar las clases correctas **no basta**. Antes de entregar, cumple el contrato de
+`COMPOSICION.md` (el lint lo comprueba y falla si no):
+
+1. **0 emojis** como icono (solo el ❤️ de la atribución).
+2. **≤ 5** momentos de color saturado por página.
+3. **Un protagonista por sección**: la marca o el acento, nunca los dos de igual a igual.
+4. Ningún texto de interfaz **por debajo de 13px**.
+5. **Un `<h1>`**, jerarquía sin saltos y **≤ 4 tamaños** distintos.
+6. **Ancho por tipo de página**: una app o un panel va a **ancho completo**, no en columna
+   estrecha (el error más común).
+7. Ritmo vertical con tokens y **una densidad** por página.
+8. Las vistas de datos tienen **tres estados**: vacío, carga y error.
+9. Etiquetas de formulario **visibles**: el placeholder no es una etiqueta.
+10. Iconos `.nz-icon` en SVG en línea, **nunca emojis**.
+
+La forma correcta de cada tipo de página está en `COMPOSICION.md` §5, y hay páginas
+completas listas para copiar en `recetas/`.
+
 ## 5. Buscas un nombre en inglés y no existe
 
 Aurora 7 usa nombres en castellano en algunas familias. Aliases verificados:
@@ -339,14 +359,27 @@ aparece en `components.json`, **no la inventes**.
 - **Forma**: `--square --rounded --pill` · **Elevación**: `--flat --raised`
 - **Estado**: `.is-active .is-disabled .is-loading .is-done .is-error .is-selected` o `[aria-current] [aria-selected]`
 
-## 7. Personalizar la marca (solo estos tokens)
+## 7. Marca: elige 2 colores y todo el sistema cambia
+
+La marca **no se toca en CSS**: se elige con un atributo en el `<html>`.
+
+```html
+<html lang="es" data-nz-theme="light" data-nz-marca="indigo">
+```
+
+- Presets incluidos: `aurora` (defecto, azul + naranja), `indigo`, `esmeralda`, `violeta`,
+  `carmesi`. Un `data-nz-marca` desconocido cae en `aurora` sin romper nada.
+- Marca propia: `python scripts/generar-marca.py miweb "#0ea5e9" "#f43f5e"` → `marcas/miweb.css`.
+  El generador crea la rampa en OKLCH, la ancla a tu color y avisa si necesita ajuste por contraste.
+- Todo lo demás (`--nz-brand*`, `--nz-accent*`, foco, sombras de color y **el modo oscuro**)
+  se **deriva solo** de esas dos rampas.
+
+Solo si necesitas afinar algo suelto (fuente, radio, ancho):
 
 ```css
 :root {{
-  --nz-brand: #2563eb;          /* color primario */
-  --nz-accent: #f97316;         /* acento, nunca fundido con el primario */
   --nz-font: "Inter", system-ui, sans-serif;
-  --nz-radius-md: 10px;
+  --nz-radius-md: 12px;
   --nz-container-max: 72rem;
 }}
 ```

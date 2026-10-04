@@ -15,6 +15,14 @@ Qué detecta:
   · colores a mano (#hex, rgb, hsl)                         → AVISO
   · desktop-first (@media max-width)                        → AVISO
   · falta body.nz / data-nz-theme / lang=es / atribución    → AVISO
+Composición (COMPOSICION.md):
+  · emojis fuera de la atribución                           → FALLO
+  · más de un <h1>                                          → FALLO
+  · presupuesto de color (>5 momentos saturados)            → AVISO
+  · marca y acento compitiendo a la vez                     → AVISO
+  · font-size propio por debajo de 13px                     → AVISO
+  · más de 4 tamaños tipográficos                           → AVISO
+  · app/panel sin contenedor ancho                          → AVISO
 
 Uso:
   python scripts/auditar-uso.py pagina.html [otra.html …]
@@ -40,6 +48,67 @@ RGB_RE = re.compile(r"\b(?:rgb|rgba|hsl|hsla)\(")
 
 # Clases legítimas que no viven en el censo de componentes
 EXENTAS = {"nz", "nz-visually-hidden", "nz-vh", "nz-print-hide"}
+
+# --- Composición (COMPOSICION.md): reglas que el lint hace cumplir -------------
+# Emoji = pictograma. Los símbolos tipográficos (✓ ✕ → ⬆ …) NO cuentan: son
+# tipografía legítima. Si llevan el selector de variación U+FE0F, sí se cazan
+# (➡️ con FE0F cae; ➡ solo, no).
+EMOJI_RE = re.compile("[\U0001F000-\U0001FAFF\u2600-\u26FF\u2700-\u27BF\u2B00-\u2BFF\uFE0F]")
+TIPOGRAFICOS = set("\u2713\u2715\u2717\u2794\u279c\u2192\u2190\u2191\u2193"
+                   "\u2b05\u2b06\u2b07\u2b95")
+ATRIBUCION = "Hecho con ❤️ por David Antizar"
+# elementos que gastan un "momento" de color saturado
+COLOR_RE = re.compile(
+    r"nz-(?:btn|cta|badge|chip|lbl|kpi|alert)(?:--(?:primary|accent|brand|success|warning|danger|info))")
+FONT_PX_RE = re.compile(r"font-size\s*:\s*(\d+(?:\.\d+)?)px")
+TEXTO_VAR_RE = re.compile(r"var\((--nz-text-(?:2xs|xs|sm|base|md|lg|xl|2xl|3xl|4xl))\)")
+
+
+def auditar_composicion(html):
+    """Las 12 leyes de COMPOSICION.md que se pueden comprobar mecánicamente."""
+    fallos, avisos = [], []
+
+    # 1 y 10 · emojis fuera de la atribución
+    cuerpo = html.replace(ATRIBUCION, "")
+    emojis = [c for c in EMOJI_RE.findall(cuerpo) if c not in TIPOGRAFICOS]
+    if emojis:
+        unicos = "".join(sorted(set(emojis)))[:14]
+        fallos.append(f"emoji-en-ui: {len(emojis)} emoji(s) fuera de la atribución ({unicos}) — usa .nz-icon en SVG")
+
+    # 2 · presupuesto de color
+    momentos = COLOR_RE.findall(html)
+    if len(momentos) > 5:
+        avisos.append(f"presupuesto-color: {len(momentos)} elementos con color saturado (máx 5)")
+
+    # 3 · dos protagonistas
+    marca = len(re.findall(r"nz-\w+--(?:primary|brand)", html))
+    acento = len(re.findall(r"nz-\w+--accent", html))
+    if marca >= 2 and acento >= 2:
+        avisos.append(f"dos-protagonistas: {marca} de marca y {acento} de acento compiten en la misma página")
+
+    # 4 · mínimo tipográfico (solo en CSS propio; el sistema ya garantiza el suyo)
+    chicos = sorted({v for v in FONT_PX_RE.findall(html) if float(v) < 13})
+    if chicos:
+        avisos.append(f"minimo-tipografico: font-size por debajo de 13px ({', '.join(chicos)}px)")
+
+    # 5 · jerarquía
+    h1 = len(re.findall(r"<h1[\s>]", html))
+    if h1 > 1:
+        fallos.append(f"jerarquia: {h1} <h1> en la misma página (debe haber exactamente uno)")
+
+    # 6 · escala tipográfica: máximo 4 tamaños
+    usados = sorted(set(TEXTO_VAR_RE.findall(html)))
+    if len(usados) > 4:
+        avisos.append(f"escala-tipografica: {len(usados)} tamaños distintos (máx 4): {', '.join(usados)}")
+
+    # 7 · ancho por tipo de página
+    es_app = bool(re.search(r"nz-appshell|nz-navbar|nz-dash-grid", html))
+    hay_ancho = bool(re.search(r"nz-container(?![\w-])|nz-container--(?:fluid|wide)|nz-main--wide|nz-dash-grid", html))
+    if es_app and not hay_ancho:
+        avisos.append("ancho-composicion: parece una app/panel y no declara contenedor ancho "
+                      "(nz-container / nz-container--fluid / nz-dash-grid)")
+
+    return fallos, avisos
 
 
 def cargar_censo():
@@ -127,6 +196,11 @@ def auditar(html, clase_a_familia, packs_conocidos):
     if "Hecho con ❤️ por David Antizar" not in html:
         avisos.append('Falta la atribución exacta: "Hecho con ❤️ por David Antizar"')
 
+    # --- 6. Composición (COMPOSICION.md) -------------------------------------
+    f2, a2 = auditar_composicion(html)
+    fallos.extend(f2)
+    avisos.extend(a2)
+
     return fallos, avisos
 
 
@@ -190,11 +264,21 @@ def selftest():
     # el lint cace también el pack que falta por enlazar.
     mala = f"""<!DOCTYPE html><html lang="es"><head>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Ntizar/Aurora7@master/tokens.css">
-<style>.x {{ background: linear-gradient(90deg, red, blue); color: #ff0000 }}</style>
-</head><body><main class="nz-container nz-card nz-boton">Hola</main></body></html>"""
+<style>.x {{ background: linear-gradient(90deg, red, blue); color: #ff0000; font-size: 11px }}</style>
+</head><body><h1>Uno</h1><h1>Dos</h1><main class="nz-container nz-card nz-boton">\U0001F511 Hola</main></body></html>"""
+
+    # Y una página BUENA: debe salir con 0 fallos (si no, hay falso positivo).
+    buena = """<!DOCTYPE html><html lang="es" data-nz-theme="light"><head>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Ntizar/Aurora7@v7.2.2/tokens.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Ntizar/Aurora7@v7.2.2/packs/p1-layout.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Ntizar/Aurora7@v7.2.2/packs/p3-typography.css">
+</head><body class="nz"><main class="nz-container"><h1 class="nz-h1">Panel</h1>
+<p class="nz-lead">Datos de ejemplo.</p></main>
+<footer>Hecho con \u2764\ufe0f por David Antizar</footer></body></html>"""
 
     fallos, avisos = auditar(mala, clase_a_familia, packs_conocidos)
     texto = " | ".join(fallos + avisos)
+    f_buena, a_buena = auditar(buena, clase_a_familia, packs_conocidos)
     esperados = [
         ("clase inventada .nz-card", "nz-card" in texto),
         ("clase inventada .nz-boton", "nz-boton" in texto),
@@ -204,12 +288,16 @@ def selftest():
         ("falta pack de nz-container", "Falta por enlazar el pack p1-layout.css" in texto),
         ("body sin nz", 'class="nz"' in texto),
         ("falta atribución", "atribución" in texto),
+        ("emoji en UI (ley 1)", "emoji-en-ui" in texto),
+        ("dos <h1> (ley 5)", "jerarquia" in texto),
+        ("font-size < 13px (ley 4)", "minimo-tipografico" in texto),
+        ("página buena sin fallos", not f_buena),
     ]
     ok = True
     for nombre, cond in esperados:
         print(f"  {'✓' if cond else '✗ FALLO DEL TEST'} {nombre}")
         ok = ok and cond
-    print(f"\nSELFTEST: {'OK — el lint caza los 8 defectos' if ok else 'FALLIDO'}")
+    print(f"\nSELFTEST: {'OK — el lint caza los ' + str(len(esperados)) + ' defectos' if ok else 'FALLIDO'}")
     return 0 if ok else 1
 
 
