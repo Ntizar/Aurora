@@ -19,11 +19,11 @@
   "objetivoTactil": "44px"
  },
  "resumen": {
-  "objetos": 1900,
-  "familias": 349,
+  "objetos": 1907,
+  "familias": 350,
   "categorias": 15,
-  "demos": 576,
-  "tokens": 169,
+  "demos": 577,
+  "tokens": 170,
   "tokensDark": 43
  },
  "packs": {
@@ -103,9 +103,9 @@
    "categoria": 9,
    "nombre": "Media e iconografía",
    "descripcion": "Imágenes responsive (formas, filtros, ratios), figure, avatares (tamaños, forma, presencia, grupos), logotipos y nube de logos, iconos en caja, media object, vídeo, audio, hueco de mapa y galería.",
-   "objetos": 112,
-   "familias": 17,
-   "demos": 41,
+   "objetos": 119,
+   "familias": 18,
+   "demos": 42,
    "pagina": "paginas/09-media.html"
   },
   "p10-commerce.css": {
@@ -1057,6 +1057,11 @@
   {
    "nombre": "--nz-control-lg",
    "valor": "2.75rem",
+   "seccion": "GEOMETRÍA · radios, objetivo táctil y alturas de control "
+  },
+  {
+   "nombre": "--nz-icon-stroke",
+   "valor": "1.75",
    "seccion": "GEOMETRÍA · radios, objetivo táctil y alturas de control "
   },
   {
@@ -5170,6 +5175,29 @@
     "item",
     "item--tall"
    ]
+  },
+  "nz-icon": {
+   "pack": "p9-media.css",
+   "categoria": 9,
+   "demo": "paginas/09-media.html",
+   "clases": [
+    "nz-icon",
+    "nz-icon--brand",
+    "nz-icon--filled",
+    "nz-icon--lg",
+    "nz-icon--muted",
+    "nz-icon--sm",
+    "nz-icon--xl"
+   ],
+   "modificadores": [
+    "brand",
+    "filled",
+    "lg",
+    "muted",
+    "sm",
+    "xl"
+   ],
+   "partes": []
   },
   "nz-icon-tile": {
    "pack": "p9-media.css",

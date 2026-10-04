@@ -177,6 +177,7 @@
   --nz-control-sm: 2rem;     /* 32px */
   --nz-control-md: 2.5rem;   /* 40px */
   --nz-control-lg: 2.75rem;  /* 44px */
+  --nz-icon-stroke: 1.75;    /* grosor de trazo de .nz-icon (SVG en línea) */
 
   /* ---- 10. SOMBRAS. Las de marca/acento se derivan del color elegido:
      cambian solas con la marca. ---- */

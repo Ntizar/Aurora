@@ -209,6 +209,11 @@
       "titulo": "Mapa con tono",
       "tag": ".nz-mapa-placeholder--brand · --neutral",
       "markup": "<div class=\"nz-cluster\"><div class=\"nz-mapa-placeholder nz-mapa-placeholder--brand\" style=\"max-width:16rem\"><span class=\"nz-mapa-placeholder__pin\"></span><span class=\"nz-mapa-placeholder__label\">Tono marca</span></div><div class=\"nz-mapa-placeholder nz-mapa-placeholder--neutral\" style=\"max-width:16rem\"><span class=\"nz-mapa-placeholder__pin\"></span><span class=\"nz-mapa-placeholder__label\">Tono neutro</span></div></div>"
+    },
+    {
+      "titulo": "Icono",
+      "tag": ".nz-icon · --sm · --lg · --xl · --brand · --muted · --filled",
+      "markup": "<div class=\"nz-cluster\"><span class=\"nz-lbl\">Trazo que hereda el texto</span><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M20 6 9 17l-5-5\"/></svg><svg class=\"nz-icon nz-icon--sm\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"8\" r=\"4\"/><path d=\"M4 21a8 8 0 0 1 16 0\"/></svg><svg class=\"nz-icon nz-icon--lg\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><circle cx=\"11\" cy=\"11\" r=\"7\"/><path d=\"m20 20-3.5-3.5\"/></svg><svg class=\"nz-icon nz-icon--xl nz-icon--muted\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M18 8a6 6 0 1 0-12 0c0 7-3 9-3 9h18s-3-2-3-9\"/><path d=\"M13.7 21a2 2 0 0 1-3.4 0\"/></svg><svg class=\"nz-icon nz-icon--brand\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M20 6 9 17l-5-5\"/></svg><svg class=\"nz-icon nz-icon--filled\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"6\"/></svg><svg class=\"nz-icon nz-icon--filled nz-icon--brand\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"6\"/></svg></div>"
     }
   ]
 }

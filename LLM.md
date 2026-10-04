@@ -1,6 +1,6 @@
 # Aurora 7 — guía de decisión para agentes
 
-Design system CSS puro, sin dependencias ni build. 1900 objetos en 15 categorías.
+Design system CSS puro, sin dependencias ni build. 1907 objetos en 15 categorías.
 **No pegues el CSS en el prompt**: enlaza por CDN y usa las clases de esta guía.
 
 ## 1. Mínimo obligatorio
@@ -186,7 +186,7 @@ Solo si necesitas afinar algo suelto (fuente, radio, ancho):
 }
 ```
 
-Los 169 tokens están inventariados en `components.json` (sección
+Los 170 tokens están inventariados en `components.json` (sección
 `tokens_def`, con nombre, valor y sección). Nada fuera de ese catálogo.
 
 ## 8. Anti-patrones (NO lo hagas)

@@ -176,3 +176,29 @@
 .nz-mapa-placeholder--brand { background: var(--nz-brand-soft); }
 .nz-mapa-placeholder--brand .nz-mapa-placeholder__pin { background: var(--nz-brand); }
 .nz-mapa-placeholder--neutral { background: var(--nz-surface-2); }
+
+
+/* ============================================================
+   Icono — SVG en línea que hereda el color y el tamaño del texto.
+   Sustituye al emoji: mismo trazo en cualquier sistema, se apaga y se
+   enciende con la interfaz, se alinea a la línea base.
+   Recomendado: set Lucide (MIT) copiado como SVG en línea.
+   ============================================================ */
+.nz-icon {
+  display: inline-block;
+  width: 1.25em;
+  height: 1.25em;
+  flex: none;
+  vertical-align: -0.2em;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: var(--nz-icon-stroke);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.nz-icon--sm { width: 1em; height: 1em; }
+.nz-icon--lg { width: 1.5em; height: 1.5em; }
+.nz-icon--xl { width: 2rem; height: 2rem; }
+.nz-icon--filled { fill: currentColor; stroke: none; }
+.nz-icon--brand { color: var(--nz-brand); }
+.nz-icon--muted { color: var(--nz-text-mute); }

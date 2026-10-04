@@ -41,6 +41,8 @@ ROOT = pathlib.Path(__file__).resolve().parent.parent
 CDN_RE = re.compile(
     r'href="(https://cdn\.jsdelivr\.net/gh/Ntizar/Aurora7@([^/"]+)/([^"]+))"')
 CLASE_RE = re.compile(r'class="([^"]*)"')
+# enlaces locales (recetas/ y páginas del propio repo): ../tokens.css, ../packs/x.css
+LOCAL_RE = re.compile(r'href="(?:\.\./)?(tokens\.css|packs/[a-z0-9-]+\.css)"')
 STYLE_RE = re.compile(r'style="([^"]*)"')
 STYLE_BLOCK_RE = re.compile(r"<style[^>]*>(.*?)</style>", re.S)
 HEX_RE = re.compile(r"#[0-9a-fA-F]{3,8}\b")
@@ -67,6 +69,9 @@ TEXTO_VAR_RE = re.compile(r"var\((--nz-text-(?:2xs|xs|sm|base|md|lg|xl|2xl|3xl|4
 def auditar_composicion(html):
     """Las 12 leyes de COMPOSICION.md que se pueden comprobar mecánicamente."""
     fallos, avisos = [], []
+    # los comentarios HTML no son interfaz: no cuentan (evita falsos positivos
+    # por documentar dentro de la propia página)
+    html = re.sub(r"<!--.*?-->", "", html, flags=re.S)
 
     # 1 y 10 · emojis fuera de la atribución
     cuerpo = html.replace(ATRIBUCION, "")
@@ -128,17 +133,18 @@ def auditar(html, clase_a_familia, packs_conocidos):
     """Devuelve (fallos, avisos, info) de una página."""
     fallos, avisos = [], []
 
-    # --- 1. CDN enlazado -----------------------------------------------------
+    # --- 1. CSS enlazado (CDN o local, para las páginas del repo) ------------
     enlaces = CDN_RE.findall(html)
-    ficheros = {e[2] for e in enlaces}
+    locales = LOCAL_RE.findall(html)
+    ficheros = {e[2] for e in enlaces} | set(locales)
     versiones = {e[1] for e in enlaces}
-    if not enlaces:
-        avisos.append("No enlaza el CDN de Aurora 7 (¿es una página Aurora?)")
+    if not enlaces and not locales:
+        avisos.append("No enlaza el CSS de Aurora (¿es una página Aurora?)")
     if "master" in versiones:
         avisos.append("CDN sin pinear (@master): jsDelivr puede servir CSS viejo desde su caché. Pineas con @vX.Y.Z")
-    if enlaces and "tokens.css" not in ficheros and "all.css" in " ".join(ficheros):
+    if (enlaces or locales) and "tokens.css" not in ficheros and "all.css" in " ".join(ficheros):
         avisos.append("tokens.css no está enlazado: los packs lo necesitan para resolver los tokens")
-    for _, _, fichero in enlaces:
+    for fichero in ficheros:
         if fichero.startswith("packs/") and fichero != "packs/all.css":
             if fichero[len("packs/"):] not in packs_conocidos:
                 fallos.append(f"Pack enlazado que no existe en el sistema: {fichero}")
@@ -155,7 +161,7 @@ def auditar(html, clase_a_familia, packs_conocidos):
         fallos.append(f"Clase del shell del catálogo (no es del sistema): .{c}")
 
     # --- 3. Packs necesarios vs enlazados ------------------------------------
-    if enlaces:
+    if enlaces or locales:
         # pack de cada familia usada
         familias = {clase_a_familia[c] for c in nz if c in clase_a_familia}
         necesarios = {FAMILIA_PACK.get(f, "") for f in familias}

@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="es" data-nz-theme="light" data-nz-marca="aurora">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Usuarios · Panel de administración</title>
+<!--
+  Receta canónica: ADMIN / GESTIÓN.
+  Cumple COMPOSICION.md: 0 emojis (iconos SVG), ancho completo, un <h1>,
+  4 tamaños, ≤5 momentos de color, tabla apilable y los tres estados.
+  Para consumidores, cambia los enlaces locales por el CDN pineado:
+  https://cdn.jsdelivr.net/gh/Ntizar/Aurora7@vX.Y.Z/tokens.css  (+ packs/pN-*.css)
+-->
+<link rel="stylesheet" href="../tokens.css">
+<link rel="stylesheet" href="../packs/p1-layout.css">
+<link rel="stylesheet" href="../packs/p2-navigation.css">
+<link rel="stylesheet" href="../packs/p3-typography.css">
+<link rel="stylesheet" href="../packs/p4-actions.css">
+<link rel="stylesheet" href="../packs/p5-forms.css">
+<link rel="stylesheet" href="../packs/p6-feedback.css">
+<link rel="stylesheet" href="../packs/p8-data.css">
+<link rel="stylesheet" href="../packs/p9-media.css">
+<link rel="stylesheet" href="../packs/p12-system.css">
+</head>
+<body class="nz">
+
+<div class="nz-with-sidebar">
+
+  <!-- ============ Barra lateral ============ -->
+  <aside class="nz-sidebar nz-sidebar--bordered nz-sidebar--sticky">
+    <p class="nz-sidebar__heading">Consola</p>
+    <nav class="nz-stack nz-stack--xs" aria-label="Secciones">
+      <a class="nz-sidebar__link nz-sidebar__link--icon" href="#">
+        <svg class="nz-icon nz-icon--sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/></svg>
+        Panel
+      </a>
+      <a class="nz-sidebar__link nz-sidebar__link--icon" href="#" aria-current="page">
+        <svg class="nz-icon nz-icon--sm" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><path d="M16 5.5a3.5 3.5 0 0 1 0 7"/></svg>
+        Usuarios
+      </a>
+      <a class="nz-sidebar__link nz-sidebar__link--icon" href="#">
+        <svg class="nz-icon nz-icon--sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2h12v20l-3-2-3 2-3-2-3 2z"/><path d="M9 7h6M9 11h4"/></svg>
+        Facturación
+      </a>
+      <a class="nz-sidebar__link nz-sidebar__link--icon" href="#">
+        <svg class="nz-icon nz-icon--sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5v14h16"/><path d="M8 16v-5M13 16V8M18 16v-3"/></svg>
+        Informes
+      </a>
+      <a class="nz-sidebar__link nz-sidebar__link--icon" href="#">
+        <svg class="nz-icon nz-icon--sm" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 3v2M12 19v2M3 12h2M19 12h2M5.6 5.6l1.5 1.5M16.9 16.9l1.5 1.5M18.4 5.6l-1.5 1.5M6.6 17.4l-1.5 1.5"/></svg>
+        Ajustes
+      </a>
+    </nav>
+  </aside>
+
+  <!-- ============ Contenido ============ -->
+  <div>
+
+    <header class="nz-navbar nz-navbar--bordered">
+      <span class="nz-navbar__brand">Aurora Admin</span>
+      <span class="nz-navbar__links">
+        <a class="nz-navbar__link" href="#">Documentación</a>
+        <a class="nz-navbar__link" href="#">Soporte</a>
+      </span>
+      <span class="nz-hstack nz-hstack--compact">
+        <button class="nz-btn nz-btn--ghost nz-btn--icon" type="button" aria-label="Notificaciones">
+          <svg class="nz-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 8a6 6 0 1 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 0 1-3.4 0"/></svg>
+        </button>
+        <span class="nz-avatar nz-avatar--sm" aria-hidden="true">DA</span>
+      </span>
+    </header>
+
+    <main class="nz-main nz-main--wide">
+      <div class="nz-container">
+
+        <div class="nz-hstack nz-hstack--between nz-hstack--top">
+          <div>
+            <p class="nz-eyebrow">Administración</p>
+            <h1 class="nz-h1">Usuarios</h1>
+            <p class="nz-lead">Altas, roles y permisos del espacio de trabajo. 1&nbsp;284 cuentas.</p>
+          </div>
+          <button class="nz-btn nz-btn--primary" type="button">
+            <svg class="nz-icon nz-icon--sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+            Invitar
+          </button>
+        </div>
+
+        <section class="nz-section" aria-label="Resumen">
+          <div class="nz-dash-grid">
+            <div class="nz-kpi nz-kpi--brand">
+              <span class="nz-kpi__label">Usuarios activos</span>
+              <span class="nz-kpi__value">1 284</span>
+              <span class="nz-kpi__delta nz-kpi__delta--up">+6,2 % este mes</span>
+            </div>
+            <div class="nz-kpi">
+              <span class="nz-kpi__label">Altas del mes</span>
+              <span class="nz-kpi__value">96</span>
+              <span class="nz-kpi__delta nz-kpi__delta--up">+12</span>
+            </div>
+            <div class="nz-kpi">
+              <span class="nz-kpi__label">Invitaciones pendientes</span>
+              <span class="nz-kpi__value">14</span>
+              <span class="nz-kpi__delta nz-kpi__delta--flat">sin cambios</span>
+            </div>
+            <div class="nz-kpi">
+              <span class="nz-kpi__label">Licencias libres</span>
+              <span class="nz-kpi__value">312</span>
+            </div>
+          </div>
+        </section>
+
+        <section class="nz-section" aria-label="Listado de usuarios">
+
+          <div class="nz-alert nz-alert--info" role="status">
+            <span class="nz-alert__icon" aria-hidden="true">
+              <svg class="nz-icon nz-icon--sm" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></svg>
+            </span>
+            <div class="nz-alert__body">
+              <p class="nz-alert__msg">La sincronización con el directorio corporativo se ejecutó hace 20 minutos.</p>
+            </div>
+          </div>
+
+          <div class="nz-toolbar">
+            <span class="nz-field">
+              <label class="nz-field__label nz-visually-hidden" for="buscar">Buscar usuario</label>
+              <span class="nz-input-icon">
+                <svg class="nz-icon nz-icon--sm nz-input-icon__icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+                <input class="nz-input" id="buscar" type="search" placeholder="Buscar por nombre o correo">
+              </span>
+            </span>
+            <span class="nz-segmented" role="group" aria-label="Filtro de estado">
+              <button type="button" aria-selected="true">Todos</button>
+              <button type="button" aria-selected="false">Activos</button>
+              <button type="button" aria-selected="false">Pendientes</button>
+            </span>
+            <span class="nz-toolbar__spacer"></span>
+            <button class="nz-btn nz-btn--outline nz-btn--sm" type="button">Exportar</button>
+          </div>
+
+          <div class="nz-table-wrap nz-table-wrap--apilable">
+            <table class="nz-table nz-table--apilable nz-table--hover">
+              <thead>
+                <tr>
+                  <th scope="col">Usuario</th>
+                  <th scope="col">Rol</th>
+                  <th scope="col">Estado</th>
+                  <th scope="col" class="nz-table__right">Última sesión</th>
+                  <th scope="col" class="nz-table__right">Acciones</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">
+                    <span class="nz-hstack nz-hstack--compact">
+                      <span class="nz-avatar nz-avatar--sm" aria-hidden="true">DA</span>
+                      <span>
+                        <span class="nz-table__strong">David Antizar</span><br>
+                        <span class="nz-table__muted">d.antizar@aurora.dev</span>
+                      </span>
+                    </span>
+                  </th>
+                  <td data-etiqueta="Rol"><span class="nz-badge nz-badge--brand">Administrador</span></td>
+                  <td data-etiqueta="Estado"><span class="nz-table__status nz-table__status--ok">Activo</span></td>
+                  <td data-etiqueta="Última sesión" class="nz-table__num nz-table__right">Hoy, 09:14</td>
+                  <td data-etiqueta="Acciones" class="nz-table__right">
+                    <button class="nz-btn nz-btn--ghost nz-btn--icon-sm" type="button" aria-label="Editar a David Antizar">
+                      <svg class="nz-icon nz-icon--sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h4L20 8l-4-4L4 16z"/><path d="M14 6l4 4"/></svg>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">
+                    <span class="nz-hstack nz-hstack--compact">
+                      <span class="nz-avatar nz-avatar--sm" aria-hidden="true">MR</span>
+                      <span>
+                        <span class="nz-table__strong">Marta Ruiz</span><br>
+                        <span class="nz-table__muted">m.ruiz@aurora.dev</span>
+                      </span>
+                    </span>
+                  </th>
+                  <td data-etiqueta="Rol"><span class="nz-badge nz-badge--neutral">Editora</span></td>
+                  <td data-etiqueta="Estado"><span class="nz-table__status nz-table__status--ok">Activo</span></td>
+                  <td data-etiqueta="Última sesión" class="nz-table__num nz-table__right">Ayer, 18:02</td>
+                  <td data-etiqueta="Acciones" class="nz-table__right">
+                    <button class="nz-btn nz-btn--ghost nz-btn--icon-sm" type="button" aria-label="Editar a Marta Ruiz">
+                      <svg class="nz-icon nz-icon--sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h4L20 8l-4-4L4 16z"/><path d="M14 6l4 4"/></svg>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">
+                    <span class="nz-hstack nz-hstack--compact">
+                      <span class="nz-avatar nz-avatar--sm" aria-hidden="true">JV</span>
+                      <span>
+                        <span class="nz-table__strong">Javier Vela</span><br>
+                        <span class="nz-table__muted">j.vela@aurora.dev</span>
+                      </span>
+                    </span>
+                  </th>
+                  <td data-etiqueta="Rol"><span class="nz-badge nz-badge--neutral">Consulta</span></td>
+                  <td data-etiqueta="Estado"><span class="nz-table__status nz-table__status--warn">Invitación pendiente</span></td>
+                  <td data-etiqueta="Última sesión" class="nz-table__num nz-table__right">—</td>
+                  <td data-etiqueta="Acciones" class="nz-table__right">
+                    <button class="nz-btn nz-btn--ghost nz-btn--icon-sm" type="button" aria-label="Reenviar invitación a Javier Vela">
+                      <svg class="nz-icon nz-icon--sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16v12H4z"/><path d="m4 7 8 6 8-6"/></svg>
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p style="font-size:var(--nz-text-sm);color:var(--nz-text-mute)">Se muestran 3 de 1 284 cuentas.</p>
+
+        </section>
+
+      </div>
+    </main>
+
+    <footer class="nz-footer">
+      <p>Hecho con ❤️ por David Antizar</p>
+    </footer>
+
+  </div>
+</div>
+
+</body>
+</html>
