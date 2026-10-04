@@ -229,7 +229,28 @@ No es cambiar dos URLs: es reescribir markup. Medido en caso real: de 107 clases
 solo 22 existían en v7. Sin equivalencia 1:1 (`nz-card` → `nz-article`/`nz-bento`/`nz-thirds`;
 mesh/orbs/3D desaparecen). Receta y script de medición en `references/migracion-v6-a-v7.md`.
 
-## 13. Referencias
+## 13. Lecciones que costaron tiempo (verificadas, no teoria)
+
+1. **Corre la cadena ENTERA que corre la CI antes de pushear.** No basta `validar-css.py`: la CI
+   pasa además `audit-a11y.py` (inputs sin etiqueta), `audit-tema.py` (supervivencia a modo
+   oscuro), `audit-catalog.py`, `audit-html.py` y `auditar-uso.py`. Pushear con la CI en rojo es
+   pushear a medias. Cadena completa:
+   `python scripts/validar-css.py && python scripts/audit-catalog.py && python scripts/audit-html.py && python scripts/audit-a11y.py && python scripts/audit-tema.py && python scripts/auditar-uso.py --selftest`
+2. **El estado inicial de una animación NUNCA es 0.** Arrancar en `scaleY(0)` / `opacity: 0` y
+   confiar en que el JS revele deja el dato invisible si el JS falla, si una captura headless
+   congela la animación o si la pestaña está en segundo plano. Arranca en `0.55` y pon red de
+   seguridad por tiempo: el dato siempre se lee, la animación solo lo adereza.
+3. **Verificar en navegador tiene dos trampas.** (a) En pestaña oculta `IntersectionObserver` y
+   `setTimeout` no disparan: llama a `Page.bringToFront` y espera antes de medir. (b) Al editar
+   CSS/JS en `file://` el navegador sirve caché: `Network.setCacheDisabled(true)` o verás el
+   fichero viejo y perseguirás un bug fantasma (y creerás que tu arreglo no funciona).
+4. **Un tag de git es inmutable.** El CDN `@vX.Y.Z` seguirá sirviendo el commit viejo aunque
+   `master` avance: cualquier funcionalidad nueva necesita versión nueva (`VERSION` en
+   `scripts/generar-llm-docs.py`, `components.json`, badge del README, tag) y todas deben decir
+   lo mismo — el validador lo comprueba contra el último tag.
+
+## 14. Referencias
+
 
 - **`Ntizar/Aurora`** — la orden máxima. `LLM.md`, `components.json`, `AGENTS.md`, `examples/`, `specs/`, `paginas/`, `audit/`, `scripts/auditar-uso.py`.
 - Este mismo `SKILL.md` **dentro del repo** (la CI valida que no se separe).
