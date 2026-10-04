@@ -6,10 +6,10 @@ Generada por `scripts/audit-catalog.py` a partir de los packs CSS y de `specs/*.
 
 | Comprobación | Valor | |
 |---|---|---|
-| Objetos declarados | 1900 |  |
-| Familias de objeto | 349 |  |
-| Demos en vivo | 576 |  |
-| Clases usadas en demos | 1900 |  |
+| Objetos declarados | 1907 |  |
+| Familias de objeto | 350 |  |
+| Demos en vivo | 578 |  |
+| Clases usadas en demos | 1907 |  |
 | Objetos fantasma (usados y no declarados) | 0 | 🟢 |
 | Clases declaradas sin demo | 0 | 🟢 |
 | Familias sin demo | 0 | 🟢 |
@@ -20,41 +20,41 @@ Generada por `scripts/audit-catalog.py` a partir de los packs CSS y de `specs/*.
 | Colores a mano fuera de tokens.css | 0 | 🟢 |
 | !important | 1 | 🟡 |
 
-Familias sin ninguna variante (`--mod`): **116** de 349 — ahí está el margen de ampliación.
+Familias sin ninguna variante (`--mod`): **116** de 350 — ahí está el margen de ampliación.
 
 ## 1. Por pack
 
 | pack | líneas | objetos | familias | hex | grad. | glass | !imp. |
 |---|---|---|---|---|---|---|---|
-| p1-layout.css | 360 | 178 | 67 | 0 | 0 | 0 | 0 |
+| p1-layout.css | 360 | 177 | 66 | 0 | 0 | 0 | 0 |
 | p10-commerce.css | 258 | 156 | 22 | 0 | 0 | 0 | 0 |
 | p11-social.css | 189 | 107 | 15 | 0 | 0 | 0 | 0 |
 | p12-system.css | 143 | 80 | 25 | 0 | 0 | 0 | 1 |
-| p13-charts.css | 284 | 210 | 21 | 0 | 0 | 0 | 0 |
-| p14-ai.css | 281 | 180 | 28 | 0 | 0 | 0 | 0 |
+| p13-charts.css | 293 | 210 | 21 | 0 | 0 | 0 | 0 |
+| p14-ai.css | 287 | 180 | 28 | 0 | 0 | 0 | 0 |
 | p15-apps.css | 364 | 74 | 30 | 0 | 0 | 0 | 0 |
-| p2-navigation.css | 178 | 77 | 10 | 0 | 0 | 0 | 0 |
+| p2-navigation.css | 179 | 78 | 10 | 0 | 0 | 0 | 0 |
 | p3-typography.css | 198 | 130 | 41 | 0 | 0 | 0 | 0 |
-| p4-actions.css | 166 | 78 | 7 | 0 | 0 | 0 | 0 |
-| p5-forms.css | 272 | 102 | 20 | 0 | 0 | 0 | 0 |
+| p4-actions.css | 172 | 78 | 7 | 0 | 0 | 0 | 0 |
+| p5-forms.css | 278 | 102 | 20 | 0 | 0 | 0 | 0 |
 | p6-feedback.css | 267 | 153 | 19 | 0 | 0 | 0 | 0 |
-| p7-overlays.css | 203 | 118 | 12 | 0 | 0 | 0 | 0 |
+| p7-overlays.css | 207 | 118 | 12 | 0 | 0 | 0 | 0 |
 | p8-data.css | 286 | 145 | 16 | 0 | 0 | 0 | 0 |
-| p9-media.css | 179 | 112 | 17 | 0 | 0 | 0 | 0 |
+| p9-media.css | 205 | 119 | 18 | 0 | 0 | 0 | 0 |
 
 ## 2. Por categoría
 
 | # | categoría | pack | objetos | familias | demos | sin demo | familias sin demo |
 |---|---|---|---|---|---|---|---|
-| 01 | Layout y estructura | p1-layout.css | 178 | 67 | 51 | 0 | 0 |
-| 02 | Navegación | p2-navigation.css | 77 | 10 | 35 | 0 | 0 |
+| 01 | Layout y estructura | p1-layout.css | 177 | 66 | 51 | 0 | 0 |
+| 02 | Navegación | p2-navigation.css | 78 | 10 | 36 | 0 | 0 |
 | 03 | Tipografía | p3-typography.css | 130 | 41 | 42 | 0 | 0 |
 | 04 | Acciones y botones | p4-actions.css | 78 | 7 | 16 | 0 | 0 |
 | 05 | Formularios e inputs | p5-forms.css | 102 | 20 | 44 | 0 | 0 |
 | 06 | Feedback y estados | p6-feedback.css | 153 | 19 | 52 | 0 | 0 |
 | 07 | Overlays y diálogo | p7-overlays.css | 118 | 12 | 34 | 0 | 0 |
 | 08 | Datos, tablas y listas | p8-data.css | 145 | 16 | 40 | 0 | 0 |
-| 09 | Media e iconografía | p9-media.css | 112 | 17 | 41 | 0 | 0 |
+| 09 | Media e iconografía | p9-media.css | 119 | 18 | 42 | 0 | 0 |
 | 10 | Comercio y producto | p10-commerce.css | 156 | 22 | 48 | 0 | 0 |
 | 11 | Social y marketing | p11-social.css | 107 | 15 | 39 | 0 | 0 |
 | 12 | Accesibilidad y sistema | p12-system.css | 80 | 25 | 29 | 0 | 0 |

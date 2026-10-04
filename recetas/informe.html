@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="es" data-nz-theme="light" data-nz-marca="aurora">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Informe de resultados Q3 2026 · Aurora 8</title>
+<!--
+  Receta canónica: INFORME / DOCUMENTO EJECUTIVO.
+  Una columna de prosa (nz-main--narrow), cifras clave en nz-kpi, tablas de
+  datos anchas dentro de nz-table-wrap (scroll propio) y print cuidado.
+  Cumple COMPOSICION.md: 0 emojis (iconos SVG), un <h1>, jerarquía sin saltos,
+  ≤ 5 momentos de color, un protagonista (marca) por sección y ancho estrecho.
+  Para consumidores, cambia los enlaces locales por el CDN pineado:
+  https://cdn.jsdelivr.net/gh/Ntizar/Aurora7@vX.Y.Z/tokens.css  (+ packs/pN-*.css)
+-->
+<link rel="stylesheet" href="../tokens.css">
+<link rel="stylesheet" href="../packs/p1-layout.css">
+<link rel="stylesheet" href="../packs/p2-navigation.css">
+<link rel="stylesheet" href="../packs/p3-typography.css">
+<link rel="stylesheet" href="../packs/p6-feedback.css">
+<link rel="stylesheet" href="../packs/p8-data.css">
+<link rel="stylesheet" href="../packs/p9-media.css">
+<style>
+  /* Print mínimo: solo tokens var(--nz-*), sin colores a mano ni px sueltos. */
+  @media print {
+    .nz-main--narrow { max-width: none; }
+    .nz-print-hide { display: none; }
+    .nz-section { padding-block: var(--nz-space-4); }
+    .nz-article,
+    .nz-table-wrap,
+    .nz-kpi { box-shadow: none; border-color: var(--nz-border-strong); }
+    .nz-table-wrap { overflow: visible; }
+    .nz-prose h2,
+    .nz-prose h3 { break-after: avoid; }
+    .nz-footer { border-top: var(--nz-border-w) solid var(--nz-border-soft); }
+  }
+</style>
+</head>
+<body class="nz">
+
+<main class="nz-main nz-main--narrow">
+
+  <nav class="nz-breadcrumb nz-print-hide" aria-label="Migas de pan">
+    <a href="#">Informes</a>
+    <span class="nz-breadcrumb__sep" aria-hidden="true">/</span>
+    <span aria-current="page">Resultados del tercer trimestre</span>
+  </nav>
+
+  <header>
+    <p class="nz-eyebrow">Operaciones · Tercer trimestre de 2026</p>
+    <h1 class="nz-h1">Informe de resultados Q3 2026</h1>
+    <p class="nz-lead">Consolidación del trimestre cerrado el 30 de septiembre: crecimiento de la
+      cartera, evolución de los indicadores operativos y las incidencias abiertas al cierre.</p>
+    <p class="nz-nota">Publicado el 4 de octubre de 2026 · Dirección de Operaciones</p>
+  </header>
+
+  <nav class="nz-toc nz-print-hide" aria-label="Índice del informe">
+    <p class="nz-toc__title">En este informe</p>
+    <a href="#resumen" aria-current="location">1. Resumen ejecutivo</a>
+    <a href="#indicadores">2. Indicadores clave</a>
+    <a href="#detalle">3. Detalle por línea de negocio</a>
+    <a href="#incidencias">4. Incidencias y riesgos</a>
+    <a href="#conclusiones">5. Conclusiones</a>
+  </nav>
+
+  <!-- ================= 1. Resumen ejecutivo ================= -->
+  <section class="nz-section" id="resumen" aria-labelledby="t-resumen">
+    <div class="nz-prose nz-measure">
+      <h2 class="nz-h2" id="t-resumen">1. Resumen ejecutivo</h2>
+      <p>El tercer trimestre cierra con una cartera de <strong>1&nbsp;284 clientes activos</strong>,
+        un <strong>6,2&nbsp;%</strong> por encima del trimestre anterior. El crecimiento se concentra
+        en las líneas de Servicios gestionados y Soporte, que aportan nueve de cada diez altas netas
+        del periodo.</p>
+      <p>La facturación recurrente alcanza los <strong>3,42 millones de euros</strong>, con una
+        retención bruta del <strong>94,1&nbsp;%</strong>. La morosidad se mantiene por debajo del
+        umbral de tolerancia fijado en el plan anual, aunque el tiempo medio de cobro se ha alargado
+        doce días respecto a junio.</p>
+      <p>No se han producido incidentes críticos. Las dos incidencias de severidad alta registradas
+        se resolvieron dentro del plazo comprometido y quedan documentadas en la sección 4.</p>
+    </div>
+  </section>
+
+  <!-- ================= 2. Indicadores clave ================= -->
+  <section class="nz-section" id="indicadores" aria-labelledby="t-indicadores">
+    <h2 class="nz-h2" id="t-indicadores">2. Indicadores clave</h2>
+    <div class="nz-grid-auto nz-grid-auto--compact">
+      <div class="nz-kpi nz-kpi--brand">
+        <span class="nz-kpi__label">Clientes activos</span>
+        <span class="nz-kpi__value">1&nbsp;284</span>
+        <span class="nz-kpi__delta nz-kpi__delta--up">+6,2 % intertrimestral</span>
+      </div>
+      <div class="nz-kpi">
+        <span class="nz-kpi__label">Facturación recurrente</span>
+        <span class="nz-kpi__value">3,42 M€</span>
+        <span class="nz-kpi__delta nz-kpi__delta--up">+4,8 % interanual</span>
+      </div>
+      <div class="nz-kpi">
+        <span class="nz-kpi__label">Retención bruta</span>
+        <span class="nz-kpi__value">94,1 %</span>
+        <span class="nz-kpi__delta nz-kpi__delta--flat">sin cambios</span>
+      </div>
+      <div class="nz-kpi">
+        <span class="nz-kpi__label">Periodo medio de cobro</span>
+        <span class="nz-kpi__value">48 días</span>
+        <span class="nz-kpi__delta nz-kpi__delta--down">+12 días</span>
+      </div>
+    </div>
+    <p class="nz-nota">Cifras consolidadas a 30 de septiembre de 2026, sin operaciones
+      intercompañía.</p>
+  </section>
+
+  <!-- ================= 3. Detalle por línea ================= -->
+  <section class="nz-section" id="detalle" aria-labelledby="t-detalle">
+    <h2 class="nz-h2" id="t-detalle">3. Detalle por línea de negocio</h2>
+    <div class="nz-prose nz-measure">
+      <p>La siguiente tabla desglosa el trimestre por línea: ingresos, variación respecto al
+        trimestre anterior y el estado de cada contrato de servicio.</p>
+    </div>
+
+    <div class="nz-table-wrap">
+      <table class="nz-table nz-table--striped">
+        <caption class="nz-table__caption">Resultados por línea de negocio · Q3 2026</caption>
+        <thead>
+          <tr>
+            <th scope="col">Línea de negocio</th>
+            <th scope="col" class="nz-table__num">Clientes</th>
+            <th scope="col" class="nz-table__num">Ingresos (M€)</th>
+            <th scope="col" class="nz-table__num">Variación</th>
+            <th scope="col">Estado</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row" class="nz-table__strong">Servicios gestionados</th>
+            <td class="nz-table__num">612</td>
+            <td class="nz-table__num">1,86</td>
+            <td class="nz-table__num">+7,4 %</td>
+            <td><span class="nz-table__status nz-table__status--ok">Al día</span></td>
+          </tr>
+          <tr>
+            <th scope="row" class="nz-table__strong">Soporte y mantenimiento</th>
+            <td class="nz-table__num">408</td>
+            <td class="nz-table__num">0,94</td>
+            <td class="nz-table__num">+3,1 %</td>
+            <td><span class="nz-table__status nz-table__status--ok">Al día</span></td>
+          </tr>
+          <tr>
+            <th scope="row" class="nz-table__strong">Consultoría</th>
+            <td class="nz-table__num">184</td>
+            <td class="nz-table__num">0,41</td>
+            <td class="nz-table__num">+1,2 %</td>
+            <td><span class="nz-table__status nz-table__status--warn">Revisión de alcance</span></td>
+          </tr>
+          <tr>
+            <th scope="row" class="nz-table__strong">Formación</th>
+            <td class="nz-table__num">80</td>
+            <td class="nz-table__num">0,21</td>
+            <td class="nz-table__num">−0,6 %</td>
+            <td><span class="nz-table__status">En curso</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="nz-nota">El detalle completo por contrato está disponible en el anexo de facturación.</p>
+  </section>
+
+  <!-- ================= 4. Incidencias y riesgos ================= -->
+  <section class="nz-section" id="incidencias" aria-labelledby="t-incidencias">
+    <h2 class="nz-h2" id="t-incidencias">4. Incidencias y riesgos</h2>
+
+    <div class="nz-callout nz-callout--warn" role="status">
+      <span aria-hidden="true">
+        <svg class="nz-icon nz-icon--sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 2 20h20z"/><path d="M12 10v4"/><path d="M12 17.5h.01"/></svg>
+      </span>
+      <p>El periodo medio de cobro se ha alargado doce días. Se activa seguimiento semanal con
+        Finanzas hasta devolverlo por debajo de los 40 días.</p>
+    </div>
+
+    <div class="nz-prose nz-measure">
+      <h3 class="nz-h3">Incidencias registradas</h3>
+      <p>Dos incidencias de severidad alta y cinco de severidad media, todas cerradas dentro del
+        plazo de compromiso con el cliente.</p>
+      <dl class="nz-dl">
+        <div class="nz-dl__row">
+          <dt class="nz-dl__dt">Incidencias de severidad alta</dt>
+          <dd class="nz-dl__dd">2 · resueltas</dd>
+        </div>
+        <div class="nz-dl__row">
+          <dt class="nz-dl__dt">Incidencias de severidad media</dt>
+          <dd class="nz-dl__dd">5 · resueltas</dd>
+        </div>
+        <div class="nz-dl__row">
+          <dt class="nz-dl__dt">Tiempo medio de resolución</dt>
+          <dd class="nz-dl__dd">6,4 horas</dd>
+        </div>
+        <div class="nz-dl__row">
+          <dt class="nz-dl__dt">Incidencias abiertas al cierre</dt>
+          <dd class="nz-dl__dd">0</dd>
+        </div>
+      </dl>
+    </div>
+  </section>
+
+  <!-- ================= 5. Conclusiones ================= -->
+  <section class="nz-section" id="conclusiones" aria-labelledby="t-conclusiones">
+    <h2 class="nz-h2" id="t-conclusiones">5. Conclusiones</h2>
+    <div class="nz-prose nz-measure">
+      <p>El trimestre cumple los objetivos de crecimiento y retención. La prioridad del cuarto
+        trimestre es <strong>acortar el periodo medio de cobro</strong> sin comprometer las altas,
+        manteniendo el esfuerzo comercial en Servicios gestionados.</p>
+      <p>El consejo de dirección recibirá el plan de acción detallado antes del 15 de octubre.</p>
+    </div>
+    <p>
+      <span class="nz-badge nz-badge--neutral">Estado del informe</span>
+      <span class="nz-badge nz-badge--success">Aprobado por dirección</span>
+    </p>
+  </section>
+
+  <footer class="nz-footer nz-footer--compact">
+    <p>Hecho con ❤️ por David Antizar</p>
+  </footer>
+
+</main>
+
+</body>
+</html>

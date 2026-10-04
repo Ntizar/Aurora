@@ -45,9 +45,9 @@
 .nz-legend__swatch--muted { background: var(--nz-border-strong); }
 
 /* ---- Barras verticales ---- */
-.nz-chart-bar { display: flex; align-items: flex-end; gap: var(--nz-space-2); min-height: 8rem; }
-.nz-chart-bar--sm { min-height: 5rem; }
-.nz-chart-bar--lg { min-height: 12rem; }
+.nz-chart-bar { display: flex; align-items: flex-end; gap: var(--nz-space-2); height: 8rem; }
+.nz-chart-bar--sm { height: 5rem; }
+.nz-chart-bar--lg { height: 12rem; }
 .nz-chart-bar__col { flex: 1 1 0; min-width: 0; display: flex; flex-direction: column; justify-content: flex-end; align-items: center; gap: var(--nz-space-1); height: 100%; }
 .nz-chart-bar__bar { width: 100%; max-width: 3rem; border-radius: var(--nz-radius-sm) var(--nz-radius-sm) 0 0; background: var(--nz-brand); min-height: 2px; transition: transform var(--nz-dur-base) var(--nz-ease-out); }
 .nz-chart-bar__col:hover .nz-chart-bar__bar { transform: scaleY(1.02); transform-origin: bottom; }
@@ -70,7 +70,7 @@
 .nz-chart-bar--stacked .nz-chart-bar__bar > :last-child { border-radius: var(--nz-radius-sm) var(--nz-radius-sm) 0 0; }
 .nz-chart-bar--neg { align-items: stretch; }
 .nz-chart-bar__zero { border-top: var(--nz-border-w) solid var(--nz-border); width: 100%; }
-.nz-chart-bar--horizontal { flex-direction: column; min-height: 0; }
+.nz-chart-bar--horizontal { flex-direction: column; height: auto; min-height: 0; }
 .nz-chart-bar--horizontal .nz-chart-bar__col { flex-direction: row; align-items: center; justify-content: flex-start; gap: var(--nz-space-2); width: 100%; height: auto; min-height: 24px; }
 .nz-chart-bar--horizontal .nz-chart-bar__bar { height: 12px; max-width: none; border-radius: 0 var(--nz-radius-sm) var(--nz-radius-sm) 0; }
 .nz-chart-bar--horizontal .nz-chart-bar__label { width: 5rem; flex: none; text-align: right; color: var(--nz-text-soft); }
@@ -221,7 +221,7 @@
 .nz-chart-scatter__y { position: absolute; top: 50%; left: calc(var(--nz-space-4) * -1); transform: translateY(-50%) rotate(-90deg); font-size: var(--nz-text-2xs); color: var(--nz-text-faint); }
 
 /* ---- Cascada ---- */
-.nz-chart-waterfall { display: flex; align-items: flex-end; gap: var(--nz-space-2); min-height: 9rem; }
+.nz-chart-waterfall { display: flex; align-items: flex-end; gap: var(--nz-space-2); height: 9rem; }
 .nz-chart-waterfall__col { flex: 1 1 0; min-width: 0; display: flex; flex-direction: column; justify-content: flex-end; align-items: center; gap: var(--nz-space-1); height: 100%; }
 .nz-chart-waterfall__bar { width: 100%; max-width: 2.5rem; border-radius: var(--nz-radius-sm); background: var(--nz-border-strong); }
 .nz-chart-waterfall__bar--up { background: var(--nz-success); }

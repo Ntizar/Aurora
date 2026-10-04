@@ -1,184 +1,189 @@
-{
-  "cat": 2,
-  "nombre": "Navegación",
-  "desc": "Navbar, menú, sidebar, tabs, breadcrumbs, paginación, TOC, dropdown, nav-footer y stepper. Todo táctil, sin JS (checkbox hack accesible).",
-  "pack": "p2-navigation.css",
-  "fichero": "02-navigation.html",
-  "demos": [
-    {
-      "titulo": "Navbar superior",
-      "tag": ".nz-navbar · __brand · __links · __link",
-      "markup": "<div class=\"nz-navbar\"><span class=\"nz-navbar__brand\"><i></i>Marca</span><span class=\"nz-navbar__links\"><a href=\"#contenido\" class=\"nz-navbar__link\" aria-current=\"page\">Inicio</a><a href=\"#contenido\" class=\"nz-navbar__link\">Docs</a><a href=\"#contenido\" class=\"nz-navbar__link\">Blog</a></span></div>"
-    },
-    {
-      "titulo": "Navbar compacta, bordered y transparent",
-      "tag": ".nz-navbar--compact · --bordered · --transparent",
-      "markup": "<div class=\"nz-navbar nz-navbar--compact\"><span class=\"nz-navbar__brand\"><i></i>Compacta</span><span class=\"nz-navbar__links\"><a href=\"#contenido\" class=\"nz-navbar__link\">Docs</a></span></div><div class=\"nz-navbar nz-navbar--bordered\"><span class=\"nz-navbar__brand\"><i></i>Bordered</span><span class=\"nz-navbar__links\"><a href=\"#contenido\" class=\"nz-navbar__link\">Docs</a></span></div><div class=\"nz-navbar nz-navbar--transparent\"><span class=\"nz-navbar__brand\"><i></i>Transparent</span><span class=\"nz-navbar__links\"><a href=\"#contenido\" class=\"nz-navbar__link\">Docs</a></span></div>"
-    },
-    {
-      "titulo": "Navbar de marca (azul sólido) y marca grande",
-      "tag": ".nz-navbar--brand · __brand--lg",
-      "markup": "<div class=\"nz-navbar nz-navbar--brand\"><span class=\"nz-navbar__brand nz-navbar__brand--lg\"><i></i>Aurora 7</span><span class=\"nz-navbar__links\"><a href=\"#contenido\" class=\"nz-navbar__link\" aria-current=\"page\">Panel</a><a href=\"#contenido\" class=\"nz-navbar__link\">Informes</a><a href=\"#contenido\" class=\"nz-navbar__link\">Equipo</a></span></div>"
-    },
-    {
-      "titulo": "Menú con hamburguesa (sin JS)",
-      "tag": ".nz-menu · __btn · __drop · __item · input:checked",
-      "markup": "<div class=\"nz-menu\"><input class=\"nz-vh\" type=\"checkbox\" id=\"menuN1\"><label class=\"nz-menu__btn\" for=\"menuN1\">☰</label><div class=\"nz-menu__drop\"><a href=\"#contenido\" class=\"nz-menu__item\" aria-current=\"page\">Inicio</a><a href=\"#contenido\" class=\"nz-menu__item\">Perfil</a><a href=\"#contenido\" class=\"nz-menu__item\">Ajustes</a></div></div>"
-    },
-    {
-      "titulo": "Menú: separador, peligro, deshabilitado y alineado a la derecha",
-      "tag": ".nz-menu--right · __sep · __item--danger · __item--disabled",
-      "markup": "<div class=\"nz-hstack demo-box\" style=\"padding:var(--nz-space-8) var(--nz-space-2) var(--nz-space-2)\"><span class=\"demo-box\">barra</span><div class=\"nz-menu nz-menu--right\"><input class=\"nz-vh\" type=\"checkbox\" id=\"menuN2\"><label class=\"nz-menu__btn\" for=\"menuN2\">☰</label><div class=\"nz-menu__drop\"><a href=\"#contenido\" class=\"nz-menu__item\">Cuenta</a><div class=\"nz-menu__sep\"></div><a href=\"#contenido\" class=\"nz-menu__item nz-menu__item--danger\">Cerrar sesión</a><a href=\"#contenido\" class=\"nz-menu__item nz-menu__item--disabled\" aria-disabled=\"true\">Facturación (pronto)</a></div></div></div>"
-    },
-    {
-      "titulo": "Sidebar de navegación",
-      "tag": ".nz-sidebar · __heading · __link · __link--count",
-      "markup": "<div class=\"nz-sidebar\"><span class=\"nz-sidebar__heading\">Menú</span><a href=\"#contenido\" class=\"nz-sidebar__link\" aria-current=\"page\">Panel</a><a href=\"#contenido\" class=\"nz-sidebar__link nz-sidebar__link--count\" data-count=\"8\">Bandeja</a><a href=\"#contenido\" class=\"nz-sidebar__link nz-sidebar__link--count\" data-count=\"24\">Informes</a></div>"
-    },
-    {
-      "titulo": "Sidebar compacta, bordered y brand",
-      "tag": ".nz-sidebar--compact · --bordered · --brand",
-      "markup": "<div class=\"nz-cluster\" style=\"align-items:flex-start\"><div class=\"nz-sidebar nz-sidebar--compact\"><a href=\"#contenido\" class=\"nz-sidebar__link\" aria-current=\"page\">Compacta</a><a href=\"#contenido\" class=\"nz-sidebar__link\">Ajustes</a></div><div class=\"nz-sidebar nz-sidebar--bordered\"><a href=\"#contenido\" class=\"nz-sidebar__link\">Bordered</a><a href=\"#contenido\" class=\"nz-sidebar__link\">Ajustes</a></div><div class=\"nz-sidebar nz-sidebar--brand\"><span class=\"nz-sidebar__heading\">Brand</span><a href=\"#contenido\" class=\"nz-sidebar__link\" aria-current=\"page\">Fondo azul suave</a></div></div>"
-    },
-    {
-      "titulo": "Sidebar: enlaces con icono y grupo anidado",
-      "tag": ".nz-sidebar__link--icon · .nz-sidebar__group",
-      "markup": "<div class=\"nz-sidebar\"><span class=\"nz-sidebar__heading\">Workspace</span><div class=\"nz-hstack nz-hstack--compact\"><a href=\"#contenido\" class=\"nz-sidebar__link nz-sidebar__link--icon\" aria-label=\"Panel\">▦</a><a href=\"#contenido\" class=\"nz-sidebar__link nz-sidebar__link--icon\" aria-label=\"Ajustes\">⚙</a><a href=\"#contenido\" class=\"nz-sidebar__link nz-sidebar__link--icon\" aria-label=\"Ayuda\">?</a></div><div class=\"nz-sidebar__group\"><a href=\"#contenido\" class=\"nz-sidebar__link\" aria-current=\"page\">General</a><a href=\"#contenido\" class=\"nz-sidebar__link\">Miembros</a><a href=\"#contenido\" class=\"nz-sidebar__link\">Facturación</a></div></div>"
-    },
-    {
-      "titulo": "Tabs con panel",
-      "tag": ".nz-tabs · __tab · __panel · [aria-selected]",
-      "markup": "<div class=\"nz-tabs\"><button class=\"nz-tabs__tab\" aria-selected=\"true\">Resumen</button><button class=\"nz-tabs__tab\">Detalle</button><button class=\"nz-tabs__tab\">Historial</button></div><div class=\"nz-tabs__panel\">El panel vive debajo de la barra de tabs y hereda su padding vertical.</div>"
-    },
-    {
-      "titulo": "Pill tabs",
-      "tag": ".nz-tabs--pill · .nz-tabs__tab",
-      "markup": "<div class=\"nz-tabs nz-tabs--pill\"><button class=\"nz-tabs__tab\" aria-selected=\"true\">Hoy</button><button class=\"nz-tabs__tab\">Semana</button><button class=\"nz-tabs__tab\">Mes</button></div>"
-    },
-    {
-      "titulo": "Tabs en una sola línea (scroll)",
-      "tag": ".nz-tabs--scroll · .nz-tabs__tab · [aria-selected]",
-      "markup": "<nav class=\"nz-tabs nz-tabs--scroll\" aria-label=\"secciones de la ficha\"><button class=\"nz-tabs__tab\" aria-selected=\"true\">Trabajo</button><button class=\"nz-tabs__tab\">Oferta</button><button class=\"nz-tabs__tab\">Perfiles</button><button class=\"nz-tabs__tab\">Carga</button><button class=\"nz-tabs__tab\">Resumen</button><button class=\"nz-tabs__tab\">Informe</button><button class=\"nz-tabs__tab\">Ajustes</button></nav>"
-    },
-    {
-      "titulo": "Tabs con contador y badge",
-      "tag": ".nz-tabs__tab--count · .nz-tabs__badge",
-      "markup": "<div class=\"nz-tabs\"><button class=\"nz-tabs__tab nz-tabs__tab--count\" data-count=\"12\" aria-selected=\"true\">Todos</button><button class=\"nz-tabs__tab nz-tabs__tab--count\" data-count=\"3\">Nuevos</button><button class=\"nz-tabs__tab\">Archivados <span class=\"nz-tabs__badge\">7</span></button></div>"
-    },
-    {
-      "titulo": "Tabs centradas y a todo lo ancho",
-      "tag": ".nz-tabs--center · .nz-tabs--full",
-      "markup": "<div class=\"nz-tabs nz-tabs--center\"><button class=\"nz-tabs__tab\" aria-selected=\"true\">Centradas</button><button class=\"nz-tabs__tab\">Otra</button></div><div class=\"nz-tabs nz-tabs--full\"><button class=\"nz-tabs__tab\" aria-selected=\"true\">Ancho 1</button><button class=\"nz-tabs__tab\">Ancho 2</button><button class=\"nz-tabs__tab\">Ancho 3</button></div>"
-    },
-    {
-      "titulo": "Tabs con subrayado (sin barra)",
-      "tag": ".nz-tabs--underline",
-      "markup": "<div class=\"nz-tabs nz-tabs--underline\"><button class=\"nz-tabs__tab\" aria-selected=\"true\">Destacada</button><button class=\"nz-tabs__tab\">Normal</button><button class=\"nz-tabs__tab\">Otra</button></div>"
-    },
-    {
-      "titulo": "Tabs verticales",
-      "tag": ".nz-tabs--vertical · .nz-tabs__tab",
-      "markup": "<div class=\"nz-tabs nz-tabs--vertical\" style=\"max-width:14rem\"><button class=\"nz-tabs__tab\" aria-selected=\"true\">Cuenta</button><button class=\"nz-tabs__tab\">Seguridad</button><button class=\"nz-tabs__tab\">Notificaciones</button></div>"
-    },
-    {
-      "titulo": "Tab deshabilitada",
-      "tag": ".nz-tabs__tab--disabled · [aria-disabled]",
-      "markup": "<div class=\"nz-tabs\"><button class=\"nz-tabs__tab\" aria-selected=\"true\">Activa</button><button class=\"nz-tabs__tab nz-tabs__tab--disabled\" aria-disabled=\"true\">Deshabilitada</button><button class=\"nz-tabs__tab\">Otra</button></div>"
-    },
-    {
-      "titulo": "Breadcrumbs",
-      "tag": ".nz-breadcrumb · __sep · [aria-current=page]",
-      "markup": "<nav class=\"nz-breadcrumb\" aria-label=\"miga de pan\"><a href=\"#\">Inicio</a><span class=\"nz-breadcrumb__sep\">/</span><a href=\"#\">Docs</a><span class=\"nz-breadcrumb__sep\">/</span><span aria-current=\"page\">Instalación</span></nav>"
-    },
-    {
-      "titulo": "Breadcrumbs compactos, con barra y con chevron",
-      "tag": ".nz-breadcrumb--compact · --slash · --chevron",
-      "markup": "<nav class=\"nz-breadcrumb nz-breadcrumb--compact nz-breadcrumb--slash\" aria-label=\"miga compacta\"><a href=\"#\">Inicio</a><span class=\"nz-breadcrumb__sep\"></span><a href=\"#\">Panel</a><span class=\"nz-breadcrumb__sep\"></span><span aria-current=\"page\">Ajustes</span></nav><nav class=\"nz-breadcrumb nz-breadcrumb--chevron\" aria-label=\"miga chevron\"><a href=\"#\">Inicio</a><span class=\"nz-breadcrumb__sep\"></span><a href=\"#\">Docs</a><span class=\"nz-breadcrumb__sep\"></span><span aria-current=\"page\">Componentes</span></nav>"
-    },
-    {
-      "titulo": "Paginación",
-      "tag": ".nz-pagination · [aria-current] · __ellipsis",
-      "markup": "<nav class=\"nz-pagination\" aria-label=\"páginas\"><a href=\"#\">‹</a><a href=\"#\" aria-current=\"page\">1</a><a href=\"#\">2</a><a href=\"#\">3</a><span class=\"nz-pagination__ellipsis\">…</span><a href=\"#\">12</a><a href=\"#\">›</a></nav>"
-    },
-    {
-      "titulo": "Paginación pequeña y grande",
-      "tag": ".nz-pagination--sm · .nz-pagination--lg",
-      "markup": "<nav class=\"nz-pagination nz-pagination--sm\" aria-label=\"páginas pequeñas\"><a href=\"#\">‹</a><a href=\"#\" aria-current=\"page\">1</a><a href=\"#\">2</a><a href=\"#\">›</a></nav><nav class=\"nz-pagination nz-pagination--lg\" aria-label=\"páginas grandes\"><a href=\"#\">‹</a><a href=\"#\" aria-current=\"page\">1</a><a href=\"#\">2</a><a href=\"#\">›</a></nav>"
-    },
-    {
-      "titulo": "Paginación simple con estado",
-      "tag": ".nz-pagination--simple · .nz-pagination__status",
-      "markup": "<nav class=\"nz-pagination nz-pagination--simple\" aria-label=\"paginación simple\"><a href=\"#\">‹ Anterior</a><span class=\"nz-pagination__status\">Página 3 de 24</span><a href=\"#\">Siguiente ›</a></nav>"
-    },
-    {
-      "titulo": "Índice de contenidos (TOC)",
-      "tag": ".nz-toc · __title · --level2 · [aria-current=location]",
-      "markup": "<nav class=\"nz-toc\"><span class=\"nz-toc__title\">En esta página</span><a href=\"#\" aria-current=\"location\">Introducción</a><a href=\"#\" class=\"nz-toc--level2\">Inicio rápido</a><a href=\"#\">Componentes</a><a href=\"#\" class=\"nz-toc--level2\">Tokens</a></nav>"
-    },
-    {
-      "titulo": "TOC compacto y con título brand",
-      "tag": ".nz-toc--compact · .nz-toc__title--brand",
-      "markup": "<nav class=\"nz-toc nz-toc--compact\"><span class=\"nz-toc__title nz-toc__title--brand\">Contenido</span><a href=\"#\" aria-current=\"location\">Instalación</a><a href=\"#\">Uso</a><a href=\"#\">API</a></nav>"
-    },
-    {
-      "titulo": "TOC sticky",
-      "tag": ".nz-toc--sticky",
-      "markup": "<div class=\"nz-overflow-y demo-box\" style=\"max-height:9rem;padding:0;text-align:start\"><nav class=\"nz-toc nz-toc--sticky\"><span class=\"nz-toc__title\">Sticky</span><a href=\"#\">Sección 1</a><a href=\"#\">Sección 2</a></nav><div class=\"demo-box\" style=\"height:7rem\">contenido que scrollea…</div></div>"
-    },
-    {
-      "titulo": "Dropdown select (sin JS)",
-      "tag": ".nz-dropdown · __btn · __list · input:checked",
-      "markup": "<div class=\"nz-dropdown\" style=\"padding-bottom:var(--nz-space-8)\"><input class=\"nz-vh\" type=\"checkbox\" id=\"dropN1\"><label class=\"nz-dropdown__btn\" for=\"dropN1\">País</label><div class=\"nz-dropdown__list\"><a href=\"#contenido\" class=\"nz-menu__item\">España</a><a href=\"#contenido\" class=\"nz-menu__item\">Francia</a><a href=\"#contenido\" class=\"nz-menu__item\">Italia</a></div></div>"
-    },
-    {
-      "titulo": "Dropdown a la derecha y ancho",
-      "tag": ".nz-dropdown--end · .nz-dropdown--wide",
-      "markup": "<div class=\"nz-hstack nz-hstack--end\" style=\"align-items:flex-start\"><div class=\"nz-dropdown nz-dropdown--end nz-dropdown--wide\" style=\"padding-bottom:var(--nz-space-6)\"><input class=\"nz-vh\" type=\"checkbox\" id=\"dropN2\"><label class=\"nz-dropdown__btn\" for=\"dropN2\">Menú alineado a la derecha</label><div class=\"nz-dropdown__list\"><a href=\"#contenido\" class=\"nz-menu__item\">Opción con mucho texto para ver el ancho de 18rem</a><a href=\"#contenido\" class=\"nz-menu__item\">Otra opción</a></div></div></div>"
-    },
-    {
-      "titulo": "Dropdown con botón icono y lista dividida",
-      "tag": ".nz-dropdown__btn--icon · .nz-dropdown__list--divided",
-      "markup": "<div class=\"nz-dropdown\" style=\"padding-bottom:var(--nz-space-8)\"><input class=\"nz-vh\" type=\"checkbox\" id=\"dropN3\"><label class=\"nz-dropdown__btn nz-dropdown__btn--icon\" for=\"dropN3\">⋯</label><div class=\"nz-dropdown__list nz-dropdown__list--divided\"><a href=\"#contenido\" class=\"nz-menu__item\">Editar</a><a href=\"#contenido\" class=\"nz-menu__item\">Duplicar</a><a href=\"#contenido\" class=\"nz-menu__item\">Archivar</a></div></div>"
-    },
-    {
-      "titulo": "Nav footer",
-      "tag": ".nz-navfooter · __col · __title",
-      "markup": "<div class=\"nz-navfooter\"><div class=\"nz-navfooter__col\"><span class=\"nz-navfooter__title\">Producto</span><a href=\"#\">Docs</a><a href=\"#\">Guías</a></div><div class=\"nz-navfooter__col\"><span class=\"nz-navfooter__title\">Compañía</span><a href=\"#\">Blog</a><a href=\"#\">Contacto</a></div></div>"
-    },
-    {
-      "titulo": "Nav footer compacto, título brand y fila inferior",
-      "tag": ".nz-navfooter--compact · __title--brand · __bottom",
-      "markup": "<div class=\"nz-navfooter nz-navfooter--compact\"><div class=\"nz-navfooter__col\"><span class=\"nz-navfooter__title nz-navfooter__title--brand\">Producto</span><a href=\"#\">Docs</a></div><div class=\"nz-navfooter__col\"><span class=\"nz-navfooter__title nz-navfooter__title--brand\">Legal</span><a href=\"#\">Privacidad</a></div><div class=\"nz-navfooter__bottom\"><span>© 2026 Ntizar</span><a href=\"#\">Cookies</a><a href=\"#\">Aviso legal</a></div></div>"
-    },
-    {
-      "titulo": "Nav footer en 2 y 3 columnas",
-      "tag": ".nz-navfooter--2col · .nz-navfooter--3col",
-      "markup": "<div class=\"nz-navfooter nz-navfooter--2col\"><div class=\"nz-navfooter__col\"><span class=\"nz-navfooter__title\">Dos columnas</span><a href=\"#\">Uno</a></div><div class=\"nz-navfooter__col\"><span class=\"nz-navfooter__title\">móvil 1 · ≥640 2</span><a href=\"#\">Dos</a></div></div><div class=\"nz-navfooter nz-navfooter--3col\"><div class=\"nz-navfooter__col\"><span class=\"nz-navfooter__title\">Tres columnas</span><a href=\"#\">Uno</a></div><div class=\"nz-navfooter__col\"><span class=\"nz-navfooter__title\">≥960 3</span><a href=\"#\">Dos</a></div><div class=\"nz-navfooter__col\"><span class=\"nz-navfooter__title\">Columnas</span><a href=\"#\">Tres</a></div></div>"
-    },
-    {
-      "titulo": "Stepper de proceso",
-      "tag": ".nz-stepper · __step · __num · __link · .is-active/.is-done",
-      "markup": "<div class=\"nz-stepper\"><div class=\"nz-stepper__step is-done\"><span class=\"nz-stepper__num\">1</span>Cuenta</div><span class=\"nz-stepper__link\">›</span><div class=\"nz-stepper__step is-active\"><span class=\"nz-stepper__num\">2</span>Pago</div><span class=\"nz-stepper__link\">›</span><div class=\"nz-stepper__step\"><span class=\"nz-stepper__num\">3</span>Listo</div></div>"
-    },
-    {
-      "titulo": "Stepper compacto",
-      "tag": ".nz-stepper--compact",
-      "markup": "<div class=\"nz-stepper nz-stepper--compact\"><div class=\"nz-stepper__step is-done\"><span class=\"nz-stepper__num\">1</span>Datos</div><div class=\"nz-stepper__step is-active\"><span class=\"nz-stepper__num\">2</span>Envío</div><div class=\"nz-stepper__step\"><span class=\"nz-stepper__num\">3</span>Fin</div></div>"
-    },
-    {
-      "titulo": "Stepper vertical",
-      "tag": ".nz-stepper--vertical",
-      "markup": "<div class=\"nz-stepper nz-stepper--vertical\"><div class=\"nz-stepper__step is-done\"><span class=\"nz-stepper__num\">1</span>Borrador</div><div class=\"nz-stepper__step is-active\"><span class=\"nz-stepper__num\">2</span>Revisión</div><div class=\"nz-stepper__step\"><span class=\"nz-stepper__num\">3</span>Publicado</div></div>"
-    },
-    {
-      "titulo": "Stepper con paso en error",
-      "tag": ".nz-stepper__step--error",
-      "markup": "<div class=\"nz-stepper\"><div class=\"nz-stepper__step is-done\"><span class=\"nz-stepper__num\">1</span>Datos</div><div class=\"nz-stepper__step nz-stepper__step--error\" aria-current=\"step\"><span class=\"nz-stepper__num\">2</span>Pago rechazado</div><div class=\"nz-stepper__step\"><span class=\"nz-stepper__num\">3</span>Confirmación</div></div>"
-    },
-    {
-      "titulo": "Skip-link al contenido (objeto de p12-system.css)",
-      "tag": ".nz-skip-link · [aria-label]",
-      "markup": "<p style=\"font-size:var(--nz-text-xs);color:var(--nz-text-mute);margin:0\">El enlace de salto vive ahora en p12-system.css (aquí en reposo, en producción aparece al pulsar Tab): <a class=\"nz-skip-link\" href=\"#contenido\" style=\"position:static\">Saltar al contenido</a></p>"
-    }
-  ]
-}
+{
+  "cat": 2,
+  "nombre": "Navegación",
+  "desc": "Navbar, menú, sidebar, tabs, breadcrumbs, paginación, TOC, dropdown, nav-footer y stepper. Todo táctil, sin JS (checkbox hack accesible).",
+  "pack": "p2-navigation.css",
+  "fichero": "02-navigation.html",
+  "demos": [
+    {
+      "titulo": "Navbar superior",
+      "tag": ".nz-navbar · __brand · __links · __link",
+      "markup": "<div class=\"nz-navbar\"><span class=\"nz-navbar__brand\"><i></i>Marca</span><span class=\"nz-navbar__links\"><a href=\"#contenido\" class=\"nz-navbar__link\" aria-current=\"page\">Inicio</a><a href=\"#contenido\" class=\"nz-navbar__link\">Docs</a><a href=\"#contenido\" class=\"nz-navbar__link\">Blog</a></span></div>"
+    },
+    {
+      "titulo": "Navbar compacta, bordered y transparent",
+      "tag": ".nz-navbar--compact · --bordered · --transparent",
+      "markup": "<div class=\"nz-navbar nz-navbar--compact\"><span class=\"nz-navbar__brand\"><i></i>Compacta</span><span class=\"nz-navbar__links\"><a href=\"#contenido\" class=\"nz-navbar__link\">Docs</a></span></div><div class=\"nz-navbar nz-navbar--bordered\"><span class=\"nz-navbar__brand\"><i></i>Bordered</span><span class=\"nz-navbar__links\"><a href=\"#contenido\" class=\"nz-navbar__link\">Docs</a></span></div><div class=\"nz-navbar nz-navbar--transparent\"><span class=\"nz-navbar__brand\"><i></i>Transparent</span><span class=\"nz-navbar__links\"><a href=\"#contenido\" class=\"nz-navbar__link\">Docs</a></span></div>"
+    },
+    {
+      "titulo": "Navbar de marca (azul sólido) y marca grande",
+      "tag": ".nz-navbar--brand · __brand--lg",
+      "markup": "<div class=\"nz-navbar nz-navbar--brand\"><span class=\"nz-navbar__brand nz-navbar__brand--lg\"><i></i>Aurora 7</span><span class=\"nz-navbar__links\"><a href=\"#contenido\" class=\"nz-navbar__link\" aria-current=\"page\">Panel</a><a href=\"#contenido\" class=\"nz-navbar__link\">Informes</a><a href=\"#contenido\" class=\"nz-navbar__link\">Equipo</a></span></div>"
+    },
+    {
+      "titulo": "Menú con hamburguesa (sin JS)",
+      "tag": ".nz-menu · __btn · __drop · __item · input:checked",
+      "markup": "<div class=\"nz-menu\"><input class=\"nz-vh\" type=\"checkbox\" id=\"menuN1\"><label class=\"nz-menu__btn\" for=\"menuN1\">☰</label><div class=\"nz-menu__drop\"><a href=\"#contenido\" class=\"nz-menu__item\" aria-current=\"page\">Inicio</a><a href=\"#contenido\" class=\"nz-menu__item\">Perfil</a><a href=\"#contenido\" class=\"nz-menu__item\">Ajustes</a></div></div>"
+    },
+    {
+      "titulo": "Menú: separador, peligro, deshabilitado y alineado a la derecha",
+      "tag": ".nz-menu--right · __sep · __item--danger · __item--disabled",
+      "markup": "<div class=\"nz-hstack demo-box\" style=\"padding:var(--nz-space-8) var(--nz-space-2) var(--nz-space-2)\"><span class=\"demo-box\">barra</span><div class=\"nz-menu nz-menu--right\"><input class=\"nz-vh\" type=\"checkbox\" id=\"menuN2\"><label class=\"nz-menu__btn\" for=\"menuN2\">☰</label><div class=\"nz-menu__drop\"><a href=\"#contenido\" class=\"nz-menu__item\">Cuenta</a><div class=\"nz-menu__sep\"></div><a href=\"#contenido\" class=\"nz-menu__item nz-menu__item--danger\">Cerrar sesión</a><a href=\"#contenido\" class=\"nz-menu__item nz-menu__item--disabled\" aria-disabled=\"true\">Facturación (pronto)</a></div></div></div>"
+    },
+    {
+      "titulo": "Sidebar de navegación",
+      "tag": ".nz-sidebar · __heading · __link · __link--count",
+      "markup": "<div class=\"nz-sidebar\"><span class=\"nz-sidebar__heading\">Menú</span><a href=\"#contenido\" class=\"nz-sidebar__link\" aria-current=\"page\">Panel</a><a href=\"#contenido\" class=\"nz-sidebar__link nz-sidebar__link--count\" data-count=\"8\">Bandeja</a><a href=\"#contenido\" class=\"nz-sidebar__link nz-sidebar__link--count\" data-count=\"24\">Informes</a></div>"
+    },
+    {
+      "titulo": "Sidebar compacta, bordered y brand",
+      "tag": ".nz-sidebar--compact · --bordered · --brand",
+      "markup": "<div class=\"nz-cluster\" style=\"align-items:flex-start\"><div class=\"nz-sidebar nz-sidebar--compact\"><a href=\"#contenido\" class=\"nz-sidebar__link\" aria-current=\"page\">Compacta</a><a href=\"#contenido\" class=\"nz-sidebar__link\">Ajustes</a></div><div class=\"nz-sidebar nz-sidebar--bordered\"><a href=\"#contenido\" class=\"nz-sidebar__link\">Bordered</a><a href=\"#contenido\" class=\"nz-sidebar__link\">Ajustes</a></div><div class=\"nz-sidebar nz-sidebar--brand\"><span class=\"nz-sidebar__heading\">Brand</span><a href=\"#contenido\" class=\"nz-sidebar__link\" aria-current=\"page\">Fondo azul suave</a></div></div>"
+    },
+    {
+      "titulo": "Sidebar: enlaces con icono y grupo anidado",
+      "tag": ".nz-sidebar__link--icon · .nz-sidebar__group",
+      "markup": "<div class=\"nz-sidebar\"><span class=\"nz-sidebar__heading\">Workspace</span><div class=\"nz-hstack nz-hstack--compact\"><a href=\"#contenido\" class=\"nz-sidebar__link nz-sidebar__link--icon\" aria-label=\"Panel\">▦</a><a href=\"#contenido\" class=\"nz-sidebar__link nz-sidebar__link--icon\" aria-label=\"Ajustes\">⚙</a><a href=\"#contenido\" class=\"nz-sidebar__link nz-sidebar__link--icon\" aria-label=\"Ayuda\">?</a></div><div class=\"nz-sidebar__group\"><a href=\"#contenido\" class=\"nz-sidebar__link\" aria-current=\"page\">General</a><a href=\"#contenido\" class=\"nz-sidebar__link\">Miembros</a><a href=\"#contenido\" class=\"nz-sidebar__link\">Facturación</a></div></div>"
+    },
+    {
+      "titulo": "Tabs con panel",
+      "tag": ".nz-tabs · __tab · __panel · [aria-selected]",
+      "markup": "<div class=\"nz-tabs\"><button class=\"nz-tabs__tab\" aria-selected=\"true\">Resumen</button><button class=\"nz-tabs__tab\">Detalle</button><button class=\"nz-tabs__tab\">Historial</button></div><div class=\"nz-tabs__panel\">El panel vive debajo de la barra de tabs y hereda su padding vertical.</div>"
+    },
+    {
+      "titulo": "Pill tabs",
+      "tag": ".nz-tabs--pill · .nz-tabs__tab",
+      "markup": "<div class=\"nz-tabs nz-tabs--pill\"><button class=\"nz-tabs__tab\" aria-selected=\"true\">Hoy</button><button class=\"nz-tabs__tab\">Semana</button><button class=\"nz-tabs__tab\">Mes</button></div>"
+    },
+    {
+      "titulo": "Tabs en una sola línea (scroll)",
+      "tag": ".nz-tabs--scroll · .nz-tabs__tab · [aria-selected]",
+      "markup": "<nav class=\"nz-tabs nz-tabs--scroll\" aria-label=\"secciones de la ficha\"><button class=\"nz-tabs__tab\" aria-selected=\"true\">Trabajo</button><button class=\"nz-tabs__tab\">Oferta</button><button class=\"nz-tabs__tab\">Perfiles</button><button class=\"nz-tabs__tab\">Carga</button><button class=\"nz-tabs__tab\">Resumen</button><button class=\"nz-tabs__tab\">Informe</button><button class=\"nz-tabs__tab\">Ajustes</button></nav>"
+    },
+    {
+      "titulo": "Tabs con contador y badge",
+      "tag": ".nz-tabs__tab--count · .nz-tabs__badge",
+      "markup": "<div class=\"nz-tabs\"><button class=\"nz-tabs__tab nz-tabs__tab--count\" data-count=\"12\" aria-selected=\"true\">Todos</button><button class=\"nz-tabs__tab nz-tabs__tab--count\" data-count=\"3\">Nuevos</button><button class=\"nz-tabs__tab\">Archivados <span class=\"nz-tabs__badge\">7</span></button></div>"
+    },
+    {
+      "titulo": "Tabs centradas y a todo lo ancho",
+      "tag": ".nz-tabs--center · .nz-tabs--full",
+      "markup": "<div class=\"nz-tabs nz-tabs--center\"><button class=\"nz-tabs__tab\" aria-selected=\"true\">Centradas</button><button class=\"nz-tabs__tab\">Otra</button></div><div class=\"nz-tabs nz-tabs--full\"><button class=\"nz-tabs__tab\" aria-selected=\"true\">Ancho 1</button><button class=\"nz-tabs__tab\">Ancho 2</button><button class=\"nz-tabs__tab\">Ancho 3</button></div>"
+    },
+    {
+      "titulo": "Tabs con subrayado (sin barra)",
+      "tag": ".nz-tabs--underline",
+      "markup": "<div class=\"nz-tabs nz-tabs--underline\"><button class=\"nz-tabs__tab\" aria-selected=\"true\">Destacada</button><button class=\"nz-tabs__tab\">Normal</button><button class=\"nz-tabs__tab\">Otra</button></div>"
+    },
+    {
+      "titulo": "Tabs verticales",
+      "tag": ".nz-tabs--vertical · .nz-tabs__tab",
+      "markup": "<div class=\"nz-tabs nz-tabs--vertical\" style=\"max-width:14rem\"><button class=\"nz-tabs__tab\" aria-selected=\"true\">Cuenta</button><button class=\"nz-tabs__tab\">Seguridad</button><button class=\"nz-tabs__tab\">Notificaciones</button></div>"
+    },
+    {
+      "titulo": "Tab deshabilitada",
+      "tag": ".nz-tabs__tab--disabled · [aria-disabled]",
+      "markup": "<div class=\"nz-tabs\"><button class=\"nz-tabs__tab\" aria-selected=\"true\">Activa</button><button class=\"nz-tabs__tab nz-tabs__tab--disabled\" aria-disabled=\"true\">Deshabilitada</button><button class=\"nz-tabs__tab\">Otra</button></div>"
+    },
+    {
+      "titulo": "Breadcrumbs",
+      "tag": ".nz-breadcrumb · __sep · [aria-current=page]",
+      "markup": "<nav class=\"nz-breadcrumb\" aria-label=\"miga de pan\"><a href=\"#\">Inicio</a><span class=\"nz-breadcrumb__sep\">/</span><a href=\"#\">Docs</a><span class=\"nz-breadcrumb__sep\">/</span><span aria-current=\"page\">Instalación</span></nav>"
+    },
+    {
+      "titulo": "Breadcrumbs compactos, con barra y con chevron",
+      "tag": ".nz-breadcrumb--compact · --slash · --chevron",
+      "markup": "<nav class=\"nz-breadcrumb nz-breadcrumb--compact nz-breadcrumb--slash\" aria-label=\"miga compacta\"><a href=\"#\">Inicio</a><span class=\"nz-breadcrumb__sep\"></span><a href=\"#\">Panel</a><span class=\"nz-breadcrumb__sep\"></span><span aria-current=\"page\">Ajustes</span></nav><nav class=\"nz-breadcrumb nz-breadcrumb--chevron\" aria-label=\"miga chevron\"><a href=\"#\">Inicio</a><span class=\"nz-breadcrumb__sep\"></span><a href=\"#\">Docs</a><span class=\"nz-breadcrumb__sep\"></span><span aria-current=\"page\">Componentes</span></nav>"
+    },
+    {
+      "titulo": "Paginación",
+      "tag": ".nz-pagination · [aria-current] · __ellipsis",
+      "markup": "<nav class=\"nz-pagination\" aria-label=\"páginas\"><a href=\"#\">‹</a><a href=\"#\" aria-current=\"page\">1</a><a href=\"#\">2</a><a href=\"#\">3</a><span class=\"nz-pagination__ellipsis\">…</span><a href=\"#\">12</a><a href=\"#\">›</a></nav>"
+    },
+    {
+      "titulo": "Paginación pequeña y grande",
+      "tag": ".nz-pagination--sm · .nz-pagination--lg",
+      "markup": "<nav class=\"nz-pagination nz-pagination--sm\" aria-label=\"páginas pequeñas\"><a href=\"#\">‹</a><a href=\"#\" aria-current=\"page\">1</a><a href=\"#\">2</a><a href=\"#\">›</a></nav><nav class=\"nz-pagination nz-pagination--lg\" aria-label=\"páginas grandes\"><a href=\"#\">‹</a><a href=\"#\" aria-current=\"page\">1</a><a href=\"#\">2</a><a href=\"#\">›</a></nav>"
+    },
+    {
+      "titulo": "Paginación simple con estado",
+      "tag": ".nz-pagination--simple · .nz-pagination__status",
+      "markup": "<nav class=\"nz-pagination nz-pagination--simple\" aria-label=\"paginación simple\"><a href=\"#\">‹ Anterior</a><span class=\"nz-pagination__status\">Página 3 de 24</span><a href=\"#\">Siguiente ›</a></nav>"
+    },
+    {
+      "titulo": "Índice de contenidos (TOC)",
+      "tag": ".nz-toc · __title · --level2 · [aria-current=location]",
+      "markup": "<nav class=\"nz-toc\"><span class=\"nz-toc__title\">En esta página</span><a href=\"#\" aria-current=\"location\">Introducción</a><a href=\"#\" class=\"nz-toc--level2\">Inicio rápido</a><a href=\"#\">Componentes</a><a href=\"#\" class=\"nz-toc--level2\">Tokens</a></nav>"
+    },
+    {
+      "titulo": "TOC compacto y con título brand",
+      "tag": ".nz-toc--compact · .nz-toc__title--brand",
+      "markup": "<nav class=\"nz-toc nz-toc--compact\"><span class=\"nz-toc__title nz-toc__title--brand\">Contenido</span><a href=\"#\" aria-current=\"location\">Instalación</a><a href=\"#\">Uso</a><a href=\"#\">API</a></nav>"
+    },
+    {
+      "titulo": "TOC sticky",
+      "tag": ".nz-toc--sticky",
+      "markup": "<div class=\"nz-overflow-y demo-box\" style=\"max-height:9rem;padding:0;text-align:start\"><nav class=\"nz-toc nz-toc--sticky\"><span class=\"nz-toc__title\">Sticky</span><a href=\"#\">Sección 1</a><a href=\"#\">Sección 2</a></nav><div class=\"demo-box\" style=\"height:7rem\">contenido que scrollea…</div></div>"
+    },
+    {
+      "titulo": "Dropdown select (sin JS)",
+      "tag": ".nz-dropdown · __btn · __list · input:checked",
+      "markup": "<div class=\"nz-dropdown\" style=\"padding-bottom:var(--nz-space-8)\"><input class=\"nz-vh\" type=\"checkbox\" id=\"dropN1\"><label class=\"nz-dropdown__btn\" for=\"dropN1\">País</label><div class=\"nz-dropdown__list\"><a href=\"#contenido\" class=\"nz-menu__item\">España</a><a href=\"#contenido\" class=\"nz-menu__item\">Francia</a><a href=\"#contenido\" class=\"nz-menu__item\">Italia</a></div></div>"
+    },
+    {
+      "titulo": "Dropdown a la derecha y ancho",
+      "tag": ".nz-dropdown--end · .nz-dropdown--wide",
+      "markup": "<div class=\"nz-hstack nz-hstack--end\" style=\"align-items:flex-start\"><div class=\"nz-dropdown nz-dropdown--end nz-dropdown--wide\" style=\"padding-bottom:var(--nz-space-6)\"><input class=\"nz-vh\" type=\"checkbox\" id=\"dropN2\"><label class=\"nz-dropdown__btn\" for=\"dropN2\">Menú alineado a la derecha</label><div class=\"nz-dropdown__list\"><a href=\"#contenido\" class=\"nz-menu__item\">Opción con mucho texto para ver el ancho de 18rem</a><a href=\"#contenido\" class=\"nz-menu__item\">Otra opción</a></div></div></div>"
+    },
+    {
+      "titulo": "Dropdown con botón icono y lista dividida",
+      "tag": ".nz-dropdown__btn--icon · .nz-dropdown__list--divided",
+      "markup": "<div class=\"nz-dropdown\" style=\"padding-bottom:var(--nz-space-8)\"><input class=\"nz-vh\" type=\"checkbox\" id=\"dropN3\"><label class=\"nz-dropdown__btn nz-dropdown__btn--icon\" for=\"dropN3\">⋯</label><div class=\"nz-dropdown__list nz-dropdown__list--divided\"><a href=\"#contenido\" class=\"nz-menu__item\">Editar</a><a href=\"#contenido\" class=\"nz-menu__item\">Duplicar</a><a href=\"#contenido\" class=\"nz-menu__item\">Archivar</a></div></div>"
+    },
+    {
+      "titulo": "Nav footer",
+      "tag": ".nz-navfooter · __col · __title",
+      "markup": "<div class=\"nz-navfooter\"><div class=\"nz-navfooter__col\"><span class=\"nz-navfooter__title\">Producto</span><a href=\"#\">Docs</a><a href=\"#\">Guías</a></div><div class=\"nz-navfooter__col\"><span class=\"nz-navfooter__title\">Compañía</span><a href=\"#\">Blog</a><a href=\"#\">Contacto</a></div></div>"
+    },
+    {
+      "titulo": "Nav footer compacto, título brand y fila inferior",
+      "tag": ".nz-navfooter--compact · __title--brand · __bottom",
+      "markup": "<div class=\"nz-navfooter nz-navfooter--compact\"><div class=\"nz-navfooter__col\"><span class=\"nz-navfooter__title nz-navfooter__title--brand\">Producto</span><a href=\"#\">Docs</a></div><div class=\"nz-navfooter__col\"><span class=\"nz-navfooter__title nz-navfooter__title--brand\">Legal</span><a href=\"#\">Privacidad</a></div><div class=\"nz-navfooter__bottom\"><span>© 2026 Ntizar</span><a href=\"#\">Cookies</a><a href=\"#\">Aviso legal</a></div></div>"
+    },
+    {
+      "titulo": "Nav footer en 2 y 3 columnas",
+      "tag": ".nz-navfooter--2col · .nz-navfooter--3col",
+      "markup": "<div class=\"nz-navfooter nz-navfooter--2col\"><div class=\"nz-navfooter__col\"><span class=\"nz-navfooter__title\">Dos columnas</span><a href=\"#\">Uno</a></div><div class=\"nz-navfooter__col\"><span class=\"nz-navfooter__title\">móvil 1 · ≥640 2</span><a href=\"#\">Dos</a></div></div><div class=\"nz-navfooter nz-navfooter--3col\"><div class=\"nz-navfooter__col\"><span class=\"nz-navfooter__title\">Tres columnas</span><a href=\"#\">Uno</a></div><div class=\"nz-navfooter__col\"><span class=\"nz-navfooter__title\">≥960 3</span><a href=\"#\">Dos</a></div><div class=\"nz-navfooter__col\"><span class=\"nz-navfooter__title\">Columnas</span><a href=\"#\">Tres</a></div></div>"
+    },
+    {
+      "titulo": "Stepper de proceso",
+      "tag": ".nz-stepper · __step · __num · __link · .is-active/.is-done",
+      "markup": "<div class=\"nz-stepper\"><div class=\"nz-stepper__step is-done\"><span class=\"nz-stepper__num\">1</span>Cuenta</div><span class=\"nz-stepper__link\">›</span><div class=\"nz-stepper__step is-active\"><span class=\"nz-stepper__num\">2</span>Pago</div><span class=\"nz-stepper__link\">›</span><div class=\"nz-stepper__step\"><span class=\"nz-stepper__num\">3</span>Listo</div></div>"
+    },
+    {
+      "titulo": "Stepper compacto",
+      "tag": ".nz-stepper--compact",
+      "markup": "<div class=\"nz-stepper nz-stepper--compact\"><div class=\"nz-stepper__step is-done\"><span class=\"nz-stepper__num\">1</span>Datos</div><div class=\"nz-stepper__step is-active\"><span class=\"nz-stepper__num\">2</span>Envío</div><div class=\"nz-stepper__step\"><span class=\"nz-stepper__num\">3</span>Fin</div></div>"
+    },
+    {
+      "titulo": "Stepper vertical",
+      "tag": ".nz-stepper--vertical",
+      "markup": "<div class=\"nz-stepper nz-stepper--vertical\"><div class=\"nz-stepper__step is-done\"><span class=\"nz-stepper__num\">1</span>Borrador</div><div class=\"nz-stepper__step is-active\"><span class=\"nz-stepper__num\">2</span>Revisión</div><div class=\"nz-stepper__step\"><span class=\"nz-stepper__num\">3</span>Publicado</div></div>"
+    },
+    {
+      "titulo": "Stepper con paso en error",
+      "tag": ".nz-stepper__step--error",
+      "markup": "<div class=\"nz-stepper\"><div class=\"nz-stepper__step is-done\"><span class=\"nz-stepper__num\">1</span>Datos</div><div class=\"nz-stepper__step nz-stepper__step--error\" aria-current=\"step\"><span class=\"nz-stepper__num\">2</span>Pago rechazado</div><div class=\"nz-stepper__step\"><span class=\"nz-stepper__num\">3</span>Confirmación</div></div>"
+    },
+    {
+      "titulo": "Skip-link al contenido (objeto de p12-system.css)",
+      "tag": ".nz-skip-link · [aria-label]",
+      "markup": "<p style=\"font-size:var(--nz-text-xs);color:var(--nz-text-mute);margin:0\">El enlace de salto vive ahora en p12-system.css (aquí en reposo, en producción aparece al pulsar Tab): <a class=\"nz-skip-link\" href=\"#contenido\" style=\"position:static\">Saltar al contenido</a></p>"
+    },
+    {
+      "titulo": "Barra lateral pegajosa",
+      "tag": ".nz-sidebar--sticky",
+      "markup": "<div class=\"nz-with-sidebar\"><div class=\"nz-sidebar nz-sidebar--sticky\"><a class=\"nz-sidebar__link\" href=\"#\" aria-current=\"page\">Resumen</a><a class=\"nz-sidebar__link\" href=\"#\">Equipos</a><a class=\"nz-sidebar__link\" href=\"#\">Informes</a></div><div class=\"demo-box\" style=\"min-height:12rem\">contenido que hace scroll</div></div>"
+    }
+  ]
+}

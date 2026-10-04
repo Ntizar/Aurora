@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es" data-nz-theme="light" data-nz-marca="aurora">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Iniciar sesión · Aurora</title>
+<!--
+  Receta canónica: LOGIN / ACCESO.
+  Cumple COMPOSICION.md: 0 emojis (iconos SVG), tarjeta única centrada
+  (nz-container--narrow, el ancho estrecho es el correcto aquí), un <h1>,
+  ≤4 tamaños, 2 momentos de color (CTA primario + alerta de error),
+  marca y acento sin competir, y etiquetas de formulario visibles.
+  Estados del acceso: normal (formulario), cargando (spinner en el botón)
+  y error (nz-alert--danger sobre el formulario).
+  Para consumidores, cambia los enlaces locales por el CDN pineado:
+  https://cdn.jsdelivr.net/gh/Ntizar/Aurora7@vX.Y.Z/tokens.css  (+ packs/pN-*.css)
+-->
+<link rel="stylesheet" href="../tokens.css">
+<link rel="stylesheet" href="../packs/p1-layout.css">
+<link rel="stylesheet" href="../packs/p3-typography.css">
+<link rel="stylesheet" href="../packs/p4-actions.css">
+<link rel="stylesheet" href="../packs/p5-forms.css">
+<link rel="stylesheet" href="../packs/p6-feedback.css">
+<link rel="stylesheet" href="../packs/p9-media.css">
+</head>
+<body class="nz">
+
+<main class="nz-center-xy" style="min-height:100dvh">
+  <div class="nz-container nz-container--narrow" style="width:100%">
+
+    <section class="nz-article nz-article--bordered nz-stack nz-stack--lg" aria-labelledby="titulo-acceso">
+
+      <!-- ============ Marca (único protagonista de la tarjeta) ============ -->
+      <span class="nz-brand">
+        <span class="nz-brand__mark" aria-hidden="true">A7</span>
+        Aurora
+      </span>
+
+      <!-- ============ Cabecera ============ -->
+      <div class="nz-stack nz-stack--sm">
+        <p class="nz-eyebrow">Panel de obra</p>
+        <h1 class="nz-h1" id="titulo-acceso">Accede a tu cuenta</h1>
+        <p class="nz-lead">Expedientes, licencias y equipos, en un solo sitio.</p>
+      </div>
+
+      <!-- ============ Estado de error (quita hidden cuando el login falle) ============ -->
+      <div class="nz-alert nz-alert--danger" role="alert" hidden>
+        <span class="nz-alert__icon" aria-hidden="true">
+          <svg class="nz-icon nz-icon--sm" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m15 9-6 6M9 9l6 6"/></svg>
+        </span>
+        <div class="nz-alert__body">
+          <p class="nz-alert__title">No hemos podido iniciar sesión</p>
+          <p class="nz-alert__msg">El correo o la contraseña no coinciden. Vuelve a intentarlo.</p>
+        </div>
+      </div>
+
+      <!-- ============ Formulario ============ -->
+      <form class="nz-stack nz-stack--sm" action="#" method="post">
+
+        <label class="nz-field">
+          <span class="nz-field__label nz-field__label--req">Correo</span>
+          <span class="nz-input-icon">
+            <svg class="nz-icon nz-icon--sm nz-input-icon__icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+            <input class="nz-input" type="email" name="correo" autocomplete="email" placeholder="tu@estudio.es" required>
+          </span>
+          <span class="nz-field__help">Solo para avisos de obra y acceso.</span>
+        </label>
+
+        <label class="nz-field">
+          <span class="nz-field__label nz-field__label--req">Contraseña</span>
+          <span class="nz-input-icon">
+            <svg class="nz-icon nz-icon--sm nz-input-icon__icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
+            <input class="nz-input" type="password" name="clave" autocomplete="current-password" required minlength="8">
+          </span>
+          <!-- Estado de error por campo (quita hidden si la validación falla) -->
+          <span class="nz-hint-error" hidden>La contraseña debe tener al menos 8 caracteres.</span>
+        </label>
+
+        <div class="nz-cluster nz-cluster--compact nz-cluster--between">
+          <label class="nz-checkbox">
+            <input type="checkbox" name="recordar">
+            <span class="nz-checkbox__box" aria-hidden="true"></span>
+            Recordarme
+          </label>
+          <a class="nz-cta nz-cta--muted nz-cta--sm" href="#">¿Olvidaste la contraseña?</a>
+        </div>
+
+        <!-- CTA único. Estado cargando: muestra el spinner y oculta el icono. -->
+        <button class="nz-btn nz-btn--primary nz-btn--block" type="submit">
+          <span class="nz-spinner nz-spinner--sm" aria-hidden="true" hidden></span>
+          <svg class="nz-icon nz-icon--sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><path d="m10 17 5-5-5-5"/><path d="M15 12H3"/></svg>
+          Entrar
+        </button>
+
+      </form>
+
+      <div class="nz-divider nz-divider--label">o</div>
+
+      <!-- ============ Acción secundaria (no compite con el CTA) ============ -->
+      <button class="nz-btn nz-btn--ghost nz-btn--block" type="button">
+        <svg class="nz-icon nz-icon--sm" viewBox="0 0 24 24" aria-hidden="true"><circle cx="7.5" cy="15.5" r="5.5"/><path d="m21 2-9.6 9.6"/><path d="m15.5 7.5 3 3L22 7l-3-3"/></svg>
+        Acceder con clave de un solo uso
+      </button>
+
+      <p class="nz-center nz-field__help">¿Aún no tienes cuenta? <a class="nz-link" href="#">Solicita acceso</a></p>
+
+    </section>
+
+  </div>
+</main>
+
+<footer class="nz-footer nz-footer--compact nz-center">
+  <p>Hecho con ❤️ por David Antizar</p>
+</footer>
+
+</body>
+</html>

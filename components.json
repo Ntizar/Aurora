@@ -22,7 +22,7 @@
   "objetos": 1907,
   "familias": 350,
   "categorias": 15,
-  "demos": 577,
+  "demos": 578,
   "tokens": 170,
   "tokensDark": 43
  },
@@ -31,8 +31,8 @@
    "categoria": 1,
    "nombre": "Layout y estructura",
    "descripcion": "El esqueleto de cualquier web: contenedores, rejillas y spans, filas, pilas, landmarks, sticky, bleed, regiones de página y helpers de flujo.",
-   "objetos": 178,
-   "familias": 67,
+   "objetos": 177,
+   "familias": 66,
    "demos": 51,
    "pagina": "paginas/01-layout.html"
   },
@@ -40,9 +40,9 @@
    "categoria": 2,
    "nombre": "Navegación",
    "descripcion": "Navbar, menú, sidebar, tabs, breadcrumbs, paginación, TOC, dropdown, nav-footer y stepper. Todo táctil, sin JS (checkbox hack accesible).",
-   "objetos": 77,
+   "objetos": 78,
    "familias": 10,
-   "demos": 35,
+   "demos": 36,
    "pagina": "paginas/02-navigation.html"
   },
   "p3-typography.css": {
@@ -1896,38 +1896,6 @@
    "modificadores": [],
    "partes": []
   },
-  "nz-sidebar": {
-   "pack": "p1-layout.css",
-   "categoria": 1,
-   "demo": "paginas/01-layout.html",
-   "clases": [
-    "nz-sidebar--sticky",
-    "nz-sidebar",
-    "nz-sidebar--bordered",
-    "nz-sidebar--brand",
-    "nz-sidebar--compact",
-    "nz-sidebar__group",
-    "nz-sidebar__heading",
-    "nz-sidebar__link",
-    "nz-sidebar__link--count",
-    "nz-sidebar__link--icon"
-   ],
-   "modificadores": [
-    "sticky",
-    "bordered",
-    "brand",
-    "compact",
-    "count",
-    "icon"
-   ],
-   "partes": [
-    "group",
-    "heading",
-    "link",
-    "link--count",
-    "link--icon"
-   ]
-  },
   "nz-spacer": {
    "pack": "p1-layout.css",
    "categoria": 1,
@@ -2323,6 +2291,38 @@
    "partes": [
     "ellipsis",
     "status"
+   ]
+  },
+  "nz-sidebar": {
+   "pack": "p2-navigation.css",
+   "categoria": 2,
+   "demo": "paginas/02-navigation.html",
+   "clases": [
+    "nz-sidebar",
+    "nz-sidebar--bordered",
+    "nz-sidebar--brand",
+    "nz-sidebar--compact",
+    "nz-sidebar--sticky",
+    "nz-sidebar__group",
+    "nz-sidebar__heading",
+    "nz-sidebar__link",
+    "nz-sidebar__link--count",
+    "nz-sidebar__link--icon"
+   ],
+   "modificadores": [
+    "bordered",
+    "brand",
+    "compact",
+    "sticky",
+    "count",
+    "icon"
+   ],
+   "partes": [
+    "group",
+    "heading",
+    "link",
+    "link--count",
+    "link--icon"
    ]
   },
   "nz-stepper": {

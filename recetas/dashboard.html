@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="es" data-nz-theme="light" data-nz-marca="aurora">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Panel de indicadores · Pulso</title>
+<!--
+  Receta canónica: DASHBOARD / PANEL DE INDICADORES.
+  Forma correcta (COMPOSICION.md §5): nz-appshell + nz-navbar + nz-dash-grid de
+  KPIs arriba y gráficos/tablas en rejilla, a ANCHO COMPLETO (no columna estrecha).
+  Cumple las 12 leyes: 0 emojis (iconos SVG), un título, 4 tamaños, ≤5 momentos de
+  color, un protagonista por sección y los tres estados (vacío / carga / error).
+  Para consumidores, sustituye los enlaces locales por el CDN pineado:
+  https://cdn.jsdelivr.net/gh/Ntizar/Aurora7@vX.Y.Z/tokens.css (+ packs/pN-*.css)
+-->
+<link rel="stylesheet" href="../tokens.css">
+<link rel="stylesheet" href="../packs/p1-layout.css">
+<link rel="stylesheet" href="../packs/p2-navigation.css">
+<link rel="stylesheet" href="../packs/p3-typography.css">
+<link rel="stylesheet" href="../packs/p4-actions.css">
+<link rel="stylesheet" href="../packs/p5-forms.css">
+<link rel="stylesheet" href="../packs/p6-feedback.css">
+<link rel="stylesheet" href="../packs/p8-data.css">
+<link rel="stylesheet" href="../packs/p9-media.css">
+<link rel="stylesheet" href="../packs/p12-system.css">
+<link rel="stylesheet" href="../packs/p13-charts.css">
+</head>
+<body class="nz">
+
+<div class="nz-appshell">
+
+  <!-- ============ Barra superior ============ -->
+  <header class="nz-navbar nz-navbar--bordered">
+    <span class="nz-navbar__brand">
+      <svg class="nz-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12h4l3 9 4-18 3 9h4"/></svg>
+      Pulso
+    </span>
+    <nav class="nz-navbar__links" aria-label="Principal">
+      <a class="nz-navbar__link" href="#" aria-current="page">Panel</a>
+      <a class="nz-navbar__link" href="#">Audiencias</a>
+      <a class="nz-navbar__link" href="#">Informes</a>
+    </nav>
+    <span class="nz-hstack nz-hstack--compact nz-hstack--end">
+      <button class="nz-btn nz-btn--ghost nz-btn--icon" type="button" aria-label="Notificaciones">
+        <svg class="nz-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 8a6 6 0 1 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 0 1-3.4 0"/></svg>
+      </button>
+      <span class="nz-avatar nz-avatar--sm" aria-hidden="true">DA</span>
+    </span>
+  </header>
+
+  <!-- ============ Contenido ============ -->
+  <main class="nz-main nz-main--wide">
+    <div class="nz-container">
+
+      <div class="nz-cluster nz-cluster--between">
+        <div class="nz-stack nz-stack--2xs">
+          <p class="nz-eyebrow">Analítica</p>
+          <h1 class="nz-h1">Panel de indicadores</h1>
+          <p class="nz-lead">Uso del producto en los últimos 30 días. Sincronizado hace 4 minutos.</p>
+        </div>
+        <div class="nz-cluster nz-cluster--compact">
+          <button class="nz-btn nz-btn--outline" type="button">
+            <svg class="nz-icon nz-icon--sm" viewBox="0 0 24 24" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m8.6 13.5 6.8 4M15.4 6.5l-6.8 4"/></svg>
+            Compartir
+          </button>
+          <button class="nz-btn nz-btn--primary" type="button">
+            <svg class="nz-icon nz-icon--sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12"/><path d="m7 12 5 5 5-5"/><path d="M5 21h14"/></svg>
+            Exportar informe
+          </button>
+        </div>
+      </div>
+
+      <!-- ---- KPIs: rejilla de indicadores (4 en escritorio) ---- -->
+      <section class="nz-section" aria-label="Cifras clave">
+        <div class="nz-dash-grid nz-dash-grid--4">
+          <div class="nz-kpi nz-kpi--brand">
+            <span class="nz-kpi__label">Usuarios activos</span>
+            <span class="nz-kpi__value">18 420</span>
+            <span class="nz-kpi__delta nz-kpi__delta--up">+6,2 % este mes</span>
+          </div>
+          <div class="nz-kpi">
+            <span class="nz-kpi__label">Sesiones</span>
+            <span class="nz-kpi__value">92 138</span>
+            <span class="nz-kpi__delta nz-kpi__delta--up">+3,4 %</span>
+          </div>
+          <div class="nz-kpi">
+            <span class="nz-kpi__label">Conversión</span>
+            <span class="nz-kpi__value">4,8 %</span>
+            <span class="nz-kpi__delta nz-kpi__delta--flat">sin cambios</span>
+          </div>
+          <div class="nz-kpi">
+            <span class="nz-kpi__label">Tiempo medio</span>
+            <span class="nz-kpi__value">6m 12s</span>
+            <span class="nz-kpi__delta nz-kpi__delta--down">−0,4 %</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ---- Tendencias: barras + donut ---- -->
+      <section class="nz-section" aria-label="Tendencias">
+        <div class="nz-dash-grid nz-dash-grid--2">
+
+          <figure class="nz-chart">
+            <div class="nz-chart__head">
+              <div>
+                <span class="nz-chart__title">Sesiones por día</span>
+                <span class="nz-chart__sub">Última semana</span>
+              </div>
+              <div class="nz-chart__actions">
+                <button class="nz-btn nz-btn--ghost nz-btn--sm" type="button">Semana</button>
+                <button class="nz-btn nz-btn--ghost nz-btn--sm" type="button">Mes</button>
+              </div>
+            </div>
+            <div class="nz-chart__body">
+              <div class="nz-chart-bar">
+                <div class="nz-chart-bar__col"><span class="nz-chart-bar__value">11,2</span><div class="nz-chart-bar__bar" style="height:52%"></div><span class="nz-chart-bar__label">L</span></div>
+                <div class="nz-chart-bar__col"><span class="nz-chart-bar__value">12,8</span><div class="nz-chart-bar__bar nz-chart-bar__bar--brand" style="height:60%"></div><span class="nz-chart-bar__label">M</span></div>
+                <div class="nz-chart-bar__col"><span class="nz-chart-bar__value">14,1</span><div class="nz-chart-bar__bar nz-chart-bar__bar--brand" style="height:68%"></div><span class="nz-chart-bar__label">X</span></div>
+                <div class="nz-chart-bar__col"><span class="nz-chart-bar__value">15,6</span><div class="nz-chart-bar__bar nz-chart-bar__bar--brand" style="height:76%"></div><span class="nz-chart-bar__label">J</span></div>
+                <div class="nz-chart-bar__col"><span class="nz-chart-bar__value">18,9</span><div class="nz-chart-bar__bar nz-chart-bar__bar--brand" style="height:92%"></div><span class="nz-chart-bar__label">V</span></div>
+                <div class="nz-chart-bar__col"><span class="nz-chart-bar__value">9,4</span><div class="nz-chart-bar__bar" style="height:44%"></div><span class="nz-chart-bar__label">S</span></div>
+                <div class="nz-chart-bar__col"><span class="nz-chart-bar__value">7,7</span><div class="nz-chart-bar__bar" style="height:36%"></div><span class="nz-chart-bar__label">D</span></div>
+              </div>
+            </div>
+            <figcaption class="nz-chart__foot">
+              <span class="nz-legend">
+                <span class="nz-legend__item"><i class="nz-legend__swatch nz-legend__swatch--brand"></i>Esta semana</span>
+                <span class="nz-legend__item"><i class="nz-legend__swatch nz-legend__swatch--muted"></i>Media del mes</span>
+              </span>
+              <span class="nz-chart__source">Fuente: telemetría de producto</span>
+            </figcaption>
+          </figure>
+
+          <figure class="nz-chart">
+            <div class="nz-chart__head">
+              <div>
+                <span class="nz-chart__title">Reparto por plataforma</span>
+                <span class="nz-chart__sub">Sesiones de los últimos 30 días</span>
+              </div>
+            </div>
+            <div class="nz-chart__body">
+              <div class="nz-chart-donut">
+                <svg class="nz-chart-donut__svg" viewBox="0 0 42 42" role="img" aria-label="Reparto de sesiones por plataforma">
+                  <circle class="nz-chart-donut__track" cx="21" cy="21" r="15.9"></circle>
+                  <circle class="nz-chart-donut__seg nz-chart-donut__seg--brand" cx="21" cy="21" r="15.9" stroke-dasharray="62 38"></circle>
+                  <circle class="nz-chart-donut__seg nz-chart-donut__seg--success" cx="21" cy="21" r="15.9" stroke-dasharray="26 74" stroke-dashoffset="-62"></circle>
+                  <circle class="nz-chart-donut__seg nz-chart-donut__seg--muted" cx="21" cy="21" r="15.9" stroke-dasharray="12 88" stroke-dashoffset="-88"></circle>
+                </svg>
+                <div class="nz-chart-donut__center">
+                  <span class="nz-chart-donut__value">62%</span>
+                  <span class="nz-chart-donut__label">móvil</span>
+                </div>
+              </div>
+            </div>
+            <figcaption class="nz-chart__foot">
+              <span class="nz-legend">
+                <span class="nz-legend__item"><i class="nz-legend__swatch nz-legend__swatch--brand"></i>Móvil 62%</span>
+                <span class="nz-legend__item"><i class="nz-legend__swatch nz-legend__swatch--success"></i>Escritorio 26%</span>
+                <span class="nz-legend__item"><i class="nz-legend__swatch nz-legend__swatch--muted"></i>Tableta 12%</span>
+              </span>
+            </figcaption>
+          </figure>
+
+        </div>
+      </section>
+
+      <!-- ---- Actividad + estados de la vista de datos ---- -->
+      <section class="nz-section" aria-label="Actividad y estado">
+        <div class="nz-dash-grid nz-dash-grid--2">
+
+          <figure class="nz-chart">
+            <div class="nz-chart__head">
+              <div>
+                <span class="nz-chart__title">Actividad acumulada</span>
+                <span class="nz-chart__sub">Sesiones por semana, últimos 3 meses</span>
+              </div>
+            </div>
+            <div class="nz-chart__body">
+              <div class="nz-chart-line nz-chart-line--lg">
+                <svg class="nz-chart-line__svg" viewBox="0 0 300 100" preserveAspectRatio="none" role="img" aria-label="Serie de actividad acumulada">
+                  <path class="nz-chart-line__area" d="M0,74 L50,60 L100,64 L150,42 L200,48 L250,26 L300,18 L300,100 L0,100 Z"></path>
+                  <path class="nz-chart-line__path" d="M0,74 L50,60 L100,64 L150,42 L200,48 L250,26 L300,18"></path>
+                  <circle class="nz-chart-line__dot" cx="100" cy="64" r="3"></circle>
+                  <circle class="nz-chart-line__dot" cx="200" cy="48" r="3"></circle>
+                  <circle class="nz-chart-line__dot nz-chart-line__dot--active" cx="250" cy="26" r="4"></circle>
+                </svg>
+              </div>
+            </div>
+            <figcaption class="nz-chart__foot">
+              <span class="nz-chart__source">El punto marcado es la campaña de reactivación.</span>
+            </figcaption>
+          </figure>
+
+          <div class="nz-stack nz-stack--sm">
+
+            <div class="nz-alert nz-alert--danger" role="alert">
+              <span class="nz-alert__icon" aria-hidden="true">
+                <svg class="nz-icon nz-icon--sm" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg>
+              </span>
+              <div class="nz-alert__body">
+                <p class="nz-alert__title">No se pudo cargar el detalle por campaña</p>
+                <p class="nz-alert__msg">La fuente de atribución no respondió. Vuelve a intentarlo en unos minutos o revisa la conexión del origen de datos.</p>
+              </div>
+            </div>
+
+            <div class="nz-chart nz-chart--bordered">
+              <div class="nz-chart__head">
+                <span class="nz-chart__title">Ingresos por canal</span>
+              </div>
+              <div class="nz-chart__body">
+                <div class="nz-chart__loading">
+                  <span class="nz-spinner nz-spinner--sm"></span>
+                  Cargando series…
+                </div>
+              </div>
+            </div>
+
+            <div class="nz-chart nz-chart--bordered">
+              <div class="nz-chart__head">
+                <span class="nz-chart__title">Objetivos del trimestre</span>
+              </div>
+              <div class="nz-chart__body">
+                <div class="nz-chart__empty">
+                  <b>Sin objetivos todavía</b>
+                  <span>Define una meta de trimestre para ver aquí el avance.</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- ---- Eventos recientes: tabla apilable con estados ---- -->
+      <section class="nz-section" aria-label="Eventos recientes">
+
+        <div class="nz-toolbar">
+          <span class="nz-field">
+            <label class="nz-field__label nz-visually-hidden" for="buscar">Buscar evento</label>
+            <span class="nz-input-icon">
+              <svg class="nz-icon nz-icon--sm nz-input-icon__icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+              <input class="nz-input" id="buscar" type="search" placeholder="Buscar por origen o etiqueta">
+            </span>
+          </span>
+          <span class="nz-segmented" role="group" aria-label="Filtro de estado">
+            <button type="button" aria-selected="true">Todos</button>
+            <button type="button" aria-selected="false">Con error</button>
+            <button type="button" aria-selected="false">En curso</button>
+          </span>
+          <span class="nz-toolbar__spacer"></span>
+          <button class="nz-btn nz-btn--outline nz-btn--sm" type="button">Exportar</button>
+        </div>
+
+        <div class="nz-table-wrap nz-table-wrap--apilable">
+          <table class="nz-table nz-table--apilable nz-table--hover">
+            <thead>
+              <tr>
+                <th scope="col">Evento</th>
+                <th scope="col">Origen</th>
+                <th scope="col">Estado</th>
+                <th scope="col" class="nz-table__right">Impacto</th>
+                <th scope="col" class="nz-table__right">Acciones</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">
+                  <span class="nz-table__strong">Pico de registros</span><br>
+                  <span class="nz-table__muted">hace 12 min</span>
+                </th>
+                <td data-etiqueta="Origen"><span class="nz-badge nz-badge--success">Web</span></td>
+                <td data-etiqueta="Estado"><span class="nz-table__status nz-table__status--ok">Resuelto</span></td>
+                <td data-etiqueta="Impacto" class="nz-table__num nz-table__right">+1 240</td>
+                <td data-etiqueta="Acciones" class="nz-table__right">
+                  <button class="nz-btn nz-btn--ghost nz-btn--icon-sm" type="button" aria-label="Ver detalle del pico de registros">
+                    <svg class="nz-icon nz-icon--sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">
+                  <span class="nz-table__strong">Fallo de sincronización</span><br>
+                  <span class="nz-table__muted">hace 40 min</span>
+                </th>
+                <td data-etiqueta="Origen"><span class="nz-badge nz-badge--neutral">API</span></td>
+                <td data-etiqueta="Estado"><span class="nz-table__status nz-table__status--err">Con error</span></td>
+                <td data-etiqueta="Impacto" class="nz-table__num nz-table__right">−318</td>
+                <td data-etiqueta="Acciones" class="nz-table__right">
+                  <button class="nz-btn nz-btn--ghost nz-btn--icon-sm" type="button" aria-label="Reintentar la sincronización con la API">
+                    <svg class="nz-icon nz-icon--sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12a9 9 0 1 1-3-6.7"/><path d="M21 4v5h-5"/></svg>
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">
+                  <span class="nz-table__strong">Campaña de reactivación</span><br>
+                  <span class="nz-table__muted">hace 2 h</span>
+                </th>
+                <td data-etiqueta="Origen"><span class="nz-badge nz-badge--neutral">Email</span></td>
+                <td data-etiqueta="Estado"><span class="nz-table__status nz-table__status--warn">En curso</span></td>
+                <td data-etiqueta="Impacto" class="nz-table__num nz-table__right">+642</td>
+                <td data-etiqueta="Acciones" class="nz-table__right">
+                  <button class="nz-btn nz-btn--ghost nz-btn--icon-sm" type="button" aria-label="Ver detalle de la campaña de reactivación">
+                    <svg class="nz-icon nz-icon--sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p style="font-size:var(--nz-text-sm);color:var(--nz-text-mute)">Se muestran 3 de 96 eventos de las últimas 24 horas.</p>
+
+      </section>
+
+    </div>
+  </main>
+
+  <!-- ============ Pie ============ -->
+  <footer class="nz-footer nz-footer--compact">
+    <p>Hecho con ❤️ por David Antizar</p>
+  </footer>
+
+</div>
+
+</body>
+</html>

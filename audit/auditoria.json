@@ -1,10 +1,10 @@
 {
  "resumen": {
-  "objetos_declarados": 1900,
-  "familias": 349,
-  "demos": 576,
+  "objetos_declarados": 1907,
+  "familias": 350,
+  "demos": 578,
   "categorias": 15,
-  "clases_usadas_en_demos": 1900,
+  "clases_usadas_en_demos": 1907,
   "clases_sin_demo": 0,
   "familias_sin_demo": 0,
   "fantasmas": 0,
@@ -20,9 +20,9 @@
  "packs": {
   "p1-layout.css": {
    "lineas": 360,
-   "bytes": 21561,
-   "clases": 178,
-   "familias": 67,
+   "bytes": 21503,
+   "clases": 177,
+   "familias": 66,
    "hex": 0,
    "gradientes": 0,
    "glass": 0,
@@ -59,8 +59,8 @@
    "important": 1
   },
   "p13-charts.css": {
-   "lineas": 284,
-   "bytes": 22237,
+   "lineas": 293,
+   "bytes": 22846,
    "clases": 210,
    "familias": 21,
    "hex": 0,
@@ -69,8 +69,8 @@
    "important": 0
   },
   "p14-ai.css": {
-   "lineas": 281,
-   "bytes": 23871,
+   "lineas": 287,
+   "bytes": 24123,
    "clases": 180,
    "familias": 28,
    "hex": 0,
@@ -89,9 +89,9 @@
    "important": 0
   },
   "p2-navigation.css": {
-   "lineas": 178,
-   "bytes": 18109,
-   "clases": 77,
+   "lineas": 179,
+   "bytes": 18259,
+   "clases": 78,
    "familias": 10,
    "hex": 0,
    "gradientes": 0,
@@ -109,8 +109,8 @@
    "important": 0
   },
   "p4-actions.css": {
-   "lineas": 166,
-   "bytes": 12541,
+   "lineas": 172,
+   "bytes": 12788,
    "clases": 78,
    "familias": 7,
    "hex": 0,
@@ -119,8 +119,8 @@
    "important": 0
   },
   "p5-forms.css": {
-   "lineas": 272,
-   "bytes": 22760,
+   "lineas": 278,
+   "bytes": 22984,
    "clases": 102,
    "familias": 20,
    "hex": 0,
@@ -130,7 +130,7 @@
   },
   "p6-feedback.css": {
    "lineas": 267,
-   "bytes": 24142,
+   "bytes": 24175,
    "clases": 153,
    "familias": 19,
    "hex": 0,
@@ -139,8 +139,8 @@
    "important": 0
   },
   "p7-overlays.css": {
-   "lineas": 203,
-   "bytes": 23192,
+   "lineas": 207,
+   "bytes": 23378,
    "clases": 118,
    "familias": 12,
    "hex": 0,
@@ -159,10 +159,10 @@
    "important": 0
   },
   "p9-media.css": {
-   "lineas": 179,
-   "bytes": 14205,
-   "clases": 112,
-   "familias": 17,
+   "lineas": 205,
+   "bytes": 15179,
+   "clases": 119,
+   "familias": 18,
    "hex": 0,
    "gradientes": 0,
    "glass": 0,
@@ -174,16 +174,16 @@
    "nombre": "Layout y estructura",
    "pack": "p1-layout.css",
    "demos": 51,
-   "objetos": 178,
-   "familias": 67,
+   "objetos": 177,
+   "familias": 66,
    "sin_demo": [],
    "familias_sin_demo": []
   },
   "2": {
    "nombre": "Navegación",
    "pack": "p2-navigation.css",
-   "demos": 35,
-   "objetos": 77,
+   "demos": 36,
+   "objetos": 78,
    "familias": 10,
    "sin_demo": [],
    "familias_sin_demo": []
@@ -245,9 +245,9 @@
   "9": {
    "nombre": "Media e iconografía",
    "pack": "p9-media.css",
-   "demos": 41,
-   "objetos": 112,
-   "familias": 17,
+   "demos": 42,
+   "objetos": 119,
+   "familias": 18,
    "sin_demo": [],
    "familias_sin_demo": []
   },
@@ -2473,6 +2473,21 @@
     "nowrap",
     "spacious",
     "top"
+   ],
+   "partes": [],
+   "demostrado": true
+  },
+  "nz-icon": {
+   "cat": 9,
+   "pack": "p9-media.css",
+   "n_clases": 7,
+   "mods": [
+    "brand",
+    "filled",
+    "lg",
+    "muted",
+    "sm",
+    "xl"
    ],
    "partes": [],
    "demostrado": true

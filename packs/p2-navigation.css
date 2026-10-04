@@ -51,6 +51,7 @@
 .nz-sidebar__link[aria-current="page"] { background: var(--nz-brand); color: var(--nz-text-invert); font-weight: 600; }
 .nz-sidebar__link--count::after { content: attr(data-count); margin-left: auto; font-size: var(--nz-text-2xs); color: var(--nz-text-faint); font-variant-numeric: tabular-nums; }
 .nz-sidebar__link--icon { justify-content: center; min-width: 44px; padding-inline: 0; }
+.nz-sidebar--sticky { position: sticky; top: var(--nz-space-6); align-self: start; max-height: calc(100dvh - var(--nz-space-12)); overflow-y: auto; }
 .nz-sidebar__group { display: flex; flex-direction: column; gap: var(--nz-space-1); padding-inline-start: var(--nz-space-3); border-inline-start: var(--nz-border-w) solid var(--nz-border-soft); }
 .nz-sidebar--compact { gap: var(--nz-space-1); padding: var(--nz-space-2); }
 .nz-sidebar--bordered { border: var(--nz-border-w) solid var(--nz-border-soft); }

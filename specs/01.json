@@ -116,9 +116,9 @@
       "markup": "<div class=\"nz-appshell demo-box\" style=\"min-height:9rem;gap:var(--nz-space-2)\"><div class=\"demo-box demo-box--brand\">fila 1 · header (auto)</div><div class=\"demo-box\" style=\"display:flex;align-items:center;justify-content:center\">fila 2 · contenido (1fr)</div><div class=\"demo-box\">fila 3 · footer (auto)</div></div>"
     },
     {
-      "titulo": "Sidebar sticky y spacers",
-      "tag": ".nz-sidebar--sticky · .nz-spacer · --fixed · --sm · --lg",
-      "markup": "<div class=\"nz-with-sidebar\"><div class=\"nz-sidebar--sticky demo-box\">.nz-sidebar--sticky · sigue el scroll con su propio top y max-height</div><div class=\"demo-box\" style=\"min-height:7rem\">contenido que hace scroll</div></div><div class=\"nz-hstack\" style=\"width:100%\"><span class=\"demo-box\">izquierda</span><span class=\"nz-spacer\"></span><span class=\"demo-box\">derecha (el spacer empuja)</span></div><div class=\"nz-hstack\" style=\"width:100%\"><span class=\"demo-box\">a</span><span class=\"nz-spacer nz-spacer--sm\"></span><span class=\"demo-box\">spacer--sm 16px</span></div><div class=\"nz-hstack\" style=\"width:100%\"><span class=\"demo-box\">b</span><span class=\"nz-spacer nz-spacer--fixed\"></span><span class=\"demo-box\">spacer--fixed 32px</span></div><div class=\"nz-hstack\" style=\"width:100%\"><span class=\"demo-box\">c</span><span class=\"nz-spacer nz-spacer--lg\"></span><span class=\"demo-box\">spacer--lg 48px</span></div>"
+      "titulo": "Spacers flexibles",
+      "tag": ".nz-spacer · --sm · --fixed · --lg",
+      "markup": "<div class=\"nz-hstack\" style=\"width:100%\"><span class=\"demo-box\">izquierda</span><span class=\"nz-spacer\"></span><span class=\"demo-box\">derecha (el spacer empuja)</span></div><div class=\"nz-hstack\" style=\"width:100%\"><span class=\"demo-box\">a</span><span class=\"nz-spacer nz-spacer--sm\"></span><span class=\"demo-box\">spacer--sm 16px</span></div><div class=\"nz-hstack\" style=\"width:100%\"><span class=\"demo-box\">b</span><span class=\"nz-spacer nz-spacer--fixed\"></span><span class=\"demo-box\">spacer--fixed 32px</span></div><div class=\"nz-hstack\" style=\"width:100%\"><span class=\"demo-box\">c</span><span class=\"nz-spacer nz-spacer--lg\"></span><span class=\"demo-box\">spacer--lg 48px</span></div>"
     },
     {
       "titulo": "Divisores: línea, vertical, dashed y dotted",
