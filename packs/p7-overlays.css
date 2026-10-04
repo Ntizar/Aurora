@@ -40,15 +40,19 @@
 .nz-drawer { position: fixed; inset: 0; z-index: var(--nz-z-drawer); visibility: hidden; }
 .nz-drawer > input { position: absolute; opacity: 0; pointer-events: none; }
 .nz-drawer__scrim { position: absolute; inset: 0; background: var(--nz-overlay); opacity: 0; transition: opacity var(--nz-dur-base) var(--nz-ease-out); }
-.nz-drawer__panel { position: absolute; top: 0; bottom: 0; width: min(85vw, 20rem); background: var(--nz-surface); box-shadow: var(--nz-shadow-xl); display: flex; flex-direction: column; transition: transform var(--nz-dur-base) var(--nz-ease-out); }
-.nz-drawer__panel--right { right: 0; transform: translateX(100%); }
-.nz-drawer__panel--left { left: 0; transform: translateX(-100%); }
+.nz-drawer__panel { position: absolute; top: 0; bottom: 0; width: min(85vw, 20rem); background: var(--nz-surface); box-shadow: var(--nz-shadow-xl); display: none; flex-direction: column; }
+.nz-drawer > input:checked ~ .nz-drawer__panel { display: flex; animation: nz-drawer-entra var(--nz-dur-base) var(--nz-ease-out); }
+@keyframes nz-drawer-entra { from { transform: translateX(100%); } }
+.nz-drawer__panel--left { animation-name: nz-drawer-entra-izq; }
+@keyframes nz-drawer-entra-izq { from { transform: translateX(-100%); } }
+.nz-drawer__panel--right { right: 0; }
+.nz-drawer__panel--left { left: 0; }
 .nz-drawer--sm .nz-drawer__panel { width: min(78vw, 15rem); }
 .nz-drawer--lg .nz-drawer__panel { width: min(92vw, 28rem); }
 .nz-drawer--flotante .nz-drawer__panel { top: var(--nz-space-4); bottom: var(--nz-space-4); border-radius: var(--nz-radius-xl); box-shadow: var(--nz-shadow-lg); }
 .nz-drawer > input:checked ~ .nz-drawer__scrim { opacity: 1; visibility: visible; }
-.nz-drawer > input:checked ~ .nz-drawer__panel--right { transform: none; visibility: visible; }
-.nz-drawer > input:checked ~ .nz-drawer__panel--left { transform: none; visibility: visible; }
+.nz-drawer > input:checked ~ .nz-drawer__panel--right { visibility: visible; }
+.nz-drawer > input:checked ~ .nz-drawer__panel--left { visibility: visible; }
 .nz-drawer__head { display: flex; align-items: center; gap: var(--nz-space-3); padding: var(--nz-space-4); border-bottom: var(--nz-border-w) solid var(--nz-border-soft); }
 .nz-drawer__title { flex: 1; font-weight: 700; }
 .nz-drawer__body { flex: 1; overflow-y: auto; padding: var(--nz-space-4); display: flex; flex-direction: column; gap: var(--nz-space-4); }

@@ -1,0 +1,1602 @@
+{
+ "01-layout.html": {
+  "320": {
+   "scrollW": 320,
+   "clientW": 320,
+   "vw": 320,
+   "fuera": [],
+   "nFuera": 0,
+   "clipados": [
+    {
+     "clase": "demo-box",
+     "exceso": 70
+    }
+   ],
+   "nClipados": 1,
+   "tactil": {
+    "nClick": 146,
+    "nPeq": 1,
+    "peq": [
+     {
+      "clase": "cat-filters__chip",
+      "w": 43,
+      "h": 44,
+      "texto": ".col"
+     }
+    ],
+    "nTexto": 1
+   }
+  },
+  "360": {
+   "scrollW": 360,
+   "clientW": 360,
+   "vw": 360,
+   "fuera": [],
+   "nFuera": 0,
+   "clipados": [
+    {
+     "clase": "demo-box",
+     "exceso": 30
+    }
+   ],
+   "nClipados": 1,
+   "tactil": {
+    "nClick": 146,
+    "nPeq": 2,
+    "peq": [
+     {
+      "clase": "cat-filters__chip",
+      "w": 43,
+      "h": 44,
+      "texto": ".col"
+     },
+     {
+      "clase": "summary",
+      "w": 215,
+      "h": 26,
+      "texto": "Panel abierto (is-open)"
+     }
+    ],
+    "nTexto": 1
+   }
+  },
+  "390": {
+   "scrollW": 390,
+   "clientW": 390,
+   "vw": 390,
+   "fuera": [],
+   "nFuera": 0,
+   "clipados": [],
+   "nClipados": 0,
+   "tactil": {
+    "nClick": 146,
+    "nPeq": 2,
+    "peq": [
+     {
+      "clase": "cat-filters__chip",
+      "w": 43,
+      "h": 44,
+      "texto": ".col"
+     },
+     {
+      "clase": "summary",
+      "w": 245,
+      "h": 26,
+      "texto": "Panel abierto (is-open)"
+     }
+    ],
+    "nTexto": 1
+   }
+  }
+ },
+ "02-navigation.html": {
+  "320": {
+   "scrollW": 320,
+   "clientW": 320,
+   "vw": 320,
+   "fuera": [],
+   "nFuera": 0,
+   "clipados": [],
+   "nClipados": 0,
+   "tactil": {
+    "nClick": 198,
+    "nPeq": 7,
+    "peq": [
+     {
+      "clase": "cat-filters__chip",
+      "w": 40,
+      "h": 44,
+      "texto": ".vh"
+     },
+     {
+      "clase": "a",
+      "w": 31,
+      "h": 44,
+      "texto": "Inicio"
+     },
+     {
+      "clase": "a",
+      "w": 28,
+      "h": 44,
+      "texto": "Docs"
+     },
+     {
+      "clase": "a",
+      "w": 28,
+      "h": 44,
+      "texto": "Inicio"
+     },
+     {
+      "clase": "a",
+      "w": 28,
+      "h": 44,
+      "texto": "Panel"
+     },
+     {
+      "clase": "a",
+      "w": 31,
+      "h": 44,
+      "texto": "Inicio"
+     },
+     {
+      "clase": "a",
+      "w": 28,
+      "h": 44,
+      "texto": "Docs"
+     }
+    ],
+    "nTexto": 2
+   }
+  },
+  "360": {
+   "scrollW": 360,
+   "clientW": 360,
+   "vw": 360,
+   "fuera": [],
+   "nFuera": 0,
+   "clipados": [],
+   "nClipados": 0,
+   "tactil": {
+    "nClick": 198,
+    "nPeq": 7,
+    "peq": [
+     {
+      "clase": "cat-filters__chip",
+      "w": 40,
+      "h": 44,
+      "texto": ".vh"
+     },
+     {
+      "clase": "a",
+      "w": 31,
+      "h": 44,
+      "texto": "Inicio"
+     },
+     {
+      "clase": "a",
+      "w": 28,
+      "h": 44,
+      "texto": "Docs"
+     },
+     {
+      "clase": "a",
+      "w": 28,
+      "h": 44,
+      "texto": "Inicio"
+     },
+     {
+      "clase": "a",
+      "w": 28,
+      "h": 44,
+      "texto": "Panel"
+     },
+     {
+      "clase": "a",
+      "w": 31,
+      "h": 44,
+      "texto": "Inicio"
+     },
+     {
+      "clase": "a",
+      "w": 28,
+      "h": 44,
+      "texto": "Docs"
+     }
+    ],
+    "nTexto": 1
+   }
+  },
+  "390": {
+   "scrollW": 390,
+   "clientW": 390,
+   "vw": 390,
+   "fuera": [],
+   "nFuera": 0,
+   "clipados": [],
+   "nClipados": 0,
+   "tactil": {
+    "nClick": 198,
+    "nPeq": 7,
+    "peq": [
+     {
+      "clase": "cat-filters__chip",
+      "w": 40,
+      "h": 44,
+      "texto": ".vh"
+     },
+     {
+      "clase": "a",
+      "w": 31,
+      "h": 44,
+      "texto": "Inicio"
+     },
+     {
+      "clase": "a",
+      "w": 28,
+      "h": 44,
+      "texto": "Docs"
+     },
+     {
+      "clase": "a",
+      "w": 28,
+      "h": 44,
+      "texto": "Inicio"
+     },
+     {
+      "clase": "a",
+      "w": 28,
+      "h": 44,
+      "texto": "Panel"
+     },
+     {
+      "clase": "a",
+      "w": 31,
+      "h": 44,
+      "texto": "Inicio"
+     },
+     {
+      "clase": "a",
+      "w": 28,
+      "h": 44,
+      "texto": "Docs"
+     }
+    ],
+    "nTexto": 2
+   }
+  }
+ },
+ "03-typography.html": {
+  "320": {
+   "scrollW": 320,
+   "clientW": 320,
+   "vw": 320,
+   "fuera": [],
+   "nFuera": 0,
+   "clipados": [],
+   "nClipados": 0,
+   "tactil": {
+    "nClick": 129,
+    "nPeq": 0,
+    "peq": [],
+    "nTexto": 3
+   }
+  },
+  "360": {
+   "scrollW": 360,
+   "clientW": 360,
+   "vw": 360,
+   "fuera": [],
+   "nFuera": 0,
+   "clipados": [],
+   "nClipados": 0,
+   "tactil": {
+    "nClick": 129,
+    "nPeq": 0,
+    "peq": [],
+    "nTexto": 4
+   }
+  },
+  "390": {
+   "scrollW": 390,
+   "clientW": 390,
+   "vw": 390,
+   "fuera": [],
+   "nFuera": 0,
+   "clipados": [],
+   "nClipados": 0,
+   "tactil": {
+    "nClick": 129,
+    "nPeq": 0,
+    "peq": [],
+    "nTexto": 4
+   }
+  }
+ },
+ "04-actions.html": {
+  "320": {
+   "scrollW": 320,
+   "clientW": 320,
+   "vw": 320,
+   "fuera": [],
+   "nFuera": 0,
+   "clipados": [],
+   "nClipados": 0,
+   "tactil": {
+    "nClick": 161,
+    "nPeq": 11,
+    "peq": [
+     {
+      "clase": "cat-filters__chip",
+      "w": 43,
+      "h": 44,
+      "texto": ".cta"
+     },
+     {
+      "clase": "nz-btn",
+      "w": 44,
+      "h": 28,
+      "texto": "2XS"
+     },
+     {
+      "clase": "nz-btn",
+      "w": 44,
+      "h": 32,
+      "texto": "XS"
+     },
+     {
+      "clase": "nz-cta",
+      "w": 80,
+      "h": 24,
+      "texto": "Explorar→"
+     },
+     {
+      "clase": "nz-cta",
+      "w": 62,
+      "h": 24,
+      "texto": "Comprar"
+     },
+     {
+      "clase": "nz-cta",
+      "w": 53,
+      "h": 21,
+      "texto": "Pequeño"
+     },
+     {
+      "clase": "nz-cta",
+      "w": 61,
+      "h": 29,
+      "texto": "Grande"
+     },
+     {
+      "clase": "nz-cta",
+      "w": 58,
+      "h": 24,
+      "texto": "Discreto"
+     },
+     {
+      "clase": "nz-cta",
+      "w": 75,
+      "h": 24,
+      "texto": "Subrayado"
+     },
+     {
+      "clase": "nz-btn",
+      "w": 58,
+      "h": 32,
+      "texto": "Corto"
+     },
+     {
+      "clase": "nz-btn",
+      "w": 83,
+      "h": 32,
+      "texto": "Compacto"
+     }
+    ],
+    "nTexto": 1
+   }
+  },
+  "360": {
+   "scrollW": 360,
+   "clientW": 360,
+   "vw": 360,
+   "fuera": [],
+   "nFuera": 0,
+   "clipados": [],
+   "nClipados": 0,
+   "tactil": {
+    "nClick": 161,
+    "nPeq": 11,
+    "peq": [
+     {
+      "clase": "cat-filters__chip",
+      "w": 43,
+      "h": 44,
+      "texto": ".cta"
+     },
+     {
+      "clase": "nz-btn",
+      "w": 44,
+      "h": 28,
+      "texto": "2XS"
+     },
+     {
+      "clase": "nz-btn",
+      "w": 44,
+      "h": 32,
+      "texto": "XS"
+     },
+     {
+      "clase": "nz-cta",
+      "w": 80,
+      "h": 24,
+      "texto": "Explorar→"
+     },
+     {
+      "clase": "nz-cta",
+      "w": 62,
+      "h": 24,
+      "texto": "Comprar"
+     },
+     {
+      "clase": "nz-cta",
+      "w": 53,
+      "h": 21,
+      "texto": "Pequeño"
+     },
+     {
+      "clase": "nz-cta",
+      "w": 61,
+      "h": 29,
+      "texto": "Grande"
+     },
+     {
+      "clase": "nz-cta",
+      "w": 58,
+      "h": 24,
+      "texto": "Discreto"
+     },
+     {
+      "clase": "nz-cta",
+      "w": 75,
+      "h": 24,
+      "texto": "Subrayado"
+     },
+     {
+      "clase": "nz-btn",
+      "w": 58,
+      "h": 32,
+      "texto": "Corto"
+     },
+     {
+      "clase": "nz-btn",
+      "w": 83,
+      "h": 32,
+      "texto": "Compacto"
+     }
+    ],
+    "nTexto": 1
+   }
+  },
+  "390": {
+   "scrollW": 390,
+   "clientW": 390,
+   "vw": 390,
+   "fuera": [],
+   "nFuera": 0,
+   "clipados": [],
+   "nClipados": 0,
+   "tactil": {
+    "nClick": 161,
+    "nPeq": 11,
+    "peq": [
+     {
+      "clase": "cat-filters__chip",
+      "w": 43,
+      "h": 44,
+      "texto": ".cta"
+     },
+     {
+      "clase": "nz-btn",
+      "w": 44,
+      "h": 28,
+      "texto": "2XS"
+     },
+     {
+      "clase": "nz-btn",
+      "w": 44,
+      "h": 32,
+      "texto": "XS"
+     },
+     {
+      "clase": "nz-cta",
+      "w": 80,
+      "h": 24,
+      "texto": "Explorar→"
+     },
+     {
+      "clase": "nz-cta",
+      "w": 62,
+      "h": 24,
+      "texto": "Comprar"
+     },
+     {
+      "clase": "nz-cta",
+      "w": 53,
+      "h": 21,
+      "texto": "Pequeño"
+     },
+     {
+      "clase": "nz-cta",
+      "w": 61,
+      "h": 29,
+      "texto": "Grande"
+     },
+     {
+      "clase": "nz-cta",
+      "w": 58,
+      "h": 24,
+      "texto": "Discreto"
+     },
+     {
+      "clase": "nz-cta",
+      "w": 75,
+      "h": 24,
+      "texto": "Subrayado"
+     },
+     {
+      "clase": "nz-btn",
+      "w": 58,
+      "h": 32,
+      "texto": "Corto"
+     },
+     {
+      "clase": "nz-btn",
+      "w": 83,
+      "h": 32,
+      "texto": "Compacto"
+     }
+    ],
+    "nTexto": 1
+   }
+  }
+ },
+ "05-forms.html": {
+  "320": {
+   "scrollW": 320,
+   "clientW": 320,
+   "vw": 320,
+   "fuera": [],
+   "nFuera": 0,
+   "clipados": [],
+   "nClipados": 0,
+   "tactil": {
+    "nClick": 225,
+    "nPeq": 4,
+    "peq": [
+     {
+      "clase": "input",
+      "w": 40,
+      "h": 44,
+      "texto": ""
+     },
+     {
+      "clase": "input",
+      "w": 40,
+      "h": 44,
+      "texto": "2"
+     },
+     {
+      "clase": "input",
+      "w": 40,
+      "h": 44,
+      "texto": ""
+     },
+     {
+      "clase": "input",
+      "w": 40,
+      "h": 44,
+      "texto": ""
+     }
+    ],
+    "nTexto": 1
+   }
+  },
+  "360": {
+   "scrollW": 360,
+   "clientW": 360,
+   "vw": 360,
+   "fuera": [],
+   "nFuera": 0,
+   "clipados": [],
+   "nClipados": 0,
+   "tactil": {
+    "nClick": 225,
+    "nPeq": 4,
+    "peq": [
+     {
+      "clase": "input",
+      "w": 40,
+      "h": 44,
+      "texto": ""
+     },
+     {
+      "clase": "input",
+      "w": 40,
+      "h": 44,
+      "texto": "2"
+     },
+     {
+      "clase": "input",
+      "w": 40,
+      "h": 44,
+      "texto": ""
+     },
+     {
+      "clase": "input",
+      "w": 40,
+      "h": 44,
+      "texto": ""
+     }
+    ],
+    "nTexto": 1
+   }
+  },
+  "390": {
+   "scrollW": 390,
+   "clientW": 390,
+   "vw": 390,
+   "fuera": [],
+   "nFuera": 0,
+   "clipados": [],
+   "nClipados": 0,
+   "tactil": {
+    "nClick": 225,
+    "nPeq": 4,
+    "peq": [
+     {
+      "clase": "input",
+      "w": 40,
+      "h": 44,
+      "texto": ""
+     },
+     {
+      "clase": "input",
+      "w": 40,
+      "h": 44,
+      "texto": "2"
+     },
+     {
+      "clase": "input",
+      "w": 40,
+      "h": 44,
+      "texto": ""
+     },
+     {
+      "clase": "input",
+      "w": 40,
+      "h": 44,
+      "texto": ""
+     }
+    ],
+    "nTexto": 1
+   }
+  }
+ },
+ "06-feedback.html": {
+  "320": {
+   "scrollW": 320,
+   "clientW": 320,
+   "vw": 320,
+   "fuera": [],
+   "nFuera": 0,
+   "clipados": [],
+   "nClipados": 0,
+   "tactil": {
+    "nClick": 157,
+    "nPeq": 0,
+    "peq": [],
+    "nTexto": 1
+   }
+  },
+  "360": {
+   "scrollW": 360,
+   "clientW": 360,
+   "vw": 360,
+   "fuera": [],
+   "nFuera": 0,
+   "clipados": [],
+   "nClipados": 0,
+   "tactil": {
+    "nClick": 157,
+    "nPeq": 0,
+    "peq": [],
+    "nTexto": 1
+   }
+  },
+  "390": {
+   "scrollW": 390,
+   "clientW": 390,
+   "vw": 390,
+   "fuera": [],
+   "nFuera": 0,
+   "clipados": [],
+   "nClipados": 0,
+   "tactil": {
+    "nClick": 157,
+    "nPeq": 0,
+    "peq": [],
+    "nTexto": 1
+   }
+  }
+ },
+ "07-overlays.html": {
+  "320": {
+   "scrollW": 320,
+   "clientW": 320,
+   "vw": 320,
+   "fuera": [],
+   "nFuera": 0,
+   "clipados": [],
+   "nClipados": 0,
+   "tactil": {
+    "nClick": 123,
+    "nPeq": 1,
+    "peq": [
+     {
+      "clase": "cat-filters__chip",
+      "w": 42,
+      "h": 44,
+      "texto": ".tip"
+     }
+    ],
+    "nTexto": 1
+   }
+  },
+  "360": {
+   "scrollW": 360,
+   "clientW": 360,
+   "vw": 360,
+   "fuera": [],
+   "nFuera": 0,
+   "clipados": [],
+   "nClipados": 0,
+   "tactil": {
+    "nClick": 123,
+    "nPeq": 1,
+    "peq": [
+     {
+      "clase": "cat-filters__chip",
+      "w": 42,
+      "h": 44,
+      "texto": ".tip"
+     }
+    ],
+    "nTexto": 1
+   }
+  },
+  "390": {
+   "scrollW": 390,
+   "clientW": 390,
+   "vw": 390,
+   "fuera": [],
+   "nFuera": 0,
+   "clipados": [],
+   "nClipados": 0,
+   "tactil": {
+    "nClick": 123,
+    "nPeq": 1,
+    "peq": [
+     {
+      "clase": "cat-filters__chip",
+      "w": 42,
+      "h": 44,
+      "texto": ".tip"
+     }
+    ],
+    "nTexto": 1
+   }
+  }
+ },
+ "08-data.html": {
+  "320": {
+   "scrollW": 320,
+   "clientW": 320,
+   "vw": 320,
+   "fuera": [],
+   "nFuera": 0,
+   "clipados": [],
+   "nClipados": 0,
+   "tactil": {
+    "nClick": 137,
+    "nPeq": 1,
+    "peq": [
+     {
+      "clase": "cat-filters__chip",
+      "w": 37,
+      "h": 44,
+      "texto": ".dl"
+     }
+    ],
+    "nTexto": 2
+   }
+  },
+  "360": {
+   "scrollW": 360,
+   "clientW": 360,
+   "vw": 360,
+   "fuera": [],
+   "nFuera": 0,
+   "clipados": [],
+   "nClipados": 0,
+   "tactil": {
+    "nClick": 137,
+    "nPeq": 1,
+    "peq": [
+     {
+      "clase": "cat-filters__chip",
+      "w": 37,
+      "h": 44,
+      "texto": ".dl"
+     }
+    ],
+    "nTexto": 2
+   }
+  },
+  "390": {
+   "scrollW": 390,
+   "clientW": 390,
+   "vw": 390,
+   "fuera": [],
+   "nFuera": 0,
+   "clipados": [],
+   "nClipados": 0,
+   "tactil": {
+    "nClick": 137,
+    "nPeq": 1,
+    "peq": [
+     {
+      "clase": "cat-filters__chip",
+      "w": 37,
+      "h": 44,
+      "texto": ".dl"
+     }
+    ],
+    "nTexto": 2
+   }
+  }
+ },
+ "09-media.html": {
+  "320": {
+   "scrollW": 320,
+   "clientW": 320,
+   "vw": 320,
+   "fuera": [],
+   "nFuera": 0,
+   "clipados": [],
+   "nClipados": 0,
+   "tactil": {
+    "nClick": 130,
+    "nPeq": 0,
+    "peq": [],
+    "nTexto": 1
+   }
+  },
+  "360": {
+   "scrollW": 360,
+   "clientW": 360,
+   "vw": 360,
+   "fuera": [],
+   "nFuera": 0,
+   "clipados": [],
+   "nClipados": 0,
+   "tactil": {
+    "nClick": 130,
+    "nPeq": 0,
+    "peq": [],
+    "nTexto": 1
+   }
+  },
+  "390": {
+   "scrollW": 390,
+   "clientW": 390,
+   "vw": 390,
+   "fuera": [],
+   "nFuera": 0,
+   "clipados": [],
+   "nClipados": 0,
+   "tactil": {
+    "nClick": 130,
+    "nPeq": 0,
+    "peq": [],
+    "nTexto": 1
+   }
+  }
+ },
+ "10-commerce.html": {
+  "320": {
+   "scrollW": 320,
+   "clientW": 320,
+   "vw": 320,
+   "fuera": [],
+   "nFuera": 0,
+   "clipados": [
+    {
+     "clase": "nz-pricetable",
+     "exceso": 13
+    },
+    {
+     "clase": "tbody",
+     "exceso": 13
+    },
+    {
+     "clase": "tr",
+     "exceso": 13
+    },
+    {
+     "clase": "is-selected",
+     "exceso": 13
+    },
+    {
+     "clase": "tr",
+     "exceso": 13
+    },
+    {
+     "clase": "is-selected",
+     "exceso": 13
+    },
+    {
+     "clase": "tr",
+     "exceso": 13
+    },
+    {
+     "clase": "is-selected",
+     "exceso": 13
+    }
+   ],
+   "nClipados": 8,
+   "tactil": {
+    "nClick": 174,
+    "nPeq": 1,
+    "peq": [
+     {
+      "clase": "cat-filters__chip",
+      "w": 42,
+      "h": 44,
+      "texto": ".off"
+     }
+    ],
+    "nTexto": 1
+   }
+  },
+  "360": {
+   "scrollW": 360,
+   "clientW": 360,
+   "vw": 360,
+   "fuera": [],
+   "nFuera": 0,
+   "clipados": [],
+   "nClipados": 0,
+   "tactil": {
+    "nClick": 174,
+    "nPeq": 1,
+    "peq": [
+     {
+      "clase": "cat-filters__chip",
+      "w": 42,
+      "h": 44,
+      "texto": ".off"
+     }
+    ],
+    "nTexto": 1
+   }
+  },
+  "390": {
+   "scrollW": 390,
+   "clientW": 390,
+   "vw": 390,
+   "fuera": [],
+   "nFuera": 0,
+   "clipados": [],
+   "nClipados": 0,
+   "tactil": {
+    "nClick": 174,
+    "nPeq": 1,
+    "peq": [
+     {
+      "clase": "cat-filters__chip",
+      "w": 42,
+      "h": 44,
+      "texto": ".off"
+     }
+    ],
+    "nTexto": 1
+   }
+  }
+ },
+ "11-social.html": {
+  "320": {
+   "scrollW": 320,
+   "clientW": 320,
+   "vw": 320,
+   "fuera": [],
+   "nFuera": 0,
+   "clipados": [],
+   "nClipados": 0,
+   "tactil": {
+    "nClick": 165,
+    "nPeq": 0,
+    "peq": [],
+    "nTexto": 6
+   }
+  },
+  "360": {
+   "scrollW": 360,
+   "clientW": 360,
+   "vw": 360,
+   "fuera": [],
+   "nFuera": 0,
+   "clipados": [],
+   "nClipados": 0,
+   "tactil": {
+    "nClick": 165,
+    "nPeq": 0,
+    "peq": [],
+    "nTexto": 6
+   }
+  },
+  "390": {
+   "scrollW": 390,
+   "clientW": 390,
+   "vw": 390,
+   "fuera": [],
+   "nFuera": 0,
+   "clipados": [],
+   "nClipados": 0,
+   "tactil": {
+    "nClick": 165,
+    "nPeq": 0,
+    "peq": [],
+    "nTexto": 6
+   }
+  }
+ },
+ "12-system.html": {
+  "320": {
+   "scrollW": 320,
+   "clientW": 320,
+   "vw": 320,
+   "fuera": [],
+   "nFuera": 0,
+   "clipados": [],
+   "nClipados": 0,
+   "tactil": {
+    "nClick": 110,
+    "nPeq": 0,
+    "peq": [],
+    "nTexto": 1
+   }
+  },
+  "360": {
+   "scrollW": 360,
+   "clientW": 360,
+   "vw": 360,
+   "fuera": [],
+   "nFuera": 0,
+   "clipados": [],
+   "nClipados": 0,
+   "tactil": {
+    "nClick": 110,
+    "nPeq": 0,
+    "peq": [],
+    "nTexto": 1
+   }
+  },
+  "390": {
+   "scrollW": 390,
+   "clientW": 390,
+   "vw": 390,
+   "fuera": [],
+   "nFuera": 0,
+   "clipados": [],
+   "nClipados": 0,
+   "tactil": {
+    "nClick": 110,
+    "nPeq": 0,
+    "peq": [],
+    "nTexto": 1
+   }
+  }
+ },
+ "13-charts.html": {
+  "320": {
+   "scrollW": 320,
+   "clientW": 320,
+   "vw": 320,
+   "fuera": [],
+   "nFuera": 0,
+   "clipados": [
+    {
+     "clase": "nz-chart-compare__row",
+     "exceso": 30
+    },
+    {
+     "clase": "nz-chart-compare__num",
+     "exceso": 30
+    },
+    {
+     "clase": "nz-chart-compare__row",
+     "exceso": 30
+    },
+    {
+     "clase": "nz-chart-compare__num",
+     "exceso": 30
+    },
+    {
+     "clase": "nz-chart-compare__row",
+     "exceso": 30
+    },
+    {
+     "clase": "nz-chart-compare__num",
+     "exceso": 30
+    }
+   ],
+   "nClipados": 6,
+   "tactil": {
+    "nClick": 119,
+    "nPeq": 0,
+    "peq": [],
+    "nTexto": 1
+   }
+  },
+  "360": {
+   "scrollW": 360,
+   "clientW": 360,
+   "vw": 360,
+   "fuera": [],
+   "nFuera": 0,
+   "clipados": [],
+   "nClipados": 0,
+   "tactil": {
+    "nClick": 119,
+    "nPeq": 0,
+    "peq": [],
+    "nTexto": 1
+   }
+  },
+  "390": {
+   "scrollW": 390,
+   "clientW": 390,
+   "vw": 390,
+   "fuera": [],
+   "nFuera": 0,
+   "clipados": [],
+   "nClipados": 0,
+   "tactil": {
+    "nClick": 119,
+    "nPeq": 0,
+    "peq": [],
+    "nTexto": 1
+   }
+  }
+ },
+ "14-ai.html": {
+  "320": {
+   "scrollW": 320,
+   "clientW": 320,
+   "vw": 320,
+   "fuera": [],
+   "nFuera": 0,
+   "clipados": [],
+   "nClipados": 0,
+   "tactil": {
+    "nClick": 131,
+    "nPeq": 12,
+    "peq": [
+     {
+      "clase": "nz-prompt__input",
+      "w": 36,
+      "h": 44,
+      "texto": ""
+     },
+     {
+      "clase": "nz-reason__summary",
+      "w": 182,
+      "h": 19,
+      "texto": "Ver razonamiento (3 paso"
+     },
+     {
+      "clase": "nz-feedback__btn",
+      "w": 36,
+      "h": 36,
+      "texto": "▲"
+     },
+     {
+      "clase": "nz-feedback__btn",
+      "w": 36,
+      "h": 36,
+      "texto": "▼"
+     },
+     {
+      "clase": "nz-chat-history__item",
+      "w": 208,
+      "h": 40,
+      "texto": "Pliego lote 310:02"
+     },
+     {
+      "clase": "nz-chat-history__item",
+      "w": 208,
+      "h": 40,
+      "texto": "Presupuesto obraayer"
+     },
+     {
+      "clase": "nz-chat-history__item",
+      "w": 208,
+      "h": 40,
+      "texto": "Normativa CTElunes"
+     },
+     {
+      "clase": "nz-chat__suggest",
+      "w": 121,
+      "h": 36,
+      "texto": "Resume un pliego"
+     },
+     {
+      "clase": "nz-chat__suggest",
+      "w": 125,
+      "h": 36,
+      "texto": "Compara dos lotes"
+     },
+     {
+      "clase": "nz-chat__suggest",
+      "w": 123,
+      "h": 36,
+      "texto": "Busca por importe"
+     },
+     {
+      "clase": "nz-chat__suggest",
+      "w": 89,
+      "h": 36,
+      "texto": "Ver ejemplo"
+     },
+     {
+      "clase": "nz-chat__suggest",
+      "w": 107,
+      "h": 36,
+      "texto": "Cómo funciona"
+     }
+    ],
+    "nTexto": 2
+   }
+  },
+  "360": {
+   "scrollW": 360,
+   "clientW": 360,
+   "vw": 360,
+   "fuera": [],
+   "nFuera": 0,
+   "clipados": [],
+   "nClipados": 0,
+   "tactil": {
+    "nClick": 131,
+    "nPeq": 11,
+    "peq": [
+     {
+      "clase": "nz-reason__summary",
+      "w": 222,
+      "h": 19,
+      "texto": "Ver razonamiento (3 paso"
+     },
+     {
+      "clase": "nz-feedback__btn",
+      "w": 36,
+      "h": 36,
+      "texto": "▲"
+     },
+     {
+      "clase": "nz-feedback__btn",
+      "w": 36,
+      "h": 36,
+      "texto": "▼"
+     },
+     {
+      "clase": "nz-chat-history__item",
+      "w": 248,
+      "h": 40,
+      "texto": "Pliego lote 310:02"
+     },
+     {
+      "clase": "nz-chat-history__item",
+      "w": 248,
+      "h": 40,
+      "texto": "Presupuesto obraayer"
+     },
+     {
+      "clase": "nz-chat-history__item",
+      "w": 248,
+      "h": 40,
+      "texto": "Normativa CTElunes"
+     },
+     {
+      "clase": "nz-chat__suggest",
+      "w": 121,
+      "h": 36,
+      "texto": "Resume un pliego"
+     },
+     {
+      "clase": "nz-chat__suggest",
+      "w": 125,
+      "h": 36,
+      "texto": "Compara dos lotes"
+     },
+     {
+      "clase": "nz-chat__suggest",
+      "w": 123,
+      "h": 36,
+      "texto": "Busca por importe"
+     },
+     {
+      "clase": "nz-chat__suggest",
+      "w": 89,
+      "h": 36,
+      "texto": "Ver ejemplo"
+     },
+     {
+      "clase": "nz-chat__suggest",
+      "w": 107,
+      "h": 36,
+      "texto": "Cómo funciona"
+     }
+    ],
+    "nTexto": 2
+   }
+  },
+  "390": {
+   "scrollW": 390,
+   "clientW": 390,
+   "vw": 390,
+   "fuera": [],
+   "nFuera": 0,
+   "clipados": [],
+   "nClipados": 0,
+   "tactil": {
+    "nClick": 131,
+    "nPeq": 12,
+    "peq": [
+     {
+      "clase": "nz-cite",
+      "w": 278,
+      "h": 38,
+      "texto": "1Pliego de cláusulas adm"
+     },
+     {
+      "clase": "nz-reason__summary",
+      "w": 252,
+      "h": 19,
+      "texto": "Ver razonamiento (3 paso"
+     },
+     {
+      "clase": "nz-feedback__btn",
+      "w": 36,
+      "h": 36,
+      "texto": "▲"
+     },
+     {
+      "clase": "nz-feedback__btn",
+      "w": 36,
+      "h": 36,
+      "texto": "▼"
+     },
+     {
+      "clase": "nz-chat-history__item",
+      "w": 278,
+      "h": 40,
+      "texto": "Pliego lote 310:02"
+     },
+     {
+      "clase": "nz-chat-history__item",
+      "w": 278,
+      "h": 40,
+      "texto": "Presupuesto obraayer"
+     },
+     {
+      "clase": "nz-chat-history__item",
+      "w": 278,
+      "h": 40,
+      "texto": "Normativa CTElunes"
+     },
+     {
+      "clase": "nz-chat__suggest",
+      "w": 121,
+      "h": 36,
+      "texto": "Resume un pliego"
+     },
+     {
+      "clase": "nz-chat__suggest",
+      "w": 125,
+      "h": 36,
+      "texto": "Compara dos lotes"
+     },
+     {
+      "clase": "nz-chat__suggest",
+      "w": 123,
+      "h": 36,
+      "texto": "Busca por importe"
+     },
+     {
+      "clase": "nz-chat__suggest",
+      "w": 89,
+      "h": 36,
+      "texto": "Ver ejemplo"
+     },
+     {
+      "clase": "nz-chat__suggest",
+      "w": 107,
+      "h": 36,
+      "texto": "Cómo funciona"
+     }
+    ],
+    "nTexto": 2
+   }
+  }
+ },
+ "15-apps.html": {
+  "320": {
+   "scrollW": 320,
+   "clientW": 320,
+   "vw": 320,
+   "fuera": [],
+   "nFuera": 0,
+   "clipados": [
+    {
+     "clase": "b",
+     "exceso": 14
+    },
+    {
+     "clase": "b",
+     "exceso": 59
+    },
+    {
+     "clase": "span",
+     "exceso": 14
+    },
+    {
+     "clase": "span",
+     "exceso": 59
+    },
+    {
+     "clase": "span",
+     "exceso": 14
+    },
+    {
+     "clase": "span",
+     "exceso": 59
+    }
+   ],
+   "nClipados": 6,
+   "tactil": {
+    "nClick": 162,
+    "nPeq": 4,
+    "peq": [
+     {
+      "clase": "input",
+      "w": 20,
+      "h": 20,
+      "texto": "on"
+     },
+     {
+      "clase": "input",
+      "w": 20,
+      "h": 20,
+      "texto": "on"
+     },
+     {
+      "clase": "nz-dock__item",
+      "w": 36,
+      "h": 36,
+      "texto": "A"
+     },
+     {
+      "clase": "nz-dock__item",
+      "w": 36,
+      "h": 36,
+      "texto": "C"
+     }
+    ],
+    "nTexto": 1
+   }
+  },
+  "360": {
+   "scrollW": 360,
+   "clientW": 360,
+   "vw": 360,
+   "fuera": [],
+   "nFuera": 0,
+   "clipados": [
+    {
+     "clase": "b",
+     "exceso": 19
+    },
+    {
+     "clase": "span",
+     "exceso": 19
+    },
+    {
+     "clase": "span",
+     "exceso": 19
+    }
+   ],
+   "nClipados": 3,
+   "tactil": {
+    "nClick": 162,
+    "nPeq": 4,
+    "peq": [
+     {
+      "clase": "input",
+      "w": 20,
+      "h": 20,
+      "texto": "on"
+     },
+     {
+      "clase": "input",
+      "w": 20,
+      "h": 20,
+      "texto": "on"
+     },
+     {
+      "clase": "nz-dock__item",
+      "w": 36,
+      "h": 36,
+      "texto": "A"
+     },
+     {
+      "clase": "nz-dock__item",
+      "w": 36,
+      "h": 36,
+      "texto": "C"
+     }
+    ],
+    "nTexto": 1
+   }
+  },
+  "390": {
+   "scrollW": 390,
+   "clientW": 390,
+   "vw": 390,
+   "fuera": [],
+   "nFuera": 0,
+   "clipados": [],
+   "nClipados": 0,
+   "tactil": {
+    "nClick": 162,
+    "nPeq": 4,
+    "peq": [
+     {
+      "clase": "input",
+      "w": 20,
+      "h": 20,
+      "texto": "on"
+     },
+     {
+      "clase": "input",
+      "w": 20,
+      "h": 20,
+      "texto": "on"
+     },
+     {
+      "clase": "nz-dock__item",
+      "w": 36,
+      "h": 36,
+      "texto": "A"
+     },
+     {
+      "clase": "nz-dock__item",
+      "w": 36,
+      "h": 36,
+      "texto": "C"
+     }
+    ],
+    "nTexto": 1
+   }
+  }
+ }
+}

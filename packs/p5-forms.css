@@ -145,7 +145,7 @@
 .nz-range--brand::-moz-range-thumb { background: var(--nz-brand); }
 .nz-range--accent::-webkit-slider-thumb { background: var(--nz-accent); box-shadow: var(--nz-shadow-accent); }
 .nz-range--accent::-moz-range-thumb { background: var(--nz-accent); box-shadow: var(--nz-shadow-accent); }
-.nz-range--sm { height: 32px; }
+.nz-range--sm { height: 44px; }
 .nz-range--sm::-webkit-slider-thumb { width: 18px; height: 18px; margin-top: -6px; }
 .nz-range__marks { display: flex; justify-content: space-between; font-size: var(--nz-text-2xs); color: var(--nz-text-faint); }
 
@@ -170,7 +170,7 @@
 .nz-search__clear:hover { background: var(--nz-bg-inset); color: var(--nz-text); }
 .nz-search--sm .nz-input { padding-left: var(--nz-space-8); font-size: var(--nz-text-sm); }
 .nz-search--sm .nz-search__icon { font-size: var(--nz-text-sm); }
-.nz-search--sm .nz-search__clear { width: 32px; height: 32px; }
+.nz-search--sm .nz-search__clear { width: 44px; height: 44px; }
 .nz-search--full { display: flex; flex: 1; min-width: 0; }
 @media (min-width: 640px) {
   .nz-search__clear { width: 32px; height: 32px; }
@@ -202,9 +202,9 @@
 
 /* ---- Selector de cantidad ---- */
 .nz-qty { display: inline-flex; align-items: center; border: var(--nz-border-w) solid var(--nz-border); border-radius: var(--nz-radius-full); overflow: hidden; background: var(--nz-surface); }
-.nz-qty button { width: 44px; height: 44px; border: 0; background: transparent; color: var(--nz-text); font-size: var(--nz-text-lg); cursor: pointer; font-family: inherit; }
+.nz-qty button { min-width: 44px; width: 44px; height: 44px; border: 0; background: transparent; color: var(--nz-text); font-size: var(--nz-text-lg); cursor: pointer; font-family: inherit; }
 .nz-qty button:hover { background: var(--nz-bg-soft); }
-.nz-qty input { width: 2.5rem; min-height: 44px; text-align: center; border: 0; background: transparent; font: inherit; font-weight: 700; font-variant-numeric: tabular-nums; color: var(--nz-text); }
+.nz-qty input { width: 2.5rem; min-width: 44px; min-height: 44px; text-align: center; border: 0; background: transparent; font: inherit; font-weight: 700; font-variant-numeric: tabular-nums; color: var(--nz-text); }
 .nz-qty input:focus { outline: none; }
 .nz-qty--sm button { font-size: var(--nz-text-md); }
 .nz-qty--lg button { width: 52px; height: 52px; font-size: var(--nz-text-xl); }
@@ -269,3 +269,9 @@
 .nz-password.is-revealed .nz-password__toggle { color: var(--nz-brand); }
 .nz-filezona.is-error { border-color: var(--nz-danger); background: var(--nz-danger-soft); color: var(--nz-danger); }
 .nz-filezona.is-success { border-color: var(--nz-success); background: var(--nz-success-soft); color: var(--nz-success); }
+
+/* ---- Densidad de escritorio de p5 (desde 960px) ---- */
+@media (min-width: 960px) {
+  .nz-range--sm { height: 32px; }
+  .nz-search--sm .nz-search__clear { width: 32px; height: 32px; }
+}

@@ -6,7 +6,7 @@
    ============================================================ */
 
 /* ---- Botón base ---- */
-.nz-btn { min-height: 44px; display: inline-flex; align-items: center; justify-content: center; gap: var(--nz-space-2); padding: 0 var(--nz-space-5); border: var(--nz-border-w) solid transparent; border-radius: var(--nz-radius-full); font: inherit; font-weight: 700; font-size: var(--nz-text-base); cursor: pointer; text-decoration: none; white-space: nowrap; transition: transform var(--nz-dur-fast) var(--nz-ease-out), box-shadow var(--nz-dur-fast) var(--nz-ease-out), background var(--nz-dur-fast) var(--nz-ease-out), color var(--nz-dur-fast) var(--nz-ease-out), border-color var(--nz-dur-fast) var(--nz-ease-out); }
+.nz-btn { min-height: 44px; min-width: 44px; display: inline-flex; align-items: center; justify-content: center; gap: var(--nz-space-2); padding: 0 var(--nz-space-5); border: var(--nz-border-w) solid transparent; border-radius: var(--nz-radius-full); font: inherit; font-weight: 700; font-size: var(--nz-text-base); cursor: pointer; text-decoration: none; white-space: nowrap; transition: transform var(--nz-dur-fast) var(--nz-ease-out), box-shadow var(--nz-dur-fast) var(--nz-ease-out), background var(--nz-dur-fast) var(--nz-ease-out), color var(--nz-dur-fast) var(--nz-ease-out), border-color var(--nz-dur-fast) var(--nz-ease-out); }
 .nz-btn:hover { transform: translateY(-2px); }
 .nz-btn:active { transform: translateY(0); }
 .nz-btn:disabled, .nz-btn.is-disabled, .nz-btn[aria-disabled="true"] { opacity: .5; pointer-events: none; }
@@ -36,7 +36,7 @@
 .nz-btn--ghost:hover { background: var(--nz-bg-inset); color: var(--nz-text); }
 .nz-btn--outline { background: transparent; color: var(--nz-brand); box-shadow: inset 0 0 0 var(--nz-border-w-strong) var(--nz-brand); }
 .nz-btn--outline:hover { background: var(--nz-brand-soft); }
-.nz-btn--link { background: none; color: var(--nz-brand); padding: 0; min-height: 32px; border-radius: var(--nz-radius-xs); text-decoration: underline; text-underline-offset: 3px; }
+.nz-btn--link { background: none; color: var(--nz-brand); padding: 0; min-height: 44px; border-radius: var(--nz-radius-xs); text-decoration: underline; text-underline-offset: 3px; }
 .nz-btn--link:hover { color: var(--nz-brand-strong); transform: none; }
 .nz-btn--text { background: none; color: var(--nz-brand); padding: 0 var(--nz-space-2); }
 .nz-btn--text:hover { background: var(--nz-brand-soft); color: var(--nz-brand-strong); transform: none; }
@@ -97,9 +97,9 @@
 
 /* ---- Selector segmentado ---- */
 .nz-segmented { display: inline-flex; padding: var(--nz-space-1); gap: var(--nz-space-1); background: var(--nz-bg-inset); border-radius: var(--nz-radius-full); }
-.nz-segmented button, .nz-segmented a { min-height: 38px; padding: 0 var(--nz-space-4); border-radius: var(--nz-radius-full); border: 0; background: transparent; color: var(--nz-text-soft); font: inherit; font-size: var(--nz-text-sm); font-weight: 600; text-decoration: none; cursor: pointer; transition: background var(--nz-dur-fast) var(--nz-ease-out), color var(--nz-dur-fast) var(--nz-ease-out), box-shadow var(--nz-dur-fast) var(--nz-ease-out); }
+.nz-segmented button, .nz-segmented a { min-height: 44px; padding: 0 var(--nz-space-4); border-radius: var(--nz-radius-full); border: 0; background: transparent; color: var(--nz-text-soft); font: inherit; font-size: var(--nz-text-sm); font-weight: 600; text-decoration: none; cursor: pointer; transition: background var(--nz-dur-fast) var(--nz-ease-out), color var(--nz-dur-fast) var(--nz-ease-out), box-shadow var(--nz-dur-fast) var(--nz-ease-out); }
 .nz-segmented [aria-selected="true"], .nz-segmented button.is-active, .nz-segmented a.is-active { background: var(--nz-surface); color: var(--nz-text); box-shadow: var(--nz-shadow-sm); }
-.nz-segmented--sm button, .nz-segmented--sm a { min-height: 32px; padding: 0 var(--nz-space-3); font-size: var(--nz-text-xs); }
+.nz-segmented--sm button, .nz-segmented--sm a { min-height: 44px; padding: 0 var(--nz-space-3); font-size: var(--nz-text-xs); }
 .nz-segmented--lg button, .nz-segmented--lg a { min-height: 44px; padding: 0 var(--nz-space-5); font-size: var(--nz-text-base); }
 .nz-segmented--vertical { flex-direction: column; border-radius: var(--nz-radius-lg); }
 .nz-segmented--vertical button, .nz-segmented--vertical a { border-radius: var(--nz-radius-md); text-align: left; }
@@ -162,4 +162,10 @@
   .nz-btn--xs { min-height: 32px; }
   .nz-btn--sm { min-height: 36px; }
   .nz-btn--icon-sm { width: 36px; min-height: 36px; }
+}
+
+/* ---- Densidad de escritorio del segmented (desde 960px) ---- */
+@media (min-width: 960px) {
+  .nz-segmented button, .nz-segmented a { min-height: 38px; }
+  .nz-segmented--sm button, .nz-segmented--sm a { min-height: 32px; }
 }

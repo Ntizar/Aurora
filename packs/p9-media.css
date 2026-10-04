@@ -93,7 +93,7 @@
 .nz-media__body { flex: 1; min-width: 0; display: grid; gap: var(--nz-space-1); }
 .nz-media__title { font-weight: 700; font-size: var(--nz-text-base); color: var(--nz-text); }
 .nz-media__desc { font-size: var(--nz-text-sm); color: var(--nz-text-soft); }
-.nz-media__link { font-size: var(--nz-text-sm); font-weight: 700; color: var(--nz-brand); text-decoration: none; }
+.nz-media__link { min-height: 44px; display: inline-flex; align-items: center; font-size: var(--nz-text-sm); font-weight: 700; color: var(--nz-brand); text-decoration: none; }
 .nz-media--reverse { flex-direction: row-reverse; }
 .nz-media--center { align-items: center; }
 .nz-media--brand .nz-media__title { color: var(--nz-brand); }

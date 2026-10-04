@@ -77,11 +77,12 @@
 .nz-attach__item { display: inline-flex; align-items: center; gap: var(--nz-space-2); padding: var(--nz-space-1) var(--nz-space-2); border-radius: var(--nz-radius-md); background: var(--nz-bg-inset); font-size: var(--nz-text-2xs); }
 .nz-attach__thumb { width: 24px; height: 24px; border-radius: var(--nz-radius-xs); background: var(--nz-brand-soft); display: inline-flex; align-items: center; justify-content: center; color: var(--nz-brand); }
 .nz-attach__name { color: var(--nz-text-soft); max-width: 10rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-.nz-attach__remove { width: 20px; height: 20px; display: inline-flex; align-items: center; justify-content: center; border: 0; border-radius: 50%; background: transparent; color: var(--nz-text-mute); cursor: pointer; }
+.nz-attach__remove { position: relative; width: 20px; height: 20px; display: inline-flex; align-items: center; justify-content: center; border: 0; border-radius: 50%; background: transparent; color: var(--nz-text-mute); cursor: pointer;  }
+.nz-attach__remove::after { content: ""; position: absolute; inset: -12px; border-radius: 50%; }
 
 /* ---- Selector de modelo ---- */
 .nz-modelpick { position: relative; display: inline-block; }
-.nz-modelpick__btn { min-height: 36px; display: inline-flex; align-items: center; gap: var(--nz-space-2); padding: 0 var(--nz-space-3); border: var(--nz-border-w) solid var(--nz-border); border-radius: var(--nz-radius-full); background: var(--nz-surface); color: var(--nz-text); font: inherit; font-size: var(--nz-text-xs); font-weight: 600; cursor: pointer; }
+.nz-modelpick__btn { min-height: 44px; display: inline-flex; align-items: center; gap: var(--nz-space-2); padding: 0 var(--nz-space-3); border: var(--nz-border-w) solid var(--nz-border); border-radius: var(--nz-radius-full); background: var(--nz-surface); color: var(--nz-text); font: inherit; font-size: var(--nz-text-xs); font-weight: 600; cursor: pointer; }
 .nz-modelpick__list { position: absolute; z-index: var(--nz-z-popover); top: calc(100% + var(--nz-space-1)); left: 0; min-width: 14rem; padding: var(--nz-space-1); border-radius: var(--nz-radius-md); background: var(--nz-surface); box-shadow: var(--nz-shadow-lg); display: grid; gap: 2px; }
 .nz-modelpick__item { display: flex; align-items: center; gap: var(--nz-space-2); min-height: 40px; padding: 0 var(--nz-space-3); border-radius: var(--nz-radius-sm); font-size: var(--nz-text-xs); color: var(--nz-text-soft); }
 .nz-modelpick__item--active { background: var(--nz-brand-soft); color: var(--nz-brand); font-weight: 700; }
@@ -278,3 +279,8 @@
 .nz-chat--compacto .nz-chat__body { gap: var(--nz-space-2); padding: var(--nz-space-2) var(--nz-space-3); }
 .nz-chat--compacto .nz-msg { gap: var(--nz-space-2); }
 .nz-chat--compacto .nz-msg__bubble { padding: var(--nz-space-2) var(--nz-space-3); font-size: var(--nz-text-sm); }
+
+/* ---- Densidad de escritorio de p14 (desde 960px) ---- */
+@media (min-width: 960px) {
+  .nz-modelpick__btn { min-height: 36px; }
+}

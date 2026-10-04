@@ -45,7 +45,7 @@
 .cat-search__count { position: absolute; right: var(--nz-space-3); font-size: var(--nz-text-2xs); color: var(--nz-text-mute); font-variant-numeric: tabular-nums; pointer-events: none; }
 .cat-filters { display: flex; gap: var(--nz-space-2); overflow-x: auto; scrollbar-width: none; padding-bottom: var(--nz-space-1); }
 .cat-filters::-webkit-scrollbar { display: none; }
-.cat-filters__chip { flex: none; min-height: 36px; padding: 0 var(--nz-space-3); display: inline-flex; align-items: center; border: 0; border-radius: var(--nz-radius-full); background: var(--nz-bg-inset); color: var(--nz-text-soft); font: inherit; font-size: var(--nz-text-xs); font-weight: 600; cursor: pointer; transition: background var(--nz-dur-fast) var(--nz-ease-out), color var(--nz-dur-fast) var(--nz-ease-out); }
+.cat-filters__chip { flex: none; min-height: 44px; padding: 0 var(--nz-space-3); display: inline-flex; align-items: center; border: 0; border-radius: var(--nz-radius-full); background: var(--nz-bg-inset); color: var(--nz-text-soft); font: inherit; font-size: var(--nz-text-xs); font-weight: 600; cursor: pointer; transition: background var(--nz-dur-fast) var(--nz-ease-out), color var(--nz-dur-fast) var(--nz-ease-out); }
 .cat-filters__chip:hover { background: var(--nz-brand-tint); color: var(--nz-brand); }
 .cat-filters__chip[aria-pressed="true"] { background: var(--nz-brand); color: var(--nz-text-invert); }
 .cat-empty { padding: var(--nz-space-10) var(--nz-space-4); text-align: center; color: var(--nz-text-mute); }
@@ -59,15 +59,15 @@
 .cat-demo__title { display: flex; align-items: baseline; gap: var(--nz-space-2); margin-bottom: var(--nz-space-3); flex-wrap: wrap; }
 .cat-demo__num { font-weight: 800; font-size: var(--nz-text-lg); color: var(--nz-accent-strong); font-variant-numeric: tabular-nums; min-width: 3rem; letter-spacing: var(--nz-tracking-tight); }
 .cat-demo__name { font-weight: 700; font-size: var(--nz-text-md); letter-spacing: var(--nz-tracking-tight); }
-.cat-demo__tag { margin-left: auto; font-family: var(--nz-font-mono); font-size: var(--nz-text-2xs); color: var(--nz-text-faint); }
+.cat-demo__tag { margin-left: auto; min-width: 0; font-family: var(--nz-font-mono); font-size: var(--nz-text-2xs); color: var(--nz-text-faint); overflow-wrap: anywhere; }
 .cat-stage { background: var(--nz-bg-soft); border-radius: var(--nz-radius-md); padding: var(--nz-space-3); overflow: hidden; }
 .cat-stage p { font-size: var(--nz-text-xs); color: var(--nz-text-mute); margin-top: var(--nz-space-2); }
 .cat-demo__code { margin-top: var(--nz-space-3); }
-.cat-demo__code > summary { min-height: 36px; display: inline-flex; align-items: center; gap: var(--nz-space-2); padding: 0 var(--nz-space-3); border-radius: var(--nz-radius-full); background: var(--nz-bg-inset); color: var(--nz-text-mute); font-size: var(--nz-text-xs); font-weight: 600; cursor: pointer; list-style: none; }
+.cat-demo__code > summary { min-height: 44px; display: inline-flex; align-items: center; gap: var(--nz-space-2); padding: 0 var(--nz-space-3); border-radius: var(--nz-radius-full); background: var(--nz-bg-inset); color: var(--nz-text-mute); font-size: var(--nz-text-xs); font-weight: 600; cursor: pointer; list-style: none; }
 .cat-demo__code > summary::-webkit-details-marker { display: none; }
 .cat-demo__code > summary:hover { background: var(--nz-brand-tint); color: var(--nz-brand); }
 .cat-demo__code pre { margin-top: var(--nz-space-2); padding: var(--nz-space-3); border-radius: var(--nz-radius-md); background: var(--nz-gray-900); color: var(--nz-gray-100); overflow-x: auto; font-family: var(--nz-font-mono); font-size: var(--nz-text-xs); line-height: var(--nz-leading-snug); }
-.cat-demo__copy { float: right; min-height: 32px; padding: 0 var(--nz-space-3); border: 0; border-radius: var(--nz-radius-full); background: var(--nz-bg-inset); color: var(--nz-text-mute); font: inherit; font-size: var(--nz-text-2xs); font-weight: 600; cursor: pointer; }
+.cat-demo__copy { float: right; min-height: 44px; padding: 0 var(--nz-space-3); border: 0; border-radius: var(--nz-radius-full); background: var(--nz-bg-inset); color: var(--nz-text-mute); font: inherit; font-size: var(--nz-text-2xs); font-weight: 600; cursor: pointer; }
 .cat-demo__copy:hover { background: var(--nz-brand); color: var(--nz-text-invert); }
 
 /* ---- Cajas de ejemplo dentro de las demos ---- */
@@ -146,4 +146,13 @@
 @media print {
   .cat-topbar, .cat-nav-pages, .cat-tools, .cat-demo__code { display: none; }
   .cat-demo { break-inside: avoid; box-shadow: none; border: var(--nz-border-w) solid var(--nz-border); }
+}
+
+/* ---- Densidad de escritorio del shell (desde 960px) ----
+   El minimo tactil de 44px manda en movil en todo lo clicable (regla 6).
+   La densidad fina vuelve solo desde 960px, donde el puntero sustituye al dedo. */
+@media (min-width: 960px) {
+  .cat-filters__chip { min-height: 36px; }
+  .cat-demo__code > summary { min-height: 36px; }
+  .cat-demo__copy { min-height: 32px; }
 }

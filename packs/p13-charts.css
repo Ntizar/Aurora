@@ -9,7 +9,7 @@
    ============================================================ */
 
 /* ---- Tarjeta de gráfico ---- */
-.nz-chart { display: flex; flex-direction: column; gap: var(--nz-space-3); padding: var(--nz-space-4); border-radius: var(--nz-radius-lg); background: var(--nz-surface); box-shadow: var(--nz-shadow-sm); }
+.nz-chart { display: flex; flex-direction: column; gap: var(--nz-space-3); margin: 0; padding: var(--nz-space-4); border-radius: var(--nz-radius-lg); background: var(--nz-surface); box-shadow: var(--nz-shadow-sm); }
 .nz-chart--bordered { box-shadow: none; border: var(--nz-border-w) solid var(--nz-border); }
 .nz-chart--flat { box-shadow: none; background: var(--nz-bg-soft); }
 .nz-chart--sm { padding: var(--nz-space-3); gap: var(--nz-space-2); }
@@ -187,11 +187,11 @@
 
 /* ---- Tabla de barras ---- */
 .nz-chart-tablebar { display: grid; gap: var(--nz-space-2); }
-.nz-chart-tablebar__row { display: grid; grid-template-columns: 8rem 1fr 3.5rem; align-items: center; gap: var(--nz-space-2); }
-.nz-chart-tablebar__name { font-size: var(--nz-text-xs); color: var(--nz-text-soft); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-.nz-chart-tablebar__track { height: 10px; border-radius: var(--nz-radius-full); background: var(--nz-bg-inset); overflow: hidden; }
+.nz-chart-tablebar__row { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: var(--nz-space-1) var(--nz-space-2); }
+.nz-chart-tablebar__name { grid-column: 1 / -1; font-size: var(--nz-text-xs); color: var(--nz-text-soft); }
+.nz-chart-tablebar__track { grid-column: 1; height: 10px; border-radius: var(--nz-radius-full); background: var(--nz-bg-inset); overflow: hidden; }
 .nz-chart-tablebar__bar { display: block; height: 100%; border-radius: inherit; background: var(--nz-brand); }
-.nz-chart-tablebar__num { font-size: var(--nz-text-xs); font-weight: 700; text-align: right; font-variant-numeric: tabular-nums; }
+.nz-chart-tablebar__num { grid-column: 2; grid-row: 2; font-size: var(--nz-text-xs); font-weight: 700; text-align: right; font-variant-numeric: tabular-nums; }
 
 /* ---- Comparativa de dos series ---- */
 .nz-chart-compare { display: grid; gap: var(--nz-space-2); }
@@ -222,12 +222,12 @@
 
 /* ---- Cascada ---- */
 .nz-chart-waterfall { display: flex; align-items: flex-end; gap: var(--nz-space-2); min-height: 9rem; }
-.nz-chart-waterfall__col { flex: 1 1 0; display: flex; flex-direction: column; justify-content: flex-end; align-items: center; gap: var(--nz-space-1); height: 100%; }
+.nz-chart-waterfall__col { flex: 1 1 0; min-width: 0; display: flex; flex-direction: column; justify-content: flex-end; align-items: center; gap: var(--nz-space-1); height: 100%; }
 .nz-chart-waterfall__bar { width: 100%; max-width: 2.5rem; border-radius: var(--nz-radius-sm); background: var(--nz-border-strong); }
 .nz-chart-waterfall__bar--up { background: var(--nz-success); }
 .nz-chart-waterfall__bar--down { background: var(--nz-danger); }
 .nz-chart-waterfall__bar--total { background: var(--nz-brand); }
-.nz-chart-waterfall__label { font-size: var(--nz-text-2xs); color: var(--nz-text-faint); }
+.nz-chart-waterfall__label { max-width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: var(--nz-text-2xs); color: var(--nz-text-faint); }
 
 /* ---- Diagrama de flujo (sankey simple) ---- */
 .nz-chart-flow { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--nz-space-4); align-items: center; }
@@ -240,7 +240,7 @@
 
 /* ---- Selector de rango temporal ---- */
 .nz-chart-range { display: inline-flex; gap: 2px; padding: 2px; border-radius: var(--nz-radius-full); background: var(--nz-bg-inset); }
-.nz-chart-range__btn { min-height: 32px; padding: 0 var(--nz-space-3); border: 0; border-radius: var(--nz-radius-full); background: transparent; color: var(--nz-text-soft); font: inherit; font-size: var(--nz-text-2xs); font-weight: 700; cursor: pointer; }
+.nz-chart-range__btn { min-height: 44px; padding: 0 var(--nz-space-3); border: 0; border-radius: var(--nz-radius-full); background: transparent; color: var(--nz-text-soft); font: inherit; font-size: var(--nz-text-2xs); font-weight: 700; cursor: pointer; }
 .nz-chart-range__btn[aria-pressed="true"] { background: var(--nz-surface); color: var(--nz-text); box-shadow: var(--nz-shadow-xs); }
 
 /* ---- Cifra con sparkline ---- */
@@ -263,6 +263,10 @@
 @media (min-width: 640px) {
   .nz-chart-bar--horizontal .nz-chart-bar__label { width: 7rem; }
   .nz-bullet { grid-template-columns: 8rem 1fr auto; }
+  .nz-chart-tablebar__row { grid-template-columns: 8rem 1fr 3.5rem; gap: var(--nz-space-2); }
+  .nz-chart-tablebar__name { grid-column: auto; grid-row: auto; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .nz-chart-tablebar__track { grid-column: auto; grid-row: auto; }
+  .nz-chart-tablebar__num { grid-column: auto; grid-row: auto; }
 }
 @media (min-width: 960px) {
   .nz-chart__body { min-height: 10rem; }
@@ -281,3 +285,8 @@
 .nz-chart-mini__bar--success { background: var(--nz-success); }
 .nz-chart-mini__bar--danger { background: var(--nz-danger); }
 .nz-chart-mini__bar--warning { background: var(--nz-warning); }
+
+/* ---- Densidad de escritorio de p13 (desde 960px) ---- */
+@media (min-width: 960px) {
+  .nz-chart-range__btn { min-height: 32px; }
+}

@@ -120,7 +120,7 @@
 .nz-banner { display: flex; align-items: center; gap: var(--nz-space-3); padding: var(--nz-space-3) var(--nz-space-4); background: var(--nz-bg-soft); border-bottom: var(--nz-border-w) solid var(--nz-border); color: var(--nz-text); font-size: var(--nz-text-sm); }
 .nz-banner__body { display: flex; align-items: center; gap: var(--nz-space-2); min-width: 0; }
 .nz-banner__action { min-height: 44px; display: inline-flex; align-items: center; margin-left: auto; padding: 0 var(--nz-space-4); border: 0; border-radius: var(--nz-radius-full); background: var(--nz-brand); color: var(--nz-text-invert); font: inherit; font-size: var(--nz-text-xs); font-weight: 700; cursor: pointer; }
-.nz-banner__close { width: 44px; min-height: 44px; display: inline-flex; align-items: center; justify-content: center; border: 0; border-radius: var(--nz-radius-full); background: transparent; color: inherit; font: inherit; cursor: pointer; opacity: .7; }
+.nz-banner__close { flex-shrink: 0; min-width: 44px; width: 44px; min-height: 44px; display: inline-flex; align-items: center; justify-content: center; border: 0; border-radius: var(--nz-radius-full); background: transparent; color: inherit; font: inherit; cursor: pointer; opacity: .7; }
 .nz-banner__close:hover { opacity: 1; background: var(--nz-bg-inset); }
 .nz-banner--brand { background: var(--nz-brand); border-bottom-color: var(--nz-brand-strong); color: var(--nz-text-invert); }
 .nz-banner--brand .nz-banner__action { background: var(--nz-gray-0); color: var(--nz-brand-strong); }
