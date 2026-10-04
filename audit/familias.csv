@@ -1,0 +1,351 @@
+familia,pack,categoria,clases,modificadores,partes,hex_crudo,px_crudo,en_recetas,alias_es,grupo_num,casi_duplicado,solape,deuda_v6,veredicto
+nz--leading-normal,p3-typography.css,3,1,0,0,0,0,0,,,,,,SIN VARIANTES
+nz--leading-snug,p3-typography.css,3,1,0,0,0,0,0,,,,,,SIN VARIANTES
+nz--leading-tight,p3-typography.css,3,1,0,0,0,0,0,,,,,,SIN VARIANTES
+nz--tracking-caps,p3-typography.css,3,1,0,0,0,0,0,,,,,,SIN VARIANTES
+nz--tracking-tight,p3-typography.css,3,1,0,0,0,0,0,,,,,,SIN VARIANTES
+nz-a11y-badge,p12-system.css,12,3,2,0,0,0,0,,,,,,OK
+nz-actbar,p15-apps.css,15,2,0,1,0,10,0,,,,,,SIN VARIANTES
+nz-activity,p11-social.css,11,4,0,3,0,2,0,,,,,,SIN VARIANTES
+nz-agenda,p15-apps.css,15,2,0,1,0,4,0,,,,,,SIN VARIANTES
+nz-agent-card,p14-ai.css,14,10,3,9,0,3,0,,,,,,OK
+nz-alert,p6-feedback.css,6,18,11,6,0,7,5,,,,aviso,,REVISAR (solape: aviso)
+nz-align-justify,p3-typography.css,3,1,0,0,0,0,0,,,,,,SIN VARIANTES
+nz-align-left,p3-typography.css,3,1,0,0,0,0,0,,,,,,SIN VARIANTES
+nz-align-right,p3-typography.css,3,1,0,0,0,0,0,,,,,,SIN VARIANTES
+nz-appempty,p15-apps.css,15,1,0,0,0,3,0,,,,vacio,,SIN VARIANTES
+nz-appnav,p15-apps.css,15,2,0,1,0,4,0,,,,,,SIN VARIANTES
+nz-approval,p14-ai.css,14,5,1,3,0,0,0,,,,,,OK
+nz-appshell,p1-layout.css,1,3,2,0,0,0,0,,,,,,OK
+nz-appstatus,p15-apps.css,15,2,0,1,0,3,0,,,,,,SIN VARIANTES
+nz-arbol,p8-data.css,8,5,0,4,0,2,0,tree,,,,,SIN VARIANTES
+nz-article,p1-layout.css,1,4,3,0,0,1,0,,,,tarjeta,,REVISAR (solape: tarjeta)
+nz-aside,p1-layout.css,1,1,0,0,0,0,0,,,,,,SIN VARIANTES
+nz-aspect,p1-layout.css,1,8,7,0,0,0,0,,,,,,OK (completa)
+nz-atajo-teclado,p12-system.css,12,3,0,2,0,2,0,keyboard-shortcut,,,etiqueta,,SIN VARIANTES
+nz-attach,p14-ai.css,14,5,0,4,0,5,0,,,,,,SIN VARIANTES
+nz-audio,p9-media.css,9,5,1,3,0,3,0,,,,,,OK
+nz-avatar,p9-media.css,9,15,13,1,0,20,2,,,,,,OK (completa)
+nz-avatar-group,p9-media.css,9,3,1,1,0,1,0,,,,,,OK
+nz-backdrop,p7-overlays.css,7,3,2,0,0,0,0,,,,,,OK
+nz-badge,p6-feedback.css,6,12,11,0,0,8,3,,,,etiqueta,,REVISAR (solape: etiqueta)
+nz-balance,p3-typography.css,3,1,0,0,0,0,0,,,,,,SIN VARIANTES
+nz-banner,p6-feedback.css,6,6,2,3,0,7,0,,,,aviso,,REVISAR (solape: aviso)
+nz-bento,p1-layout.css,1,5,2,2,0,0,0,,,,tarjeta,,REVISAR (solape: tarjeta)
+nz-bgimg,p9-media.css,9,3,2,0,0,0,0,,,,,,OK
+nz-bleed,p1-layout.css,1,4,3,0,0,0,0,,,,,,OK
+nz-blockquote,p3-typography.css,3,4,3,0,0,1,0,,,,,,OK
+nz-brand,p9-media.css,9,8,5,3,0,6,0,,,,,,OK (completa)
+nz-breadcrumb,p2-navigation.css,2,5,3,1,0,1,0,,,,,,OK
+nz-btn,p4-actions.css,4,41,36,6,0,32,7,,,,,,OK (completa)
+nz-btn-group,p4-actions.css,4,5,3,1,0,3,0,,,,,,OK
+nz-bullet,p13-charts.css,13,10,3,9,0,5,0,,,,,,OK
+nz-callout,p6-feedback.css,6,8,7,0,0,1,0,,,,aviso,,REVISAR (solape: aviso)
+nz-caps,p3-typography.css,3,1,0,0,0,0,0,,,,etiqueta,,SIN VARIANTES
+nz-cart,p10-commerce.css,10,11,2,8,0,8,0,,,,,,OK
+nz-cart-item,p10-commerce.css,10,10,1,8,0,4,0,,,,,,OK
+nz-center,p3-typography.css,3,1,0,0,0,0,0,,,,,,SIN VARIANTES
+nz-center-x,p1-layout.css,1,1,0,0,0,0,0,,,,,,SIN VARIANTES
+nz-center-xy,p1-layout.css,1,1,0,0,0,0,0,,,,,,SIN VARIANTES
+nz-center-y,p1-layout.css,1,1,0,0,0,0,0,,,,,,SIN VARIANTES
+nz-chart,p13-charts.css,13,22,5,17,0,21,0,,,,,,OK
+nz-chart-bar,p13-charts.css,13,23,12,16,0,4,0,,,,,,OK (completa)
+nz-chart-compare,p13-charts.css,13,8,2,7,0,2,0,,,,,,OK
+nz-chart-donut,p13-charts.css,13,13,6,10,0,0,0,,,,,,OK (completa)
+nz-chart-flow,p13-charts.css,13,7,3,6,0,1,0,,,,,,OK
+nz-chart-gauge,p13-charts.css,13,11,5,9,0,0,0,,,,,,OK
+nz-chart-line,p13-charts.css,13,17,10,9,0,0,0,,,,,,OK (completa)
+nz-chart-mini,p13-charts.css,13,7,5,6,0,5,0,,,,,,OK
+nz-chart-radar,p13-charts.css,13,6,0,5,0,0,0,,,,,,SIN VARIANTES
+nz-chart-range,p13-charts.css,13,2,0,1,0,4,0,,,,,,SIN VARIANTES
+nz-chart-scatter,p13-charts.css,13,7,2,6,0,2,0,,,,,,OK
+nz-chart-stat,p13-charts.css,13,9,3,8,0,1,0,,,,,,OK
+nz-chart-tablebar,p13-charts.css,13,6,0,5,0,1,0,,,,,,SIN VARIANTES
+nz-chart-waterfall,p13-charts.css,13,7,3,6,0,0,0,,,,,,OK
+nz-chat,p14-ai.css,14,12,3,8,0,5,0,,,,,,OK
+nz-chat-empty,p14-ai.css,14,5,0,4,0,2,0,,,,,,SIN VARIANTES
+nz-chat-history,p14-ai.css,14,5,1,4,0,2,0,,,,,,OK
+nz-checkbox,p5-forms.css,5,5,3,2,0,9,0,,,,,,OK
+nz-checkout-steps,p10-commerce.css,10,6,2,4,0,2,0,,,,,,OK
+nz-chip,p6-feedback.css,6,10,7,2,0,10,0,,,,etiqueta,,REVISAR (solape: etiqueta)
+nz-cite,p14-ai.css,14,5,0,4,0,0,0,,,,,,SIN VARIANTES
+nz-cluster,p1-layout.css,1,7,6,0,0,0,0,,,,,,OK (completa)
+nz-cmd,p7-overlays.css,7,16,3,13,0,5,0,command-palette,,,,,OK
+nz-code,p3-typography.css,3,6,5,0,0,0,0,,,,,,OK
+nz-codepad,p15-apps.css,15,3,0,2,0,3,0,,,,,,SIN VARIANTES
+nz-col,p1-layout.css,1,1,0,0,0,0,0,,,,,,SIN VARIANTES
+nz-collapsible,p1-layout.css,1,1,0,0,0,0,0,,,,,,SIN VARIANTES
+nz-columns-2,p3-typography.css,3,1,0,0,0,0,0,,nz-columns,,,,SIN VARIANTES
+nz-columns-3,p3-typography.css,3,1,0,0,0,0,0,,nz-columns,,,,SIN VARIANTES
+nz-comment,p11-social.css,11,14,4,9,0,1,0,,,,,,OK
+nz-compare,p8-data.css,8,7,1,6,0,0,0,,,,,,OK
+nz-compare-bar,p10-commerce.css,10,5,1,3,0,1,0,,,,,,OK
+nz-confirm,p7-overlays.css,7,7,2,4,0,4,0,confirm-dialog,,,,,OK
+nz-container,p1-layout.css,1,5,4,0,0,0,1,,,,,,OK
+nz-context-meter,p14-ai.css,14,6,2,3,0,1,0,,,,,,OK
+nz-contrast,p12-system.css,12,14,8,12,0,4,0,,,,,,OK (completa)
+nz-countdown,p6-feedback.css,6,7,4,2,0,0,0,,,,,,OK
+nz-coupon,p10-commerce.css,10,6,1,4,0,2,0,,,,,,OK
+nz-cover,p9-media.css,9,5,4,0,0,0,0,,,,,,OK
+nz-cta,p4-actions.css,4,7,5,1,0,2,0,,,,,,OK
+nz-cta-banner,p11-social.css,11,10,4,5,0,2,0,,,,,,OK
+nz-cuota,p14-ai.css,14,7,2,4,0,1,0,,,,,,OK
+nz-dash-grid,p1-layout.css,1,4,3,0,0,0,1,dashboard-grid,,,,,OK
+nz-datagrid,p8-data.css,8,4,3,1,0,0,0,data-grid,,,,,OK
+nz-dateline,p3-typography.css,3,1,0,0,0,0,0,,,,,,SIN VARIANTES
+nz-diff,p14-ai.css,14,7,3,6,0,0,0,,,,,,OK
+nz-discount-badge,p10-commerce.css,10,3,1,1,0,0,0,,,,,,OK
+nz-display,p3-typography.css,3,3,2,0,0,0,0,,,,titulo,,REVISAR (solape: titulo)
+nz-divider,p1-layout.css,1,5,4,0,0,2,0,,,,,,OK
+nz-dl,p8-data.css,8,9,5,4,0,0,0,,,,,,OK
+nz-dock,p15-apps.css,15,4,2,1,0,10,0,,,,,,OK
+nz-docs,p15-apps.css,15,3,0,2,0,8,0,,,,,,SIN VARIANTES
+nz-drawer,p7-overlays.css,7,15,6,11,0,0,0,,,,,,OK (completa)
+nz-drawer-layout,p1-layout.css,1,3,1,1,0,0,0,,,,,,OK
+nz-dropdown,p2-navigation.css,2,7,4,4,0,3,0,,,,,,OK
+nz-embed-grid,p14-ai.css,14,7,4,6,0,1,0,,,,,,OK
+nz-empty,p6-feedback.css,6,9,3,5,0,0,0,empty-state,,,vacio,,REVISAR (solape: vacio)
+nz-error,p6-feedback.css,6,3,2,0,0,0,0,,,,,,OK
+nz-errorstate,p6-feedback.css,6,6,2,3,0,0,0,error-state,,,vacio,,REVISAR (solape: vacio)
+nz-eyebrow,p3-typography.css,3,1,0,0,0,0,1,,,,etiqueta,,REVISAR (solape: etiqueta)
+nz-fab,p4-actions.css,4,6,5,0,0,7,0,,,,,,OK
+nz-feed,p11-social.css,11,6,2,3,0,1,0,,,,,,OK
+nz-feedback,p14-ai.css,14,3,1,2,0,2,0,,,,,,OK
+nz-field,p5-forms.css,5,11,5,7,0,0,2,,,,,,OK
+nz-fieldset,p5-forms.css,5,7,5,1,0,0,0,,,,,,OK
+nz-figura,p3-typography.css,3,2,0,1,0,0,0,figure,,,,,SIN VARIANTES
+nz-figure,p9-media.css,9,6,3,2,0,0,0,,,,,,OK
+nz-filezona,p5-forms.css,5,4,0,3,0,1,0,file-dropzone,,,,,SIN VARIANTES
+nz-focus-accent,p12-system.css,12,1,0,0,0,0,0,,,,,,SIN VARIANTES
+nz-focus-ring,p12-system.css,12,1,0,0,0,0,0,,,,,,SIN VARIANTES
+nz-footer,p1-layout.css,1,4,3,0,0,0,1,,,,,,OK
+nz-formgrid,p5-forms.css,5,4,3,0,0,0,0,form-grid,,,,,OK
+nz-funnel,p13-charts.css,13,8,3,7,0,2,0,,,,,,OK
+nz-galeria,p9-media.css,9,6,4,2,0,0,0,gallery,,,,,OK
+nz-gauge-num,p8-data.css,8,8,3,6,0,0,0,,,,,,OK
+nz-gift-note,p10-commerce.css,10,4,1,2,0,0,0,,,,,,OK
+nz-grid-12,p1-layout.css,1,3,2,0,0,0,0,,nz-grid,,,,AGRUPAR (numerico)
+nz-grid-auto,p1-layout.css,1,3,2,0,0,1,0,,,,,,OK
+nz-guardrail,p14-ai.css,14,5,1,3,0,1,0,,,,,,OK
+nz-h1,p3-typography.css,3,5,4,0,0,0,1,,,,titulo,,REVISAR (solape: titulo)
+nz-h2,p3-typography.css,3,5,4,0,0,0,0,,,,titulo,,REVISAR (solape: titulo)
+nz-h3,p3-typography.css,3,5,4,0,0,0,0,,,,titulo,,REVISAR (solape: titulo)
+nz-h4,p3-typography.css,3,5,4,0,0,0,0,,,,titulo,,REVISAR (solape: titulo)
+nz-h5,p3-typography.css,3,5,4,0,0,0,0,,,,titulo,,REVISAR (solape: titulo)
+nz-h6,p3-typography.css,3,5,4,0,0,0,0,,,,titulo,,REVISAR (solape: titulo)
+nz-hashtag,p11-social.css,11,2,1,0,0,0,0,,,,,,OK
+nz-header,p1-layout.css,1,5,4,0,0,1,0,,,,,,OK
+nz-heatcalendar,p13-charts.css,13,11,6,10,0,6,0,,,,,,OK (completa)
+nz-heatmap,p13-charts.css,13,12,5,11,0,2,0,,,,,,OK
+nz-hero-bleed,p1-layout.css,1,4,3,0,0,0,0,,,,,,OK
+nz-hide-escritorio,p1-layout.css,1,1,0,0,0,0,0,hide-desktop,,,,,SIN VARIANTES
+nz-hide-movil,p1-layout.css,1,1,0,0,0,0,0,hide-mobile,,,,,SIN VARIANTES
+nz-high-contrast-note,p12-system.css,12,2,0,1,0,0,0,,,,,,SIN VARIANTES
+nz-highlight,p3-typography.css,3,2,1,0,0,0,0,,,,,,OK
+nz-hint-error,p5-forms.css,5,2,1,0,0,0,0,error-hint,,,,,OK
+nz-holy,p1-layout.css,1,7,1,5,0,0,0,,,,,,OK
+nz-hstack,p1-layout.css,1,9,8,0,0,0,4,,,,,,OK (completa)
+nz-icon,p9-media.css,9,7,6,0,0,8,2,,,,,,OK (completa)
+nz-icon-tile,p9-media.css,9,10,9,0,0,8,0,,,,,,OK (completa)
+nz-img,p9-media.css,9,10,9,0,0,0,0,,,,,,OK (completa)
+nz-incident,p12-system.css,12,8,3,4,0,0,0,,,,,,OK
+nz-indent,p3-typography.css,3,1,0,0,0,0,0,,,,,,SIN VARIANTES
+nz-initial,p3-typography.css,3,1,0,0,0,0,0,,,,,,SIN VARIANTES
+nz-inlinestat,p8-data.css,8,6,5,0,0,2,0,,,,,,OK
+nz-input,p5-forms.css,5,11,10,0,0,8,1,,,,,,OK (completa)
+nz-input-icon,p5-forms.css,5,2,0,1,0,0,2,,,,,,OK
+nz-inputgroup,p5-forms.css,5,6,4,3,0,1,0,,,,,,OK
+nz-inspector,p15-apps.css,15,1,0,0,0,2,0,,,,,,SIN VARIANTES
+nz-kanban,p15-apps.css,15,3,0,2,0,3,0,,,,,,SIN VARIANTES
+nz-kbd,p3-typography.css,3,2,1,0,0,1,0,,,,etiqueta,,REVISAR (solape: etiqueta)
+nz-kgraph,p14-ai.css,14,8,3,7,0,0,0,,,,,,OK
+nz-kpi,p8-data.css,8,18,9,11,0,3,7,,,,tarjeta,,REVISAR (solape: tarjeta)
+nz-label,p5-forms.css,5,2,1,0,0,0,0,,,,,,OK
+nz-landmark,p12-system.css,12,5,3,1,0,0,0,,,,,,OK
+nz-launcher,p15-apps.css,15,2,0,1,0,3,0,,,,,,SIN VARIANTES
+nz-lbl,p3-typography.css,3,10,9,0,0,2,0,,,,etiqueta,,REVISAR (solape: etiqueta)
+nz-lead,p3-typography.css,3,4,3,0,0,1,1,,,,,,OK
+nz-legend,p13-charts.css,13,10,7,8,0,2,0,,,,,,OK (completa)
+nz-lightbox,p7-overlays.css,7,8,3,6,0,4,0,,,,,,OK
+nz-link,p3-typography.css,3,9,8,0,0,5,0,,,,,,OK (completa)
+nz-list,p3-typography.css,3,10,8,2,0,4,0,,,,,,OK (completa)
+nz-list-row,p8-data.css,8,6,1,4,0,3,0,,,,,,OK
+nz-live-region,p12-system.css,12,4,2,1,0,2,0,,,,,,OK
+nz-loading-bar,p6-feedback.css,6,6,4,5,0,1,0,,,,carga,,REVISAR (solape: carga)
+nz-logo-nube,p9-media.css,9,5,3,2,0,3,0,cloud-logo,,,,,OK
+nz-logomark,p9-media.css,9,3,2,0,0,0,0,,,,,,OK
+nz-logos,p9-media.css,9,3,2,0,0,1,0,logo-cloud,,,,,OK
+nz-main,p1-layout.css,1,4,3,0,0,0,2,,,,,,OK
+nz-maintenance-banner,p12-system.css,12,4,0,3,0,0,0,,,,,,SIN VARIANTES
+nz-mapa-placeholder,p9-media.css,9,5,2,2,0,2,0,map-placeholder,,,,,OK
+nz-masonry,p1-layout.css,1,3,2,0,0,0,0,,,,,,OK
+nz-matrix,p8-data.css,8,7,4,6,0,2,0,,,,,,OK
+nz-measure,p3-typography.css,3,3,2,0,0,0,0,,,,,,OK
+nz-media,p9-media.css,9,11,5,5,0,1,0,,,,,,OK
+nz-media-badge,p9-media.css,9,7,6,0,0,0,0,,,,,,OK (completa)
+nz-mention,p11-social.css,11,2,1,0,0,0,0,,,,,,OK
+nz-menu,p2-navigation.css,2,8,3,6,0,5,0,,,,,,OK
+nz-menu-pop,p7-overlays.css,7,10,5,7,0,3,0,popup-menu,,,,,OK
+nz-meter,p6-feedback.css,6,6,3,2,0,1,0,,,,,,OK
+nz-min-target,p12-system.css,12,1,0,0,0,1,0,,,,,,SIN VARIANTES
+nz-modal,p7-overlays.css,7,18,8,12,0,6,0,,,,,,OK (completa)
+nz-model-compare,p14-ai.css,14,7,2,6,0,2,0,,,,,,OK
+nz-modelpick,p14-ai.css,14,6,1,5,0,4,0,,,,,,OK
+nz-month,p15-apps.css,15,1,0,0,0,4,0,,,,,,SIN VARIANTES
+nz-motion-badge,p12-system.css,12,2,1,0,0,2,0,,,,,,OK
+nz-msg,p14-ai.css,14,18,9,9,0,1,0,message,,,,,OK (completa)
+nz-nav-landmark,p1-layout.css,1,1,0,0,0,0,0,,,,,,SIN VARIANTES
+nz-navbar,p2-navigation.css,2,9,5,4,0,5,5,mobile-nav,,,,,OK
+nz-navfooter,p2-navigation.css,2,8,4,4,0,1,0,,,,,,OK
+nz-nota,p3-typography.css,3,1,0,0,0,0,0,note,,,aviso,,SIN VARIANTES
+nz-notif,p11-social.css,11,10,4,5,0,6,0,,,,,,OK
+nz-num,p3-typography.css,3,9,8,0,0,0,0,,,,,,OK (completa)
+nz-off,p10-commerce.css,10,2,1,0,0,0,0,,,,,,OK
+nz-offcanvas,p7-overlays.css,7,6,2,3,0,1,0,,,,,,OK
+nz-offline-bar,p6-feedback.css,6,2,0,1,0,0,0,,,,,,SIN VARIANTES
+nz-order,p10-commerce.css,10,11,3,9,0,0,0,,,,,,OK
+nz-otp,p5-forms.css,5,4,3,0,0,0,0,,,,,,OK
+nz-outlet,p1-layout.css,1,3,2,0,0,0,0,,,,,,OK
+nz-overflow-x,p1-layout.css,1,1,0,0,0,0,0,,,,,,SIN VARIANTES
+nz-overflow-y,p1-layout.css,1,1,0,0,0,0,0,,,,,,SIN VARIANTES
+nz-pagination,p2-navigation.css,2,6,3,2,0,6,0,,,,,,OK
+nz-password,p5-forms.css,5,2,0,1,0,4,0,,,,,,SIN VARIANTES
+nz-pathbar,p15-apps.css,15,2,0,1,0,2,0,,,,,,SIN VARIANTES
+nz-pay,p10-commerce.css,10,5,0,4,0,6,0,,,,,,SIN VARIANTES
+nz-payment,p10-commerce.css,10,7,2,5,0,3,0,,,,,,OK
+nz-plan,p10-commerce.css,10,14,5,10,0,3,0,pricing-plan,,nz-plans (con s),,,PAR singular/plural
+nz-plans,p10-commerce.css,10,6,5,0,0,0,0,pricing-plans,,nz-plan (sin s),,,PAR singular/plural
+nz-popover,p7-overlays.css,7,11,5,6,0,7,0,tooltip,,,,,OK
+nz-post,p11-social.css,11,16,3,12,0,3,0,,,,,,OK
+nz-preferencias,p12-system.css,12,5,0,4,0,1,0,,,,,,SIN VARIANTES
+nz-prefs,p15-apps.css,15,3,0,2,0,4,0,,,,,,SIN VARIANTES
+nz-pretty,p3-typography.css,3,1,0,0,0,0,0,,,,,,SIN VARIANTES
+nz-price,p10-commerce.css,10,13,6,6,0,1,0,,,,,,OK (completa)
+nz-pricetable,p10-commerce.css,10,4,1,2,0,0,0,,,,,,OK
+nz-print-hide,p1-layout.css,1,1,0,0,0,0,0,,,,,,SIN VARIANTES
+nz-product,p10-commerce.css,10,16,4,11,0,3,0,,,nz-products (con s),,,PAR singular/plural
+nz-products,p10-commerce.css,10,2,1,0,0,0,0,,,nz-product (sin s),,,PAR singular/plural
+nz-progress,p6-feedback.css,6,12,8,3,0,5,0,,,,carga,,REVISAR (solape: carga)
+nz-prompt,p14-ai.css,14,5,0,4,0,4,0,,,,,,SIN VARIANTES
+nz-propsheet,p15-apps.css,15,2,0,1,0,0,0,,,,,,SIN VARIANTES
+nz-prose,p3-typography.css,3,3,2,0,0,0,0,,,,,,OK
+nz-ptemplate,p14-ai.css,14,4,0,3,0,0,0,,,,,,SIN VARIANTES
+nz-pulse,p6-feedback.css,6,3,2,0,0,2,0,,,,carga,,REVISAR (solape: carga)
+nz-qty,p5-forms.css,5,4,3,0,0,11,0,,,,,,OK
+nz-quote,p11-social.css,11,10,3,6,0,3,0,,,,,,OK
+nz-radio,p5-forms.css,5,4,2,2,0,12,0,,,,,,OK
+nz-range,p5-forms.css,5,5,3,1,0,15,0,,,,,,OK
+nz-reason,p14-ai.css,14,3,0,2,0,0,0,,,,,,SIN VARIANTES
+nz-record,p8-data.css,8,16,5,11,0,10,0,,,nz-records (con s),tarjeta,,PAR singular/plural
+nz-records,p8-data.css,8,3,2,0,0,0,0,,,nz-record (sin s),,,PAR singular/plural
+nz-reduced-motion-ok,p12-system.css,12,1,0,0,0,0,0,,,,,,SIN VARIANTES
+nz-region-ad,p1-layout.css,1,3,2,0,0,0,0,,,,,,OK
+nz-region-chat,p1-layout.css,1,3,2,0,0,0,0,,,,,,OK
+nz-region-cookies,p1-layout.css,1,3,2,0,0,0,0,,,,,,OK
+nz-region-toolbar,p1-layout.css,1,3,2,0,0,0,0,,,,,,OK
+nz-resmon,p15-apps.css,15,2,0,1,0,1,0,,,,,,SIN VARIANTES
+nz-ribbon,p15-apps.css,15,2,0,1,0,2,0,,,,,,SIN VARIANTES
+nz-ring,p6-feedback.css,6,9,5,3,0,4,0,,,,,,OK
+nz-root,p1-layout.css,1,1,0,0,0,0,0,,,,,,SIN VARIANTES
+nz-route,p1-layout.css,1,2,0,1,0,0,0,,,,,,SIN VARIANTES
+nz-row,p1-layout.css,1,6,5,0,0,0,0,,,,,,OK
+nz-rowform,p5-forms.css,5,3,2,0,0,0,0,,,,,,OK
+nz-rtl,p1-layout.css,1,1,0,0,0,0,0,,,,,,SIN VARIANTES
+nz-runlog,p14-ai.css,14,7,3,6,0,1,0,,,,,,OK
+nz-safe,p1-layout.css,1,1,0,0,0,2,0,,,,,,SIN VARIANTES
+nz-safe-x,p1-layout.css,1,1,0,0,0,2,0,,,,,,SIN VARIANTES
+nz-score,p14-ai.css,14,7,1,5,0,1,0,,,,,,OK
+nz-scrim,p1-layout.css,1,3,2,0,0,0,0,,,,,,OK
+nz-search,p5-forms.css,5,5,2,2,0,8,0,,,,,,OK
+nz-section,p1-layout.css,1,4,3,0,0,0,1,,,,,,OK
+nz-segmented,p4-actions.css,4,7,6,0,0,5,1,,,,,,OK (completa)
+nz-select,p5-forms.css,5,6,5,0,0,3,0,,,,,,OK
+nz-share,p11-social.css,11,6,3,2,0,3,0,,,,,,OK
+nz-sheet,p7-overlays.css,7,13,3,10,0,5,0,,,,,,OK
+nz-shipping-option,p10-commerce.css,10,6,2,3,0,1,0,,,,,,OK
+nz-show-escritorio,p1-layout.css,1,1,0,0,0,0,0,show-desktop,,,,,SIN VARIANTES
+nz-show-movil,p1-layout.css,1,1,0,0,0,0,0,show-mobile,,,,,SIN VARIANTES
+nz-sidebar,p1-layout.css,1,10,6,5,0,0,6,,,,,,OK (completa)
+nz-skeleton,p6-feedback.css,6,11,7,6,0,3,0,,,,carga,,REVISAR (solape: carga)
+nz-skip-link,p12-system.css,12,2,1,0,0,3,0,,,,,,OK
+nz-skip-links-group,p12-system.css,12,2,0,1,0,1,0,,,,,,SIN VARIANTES
+nz-social,p11-social.css,11,5,4,0,0,3,0,social-links,,,,,OK
+nz-social-proof,p11-social.css,11,3,0,2,0,1,0,,,,,,SIN VARIANTES
+nz-spacer,p1-layout.css,1,4,3,0,0,0,0,,,,,,OK
+nz-span-1,p1-layout.css,1,1,0,0,0,0,0,,nz-span,,,,SIN VARIANTES
+nz-span-10,p1-layout.css,1,1,0,0,0,0,0,,nz-span,,,,SIN VARIANTES
+nz-span-11,p1-layout.css,1,1,0,0,0,0,0,,nz-span,,,,SIN VARIANTES
+nz-span-12,p1-layout.css,1,1,0,0,0,0,0,,nz-span,,,,SIN VARIANTES
+nz-span-2,p1-layout.css,1,1,0,0,0,0,0,,nz-span,,,,SIN VARIANTES
+nz-span-3,p1-layout.css,1,1,0,0,0,0,0,,nz-span,,,,SIN VARIANTES
+nz-span-4,p1-layout.css,1,1,0,0,0,0,0,,nz-span,,,,SIN VARIANTES
+nz-span-5,p1-layout.css,1,1,0,0,0,0,0,,nz-span,,,,SIN VARIANTES
+nz-span-6,p1-layout.css,1,1,0,0,0,0,0,,nz-span,,,,SIN VARIANTES
+nz-span-7,p1-layout.css,1,1,0,0,0,0,0,,nz-span,,,,SIN VARIANTES
+nz-span-8,p1-layout.css,1,1,0,0,0,0,0,,nz-span,,,,SIN VARIANTES
+nz-span-9,p1-layout.css,1,1,0,0,0,0,0,,nz-span,,,,SIN VARIANTES
+nz-spark,p8-data.css,8,6,4,2,0,1,0,,,,,,OK
+nz-sparkline,p13-charts.css,13,6,4,1,0,2,0,,,,,,OK
+nz-spin,p4-actions.css,4,5,4,0,0,2,0,,,,carga,,REVISAR (solape: carga)
+nz-spinner,p6-feedback.css,6,7,6,0,0,16,0,spinner,,,carga,,REVISAR (solape: carga)
+nz-split,p1-layout.css,1,5,4,0,0,2,0,,,,,,OK
+nz-splitpane,p1-layout.css,1,4,1,2,0,2,0,,,,,,OK
+nz-splitview,p15-apps.css,15,2,0,1,0,2,0,,,,,,SIN VARIANTES
+nz-spotlight,p15-apps.css,15,3,0,2,0,3,0,,,,,,SIN VARIANTES
+nz-sr-only-focusable,p12-system.css,12,1,0,0,0,3,0,,,,,,SIN VARIANTES
+nz-stack,p1-layout.css,1,6,5,0,0,0,2,,,,,,OK
+nz-stars,p10-commerce.css,10,9,4,5,0,2,0,,,,,,OK
+nz-stat-badge,p8-data.css,8,1,0,0,0,0,0,,,,,,SIN VARIANTES
+nz-statusbar,p6-feedback.css,6,7,5,1,0,0,0,,,,,,OK
+nz-stepper,p2-navigation.css,2,7,3,4,0,5,0,,,,,,OK
+nz-sticky-bottom,p1-layout.css,1,1,0,0,0,0,0,,,,,,SIN VARIANTES
+nz-sticky-top,p1-layout.css,1,1,0,0,0,0,0,,,,,,SIN VARIANTES
+nz-stock,p10-commerce.css,10,6,4,1,0,2,0,,,,,,OK
+nz-stream-status,p14-ai.css,14,5,3,1,0,2,0,,,,,,OK
+nz-summary,p10-commerce.css,10,7,2,5,0,1,0,,,,,,OK
+nz-switch,p5-forms.css,5,9,5,4,0,19,0,,,,,,OK
+nz-syn,p15-apps.css,15,4,4,0,0,0,0,,,,,,OK
+nz-sysdialog,p15-apps.css,15,3,0,2,0,2,0,,,,,,SIN VARIANTES
+nz-sysinfo,p12-system.css,12,4,0,3,0,0,0,,,,,,SIN VARIANTES
+nz-sysnotif,p15-apps.css,15,4,0,3,0,4,0,,,,,,SIN VARIANTES
+nz-sysstatus,p12-system.css,12,8,5,2,0,2,0,,,,,,OK
+nz-tabfocus-visible,p12-system.css,12,1,0,0,0,1,0,,,,,,SIN VARIANTES
+nz-table,p8-data.css,8,32,19,22,0,4,10,,,,,,OK (completa)
+nz-table-wrap,p8-data.css,8,2,1,0,0,0,2,,,,,,OK
+nz-tabs,p2-navigation.css,2,12,8,5,0,7,0,,,,,,OK (completa)
+nz-tap-44,p12-system.css,12,1,0,0,0,2,0,,nz-tap,,,,SIN VARIANTES
+nz-taskplan,p14-ai.css,14,8,3,7,0,2,0,task-plan,,,,,OK
+nz-taskwin,p15-apps.css,15,2,0,1,0,1,0,,,,,,SIN VARIANTES
+nz-team,p11-social.css,11,9,2,6,0,8,0,,,,,,OK
+nz-tema-badge,p12-system.css,12,4,3,0,0,0,0,theme-badge,,,,,OK
+nz-term,p15-apps.css,15,3,0,2,0,1,0,,,,,,SIN VARIANTES
+nz-text,p3-typography.css,3,9,9,0,0,0,0,,,,titulo,,REVISAR (solape: titulo)
+nz-textarea,p5-forms.css,5,6,4,1,0,1,0,,,,,,OK
+nz-thinking,p14-ai.css,14,4,2,3,0,2,0,,,,,,OK
+nz-thirds,p1-layout.css,1,3,2,0,0,0,0,,,,tarjeta,,REVISAR (solape: tarjeta)
+nz-timeline,p8-data.css,8,15,7,11,0,17,0,,,,,,OK (completa)
+nz-tip,p7-overlays.css,7,6,4,1,0,2,0,,,,,,OK
+nz-toast,p6-feedback.css,6,11,6,4,0,10,0,,,,aviso,,REVISAR (solape: aviso)
+nz-toast-stack,p7-overlays.css,7,5,3,3,0,2,0,,,,,,OK
+nz-toc,p2-navigation.css,2,6,4,2,0,4,0,,,,,,OK
+nz-tokens,p14-ai.css,14,4,0,3,0,0,0,,,,,,SIN VARIANTES
+nz-toolbar,p4-actions.css,4,7,3,3,0,1,2,,,,,,OK
+nz-toolcall,p14-ai.css,14,9,3,8,0,0,0,,,,,,OK
+nz-toolrow,p14-ai.css,14,3,1,2,0,1,0,,,,,,OK
+nz-tray,p15-apps.css,15,3,0,2,0,4,0,,,,,,SIN VARIANTES
+nz-tree,p15-apps.css,15,2,0,1,0,4,0,,,,,,SIN VARIANTES
+nz-treemap,p13-charts.css,13,8,4,7,0,2,0,,,,,,OK
+nz-truncate,p3-typography.css,3,4,3,0,0,0,0,,,,,,OK
+nz-trust,p11-social.css,11,5,2,2,0,1,0,,,,,,OK
+nz-underline,p3-typography.css,3,1,1,0,0,2,0,,,,,,OK
+nz-userbox,p15-apps.css,15,2,0,1,0,4,0,,,,,,SIN VARIANTES
+nz-username,p11-social.css,11,5,1,3,0,3,0,,,,,,OK
+nz-version-badge,p12-system.css,12,1,0,0,0,0,0,,,,,,SIN VARIANTES
+nz-vh,p12-system.css,12,1,0,0,0,3,0,,,,,,SIN VARIANTES
+nz-video,p9-media.css,9,7,2,4,0,3,0,,,,,,OK
+nz-visually-hidden,p12-system.css,12,1,0,0,0,3,1,,,,,,OK
+nz-widget,p15-apps.css,15,2,0,1,0,0,0,,,,,,SIN VARIANTES
+nz-window,p15-apps.css,15,5,2,2,0,5,0,,,,,,OK
+nz-winfoot,p15-apps.css,15,2,0,1,0,2,0,,,,,,SIN VARIANTES
+nz-wishlist,p10-commerce.css,10,3,0,2,0,2,0,,,,,,SIN VARIANTES
+nz-with-sidebar,p1-layout.css,1,3,2,0,0,0,1,,,,,,OK
