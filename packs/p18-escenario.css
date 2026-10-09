@@ -1,0 +1,214 @@
+/* ============================================================
+   Paquete 18 · ESCENARIO (charlas y piezas en beats)
+   ------------------------------------------------------------
+   El estilo de una charla en beats, dentro del sistema: un lienzo 16:9, una
+   escala de texto de escenario, nodos con enlaces para los diagramas y un marco
+   para el QR de cierre. Nace del deck de Borja (beatdeck, MIT) traído a Aurora.
+
+   Reglas (las mismas que el resto del sistema):
+   - Todo lo público vive bajo `.nz-` y usa tokens; cero literales, cero glass,
+     cero gradientes, cero !important.
+   - Cada familia nace con su demo en specs/18.json (CSS sin demostrar es deuda).
+   - Mobile-first: en móvil el escenario es una columna legible; el lienzo 16:9
+     entra a partir de 960 px.
+   - Una familia, un pack: aquí solo vive lo que es escenario.
+
+   Hecho con ❤️ por David Antizar
+   ============================================================ */
+
+/* ---- 01 Lienzo: el escenario ---- */
+.nz-escenario {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--nz-space-6);
+  padding: var(--nz-space-6);
+  background: var(--nz-bg);
+  color: var(--nz-text);
+  border: var(--nz-border-w) solid var(--nz-border-soft);
+  border-radius: var(--nz-radius-lg);
+}
+@media (min-width: 960px) {
+  .nz-escenario--lienzo {
+    aspect-ratio: 16 / 9;
+    gap: var(--nz-space-10);
+    padding: var(--nz-space-12);
+    overflow: hidden;
+  }
+}
+.nz-escenario__cuerpo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--nz-space-6);
+  flex: 1;
+  min-width: 0;
+}
+.nz-escenario__pie {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--nz-space-3);
+}
+.nz-escenario__marca {
+  font-family: var(--nz-font-mono);
+  font-size: var(--nz-text-2xs);
+  letter-spacing: var(--nz-tracking-caps);
+  text-transform: uppercase;
+  color: var(--nz-text-mute);
+}
+.nz-escenario--profundo {
+  background: var(--nz-gray-950);
+  border-color: var(--nz-gray-800);
+  color: var(--nz-gray-0);
+}
+.nz-escenario--profundo .nz-escenario__marca {
+  color: var(--nz-gray-400);
+}
+
+/* ---- 02 Roles de texto del escenario ---- */
+.nz-esc-titular {
+  font-family: var(--nz-font-titulo);
+  font-size: var(--nz-esc-titular);
+  font-weight: 800;
+  line-height: var(--nz-leading-tight);
+  letter-spacing: var(--nz-tracking-tight);
+  text-wrap: balance;
+  margin: 0;
+}
+.nz-esc-editorial {
+  font-family: var(--nz-font);
+  font-size: var(--nz-esc-editorial);
+  font-weight: 300;
+  line-height: var(--nz-leading-snug);
+  letter-spacing: var(--nz-tracking-tight);
+  text-wrap: pretty;
+  max-width: 36ch;
+  margin: 0;
+}
+.nz-esc-numeral {
+  font-family: var(--nz-font-titulo);
+  font-size: var(--nz-esc-numeral);
+  font-weight: 800;
+  line-height: var(--nz-leading-tight);
+  letter-spacing: var(--nz-tracking-tight);
+  font-variant-numeric: tabular-nums;
+  margin: 0;
+}
+.nz-esc-etiqueta {
+  font-family: var(--nz-font-mono);
+  font-size: var(--nz-esc-etiqueta);
+  font-weight: 700;
+  letter-spacing: var(--nz-tracking-caps);
+  text-transform: uppercase;
+  color: var(--nz-text-mute);
+  margin: 0;
+}
+.nz-esc-dato {
+  font-size: var(--nz-esc-dato);
+  line-height: var(--nz-leading-snug);
+  color: var(--nz-text-soft);
+  max-width: 52ch;
+  margin: 0;
+}
+.nz-esc-titular--brand,
+.nz-esc-editorial--brand,
+.nz-esc-numeral--brand {
+  color: var(--nz-brand-strong);
+}
+.nz-esc-titular--accent,
+.nz-esc-editorial--accent,
+.nz-esc-numeral--accent,
+.nz-esc-etiqueta--accent {
+  color: var(--nz-accent-strong);
+}
+.nz-esc-titular--muted,
+.nz-esc-editorial--muted {
+  color: var(--nz-text-mute);
+}
+
+/* ---- 03 Nodos y enlaces: el diagrama que se construye ---- */
+.nz-nodo {
+  display: flex;
+  flex-direction: column;
+  gap: var(--nz-space-1);
+  padding: var(--nz-space-4);
+  background: var(--nz-surface);
+  border: var(--nz-border-w) solid var(--nz-border-strong);
+  border-radius: var(--nz-radius-md);
+  min-width: 0;
+}
+.nz-nodo__tipo {
+  font-family: var(--nz-font-mono);
+  font-size: var(--nz-text-2xs);
+  letter-spacing: var(--nz-tracking-caps);
+  text-transform: uppercase;
+  color: var(--nz-text-mute);
+}
+.nz-nodo__valor {
+  font-size: var(--nz-text-lg);
+  font-weight: 700;
+  color: var(--nz-text);
+}
+.nz-nodo--acento {
+  border-color: var(--nz-accent);
+}
+.nz-nodo--apagado {
+  opacity: 0.4;
+}
+.nz-enlace {
+  display: block;
+  position: relative;
+  height: var(--nz-border-w);
+  background: var(--nz-border-strong);
+  margin-block: var(--nz-space-4);
+}
+.nz-enlace--acento {
+  background: var(--nz-accent);
+}
+.nz-enlace__punta {
+  position: absolute;
+  top: 50%;
+  right: calc(-1 * var(--nz-space-1));
+  width: var(--nz-space-2);
+  height: var(--nz-space-2);
+  border-top: var(--nz-border-w) solid var(--nz-border-strong);
+  border-right: var(--nz-border-w) solid var(--nz-border-strong);
+  transform: translateY(-50%) rotate(45deg);
+}
+.nz-enlace--acento .nz-enlace__punta {
+  border-color: var(--nz-accent);
+}
+
+/* ---- 04 QR de cierre ---- */
+.nz-qr {
+  display: flex;
+  flex-direction: column;
+  gap: var(--nz-space-3);
+  align-items: flex-start;
+}
+.nz-qr__marco {
+  display: block;
+  width: var(--nz-esc-qr);
+  height: var(--nz-esc-qr);
+  padding: var(--nz-space-3);
+  background: var(--nz-gray-0);
+  border-radius: var(--nz-radius-md);
+}
+.nz-qr__marco svg,
+.nz-qr__marco img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.nz-qr__marco svg {
+  color: var(--nz-gray-950);
+}
+.nz-qr__pie {
+  font-family: var(--nz-font-mono);
+  font-size: var(--nz-text-2xs);
+  letter-spacing: var(--nz-tracking-caps);
+  text-transform: uppercase;
+  color: var(--nz-text-mute);
+}

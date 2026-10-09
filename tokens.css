@@ -145,6 +145,17 @@
   --nz-tracking-tight: -0.02em;
   --nz-tracking-caps: 0.08em;
 
+  /* ---- ESCENARIO · charlas y piezas en beats (categoría 18) ----
+     Una sola escala fluida para todo el lienzo: sube sola con el ancho, y en móvil
+     se queda en un tamaño que se lee (allí el escenario se apila en columna, no
+     se encoge a miniatura). */
+  --nz-esc-titular:   clamp(2.5rem, 0.9rem + 8.4vw, 11rem);
+  --nz-esc-editorial: clamp(1.35rem, 0.85rem + 3.1vw, 4rem);
+  --nz-esc-numeral:   clamp(2.25rem, 0.8rem + 7.1vw, 9.5rem);
+  --nz-esc-etiqueta:  clamp(0.75rem, 0.6rem + 0.75vw, 1.5rem);
+  --nz-esc-dato:      clamp(0.9rem, 0.75rem + 0.65vw, 1.6rem);
+  --nz-esc-qr:        clamp(6rem, 3rem + 8vw, 11rem);
+
   /* ---- 8. ESPACIO (escala 4px) + RITMO VERTICAL ---- */
   --nz-space-0: 0;
   --nz-space-1: 0.25rem;   /* 4 */

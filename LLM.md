@@ -1,6 +1,6 @@
 # Aurora — guía de decisión para agentes
 
-Design system CSS puro, sin dependencias ni build. 2145 objetos en 17 categorías.
+Design system CSS puro, sin dependencias ni build. 2176 objetos en 18 categorías.
 **No pegues el CSS en el prompt**: enlaza por CDN y usa las clases de esta guía.
 
 ## 1. Mínimo obligatorio
@@ -8,8 +8,8 @@ Design system CSS puro, sin dependencias ni build. 2145 objetos en 17 categoría
 ```html
 <html lang="es" data-nz-theme="light">
 <head>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v8.1.0/tokens.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v8.1.0/packs/all.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v8.2.0/tokens.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v8.2.0/packs/all.css">
 </head>
 <body class="nz">
 ```
@@ -28,7 +28,8 @@ van cada uno. Dark mode: cambia a `data-nz-theme="dark"` en el `<html>`.
 | login-form | `tokens.css` + `p1-layout.css, p3-typography.css, p4-actions.css, p5-forms.css, p6-feedback.css` | card centrada + field + input + botón + alerta de error |
 | escritorio-app | `tokens.css` + `p1-layout.css, p2-navigation.css, p3-typography.css, p4-actions.css, p8-data.css, p15-apps.css` | window + appnav + kanban/agenda + statusbar |
 | e-commerce | `tokens.css` + `p1-layout.css, p3-typography.css, p4-actions.css, p10-commerce.css, p8-data.css` | producto + cart + checkout-steps + pricetable |
-| prototipo | `tokens.css` + `all.css` | exploración rápida: un solo enlace con los 15 packs |
+| charla-beats | `tokens.css` + `p1-layout.css, p3-typography.css, p4-actions.css, p18-escenario.css` | lienzo 16:9 + titular/editorial/numeral + nodos del diagrama + QR de cierre |
+| prototipo | `tokens.css` + `all.css` | exploración rápida: un solo enlace con todos los packs |
 
 Carga **solo los packs que uses** en producción (cada uno pesa 12-40 KB) o
 `packs/all.css` para prototipos. `tokens.css` siempre primero.
@@ -54,6 +55,7 @@ Carga **solo los packs que uses** en producción (cada uno pesa 12-40 KB) o
 | 15 · Apps y escritorio | `p15-apps.css` | `nz-actbar`, `nz-agenda`, `nz-appempty`, `nz-appnav`… |
 | 16 · Cristal (capa de estilo) | `p16-cristal.css` | `nz-cristal`, `nz-cristal-barra` |
 | 17 · Patrones compuestos | `p17-patrones.css` | `nz-agenda-disponibilidad`, `nz-asistente-pasos`, `nz-aviso-accion`, `nz-aviso-sistema`… |
+| 18 · Escenario (charlas en beats) | `p18-escenario.css` | `nz-enlace`, `nz-esc-dato`, `nz-esc-editorial`, `nz-esc-etiqueta`… |
 
 ## 4. Necesito X → uso Y
 
@@ -188,7 +190,7 @@ Solo si necesitas afinar algo suelto (fuente, radio, ancho):
 }
 ```
 
-Los 179 tokens están inventariados en `components.json` (sección
+Los 185 tokens están inventariados en `components.json` (sección
 `tokens_def`, con nombre, valor y sección). Nada fuera de ese catálogo.
 
 ## 8. Anti-patrones (NO lo hagas)
@@ -199,7 +201,7 @@ Los 179 tokens están inventariados en `components.json` (sección
 - ❌ Gradientes, `backdrop-filter` o `!important`: prohibidos por el manifiesto y la CI los detecta.
 - ❌ Clases globales sin `.nz-`: romperías la convivencia con otros frameworks.
 - ❌ Desktop-first: el sistema es mobile-first (base 1 columna, `min-width` para crecer).
-- ❌ Enlazar `@master` en producción: pinea la versión (`@v8.1.0`) o jsDelivr te servirá CSS viejo desde su caché.
+- ❌ Enlazar `@master` en producción: pinea la versión (`@v8.2.0`) o jsDelivr te servirá CSS viejo desde su caché.
 
 ## 9. Verificar antes de entregar
 

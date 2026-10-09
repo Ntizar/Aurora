@@ -1,10 +1,10 @@
 {
  "name": "Aurora",
- "version": "8.1.0",
+ "version": "8.2.0",
  "type": "css-only design system",
  "namespace": ".nz-",
  "tokens": "tokens.css",
- "cdn": "https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v8.1.0/",
+ "cdn": "https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v8.2.0/",
  "manifiesto": {
   "gradientes": 0,
   "glass": 0,
@@ -19,11 +19,11 @@
   "objetivoTactil": "44px"
  },
  "resumen": {
-  "objetos": 2145,
-  "familias": 399,
-  "categorias": 17,
-  "demos": 632,
-  "tokens": 179,
+  "objetos": 2176,
+  "familias": 408,
+  "categorias": 18,
+  "demos": 648,
+  "tokens": 185,
   "tokensDark": 43
  },
  "packs": {
@@ -179,6 +179,15 @@
    "familias": 46,
    "demos": 47,
    "pagina": "paginas/17-patrones.html"
+  },
+  "p18-escenario.css": {
+   "categoria": 18,
+   "nombre": "Escenario (charlas en beats)",
+   "descripcion": "El estilo de una charla en beats dentro del sistema: un lienzo 16:9, la escala de texto del escenario (titular, editorial, numeral, etiqueta y dato), nodos con enlaces para los diagramas que se construyen clic a clic, y el marco del QR de cierre. En móvil el escenario se apila en columna legible; el lienzo de proyector entra desde 960 px.",
+   "objetos": 31,
+   "familias": 9,
+   "demos": 16,
+   "pagina": "paginas/18-escenario.html"
   }
  },
  "lexico": {
@@ -334,11 +343,20 @@
    ],
    "tipico": "producto + cart + checkout-steps + pricetable"
   },
+  "charla-beats": {
+   "packs": [
+    "p1-layout.css",
+    "p3-typography.css",
+    "p4-actions.css",
+    "p18-escenario.css"
+   ],
+   "tipico": "lienzo 16:9 + titular/editorial/numeral + nodos del diagrama + QR de cierre"
+  },
   "prototipo": {
    "packs": [
     "all.css"
    ],
-   "tipico": "exploración rápida: un solo enlace con los 15 packs"
+   "tipico": "exploración rápida: un solo enlace con todos los packs"
   }
  },
  "tokens_def": [
@@ -915,6 +933,36 @@
   {
    "nombre": "--nz-tracking-caps",
    "valor": "0.08em",
+   "seccion": "ROLES TEMÁTICOS (light). Todo color de interfaz sale de aquí. "
+  },
+  {
+   "nombre": "--nz-esc-titular",
+   "valor": "clamp(2.5rem, 0.9rem + 8.4vw, 11rem)",
+   "seccion": "ROLES TEMÁTICOS (light). Todo color de interfaz sale de aquí. "
+  },
+  {
+   "nombre": "--nz-esc-editorial",
+   "valor": "clamp(1.35rem, 0.85rem + 3.1vw, 4rem)",
+   "seccion": "ROLES TEMÁTICOS (light). Todo color de interfaz sale de aquí. "
+  },
+  {
+   "nombre": "--nz-esc-numeral",
+   "valor": "clamp(2.25rem, 0.8rem + 7.1vw, 9.5rem)",
+   "seccion": "ROLES TEMÁTICOS (light). Todo color de interfaz sale de aquí. "
+  },
+  {
+   "nombre": "--nz-esc-etiqueta",
+   "valor": "clamp(0.75rem, 0.6rem + 0.75vw, 1.5rem)",
+   "seccion": "ROLES TEMÁTICOS (light). Todo color de interfaz sale de aquí. "
+  },
+  {
+   "nombre": "--nz-esc-dato",
+   "valor": "clamp(0.9rem, 0.75rem + 0.65vw, 1.6rem)",
+   "seccion": "ROLES TEMÁTICOS (light). Todo color de interfaz sale de aquí. "
+  },
+  {
+   "nombre": "--nz-esc-qr",
+   "valor": "clamp(6rem, 3rem + 8vw, 11rem)",
    "seccion": "ROLES TEMÁTICOS (light). Todo color de interfaz sale de aquí. "
   },
   {
@@ -9446,6 +9494,151 @@
     "cabecera",
     "datos",
     "plan"
+   ]
+  },
+  "nz-enlace": {
+   "pack": "p18-escenario.css",
+   "categoria": 18,
+   "demo": "paginas/18-escenario.html",
+   "clases": [
+    "nz-enlace",
+    "nz-enlace--acento",
+    "nz-enlace__punta"
+   ],
+   "modificadores": [
+    "acento"
+   ],
+   "partes": [
+    "punta"
+   ]
+  },
+  "nz-esc-dato": {
+   "pack": "p18-escenario.css",
+   "categoria": 18,
+   "demo": "paginas/18-escenario.html",
+   "clases": [
+    "nz-esc-dato"
+   ],
+   "modificadores": [],
+   "partes": []
+  },
+  "nz-esc-editorial": {
+   "pack": "p18-escenario.css",
+   "categoria": 18,
+   "demo": "paginas/18-escenario.html",
+   "clases": [
+    "nz-esc-editorial",
+    "nz-esc-editorial--accent",
+    "nz-esc-editorial--brand",
+    "nz-esc-editorial--muted"
+   ],
+   "modificadores": [
+    "accent",
+    "brand",
+    "muted"
+   ],
+   "partes": []
+  },
+  "nz-esc-etiqueta": {
+   "pack": "p18-escenario.css",
+   "categoria": 18,
+   "demo": "paginas/18-escenario.html",
+   "clases": [
+    "nz-esc-etiqueta",
+    "nz-esc-etiqueta--accent"
+   ],
+   "modificadores": [
+    "accent"
+   ],
+   "partes": []
+  },
+  "nz-esc-numeral": {
+   "pack": "p18-escenario.css",
+   "categoria": 18,
+   "demo": "paginas/18-escenario.html",
+   "clases": [
+    "nz-esc-numeral",
+    "nz-esc-numeral--accent",
+    "nz-esc-numeral--brand"
+   ],
+   "modificadores": [
+    "accent",
+    "brand"
+   ],
+   "partes": []
+  },
+  "nz-esc-titular": {
+   "pack": "p18-escenario.css",
+   "categoria": 18,
+   "demo": "paginas/18-escenario.html",
+   "clases": [
+    "nz-esc-titular",
+    "nz-esc-titular--accent",
+    "nz-esc-titular--brand",
+    "nz-esc-titular--muted"
+   ],
+   "modificadores": [
+    "accent",
+    "brand",
+    "muted"
+   ],
+   "partes": []
+  },
+  "nz-escenario": {
+   "pack": "p18-escenario.css",
+   "categoria": 18,
+   "demo": "paginas/18-escenario.html",
+   "clases": [
+    "nz-escenario",
+    "nz-escenario--lienzo",
+    "nz-escenario--profundo",
+    "nz-escenario__cuerpo",
+    "nz-escenario__marca",
+    "nz-escenario__pie"
+   ],
+   "modificadores": [
+    "lienzo",
+    "profundo"
+   ],
+   "partes": [
+    "cuerpo",
+    "marca",
+    "pie"
+   ]
+  },
+  "nz-nodo": {
+   "pack": "p18-escenario.css",
+   "categoria": 18,
+   "demo": "paginas/18-escenario.html",
+   "clases": [
+    "nz-nodo",
+    "nz-nodo--acento",
+    "nz-nodo--apagado",
+    "nz-nodo__tipo",
+    "nz-nodo__valor"
+   ],
+   "modificadores": [
+    "acento",
+    "apagado"
+   ],
+   "partes": [
+    "tipo",
+    "valor"
+   ]
+  },
+  "nz-qr": {
+   "pack": "p18-escenario.css",
+   "categoria": 18,
+   "demo": "paginas/18-escenario.html",
+   "clases": [
+    "nz-qr",
+    "nz-qr__marco",
+    "nz-qr__pie"
+   ],
+   "modificadores": [],
+   "partes": [
+    "marco",
+    "pie"
    ]
   }
  }

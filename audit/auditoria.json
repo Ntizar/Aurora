@@ -1,10 +1,10 @@
 {
  "resumen": {
-  "objetos_declarados": 2145,
-  "familias": 399,
-  "demos": 632,
-  "categorias": 17,
-  "clases_usadas_en_demos": 2145,
+  "objetos_declarados": 2176,
+  "familias": 408,
+  "demos": 648,
+  "categorias": 18,
+  "clases_usadas_en_demos": 2176,
   "clases_sin_demo": 0,
   "familias_sin_demo": 0,
   "fantasmas": 0,
@@ -14,8 +14,8 @@
   "glass": 0,
   "gradientes": 0,
   "important": 1,
-  "familias_sin_variantes": 161,
-  "packs": 17
+  "familias_sin_variantes": 163,
+  "packs": 18
  },
  "packs": {
   "p1-layout.css": {
@@ -103,6 +103,16 @@
    "bytes": 34113,
    "clases": 224,
    "familias": 46,
+   "hex": 0,
+   "gradientes": 0,
+   "glass": 0,
+   "important": 0
+  },
+  "p18-escenario.css": {
+   "lineas": 215,
+   "bytes": 5617,
+   "clases": 31,
+   "familias": 9,
    "hex": 0,
    "gradientes": 0,
    "glass": 0,
@@ -340,6 +350,15 @@
    "demos": 47,
    "objetos": 224,
    "familias": 46,
+   "sin_demo": [],
+   "familias_sin_demo": []
+  },
+  "18": {
+   "nombre": "Escenario (charlas en beats)",
+   "pack": "p18-escenario.css",
+   "demos": 16,
+   "objetos": 31,
+   "familias": 9,
    "sin_demo": [],
    "familias_sin_demo": []
   }
@@ -2256,6 +2275,18 @@
    ],
    "demostrado": true
   },
+  "nz-enlace": {
+   "cat": 18,
+   "pack": "p18-escenario.css",
+   "n_clases": 3,
+   "mods": [
+    "acento"
+   ],
+   "partes": [
+    "punta"
+   ],
+   "demostrado": true
+  },
   "nz-error": {
    "cat": 6,
    "pack": "p6-feedback.css",
@@ -2279,6 +2310,74 @@
     "body",
     "code",
     "title"
+   ],
+   "demostrado": true
+  },
+  "nz-esc-dato": {
+   "cat": 18,
+   "pack": "p18-escenario.css",
+   "n_clases": 1,
+   "mods": [],
+   "partes": [],
+   "demostrado": true
+  },
+  "nz-esc-editorial": {
+   "cat": 18,
+   "pack": "p18-escenario.css",
+   "n_clases": 4,
+   "mods": [
+    "accent",
+    "brand",
+    "muted"
+   ],
+   "partes": [],
+   "demostrado": true
+  },
+  "nz-esc-etiqueta": {
+   "cat": 18,
+   "pack": "p18-escenario.css",
+   "n_clases": 2,
+   "mods": [
+    "accent"
+   ],
+   "partes": [],
+   "demostrado": true
+  },
+  "nz-esc-numeral": {
+   "cat": 18,
+   "pack": "p18-escenario.css",
+   "n_clases": 3,
+   "mods": [
+    "accent",
+    "brand"
+   ],
+   "partes": [],
+   "demostrado": true
+  },
+  "nz-esc-titular": {
+   "cat": 18,
+   "pack": "p18-escenario.css",
+   "n_clases": 4,
+   "mods": [
+    "accent",
+    "brand",
+    "muted"
+   ],
+   "partes": [],
+   "demostrado": true
+  },
+  "nz-escenario": {
+   "cat": 18,
+   "pack": "p18-escenario.css",
+   "n_clases": 6,
+   "mods": [
+    "lienzo",
+    "profundo"
+   ],
+   "partes": [
+    "cuerpo",
+    "marca",
+    "pie"
    ],
    "demostrado": true
   },
@@ -3739,6 +3838,20 @@
    ],
    "demostrado": true
   },
+  "nz-nodo": {
+   "cat": 18,
+   "pack": "p18-escenario.css",
+   "n_clases": 5,
+   "mods": [
+    "acento",
+    "apagado"
+   ],
+   "partes": [
+    "tipo",
+    "valor"
+   ],
+   "demostrado": true
+  },
   "nz-nota": {
    "cat": 3,
    "pack": "p3-typography.css",
@@ -4294,6 +4407,17 @@
     "success"
    ],
    "partes": [],
+   "demostrado": true
+  },
+  "nz-qr": {
+   "cat": 18,
+   "pack": "p18-escenario.css",
+   "n_clases": 3,
+   "mods": [],
+   "partes": [
+    "marco",
+    "pie"
+   ],
    "demostrado": true
   },
   "nz-qty": {
@@ -6034,6 +6158,7 @@
   "nz-desglose-precio",
   "nz-docs",
   "nz-editor-campos",
+  "nz-esc-dato",
   "nz-estado-vacio",
   "nz-eyebrow",
   "nz-facturacion-estados",
@@ -6082,6 +6207,7 @@
   "nz-prompt",
   "nz-propsheet",
   "nz-ptemplate",
+  "nz-qr",
   "nz-reason",
   "nz-reduced-motion-ok",
   "nz-rejilla-estadisticas",

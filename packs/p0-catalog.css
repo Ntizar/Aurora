@@ -61,7 +61,12 @@
 .cat-demo__name { font-weight: 700; font-size: var(--nz-text-md); letter-spacing: var(--nz-tracking-tight); }
 .cat-demo__tag { margin-left: auto; min-width: 0; font-family: var(--nz-font-mono); font-size: var(--nz-text-2xs); color: var(--nz-text-faint); overflow-wrap: anywhere; }
 .cat-stage { background: var(--nz-bg-soft); border-radius: var(--nz-radius-md); padding: var(--nz-space-3); overflow: hidden; }
-.cat-stage p { font-size: var(--nz-text-xs); color: var(--nz-text-mute); margin-top: var(--nz-space-2); }
+/* La prosa suelta de una demo (párrafos SIN clase) se enseña pequeña y apagada.
+   OJO: nunca con un selector de elemento pelado. `.cat-stage p` es 0,1,1 y gana a
+   CUALQUIER objeto del sistema (0,1,0): convertía en 13px apagados todas las demos
+   de tipografía (nz-display, nz-h1, nz-esc-titular…). Bug real, arreglado el
+   2026-10-09 midiendo el catálogo, no mirándolo. */
+.cat-stage :is(p, li, dd, blockquote):not([class]) { font-size: var(--nz-text-xs); color: var(--nz-text-mute); margin-top: var(--nz-space-2); }
 .cat-demo__code { margin-top: var(--nz-space-3); }
 .cat-demo__code > summary { min-height: 44px; display: inline-flex; align-items: center; gap: var(--nz-space-2); padding: 0 var(--nz-space-3); border-radius: var(--nz-radius-full); background: var(--nz-bg-inset); color: var(--nz-text-mute); font-size: var(--nz-text-xs); font-weight: 600; cursor: pointer; list-style: none; }
 .cat-demo__code > summary::-webkit-details-marker { display: none; }

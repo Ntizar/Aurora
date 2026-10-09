@@ -27,7 +27,7 @@ sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
 bc = import_module("build-catalog")
 
 ROOT = bc.ROOT
-VERSION = "8.1.0"
+VERSION = "8.2.0"
 CDN = f"https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v{VERSION}/"
 
 # ---------------------------------------------------------------------------
@@ -104,9 +104,14 @@ COMBOS = {
                   "p10-commerce.css", "p8-data.css"],
         "tipico": "producto + cart + checkout-steps + pricetable",
     },
+    "charla-beats": {
+        "packs": ["p1-layout.css", "p3-typography.css", "p4-actions.css",
+                  "p18-escenario.css"],
+        "tipico": "lienzo 16:9 + titular/editorial/numeral + nodos del diagrama + QR de cierre",
+    },
     "prototipo": {
         "packs": ["all.css"],
-        "tipico": "exploración rápida: un solo enlace con los 15 packs",
+        "tipico": "exploración rápida: un solo enlace con todos los packs",
     },
 }
 

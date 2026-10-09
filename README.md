@@ -4,12 +4,12 @@
 
 **Design system CSS de Ntizar — un solo sistema para montar cualquier web.**
 
-1.900 objetos · 349 familias · 576 demos en vivo · 15 categorías · 0 gradientes · 0 glass
+2.176 objetos · 408 familias · 648 demos en vivo · 18 categorías · 0 gradientes · 0 glass
 
 [![CI — validación del manifiesto](https://github.com/Ntizar/Aurora/actions/workflows/validar.yml/badge.svg)](https://github.com/Ntizar/Aurora/actions/workflows/validar.yml)
 [![GitHub Pages](https://github.com/Ntizar/Aurora/actions/workflows/pages.yml/badge.svg)](https://github.com/Ntizar/Aurora/actions/workflows/pages.yml)
-![versión](https://img.shields.io/badge/versi%C3%B3n-8.1.0-2563eb)
-![objetos](https://img.shields.io/badge/objetos-1.900-2563eb)
+![versión](https://img.shields.io/badge/versi%C3%B3n-8.2.0-2563eb)
+![objetos](https://img.shields.io/badge/objetos-2.176-2563eb)
 ![demos](https://img.shields.io/badge/demos-576-f97316)
 
 **[Explorar el catálogo →](https://ntizar.github.io/Aurora/)**
@@ -59,16 +59,16 @@ Aurora no es una colección de snippets: es un **sistema con contrato**. Cada ob
 **En una página real** — enlaza los tokens y solo los packs que necesites:
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v8.1.0/tokens.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v8.1.0/packs/p4-actions.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v8.1.0/packs/p5-forms.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v8.2.0/tokens.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v8.2.0/packs/p4-actions.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v8.2.0/packs/p5-forms.css">
 ```
 
 **Todo de golpe** — para prototipar:
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v8.1.0/tokens.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v8.1.0/packs/all.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v8.2.0/tokens.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v8.2.0/packs/all.css">
 ```
 
 El `body` lleva `class="nz"` y el tema se fija en el `<html>`:

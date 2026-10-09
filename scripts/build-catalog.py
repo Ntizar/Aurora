@@ -34,7 +34,7 @@ PACKS_COMPONENTES = [f"p{i}-{n}.css" for i, n in [
     (5, "forms"), (6, "feedback"), (7, "overlays"), (8, "data"), (9, "media"),
     (10, "commerce"), (11, "social"), (12, "system"),
     (13, "charts"), (14, "ai"), (15, "apps"),
-    (16, "cristal"), (17, "patrones"),
+    (16, "cristal"), (17, "patrones"), (18, "escenario"),
 ]]
 
 # Packs con permiso para usar backdrop-filter y gradientes (capa de cristal).

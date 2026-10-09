@@ -1,14 +1,14 @@
 ---
 name: aurora-design-system
 description: "Usa al construir o tocar cualquier web con Aurora (Ntizar/Aurora). El repo manda: resuelve la versión vigente y pide LLM.md + components.json antes de escribir CSS."
-version: "8.1.0"
+version: "8.2.0"
 tags: [css, design-system, aurora, ntizar, agent-ready, movil]
 ---
 
 # Aurora — doctrina única (el repo es la orden máxima)
 
 Design system CSS puro, sin build, sin dependencias, namespaced bajo `.nz-`.
-**v8.1.0 · 2145 objetos · 399 familias · 632 demos · 17 categorías · 179 tokens.**
+**v8.2.0 · 2176 objetos · 408 familias · 648 demos · 18 categorías · 185 tokens.**
 *(Cabecera de testigo, no de autoridad: resuélvela con el PASO 0.)*
 
 > ⚠️ `Ntizar/Aurora` **manda sobre esta skill**. Esta skill es un puntero; el repo
@@ -27,7 +27,7 @@ procedimiento. Resuélvela en cada tarea:
 ```bash
 # a) con el repo clonado (lo normal en esta máquina) — la vía rápida
 git -C C:/Users/d_ant/Projects/Aurora-7 fetch --tags -q
-V=$(git -C C:/Users/d_ant/Projects/Aurora-7 describe --tags --abbrev=0)   # p.ej. v8.1.0
+V=$(git -C C:/Users/d_ant/Projects/Aurora-7 describe --tags --abbrev=0)   # p.ej. v8.2.0
 
 # b) sin repo — pregunta a GitHub
 curl -s https://api.github.com/repos/Ntizar/Aurora/tags | grep -m1 '"name"'
@@ -89,8 +89,8 @@ nueva del sistema no te deja ciego: solo obliga a refrescar la cabecera.
 ```html
 <html lang="es" data-nz-theme="light">   <!-- o "dark" -->
 <head>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v8.1.0/tokens.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v8.1.0/packs/all.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v8.2.0/tokens.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v8.2.0/packs/all.css">
 </head>
 <body class="nz">
 ```
@@ -169,6 +169,7 @@ Regla de dedo: **ancho intrínseco → scroll**; **datos tabulares → apilable*
 | Layout (p1) | `.nz-appshell`, `.nz-with-sidebar`, `.nz-split`, `.nz-dash-grid`, `.nz-container` |
 | Navegación (p2) | `.nz-navbar`, `.nz-tabs` (+ `--scroll`, `--pill`), `.nz-breadcrumb`, `.nz-stepper`, `.nz-pagination` |
 | Chat IA (p14) | `.nz-chat`, `.nz-msg`, `.nz-prompt`, `.nz-toolcall`, `.nz-taskplan`, `.nz-approval` |
+| Presentar una charla en beats (p18) | `.nz-escenario` (+ `--lienzo`, `--profundo`) con `.nz-esc-titular/editorial/numeral/etiqueta/dato`, `.nz-nodo`, `.nz-enlace`, `.nz-qr` |
 | Escritorio (p15) | `.nz-window`, `.nz-appnav`, `.nz-kanban`, `.nz-actbar`, `.nz-statusbar` |
 
 Léxico cerrado de modificadores (igual en los 15 packs): tamaño `--2xs/--xs/--sm/--lg/--xl`,
@@ -216,6 +217,11 @@ Criterio de admisión: (a) resuelve un problema real y repetido, (b) es mobile-f
 - ❌ Comparar órdenes de magnitud en `.nz-chart-bar`/`.nz-bullet` de una sola escala (29.262 € junto a 109 €: las barras pequeñas desaparecen y el gráfico miente). Para mezclas dispares, `.nz-chart-tablebar`; para presupuestos, bullet con pista escalonada.
 - ❌ **Contenedor con solo `min-height` cuando su hijo usa `height: 100%`**: el porcentaje no resuelve y el hijo colapsa. Bug real: `.nz-chart-bar__col` (y `__bar`) se quedaban en 2px en TODAS las gráficas de barras, y la cascada en 0px — roto también en el catálogo oficial durante meses. Da altura **definida** al contenedor (`height: 8rem`, no `min-height`) o usa `inset: 0` si el hijo es absoluto. El lint no lo ve: hay que medirlo (`getBoundingClientRect().height` en el navegador).
 - ❌ **Dejar una familia declarada en dos packs** aunque sea por un modificador suelto: el censo asigna la familia al pack de la primera clase que encuentra, y un agente que siga `components.json` enlaza el pack equivocado → el componente sale **sin estilos**. Bug real: `.nz-sidebar--sticky` vivía en `p1-layout.css` mientras la familia estaba en `p2-navigation.css`, y la barra lateral salía pelada. **Una familia, un pack**; auditarlo cruzando el censo con las declaraciones reales (no solo por clase, por FAMILIA).
+- ❌ **Estilar el markup de una demo con un selector de elemento pelado en el shell.**
+  `.cat-stage p` (0,1,1) gana a cualquier objeto del sistema (0,1,0): las demos de tipografía
+  llevaban desde siempre pintándose a 13px apagados (`nz-display`, `nz-h1`, `nz-esc-titular`) sin
+  que el lint lo viera, porque el lint mira clases declaradas, no quién gana la cascada. Se descubre
+  **midiendo** el tamaño computado en el navegador. El shell estila lo suyo con `:not([class])`.
 - ❌ Dejar el patrón resuelto en el proyecto y no subirlo al repo.
 
 ## 11. Excepciones vigentes (cuándo NO usar Aurora)
