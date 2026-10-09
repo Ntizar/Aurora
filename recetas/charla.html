@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es" data-nz-theme="dark" data-nz-marca="aurora">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MasterMind · la charla en beats</title>
+<!--
+  Receta: CHARLA EN BEATS (categoría 18 · Escenario).
+  Ocho beats explican MasterMind. `.nz-recorrido` enseña un beat cada vez y manda
+  la URL (#b06): sin una línea de JS, y si el navegador no soporta :has(), no se
+  esconde nada y el documento se lee entero de arriba abajo.
+  Esta página no lleva ni una linea de CSS propio: solo objetos del sistema.
+  Consumidores: cambia los enlaces locales por el CDN pineado:
+  https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v8.3.0/tokens.css (+ packs/pN-*.css)
+-->
+<link rel="stylesheet" href="../tokens.css">
+<link rel="stylesheet" href="../packs/p1-layout.css">
+<link rel="stylesheet" href="../packs/p2-navigation.css">
+<link rel="stylesheet" href="../packs/p3-typography.css">
+<link rel="stylesheet" href="../packs/p4-actions.css">
+<link rel="stylesheet" href="../packs/p9-media.css">
+<link rel="stylesheet" href="../packs/p18-escenario.css">
+</head>
+<body class="nz">
+
+<header class="nz-navbar nz-navbar--bordered">
+  <span class="nz-navbar__brand">
+    <svg class="nz-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v4m0 10v4M3 12h4m10 0h4M6.3 6.3l2.8 2.8m5.8 5.8 2.8 2.8m0-11.4-2.8 2.8m-5.8 5.8-2.8 2.8"/></svg>
+    MasterMind
+  </span>
+  <nav class="nz-navbar__links" aria-label="Los ocho beats">
+      <a class="nz-navbar__link" aria-current="page" href="#b01">portada</a>
+      <a class="nz-navbar__link" href="#b02">problema</a>
+      <a class="nz-navbar__link" href="#b03">poderes</a>
+      <a class="nz-navbar__link" href="#b04">piezas</a>
+      <a class="nz-navbar__link" href="#b05">viaje</a>
+      <a class="nz-navbar__link" href="#b06">números</a>
+      <a class="nz-navbar__link" href="#b07">cron</a>
+      <a class="nz-navbar__link" href="#b08">cierre</a>
+  </nav>
+</header>
+
+<main class="nz-main nz-main--wide">
+  <div class="nz-container--fluid">
+
+    <div class="nz-recorrido">
+      <section class="nz-recorrido__beat" id="b01">
+        <div class="nz-escenario nz-escenario--profundo">
+          <div class="nz-escenario__cuerpo">
+            <p class="nz-esc-etiqueta">El sistema, en ocho beats</p>
+            <h1 class="nz-esc-titular">MasterMind.</h1>
+            <p class="nz-esc-editorial">Un agente que recuerda lo que hablasteis ayer, busca por significado entre quinientas skills y aprende solo mientras no le hablas.</p>
+            <p class="nz-esc-dato">Avanzas con los enlaces de arriba o con las flechas del navegador: cada beat es una dirección propia.</p>
+          </div>
+          <div class="nz-escenario__pie"><span class="nz-escenario__marca">01 · portada</span><span class="nz-escenario__marca">un clic = un beat</span></div>
+        </div>
+      </section>
+      <section class="nz-recorrido__beat" id="b02">
+        <div class="nz-escenario">
+          <div class="nz-escenario__cuerpo">
+            <p class="nz-esc-etiqueta">02 · el problema</p>
+            <p class="nz-esc-editorial">Cada chat empieza de cero. El contexto se repite cada mañana y lo aprendido ayer se evapora al cerrar la pestaña.</p>
+            <p class="nz-esc-editorial nz-esc-editorial--accent">No falta modelo. Falta memoria.</p>
+          </div>
+          <div class="nz-escenario__pie"><span class="nz-escenario__marca">02 · el problema</span><span class="nz-escenario__marca">#b02</span></div>
+        </div>
+      </section>
+      <section class="nz-recorrido__beat" id="b03">
+        <div class="nz-escenario">
+          <div class="nz-escenario__cuerpo">
+            <p class="nz-esc-etiqueta">03 · los tres superpoderes</p>
+            <div class="nz-grid-auto">
+              <div class="nz-nodo"><span class="nz-nodo__tipo">01</span><span class="nz-nodo__valor">Recuerda</span></div>
+              <div class="nz-nodo nz-nodo--acento"><span class="nz-nodo__tipo">02</span><span class="nz-nodo__valor">Sabe buscar</span></div>
+              <div class="nz-nodo"><span class="nz-nodo__tipo">03</span><span class="nz-nodo__valor">Aprende solo</span></div>
+            </div>
+            <p class="nz-esc-dato">Una memoria que entra en cada sesión, una búsqueda por significado y un aprendizaje que convierte lo visto en conocimiento.</p>
+          </div>
+          <div class="nz-escenario__pie"><span class="nz-escenario__marca">03 · los tres superpoderes</span><span class="nz-escenario__marca">#b03</span></div>
+        </div>
+      </section>
+      <section class="nz-recorrido__beat" id="b04">
+        <div class="nz-escenario">
+          <div class="nz-escenario__cuerpo">
+            <p class="nz-esc-etiqueta">04 · las seis piezas</p>
+            <div class="nz-grid-auto">
+              <div class="nz-nodo nz-nodo--acento"><span class="nz-nodo__tipo">El cerebro</span><span class="nz-nodo__valor">Hermes Agent</span></div>
+              <div class="nz-nodo"><span class="nz-nodo__tipo">Los modelos</span><span class="nz-nodo__valor">NaN.builders</span></div>
+              <div class="nz-nodo"><span class="nz-nodo__tipo">La búsqueda</span><span class="nz-nodo__valor">ChromaDB</span></div>
+              <div class="nz-nodo"><span class="nz-nodo__tipo">La verdad</span><span class="nz-nodo__valor">GitHub</span></div>
+              <div class="nz-nodo"><span class="nz-nodo__tipo">Las manos</span><span class="nz-nodo__valor">El servidor</span></div>
+              <div class="nz-nodo"><span class="nz-nodo__tipo">La ventana</span><span class="nz-nodo__valor">Este panel</span></div>
+            </div>
+            <p class="nz-esc-dato">Un cerebro que decide, unos modelos que piensan, un buscador semántico, un repositorio como verdad y un servidor que trabaja de noche.</p>
+          </div>
+          <div class="nz-escenario__pie"><span class="nz-escenario__marca">04 · las seis piezas</span><span class="nz-escenario__marca">#b04</span></div>
+        </div>
+      </section>
+      <section class="nz-recorrido__beat" id="b05">
+        <div class="nz-escenario">
+          <div class="nz-escenario__cuerpo">
+            <p class="nz-esc-etiqueta">05 · el viaje de una tarea</p>
+            <pre class="nz-code--block">python scripts/consultar-skills.py "desplegar en el servidor"
+→ 6 skills relevantes · 0,4 s</pre>
+            <p class="nz-esc-dato">Decide el nivel de la tarea, carga los skills de ese dominio, delega y verifica el resultado antes de dártelo.</p>
+          </div>
+          <div class="nz-escenario__pie"><span class="nz-escenario__marca">05 · el viaje de una tarea</span><span class="nz-escenario__marca">#b05</span></div>
+        </div>
+      </section>
+      <section class="nz-recorrido__beat" id="b06">
+        <div class="nz-escenario">
+          <div class="nz-escenario__cuerpo">
+            <p class="nz-esc-etiqueta">06 · los números</p>
+            <div class="nz-grid-auto">
+              <div><p class="nz-esc-numeral">570</p><p class="nz-esc-etiqueta">skills en el catálogo</p></div>
+              <div><p class="nz-esc-numeral">16</p><p class="nz-esc-etiqueta">tareas que se hacen solas</p></div>
+              <div><p class="nz-esc-numeral nz-esc-numeral--accent">0 €</p><p class="nz-esc-etiqueta">coste de plataforma</p></div>
+            </div>
+            <p class="nz-esc-dato">Todo corre en el plan gratuito. Aquí no se paga por plataforma: se paga en cuidado.</p>
+          </div>
+          <div class="nz-escenario__pie"><span class="nz-escenario__marca">06 · los números</span><span class="nz-escenario__marca">#b06</span></div>
+        </div>
+      </section>
+      <section class="nz-recorrido__beat" id="b07">
+        <div class="nz-escenario">
+          <div class="nz-escenario__cuerpo">
+            <p class="nz-esc-etiqueta">07 · mientras no le hablas</p>
+            <div class="nz-grid-auto">
+              <div class="nz-nodo"><span class="nz-nodo__tipo">05:00</span><span class="nz-nodo__valor">Prepara el resumen del día</span></div>
+              <div class="nz-nodo"><span class="nz-nodo__tipo">06:30</span><span class="nz-nodo__valor">Explora los proyectos destacados</span></div>
+              <div class="nz-nodo"><span class="nz-nodo__tipo">07:00</span><span class="nz-nodo__valor">Deja el informe en tu chat</span></div>
+              <div class="nz-nodo"><span class="nz-nodo__tipo">Al cerrar</span><span class="nz-nodo__valor">Destila la sesión y la sube al repositorio</span></div>
+            </div>
+          </div>
+          <div class="nz-escenario__pie"><span class="nz-escenario__marca">07 · mientras no le hablas</span><span class="nz-escenario__marca">#b07</span></div>
+        </div>
+      </section>
+      <section class="nz-recorrido__beat" id="b08">
+        <div class="nz-escenario">
+          <div class="nz-escenario__cuerpo">
+            <p class="nz-esc-etiqueta">08 · cierre</p>
+            <p class="nz-esc-editorial">El trabajo de hoy es el punto de partida de mañana.</p>
+            <div class="nz-qr">
+              <span class="nz-qr__marco"><svg role="img" aria-label="QR de la charla en vivo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29 29" shape-rendering="crispEdges"><path stroke="currentColor" d="M0 0.5h7m2 0h1m1 0h2m2 0h6m1 0h7M0 1.5h1m5 0h1m3 0h1m1 0h1m5 0h1m3 0h1m5 0h1M0 2.5h1m1 0h3m1 0h1m1 0h3m3 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h3m1 0h1M0 3.5h1m1 0h3m1 0h1m1 0h3m1 0h1m3 0h2m2 0h1m1 0h1m1 0h3m1 0h1M0 4.5h1m1 0h3m1 0h1m1 0h2m2 0h4m1 0h4m1 0h1m1 0h3m1 0h1M0 5.5h1m5 0h1m1 0h2m3 0h4m1 0h1m3 0h1m5 0h1M0 6.5h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7M8 7.5h1m1 0h1m2 0h1m1 0h1m4 0h1M0 8.5h1m1 0h5m2 0h2m3 0h2m1 0h1m2 0h1m1 0h5M0 9.5h5m2 0h1m2 0h1m4 0h2m2 0h2m1 0h3m3 0h1M1 10.5h1m3 0h2m1 0h4m5 0h2m1 0h2M2 11.5h1m1 0h2m1 0h1m1 0h3m2 0h1m1 0h1m2 0h1m1 0h2m2 0h1m1 0h1M2 12.5h2m2 0h1m4 0h1m4 0h3m1 0h2m3 0h2M0 13.5h1m2 0h2m3 0h1m1 0h6m1 0h4m1 0h3m3 0h1M2 14.5h1m1 0h1m1 0h3m1 0h1m1 0h6m2 0h1m4 0h2M0 15.5h2m5 0h4m2 0h1m1 0h1m2 0h3m1 0h3m2 0h1M0 16.5h5m1 0h2m6 0h2m1 0h1m1 0h1m5 0h2M0 17.5h1m1 0h1m1 0h1m2 0h2m6 0h2m1 0h7m1 0h1m1 0h1M0 18.5h1m1 0h1m2 0h4m1 0h1m15 0h1M0 19.5h1m1 0h1m4 0h1m1 0h1m1 0h2m1 0h1m1 0h1m1 0h1m2 0h2m4 0h1M0 20.5h1m1 0h1m1 0h4m1 0h1m6 0h2m1 0h6m1 0h3M8 21.5h4m1 0h3m2 0h1m1 0h1m3 0h5M0 22.5h7m5 0h5m2 0h2m1 0h1m1 0h3M0 23.5h1m5 0h1m1 0h1m1 0h1m2 0h1m1 0h1m3 0h2m3 0h1M0 24.5h1m1 0h3m1 0h1m1 0h2m4 0h2m1 0h1m2 0h5m1 0h1m1 0h1M0 25.5h1m1 0h3m1 0h1m1 0h1m1 0h2m1 0h1m1 0h2m3 0h1m2 0h1m1 0h2M0 26.5h1m1 0h3m1 0h1m1 0h1m2 0h3m3 0h1m1 0h9M0 27.5h1m5 0h1m2 0h1m1 0h4m1 0h1m1 0h1m1 0h2m2 0h1m2 0h1M0 28.5h7m1 0h5m1 0h1m3 0h1m6 0h2"/></svg></span>
+              <span class="nz-qr__pie">la charla en vivo · 8zfjr7fa.hostthis.dev</span>
+            </div>
+            <p><a class="nz-btn nz-btn--outline nz-btn--sm" href="#b01">Volver al principio</a></p>
+          </div>
+          <div class="nz-escenario__pie"><span class="nz-escenario__marca">08 · cierre</span><span class="nz-escenario__marca">8 / 8</span></div>
+        </div>
+      </section>
+    </div>
+
+  </div>
+</main>
+
+<footer class="nz-footer">
+  <p class="nz-escenario__marca">Hecho con ❤️ por David Antizar</p>
+  <p class="nz-escenario__marca">Aurora 8.3.0 · categoría 18 · Escenario</p>
+</footer>
+
+</body>
+</html>
