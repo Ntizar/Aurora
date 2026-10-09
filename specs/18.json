@@ -1,89 +1,99 @@
 {
- "cat": 18,
- "nombre": "Escenario (charlas en beats)",
- "desc": "El estilo de una charla en beats dentro del sistema: un lienzo 16:9, la escala de texto del escenario (titular, editorial, numeral, etiqueta y dato), nodos con enlaces para los diagramas que se construyen clic a clic, y el marco del QR de cierre. En móvil el escenario se apila en columna legible; el lienzo de proyector entra desde 960 px.",
- "pack": "p18-escenario.css",
- "fichero": "18-escenario.html",
- "demos": [
-  {
-   "titulo": "Escenario: un beat con cuerpo y pie",
-   "tag": ".nz-escenario · __cuerpo · __pie · __marca",
-   "markup": "<div class=\"nz-escenario\"><div class=\"nz-escenario__cuerpo\"><p class=\"nz-esc-etiqueta\">el problema</p><p class=\"nz-esc-editorial\">Cada chat empieza de cero. Tú repites el contexto y lo aprendido ayer se evapora al cerrar la pestaña.</p></div><div class=\"nz-escenario__pie\"><span class=\"nz-escenario__marca\">Mastermind · 02</span><span class=\"nz-escenario__marca\">un clic = un beat</span></div></div>"
-  },
-  {
-   "titulo": "Escenario de proyector (lienzo 16:9, desde 960 px)",
-   "tag": ".nz-escenario--lienzo",
-   "markup": "<div class=\"nz-escenario nz-escenario--lienzo\"><div class=\"nz-escenario__cuerpo\"><p class=\"nz-esc-etiqueta\">el diagnóstico</p><p class=\"nz-esc-editorial nz-esc-editorial--accent\">No falta modelo. Falta memoria.</p></div><div class=\"nz-escenario__pie\"><span class=\"nz-escenario__marca\">Mastermind · 02.4</span></div></div>"
-  },
-  {
-   "titulo": "Escenario profundo (sala a oscuras)",
-   "tag": ".nz-escenario--profundo",
-   "markup": "<div class=\"nz-escenario nz-escenario--profundo\"><div class=\"nz-escenario__cuerpo\"><p class=\"nz-esc-dato\">El lienzo profundo mantiene la escala y el pie, y cambia el fondo al negro de sala para que el texto destaque sin encender la habitación.</p></div><div class=\"nz-escenario__pie\"><span class=\"nz-escenario__marca\">cockpit · 16</span></div></div>"
-  },
-  {
-   "titulo": "Titular del escenario",
-   "tag": ".nz-esc-titular",
-   "markup": "<p class=\"nz-esc-titular\">Mastermind.</p>"
-  },
-  {
-   "titulo": "Titular con acento",
-   "tag": ".nz-esc-titular--accent",
-   "markup": "<p class=\"nz-esc-titular nz-esc-titular--accent\">No falta modelo. Falta memoria.</p>"
-  },
-  {
-   "titulo": "Titular con marca",
-   "tag": ".nz-esc-titular--brand",
-   "markup": "<p class=\"nz-esc-titular nz-esc-titular--brand\">Mastermind.</p>"
-  },
-  {
-   "titulo": "Editorial: el párrafo del escenario",
-   "tag": ".nz-esc-editorial · --muted",
-   "markup": "<p class=\"nz-esc-editorial\">Todo el sistema cabe en tres superpoderes: recuerda, sabe buscar y aprende solo.</p><p class=\"nz-esc-editorial nz-esc-editorial--muted\">El resto de la charla es cómo se sostienen.</p>"
-  },
-  {
-   "titulo": "Numeral con etiqueta y dato",
-   "tag": ".nz-esc-numeral · .nz-esc-etiqueta · .nz-esc-dato",
-   "markup": "<div style=\"display:flex;flex-direction:column;gap:var(--nz-space-3)\"><p class=\"nz-esc-numeral\">565</p><p class=\"nz-esc-etiqueta\">skills indexados</p><p class=\"nz-esc-dato\">Se buscan por significado, no por nombre: la consulta no dice cómo se llama el skill, dice qué se necesita.</p></div>"
-  },
-  {
-   "titulo": "Numeral con acento",
-   "tag": ".nz-esc-numeral--accent",
-   "markup": "<p class=\"nz-esc-numeral nz-esc-numeral--accent\">0 €</p>"
-  },
-  {
-   "titulo": "Nodo del diagrama",
-   "tag": ".nz-nodo · __tipo · __valor",
-   "markup": "<div class=\"nz-nodo\"><span class=\"nz-nodo__tipo\">modelos</span><span class=\"nz-nodo__valor\">NaN.builders</span></div>"
-  },
-  {
-   "titulo": "Nodo acentuado y nodo apagado",
-   "tag": ".nz-nodo--acento · .nz-nodo--apagado",
-   "markup": "<div style=\"display:flex;flex-wrap:wrap;gap:var(--nz-space-4)\"><div class=\"nz-nodo nz-nodo--acento\"><span class=\"nz-nodo__tipo\">cerebro</span><span class=\"nz-nodo__valor\">Hermes Agent</span></div><div class=\"nz-nodo nz-nodo--apagado\"><span class=\"nz-nodo__tipo\">la ventana</span><span class=\"nz-nodo__valor\">dashboard</span></div></div>"
-  },
-  {
-   "titulo": "Enlace con punta, normal y con acento",
-   "tag": ".nz-enlace · __punta · --acento",
-   "markup": "<div style=\"max-width:24rem\"><span class=\"nz-enlace\"><span class=\"nz-enlace__punta\"></span></span><span class=\"nz-enlace nz-enlace--acento\"><span class=\"nz-enlace__punta\"></span></span></div>"
-  },
-  {
-   "titulo": "Diagrama de tres piezas",
-   "tag": ".nz-nodo · .nz-enlace",
-   "markup": "<div style=\"display:flex;flex-wrap:wrap;align-items:center;gap:var(--nz-space-4)\"><div class=\"nz-nodo\"><span class=\"nz-nodo__tipo\">buscador</span><span class=\"nz-nodo__valor\">ChromaDB</span></div><span class=\"nz-enlace\" style=\"flex:1;min-width:var(--nz-space-10)\"><span class=\"nz-enlace__punta\"></span></span><div class=\"nz-nodo nz-nodo--acento\"><span class=\"nz-nodo__tipo\">cerebro</span><span class=\"nz-nodo__valor\">Hermes Agent</span></div></div>"
-  },
-  {
-   "titulo": "QR de cierre con su pie",
-   "tag": ".nz-qr · __marco · __pie",
-   "markup": "<div class=\"nz-qr\"><span class=\"nz-qr__marco\"><svg viewBox=\"0 0 21 21\" role=\"img\" aria-label=\"Código QR de ejemplo\"><path fill=\"currentColor\" d=\"M0 0h7v7H0zM14 0h7v7h-7zM0 14h7v7H0zM3 3h1v1H3zM16 3h1v1h-1zM3 16h1v1H3zM8 2h1v1H8zM10 2h2v1h-2zM8 5h2v1H8zM11 5h1v1h-1zM8 8h1v2H8zM10 8h3v1h-3zM14 8h1v1h-1zM16 8h2v1h-2zM19 8h2v1h-2zM9 10h2v1H9zM12 10h1v2h-1zM14 11h2v1h-2zM17 10h1v1h-1zM19 11h2v1h-2zM8 12h1v1H8zM10 12h1v1h-1zM16 13h1v1h-1zM18 13h2v1h-2zM9 14h2v1H9zM12 14h1v1h-1zM15 14h2v2h-2zM9 16h1v1H9zM11 16h2v1h-2zM14 16h1v1h-1zM18 16h1v1h-1zM20 16h1v1h-1zM8 18h2v1H8zM11 18h1v1h-1zM13 18h2v1h-2zM17 18h1v1h-1zM19 18h1v1h-1zM8 20h3v1H8zM13 20h1v1h-1zM15 20h2v1h-2zM18 20h3v1h-3z\"/></svg></span><span class=\"nz-qr__pie\">rtkg6q67.hostthis.dev</span></div>"
-  },
-  {
-   "titulo": "Etiqueta y numeral con acento",
-   "tag": ".nz-esc-etiqueta--accent · .nz-esc-numeral--accent",
-   "markup": "<div style=\"display:flex;flex-direction:column;gap:var(--nz-space-2)\"><p class=\"nz-esc-etiqueta nz-esc-etiqueta--accent\">coste de plataforma</p><p class=\"nz-esc-numeral nz-esc-numeral--accent\">0 €</p></div>"
-  },
-  {
-   "titulo": "Roles con marca y apagados",
-   "tag": ".nz-esc-editorial--brand · .nz-esc-numeral--brand · .nz-esc-titular--muted",
-   "markup": "<div style=\"display:flex;flex-direction:column;gap:var(--nz-space-3)\"><p class=\"nz-esc-titular nz-esc-titular--muted\">Mastermind.</p><p class=\"nz-esc-editorial nz-esc-editorial--brand\">El cerebro es el agente y el repositorio es la verdad.</p><p class=\"nz-esc-numeral nz-esc-numeral--brand\">16</p></div>"
-  }
- ]
+  "cat": 18,
+  "nombre": "Escenario (charlas en beats)",
+  "desc": "El estilo de una charla en beats dentro del sistema: un lienzo 16:9, la escala de texto del escenario (titular, editorial, numeral, etiqueta y dato), nodos con enlaces para los diagramas que se construyen clic a clic, y el marco del QR de cierre. En móvil el escenario se apila en columna legible; el lienzo de proyector entra desde 960 px.",
+  "pack": "p18-escenario.css",
+  "fichero": "18-escenario.html",
+  "demos": [
+    {
+      "titulo": "Escenario: un beat con cuerpo y pie",
+      "tag": ".nz-escenario · __cuerpo · __pie · __marca",
+      "markup": "<div class=\"nz-escenario\"><div class=\"nz-escenario__cuerpo\"><p class=\"nz-esc-etiqueta\">el problema</p><p class=\"nz-esc-editorial\">Cada chat empieza de cero. Tú repites el contexto y lo aprendido ayer se evapora al cerrar la pestaña.</p></div><div class=\"nz-escenario__pie\"><span class=\"nz-escenario__marca\">Mastermind · 02</span><span class=\"nz-escenario__marca\">un clic = un beat</span></div></div>"
+    },
+    {
+      "titulo": "Escenario de proyector (lienzo 16:9, desde 960 px)",
+      "tag": ".nz-escenario--lienzo",
+      "markup": "<div class=\"nz-escenario nz-escenario--lienzo\"><div class=\"nz-escenario__cuerpo\"><p class=\"nz-esc-etiqueta\">el diagnóstico</p><p class=\"nz-esc-editorial nz-esc-editorial--accent\">No falta modelo. Falta memoria.</p></div><div class=\"nz-escenario__pie\"><span class=\"nz-escenario__marca\">Mastermind · 02.4</span></div></div>"
+    },
+    {
+      "titulo": "Escenario profundo (sala a oscuras)",
+      "tag": ".nz-escenario--profundo",
+      "markup": "<div class=\"nz-escenario nz-escenario--profundo\"><div class=\"nz-escenario__cuerpo\"><p class=\"nz-esc-dato\">El lienzo profundo mantiene la escala y el pie, y cambia el fondo al negro de sala para que el texto destaque sin encender la habitación.</p></div><div class=\"nz-escenario__pie\"><span class=\"nz-escenario__marca\">cockpit · 16</span></div></div>"
+    },
+    {
+      "titulo": "Titular del escenario",
+      "tag": ".nz-esc-titular",
+      "markup": "<p class=\"nz-esc-titular\">Mastermind.</p>"
+    },
+    {
+      "titulo": "Titular con acento",
+      "tag": ".nz-esc-titular--accent",
+      "markup": "<p class=\"nz-esc-titular nz-esc-titular--accent\">No falta modelo. Falta memoria.</p>"
+    },
+    {
+      "titulo": "Titular con marca",
+      "tag": ".nz-esc-titular--brand",
+      "markup": "<p class=\"nz-esc-titular nz-esc-titular--brand\">Mastermind.</p>"
+    },
+    {
+      "titulo": "Editorial: el párrafo del escenario",
+      "tag": ".nz-esc-editorial · --muted",
+      "markup": "<p class=\"nz-esc-editorial\">Todo el sistema cabe en tres superpoderes: recuerda, sabe buscar y aprende solo.</p><p class=\"nz-esc-editorial nz-esc-editorial--muted\">El resto de la charla es cómo se sostienen.</p>"
+    },
+    {
+      "titulo": "Numeral con etiqueta y dato",
+      "tag": ".nz-esc-numeral · .nz-esc-etiqueta · .nz-esc-dato",
+      "markup": "<div style=\"display:flex;flex-direction:column;gap:var(--nz-space-3)\"><p class=\"nz-esc-numeral\">565</p><p class=\"nz-esc-etiqueta\">skills indexados</p><p class=\"nz-esc-dato\">Se buscan por significado, no por nombre: la consulta no dice cómo se llama el skill, dice qué se necesita.</p></div>"
+    },
+    {
+      "titulo": "Numeral con acento",
+      "tag": ".nz-esc-numeral--accent",
+      "markup": "<p class=\"nz-esc-numeral nz-esc-numeral--accent\">0 €</p>"
+    },
+    {
+      "titulo": "Nodo del diagrama",
+      "tag": ".nz-nodo · __tipo · __valor",
+      "markup": "<div class=\"nz-nodo\"><span class=\"nz-nodo__tipo\">modelos</span><span class=\"nz-nodo__valor\">NaN.builders</span></div>"
+    },
+    {
+      "titulo": "Nodo acentuado y nodo apagado",
+      "tag": ".nz-nodo--acento · .nz-nodo--apagado",
+      "markup": "<div style=\"display:flex;flex-wrap:wrap;gap:var(--nz-space-4)\"><div class=\"nz-nodo nz-nodo--acento\"><span class=\"nz-nodo__tipo\">cerebro</span><span class=\"nz-nodo__valor\">Hermes Agent</span></div><div class=\"nz-nodo nz-nodo--apagado\"><span class=\"nz-nodo__tipo\">la ventana</span><span class=\"nz-nodo__valor\">dashboard</span></div></div>"
+    },
+    {
+      "titulo": "Enlace con punta, normal y con acento",
+      "tag": ".nz-enlace · __punta · --acento",
+      "markup": "<div style=\"max-width:24rem\"><span class=\"nz-enlace\"><span class=\"nz-enlace__punta\"></span></span><span class=\"nz-enlace nz-enlace--acento\"><span class=\"nz-enlace__punta\"></span></span></div>"
+    },
+    {
+      "titulo": "Diagrama de tres piezas",
+      "tag": ".nz-nodo · .nz-enlace",
+      "markup": "<div style=\"display:flex;flex-wrap:wrap;align-items:center;gap:var(--nz-space-4)\"><div class=\"nz-nodo\"><span class=\"nz-nodo__tipo\">buscador</span><span class=\"nz-nodo__valor\">ChromaDB</span></div><span class=\"nz-enlace\" style=\"flex:1;min-width:var(--nz-space-10)\"><span class=\"nz-enlace__punta\"></span></span><div class=\"nz-nodo nz-nodo--acento\"><span class=\"nz-nodo__tipo\">cerebro</span><span class=\"nz-nodo__valor\">Hermes Agent</span></div></div>"
+    },
+    {
+      "titulo": "QR de cierre con su pie",
+      "tag": ".nz-qr · __marco · __pie",
+      "markup": "<div class=\"nz-qr\"><span class=\"nz-qr__marco\"><svg viewBox=\"0 0 21 21\" role=\"img\" aria-label=\"Código QR de ejemplo\"><path fill=\"currentColor\" d=\"M0 0h7v7H0zM14 0h7v7h-7zM0 14h7v7H0zM3 3h1v1H3zM16 3h1v1h-1zM3 16h1v1H3zM8 2h1v1H8zM10 2h2v1h-2zM8 5h2v1H8zM11 5h1v1h-1zM8 8h1v2H8zM10 8h3v1h-3zM14 8h1v1h-1zM16 8h2v1h-2zM19 8h2v1h-2zM9 10h2v1H9zM12 10h1v2h-1zM14 11h2v1h-2zM17 10h1v1h-1zM19 11h2v1h-2zM8 12h1v1H8zM10 12h1v1h-1zM16 13h1v1h-1zM18 13h2v1h-2zM9 14h2v1H9zM12 14h1v1h-1zM15 14h2v2h-2zM9 16h1v1H9zM11 16h2v1h-2zM14 16h1v1h-1zM18 16h1v1h-1zM20 16h1v1h-1zM8 18h2v1H8zM11 18h1v1h-1zM13 18h2v1h-2zM17 18h1v1h-1zM19 18h1v1h-1zM8 20h3v1H8zM13 20h1v1h-1zM15 20h2v1h-2zM18 20h3v1h-3z\"/></svg></span><span class=\"nz-qr__pie\">rtkg6q67.hostthis.dev</span></div>"
+    },
+    {
+      "titulo": "Etiqueta y numeral con acento",
+      "tag": ".nz-esc-etiqueta--accent · .nz-esc-numeral--accent",
+      "markup": "<div style=\"display:flex;flex-direction:column;gap:var(--nz-space-2)\"><p class=\"nz-esc-etiqueta nz-esc-etiqueta--accent\">coste de plataforma</p><p class=\"nz-esc-numeral nz-esc-numeral--accent\">0 €</p></div>"
+    },
+    {
+      "titulo": "Roles con marca y apagados",
+      "tag": ".nz-esc-editorial--brand · .nz-esc-numeral--brand · .nz-esc-titular--muted",
+      "markup": "<div style=\"display:flex;flex-direction:column;gap:var(--nz-space-3)\"><p class=\"nz-esc-titular nz-esc-titular--muted\">Mastermind.</p><p class=\"nz-esc-editorial nz-esc-editorial--brand\">El cerebro es el agente y el repositorio es la verdad.</p><p class=\"nz-esc-numeral nz-esc-numeral--brand\">16</p></div>"
+    },
+    {
+      "titulo": "Recorrido: un beat cada vez y su dirección en la URL",
+      "markup": "<div class=\"nz-recorrido\"><section class=\"nz-recorrido__beat\" id=\"d18r-1\"><p class=\"nz-esc-etiqueta\">Beat 01 · portada</p><p class=\"nz-esc-editorial\">El sistema se presenta en un lienzo.</p></section><section class=\"nz-recorrido__beat\" id=\"d18r-2\"><p class=\"nz-esc-etiqueta\">Beat 02 · el problema</p><p class=\"nz-esc-editorial\">No falta modelo: falta memoria.</p></section></div><p><a class=\"nz-btn nz-btn--outline nz-btn--sm\" href=\"#d18r-2\">Ir al beat 02</a></p>",
+      "tag": ".nz-recorrido · __beat"
+    },
+    {
+      "titulo": "El índice son enlaces normales (aquí, dentro del pie)",
+      "markup": "<div class=\"nz-recorrido\"><section class=\"nz-recorrido__beat\" id=\"d18r-3\"><div class=\"nz-escenario\"><div class=\"nz-escenario__cuerpo\"><p class=\"nz-esc-titular\">La charla.</p></div><div class=\"nz-escenario__pie\"><span class=\"nz-escenario__marca\">01 · portada</span><span class=\"nz-escenario__marca\">un clic = un beat</span></div></div></section><section class=\"nz-recorrido__beat\" id=\"d18r-4\"><div class=\"nz-escenario nz-escenario--profundo\"><div class=\"nz-escenario__cuerpo\"><p class=\"nz-esc-numeral nz-esc-numeral--accent\">0 €</p><p class=\"nz-esc-etiqueta\">coste de plataforma</p></div><div class=\"nz-escenario__pie\"><span class=\"nz-escenario__marca\">02 · el coste</span><span class=\"nz-escenario__marca\">#02</span></div></div></section></div>",
+      "tag": ".nz-recorrido · __beat · .nz-escenario"
+    }
+  ]
 }

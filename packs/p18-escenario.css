@@ -181,6 +181,35 @@
   border-color: var(--nz-accent);
 }
 
+/* ---- 05 Recorrido: la charla entera, sin una línea de JS ---- */
+/* Un `.nz-recorrido` agrupa beats con `id`. Si el navegador soporta `:has()`,
+   se enseña UN beat cada vez y manda la URL (`#b06`); las flechas del navegador
+   recorren la charla. Si no lo soporta, no se esconde nada y la página se lee
+   entera de arriba abajo: el contenido nunca queda inalcanzable. */
+.nz-recorrido {
+  display: flex;
+  flex-direction: column;
+  gap: var(--nz-space-6);
+  min-width: 0;
+}
+.nz-recorrido__beat {
+  display: flex;
+  flex-direction: column;
+  gap: var(--nz-space-4);
+  min-width: 0;
+  scroll-margin-block-start: var(--nz-space-6);
+}
+@supports selector(:has(*)) {
+  /* con un beat apuntado, se ve solo ese */
+  .nz-recorrido:has(.nz-recorrido__beat:target) .nz-recorrido__beat:not(:target) {
+    display: none;
+  }
+  /* sin nada apuntado, la charla abre por el primer beat */
+  .nz-recorrido:not(:has(.nz-recorrido__beat:target)) .nz-recorrido__beat:not(:first-child) {
+    display: none;
+  }
+}
+
 /* ---- 04 QR de cierre ---- */
 .nz-qr {
   display: flex;

@@ -3,11 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>Aurora · 18 Escenario (charlas en beats) · 31 objetos</title>
+<title>Aurora · 18 Escenario (charlas en beats) · 33 objetos</title>
 <meta name="description" content="El estilo de una charla en beats dentro del sistema: un lienzo 16:9, la escala de texto del escenario (titular, editorial, numeral, etiqueta y dato), nodos con enlaces para los diagramas que se construyen clic a clic, y el marco del QR de cierre. En móvil el escenario se apila en columna legible; el lienzo de proyector entra desde 960 px.">
 <link rel="stylesheet" href="../tokens.css">
 <link rel="stylesheet" href="../packs/p0-catalog.css">
 <link rel="stylesheet" href="../packs/p1-layout.css">
+<link rel="stylesheet" href="../packs/p4-actions.css">
 <link rel="stylesheet" href="../packs/p6-feedback.css">
 <link rel="stylesheet" href="../packs/p12-system.css">
 <link rel="stylesheet" href="../packs/p18-escenario.css">
@@ -16,7 +17,7 @@
 <a class="nz-skip-link" href="#contenido">Saltar al contenido</a>
 <header class="cat-topbar">
 <a class="cat-brandmark" href="../index.html"><i></i><i></i> Aurora</a>
-<span class="cat-count">18 · 31 objetos · 16 demos</span>
+<span class="cat-count">18 · 33 objetos · 18 demos</span>
 <span class="cat-topbar__tools">
 <a class="cat-icobtn" href="../index.html" title="Portada" aria-label="Volver a la portada">⌂</a>
 <button class="cat-icobtn" id="btnTheme" aria-label="Cambiar tema" title="Light / Dark">◐</button>
@@ -44,14 +45,14 @@
 </nav>
 <main class="nz-container cat-main" id="contenido">
   <div class="cat-pagehead">
-    <p class="cat-pagehead__over">Categoría 18 de 18 · 31 objetos · 16 demos</p>
+    <p class="cat-pagehead__over">Categoría 18 de 18 · 33 objetos · 18 demos</p>
     <h1>Escenario (charlas en beats)</h1>
     <p>El estilo de una charla en beats dentro del sistema: un lienzo 16:9, la escala de texto del escenario (titular, editorial, numeral, etiqueta y dato), nodos con enlaces para los diagramas que se construyen clic a clic, y el marco del QR de cierre. En móvil el escenario se apila en columna legible; el lienzo de proyector entra desde 960 px.</p>
     <div class="cat-pagehead__stats">
-      <span class="nz-badge nz-badge--brand"><i></i>31 objetos</span>
-      <span class="nz-badge nz-badge--neutral">9 familias</span>
-      <span class="nz-badge nz-badge--accent">16 demos en vivo</span>
-      <span class="nz-badge nz-badge--neutral">9 clases distintas usadas</span>
+      <span class="nz-badge nz-badge--brand"><i></i>33 objetos</span>
+      <span class="nz-badge nz-badge--neutral">10 familias</span>
+      <span class="nz-badge nz-badge--accent">18 demos en vivo</span>
+      <span class="nz-badge nz-badge--neutral">11 clases distintas usadas</span>
       <a class="nz-badge nz-badge--brand" href="../packs/p18-escenario.css">p18-escenario.css</a>
     </div>
   </div>
@@ -59,9 +60,10 @@
     <div class="cat-search">
       <span class="cat-search__icon" aria-hidden="true">⌕</span>
       <input class="cat-search__input" id="catBuscar" type="search" placeholder="Buscar en esta categoría… (pulsa /)" aria-label="Buscar objeto en esta categoría">
-      <span class="cat-search__count" id="catContador">16 objetos</span>
+      <span class="cat-search__count" id="catContador">18 objetos</span>
     </div>
     <div class="cat-filters" role="group" aria-label="Filtrar por familia de objeto"><button type="button" class="cat-filters__chip" data-filtro="todo" aria-pressed="true">Todo</button>
+      <button type="button" class="cat-filters__chip" data-filtro="nz-btn" aria-pressed="false">.btn</button>
       <button type="button" class="cat-filters__chip" data-filtro="nz-enlace" aria-pressed="false">.enlace</button>
       <button type="button" class="cat-filters__chip" data-filtro="nz-esc-dato" aria-pressed="false">.esc-dato</button>
       <button type="button" class="cat-filters__chip" data-filtro="nz-esc-editorial" aria-pressed="false">.esc-editorial</button>
@@ -70,7 +72,8 @@
       <button type="button" class="cat-filters__chip" data-filtro="nz-esc-titular" aria-pressed="false">.esc-titular</button>
       <button type="button" class="cat-filters__chip" data-filtro="nz-escenario" aria-pressed="false">.escenario</button>
       <button type="button" class="cat-filters__chip" data-filtro="nz-nodo" aria-pressed="false">.nodo</button>
-      <button type="button" class="cat-filters__chip" data-filtro="nz-qr" aria-pressed="false">.qr</button></div>
+      <button type="button" class="cat-filters__chip" data-filtro="nz-qr" aria-pressed="false">.qr</button>
+      <button type="button" class="cat-filters__chip" data-filtro="nz-recorrido" aria-pressed="false">.recorrido</button></div>
   </div>
   <section class="cat-demo cat-in" data-cat="nz-esc-editorial nz-esc-etiqueta nz-escenario">
     <div class="cat-demo__title"><span class="cat-demo__num">1</span><span class="cat-demo__name">Escenario: un beat con cuerpo y pie</span><span class="cat-demo__tag">.nz-escenario · __cuerpo · __pie · __marca</span></div>
@@ -168,6 +171,18 @@
       <div style="display:flex;flex-direction:column;gap:var(--nz-space-3)"><p class="nz-esc-titular nz-esc-titular--muted">Mastermind.</p><p class="nz-esc-editorial nz-esc-editorial--brand">El cerebro es el agente y el repositorio es la verdad.</p><p class="nz-esc-numeral nz-esc-numeral--brand">16</p></div>
     </div>
   </section>
+  <section class="cat-demo cat-in" data-cat="nz-btn nz-esc-editorial nz-esc-etiqueta nz-recorrido">
+    <div class="cat-demo__title"><span class="cat-demo__num">17</span><span class="cat-demo__name">Recorrido: un beat cada vez y su dirección en la URL</span><span class="cat-demo__tag">.nz-recorrido · __beat</span></div>
+    <div class="cat-stage">
+      <div class="nz-recorrido"><section class="nz-recorrido__beat" id="d18r-1"><p class="nz-esc-etiqueta">Beat 01 · portada</p><p class="nz-esc-editorial">El sistema se presenta en un lienzo.</p></section><section class="nz-recorrido__beat" id="d18r-2"><p class="nz-esc-etiqueta">Beat 02 · el problema</p><p class="nz-esc-editorial">No falta modelo: falta memoria.</p></section></div><p><a class="nz-btn nz-btn--outline nz-btn--sm" href="#d18r-2">Ir al beat 02</a></p>
+    </div>
+  </section>
+  <section class="cat-demo cat-in" data-cat="nz-esc-etiqueta nz-esc-numeral nz-esc-titular nz-escenario nz-recorrido">
+    <div class="cat-demo__title"><span class="cat-demo__num">18</span><span class="cat-demo__name">El índice son enlaces normales (aquí, dentro del pie)</span><span class="cat-demo__tag">.nz-recorrido · __beat · .nz-escenario</span></div>
+    <div class="cat-stage">
+      <div class="nz-recorrido"><section class="nz-recorrido__beat" id="d18r-3"><div class="nz-escenario"><div class="nz-escenario__cuerpo"><p class="nz-esc-titular">La charla.</p></div><div class="nz-escenario__pie"><span class="nz-escenario__marca">01 · portada</span><span class="nz-escenario__marca">un clic = un beat</span></div></div></section><section class="nz-recorrido__beat" id="d18r-4"><div class="nz-escenario nz-escenario--profundo"><div class="nz-escenario__cuerpo"><p class="nz-esc-numeral nz-esc-numeral--accent">0 €</p><p class="nz-esc-etiqueta">coste de plataforma</p></div><div class="nz-escenario__pie"><span class="nz-escenario__marca">02 · el coste</span><span class="nz-escenario__marca">#02</span></div></div></section></div>
+    </div>
+  </section>
   <div class="cat-empty" id="catVacio" hidden><b>Nada por aquí</b>Prueba con otro término o quita el filtro.</div>
 </main>
 <div class="cat-nav-pages" style="justify-content:center;border-top:1px solid var(--nz-border-soft)">
@@ -175,7 +190,7 @@
   <a href="01-layout.html">01 Layout y estructura →</a>
 </div>
 <footer class="cat-footer">
-  Aurora · Design System Ntizar · Categoría 18 de 18 · 2176 objetos · 648 demos · Hecho con ❤️ por David Antizar
+  Aurora · Design System Ntizar · Categoría 18 de 18 · 2178 objetos · 650 demos · Hecho con ❤️ por David Antizar
 </footer>
 <script src="../js/catalog.js"></script>
 <script src="../js/graficos.js"></script>

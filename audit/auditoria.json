@@ -1,10 +1,10 @@
 {
  "resumen": {
-  "objetos_declarados": 2176,
-  "familias": 408,
-  "demos": 648,
+  "objetos_declarados": 2178,
+  "familias": 409,
+  "demos": 650,
   "categorias": 18,
-  "clases_usadas_en_demos": 2176,
+  "clases_usadas_en_demos": 2178,
   "clases_sin_demo": 0,
   "familias_sin_demo": 0,
   "fantasmas": 0,
@@ -14,7 +14,7 @@
   "glass": 0,
   "gradientes": 0,
   "important": 1,
-  "familias_sin_variantes": 163,
+  "familias_sin_variantes": 164,
   "packs": 18
  },
  "packs": {
@@ -109,10 +109,10 @@
    "important": 0
   },
   "p18-escenario.css": {
-   "lineas": 215,
-   "bytes": 5617,
-   "clases": 31,
-   "familias": 9,
+   "lineas": 244,
+   "bytes": 6618,
+   "clases": 33,
+   "familias": 10,
    "hex": 0,
    "gradientes": 0,
    "glass": 0,
@@ -356,9 +356,9 @@
   "18": {
    "nombre": "Escenario (charlas en beats)",
    "pack": "p18-escenario.css",
-   "demos": 16,
-   "objetos": 31,
-   "familias": 9,
+   "demos": 18,
+   "objetos": 33,
+   "familias": 10,
    "sin_demo": [],
    "familias_sin_demo": []
   }
@@ -4529,6 +4529,16 @@
    "partes": [],
    "demostrado": true
   },
+  "nz-recorrido": {
+   "cat": 18,
+   "pack": "p18-escenario.css",
+   "n_clases": 2,
+   "mods": [],
+   "partes": [
+    "beat"
+   ],
+   "demostrado": true
+  },
   "nz-reduced-motion-ok": {
    "cat": 12,
    "pack": "p12-system.css",
@@ -6209,6 +6219,7 @@
   "nz-ptemplate",
   "nz-qr",
   "nz-reason",
+  "nz-recorrido",
   "nz-reduced-motion-ok",
   "nz-rejilla-estadisticas",
   "nz-resmon",

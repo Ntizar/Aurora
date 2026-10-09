@@ -1,10 +1,10 @@
 {
  "name": "Aurora",
- "version": "8.2.0",
+ "version": "8.3.0",
  "type": "css-only design system",
  "namespace": ".nz-",
  "tokens": "tokens.css",
- "cdn": "https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v8.2.0/",
+ "cdn": "https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v8.3.0/",
  "manifiesto": {
   "gradientes": 0,
   "glass": 0,
@@ -19,10 +19,10 @@
   "objetivoTactil": "44px"
  },
  "resumen": {
-  "objetos": 2176,
-  "familias": 408,
+  "objetos": 2178,
+  "familias": 409,
   "categorias": 18,
-  "demos": 648,
+  "demos": 650,
   "tokens": 185,
   "tokensDark": 43
  },
@@ -184,9 +184,9 @@
    "categoria": 18,
    "nombre": "Escenario (charlas en beats)",
    "descripcion": "El estilo de una charla en beats dentro del sistema: un lienzo 16:9, la escala de texto del escenario (titular, editorial, numeral, etiqueta y dato), nodos con enlaces para los diagramas que se construyen clic a clic, y el marco del QR de cierre. En móvil el escenario se apila en columna legible; el lienzo de proyector entra desde 960 px.",
-   "objetos": 31,
-   "familias": 9,
-   "demos": 16,
+   "objetos": 33,
+   "familias": 10,
+   "demos": 18,
    "pagina": "paginas/18-escenario.html"
   }
  },
@@ -9639,6 +9639,19 @@
    "partes": [
     "marco",
     "pie"
+   ]
+  },
+  "nz-recorrido": {
+   "pack": "p18-escenario.css",
+   "categoria": 18,
+   "demo": "paginas/18-escenario.html",
+   "clases": [
+    "nz-recorrido",
+    "nz-recorrido__beat"
+   ],
+   "modificadores": [],
+   "partes": [
+    "beat"
    ]
   }
  }
