@@ -239,10 +239,10 @@ Medido en producto vivo (madrid-circula, 1920×1080) antes de la v8.4:
 | Ancho usado a 1920px | 1152px → **40% de pantalla vacía** | 1536px → 20% de margen (y 0% con `--app`) | `getBoundingClientRect()` del contenedor |
 | Media queries por encima de 960px | **1** en 20 packs | escalón 1200 y 1440 en tokens | `grep min-width` |
 | Fuente real | la del sistema operativo: **Inter no se cargaba nunca** | Inter variable servida por el repo | ancho de «Inter» vs familia inventada: idénticos en v8.3 |
-| Texto de interfaz a 12px | 36 elementos (contra la ley 4 del propio contrato) | 0 rótulos: los 12px quedan para datos | recuento de `getComputedStyle().fontSize` |
-| Negritas (≥700) | 167/887 (19%) en la portada · 140/548 (26%) en el panel | objetivo < 8% | recuento de `fontWeight` |
+| Texto de interfaz a 12px | 36 elementos en el panel y 22 en la portada (contra la ley 4 del propio contrato) | 0 etiquetas: los 12px quedan para datos — medido tras la v8.4.2, los 26 que quedan en la portada son valores de barra, ejes del mapa de calor, la fuente y la nota al pie | `getComputedStyle().fontSize`, agrupado por clase |
+| Negritas (≥700) | 167/887 (19%) en la portada · 140/548 (26%) en el panel | medido tras la v8.4.2 en el mismo producto: **9,1% en la portada y 5,7% en el panel** | recuento de `getComputedStyle().fontWeight` |
 | Titulares | h1 38px · display hasta 56px | h1 34px · display 50px (tope a propósito) | token `--nz-text-3xl/4xl` |
-| Uso del acento | 356 marca / 110 acento (3,2:1) | rol definido + lint `acento-ausente` | recuento de `var(--nz-accent*)` |
+| Uso del acento | 356 marca / 110 acento (3,2:1) y la doc empujaba `indigo` | rol definido + lint `acento-ausente`; el ejemplo de la doc usa el preset por defecto | recuento de `var(--nz-accent*)` |
 
 ---
 
