@@ -215,7 +215,7 @@
 .nz-progress--thin { height: 4px; }
 .nz-progress--lg { height: 12px; }
 .nz-progress--with-label { height: 20px; }
-.nz-progress__value { position: absolute; top: 50%; right: var(--nz-space-2); transform: translateY(-50%); font-size: var(--nz-text-2xs); font-weight: var(--nz-peso-titulo); font-variant-numeric: tabular-nums; color: var(--nz-text); }
+.nz-progress__value { position: absolute; top: 50%; right: var(--nz-space-2); transform: translateY(-50%); font-size: var(--nz-text-2xs); font-weight: var(--nz-peso-fuerte); font-variant-numeric: tabular-nums; color: var(--nz-text); }
 .nz-progress__caption { display: flex; justify-content: space-between; gap: var(--nz-space-2); margin-top: var(--nz-space-1); font-size: var(--nz-text-xs); color: var(--nz-text-mute); }
 .nz-progress--indeterminate .nz-progress__bar { width: 40%; animation: nzIndeterm 1.3s var(--nz-ease-soft) infinite; }
 @keyframes nzIndeterm { 0% { transform: translateX(-100%); } 100% { transform: translateX(3.5em); } }
@@ -223,7 +223,7 @@
 /* ---- Meter (nivel dentro de un rango) ---- */
 .nz-meter { position: relative; height: 20px; border-radius: var(--nz-radius-full); background: var(--nz-bg-inset); overflow: hidden; }
 .nz-meter__bar { height: 100%; border-radius: inherit; background: var(--nz-warning); transition: width var(--nz-dur-slow) var(--nz-ease-out); }
-.nz-meter__label { position: absolute; top: 50%; right: var(--nz-space-2); transform: translateY(-50%); font-size: var(--nz-text-2xs); font-weight: var(--nz-peso-titulo); font-variant-numeric: tabular-nums; color: var(--nz-text); }
+.nz-meter__label { position: absolute; top: 50%; right: var(--nz-space-2); transform: translateY(-50%); font-size: var(--nz-text-2xs); font-weight: var(--nz-peso-fuerte); font-variant-numeric: tabular-nums; color: var(--nz-text); }
 .nz-meter--brand .nz-meter__bar { background: var(--nz-brand); }
 .nz-meter--success .nz-meter__bar { background: var(--nz-success); }
 .nz-meter--danger .nz-meter__bar { background: var(--nz-danger); }

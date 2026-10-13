@@ -12,7 +12,7 @@
 .nz-price__decimal { font-size: .65em; color: var(--nz-text-mute); }
 .nz-price__period { font-size: var(--nz-text-xs); color: var(--nz-text-mute); }
 .nz-price__old { font-size: var(--nz-text-sm); color: var(--nz-text-faint); text-decoration: line-through; }
-.nz-price__save { display: inline-flex; align-items: center; min-height: 22px; padding: 0 var(--nz-space-2); border-radius: var(--nz-radius-full); background: var(--nz-success-soft); color: var(--nz-success); font-size: var(--nz-text-xs); font-weight: var(--nz-peso-titulo); white-space: nowrap; }
+.nz-price__save { display: inline-flex; align-items: center; min-height: 22px; padding: 0 var(--nz-space-2); border-radius: var(--nz-radius-full); background: var(--nz-success-soft); color: var(--nz-success); font-size: var(--nz-text-xs); font-weight: var(--nz-peso-fuerte); white-space: nowrap; }
 .nz-price--brand .nz-price__amount { color: var(--nz-brand); }
 .nz-price--accent .nz-price__amount { color: var(--nz-accent); }
 .nz-price--sm .nz-price__amount { font-size: var(--nz-text-lg); }
@@ -49,7 +49,7 @@
 .nz-product__media { position: relative; aspect-ratio: 1; border-radius: var(--nz-radius-md); overflow: hidden; background: var(--nz-bg-inset); }
 .nz-product__media img { display: block; width: 100%; height: 100%; object-fit: cover; }
 .nz-product__badge { position: absolute; top: var(--nz-space-2); left: var(--nz-space-2); }
-.nz-product__ribbon { position: absolute; top: var(--nz-space-2); right: var(--nz-space-2); padding: var(--nz-space-1) var(--nz-space-3); border-radius: var(--nz-radius-full); background: var(--nz-accent); color: var(--nz-text-invert); font-size: var(--nz-text-xs); font-weight: var(--nz-peso-titulo); letter-spacing: var(--nz-tracking-caps); text-transform: uppercase; }
+.nz-product__ribbon { position: absolute; top: var(--nz-space-2); right: var(--nz-space-2); padding: var(--nz-space-1) var(--nz-space-3); border-radius: var(--nz-radius-full); background: var(--nz-accent); color: var(--nz-text-invert); font-size: var(--nz-text-xs); font-weight: var(--nz-peso-fuerte); letter-spacing: var(--nz-tracking-caps); text-transform: uppercase; }
 .nz-product__quick { position: absolute; left: var(--nz-space-2); right: var(--nz-space-2); bottom: var(--nz-space-2); min-height: 44px; display: inline-flex; align-items: center; justify-content: center; gap: var(--nz-space-2); border: var(--nz-border-w) solid var(--nz-border); border-radius: var(--nz-radius-md); background: var(--nz-surface); color: var(--nz-text); font: inherit; font-size: var(--nz-text-sm); font-weight: var(--nz-peso-fuerte); box-shadow: var(--nz-shadow-md); cursor: pointer; }
 .nz-product__body { display: grid; gap: var(--nz-space-1); min-width: 0; }
 .nz-product__cat { font-size: var(--nz-text-xs); font-weight: var(--nz-peso-fuerte); letter-spacing: var(--nz-tracking-caps); text-transform: uppercase; color: var(--nz-text-faint); }
@@ -83,7 +83,7 @@
 .nz-plan__desc { font-size: var(--nz-text-xs); color: var(--nz-text-mute); }
 .nz-plan__price { font-size: var(--nz-text-3xl); font-weight: var(--nz-peso-titulo); letter-spacing: var(--nz-tracking-tight); font-variant-numeric: tabular-nums; }
 .nz-plan__price small { font-size: .5em; font-weight: var(--nz-peso-fuerte); color: var(--nz-text-mute); }
-.nz-plan__badge { display: inline-flex; align-items: center; align-self: flex-start; min-height: 22px; padding: 0 var(--nz-space-2); border-radius: var(--nz-radius-full); background: var(--nz-brand-soft); color: var(--nz-brand); font-size: var(--nz-text-xs); font-weight: var(--nz-peso-titulo); letter-spacing: var(--nz-tracking-caps); text-transform: uppercase; }
+.nz-plan__badge { display: inline-flex; align-items: center; align-self: flex-start; min-height: 22px; padding: 0 var(--nz-space-2); border-radius: var(--nz-radius-full); background: var(--nz-brand-soft); color: var(--nz-brand); font-size: var(--nz-text-xs); font-weight: var(--nz-peso-fuerte); letter-spacing: var(--nz-tracking-caps); text-transform: uppercase; }
 .nz-plan__features { display: flex; flex-direction: column; gap: var(--nz-space-2); margin: 0; padding: 0; list-style: none; }
 .nz-plan__feature { display: flex; align-items: center; gap: var(--nz-space-2); font-size: var(--nz-text-sm); color: var(--nz-text-soft); }
 .nz-plan__feature i { width: 6px; height: 6px; flex: none; border-radius: 50%; background: var(--nz-success); }
@@ -112,7 +112,7 @@
 /* ---- Tabla de precios ---- */
 .nz-pricetable { width: 100%; border-collapse: collapse; font-size: var(--nz-text-sm); }
 .nz-pricetable th, .nz-pricetable td { padding: var(--nz-space-3) var(--nz-space-4); text-align: left; border-bottom: var(--nz-border-w) solid var(--nz-border-soft); }
-.nz-pricetable th { font-size: var(--nz-text-xs); font-weight: var(--nz-peso-titulo); text-transform: uppercase; letter-spacing: var(--nz-tracking-caps); color: var(--nz-text-mute); }
+.nz-pricetable th { font-size: var(--nz-text-xs); font-weight: var(--nz-peso-fuerte); text-transform: uppercase; letter-spacing: var(--nz-tracking-caps); color: var(--nz-text-mute); }
 .nz-pricetable td { color: var(--nz-text-soft); }
 .nz-pricetable__rowhead { color: var(--nz-text); font-weight: var(--nz-peso-fuerte); }
 .nz-pricetable__col { color: var(--nz-text); font-weight: var(--nz-peso-titulo); }
@@ -142,7 +142,7 @@
 .nz-cart__qty button { width: 44px; height: 44px; border: 0; border-radius: var(--nz-radius-sm); background: var(--nz-bg-inset); color: var(--nz-text); font: inherit; font-weight: var(--nz-peso-titulo); cursor: pointer; }
 .nz-cart__qty button:hover { background: var(--nz-brand-soft); color: var(--nz-brand); }
 .nz-cart__qty span { min-width: 2rem; text-align: center; font-weight: var(--nz-peso-fuerte); font-variant-numeric: tabular-nums; }
-.nz-cart__count { display: inline-grid; place-items: center; min-width: 22px; height: 22px; padding: 0 var(--nz-space-1); border-radius: var(--nz-radius-full); background: var(--nz-brand); color: var(--nz-text-invert); font-size: var(--nz-text-2xs); font-weight: var(--nz-peso-titulo); font-variant-numeric: tabular-nums; }
+.nz-cart__count { display: inline-grid; place-items: center; min-width: 22px; height: 22px; padding: 0 var(--nz-space-1); border-radius: var(--nz-radius-full); background: var(--nz-brand); color: var(--nz-text-invert); font-size: var(--nz-text-2xs); font-weight: var(--nz-peso-fuerte); font-variant-numeric: tabular-nums; }
 .nz-cart__foot { display: flex; align-items: center; justify-content: space-between; gap: var(--nz-space-3); padding-top: var(--nz-space-3); border-top: var(--nz-border-w) solid var(--nz-border); }
 .nz-cart__total { font-size: var(--nz-text-lg); font-weight: var(--nz-peso-titulo); font-variant-numeric: tabular-nums; }
 .nz-cart__empty { display: grid; justify-items: center; gap: var(--nz-space-2); padding: var(--nz-space-8) var(--nz-space-4); text-align: center; font-size: var(--nz-text-sm); color: var(--nz-text-mute); }
@@ -154,7 +154,7 @@
 /* ---- Pasos de compra ---- */
 .nz-checkout-steps { display: grid; gap: var(--nz-space-3); margin: 0; padding: 0; list-style: none; }
 .nz-checkout-steps__step { display: flex; align-items: center; gap: var(--nz-space-3); font-size: var(--nz-text-sm); color: var(--nz-text-mute); }
-.nz-checkout-steps__num { display: inline-grid; place-items: center; width: 32px; height: 32px; flex: none; border-radius: 50%; background: var(--nz-bg-inset); color: var(--nz-text-soft); font-size: var(--nz-text-xs); font-weight: var(--nz-peso-titulo); font-variant-numeric: tabular-nums; }
+.nz-checkout-steps__num { display: inline-grid; place-items: center; width: 32px; height: 32px; flex: none; border-radius: 50%; background: var(--nz-bg-inset); color: var(--nz-text-soft); font-size: var(--nz-text-xs); font-weight: var(--nz-peso-fuerte); font-variant-numeric: tabular-nums; }
 .nz-checkout-steps__label { font-weight: var(--nz-peso-fuerte); }
 .nz-checkout-steps__step--done { color: var(--nz-text); }
 .nz-checkout-steps__step--done .nz-checkout-steps__num { background: var(--nz-success); color: var(--nz-text-invert); }
@@ -186,14 +186,14 @@
 .nz-payment__method { display: flex; align-items: center; gap: var(--nz-space-3); min-height: 44px; padding: var(--nz-space-3) var(--nz-space-4); border: var(--nz-border-w) solid var(--nz-border); border-radius: var(--nz-radius-md); background: var(--nz-surface); }
 .nz-payment__method:hover { border-color: var(--nz-border-strong); }
 .nz-payment__method--selected { border-color: var(--nz-brand); border-width: var(--nz-border-w-strong); background: var(--nz-brand-soft); }
-.nz-payment__icon { width: 40px; height: 28px; flex: none; display: grid; place-items: center; border-radius: var(--nz-radius-xs); background: var(--nz-bg-inset); font-size: var(--nz-text-xs); font-weight: var(--nz-peso-titulo); color: var(--nz-text-mute); }
+.nz-payment__icon { width: 40px; height: 28px; flex: none; display: grid; place-items: center; border-radius: var(--nz-radius-xs); background: var(--nz-bg-inset); font-size: var(--nz-text-xs); font-weight: var(--nz-peso-fuerte); color: var(--nz-text-mute); }
 .nz-payment__label { font-weight: var(--nz-peso-fuerte); font-size: var(--nz-text-sm); color: var(--nz-text); }
 .nz-payment__note { font-size: var(--nz-text-xs); color: var(--nz-text-mute); }
 @media (min-width: 640px) { .nz-payment--grid { grid-template-columns: repeat(2, 1fr); } }
 
 /* ---- Forma de pago (item simple) ---- */
 .nz-pay { display: flex; align-items: center; gap: var(--nz-space-3); padding: var(--nz-space-3) var(--nz-space-4); border: var(--nz-border-w) solid var(--nz-border-soft); border-radius: var(--nz-radius-md); background: var(--nz-surface); }
-.nz-pay__icon { width: 40px; height: 28px; flex: none; border-radius: var(--nz-radius-xs); background: var(--nz-bg-inset); display: grid; place-items: center; font-size: var(--nz-text-xs); font-weight: var(--nz-peso-titulo); color: var(--nz-text-mute); }
+.nz-pay__icon { width: 40px; height: 28px; flex: none; border-radius: var(--nz-radius-xs); background: var(--nz-bg-inset); display: grid; place-items: center; font-size: var(--nz-text-xs); font-weight: var(--nz-peso-fuerte); color: var(--nz-text-mute); }
 .nz-pay__body { flex: 1; display: grid; gap: 1px; }
 .nz-pay__name { font-weight: var(--nz-peso-fuerte); font-size: var(--nz-text-sm); color: var(--nz-text); }
 .nz-pay__meta { font-size: var(--nz-text-xs); color: var(--nz-text-mute); }
@@ -203,7 +203,7 @@
 .nz-order__head { display: flex; flex-wrap: wrap; align-items: center; gap: var(--nz-space-2) var(--nz-space-3); }
 .nz-order__id { font-family: var(--nz-font-mono); font-size: var(--nz-text-xs); color: var(--nz-text-mute); }
 .nz-order__date { font-size: var(--nz-text-xs); color: var(--nz-text-faint); }
-.nz-order__status { display: inline-flex; align-items: center; gap: var(--nz-space-1); margin-left: auto; padding: var(--nz-space-1) var(--nz-space-3); border-radius: var(--nz-radius-full); background: var(--nz-success-soft); color: var(--nz-success); font-size: var(--nz-text-xs); font-weight: var(--nz-peso-titulo); letter-spacing: var(--nz-tracking-caps); text-transform: uppercase; }
+.nz-order__status { display: inline-flex; align-items: center; gap: var(--nz-space-1); margin-left: auto; padding: var(--nz-space-1) var(--nz-space-3); border-radius: var(--nz-radius-full); background: var(--nz-success-soft); color: var(--nz-success); font-size: var(--nz-text-xs); font-weight: var(--nz-peso-fuerte); letter-spacing: var(--nz-tracking-caps); text-transform: uppercase; }
 .nz-order__status--pending { background: var(--nz-warning-soft); color: var(--nz-warning); }
 .nz-order__status--canceled { background: var(--nz-danger-soft); color: var(--nz-danger); }
 .nz-order__items { display: grid; gap: var(--nz-space-2); margin: 0; padding: 0; list-style: none; font-size: var(--nz-text-sm); color: var(--nz-text-soft); }
@@ -233,15 +233,15 @@
 .nz-compare-bar__clear:hover { color: var(--nz-danger); }
 
 /* ---- Etiqueta de descuento ---- */
-.nz-off { display: inline-flex; align-items: center; padding: 0.15rem 0.6rem; border-radius: var(--nz-radius-full); background: var(--nz-danger-soft); color: var(--nz-danger); font-size: var(--nz-text-xs); font-weight: var(--nz-peso-titulo); }
+.nz-off { display: inline-flex; align-items: center; padding: 0.15rem 0.6rem; border-radius: var(--nz-radius-full); background: var(--nz-danger-soft); color: var(--nz-danger); font-size: var(--nz-text-xs); font-weight: var(--nz-peso-fuerte); }
 .nz-off--green { background: var(--nz-success-soft); color: var(--nz-success); }
-.nz-discount-badge { display: inline-flex; align-items: baseline; gap: var(--nz-space-2); padding: var(--nz-space-1) var(--nz-space-3); border-radius: var(--nz-radius-sm); background: var(--nz-danger-soft); color: var(--nz-danger); font-size: var(--nz-text-xs); font-weight: var(--nz-peso-titulo); }
+.nz-discount-badge { display: inline-flex; align-items: baseline; gap: var(--nz-space-2); padding: var(--nz-space-1) var(--nz-space-3); border-radius: var(--nz-radius-sm); background: var(--nz-danger-soft); color: var(--nz-danger); font-size: var(--nz-text-xs); font-weight: var(--nz-peso-fuerte); }
 .nz-discount-badge__was { font-size: var(--nz-text-2xs); font-weight: var(--nz-peso-fuerte); color: var(--nz-text-mute); text-decoration: line-through; }
 .nz-discount-badge--lg { padding: var(--nz-space-2) var(--nz-space-4); border-radius: var(--nz-radius-md); font-size: var(--nz-text-md); }
 
 /* ---- Nota de regalo ---- */
 .nz-gift-note { display: grid; gap: var(--nz-space-1); padding: var(--nz-space-3) var(--nz-space-4); border-left: var(--nz-border-w-strong) solid var(--nz-accent); border-radius: var(--nz-radius-sm); background: var(--nz-accent-soft); }
-.nz-gift-note__label { font-size: var(--nz-text-xs); font-weight: var(--nz-peso-titulo); letter-spacing: var(--nz-tracking-caps); text-transform: uppercase; color: var(--nz-accent-strong); }
+.nz-gift-note__label { font-size: var(--nz-text-xs); font-weight: var(--nz-peso-fuerte); letter-spacing: var(--nz-tracking-caps); text-transform: uppercase; color: var(--nz-accent-strong); }
 .nz-gift-note__body { font-size: var(--nz-text-sm); color: var(--nz-text-soft); }
 
 

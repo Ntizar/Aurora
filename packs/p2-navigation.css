@@ -123,7 +123,7 @@
 
 /* ---- 09 Índice de contenidos (TOC) ---- */
 .nz-toc { display: flex; flex-direction: column; gap: var(--nz-space-1); padding: var(--nz-space-4); background: var(--nz-surface); border-radius: var(--nz-radius-lg); box-shadow: var(--nz-shadow-sm); }
-.nz-toc__title { font-size: var(--nz-text-xs); font-weight: var(--nz-peso-titulo); letter-spacing: var(--nz-tracking-caps); text-transform: uppercase; color: var(--nz-text-faint); margin-bottom: var(--nz-space-2); }
+.nz-toc__title { font-size: var(--nz-text-xs); font-weight: var(--nz-peso-fuerte); letter-spacing: var(--nz-tracking-caps); text-transform: uppercase; color: var(--nz-text-faint); margin-bottom: var(--nz-space-2); }
 .nz-toc__title--brand { color: var(--nz-brand); }
 .nz-toc a { display: flex; min-height: 44px; align-items: center; color: var(--nz-text-soft); text-decoration: none; padding: var(--nz-space-2) var(--nz-space-2); border-left: 3px solid transparent; border-radius: var(--nz-radius-sm); font-size: var(--nz-text-sm); }
 .nz-toc a:hover { background: var(--nz-bg-soft); color: var(--nz-text); }
@@ -149,7 +149,7 @@
 /* ---- 11 Nav footer ---- */
 .nz-navfooter { display: flex; flex-wrap: wrap; gap: var(--nz-space-2) var(--nz-space-6); padding: var(--nz-space-6) 0; }
 .nz-navfooter__col { min-width: 7rem; display: flex; flex-direction: column; gap: var(--nz-space-2); }
-.nz-navfooter__title { font-size: var(--nz-text-xs); font-weight: var(--nz-peso-titulo); letter-spacing: var(--nz-tracking-caps); text-transform: uppercase; color: var(--nz-text-faint); }
+.nz-navfooter__title { font-size: var(--nz-text-xs); font-weight: var(--nz-peso-fuerte); letter-spacing: var(--nz-tracking-caps); text-transform: uppercase; color: var(--nz-text-faint); }
 .nz-navfooter__title--brand { color: var(--nz-brand); }
 .nz-navfooter a { min-height: 44px; display: inline-flex; align-items: center; color: var(--nz-text-soft); text-decoration: none; font-size: var(--nz-text-sm); }
 .nz-navfooter a:hover { color: var(--nz-brand); }

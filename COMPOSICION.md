@@ -17,7 +17,7 @@ Verificación: `python scripts/auditar-uso.py tu-pagina.html` comprueba estas re
 | 3 | **Un protagonista por sección**: la marca (azul/tu color) **o** el acento, nunca los dos de igual a igual. **Y el acento tiene que aparecer**: cada página lleva al menos un momento de acento, y la marca no acapara más de dos tercios | lint: `dos-protagonistas` · `acento-ausente` · `acento-testimonial` |
 | 4 | **Ningún texto de interfaz por debajo de 13px** (`--nz-text-xs`); los 12px (`--nz-text-2xs`) son **solo para datos** (ejes, contadores, notas al pie) | lint: `minimo-tipografico` |
 | 5 | **Un solo `<h1>`** y jerarquía sin saltos (h1 → h2 → h3) | lint: `jerarquia` |
-| 6 | **Máximo 4 tamaños tipográficos** por página (`--nz-text-*`, nunca px suelto) y **pesos por token** (`--nz-peso-*`): 400 cuerpo · 500 apoyo · 600 interfaz · 700 titulares y cifras. El **800 no existe** y nada por debajo de 16px lleva 700 | lint: `escala-tipografica` · `peso-a-mano` |
+| 6 | **Máximo 4 tamaños tipográficos** por página (`--nz-text-*`, nunca px suelto) y **pesos por token** (`--nz-peso-*`): 400 cuerpo · 500 apoyo · 600 interfaz · 700 titulares y cifras. El **800 no existe** y nada por debajo de 16px lleva 700 | lint: `escala-tipografica` · `peso-a-mano` · `peso-por-tamano` |
 | 7 | **Ancho por tipo de página** (ver §5). Una app no vive en columna estrecha | lint: `ancho-composicion` |
 | 8 | **Ritmo vertical**: la separación entre secciones sale de `--nz-rh-seccion`, no del aire | lint: `ritmo-vertical` |
 | 9 | **Una densidad por página** (compact / normal / spacious) | revisión |
@@ -43,7 +43,11 @@ Verificación: `python scripts/auditar-uso.py tu-pagina.html` comprueba estas re
   interfaz, insignias y botones · `--nz-peso-titulo` (700) **solo** titulares y cifras
   grandes. El **800 está retirado** y **nada por debajo de 16px lleva 700**: cuando todo
   es negrita, nada destaca (medido: el 26% de los elementos de una herramienta salía en
-  negrita). Utilidades: `.nz-text--peso-medio`, `.nz-text--peso-fuerte`.
+  negrita). Lo comprueba el propio sistema con la puerta `peso-por-tamano` de
+  `validar-css.py`; las únicas excepciones son las **cifras** (se reconocen por
+  `font-variant-numeric: tabular-nums`: un contador en una insignia sí va en negrita) y
+  los **símbolos**, que no son texto.
+  Utilidades: `.nz-text--peso-medio`, `.nz-text--peso-fuerte`.
 - **13px es el mínimo de la interfaz** (`--nz-text-xs`): etiquetas, insignias, estados.
   Los **12px** (`--nz-text-2xs`) son para **datos**: ejes, contadores, notas al pie,
   atajos de teclado. Una etiqueta nunca baja a 12px.
@@ -187,8 +191,9 @@ desborda (ver `LLM.md` §4b). Añadido: nada clicable por debajo de **`--nz-tact
 **Escritorio** (v8.4): el sistema **crece**, no se queda en la columna del móvil. El lienzo
 sube a 84rem (≥1200px) y a 96rem (≥1440px), los márgenes laterales suben con él
 (`--nz-gutter`: 16 → 24 → 32px) y un panel o herramienta usa `.nz-container--app` para
-llenar la pantalla. **La prueba objetiva**: a 1920px, el contenido debe ocupar más del 90%
-del ancho; en v8.3 ocupaba el 60%.
+llenar la pantalla. **La prueba objetiva** (medida en producto vivo a 1920px): una herramienta
+ocupa ≥95% del ancho (100% con `--app`) y una página de contenido no baja del 80% — en v8.3
+el lienzo se plantaba en 1152px, el 60%.
 
 ---
 
@@ -206,7 +211,7 @@ del ancho; en v8.3 ocupaba el 60%.
 10. ☐ Etiquetas de formulario visibles.
 11. ☐ Los tres estados (vacío / carga / error) en las vistas de datos.
 12. ☐ `scrollWidth == clientWidth` a 320/360/390 y atribución exacta.
-13. ☐ **A 1920px el contenido ocupa más del 90% del ancho** (medido, no admirado).
+13. ☐ **A 1920px el lienzo no se queda corto**: ≥95% en una herramienta (100% con `--app`) y ≥80% en una página de contenido (medido, no admirado).
 14. ☐ La fuente es la del sistema (Inter servida por `tokens.css`), no la del sistema operativo.
 
 ---

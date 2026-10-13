@@ -10,7 +10,7 @@
 /* ---- Tabla ---- */
 .nz-table-wrap { overflow-x: auto; border-radius: var(--nz-radius-md); border: var(--nz-border-w) solid var(--nz-border-soft); }
 .nz-table { width: 100%; border-collapse: collapse; background: var(--nz-surface); font-size: var(--nz-text-sm); min-width: 30rem; }
-.nz-table thead th { background: var(--nz-bg-soft); color: var(--nz-text-mute); font-size: var(--nz-text-xs); font-weight: var(--nz-peso-titulo); text-transform: uppercase; letter-spacing: var(--nz-tracking-caps); text-align: left; padding: var(--nz-space-3) var(--nz-space-4); white-space: nowrap; }
+.nz-table thead th { background: var(--nz-bg-soft); color: var(--nz-text-mute); font-size: var(--nz-text-xs); font-weight: var(--nz-peso-fuerte); text-transform: uppercase; letter-spacing: var(--nz-tracking-caps); text-align: left; padding: var(--nz-space-3) var(--nz-space-4); white-space: nowrap; }
 .nz-table tbody td { padding: var(--nz-space-3) var(--nz-space-4); border-top: var(--nz-border-w) solid var(--nz-border-soft); color: var(--nz-text-soft); }
 .nz-table tbody tr { transition: background var(--nz-dur-fast) var(--nz-ease-out); }
 .nz-table tbody tr:hover { background: var(--nz-bg-soft); }
@@ -71,10 +71,10 @@
 .nz-table--apilable tbody th, .nz-table--apilable tbody td, .nz-table--apilable tfoot td {
   display: block; padding: var(--nz-space-1) 0; border: 0; text-align: left;
 }
-.nz-table--apilable tbody th[scope="row"] { font-size: var(--nz-text-sm); font-weight: var(--nz-peso-titulo); color: var(--nz-text); }
+.nz-table--apilable tbody th[scope="row"] { font-size: var(--nz-text-sm); font-weight: var(--nz-peso-fuerte); color: var(--nz-text); }
 .nz-table--apilable tbody td[data-etiqueta]::before, .nz-table--apilable tfoot td[data-etiqueta]::before {
   content: attr(data-etiqueta); display: block;
-  font-size: var(--nz-text-xs); font-weight: var(--nz-peso-titulo); letter-spacing: var(--nz-tracking-caps);
+  font-size: var(--nz-text-xs); font-weight: var(--nz-peso-fuerte); letter-spacing: var(--nz-tracking-caps);
   text-transform: uppercase; color: var(--nz-text-mute);
 }
 @media (min-width: 640px) {
@@ -109,7 +109,7 @@
 
 /* ---- KPI / tarjeta de dato ---- */
 .nz-kpi { display: grid; gap: var(--nz-space-1); padding: var(--nz-space-5); border-radius: var(--nz-radius-lg); background: var(--nz-surface); box-shadow: var(--nz-shadow-sm); }
-.nz-kpi__label { font-size: var(--nz-text-xs); font-weight: var(--nz-peso-titulo); letter-spacing: var(--nz-tracking-caps); text-transform: uppercase; color: var(--nz-text-mute); }
+.nz-kpi__label { font-size: var(--nz-text-xs); font-weight: var(--nz-peso-fuerte); letter-spacing: var(--nz-tracking-caps); text-transform: uppercase; color: var(--nz-text-mute); }
 .nz-kpi__value { font-size: var(--nz-text-2xl); font-weight: var(--nz-peso-titulo); letter-spacing: var(--nz-tracking-tight); font-variant-numeric: tabular-nums; color: var(--nz-text); }
 .nz-kpi__value--brand { color: var(--nz-brand); }
 .nz-kpi__value--accent { color: var(--nz-accent); }
@@ -163,9 +163,9 @@
 .nz-record__meta--brand { color: var(--nz-brand); }
 .nz-record__value { font-size: var(--nz-text-sm); font-weight: var(--nz-peso-fuerte); font-variant-numeric: tabular-nums; color: var(--nz-text); }
 .nz-record__value--brand { color: var(--nz-brand); }
-.nz-record__tag { font-size: var(--nz-text-xs); font-weight: var(--nz-peso-titulo); letter-spacing: var(--nz-tracking-caps); text-transform: uppercase; color: var(--nz-text-mute); }
+.nz-record__tag { font-size: var(--nz-text-xs); font-weight: var(--nz-peso-fuerte); letter-spacing: var(--nz-tracking-caps); text-transform: uppercase; color: var(--nz-text-mute); }
 .nz-record__thumb { width: 44px; height: 44px; flex: none; border-radius: var(--nz-radius-sm); overflow: hidden; background: var(--nz-bg-inset); }
-.nz-record__avatar { width: 40px; height: 40px; flex: none; display: inline-grid; place-items: center; border-radius: 50%; background: var(--nz-brand-soft); color: var(--nz-brand); font-weight: var(--nz-peso-titulo); font-size: var(--nz-text-sm); }
+.nz-record__avatar { width: 40px; height: 40px; flex: none; display: inline-grid; place-items: center; border-radius: 50%; background: var(--nz-brand-soft); color: var(--nz-brand); font-weight: var(--nz-peso-fuerte); font-size: var(--nz-text-sm); }
 .nz-record__actions { margin-left: auto; display: inline-flex; align-items: center; gap: var(--nz-space-1); }
 
 /* ---- Timeline ---- */
@@ -264,7 +264,7 @@
 /* ---- Tabla de comparación con columna destacada ---- */
 .nz-compare { width: 100%; border-collapse: collapse; font-size: var(--nz-text-sm); background: var(--nz-surface); }
 .nz-compare th, .nz-compare td { padding: var(--nz-space-3) var(--nz-space-4); text-align: left; border-top: var(--nz-border-w) solid var(--nz-border-soft); }
-.nz-compare__head { color: var(--nz-text-mute); font-size: var(--nz-text-xs); font-weight: var(--nz-peso-titulo); text-transform: uppercase; letter-spacing: var(--nz-tracking-caps); }
+.nz-compare__head { color: var(--nz-text-mute); font-size: var(--nz-text-xs); font-weight: var(--nz-peso-fuerte); text-transform: uppercase; letter-spacing: var(--nz-tracking-caps); }
 .nz-compare__feature { color: var(--nz-text); font-weight: var(--nz-peso-fuerte); }
 .nz-compare__col--featured { background: var(--nz-brand-soft); }
 .nz-compare__check { color: var(--nz-success); font-weight: var(--nz-peso-titulo); }

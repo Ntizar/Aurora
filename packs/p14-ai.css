@@ -105,7 +105,7 @@
 /* ---- Plan por pasos ---- */
 .nz-taskplan { display: grid; gap: var(--nz-space-2); }
 .nz-taskplan__step { display: grid; grid-template-columns: auto 1fr; gap: var(--nz-space-3); align-items: start; }
-.nz-taskplan__num { width: 24px; height: 24px; display: inline-flex; align-items: center; justify-content: center; border-radius: 50%; background: var(--nz-bg-inset); color: var(--nz-text-mute); font-size: var(--nz-text-2xs); font-weight: var(--nz-peso-titulo); }
+.nz-taskplan__num { width: 24px; height: 24px; display: inline-flex; align-items: center; justify-content: center; border-radius: 50%; background: var(--nz-bg-inset); color: var(--nz-text-mute); font-size: var(--nz-text-2xs); font-weight: var(--nz-peso-fuerte); }
 .nz-taskplan__label { font-size: var(--nz-text-sm); font-weight: var(--nz-peso-fuerte); }
 .nz-taskplan__detail { font-size: var(--nz-text-xs); color: var(--nz-text-mute); }
 .nz-taskplan__step--done .nz-taskplan__num { background: var(--nz-success); color: var(--nz-gray-0); }
@@ -241,7 +241,7 @@
 
 /* ---- Historial de conversaciones ---- */
 .nz-chat-history { display: grid; gap: 2px; }
-.nz-chat-history__title { font-size: var(--nz-text-xs); font-weight: var(--nz-peso-titulo); letter-spacing: var(--nz-tracking-caps); text-transform: uppercase; color: var(--nz-text-mute); padding: var(--nz-space-2) var(--nz-space-2) var(--nz-space-1); }
+.nz-chat-history__title { font-size: var(--nz-text-xs); font-weight: var(--nz-peso-fuerte); letter-spacing: var(--nz-tracking-caps); text-transform: uppercase; color: var(--nz-text-mute); padding: var(--nz-space-2) var(--nz-space-2) var(--nz-space-1); }
 .nz-chat-history__item { display: flex; align-items: center; gap: var(--nz-space-2); min-height: 40px; padding: 0 var(--nz-space-2); border-radius: var(--nz-radius-sm); font-size: var(--nz-text-xs); color: var(--nz-text-soft); text-decoration: none; }
 .nz-chat-history__item:hover { background: var(--nz-bg-inset); }
 .nz-chat-history__item--active { background: var(--nz-brand-soft); color: var(--nz-brand); font-weight: var(--nz-peso-fuerte); }

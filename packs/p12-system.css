@@ -95,7 +95,7 @@
 
 /* ---- Aviso de mantenimiento ---- */
 .nz-maintenance-banner { display: flex; flex-direction: column; gap: var(--nz-space-3); padding: var(--nz-space-4); border-left: var(--nz-border-w-strong) solid var(--nz-warning); border-radius: var(--nz-radius-md); background: var(--nz-warning-soft); }
-.nz-maintenance-banner__title { font-size: var(--nz-text-sm); font-weight: var(--nz-peso-titulo); color: var(--nz-text); }
+.nz-maintenance-banner__title { font-size: var(--nz-text-sm); font-weight: var(--nz-peso-fuerte); color: var(--nz-text); }
 .nz-maintenance-banner__body { font-size: var(--nz-text-xs); color: var(--nz-text-soft); }
 .nz-maintenance-banner__actions { display: flex; flex-wrap: wrap; gap: var(--nz-space-2); }
 @media (min-width: 640px) { .nz-maintenance-banner { flex-direction: row; align-items: center; } .nz-maintenance-banner__actions { margin-left: auto; } }

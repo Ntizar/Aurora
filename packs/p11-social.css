@@ -75,7 +75,7 @@
 .nz-quote__byline { display: grid; gap: 1px; }
 .nz-quote__name { font-weight: var(--nz-peso-fuerte); font-size: var(--nz-text-sm); color: var(--nz-text); }
 .nz-quote__role { font-size: var(--nz-text-xs); color: var(--nz-text-mute); }
-.nz-quote__logo { margin-left: auto; font-size: var(--nz-text-sm); font-weight: var(--nz-peso-titulo); color: var(--nz-text-faint); }
+.nz-quote__logo { margin-left: auto; font-size: var(--nz-text-sm); font-weight: var(--nz-peso-fuerte); color: var(--nz-text-faint); }
 .nz-quote--brand { background: var(--nz-brand); color: var(--nz-text-invert); }
 .nz-quote--brand p, .nz-quote--brand .nz-quote__name { color: var(--nz-text-invert); }
 .nz-quote--brand .nz-quote__role { color: var(--nz-blue-100); }
@@ -126,7 +126,7 @@
 /* ---- Logotipos de confianza ---- */
 .nz-trust { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: var(--nz-space-4) var(--nz-space-8); font-size: var(--nz-text-sm); font-weight: var(--nz-peso-fuerte); color: var(--nz-text-faint); }
 .nz-trust__stars { display: inline-flex; align-items: center; gap: var(--nz-space-1); color: var(--nz-warning); }
-.nz-trust__logo { min-height: 44px; display: inline-flex; align-items: center; gap: var(--nz-space-2); padding: 0 var(--nz-space-2); border-radius: var(--nz-radius-sm); background: var(--nz-bg-inset); color: var(--nz-text-soft); font-size: var(--nz-text-sm); font-weight: var(--nz-peso-titulo); }
+.nz-trust__logo { min-height: 44px; display: inline-flex; align-items: center; gap: var(--nz-space-2); padding: 0 var(--nz-space-2); border-radius: var(--nz-radius-sm); background: var(--nz-bg-inset); color: var(--nz-text-soft); font-size: var(--nz-text-sm); font-weight: var(--nz-peso-fuerte); }
 .nz-trust--bordered { padding: var(--nz-space-4); border: var(--nz-border-w) solid var(--nz-border-soft); border-radius: var(--nz-radius-lg); background: var(--nz-surface); }
 .nz-trust--sm { gap: var(--nz-space-3) var(--nz-space-5); font-size: var(--nz-text-xs); }
 

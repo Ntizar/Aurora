@@ -68,7 +68,7 @@
 .nz-btn--icon-sm { width: 44px; min-height: 44px; padding: 0; }
 .nz-btn--icon-lg { width: 52px; min-height: 52px; padding: 0; }
 .nz-btn--icon-square { width: 44px; padding: 0; border-radius: var(--nz-radius-md); }
-.nz-btn__badge { position: absolute; top: -4px; right: -4px; min-width: 18px; height: 18px; padding: 0 var(--nz-space-1); display: inline-flex; align-items: center; justify-content: center; border-radius: var(--nz-radius-full); background: var(--nz-accent); color: var(--nz-gray-0); font-size: var(--nz-text-2xs); font-weight: var(--nz-peso-titulo); }
+.nz-btn__badge { position: absolute; top: -4px; right: -4px; min-width: 18px; height: 18px; padding: 0 var(--nz-space-1); display: inline-flex; align-items: center; justify-content: center; border-radius: var(--nz-radius-full); background: var(--nz-accent); color: var(--nz-gray-0); font-size: var(--nz-text-2xs); font-weight: var(--nz-peso-fuerte); }
 .nz-btn--badged { position: relative; overflow: visible; }
 
 /* ---- Estados ---- */

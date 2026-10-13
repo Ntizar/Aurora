@@ -82,7 +82,7 @@
 .nz-checkbox { display: inline-flex; align-items: center; gap: var(--nz-space-2); min-height: 44px; cursor: pointer; font-size: var(--nz-text-base); color: var(--nz-text); }
 .nz-checkbox input { position: absolute; opacity: 0; width: 1px; height: 1px; }
 .nz-checkbox__box { width: 22px; height: 22px; flex: none; display: inline-grid; place-items: center; border-radius: var(--nz-radius-xs); border: var(--nz-border-w-strong) solid var(--nz-border-strong); background: var(--nz-surface); transition: background var(--nz-dur-fast) var(--nz-ease-out), border-color var(--nz-dur-fast) var(--nz-ease-out); }
-.nz-checkbox__box::after { content: "✓"; color: var(--nz-text-invert); font-size: var(--nz-text-sm); font-weight: var(--nz-peso-titulo); opacity: 0; transform: scale(.5); transition: opacity var(--nz-dur-fast) var(--nz-ease-out), transform var(--nz-dur-fast) var(--nz-ease-out); }
+.nz-checkbox__box::after { content: "✓"; color: var(--nz-text-invert); font-size: var(--nz-text-sm); font-weight: var(--nz-peso-fuerte); opacity: 0; transform: scale(.5); transition: opacity var(--nz-dur-fast) var(--nz-ease-out), transform var(--nz-dur-fast) var(--nz-ease-out); }
 .nz-checkbox input:checked ~ .nz-checkbox__box { background: var(--nz-brand); border-color: var(--nz-brand); }
 .nz-checkbox input:checked ~ .nz-checkbox__box::after { opacity: 1; transform: scale(1); }
 .nz-checkbox input:focus-visible ~ .nz-checkbox__box { box-shadow: var(--nz-focus-ring); }

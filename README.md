@@ -8,7 +8,7 @@
 
 [![CI — validación del manifiesto](https://github.com/Ntizar/Aurora/actions/workflows/validar.yml/badge.svg)](https://github.com/Ntizar/Aurora/actions/workflows/validar.yml)
 [![GitHub Pages](https://github.com/Ntizar/Aurora/actions/workflows/pages.yml/badge.svg)](https://github.com/Ntizar/Aurora/actions/workflows/pages.yml)
-![versión](https://img.shields.io/badge/versi%C3%B3n-8.4.0-2563eb)
+![versión](https://img.shields.io/badge/versi%C3%B3n-8.4.1-2563eb)
 ![objetos](https://img.shields.io/badge/objetos-2.184-2563eb)
 ![demos](https://img.shields.io/badge/demos-653-f97316)
 
@@ -65,16 +65,16 @@ Aurora no es una colección de snippets: es un **sistema con contrato**. Cada ob
 **En una página real** — enlaza los tokens y solo los packs que necesites:
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v8.4.0/tokens.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v8.4.0/packs/p4-actions.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v8.4.0/packs/p5-forms.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v8.4.1/tokens.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v8.4.1/packs/p4-actions.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v8.4.1/packs/p5-forms.css">
 ```
 
 **Todo de golpe** — para prototipar:
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v8.4.0/tokens.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v8.4.0/packs/all.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v8.4.1/tokens.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v8.4.1/packs/all.css">
 ```
 
 El `body` lleva `class="nz"` y el tema se fija en el `<html>`:
@@ -167,7 +167,8 @@ Los 18 packs hablan el mismo idioma — si sabes usar un objeto, sabes usarlos t
 8. **Tipografía con juicio**: 13px es el mínimo de interfaz (12px solo para datos),
    el peso es un token y el 800 no existe
 9. **Escritorio de verdad**: el lienzo crece hasta 96rem y una herramienta usa
-   `.nz-container--app`; a 1920px el contenido debe ocupar más del 90% del ancho
+   `.nz-container--app`; medido a 1920px: una herramienta ocupa ≥95% del ancho (y hasta el
+   100% con `--app`), y una página de contenido ya no baja del 80% (en v8.3 era el 60%)
 
 ## Garantías automáticas
 
@@ -176,7 +177,7 @@ pone en rojo **antes** de publicarse:
 
 | Puerta | Qué vigila |
 |---|---|
-| `validar-css.py` | 0 gradientes/glass/colores a mano, 0 `!important` sin justificar, tokens existentes, dueño único por clase, cobertura clase↔demo, HTML bien formado, cada página carga los packs que usa y ningún literal que ya tenga token |
+| `validar-css.py` | 0 gradientes/glass/colores a mano, 0 `!important` sin justificar, tokens existentes, dueño único por clase, cobertura clase↔demo, HTML bien formado, cada página carga los packs que usa, ningún literal que ya tenga token y **nada por debajo de 16px en negrita** (`peso-por-tamano`) |
 | `audit-tema.py` | que ninguna regla pinte texto o bordes de paleta sin declarar su propio fondo: eso es lo que rompe el modo oscuro |
 | `audit-a11y.py` | `alt`, etiquetas asociadas, texto accesible, `aria-*` que apunten a ids reales, `label[for]` correctos, `tabindex` y orden de tabulación |
 | `audit-catalog.py` | auditoría campo a campo: lo declarado contra lo demostrado |

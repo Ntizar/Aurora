@@ -46,6 +46,13 @@ EXCEPCIONES_IMPORTANT = {
     ".nz-print-hide": "debe ganar a display:flex al imprimir",
 }
 
+# Ley del peso por tamaño (v8.4): nada por debajo de 16px va en 700... salvo
+# las CIFRAS (un contador en una insignia sí va en negrita: se reconoce por
+# font-variant-numeric: tabular-nums) y los SÍMBOLOS, que no son texto.
+EXCEPCIONES_PESO = {
+    ".nz-username__check": "símbolo ✓ dentro de una insignia de 16px, no es texto",
+}
+
 VAR_DEF = re.compile(r"(--nz-[A-Za-z0-9_-]+)\s*:")
 VAR_USE = re.compile(r"var\(\s*(--nz-[A-Za-z0-9_-]+)")
 HEX = re.compile(r"#[0-9a-fA-F]{3,8}\b")
@@ -127,6 +134,28 @@ def main():
             linea = limpio.find(t)
             linea = limpio[:linea].count("\n") + 1
             fallo(f"{pack}:{linea}: token inexistente {t}")
+
+        # 2b. ley del peso por tamaño (v8.4): nada por debajo de 16px en negrita.
+        #     Se enmascaran los comentarios con espacios para que el número de
+        #     línea del aviso sea el del fichero real.
+        enmascarado = re.sub(r"/\*.*?\*/", lambda m: " " * len(m.group(0)), crudo, flags=re.S)
+        for m in re.finditer(r"([^{}]*)\{([^{}]*)\}", enmascarado):
+            sel, blk = m.group(1).strip().replace("\n", " "), m.group(2)
+            if not re.search(r"font-weight:\s*(?:700|800|var\(--nz-peso-titulo\))", blk):
+                continue
+            pequeno = re.search(r"font-size:\s*var\(--nz-text-(?:2xs|xs|sm)\)", blk)
+            if not pequeno:
+                for px in re.finditer(r"font-size:\s*(\d+(?:\.\d+)?)px", blk):
+                    if float(px.group(1)) < 16:
+                        pequeno = px
+                        break
+            if not pequeno:
+                continue
+            if "tabular-nums" in blk or any(e in sel for e in EXCEPCIONES_PESO):
+                continue
+            linea = enmascarado[:m.start()].count("\n") + 1
+            fallo(f"{pack}:{linea}: «{pequeno.group(0)}» con 700 — nada por debajo de 16px va en "
+                  f"negrita (usa var(--nz-peso-fuerte)): {sel[:70]}")
 
         # 7. clases fuera del espacio de nombres
         for m in re.finditer(r"(?:^|[\s,>+~])\.([a-z][a-z0-9_-]*)", limpio):

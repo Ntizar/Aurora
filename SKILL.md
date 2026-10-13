@@ -1,14 +1,14 @@
 ---
 name: aurora-design-system
 description: "Usa al construir o tocar cualquier web con Aurora (Ntizar/Aurora). El repo manda: resuelve la versión vigente y pide LLM.md + components.json antes de escribir CSS."
-version: "8.4.0"
+version: "8.4.1"
 tags: [css, design-system, aurora, ntizar, agent-ready, movil, escritorio, tipografia]
 ---
 
 # Aurora — doctrina única (el repo es la orden máxima)
 
 Design system CSS puro, sin build, sin dependencias, namespaced bajo `.nz-`.
-**v8.4.0 · 2184 objetos · 409 familias · 653 demos · 18 categorías · 189 tokens.**
+**v8.4.1 · 2184 objetos · 409 familias · 653 demos · 18 categorías · 189 tokens.**
 *(Cabecera de testigo, no de autoridad: resuélvela con el PASO 0.)*
 
 > ⚠️ `Ntizar/Aurora` **manda sobre esta skill**. Esta skill es un puntero; el repo
@@ -28,7 +28,7 @@ procedimiento. Resuélvela en cada tarea:
 # a) con el repo clonado (lo normal en esta máquina) — la vía rápida
 #    (ajusta la carpeta al nombre de tu clon: Aurora-8, Aurora-7, Aurora…)
 git -C C:/Users/d_ant/Projects/Aurora-8 fetch --tags -q
-V=$(git -C C:/Users/d_ant/Projects/Aurora-8 describe --tags --abbrev=0)   # p.ej. v8.4.0
+V=$(git -C C:/Users/d_ant/Projects/Aurora-8 describe --tags --abbrev=0)   # p.ej. v8.4.1
 
 # b) sin repo — pregunta a GitHub
 curl -s https://api.github.com/repos/Ntizar/Aurora/tags | grep -m1 '"name"'
@@ -171,12 +171,14 @@ El lint lo comprueba (`acento-ausente`, `acento-testimonial`).
 10. **Tipografía con juicio (v8.4)**: 13px es el mínimo del texto de interfaz; los 12px
     (`--nz-text-2xs`) son **solo para datos** (ejes, contadores, notas al pie). El peso es un
     token (`--nz-peso-normal/medio/fuerte/titulo` → 400/500/600/700): **el 800 no existe** y
-    **nada por debajo de 16px lleva 700**. La fuente la sirve el sistema (Inter variable en
-    `tokens.css`): no enlaces Google Fonts.
+    **nada por debajo de 16px lleva 700** (puerta `peso-por-tamano` de `validar-css.py`;
+    excepciones: cifras con `tabular-nums` y símbolos). La fuente la sirve el sistema (Inter
+    variable en `tokens.css`): no enlaces Google Fonts.
 11. **Escritorio de verdad (v8.4)**: el lienzo crece (72rem → 84rem ≥1200 → 96rem ≥1440) y
     una herramienta (panel, tablero, tabla, mapa, editor) usa **`.nz-container--app`** para
     llenar la pantalla. La **letra no crece** con el monitor; crece el lienzo. Prueba
-    objetiva: a 1920px el contenido ocupa más del 90% del ancho.
+    objetiva: a 1920px una herramienta ocupa ≥95% del ancho (100% con `--app`) y una página de
+    contenido no baja del 80% (en v8.3 era el 60%).
 12. **El acento tiene papel (v8.4)**: la marca hace la estructura, el acento marca **el dato
     que importa y la acción secundaria** (delta de KPI, 2ª serie, foco, `--accent` de botón,
     `nz-lead--accent`, `nz-highlight--accent`). Cada página lleva al menos un momento de
