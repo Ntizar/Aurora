@@ -30,13 +30,13 @@
 .nz-figure__img { border-radius: var(--nz-radius-md); overflow: hidden; }
 .nz-figure figcaption { margin-top: var(--nz-space-2); font-size: var(--nz-text-sm); color: var(--nz-text-mute); text-align: center; }
 .nz-figure__credit { font-size: var(--nz-text-2xs); color: var(--nz-text-faint); }
-.nz-figure--brand figcaption { color: var(--nz-brand); font-weight: 700; }
+.nz-figure--brand figcaption { color: var(--nz-brand); font-weight: var(--nz-peso-fuerte); }
 .nz-figure--caption-left figcaption { text-align: left; }
 .nz-figure--sm { max-width: 18rem; }
 .nz-figure--sm figcaption { font-size: var(--nz-text-xs); }
 
 /* ---- Avatar ---- */
-.nz-avatar { position: relative; display: inline-flex; align-items: center; justify-content: center; border-radius: 50%; background: var(--nz-brand-soft); color: var(--nz-brand); font-weight: 800; overflow: hidden; border: 2px solid var(--nz-surface); }
+.nz-avatar { position: relative; display: inline-flex; align-items: center; justify-content: center; border-radius: 50%; background: var(--nz-brand-soft); color: var(--nz-brand); font-weight: var(--nz-peso-titulo); overflow: hidden; border: 2px solid var(--nz-surface); }
 .nz-avatar img { display: block; width: 100%; height: 100%; object-fit: cover; }
 .nz-avatar--xs { width: 28px; height: 28px; font-size: var(--nz-text-2xs); }
 .nz-avatar--sm { width: 36px; height: 36px; font-size: var(--nz-text-xs); }
@@ -62,12 +62,12 @@
 .nz-avatar-group--sm .nz-avatar { margin-left: -0.35rem; border-width: var(--nz-border-w); }
 
 /* ---- Logotipo / palabra de marca ---- */
-.nz-brand { display: inline-flex; align-items: center; gap: var(--nz-space-2); font-weight: 800; letter-spacing: var(--nz-tracking-tight); color: var(--nz-text); }
+.nz-brand { display: inline-flex; align-items: center; gap: var(--nz-space-2); font-weight: var(--nz-peso-titulo); letter-spacing: var(--nz-tracking-tight); color: var(--nz-text); }
 .nz-brand__mark { display: inline-grid; place-items: center; width: 28px; height: 28px; border-radius: var(--nz-radius-sm); background: var(--nz-brand); color: var(--nz-text-invert); font-size: var(--nz-text-sm); }
 .nz-brand--lg .nz-brand__mark { width: 36px; height: 36px; font-size: var(--nz-text-md); }
 .nz-brand--sm { font-size: var(--nz-text-sm); }
 .nz-brand--sm .nz-brand__mark { width: 22px; height: 22px; font-size: var(--nz-text-2xs); border-radius: var(--nz-radius-xs); }
-.nz-brand--mono .nz-brand__mark { font-family: var(--nz-font-mono); font-weight: 700; }
+.nz-brand--mono .nz-brand__mark { font-family: var(--nz-font-mono); font-weight: var(--nz-peso-fuerte); }
 .nz-brand__mark--accent { background: var(--nz-accent); }
 .nz-brand__mark--dark { background: var(--nz-gray-900); color: var(--nz-gray-50); }
 .nz-brand--accent { color: var(--nz-accent); }
@@ -91,9 +91,9 @@
 .nz-media { display: flex; gap: var(--nz-space-3); align-items: flex-start; }
 .nz-media__fig { flex: none; }
 .nz-media__body { flex: 1; min-width: 0; display: grid; gap: var(--nz-space-1); }
-.nz-media__title { font-weight: 700; font-size: var(--nz-text-base); color: var(--nz-text); }
+.nz-media__title { font-weight: var(--nz-peso-fuerte); font-size: var(--nz-text-base); color: var(--nz-text); }
 .nz-media__desc { font-size: var(--nz-text-sm); color: var(--nz-text-soft); }
-.nz-media__link { min-height: 44px; display: inline-flex; align-items: center; font-size: var(--nz-text-sm); font-weight: 700; color: var(--nz-brand); text-decoration: none; }
+.nz-media__link { min-height: 44px; display: inline-flex; align-items: center; font-size: var(--nz-text-sm); font-weight: var(--nz-peso-fuerte); color: var(--nz-brand); text-decoration: none; }
 .nz-media--reverse { flex-direction: row-reverse; }
 .nz-media--center { align-items: center; }
 .nz-media--brand .nz-media__title { color: var(--nz-brand); }
@@ -126,7 +126,7 @@
 /* ---- Hueco de mapa (placeholder con chincheta) ---- */
 .nz-mapa-placeholder { position: relative; display: grid; place-items: center; min-height: 10rem; border-radius: var(--nz-radius-lg); background: var(--nz-bg-inset); overflow: hidden; }
 .nz-mapa-placeholder__pin { width: 22px; height: 22px; border-radius: 50% 50% 50% 0; transform: rotate(-45deg); background: var(--nz-accent); box-shadow: var(--nz-shadow-accent); }
-.nz-mapa-placeholder__label { position: absolute; left: var(--nz-space-3); bottom: var(--nz-space-3); padding: var(--nz-space-1) var(--nz-space-2); border-radius: var(--nz-radius-sm); background: var(--nz-surface); font-size: var(--nz-text-2xs); font-weight: 700; color: var(--nz-text-soft); }
+.nz-mapa-placeholder__label { position: absolute; left: var(--nz-space-3); bottom: var(--nz-space-3); padding: var(--nz-space-1) var(--nz-space-2); border-radius: var(--nz-radius-sm); background: var(--nz-surface); font-size: var(--nz-text-xs); font-weight: var(--nz-peso-fuerte); color: var(--nz-text-soft); }
 
 /* ---- Galería de imágenes ---- */
 .nz-galeria { display: grid; gap: var(--nz-space-2); grid-template-columns: 1fr; }
@@ -144,14 +144,14 @@
 .nz-media-badge--bottom { top: auto; bottom: var(--nz-space-2); }
 .nz-media-badge--center { top: 50%; left: 50%; transform: translate(-50%, -50%); }
 .nz-media-badge--top-izq { top: var(--nz-space-2); left: var(--nz-space-2); right: auto; bottom: auto; transform: none; }
-.nz-media-badge--brand { background: var(--nz-brand); color: var(--nz-text-invert); border-radius: var(--nz-radius-full); padding: 0 var(--nz-space-2); font-size: var(--nz-text-2xs); font-weight: 800; }
-.nz-media-badge--danger { background: var(--nz-danger); color: var(--nz-text-invert); border-radius: var(--nz-radius-full); padding: 0 var(--nz-space-2); font-size: var(--nz-text-2xs); font-weight: 800; }
+.nz-media-badge--brand { background: var(--nz-brand); color: var(--nz-text-invert); border-radius: var(--nz-radius-full); padding: 0 var(--nz-space-2); font-size: var(--nz-text-xs); font-weight: var(--nz-peso-fuerte); }
+.nz-media-badge--danger { background: var(--nz-danger); color: var(--nz-text-invert); border-radius: var(--nz-radius-full); padding: 0 var(--nz-space-2); font-size: var(--nz-text-xs); font-weight: var(--nz-peso-fuerte); }
 
 /* ---- Nube de logotipos ---- */
 .nz-logo-nube { display: grid; gap: var(--nz-space-3); grid-template-columns: 1fr; }
 @media (min-width: 640px) { .nz-logo-nube { grid-template-columns: repeat(2, 1fr); } }
 @media (min-width: 960px) { .nz-logo-nube { grid-template-columns: repeat(4, 1fr); } }
-.nz-logo-nube__item { display: grid; place-items: center; min-height: 56px; padding: var(--nz-space-3); border-radius: var(--nz-radius-md); background: var(--nz-surface); box-shadow: var(--nz-shadow-xs); color: var(--nz-text-mute); font-weight: 700; }
+.nz-logo-nube__item { display: grid; place-items: center; min-height: 56px; padding: var(--nz-space-3); border-radius: var(--nz-radius-md); background: var(--nz-surface); box-shadow: var(--nz-shadow-xs); color: var(--nz-text-mute); font-weight: var(--nz-peso-fuerte); }
 .nz-logo-nube__item--muted { background: var(--nz-bg-soft); box-shadow: none; color: var(--nz-text-faint); }
 
 /* ---- Fila de logotipos (logos grid) ---- */

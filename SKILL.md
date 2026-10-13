@@ -1,14 +1,14 @@
 ---
 name: aurora-design-system
 description: "Usa al construir o tocar cualquier web con Aurora (Ntizar/Aurora). El repo manda: resuelve la versión vigente y pide LLM.md + components.json antes de escribir CSS."
-version: "8.3.0"
-tags: [css, design-system, aurora, ntizar, agent-ready, movil]
+version: "8.4.0"
+tags: [css, design-system, aurora, ntizar, agent-ready, movil, escritorio, tipografia]
 ---
 
 # Aurora — doctrina única (el repo es la orden máxima)
 
 Design system CSS puro, sin build, sin dependencias, namespaced bajo `.nz-`.
-**v8.3.0 · 2178 objetos · 409 familias · 650 demos · 18 categorías · 185 tokens.**
+**v8.4.0 · 2184 objetos · 409 familias · 653 demos · 18 categorías · 189 tokens.**
 *(Cabecera de testigo, no de autoridad: resuélvela con el PASO 0.)*
 
 > ⚠️ `Ntizar/Aurora` **manda sobre esta skill**. Esta skill es un puntero; el repo
@@ -26,8 +26,9 @@ procedimiento. Resuélvela en cada tarea:
 
 ```bash
 # a) con el repo clonado (lo normal en esta máquina) — la vía rápida
-git -C C:/Users/d_ant/Projects/Aurora-7 fetch --tags -q
-V=$(git -C C:/Users/d_ant/Projects/Aurora-7 describe --tags --abbrev=0)   # p.ej. v8.3.0
+#    (ajusta la carpeta al nombre de tu clon: Aurora-8, Aurora-7, Aurora…)
+git -C C:/Users/d_ant/Projects/Aurora-8 fetch --tags -q
+V=$(git -C C:/Users/d_ant/Projects/Aurora-8 describe --tags --abbrev=0)   # p.ej. v8.4.0
 
 # b) sin repo — pregunta a GitHub
 curl -s https://api.github.com/repos/Ntizar/Aurora/tags | grep -m1 '"name"'
@@ -37,7 +38,7 @@ Y lee los **documentos generados** (el repo los produce solo, no los escribas t�
 
 ```bash
 # LEER la verdad viva: master / latest (no hay caché que te estorbe, no se sirve a nadie)
-curl -s https://cdn.jsdelivr.net/gh/Ntizar/Aurora@master/LLM.md           # ~10 KB
+curl -s https://cdn.jsdelivr.net/gh/Ntizar/Aurora@master/LLM.md           # ~12 KB
 curl -s https://cdn.jsdelivr.net/gh/Ntizar/Aurora@master/components.json  # API completa
 
 # PUBLICAR: siempre el tag resuelto en $V (jsDelivr cachea @master por edge)
@@ -45,7 +46,7 @@ curl -s https://cdn.jsdelivr.net/gh/Ntizar/Aurora@master/components.json  # API 
 ```
 
 Con el repo clonado, tira de disco (más rápido, sin red):
-`C:/Users/d_ant/Projects/Aurora-7/{LLM.md,components.json,examples/,SKILL.md}`.
+`C:/Users/d_ant/Projects/Aurora-8/{LLM.md,components.json,COMPOSICION.md,recetas/,SKILL.md}`.
 
 **La regla, en una línea:** *para leer, la verdad viva; para publicar, el tag resuelto.*
 `@master` sirve para consultar documentos; el `<link>` que entregas va siempre pineado
@@ -127,6 +128,35 @@ Esto es lo que se rompía una y otra vez. Ahora lo garantiza el sistema, sin JS.
 
 Regla de dedo: **ancho intrínseco → scroll**; **datos tabulares → apilable**.
 
+## 4b. Escritorio y tipografía: lo que arregla la v8.4
+
+**Escritorio** (el fallo que originó esta revisión: un producto mobile-first que se plantaba
+en 960px y dejaba el 40% de la pantalla vacío en un monitor):
+
+| Necesito | Cómo |
+|---|---|
+| Una **herramienta** (panel, tablero, tabla, mapa, editor) a pantalla completa | `<main class="nz-container nz-container--app">` — **sin tope de ancho** |
+| Prosa o landing que no se estire hasta reventar | `.nz-container` (72 → 84rem ≥1200 → 96rem ≥1440, ya viene solo) |
+| Rejilla de panel en escritorio | `.nz-dash-grid` (llega a 6 columnas en el tramo de 1440) |
+| Márgenes laterales correctos | `--nz-gutter` (16 → 24 → 32px, automático) |
+
+La **letra no crece** con el monitor: los titulares están topados a propósito (3xl 34px,
+4xl 50px). Un h1 de 56px en un 27" no es jerarquía, es desproporción.
+
+**Tipografía** (dos defectos que David detectó como «tamaños raros» y «negritas cuando no toca»):
+
+| Lo que se hacía | Lo que se hace (v8.4) |
+|---|---|
+| Micro-rótulos de interfaz a **12px peso 800** | 13px (`--nz-text-xs`) peso 600 (`--nz-peso-fuerte`) |
+| `font-weight: 700` y `800` a mano por los packs | Tokens `--nz-peso-*`: 400 cuerpo · 500 apoyo · 600 interfaz · 700 **solo** titulares y cifras |
+| `--nz-font: "Inter"` declarada pero **nunca cargada** (se veía la fuente del sistema) | Inter variable **self-hosted** en `tokens.css` (`fuentes/*.woff2`): la misma letra en todas las máquinas y en las capturas |
+| Titulares hasta 56px, KPI 28px | Cima recortada (34/50) y la escala baja monótona: 12·13·14·16·18·20·24·28·36·50 |
+| Texto real por debajo de 13px (36 casos en un panel: contra la ley 4 del propio contrato) | 13px el mínimo de interfaz; **12px solo para datos** (ejes, contadores, notas) |
+
+El naranja: la doctrina es que **la marca hace la estructura y el acento marca el dato que
+importa**. Si una página sale toda azul, no es culpa del diseño: es que no se usó el acento.
+El lint lo comprueba (`acento-ausente`, `acento-testimonial`).
+
 ## 5. Las reglas duras (la CI las valida)
 
 1. Todo lo público vive bajo `.nz-` (nada de clases globales).
@@ -138,6 +168,20 @@ Regla de dedo: **ancho intrínseco → scroll**; **datos tabulares → apilable*
 7. Una clase, un dueño (un pack). El shell del catálogo (`.cat-*`) jamás declara `.nz-*`.
 8. Footer exacto: `Hecho con ❤️ por David Antizar` (emoji U+2764, sin variantes).
 9. Todo en castellano (clases incluidas cuando toca: `nz-arbol`, `nz-filezona`, `nz-fieldset__leyenda`).
+10. **Tipografía con juicio (v8.4)**: 13px es el mínimo del texto de interfaz; los 12px
+    (`--nz-text-2xs`) son **solo para datos** (ejes, contadores, notas al pie). El peso es un
+    token (`--nz-peso-normal/medio/fuerte/titulo` → 400/500/600/700): **el 800 no existe** y
+    **nada por debajo de 16px lleva 700**. La fuente la sirve el sistema (Inter variable en
+    `tokens.css`): no enlaces Google Fonts.
+11. **Escritorio de verdad (v8.4)**: el lienzo crece (72rem → 84rem ≥1200 → 96rem ≥1440) y
+    una herramienta (panel, tablero, tabla, mapa, editor) usa **`.nz-container--app`** para
+    llenar la pantalla. La **letra no crece** con el monitor; crece el lienzo. Prueba
+    objetiva: a 1920px el contenido ocupa más del 90% del ancho.
+12. **El acento tiene papel (v8.4)**: la marca hace la estructura, el acento marca **el dato
+    que importa y la acción secundaria** (delta de KPI, 2ª serie, foco, `--accent` de botón,
+    `nz-lead--accent`, `nz-highlight--accent`). Cada página lleva al menos un momento de
+    acento y la marca no acapara más de dos tercios (lint: `acento-ausente`,
+    `acento-testimonial`).
 
 ## 6. Flujo del agente para generar HTML con Aurora
 
@@ -171,8 +215,11 @@ Regla de dedo: **ancho intrínseco → scroll**; **datos tabulares → apilable*
 | Chat IA (p14) | `.nz-chat`, `.nz-msg`, `.nz-prompt`, `.nz-toolcall`, `.nz-taskplan`, `.nz-approval` |
 | Presentar una charla en beats (p18) | `.nz-escenario` (+ `--lienzo`, `--profundo`) con `.nz-esc-titular/editorial/numeral/etiqueta/dato`, `.nz-nodo`, `.nz-enlace`, `.nz-qr` |
 | Escritorio (p15) | `.nz-window`, `.nz-appnav`, `.nz-kanban`, `.nz-actbar`, `.nz-statusbar` |
+| Herramienta a pantalla completa (p1) | `.nz-container--app` (junto a `.nz-container`) |
+| El dato que importa en acento (p3/p8) | `.nz-num--accent`, `.nz-kpi--accent`, `.nz-lbl--accent`, `.nz-lead--accent`, `.nz-text--accent-soft`, `.nz-highlight--accent` |
+| Énfasis sin negrita | `.nz-text--peso-medio`, `.nz-text--peso-fuerte` |
 
-Léxico cerrado de modificadores (igual en los 15 packs): tamaño `--2xs/--xs/--sm/--lg/--xl`,
+Léxico cerrado de modificadores (igual en los 18 packs): tamaño `--2xs/--xs/--sm/--lg/--xl`,
 tono `--brand/--accent/--success/--warning/--danger/--info/--neutral`, énfasis `--solid/--soft/--outline/--ghost`,
 disposición `--vertical/--horizontal/--inline/--compact/--spacious/--center/--between/--end`,
 forma `--square/--rounded/--pill`, elevación `--flat/--raised`, estados `.is-active/.is-disabled/.is-loading/.is-done/.is-error/.is-empty/.is-selected`.
@@ -222,7 +269,23 @@ Criterio de admisión: (a) resuelve un problema real y repetido, (b) es mobile-f
   llevaban desde siempre pintándose a 13px apagados (`nz-display`, `nz-h1`, `nz-esc-titular`) sin
   que el lint lo viera, porque el lint mira clases declaradas, no quién gana la cascada. Se descubre
   **midiendo** el tamaño computado en el navegador. El shell estila lo suyo con `:not([class])`.
-- ❌ Dejar el patrón resuelto en el proyecto y no subirlo al repo.
+- ❌ **Declarar una fuente que no se carga.** `--nz-font: "Inter"` sin `@font-face` ni
+  `<link>`: el navegador cae a la fuente del sistema y **nadie se entera**, porque el CSS
+  es válido y el lint mira tokens, no si la letra llega. Medido (v8.3): el ancho de «Inter»
+  era idéntico al de una familia inventada (612,47px), `document.fonts` traía 0 fuentes web
+  y aun así `document.fonts.check('16px Inter')` devolvía `true` (falso positivo) — se
+  comprueba **midiendo anchos**, no preguntando. En v8.4 Inter viaja en `tokens.css`.
+- ❌ **Negritas a mano por todo el sistema.** 70+ `font-weight: 700/800` sueltos y 167 de
+  887 elementos en negrita en una portada (19%; 26% en un panel): cuando todo es negrita
+  nada destaca, y el texto de 12px en negrita se lee peor, no mejor. El peso es un token y
+  el 800 no existe.
+- ❌ **Dejar el escritorio a la deriva.** Mobile-first no es «solo móvil»: si no hay ningún
+  escalón por encima de 960px, el producto enseña 768px de margen en un monitor de 1920
+  (40% de la pantalla, medido). El lienzo crece; la letra no.
+- ❌ **Enlazar Google Fonts o cualquier CDN de fuentes** en un producto Aurora: la letra
+  ya viene en el sistema, y una dependencia externa rompe las capturas headless y la
+  paridad entre máquinas.
+- ❌ **Dejar el patrón resuelto en el proyecto y no subirlo al repo.**
 
 ## 11. Excepciones vigentes (cuándo NO usar Aurora)
 
@@ -254,11 +317,22 @@ mesh/orbs/3D desaparecen). Receta y script de medición en `references/migracion
    `master` avance: cualquier funcionalidad nueva necesita versión nueva (`VERSION` en
    `scripts/generar-llm-docs.py`, `components.json`, badge del README, tag) y todas deben decir
    lo mismo — el validador lo comprueba contra el último tag.
+5. **Un design system se contradice en silencio.** v8.3 declaraba «13px es el mínimo de
+   interfaz» mientras tenía 36 textos por debajo en un producto real y 137 usos de 12px en
+   los packs; y la documentación empujaba `data-nz-marca="indigo"` como ejemplo, así que
+   todos los productos salían azules y el naranja desaparecía. Se arregla **poniendo la
+   regla en el lint** (`minimo-tipografico`, `peso-a-mano`, `acento-ausente`) y **cambiando
+   el ejemplo de la doc al preset por defecto**. Lección: el ejemplo de la documentación *es*
+   doctrina — lo que muestras es lo que se construye.
+6. **«Mide, no admires» también vale para el diseño.** Los tres defectos que originaron la
+   v8.4 (40% de pantalla vacía, Inter que nunca se cargaba, 19-26% de negritas) no se ven
+   mirando una captura con cariño: se ven con `getBoundingClientRect()`, midiendo el ancho
+   de un texto contra una familia inventada y contando `getComputedStyle().fontWeight`.
 
 ## 14. Referencias
 
 
-- **`Ntizar/Aurora`** — la orden máxima. `LLM.md`, `components.json`, `AGENTS.md`, `examples/`, `specs/`, `paginas/`, `audit/`, `scripts/auditar-uso.py`.
+- **`Ntizar/Aurora`** — la orden máxima. `LLM.md`, `components.json`, `AGENTS.md`, `COMPOSICION.md`, `examples/`, `recetas/`, `specs/`, `paginas/`, `audit/`, `scripts/auditar-uso.py`.
 - Este mismo `SKILL.md` **dentro del repo** (la CI valida que no se separe).
 - `references/migracion-v6-a-v7.md` y el caso Aurora en la skill `design-system-coherence-audit`.
 

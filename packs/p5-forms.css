@@ -7,20 +7,20 @@
    ============================================================ */
 
 /* ---- Etiqueta suelta ---- */
-.nz-label { display: inline-flex; align-items: center; gap: var(--nz-space-1); font-size: var(--nz-text-sm); font-weight: 700; color: var(--nz-text); }
+.nz-label { display: inline-flex; align-items: center; gap: var(--nz-space-1); font-size: var(--nz-text-sm); font-weight: var(--nz-peso-fuerte); color: var(--nz-text); }
 .nz-label--req::after { content: " *"; color: var(--nz-danger); }
 
 /* ---- Field (contenedor etiqueta + control + ayuda) ---- */
 .nz-field { display: flex; flex-direction: column; gap: var(--nz-space-1); }
-.nz-field__label { font-size: var(--nz-text-sm); font-weight: 700; color: var(--nz-text); }
+.nz-field__label { font-size: var(--nz-text-sm); font-weight: var(--nz-peso-fuerte); color: var(--nz-text); }
 .nz-field__label--req::after { content: " *"; color: var(--nz-danger); }
-.nz-field__label--optional::after { content: " (opcional)"; color: var(--nz-text-faint); font-weight: 600; }
+.nz-field__label--optional::after { content: " (opcional)"; color: var(--nz-text-faint); font-weight: var(--nz-peso-fuerte); }
 .nz-field__help { font-size: var(--nz-text-xs); color: var(--nz-text-mute); }
-.nz-field__error { font-size: var(--nz-text-xs); color: var(--nz-danger); font-weight: 600; }
+.nz-field__error { font-size: var(--nz-text-xs); color: var(--nz-danger); font-weight: var(--nz-peso-fuerte); }
 .nz-field__hint { display: flex; justify-content: space-between; gap: var(--nz-space-2); font-size: var(--nz-text-xs); color: var(--nz-text-faint); }
 .nz-field__counter { font-variant-numeric: tabular-nums; color: var(--nz-text-faint); }
 .nz-field--compact { gap: var(--nz-space-0); }
-.nz-field--compact .nz-field__label { font-size: var(--nz-text-xs); font-weight: 600; }
+.nz-field--compact .nz-field__label { font-size: var(--nz-text-xs); font-weight: var(--nz-peso-fuerte); }
 .nz-field--inline { flex-direction: row; align-items: center; flex-wrap: wrap; gap: var(--nz-space-2) var(--nz-space-3); }
 .nz-field--inline .nz-field__label { flex: none; }
 .nz-field--horizontal { gap: var(--nz-space-2); }
@@ -82,13 +82,13 @@
 .nz-checkbox { display: inline-flex; align-items: center; gap: var(--nz-space-2); min-height: 44px; cursor: pointer; font-size: var(--nz-text-base); color: var(--nz-text); }
 .nz-checkbox input { position: absolute; opacity: 0; width: 1px; height: 1px; }
 .nz-checkbox__box { width: 22px; height: 22px; flex: none; display: inline-grid; place-items: center; border-radius: var(--nz-radius-xs); border: var(--nz-border-w-strong) solid var(--nz-border-strong); background: var(--nz-surface); transition: background var(--nz-dur-fast) var(--nz-ease-out), border-color var(--nz-dur-fast) var(--nz-ease-out); }
-.nz-checkbox__box::after { content: "✓"; color: var(--nz-text-invert); font-size: var(--nz-text-sm); font-weight: 800; opacity: 0; transform: scale(.5); transition: opacity var(--nz-dur-fast) var(--nz-ease-out), transform var(--nz-dur-fast) var(--nz-ease-out); }
+.nz-checkbox__box::after { content: "✓"; color: var(--nz-text-invert); font-size: var(--nz-text-sm); font-weight: var(--nz-peso-titulo); opacity: 0; transform: scale(.5); transition: opacity var(--nz-dur-fast) var(--nz-ease-out), transform var(--nz-dur-fast) var(--nz-ease-out); }
 .nz-checkbox input:checked ~ .nz-checkbox__box { background: var(--nz-brand); border-color: var(--nz-brand); }
 .nz-checkbox input:checked ~ .nz-checkbox__box::after { opacity: 1; transform: scale(1); }
 .nz-checkbox input:focus-visible ~ .nz-checkbox__box { box-shadow: var(--nz-focus-ring); }
 .nz-checkbox input:disabled ~ .nz-checkbox__box { opacity: .45; }
 .nz-checkbox__box--indeterminate { background: var(--nz-brand); border-color: var(--nz-brand); }
-.nz-checkbox__box--indeterminate::after { content: "–"; color: var(--nz-text-invert); opacity: 1; transform: none; font-weight: 800; }
+.nz-checkbox__box--indeterminate::after { content: "–"; color: var(--nz-text-invert); opacity: 1; transform: none; font-weight: var(--nz-peso-titulo); }
 .nz-checkbox--sm { font-size: var(--nz-text-sm); }
 .nz-checkbox--sm .nz-checkbox__box { width: 18px; height: 18px; }
 @media (min-width: 640px) {
@@ -159,8 +159,8 @@
 .nz-inputgroup--pill .nz-inputgroup__addon:first-child { padding-left: var(--nz-space-4); }
 .nz-inputgroup--error { border-color: var(--nz-danger); }
 .nz-inputgroup--error:focus-within { border-color: var(--nz-danger); box-shadow: 0 0 0 3px var(--nz-red-100); }
-.nz-inputgroup__addon--brand { background: var(--nz-brand); color: var(--nz-text-invert); font-weight: 700; }
-.nz-inputgroup__addon--accent { background: var(--nz-accent); color: var(--nz-gray-0); font-weight: 700; }
+.nz-inputgroup__addon--brand { background: var(--nz-brand); color: var(--nz-text-invert); font-weight: var(--nz-peso-fuerte); }
+.nz-inputgroup__addon--accent { background: var(--nz-accent); color: var(--nz-gray-0); font-weight: var(--nz-peso-fuerte); }
 
 /* ---- Búsqueda ---- */
 .nz-search { position: relative; display: block; }
@@ -192,7 +192,7 @@
 
 /* ---- OTP (código de un solo uso) ---- */
 .nz-otp { display: flex; gap: var(--nz-space-2); justify-content: center; }
-.nz-otp input { width: 3rem; min-height: 3.25rem; text-align: center; font-size: var(--nz-text-lg); font-weight: 700; font-variant-numeric: tabular-nums; border: var(--nz-border-w) solid var(--nz-border); border-radius: var(--nz-radius-sm); background: var(--nz-surface); color: var(--nz-text); font-family: var(--nz-font); }
+.nz-otp input { width: 3rem; min-height: 3.25rem; text-align: center; font-size: var(--nz-text-lg); font-weight: var(--nz-peso-fuerte); font-variant-numeric: tabular-nums; border: var(--nz-border-w) solid var(--nz-border); border-radius: var(--nz-radius-sm); background: var(--nz-surface); color: var(--nz-text); font-family: var(--nz-font); }
 .nz-otp input:focus { outline: none; border-color: var(--nz-brand); box-shadow: var(--nz-focus-ring); }
 .nz-otp input:not(:placeholder-shown) { border-color: var(--nz-brand); background: var(--nz-brand-soft); }
 .nz-otp--sm input { width: 2.5rem; min-height: 2.75rem; font-size: var(--nz-text-md); }
@@ -204,7 +204,7 @@
 .nz-qty { display: inline-flex; align-items: center; border: var(--nz-border-w) solid var(--nz-border); border-radius: var(--nz-radius-full); overflow: hidden; background: var(--nz-surface); }
 .nz-qty button { min-width: 44px; width: 44px; height: 44px; border: 0; background: transparent; color: var(--nz-text); font-size: var(--nz-text-lg); cursor: pointer; font-family: inherit; }
 .nz-qty button:hover { background: var(--nz-bg-soft); }
-.nz-qty input { width: 2.5rem; min-width: 44px; min-height: 44px; text-align: center; border: 0; background: transparent; font: inherit; font-weight: 700; font-variant-numeric: tabular-nums; color: var(--nz-text); }
+.nz-qty input { width: 2.5rem; min-width: 44px; min-height: 44px; text-align: center; border: 0; background: transparent; font: inherit; font-weight: var(--nz-peso-fuerte); font-variant-numeric: tabular-nums; color: var(--nz-text); }
 .nz-qty input:focus { outline: none; }
 .nz-qty--sm button { font-size: var(--nz-text-md); }
 .nz-qty--lg button { width: 52px; height: 52px; font-size: var(--nz-text-xl); }
@@ -236,10 +236,10 @@
 
 /* ---- Fieldset (agrupación con leyenda) ---- */
 .nz-fieldset { display: flex; flex-direction: column; gap: var(--nz-space-3); margin: 0; padding: var(--nz-space-4); border: var(--nz-border-w) solid var(--nz-border); border-radius: var(--nz-radius-md); background: var(--nz-surface); }
-.nz-fieldset__leyenda { padding-inline: var(--nz-space-2); font-size: var(--nz-text-sm); font-weight: 700; color: var(--nz-text); }
+.nz-fieldset__leyenda { padding-inline: var(--nz-space-2); font-size: var(--nz-text-sm); font-weight: var(--nz-peso-fuerte); color: var(--nz-text); }
 
 /* ---- Pista de validación bajo el control ---- */
-.nz-hint-error { display: flex; align-items: center; gap: var(--nz-space-1); font-size: var(--nz-text-xs); font-weight: 600; color: var(--nz-danger); }
+.nz-hint-error { display: flex; align-items: center; gap: var(--nz-space-1); font-size: var(--nz-text-xs); font-weight: var(--nz-peso-fuerte); color: var(--nz-danger); }
 .nz-hint-error::before { content: "⚠"; }
 .nz-hint-error--ok { color: var(--nz-success); }
 .nz-hint-error--ok::before { content: "✓"; }

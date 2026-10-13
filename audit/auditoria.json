@@ -1,10 +1,10 @@
 {
  "resumen": {
-  "objetos_declarados": 2178,
+  "objetos_declarados": 2184,
   "familias": 409,
-  "demos": 650,
+  "demos": 653,
   "categorias": 18,
-  "clases_usadas_en_demos": 2178,
+  "clases_usadas_en_demos": 2184,
   "clases_sin_demo": 0,
   "familias_sin_demo": 0,
   "fantasmas": 0,
@@ -19,9 +19,9 @@
  },
  "packs": {
   "p1-layout.css": {
-   "lineas": 360,
-   "bytes": 21501,
-   "clases": 177,
+   "lineas": 361,
+   "bytes": 21635,
+   "clases": 178,
    "familias": 66,
    "hex": 0,
    "gradientes": 0,
@@ -30,7 +30,7 @@
   },
   "p10-commerce.css": {
    "lineas": 258,
-   "bytes": 26424,
+   "bytes": 27243,
    "clases": 156,
    "familias": 22,
    "hex": 0,
@@ -40,7 +40,7 @@
   },
   "p11-social.css": {
    "lineas": 189,
-   "bytes": 18246,
+   "bytes": 18674,
    "clases": 107,
    "familias": 15,
    "hex": 0,
@@ -50,7 +50,7 @@
   },
   "p12-system.css": {
    "lineas": 143,
-   "bytes": 13645,
+   "bytes": 14089,
    "clases": 80,
    "familias": 25,
    "hex": 0,
@@ -60,7 +60,7 @@
   },
   "p13-charts.css": {
    "lineas": 363,
-   "bytes": 28259,
+   "bytes": 28510,
    "clases": 216,
    "familias": 22,
    "hex": 0,
@@ -70,7 +70,7 @@
   },
   "p14-ai.css": {
    "lineas": 287,
-   "bytes": 24121,
+   "bytes": 24555,
    "clases": 180,
    "familias": 28,
    "hex": 0,
@@ -80,7 +80,7 @@
   },
   "p15-apps.css": {
    "lineas": 364,
-   "bytes": 41564,
+   "bytes": 42462,
    "clases": 74,
    "familias": 30,
    "hex": 0,
@@ -100,7 +100,7 @@
   },
   "p17-patrones.css": {
    "lineas": 659,
-   "bytes": 34113,
+   "bytes": 34828,
    "clases": 224,
    "familias": 46,
    "hex": 0,
@@ -110,7 +110,7 @@
   },
   "p18-escenario.css": {
    "lineas": 244,
-   "bytes": 6618,
+   "bytes": 6754,
    "clases": 33,
    "familias": 10,
    "hex": 0,
@@ -120,7 +120,7 @@
   },
   "p2-navigation.css": {
    "lineas": 179,
-   "bytes": 18257,
+   "bytes": 18487,
    "clases": 78,
    "familias": 10,
    "hex": 0,
@@ -129,9 +129,9 @@
    "important": 0
   },
   "p3-typography.css": {
-   "lineas": 198,
-   "bytes": 15223,
-   "clases": 130,
+   "lineas": 210,
+   "bytes": 16676,
+   "clases": 135,
    "familias": 41,
    "hex": 0,
    "gradientes": 0,
@@ -140,7 +140,7 @@
   },
   "p4-actions.css": {
    "lineas": 172,
-   "bytes": 12786,
+   "bytes": 12876,
    "clases": 78,
    "familias": 7,
    "hex": 0,
@@ -150,7 +150,7 @@
   },
   "p5-forms.css": {
    "lineas": 278,
-   "bytes": 22982,
+   "bytes": 23216,
    "clases": 102,
    "familias": 20,
    "hex": 0,
@@ -160,7 +160,7 @@
   },
   "p6-feedback.css": {
    "lineas": 267,
-   "bytes": 24173,
+   "bytes": 24477,
    "clases": 153,
    "familias": 19,
    "hex": 0,
@@ -170,7 +170,7 @@
   },
   "p7-overlays.css": {
    "lineas": 207,
-   "bytes": 23376,
+   "bytes": 23586,
    "clases": 118,
    "familias": 12,
    "hex": 0,
@@ -180,7 +180,7 @@
   },
   "p8-data.css": {
    "lineas": 286,
-   "bytes": 23044,
+   "bytes": 23525,
    "clases": 145,
    "familias": 16,
    "hex": 0,
@@ -190,7 +190,7 @@
   },
   "p9-media.css": {
    "lineas": 205,
-   "bytes": 15177,
+   "bytes": 15354,
    "clases": 119,
    "familias": 18,
    "hex": 0,
@@ -203,8 +203,8 @@
   "1": {
    "nombre": "Layout y estructura",
    "pack": "p1-layout.css",
-   "demos": 51,
-   "objetos": 177,
+   "demos": 52,
+   "objetos": 178,
    "familias": 66,
    "sin_demo": [],
    "familias_sin_demo": []
@@ -221,8 +221,8 @@
   "3": {
    "nombre": "Tipografía",
    "pack": "p3-typography.css",
-   "demos": 42,
-   "objetos": 130,
+   "demos": 44,
+   "objetos": 135,
    "familias": 41,
    "sin_demo": [],
    "familias_sin_demo": []
@@ -1849,8 +1849,9 @@
   "nz-container": {
    "cat": 1,
    "pack": "p1-layout.css",
-   "n_clases": 5,
+   "n_clases": 6,
    "mods": [
+    "app",
     "fixed",
     "fluid",
     "narrow",
@@ -2936,8 +2937,9 @@
   "nz-highlight": {
    "cat": 3,
    "pack": "p3-typography.css",
-   "n_clases": 2,
+   "n_clases": 3,
    "mods": [
+    "accent",
     "brand"
    ],
    "partes": [],
@@ -3266,8 +3268,9 @@
   "nz-lead": {
    "cat": 3,
    "pack": "p3-typography.css",
-   "n_clases": 4,
+   "n_clases": 5,
    "mods": [
+    "accent",
     "brand",
     "lg",
     "sm"
@@ -5698,14 +5701,17 @@
   "nz-text": {
    "cat": 3,
    "pack": "p3-typography.css",
-   "n_clases": 9,
+   "n_clases": 12,
    "mods": [
+    "accent-soft",
     "brand-soft",
     "danger",
     "faint",
     "large",
     "mono",
     "muted",
+    "peso-fuerte",
+    "peso-medio",
     "small",
     "success",
     "warning"

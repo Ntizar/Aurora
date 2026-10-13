@@ -15,7 +15,7 @@
 .nz-chart--sm { padding: var(--nz-space-3); gap: var(--nz-space-2); }
 .nz-chart--lg { padding: var(--nz-space-6); gap: var(--nz-space-4); }
 .nz-chart__head { display: flex; align-items: flex-start; gap: var(--nz-space-3); flex-wrap: wrap; }
-.nz-chart__title { font-size: var(--nz-text-md); font-weight: 700; letter-spacing: var(--nz-tracking-tight); }
+.nz-chart__title { font-size: var(--nz-text-md); font-weight: var(--nz-peso-fuerte); letter-spacing: var(--nz-tracking-tight); }
 .nz-chart__sub { font-size: var(--nz-text-xs); color: var(--nz-text-mute); }
 .nz-chart__actions { margin-left: auto; display: flex; gap: var(--nz-space-2); align-items: center; }
 .nz-chart__body { position: relative; min-height: 8rem; }
@@ -57,7 +57,7 @@
 .nz-chart-bar__bar--warning { background: var(--nz-warning); }
 .nz-chart-bar__bar--danger { background: var(--nz-danger); }
 .nz-chart-bar__bar--muted { background: var(--nz-border-strong); }
-.nz-chart-bar__value { font-size: var(--nz-text-2xs); font-weight: 700; color: var(--nz-text-soft); font-variant-numeric: tabular-nums; }
+.nz-chart-bar__value { font-size: var(--nz-text-2xs); font-weight: var(--nz-peso-fuerte); color: var(--nz-text-soft); font-variant-numeric: tabular-nums; }
 .nz-chart-bar__label { font-size: var(--nz-text-2xs); color: var(--nz-text-faint); }
 .nz-chart-bar--grouped .nz-chart-bar__col { flex-direction: row; align-items: flex-end; justify-content: center; gap: var(--nz-space-1); }
 .nz-chart-bar__group { display: flex; align-items: flex-end; gap: 2px; width: 100%; height: 100%; justify-content: center; }
@@ -110,7 +110,7 @@
 .nz-chart-donut__seg--success { stroke: var(--nz-success); }
 .nz-chart-donut__seg--muted { stroke: var(--nz-border-strong); }
 .nz-chart-donut__center { position: absolute; display: grid; place-items: center; text-align: center; }
-.nz-chart-donut__value { font-size: var(--nz-text-xl); font-weight: 800; letter-spacing: var(--nz-tracking-tight); font-variant-numeric: tabular-nums; }
+.nz-chart-donut__value { font-size: var(--nz-text-xl); font-weight: var(--nz-peso-titulo); letter-spacing: var(--nz-tracking-tight); font-variant-numeric: tabular-nums; }
 .nz-chart-donut__label { font-size: var(--nz-text-2xs); color: var(--nz-text-mute); }
 
 /* ---- Medidor semicircular ---- */
@@ -123,7 +123,7 @@
 .nz-chart-gauge__fill--success { stroke: var(--nz-success); }
 .nz-chart-gauge__fill--warning { stroke: var(--nz-warning); }
 .nz-chart-gauge__fill--danger { stroke: var(--nz-danger); }
-.nz-chart-gauge__value { position: absolute; bottom: 0; font-size: var(--nz-text-2xl); font-weight: 800; letter-spacing: var(--nz-tracking-tight); font-variant-numeric: tabular-nums; }
+.nz-chart-gauge__value { position: absolute; bottom: 0; font-size: var(--nz-text-2xl); font-weight: var(--nz-peso-titulo); letter-spacing: var(--nz-tracking-tight); font-variant-numeric: tabular-nums; }
 .nz-chart-gauge__label { font-size: var(--nz-text-2xs); color: var(--nz-text-mute); }
 
 /* ---- Mapa de calor ---- */
@@ -160,7 +160,7 @@
 .nz-treemap__cell--brand { background: var(--nz-brand); color: var(--nz-text-invert); }
 .nz-treemap__cell--accent { background: var(--nz-accent); color: var(--nz-gray-0); }
 .nz-treemap__cell--muted { background: var(--nz-bg-inset); color: var(--nz-text-soft); }
-.nz-treemap__label { font-size: var(--nz-text-2xs); font-weight: 700; }
+.nz-treemap__label { font-size: var(--nz-text-2xs); font-weight: var(--nz-peso-fuerte); }
 .nz-treemap__value { font-size: var(--nz-text-2xs); opacity: .85; font-variant-numeric: tabular-nums; }
 
 /* ---- Embudo ---- */
@@ -171,7 +171,7 @@
 .nz-funnel__bar--accent { background: var(--nz-accent); }
 .nz-funnel__bar--muted { background: var(--nz-border-strong); }
 .nz-funnel__label { font-size: var(--nz-text-2xs); color: var(--nz-text-mute); text-align: center; }
-.nz-funnel__value { font-size: var(--nz-text-2xs); font-weight: 700; text-align: center; font-variant-numeric: tabular-nums; }
+.nz-funnel__value { font-size: var(--nz-text-2xs); font-weight: var(--nz-peso-fuerte); text-align: center; font-variant-numeric: tabular-nums; }
 
 /* ---- Bullet chart ---- */
 .nz-bullet { display: grid; grid-template-columns: 6rem 1fr auto; align-items: center; gap: var(--nz-space-3); }
@@ -183,7 +183,7 @@
 .nz-bullet__value--accent { background: var(--nz-accent); }
 .nz-bullet__value--success { background: var(--nz-success); }
 .nz-bullet__target { position: absolute; top: -2px; bottom: -2px; width: 2px; background: var(--nz-text); }
-.nz-bullet__num { font-size: var(--nz-text-xs); font-weight: 700; font-variant-numeric: tabular-nums; color: var(--nz-text-soft); }
+.nz-bullet__num { font-size: var(--nz-text-xs); font-weight: var(--nz-peso-fuerte); font-variant-numeric: tabular-nums; color: var(--nz-text-soft); }
 
 /* ---- Tabla de barras ---- */
 .nz-chart-tablebar { display: grid; gap: var(--nz-space-2); }
@@ -191,7 +191,7 @@
 .nz-chart-tablebar__name { grid-column: 1 / -1; font-size: var(--nz-text-xs); color: var(--nz-text-soft); }
 .nz-chart-tablebar__track { grid-column: 1; height: 10px; border-radius: var(--nz-radius-full); background: var(--nz-bg-inset); overflow: hidden; }
 .nz-chart-tablebar__bar { display: block; height: 100%; border-radius: inherit; background: var(--nz-brand); }
-.nz-chart-tablebar__num { grid-column: 2; grid-row: 2; font-size: var(--nz-text-xs); font-weight: 700; text-align: right; font-variant-numeric: tabular-nums; }
+.nz-chart-tablebar__num { grid-column: 2; grid-row: 2; font-size: var(--nz-text-xs); font-weight: var(--nz-peso-fuerte); text-align: right; font-variant-numeric: tabular-nums; }
 
 /* ---- Comparativa de dos series ---- */
 .nz-chart-compare { display: grid; gap: var(--nz-space-2); }
@@ -231,7 +231,7 @@
 
 /* ---- Diagrama de flujo (sankey simple) ---- */
 .nz-chart-flow { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--nz-space-4); align-items: center; }
-.nz-chart-flow__node { padding: var(--nz-space-2) var(--nz-space-3); border-radius: var(--nz-radius-md); background: var(--nz-brand-soft); color: var(--nz-brand); font-size: var(--nz-text-xs); font-weight: 700; text-align: center; }
+.nz-chart-flow__node { padding: var(--nz-space-2) var(--nz-space-3); border-radius: var(--nz-radius-md); background: var(--nz-brand-soft); color: var(--nz-brand); font-size: var(--nz-text-xs); font-weight: var(--nz-peso-fuerte); text-align: center; }
 .nz-chart-flow__node--brand { background: var(--nz-brand); color: var(--nz-text-invert); }
 .nz-chart-flow__node--accent { background: var(--nz-accent-soft); color: var(--nz-accent-strong); }
 .nz-chart-flow__node--muted { background: var(--nz-bg-inset); color: var(--nz-text-soft); }
@@ -240,15 +240,15 @@
 
 /* ---- Selector de rango temporal ---- */
 .nz-chart-range { display: inline-flex; gap: 2px; padding: 2px; border-radius: var(--nz-radius-full); background: var(--nz-bg-inset); }
-.nz-chart-range__btn { min-height: 44px; padding: 0 var(--nz-space-3); border: 0; border-radius: var(--nz-radius-full); background: transparent; color: var(--nz-text-soft); font: inherit; font-size: var(--nz-text-2xs); font-weight: 700; cursor: pointer; }
+.nz-chart-range__btn { min-height: 44px; padding: 0 var(--nz-space-3); border: 0; border-radius: var(--nz-radius-full); background: transparent; color: var(--nz-text-soft); font: inherit; font-size: var(--nz-text-xs); font-weight: var(--nz-peso-fuerte); cursor: pointer; }
 .nz-chart-range__btn[aria-pressed="true"] { background: var(--nz-surface); color: var(--nz-text); box-shadow: var(--nz-shadow-xs); }
 
 /* ---- Cifra con sparkline ---- */
 .nz-chart-stat { display: grid; gap: var(--nz-space-1); }
 .nz-chart-stat__label { font-size: var(--nz-text-xs); color: var(--nz-text-mute); }
-.nz-chart-stat__value { font-size: var(--nz-text-2xl); font-weight: 800; letter-spacing: var(--nz-tracking-tight); font-variant-numeric: tabular-nums; }
-.nz-chart-stat__unit { font-size: var(--nz-text-sm); font-weight: 600; color: var(--nz-text-mute); margin-left: 2px; }
-.nz-chart-stat__delta { font-size: var(--nz-text-xs); font-weight: 700; }
+.nz-chart-stat__value { font-size: var(--nz-text-2xl); font-weight: var(--nz-peso-titulo); letter-spacing: var(--nz-tracking-tight); font-variant-numeric: tabular-nums; }
+.nz-chart-stat__unit { font-size: var(--nz-text-sm); font-weight: var(--nz-peso-fuerte); color: var(--nz-text-mute); margin-left: 2px; }
+.nz-chart-stat__delta { font-size: var(--nz-text-xs); font-weight: var(--nz-peso-fuerte); }
 .nz-chart-stat__delta--up { color: var(--nz-success); }
 .nz-chart-stat__delta--down { color: var(--nz-danger); }
 .nz-chart-stat__delta--flat { color: var(--nz-text-mute); }
@@ -327,7 +327,7 @@
 .nz-chart-tip.is-active { opacity: 1; transform: translateY(0); }
 .nz-chart-tip--inline { position: static; opacity: 1; transform: none; }
 .nz-chart-tip__label { display: block; color: var(--nz-text-mute); font-size: var(--nz-text-2xs); }
-.nz-chart-tip__value { display: block; font-weight: 700; font-variant-numeric: tabular-nums; }
+.nz-chart-tip__value { display: block; font-weight: var(--nz-peso-fuerte); font-variant-numeric: tabular-nums; }
 
 /* ---- Animación de entrada (la activa el motor con IntersectionObserver) ----
    data-nz-anim lo pone el JS en <html>: sin JS nada se esconde nunca.

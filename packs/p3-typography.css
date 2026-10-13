@@ -1,25 +1,30 @@
 /* ============================================================
-   AURORA — p3-typography.css · Categoría 3 · Tipografía (130 objetos)
+   AURORA — p3-typography.css · Categoría 3 · Tipografía (135 objetos)
    Escala, tonos de titular, cuerpo, prose (dueño único), listas,
    bloque, código, etiquetas, cifras, enlaces y utilidades de texto.
-   Demostrado en specs/03.json (42 demos). Prose: dueño único del sistema.
+   Demostrado en specs/03.json (44 demos). Prose: dueño único del sistema.
    Jerarquía por tamaño/peso/espacio, no por color. Solo tokens.
+   Pesos por token (--nz-peso-*): el 800 está retirado y nada por debajo de
+   16px lleva 700. Medido antes de este cambio: el 26% de los elementos de una
+   herramienta salía en negrita, así que no destacaba nada.
    Cero gradientes, cero glass. Hecho con ❤️ por David Antizar
    ============================================================ */
 
 /* ---- 01 Escala (fluida, mobile-first — tokens ya definidos) ---- */
-.nz-display { font-size: var(--nz-text-4xl); font-weight: 800; line-height: var(--nz-leading-tight); letter-spacing: var(--nz-tracking-tight); }
-.nz-h1 { font-size: var(--nz-text-3xl); font-weight: 800; line-height: var(--nz-leading-tight); letter-spacing: var(--nz-tracking-tight); }
-.nz-h2 { font-size: var(--nz-text-2xl); font-weight: 700; line-height: var(--nz-leading-tight); letter-spacing: var(--nz-tracking-tight); }
-.nz-h3 { font-size: var(--nz-text-xl); font-weight: 700; line-height: var(--nz-leading-snug); letter-spacing: var(--nz-tracking-tight); }
-.nz-h4 { font-size: var(--nz-text-lg); font-weight: 700; line-height: var(--nz-leading-snug); }
-.nz-h5 { font-size: var(--nz-text-base); font-weight: 700; line-height: var(--nz-leading-snug); }
-.nz-h6 { font-size: var(--nz-text-sm); font-weight: 700; line-height: var(--nz-leading-snug); letter-spacing: var(--nz-tracking-caps); text-transform: uppercase; }
-.nz-eyebrow { font-size: var(--nz-text-2xs); font-weight: 800; letter-spacing: var(--nz-tracking-caps); text-transform: uppercase; color: var(--nz-brand); }
+.nz-display { font-size: var(--nz-text-4xl); font-weight: var(--nz-peso-titulo); line-height: var(--nz-leading-tight); letter-spacing: var(--nz-tracking-tight); }
+.nz-h1 { font-size: var(--nz-text-3xl); font-weight: var(--nz-peso-titulo); line-height: var(--nz-leading-tight); letter-spacing: var(--nz-tracking-tight); }
+.nz-h2 { font-size: var(--nz-text-2xl); font-weight: var(--nz-peso-titulo); line-height: var(--nz-leading-tight); letter-spacing: var(--nz-tracking-tight); }
+.nz-h3 { font-size: var(--nz-text-xl); font-weight: var(--nz-peso-fuerte); line-height: var(--nz-leading-snug); letter-spacing: var(--nz-tracking-tight); }
+.nz-h4 { font-size: var(--nz-text-lg); font-weight: var(--nz-peso-fuerte); line-height: var(--nz-leading-snug); }
+.nz-h5 { font-size: var(--nz-text-base); font-weight: var(--nz-peso-fuerte); line-height: var(--nz-leading-snug); }
+.nz-h6 { font-size: var(--nz-text-sm); font-weight: var(--nz-peso-fuerte); line-height: var(--nz-leading-snug); letter-spacing: var(--nz-tracking-caps); text-transform: uppercase; }
+/* El antetítulo se lee a 13px (era 12px, por debajo del mínimo de interfaz que
+   exige COMPOSICION.md) y se distingue por versalita + espaciado, no por peso. */
+.nz-eyebrow { font-size: var(--nz-text-xs); font-weight: var(--nz-peso-fuerte); letter-spacing: var(--nz-tracking-caps); text-transform: uppercase; color: var(--nz-brand); }
 
 /* ---- 02 Display grande y pequeño ---- */
 .nz-display--xl { font-size: calc(var(--nz-text-4xl) * 1.15); letter-spacing: var(--nz-tracking-tight); }
-.nz-display--sm { font-size: var(--nz-text-2xl); font-weight: 800; line-height: var(--nz-leading-tight); }
+.nz-display--sm { font-size: var(--nz-text-2xl); font-weight: var(--nz-peso-titulo); line-height: var(--nz-leading-tight); }
 
 /* ---- 03 Tono de titular (azul / naranja / apagado / apretado) ---- */
 .nz-h1--brand, .nz-h2--brand, .nz-h3--brand, .nz-h4--brand, .nz-h5--brand, .nz-h6--brand { color: var(--nz-brand); }
@@ -32,6 +37,7 @@
 .nz-lead--sm { font-size: var(--nz-text-md); }
 .nz-lead--lg { font-size: var(--nz-text-xl); line-height: var(--nz-leading-normal); }
 .nz-lead--brand { color: var(--nz-text-soft); border-inline-start: 3px solid var(--nz-brand); padding-inline-start: var(--nz-space-4); }
+.nz-lead--accent { color: var(--nz-text-soft); border-inline-start: 3px solid var(--nz-accent); padding-inline-start: var(--nz-space-4); }
 .nz-text--large { font-size: var(--nz-text-lg); }
 .nz-text--small { font-size: var(--nz-text-sm); }
 .nz-text--muted { color: var(--nz-text-mute); }
@@ -41,6 +47,9 @@
 .nz-text--danger { color: var(--nz-danger); }
 .nz-text--warning { color: var(--nz-warning); }
 .nz-text--brand-soft { color: var(--nz-brand-strong); background: var(--nz-brand-soft); padding: 0 .3em; border-radius: var(--nz-radius-xs); }
+.nz-text--accent-soft { color: var(--nz-accent-strong); background: var(--nz-accent-soft); padding: 0 .3em; border-radius: var(--nz-radius-xs); }
+.nz-text--peso-medio { font-weight: var(--nz-peso-medio); }
+.nz-text--peso-fuerte { font-weight: var(--nz-peso-fuerte); }
 
 /* ---- 05 Prose (dueño único de este objeto) ---- */
 .nz-prose { max-width: var(--nz-container-narrow); margin-inline: auto; }
@@ -51,11 +60,11 @@
 .nz-prose ul, .nz-prose ol { margin-block: var(--nz-space-3); padding-inline-start: var(--nz-space-6); }
 .nz-prose li { margin-block: var(--nz-space-1); color: var(--nz-text-soft); }
 .nz-prose a { color: var(--nz-brand); }
-.nz-prose strong { color: var(--nz-text); }
+.nz-prose strong { color: var(--nz-text); font-weight: var(--nz-peso-titulo); }
 .nz-prose code { font-family: var(--nz-font-mono); font-size: .9em; padding: .1em .35em; border-radius: var(--nz-radius-xs); background: var(--nz-bg-inset); color: var(--nz-brand-strong); }
 .nz-prose table { width: 100%; border-collapse: collapse; margin-block: var(--nz-space-4); font-size: var(--nz-text-sm); }
 .nz-prose th, .nz-prose td { text-align: start; padding: var(--nz-space-2) var(--nz-space-3); border-bottom: var(--nz-border-w) solid var(--nz-border-soft); }
-.nz-prose th { color: var(--nz-text); font-weight: 700; }
+.nz-prose th { color: var(--nz-text); font-weight: var(--nz-peso-fuerte); }
 .nz-prose img { max-width: 100%; height: auto; border-radius: var(--nz-radius-md); }
 .nz-prose--wide { max-width: var(--nz-container-max); }
 .nz-prose--brand a { color: var(--nz-brand-strong); }
@@ -67,10 +76,10 @@
 .nz-list__item { display: flex; gap: var(--nz-space-3); align-items: flex-start; color: var(--nz-text-soft); }
 .nz-list__item::before { content: ""; flex: none; width: 8px; height: 8px; margin-top: .5em; border-radius: var(--nz-radius-full); background: var(--nz-brand); }
 .nz-list--accent .nz-list__item::before { background: var(--nz-accent); }
-.nz-list--check .nz-list__item::before { content: "✓"; width: auto; height: auto; background: none; color: var(--nz-success); font-weight: 800; font-size: var(--nz-text-sm); }
+.nz-list--check .nz-list__item::before { content: "✓"; width: auto; height: auto; background: none; color: var(--nz-success); font-weight: var(--nz-peso-fuerte); font-size: var(--nz-text-sm); }
 .nz-list--numeric { counter-reset: nzcount; }
 .nz-list--numeric .nz-list__item { counter-increment: nzcount; display: grid; grid-template-columns: 1.75rem 1fr; gap: var(--nz-space-2); }
-.nz-list--numeric .nz-list__item::before { content: counter(nzcount); width: auto; height: auto; background: none; color: var(--nz-brand); font-weight: 800; font-variant-numeric: tabular-nums; margin-top: 0; }
+.nz-list--numeric .nz-list__item::before { content: counter(nzcount); width: auto; height: auto; background: none; color: var(--nz-brand); font-weight: var(--nz-peso-fuerte); font-variant-numeric: tabular-nums; margin-top: 0; }
 .nz-list--brand .nz-list__item { padding: var(--nz-space-2) var(--nz-space-3); border-radius: var(--nz-radius-sm); background: var(--nz-brand-soft); color: var(--nz-text); }
 .nz-list--compact { gap: var(--nz-space-1); }
 .nz-list--compact .nz-list__item { font-size: var(--nz-text-sm); }
@@ -100,8 +109,10 @@
 .nz-kbd { font-family: var(--nz-font-mono); font-size: var(--nz-text-xs); padding: 0.2rem var(--nz-space-2); border-radius: var(--nz-radius-xs); background: var(--nz-surface-2); border: var(--nz-border-w) solid var(--nz-border); box-shadow: 0 1px 0 var(--nz-border); color: var(--nz-text); }
 .nz-kbd--lg { font-size: var(--nz-text-sm); padding: 0.35rem 0.7rem; }
 
-/* ---- 09 Etiqueta / chip de texto ---- */
-.nz-lbl { display: inline-flex; align-items: center; gap: var(--nz-space-1); padding: 0.2rem 0.7rem; border-radius: var(--nz-radius-full); background: var(--nz-bg-inset); color: var(--nz-text-soft); font-size: var(--nz-text-2xs); font-weight: 700; }
+/* ---- 09 Etiqueta / chip de texto ----
+   Una etiqueta es interfaz: se lee a 13px, no a 12px. Se distingue por el
+   espaciado y el color, no por el peso (llevaba 700/800 sobre 12px). */
+.nz-lbl { display: inline-flex; align-items: center; gap: var(--nz-space-1); padding: 0.2rem 0.7rem; border-radius: var(--nz-radius-full); background: var(--nz-bg-inset); color: var(--nz-text-soft); font-size: var(--nz-text-xs); font-weight: var(--nz-peso-fuerte); }
 .nz-lbl--brand { background: var(--nz-brand-soft); color: var(--nz-brand); }
 .nz-lbl--accent { background: var(--nz-accent-soft); color: var(--nz-accent-strong); }
 .nz-lbl--success { background: var(--nz-success-soft); color: var(--nz-success); }
@@ -109,29 +120,29 @@
 .nz-lbl--info { background: var(--nz-info-soft); color: var(--nz-info); }
 .nz-lbl--neutral { background: var(--nz-bg-inset); color: var(--nz-text-mute); }
 .nz-lbl--outline { background: none; border: var(--nz-border-w) solid var(--nz-border-strong); color: var(--nz-text-soft); }
-.nz-lbl--lg { padding: 0.3rem 0.9rem; font-size: var(--nz-text-xs); }
-.nz-lbl--sm { padding: 0.1rem var(--nz-space-2); font-size: var(--nz-text-2xs); }
+.nz-lbl--lg { padding: 0.3rem 0.9rem; font-size: var(--nz-text-sm); }
+.nz-lbl--sm { padding: 0.1rem var(--nz-space-2); font-size: var(--nz-text-2xs); font-weight: var(--nz-peso-medio); }
 .nz-lbl i { width: 5px; height: 5px; border-radius: 50%; background: currentColor; }
 
 /* ---- 10 Cifras / números ---- */
 .nz-num { font-variant-numeric: tabular-nums; letter-spacing: var(--nz-tracking-tight); }
-.nz-num--stat { font-size: var(--nz-text-2xl); font-weight: 800; color: var(--nz-text); }
+.nz-num--stat { font-size: var(--nz-text-2xl); font-weight: var(--nz-peso-titulo); color: var(--nz-text); }
 .nz-num--brand { color: var(--nz-brand); }
-.nz-num--accent { color: var(--nz-accent); }
+.nz-num--accent { color: var(--nz-accent-strong); }
 .nz-num--sm { font-size: var(--nz-text-sm); }
-.nz-num--lg { font-size: var(--nz-text-xl); font-weight: 700; }
+.nz-num--lg { font-size: var(--nz-text-xl); font-weight: var(--nz-peso-fuerte); }
 .nz-num--success { color: var(--nz-success); }
 .nz-num--danger { color: var(--nz-danger); }
 .nz-num--muted { color: var(--nz-text-mute); }
 
 /* ---- 11 Enlaces con vida ---- */
-.nz-link { position: relative; color: var(--nz-brand); font-weight: 600; text-decoration: none; }
+.nz-link { position: relative; color: var(--nz-brand); font-weight: var(--nz-peso-fuerte); text-decoration: none; }
 .nz-link::after { content: ""; position: absolute; left: 0; right: 0; bottom: -2px; height: 2px; border-radius: var(--nz-radius-full); background: currentColor; transform: scaleX(0); transform-origin: left; transition: transform var(--nz-dur-base) var(--nz-ease-out); }
 .nz-link:hover::after { transform: scaleX(1); }
-.nz-link--accent { color: var(--nz-accent); }
-.nz-link--brand { color: var(--nz-brand-strong); font-weight: 700; }
+.nz-link--accent { color: var(--nz-accent-strong); }
+.nz-link--brand { color: var(--nz-brand-strong); font-weight: var(--nz-peso-titulo); }
 .nz-link--danger { color: var(--nz-danger); }
-.nz-link--quiet { color: var(--nz-text-soft); font-weight: 400; }
+.nz-link--quiet { color: var(--nz-text-soft); font-weight: var(--nz-peso-normal); }
 .nz-link--underline { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
 .nz-link--underline:hover { text-decoration-color: var(--nz-brand); }
 .nz-link--underline::after { display: none; }
@@ -172,11 +183,12 @@
 @media (min-width: 960px) { .nz-columns-3 { columns: 3; } }
 
 /* ---- 17 Letra capital ---- */
-.nz-initial::first-letter { float: left; font-size: 3em; line-height: .9; font-weight: 800; padding-right: var(--nz-space-2); color: var(--nz-brand); }
+.nz-initial::first-letter { float: left; font-size: 3em; line-height: .9; font-weight: var(--nz-peso-titulo); padding-right: var(--nz-space-2); color: var(--nz-brand); }
 
 /* ---- 18 Resaltado de marcador ---- */
 .nz-highlight { background: var(--nz-warning-soft); color: var(--nz-text); padding: 0 .15em; border-radius: var(--nz-radius-xs); }
 .nz-highlight--brand { background: var(--nz-brand-tint); color: var(--nz-brand-strong); }
+.nz-highlight--accent { background: var(--nz-accent-tint); color: var(--nz-accent-strong); }
 .nz-underline--accent { text-decoration: underline; text-decoration-color: var(--nz-accent); text-decoration-thickness: 2px; text-underline-offset: 3px; }
 
 /* ---- 19 Fecha / antetítulo de artículo ---- */

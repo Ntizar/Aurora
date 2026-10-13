@@ -8,12 +8,12 @@
 
 /* ---- 01 Navbar superior ---- */
 .nz-navbar { display: flex; flex-wrap: wrap; align-items: center; gap: var(--nz-space-2) var(--nz-space-3); min-height: 56px; padding: var(--nz-space-2) var(--nz-gutter); background: var(--nz-surface); border-bottom: var(--nz-border-w) solid var(--nz-border-soft); }
-.nz-navbar__brand { display: flex; align-items: center; gap: var(--nz-space-2); font-weight: 800; letter-spacing: var(--nz-tracking-tight); color: var(--nz-text); }
+.nz-navbar__brand { display: flex; align-items: center; gap: var(--nz-space-2); font-weight: var(--nz-peso-titulo); letter-spacing: var(--nz-tracking-tight); color: var(--nz-text); }
 .nz-navbar__brand i { width: 10px; height: 10px; border-radius: var(--nz-radius-full); background: var(--nz-brand); }
 .nz-navbar__brand--lg { font-size: var(--nz-text-lg); }
 .nz-navbar__links { display: flex; flex-wrap: wrap; align-items: center; gap: var(--nz-space-1); margin-left: auto; min-width: 0; }
 .nz-navbar__links::-webkit-scrollbar { display: none; }
-.nz-navbar__link { min-height: 44px; display: inline-flex; align-items: center; padding: 0 var(--nz-space-3); border-radius: var(--nz-radius-full); color: var(--nz-text-soft); font-size: var(--nz-text-sm); font-weight: 600; text-decoration: none; }
+.nz-navbar__link { min-height: 44px; display: inline-flex; align-items: center; padding: 0 var(--nz-space-3); border-radius: var(--nz-radius-full); color: var(--nz-text-soft); font-size: var(--nz-text-sm); font-weight: var(--nz-peso-fuerte); text-decoration: none; }
 .nz-navbar__link:hover { background: var(--nz-bg-inset); color: var(--nz-text); }
 .nz-navbar__link[aria-current="page"] { background: var(--nz-brand); color: var(--nz-text-invert); }
 
@@ -36,7 +36,7 @@
 .nz-menu > input:checked ~ .nz-menu__drop { transform: none; opacity: 1; visibility: visible; }
 .nz-menu__item { display: flex; align-items: center; gap: var(--nz-space-2); min-height: 44px; padding: 0 var(--nz-space-3); border-radius: var(--nz-radius-sm); color: var(--nz-text-soft); font-size: var(--nz-text-sm); text-decoration: none; }
 .nz-menu__item:hover { background: var(--nz-bg-soft); color: var(--nz-text); }
-.nz-menu__item[aria-current="page"] { color: var(--nz-brand); font-weight: 700; }
+.nz-menu__item[aria-current="page"] { color: var(--nz-brand); font-weight: var(--nz-peso-fuerte); }
 .nz-menu--right { margin-left: auto; }
 .nz-menu__sep { height: 1px; margin: var(--nz-space-1) var(--nz-space-2); background: var(--nz-border-soft); }
 .nz-menu__item--danger { color: var(--nz-danger); }
@@ -45,10 +45,10 @@
 
 /* ---- 04 Sidebar de navegación ---- */
 .nz-sidebar { display: flex; flex-direction: column; gap: var(--nz-space-2); padding: var(--nz-space-4); background: var(--nz-surface); border-radius: var(--nz-radius-lg); min-width: 13rem; }
-.nz-sidebar__heading { font-size: var(--nz-text-2xs); font-weight: 800; letter-spacing: var(--nz-tracking-caps); text-transform: uppercase; color: var(--nz-text-faint); padding: var(--nz-space-2) var(--nz-space-3); }
+.nz-sidebar__heading { font-size: var(--nz-text-xs); font-weight: var(--nz-peso-fuerte); letter-spacing: var(--nz-tracking-caps); text-transform: uppercase; color: var(--nz-text-faint); padding: var(--nz-space-2) var(--nz-space-3); }
 .nz-sidebar__link { display: flex; align-items: center; gap: var(--nz-space-2); min-height: 44px; padding: 0 var(--nz-space-3); border-radius: var(--nz-radius-sm); color: var(--nz-text-soft); font-size: var(--nz-text-sm); text-decoration: none; }
 .nz-sidebar__link:hover { background: var(--nz-bg-soft); color: var(--nz-text); }
-.nz-sidebar__link[aria-current="page"] { background: var(--nz-brand); color: var(--nz-text-invert); font-weight: 600; }
+.nz-sidebar__link[aria-current="page"] { background: var(--nz-brand); color: var(--nz-text-invert); font-weight: var(--nz-peso-fuerte); }
 .nz-sidebar__link--count::after { content: attr(data-count); margin-left: auto; font-size: var(--nz-text-2xs); color: var(--nz-text-faint); font-variant-numeric: tabular-nums; }
 .nz-sidebar__link--icon { justify-content: center; min-width: 44px; padding-inline: 0; }
 .nz-sidebar--sticky { position: sticky; top: var(--nz-space-6); align-self: start; max-height: calc(100dvh - var(--nz-space-12)); overflow-y: auto; }
@@ -65,13 +65,13 @@
    línea, se pide con --scroll. */
 .nz-tabs { display: flex; flex-wrap: wrap; gap: var(--nz-space-1); border-bottom: var(--nz-border-w) solid var(--nz-border-soft); }
 .nz-tabs::-webkit-scrollbar { display: none; }
-.nz-tabs__tab { position: relative; white-space: nowrap; min-height: 44px; display: inline-flex; align-items: center; padding: 0 var(--nz-space-4); color: var(--nz-text-soft); font-size: var(--nz-text-sm); font-weight: 600; text-decoration: none; border: 0; background: transparent; font-family: inherit; cursor: pointer; }
+.nz-tabs__tab { position: relative; white-space: nowrap; min-height: 44px; display: inline-flex; align-items: center; padding: 0 var(--nz-space-4); color: var(--nz-text-soft); font-size: var(--nz-text-sm); font-weight: var(--nz-peso-fuerte); text-decoration: none; border: 0; background: transparent; font-family: inherit; cursor: pointer; }
 .nz-tabs__tab:hover { color: var(--nz-text); }
 .nz-tabs__tab[aria-selected="true"], .nz-tabs__tab.is-active { color: var(--nz-brand); }
 .nz-tabs__tab[aria-selected="true"]::after, .nz-tabs__tab.is-active::after { content: ""; position: absolute; left: var(--nz-space-3); right: var(--nz-space-3); bottom: -1px; height: 3px; border-radius: var(--nz-radius-full) var(--nz-radius-full) 0 0; background: var(--nz-brand); }
 .nz-tabs__tab--count::before { content: attr(data-count); margin-right: var(--nz-space-2); font-size: var(--nz-text-2xs); padding: 0.1rem 0.45rem; border-radius: var(--nz-radius-full); background: var(--nz-bg-inset); color: var(--nz-text-mute); font-variant-numeric: tabular-nums; }
 .nz-tabs__tab--disabled, .nz-tabs__tab[aria-disabled="true"] { color: var(--nz-text-faint); cursor: not-allowed; }
-.nz-tabs__badge { margin-left: var(--nz-space-2); min-width: 1.5rem; height: 1.25rem; display: inline-flex; align-items: center; justify-content: center; padding: 0 var(--nz-space-1); border-radius: var(--nz-radius-full); background: var(--nz-brand); color: var(--nz-text-invert); font-size: var(--nz-text-2xs); font-variant-numeric: tabular-nums; }
+.nz-tabs__badge { margin-left: var(--nz-space-2); min-width: 1.5rem; height: 1.25rem; display: inline-flex; align-items: center; justify-content: center; padding: 0 var(--nz-space-1); border-radius: var(--nz-radius-full); background: var(--nz-brand); color: var(--nz-text-invert); font-size: var(--nz-text-xs); font-variant-numeric: tabular-nums; }
 .nz-tabs__panel { min-width: 0; padding-block: var(--nz-space-4); color: var(--nz-text-soft); font-size: var(--nz-text-sm); }
 .nz-tabs--center { justify-content: center; }
 .nz-tabs--full .nz-tabs__tab { flex: 1 1 0; justify-content: center; }
@@ -100,14 +100,14 @@
 .nz-breadcrumb a { min-height: 44px; display: inline-flex; align-items: center; color: var(--nz-text-soft); text-decoration: none; }
 .nz-breadcrumb a:hover { color: var(--nz-brand); }
 .nz-breadcrumb__sep { color: var(--nz-text-faint); margin: 0 var(--nz-space-1); }
-.nz-breadcrumb [aria-current="page"] { color: var(--nz-text); font-weight: 700; }
+.nz-breadcrumb [aria-current="page"] { color: var(--nz-text); font-weight: var(--nz-peso-fuerte); }
 .nz-breadcrumb--compact { font-size: var(--nz-text-xs); padding: 0; }
 .nz-breadcrumb--slash .nz-breadcrumb__sep::before { content: "/"; }
 .nz-breadcrumb--chevron .nz-breadcrumb__sep::before { content: "›"; }
 
 /* ---- 08 Paginación ---- */
 .nz-pagination { display: flex; align-items: center; gap: var(--nz-space-1); flex-wrap: wrap; }
-.nz-pagination a, .nz-pagination button { min-width: 44px; min-height: 44px; display: inline-flex; align-items: center; justify-content: center; padding: 0 var(--nz-space-3); border-radius: var(--nz-radius-sm); border: 0; background: transparent; color: var(--nz-text-soft); font-weight: 600; font-size: var(--nz-text-sm); text-decoration: none; font-family: inherit; cursor: pointer; }
+.nz-pagination a, .nz-pagination button { min-width: 44px; min-height: 44px; display: inline-flex; align-items: center; justify-content: center; padding: 0 var(--nz-space-3); border-radius: var(--nz-radius-sm); border: 0; background: transparent; color: var(--nz-text-soft); font-weight: var(--nz-peso-fuerte); font-size: var(--nz-text-sm); text-decoration: none; font-family: inherit; cursor: pointer; }
 .nz-pagination a:hover, .nz-pagination button:hover { background: var(--nz-bg-inset); color: var(--nz-text); }
 .nz-pagination [aria-current="page"], .nz-pagination [aria-current="true"] { background: var(--nz-brand); color: var(--nz-text-invert); }
 .nz-pagination__ellipsis { padding: 0 var(--nz-space-1); color: var(--nz-text-faint); }
@@ -123,11 +123,11 @@
 
 /* ---- 09 Índice de contenidos (TOC) ---- */
 .nz-toc { display: flex; flex-direction: column; gap: var(--nz-space-1); padding: var(--nz-space-4); background: var(--nz-surface); border-radius: var(--nz-radius-lg); box-shadow: var(--nz-shadow-sm); }
-.nz-toc__title { font-size: var(--nz-text-2xs); font-weight: 800; letter-spacing: var(--nz-tracking-caps); text-transform: uppercase; color: var(--nz-text-faint); margin-bottom: var(--nz-space-2); }
+.nz-toc__title { font-size: var(--nz-text-xs); font-weight: var(--nz-peso-titulo); letter-spacing: var(--nz-tracking-caps); text-transform: uppercase; color: var(--nz-text-faint); margin-bottom: var(--nz-space-2); }
 .nz-toc__title--brand { color: var(--nz-brand); }
 .nz-toc a { display: flex; min-height: 44px; align-items: center; color: var(--nz-text-soft); text-decoration: none; padding: var(--nz-space-2) var(--nz-space-2); border-left: 3px solid transparent; border-radius: var(--nz-radius-sm); font-size: var(--nz-text-sm); }
 .nz-toc a:hover { background: var(--nz-bg-soft); color: var(--nz-text); }
-.nz-toc a[aria-current="location"] { border-left-color: var(--nz-brand); color: var(--nz-brand); font-weight: 600; }
+.nz-toc a[aria-current="location"] { border-left-color: var(--nz-brand); color: var(--nz-brand); font-weight: var(--nz-peso-fuerte); }
 .nz-toc a.nz-toc--level2 { padding-left: var(--nz-space-5); font-size: var(--nz-text-xs); }
 .nz-toc--compact { gap: 0; padding: var(--nz-space-2); }
 .nz-toc--compact a { min-height: 44px; padding-block: var(--nz-space-1); font-size: var(--nz-text-xs); }
@@ -137,7 +137,7 @@
 /* ---- 10 Dropdown select ---- */
 .nz-dropdown { position: relative; }
 .nz-dropdown > input { position: absolute; opacity: 0; pointer-events: none; }
-.nz-dropdown__btn { min-height: 44px; display: inline-flex; align-items: center; gap: var(--nz-space-2); padding: 0 var(--nz-space-4); border-radius: var(--nz-radius-full); border: var(--nz-border-w) solid var(--nz-border); background: var(--nz-surface); color: var(--nz-text); font-weight: 600; font-family: inherit; cursor: pointer; font-size: var(--nz-text-sm); }
+.nz-dropdown__btn { min-height: 44px; display: inline-flex; align-items: center; gap: var(--nz-space-2); padding: 0 var(--nz-space-4); border-radius: var(--nz-radius-full); border: var(--nz-border-w) solid var(--nz-border); background: var(--nz-surface); color: var(--nz-text); font-weight: var(--nz-peso-fuerte); font-family: inherit; cursor: pointer; font-size: var(--nz-text-sm); }
 .nz-dropdown__btn::after { content: "▾"; font-size: var(--nz-text-xs); color: var(--nz-text-faint); }
 .nz-dropdown__btn--icon { padding: 0; min-width: 44px; justify-content: center; gap: 0; }
 .nz-dropdown__list { position: absolute; top: calc(100% + var(--nz-space-2)); left: 0; min-width: 12rem; padding: var(--nz-space-2); border-radius: var(--nz-radius-lg); background: var(--nz-surface); box-shadow: var(--nz-shadow-lg); opacity: 0; visibility: hidden; transform: translateY(-6px); transition: transform var(--nz-dur-base) var(--nz-ease-out), opacity var(--nz-dur-base) var(--nz-ease-out), visibility var(--nz-dur-base); }
@@ -149,7 +149,7 @@
 /* ---- 11 Nav footer ---- */
 .nz-navfooter { display: flex; flex-wrap: wrap; gap: var(--nz-space-2) var(--nz-space-6); padding: var(--nz-space-6) 0; }
 .nz-navfooter__col { min-width: 7rem; display: flex; flex-direction: column; gap: var(--nz-space-2); }
-.nz-navfooter__title { font-size: var(--nz-text-2xs); font-weight: 800; letter-spacing: var(--nz-tracking-caps); text-transform: uppercase; color: var(--nz-text-faint); }
+.nz-navfooter__title { font-size: var(--nz-text-xs); font-weight: var(--nz-peso-titulo); letter-spacing: var(--nz-tracking-caps); text-transform: uppercase; color: var(--nz-text-faint); }
 .nz-navfooter__title--brand { color: var(--nz-brand); }
 .nz-navfooter a { min-height: 44px; display: inline-flex; align-items: center; color: var(--nz-text-soft); text-decoration: none; font-size: var(--nz-text-sm); }
 .nz-navfooter a:hover { color: var(--nz-brand); }
@@ -164,7 +164,7 @@
 /* ---- 12 Stepper de navegación (proceso) ---- */
 .nz-stepper { display: flex; align-items: center; gap: var(--nz-space-2); overflow-x: auto; scrollbar-width: none; }
 .nz-stepper::-webkit-scrollbar { display: none; }
-.nz-stepper__step { display: flex; align-items: center; gap: var(--nz-space-2); white-space: nowrap; color: var(--nz-text-faint); font-size: var(--nz-text-sm); font-weight: 600; }
+.nz-stepper__step { display: flex; align-items: center; gap: var(--nz-space-2); white-space: nowrap; color: var(--nz-text-faint); font-size: var(--nz-text-sm); font-weight: var(--nz-peso-fuerte); }
 .nz-stepper__num { min-width: 28px; height: 28px; display: inline-flex; align-items: center; justify-content: center; border-radius: var(--nz-radius-full); background: var(--nz-bg-inset); color: var(--nz-text-mute); font-size: var(--nz-text-xs); font-variant-numeric: tabular-nums; }
 .nz-stepper__step.is-active { color: var(--nz-text); }
 .nz-stepper__step.is-active .nz-stepper__num { background: var(--nz-brand); color: var(--nz-text-invert); }

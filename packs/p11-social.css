@@ -10,10 +10,10 @@
 .nz-post { position: relative; display: flex; flex-direction: column; gap: var(--nz-space-3); padding: var(--nz-space-4); border-radius: var(--nz-radius-lg); background: var(--nz-surface); box-shadow: var(--nz-shadow-sm); }
 .nz-post__head { display: flex; align-items: center; gap: var(--nz-space-3); }
 .nz-post__byline { flex: 1; min-width: 0; display: grid; gap: 1px; }
-.nz-post__author { display: flex; align-items: center; gap: var(--nz-space-1); font-weight: 700; font-size: var(--nz-text-sm); color: var(--nz-text); }
+.nz-post__author { display: flex; align-items: center; gap: var(--nz-space-1); font-weight: var(--nz-peso-fuerte); font-size: var(--nz-text-sm); color: var(--nz-text); }
 .nz-post__handle { font-size: var(--nz-text-xs); color: var(--nz-text-mute); }
 .nz-post__time { font-size: var(--nz-text-2xs); color: var(--nz-text-faint); white-space: nowrap; }
-.nz-post__pin { font-size: var(--nz-text-2xs); font-weight: 800; letter-spacing: var(--nz-tracking-caps); text-transform: uppercase; color: var(--nz-accent-strong); }
+.nz-post__pin { font-size: var(--nz-text-xs); font-weight: var(--nz-peso-fuerte); letter-spacing: var(--nz-tracking-caps); text-transform: uppercase; color: var(--nz-accent-strong); }
 .nz-post__media { aspect-ratio: 16 / 9; border-radius: var(--nz-radius-md); overflow: hidden; background: var(--nz-bg-inset); }
 .nz-post__media img { display: block; width: 100%; height: 100%; object-fit: cover; }
 .nz-post__body { font-size: var(--nz-text-sm); color: var(--nz-text-soft); line-height: var(--nz-leading-normal); }
@@ -29,7 +29,7 @@
 
 /* ---- Feed ---- */
 .nz-feed { display: grid; gap: var(--nz-space-3); }
-.nz-feed__sep { display: flex; align-items: center; gap: var(--nz-space-3); font-size: var(--nz-text-2xs); font-weight: 800; letter-spacing: var(--nz-tracking-caps); text-transform: uppercase; color: var(--nz-text-faint); }
+.nz-feed__sep { display: flex; align-items: center; gap: var(--nz-space-3); font-size: var(--nz-text-xs); font-weight: var(--nz-peso-fuerte); letter-spacing: var(--nz-tracking-caps); text-transform: uppercase; color: var(--nz-text-faint); }
 .nz-feed__sep::before, .nz-feed__sep::after { content: ""; flex: 1; height: 1px; background: var(--nz-border-soft); }
 .nz-feed__loading { display: grid; justify-items: center; gap: var(--nz-space-2); padding: var(--nz-space-5); font-size: var(--nz-text-xs); color: var(--nz-text-mute); }
 .nz-feed__end { padding: var(--nz-space-4); text-align: center; font-size: var(--nz-text-xs); color: var(--nz-text-faint); }
@@ -37,13 +37,13 @@
 @media (min-width: 960px) { .nz-feed--2col { grid-template-columns: repeat(2, 1fr); align-items: start; } }
 
 /* ---- Métrica social (like/guardado/compartido) ---- */
-.nz-social { display: inline-flex; align-items: center; justify-content: center; gap: var(--nz-space-1); min-width: 44px; min-height: 44px; padding: 0 var(--nz-space-2); border: 0; border-radius: var(--nz-radius-full); background: transparent; color: var(--nz-text-mute); font: inherit; font-size: var(--nz-text-xs); font-weight: 600; cursor: pointer; }
+.nz-social { display: inline-flex; align-items: center; justify-content: center; gap: var(--nz-space-1); min-width: 44px; min-height: 44px; padding: 0 var(--nz-space-2); border: 0; border-radius: var(--nz-radius-full); background: transparent; color: var(--nz-text-mute); font: inherit; font-size: var(--nz-text-xs); font-weight: var(--nz-peso-fuerte); cursor: pointer; }
 .nz-social i { font-style: normal; }
 .nz-social:hover { color: var(--nz-text); background: var(--nz-bg-soft); }
 .nz-social--liked { color: var(--nz-danger); }
 .nz-social--liked:hover { color: var(--nz-danger); }
 .nz-social--saved { color: var(--nz-brand); }
-.nz-social--count { font-variant-numeric: tabular-nums; font-weight: 800; }
+.nz-social--count { font-variant-numeric: tabular-nums; font-weight: var(--nz-peso-titulo); }
 .nz-social--loading { color: var(--nz-text-faint); }
 .nz-social--loading::after { content: " …"; }
 
@@ -51,11 +51,11 @@
 .nz-comment { position: relative; display: flex; gap: var(--nz-space-3); padding: var(--nz-space-3) 0; }
 .nz-comment__body { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: var(--nz-space-1); }
 .nz-comment__head { display: flex; align-items: baseline; flex-wrap: wrap; gap: var(--nz-space-2); }
-.nz-comment__author { font-weight: 700; font-size: var(--nz-text-sm); color: var(--nz-text); }
+.nz-comment__author { font-weight: var(--nz-peso-fuerte); font-size: var(--nz-text-sm); color: var(--nz-text); }
 .nz-comment__time { font-size: var(--nz-text-2xs); color: var(--nz-text-faint); }
 .nz-comment__text { font-size: var(--nz-text-sm); color: var(--nz-text-soft); }
 .nz-comment__actions { display: flex; flex-wrap: wrap; gap: var(--nz-space-3); }
-.nz-comment__actions button, .nz-comment__actions a { min-height: 44px; display: inline-flex; align-items: center; padding: 0; border: 0; background: transparent; color: var(--nz-text-mute); font: inherit; font-size: var(--nz-text-xs); font-weight: 600; text-decoration: none; cursor: pointer; }
+.nz-comment__actions button, .nz-comment__actions a { min-height: 44px; display: inline-flex; align-items: center; padding: 0; border: 0; background: transparent; color: var(--nz-text-mute); font: inherit; font-size: var(--nz-text-xs); font-weight: var(--nz-peso-fuerte); text-decoration: none; cursor: pointer; }
 .nz-comment__actions button:hover, .nz-comment__actions a:hover { color: var(--nz-brand); }
 .nz-comment__reactions { display: inline-flex; align-items: center; gap: var(--nz-space-1); font-size: var(--nz-text-2xs); color: var(--nz-text-mute); }
 .nz-comment__reply { padding: var(--nz-space-2) var(--nz-space-3); border-radius: var(--nz-radius-md); background: var(--nz-bg-soft); font-size: var(--nz-text-xs); color: var(--nz-text-soft); }
@@ -68,14 +68,14 @@
 
 /* ---- Testimonio ---- */
 .nz-quote { position: relative; display: flex; flex-direction: column; gap: var(--nz-space-3); padding: var(--nz-space-6); border-radius: var(--nz-radius-lg); background: var(--nz-surface); box-shadow: var(--nz-shadow-sm); }
-.nz-quote::before { content: "“"; position: absolute; top: var(--nz-space-2); right: var(--nz-space-5); font-size: 5rem; line-height: 1; font-weight: 800; color: var(--nz-brand-soft); }
+.nz-quote::before { content: "“"; position: absolute; top: var(--nz-space-2); right: var(--nz-space-5); font-size: 5rem; line-height: 1; font-weight: var(--nz-peso-titulo); color: var(--nz-brand-soft); }
 .nz-quote p { position: relative; z-index: 1; font-size: var(--nz-text-md); color: var(--nz-text); line-height: var(--nz-leading-snug); }
 .nz-quote__who { display: flex; align-items: center; gap: var(--nz-space-3); margin-top: var(--nz-space-2); }
 .nz-quote__avatar { width: 44px; height: 44px; flex: none; }
 .nz-quote__byline { display: grid; gap: 1px; }
-.nz-quote__name { font-weight: 700; font-size: var(--nz-text-sm); color: var(--nz-text); }
+.nz-quote__name { font-weight: var(--nz-peso-fuerte); font-size: var(--nz-text-sm); color: var(--nz-text); }
 .nz-quote__role { font-size: var(--nz-text-xs); color: var(--nz-text-mute); }
-.nz-quote__logo { margin-left: auto; font-size: var(--nz-text-sm); font-weight: 800; color: var(--nz-text-faint); }
+.nz-quote__logo { margin-left: auto; font-size: var(--nz-text-sm); font-weight: var(--nz-peso-titulo); color: var(--nz-text-faint); }
 .nz-quote--brand { background: var(--nz-brand); color: var(--nz-text-invert); }
 .nz-quote--brand p, .nz-quote--brand .nz-quote__name { color: var(--nz-text-invert); }
 .nz-quote--brand .nz-quote__role { color: var(--nz-blue-100); }
@@ -89,8 +89,8 @@
 
 /* ---- CTA banner ---- */
 .nz-cta-banner { position: relative; display: flex; flex-direction: column; align-items: flex-start; gap: var(--nz-space-4); padding: var(--nz-space-8) var(--nz-space-6); border-radius: var(--nz-radius-xl); background: var(--nz-brand); color: var(--nz-text-invert); }
-.nz-cta-banner__eyebrow { font-size: var(--nz-text-2xs); font-weight: 800; letter-spacing: var(--nz-tracking-caps); text-transform: uppercase; color: var(--nz-blue-100); }
-.nz-cta-banner__title { font-size: var(--nz-text-2xl); font-weight: 800; letter-spacing: var(--nz-tracking-tight); }
+.nz-cta-banner__eyebrow { font-size: var(--nz-text-xs); font-weight: var(--nz-peso-fuerte); letter-spacing: var(--nz-tracking-caps); text-transform: uppercase; color: var(--nz-blue-100); }
+.nz-cta-banner__title { font-size: var(--nz-text-2xl); font-weight: var(--nz-peso-titulo); letter-spacing: var(--nz-tracking-tight); }
 .nz-cta-banner__body { max-width: 44ch; font-size: var(--nz-text-md); color: var(--nz-blue-100); }
 .nz-cta-banner__actions { display: flex; flex-wrap: wrap; gap: var(--nz-space-2); }
 .nz-cta-banner__actions .nz-btn { background: var(--nz-surface); color: var(--nz-brand-strong); }
@@ -114,7 +114,7 @@
 .nz-team { display: grid; gap: var(--nz-space-4); grid-template-columns: 1fr; }
 .nz-team__member { display: flex; flex-direction: column; align-items: center; gap: var(--nz-space-2); padding: var(--nz-space-5); border-radius: var(--nz-radius-lg); background: var(--nz-surface); box-shadow: var(--nz-shadow-sm); text-align: center; }
 .nz-team__avatar { width: 80px; height: 80px; }
-.nz-team__name { font-weight: 700; font-size: var(--nz-text-md); color: var(--nz-text); }
+.nz-team__name { font-weight: var(--nz-peso-fuerte); font-size: var(--nz-text-md); color: var(--nz-text); }
 .nz-team__role { font-size: var(--nz-text-xs); color: var(--nz-text-mute); }
 .nz-team__bio { font-size: var(--nz-text-xs); color: var(--nz-text-soft); }
 .nz-team__social { display: inline-flex; gap: var(--nz-space-1); margin-top: var(--nz-space-1); }
@@ -124,9 +124,9 @@
 @media (min-width: 960px) { .nz-team { grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr)); } }
 
 /* ---- Logotipos de confianza ---- */
-.nz-trust { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: var(--nz-space-4) var(--nz-space-8); font-size: var(--nz-text-sm); font-weight: 700; color: var(--nz-text-faint); }
+.nz-trust { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: var(--nz-space-4) var(--nz-space-8); font-size: var(--nz-text-sm); font-weight: var(--nz-peso-fuerte); color: var(--nz-text-faint); }
 .nz-trust__stars { display: inline-flex; align-items: center; gap: var(--nz-space-1); color: var(--nz-warning); }
-.nz-trust__logo { min-height: 44px; display: inline-flex; align-items: center; gap: var(--nz-space-2); padding: 0 var(--nz-space-2); border-radius: var(--nz-radius-sm); background: var(--nz-bg-inset); color: var(--nz-text-soft); font-size: var(--nz-text-sm); font-weight: 800; }
+.nz-trust__logo { min-height: 44px; display: inline-flex; align-items: center; gap: var(--nz-space-2); padding: 0 var(--nz-space-2); border-radius: var(--nz-radius-sm); background: var(--nz-bg-inset); color: var(--nz-text-soft); font-size: var(--nz-text-sm); font-weight: var(--nz-peso-titulo); }
 .nz-trust--bordered { padding: var(--nz-space-4); border: var(--nz-border-w) solid var(--nz-border-soft); border-radius: var(--nz-radius-lg); background: var(--nz-surface); }
 .nz-trust--sm { gap: var(--nz-space-3) var(--nz-space-5); font-size: var(--nz-text-xs); }
 
@@ -134,8 +134,8 @@
 .nz-share { display: inline-flex; gap: var(--nz-space-2); }
 .nz-share a, .nz-share button { width: 44px; height: 44px; display: inline-flex; align-items: center; justify-content: center; border: 0; border-radius: 50%; background: var(--nz-bg-inset); color: var(--nz-text-soft); font: inherit; font-size: var(--nz-text-sm); text-decoration: none; cursor: pointer; transition: background var(--nz-dur-fast) var(--nz-ease-out), color var(--nz-dur-fast) var(--nz-ease-out); }
 .nz-share a:hover, .nz-share button:hover { background: var(--nz-brand); color: var(--nz-text-invert); }
-.nz-share__count { display: inline-flex; align-items: center; margin-left: var(--nz-space-1); font-size: var(--nz-text-xs); font-weight: 700; color: var(--nz-text-mute); font-variant-numeric: tabular-nums; }
-.nz-share__label { font-size: var(--nz-text-2xs); font-weight: 800; letter-spacing: var(--nz-tracking-caps); text-transform: uppercase; color: var(--nz-text-faint); }
+.nz-share__count { display: inline-flex; align-items: center; margin-left: var(--nz-space-1); font-size: var(--nz-text-xs); font-weight: var(--nz-peso-fuerte); color: var(--nz-text-mute); font-variant-numeric: tabular-nums; }
+.nz-share__label { font-size: var(--nz-text-xs); font-weight: var(--nz-peso-fuerte); letter-spacing: var(--nz-tracking-caps); text-transform: uppercase; color: var(--nz-text-faint); }
 .nz-share--vertical { flex-direction: column; }
 .nz-share--brand a, .nz-share--brand button { background: var(--nz-brand); color: var(--nz-text-invert); }
 .nz-share--brand a:hover, .nz-share--brand button:hover { background: var(--nz-brand-strong); }
@@ -143,15 +143,15 @@
 
 /* ---- Avatar + nombre ---- */
 .nz-username { display: inline-flex; align-items: center; gap: var(--nz-space-2); }
-.nz-username__name { font-weight: 700; font-size: var(--nz-text-sm); color: var(--nz-text); }
+.nz-username__name { font-weight: var(--nz-peso-fuerte); font-size: var(--nz-text-sm); color: var(--nz-text); }
 .nz-username__handle { font-size: var(--nz-text-xs); color: var(--nz-text-mute); }
-.nz-username__check { display: inline-grid; place-items: center; width: 16px; height: 16px; flex: none; border-radius: 50%; background: var(--nz-brand); color: var(--nz-text-invert); font-size: 10px; font-weight: 800; }
-.nz-username--verified .nz-username__name::after { content: " ✓"; color: var(--nz-brand); font-weight: 800; }
+.nz-username__check { display: inline-grid; place-items: center; width: 16px; height: 16px; flex: none; border-radius: 50%; background: var(--nz-brand); color: var(--nz-text-invert); font-size: 10px; font-weight: var(--nz-peso-titulo); }
+.nz-username--verified .nz-username__name::after { content: " ✓"; color: var(--nz-brand); font-weight: var(--nz-peso-titulo); }
 
 /* ---- Mención y etiqueta ---- */
-.nz-mention { display: inline-flex; align-items: center; padding: 0 var(--nz-space-1); border-radius: var(--nz-radius-xs); background: var(--nz-brand-soft); color: var(--nz-brand); font-weight: 700; text-decoration: none; }
+.nz-mention { display: inline-flex; align-items: center; padding: 0 var(--nz-space-1); border-radius: var(--nz-radius-xs); background: var(--nz-brand-soft); color: var(--nz-brand); font-weight: var(--nz-peso-fuerte); text-decoration: none; }
 .nz-mention--accent { background: var(--nz-accent-soft); color: var(--nz-accent-strong); }
-.nz-hashtag { color: var(--nz-text-soft); font-weight: 700; text-decoration: none; }
+.nz-hashtag { color: var(--nz-text-soft); font-weight: var(--nz-peso-fuerte); text-decoration: none; }
 .nz-hashtag:hover { color: var(--nz-brand); text-decoration: underline; }
 .nz-hashtag--accent { color: var(--nz-accent-strong); }
 
@@ -160,7 +160,7 @@
 .nz-social-proof__avatars { display: inline-flex; flex: none; }
 .nz-social-proof__avatars > * { margin-left: calc(-1 * var(--nz-space-2)); border: 2px solid var(--nz-surface); border-radius: 50%; }
 .nz-social-proof__avatars > *:first-child { margin-left: 0; }
-.nz-social-proof__text b { color: var(--nz-text); font-weight: 800; font-variant-numeric: tabular-nums; }
+.nz-social-proof__text b { color: var(--nz-text); font-weight: var(--nz-peso-titulo); font-variant-numeric: tabular-nums; }
 
 /* ---- Actividad reciente ---- */
 .nz-activity { display: grid; gap: var(--nz-space-2); margin: 0; padding: 0; list-style: none; }
@@ -172,7 +172,7 @@
 .nz-notif { display: flex; align-items: center; gap: var(--nz-space-3); padding: var(--nz-space-3) var(--nz-space-4); border-radius: var(--nz-radius-md); background: var(--nz-surface); box-shadow: var(--nz-shadow-md); }
 .nz-notif__icon { width: 40px; height: 40px; flex: none; display: grid; place-items: center; border-radius: 50%; background: var(--nz-accent-soft); color: var(--nz-accent); }
 .nz-notif__body { flex: 1; min-width: 0; display: grid; gap: 1px; }
-.nz-notif__title { font-weight: 700; font-size: var(--nz-text-sm); color: var(--nz-text); }
+.nz-notif__title { font-weight: var(--nz-peso-fuerte); font-size: var(--nz-text-sm); color: var(--nz-text); }
 .nz-notif__desc { font-size: var(--nz-text-xs); color: var(--nz-text-mute); }
 .nz-notif__actions { display: inline-flex; gap: var(--nz-space-1); }
 .nz-notif--brand .nz-notif__icon { background: var(--nz-brand-soft); color: var(--nz-brand); }

@@ -6,10 +6,10 @@ Generada por `scripts/audit-catalog.py` a partir de los packs CSS y de `specs/*.
 
 | Comprobación | Valor | |
 |---|---|---|
-| Objetos declarados | 2178 |  |
+| Objetos declarados | 2184 |  |
 | Familias de objeto | 409 |  |
-| Demos en vivo | 650 |  |
-| Clases usadas en demos | 2178 |  |
+| Demos en vivo | 653 |  |
+| Clases usadas en demos | 2184 |  |
 | Objetos fantasma (usados y no declarados) | 0 | 🟢 |
 | Clases declaradas sin demo | 0 | 🟢 |
 | Familias sin demo | 0 | 🟢 |
@@ -26,7 +26,7 @@ Familias sin ninguna variante (`--mod`): **164** de 409 — ahí está el margen
 
 | pack | líneas | objetos | familias | hex | grad. | glass | !imp. |
 |---|---|---|---|---|---|---|---|
-| p1-layout.css | 360 | 177 | 66 | 0 | 0 | 0 | 0 |
+| p1-layout.css | 361 | 178 | 66 | 0 | 0 | 0 | 0 |
 | p10-commerce.css | 258 | 156 | 22 | 0 | 0 | 0 | 0 |
 | p11-social.css | 189 | 107 | 15 | 0 | 0 | 0 | 0 |
 | p12-system.css | 143 | 80 | 25 | 0 | 0 | 0 | 1 |
@@ -37,7 +37,7 @@ Familias sin ninguna variante (`--mod`): **164** de 409 — ahí está el margen
 | p17-patrones.css | 659 | 224 | 46 | 0 | 0 | 0 | 0 |
 | p18-escenario.css | 244 | 33 | 10 | 0 | 0 | 0 | 0 |
 | p2-navigation.css | 179 | 78 | 10 | 0 | 0 | 0 | 0 |
-| p3-typography.css | 198 | 130 | 41 | 0 | 0 | 0 | 0 |
+| p3-typography.css | 210 | 135 | 41 | 0 | 0 | 0 | 0 |
 | p4-actions.css | 172 | 78 | 7 | 0 | 0 | 0 | 0 |
 | p5-forms.css | 278 | 102 | 20 | 0 | 0 | 0 | 0 |
 | p6-feedback.css | 267 | 153 | 19 | 0 | 0 | 0 | 0 |
@@ -49,9 +49,9 @@ Familias sin ninguna variante (`--mod`): **164** de 409 — ahí está el margen
 
 | # | categoría | pack | objetos | familias | demos | sin demo | familias sin demo |
 |---|---|---|---|---|---|---|---|
-| 01 | Layout y estructura | p1-layout.css | 177 | 66 | 51 | 0 | 0 |
+| 01 | Layout y estructura | p1-layout.css | 178 | 66 | 52 | 0 | 0 |
 | 02 | Navegación | p2-navigation.css | 78 | 10 | 36 | 0 | 0 |
-| 03 | Tipografía | p3-typography.css | 130 | 41 | 42 | 0 | 0 |
+| 03 | Tipografía | p3-typography.css | 135 | 41 | 44 | 0 | 0 |
 | 04 | Acciones y botones | p4-actions.css | 78 | 7 | 16 | 0 | 0 |
 | 05 | Formularios e inputs | p5-forms.css | 102 | 20 | 44 | 0 | 0 |
 | 06 | Feedback y estados | p6-feedback.css | 153 | 19 | 52 | 0 | 0 |

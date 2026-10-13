@@ -7,6 +7,31 @@
    Mobile-first · Light + Dark · Hecho con ❤️ por David Antizar
    ============================================================ */
 
+/* ---- 0. FUENTE DEL SISTEMA · Inter variable, servida por el propio repo.
+   Antes esto era una promesa falsa: --nz-font declaraba «Inter», pero el
+   sistema no la cargaba en ningún sitio, así que cada máquina pintaba la suya
+   (Segoe UI en Windows, Roboto en Android, DejaVu en Linux). Medido el
+   2026-10-13 en la web pública: el ancho de «Inter» y el de una familia
+   inventada daban exactamente lo mismo. Ahora la fuente viaja con el CSS:
+   misma letra en todas las máquinas, sin Google, sin red y sin pedir nada.
+   Regenerar/actualizar: python scripts/traer-fuente.py ---- */
+@font-face {
+  font-family: "Inter var";
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url("fuentes/inter-var-latin.woff2") format("woff2-variations");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Inter var";
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url("fuentes/inter-var-latin-ext.woff2") format("woff2-variations");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
 :root {
   /* ---- 1. MARCA · rampa por defecto = preset «aurora» (azul).
      Tu color SIEMPRE cae en el paso 600 (el primario). Las demás marcas las
@@ -121,24 +146,38 @@
   --nz-info-tint:   var(--nz-marca-100);
   --nz-overlay:     rgba(17, 24, 39, 0.48);
 
-  /* ---- 7. TIPOGRAFÍA · escala modular v8 (monótona: sin duplicados ni solapes).
-     12 · 13 · 14 · 16 · 18 · 20-22 · 24-28 · 30-38 · 40-56 ---- */
-  /* Tipografía moderna por defecto (Inter variable). Si no se carga la web,
-     cae al stack del sistema sin romper nada: --nz-font es un token, el proyecto
-     puede cambiarlo a la familia que quiera. */
-  --nz-font: "Inter", "Inter Variable", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-  --nz-font-titulo: "Inter", "Inter Variable", system-ui, -apple-system, "Segoe UI", sans-serif;
+  /* ---- 7. TIPOGRAFÍA · escala modular v8.4 (monótona: sin duplicados ni solapes).
+     12 · 13 · 14 · 16 · 18 · 20-23 · 24-27 · 28-34 · 36-50
+     La letra NO crece con el monitor: crece el lienzo (--nz-container-max).
+     Un titular que se estira hasta 56px en una pantalla de 27" no es jerarquía,
+     es desproporción. Los topes de arriba están recortados a propósito. ---- */
+  --nz-font: "Inter var", "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --nz-font-titulo: "Inter var", "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
   --nz-font-mono: "JetBrains Mono", ui-monospace, "Cascadia Code", "SF Mono", Consolas, monospace;
-  --nz-text-2xs:  0.75rem;    /* 12px — micro: contadores, tags */
-  --nz-text-xs:   0.8125rem;  /* 13px — etiquetas */
+  /* Pesos: el eje que faltaba. Antes cada pack escribía 700 u 800 a mano (más de
+     70 sitios), así que el 26% de los elementos de una herramienta salía en
+     negrita y no destacaba nada. Reglas:
+       · normal (400) — cuerpo, prosa, datos.
+       · medio (500) — énfasis suave, filas activas, texto de apoyo.
+       · fuerte (600) — rótulos e interfaz (etiquetas, insignias, botones).
+       · titulo (700) — SOLO titulares y cifras grandes.
+     Prohibido 800: si todo es negrita, nada lo es. Y nada por debajo de 16px
+     lleva 700 (para eso está el 600, que sí existe en la variable). ---- */
+  --nz-peso-normal: 400;
+  --nz-peso-medio:  500;
+  --nz-peso-fuerte: 600;
+  --nz-peso-titulo: 700;
+  --nz-text-2xs:  0.75rem;    /* 12px — micro-DATO: contadores, ejes, notas al pie.
+                                 Nunca texto de interfaz: una etiqueta se lee a 13px */
+  --nz-text-xs:   0.8125rem;  /* 13px — etiquetas e interfaz mínima */
   --nz-text-sm:   0.875rem;   /* 14px — interfaz secundaria */
   --nz-text-base: 1rem;       /* 16px — BASE de interfaz y prosa */
   --nz-text-md:   var(--nz-text-base);   /* alias deprecado de base */
   --nz-text-lg:   1.125rem;   /* 18px — subtítulo */
-  --nz-text-xl:   clamp(1.25rem, 1.18rem + 0.35vw, 1.375rem);   /* 20 → 22 */
-  --nz-text-2xl:  clamp(1.5rem, 1.36rem + 0.7vw, 1.75rem);      /* 24 → 28 */
-  --nz-text-3xl:  clamp(1.875rem, 1.62rem + 1.3vw, 2.375rem);   /* 30 → 38 */
-  --nz-text-4xl:  clamp(2.5rem, 2rem + 2.4vw, 3.5rem);          /* 40 → 56 */
+  --nz-text-xl:   clamp(1.25rem, 1.16rem + 0.36vw, 1.4375rem);  /* 20 → 23 */
+  --nz-text-2xl:  clamp(1.5rem, 1.37rem + 0.52vw, 1.6875rem);   /* 24 → 27 */
+  --nz-text-3xl:  clamp(1.75rem, 1.46rem + 1.1vw, 2.125rem);    /* 28 → 34 */
+  --nz-text-4xl:  clamp(2.25rem, 1.6rem + 2.6vw, 3.125rem);     /* 36 → 50 */
   --nz-leading-tight: 1.2;
   --nz-leading-snug: 1.375;
   --nz-leading-normal: 1.6;
@@ -176,7 +215,12 @@
   --nz-gutter: var(--nz-space-4);                    /* gutter móvil */
   --nz-rh-bloque: var(--nz-space-6);                 /* ritmo entre bloques (24) */
   --nz-rh-seccion: var(--nz-space-10);               /* ritmo entre secciones (40) */
-  --nz-container-max: 72rem;                         /* 1152px */
+  /* LIENZO · hasta v8.3 esto era un tope fijo de 72rem (1152px), así que en un
+     monitor de 1920 sobraban 768px de pantalla (el 40%, medido en producto vivo).
+     Ahora el lienzo crece con el escritorio (ver § breakpoints, al final del
+     fichero): 72rem → 84rem ≥1200 → 96rem ≥1440. Quien quiera su propio tope lo
+     pisa en su :root; quien quiera pantalla completa usa .nz-container--app. ---- */
+  --nz-container-max: 72rem;                         /* 1152px → 1536px en ≥1440 */
   --nz-container-narrow: 44rem;                      /* 704px, prose */
 
   /* ---- 9. GEOMETRÍA · radios, objetivo táctil y alturas de control ---- */
@@ -325,11 +369,29 @@
    sm    ≥ 640px   2 columnas
    md    ≥ 960px   3 columnas / sidebar
    lg    ≥ 1200px  layout completo
+   xl    ≥ 1440px  escritorio ancho (lienzo de 96rem)
 ---- */
 
 /* ---- Ritmo vertical en escritorio: las secciones respiran más ---- */
 @media (min-width: 960px) {
   :root { --nz-rh-seccion: var(--nz-space-16); }
+}
+
+/* ---- LIENZO Y MÁRGENES EN ESCRITORIO (v8.4)
+   Hasta v8.3 el sistema crecía hasta 960px y se plantaba: las media queries por
+   encima de 960px eran UNA en los 20 packs. Resultado medido: en un monitor de
+   1920px sobraba el 40% de la pantalla. Aquí el lienzo sigue creciendo. ---- */
+@media (min-width: 1200px) {
+  :root {
+    --nz-container-max: 84rem;                  /* 1344px */
+    --nz-gutter: var(--nz-space-6);
+  }
+}
+@media (min-width: 1440px) {
+  :root {
+    --nz-container-max: 96rem;                  /* 1536px */
+    --nz-gutter: var(--nz-space-8);
+  }
 }
 
 /* ---- MARCAS (presets de color) ----

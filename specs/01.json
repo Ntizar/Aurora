@@ -259,6 +259,11 @@
       "titulo": "Panel abierto y ruta activa",
       "tag": ".nz-collapsible.is-open · .nz-route.is-active",
       "markup": "<div class=\"nz-stack nz-stack--sm\"><div class=\"nz-collapsible is-open\"><details open><summary style=\"cursor:pointer\">Panel abierto (is-open)</summary><p style=\"font-size:var(--nz-text-sm);color:var(--nz-text-soft);margin-top:var(--nz-space-2)\">El borde azul marca el estado abierto; el atributo hidden lo pliega.</p></details></div><div class=\"nz-route is-active\"><div class=\"demo-box\">ruta activa</div><div class=\"nz-route__outlet\">outlet</div></div></div>"
+    },
+    {
+      "titulo": "Contenedor de herramienta: todo el ancho",
+      "tag": ".nz-container--app",
+      "markup": "<div class=\"nz-container nz-container--app\"><div class=\"nz-article\"><p style=\"margin:0\">Un panel, un tablero o una tabla van a todo el ancho: <strong>.nz-container--app</strong> quita el tope del lienzo (en escritorio, de 1152px a 1536px). La prosa de lectura sigue con .nz-container, y en móvil las dos son iguales.</p></div></div>"
     }
   ]
 }

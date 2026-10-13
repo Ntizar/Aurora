@@ -6,7 +6,7 @@
    ============================================================ */
 
 /* ---- Botón base ---- */
-.nz-btn { min-height: 44px; min-width: 44px; display: inline-flex; align-items: center; justify-content: center; gap: var(--nz-space-2); padding: 0 var(--nz-space-5); border: var(--nz-border-w) solid transparent; border-radius: var(--nz-radius-full); font: inherit; font-weight: 700; font-size: var(--nz-text-base); cursor: pointer; text-decoration: none; white-space: nowrap; transition: transform var(--nz-dur-fast) var(--nz-ease-out), box-shadow var(--nz-dur-fast) var(--nz-ease-out), background var(--nz-dur-fast) var(--nz-ease-out), color var(--nz-dur-fast) var(--nz-ease-out), border-color var(--nz-dur-fast) var(--nz-ease-out); }
+.nz-btn { min-height: 44px; min-width: 44px; display: inline-flex; align-items: center; justify-content: center; gap: var(--nz-space-2); padding: 0 var(--nz-space-5); border: var(--nz-border-w) solid transparent; border-radius: var(--nz-radius-full); font: inherit; font-weight: var(--nz-peso-fuerte); font-size: var(--nz-text-base); cursor: pointer; text-decoration: none; white-space: nowrap; transition: transform var(--nz-dur-fast) var(--nz-ease-out), box-shadow var(--nz-dur-fast) var(--nz-ease-out), background var(--nz-dur-fast) var(--nz-ease-out), color var(--nz-dur-fast) var(--nz-ease-out), border-color var(--nz-dur-fast) var(--nz-ease-out); }
 .nz-btn:hover { transform: translateY(-2px); }
 .nz-btn:active { transform: translateY(0); }
 .nz-btn:disabled, .nz-btn.is-disabled, .nz-btn[aria-disabled="true"] { opacity: .5; pointer-events: none; }
@@ -68,7 +68,7 @@
 .nz-btn--icon-sm { width: 44px; min-height: 44px; padding: 0; }
 .nz-btn--icon-lg { width: 52px; min-height: 52px; padding: 0; }
 .nz-btn--icon-square { width: 44px; padding: 0; border-radius: var(--nz-radius-md); }
-.nz-btn__badge { position: absolute; top: -4px; right: -4px; min-width: 18px; height: 18px; padding: 0 var(--nz-space-1); display: inline-flex; align-items: center; justify-content: center; border-radius: var(--nz-radius-full); background: var(--nz-accent); color: var(--nz-gray-0); font-size: var(--nz-text-2xs); font-weight: 800; }
+.nz-btn__badge { position: absolute; top: -4px; right: -4px; min-width: 18px; height: 18px; padding: 0 var(--nz-space-1); display: inline-flex; align-items: center; justify-content: center; border-radius: var(--nz-radius-full); background: var(--nz-accent); color: var(--nz-gray-0); font-size: var(--nz-text-2xs); font-weight: var(--nz-peso-titulo); }
 .nz-btn--badged { position: relative; overflow: visible; }
 
 /* ---- Estados ---- */
@@ -97,7 +97,7 @@
 
 /* ---- Selector segmentado ---- */
 .nz-segmented { display: inline-flex; padding: var(--nz-space-1); gap: var(--nz-space-1); background: var(--nz-bg-inset); border-radius: var(--nz-radius-full); }
-.nz-segmented button, .nz-segmented a { min-height: 44px; padding: 0 var(--nz-space-4); border-radius: var(--nz-radius-full); border: 0; background: transparent; color: var(--nz-text-soft); font: inherit; font-size: var(--nz-text-sm); font-weight: 600; text-decoration: none; cursor: pointer; transition: background var(--nz-dur-fast) var(--nz-ease-out), color var(--nz-dur-fast) var(--nz-ease-out), box-shadow var(--nz-dur-fast) var(--nz-ease-out); }
+.nz-segmented button, .nz-segmented a { min-height: 44px; padding: 0 var(--nz-space-4); border-radius: var(--nz-radius-full); border: 0; background: transparent; color: var(--nz-text-soft); font: inherit; font-size: var(--nz-text-sm); font-weight: var(--nz-peso-fuerte); text-decoration: none; cursor: pointer; transition: background var(--nz-dur-fast) var(--nz-ease-out), color var(--nz-dur-fast) var(--nz-ease-out), box-shadow var(--nz-dur-fast) var(--nz-ease-out); }
 .nz-segmented [aria-selected="true"], .nz-segmented button.is-active, .nz-segmented a.is-active { background: var(--nz-surface); color: var(--nz-text); box-shadow: var(--nz-shadow-sm); }
 .nz-segmented--sm button, .nz-segmented--sm a { min-height: 44px; padding: 0 var(--nz-space-3); font-size: var(--nz-text-xs); }
 .nz-segmented--lg button, .nz-segmented--lg a { min-height: 44px; padding: 0 var(--nz-space-5); font-size: var(--nz-text-base); }
@@ -114,7 +114,7 @@
 .nz-fab--accent { background: var(--nz-accent); box-shadow: var(--nz-shadow-accent); }
 .nz-fab--lg { width: 64px; height: 64px; }
 .nz-fab--sm { width: 44px; height: 44px; font-size: var(--nz-text-md); }
-.nz-fab--extended { width: auto; padding: 0 var(--nz-space-5); gap: var(--nz-space-2); font-size: var(--nz-text-base); font-weight: 700; }
+.nz-fab--extended { width: auto; padding: 0 var(--nz-space-5); gap: var(--nz-space-2); font-size: var(--nz-text-base); font-weight: var(--nz-peso-fuerte); }
 .nz-fab--bottom-left { right: auto; left: var(--nz-space-5); }
 
 /* ---- Cargadores ---- */
@@ -126,7 +126,7 @@
 @keyframes nzSpin { to { transform: rotate(360deg); } }
 
 /* ---- Enlace-acción ---- */
-.nz-cta { display: inline-flex; align-items: center; gap: var(--nz-space-2); color: var(--nz-brand); font-weight: 700; font-size: var(--nz-text-base); text-decoration: none; }
+.nz-cta { display: inline-flex; align-items: center; gap: var(--nz-space-2); color: var(--nz-brand); font-weight: var(--nz-peso-fuerte); font-size: var(--nz-text-base); text-decoration: none; }
 .nz-cta:hover { color: var(--nz-brand-strong); }
 .nz-cta__arrow { transition: transform var(--nz-dur-base) var(--nz-ease-out); }
 .nz-cta:hover .nz-cta__arrow { transform: translateX(4px); }

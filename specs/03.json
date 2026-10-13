@@ -214,6 +214,16 @@
    "titulo": "Alturas de línea y tracking",
    "tag": ".nz--leading-tight · --snug · --normal · --tracking-tight · --tracking-caps",
    "markup": "<p class=\"nz--leading-tight\">Leading tight: apretado, para titulares.</p><p class=\"nz--leading-snug\">Leading snug: intermedio.</p><p class=\"nz--leading-normal\">Leading normal: lectura cómoda.</p><p class=\"nz--tracking-tight\">Tracking apretado</p><p class=\"nz--tracking-caps\">TRACKING CAPS</p>"
+  },
+  {
+   "titulo": "El acento (naranja) en el texto",
+   "tag": ".nz-lead--accent · .nz-text--accent-soft · .nz-highlight--accent",
+   "markup": "<p class=\"nz-lead nz-lead--accent\">El acento marca lo que importa: filete naranja de entrada.</p><p>Las cifras clave van con <span class=\"nz-text--accent-soft\">fondo de acento suave</span> o con <span class=\"nz-highlight nz-highlight--accent\">marcador naranja</span>, nunca con el mismo peso que la marca.</p>"
+  },
+  {
+   "titulo": "Pesos del sistema (Inter variable)",
+   "tag": ".nz-text--peso-medio · .nz-text--peso-fuerte",
+   "markup": "<p class=\"nz-text--peso-medio\">Medio (500): filas activas y texto de apoyo.</p><p class=\"nz-text--peso-fuerte\">Fuerte (600): rótulos de interfaz y botones.</p><p class=\"nz-h1\" style=\"margin:0\">Titular (700): solo titulares y cifras grandes.</p><p class=\"nz-nota\">El 800 está retirado: si todo es negrita, no destaca nada.</p>"
   }
  ]
 }

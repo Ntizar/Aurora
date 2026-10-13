@@ -1,6 +1,6 @@
 # Aurora — guía de decisión para agentes
 
-Design system CSS puro, sin dependencias ni build. 2178 objetos en 18 categorías.
+Design system CSS puro, sin dependencias ni build. 2184 objetos en 18 categorías.
 **No pegues el CSS en el prompt**: enlaza por CDN y usa las clases de esta guía.
 
 ## 1. Mínimo obligatorio
@@ -8,8 +8,8 @@ Design system CSS puro, sin dependencias ni build. 2178 objetos en 18 categoría
 ```html
 <html lang="es" data-nz-theme="light">
 <head>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v8.3.0/tokens.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v8.3.0/packs/all.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v8.4.0/tokens.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v8.4.0/packs/all.css">
 </head>
 <body class="nz">
 ```
@@ -77,10 +77,11 @@ Carga **solo los packs que uses** en producción (cada uno pesa 12-40 KB) o
 | Chat / IA (p14) | `.nz-chat`, `.nz-msg`, `.nz-prompt`, `.nz-toolcall`, `.nz-taskplan`, `.nz-approval` |
 | Escritorio / app (p15) | `.nz-window`, `.nz-appnav`, `.nz-kanban`, `.nz-actbar`, `.nz-statusbar` |
 
-## 4b. Móvil: lo que ya viene resuelto (no lo reinventes)
+## 4b. Móvil y escritorio: lo que ya viene resuelto (no lo reinventes)
 
-El sistema garantiza que nada se corta ni se sale de la pantalla. No hace falta
-JS ni media queries propias:
+El sistema garantiza que nada se corta ni se sale de la pantalla, y que en un
+monitor grande **no sobra media pantalla**. No hace falta JS ni media queries
+propias:
 
 - **Pestañas** (`.nz-tabs`): se envuelven en varias líneas, todas se ven y se
   pulsan. Si una barra debe quedarse en una sola línea, se pide `.nz-tabs--scroll`.
@@ -93,6 +94,27 @@ JS ni media queries propias:
 - **Nada desborda** (p1): los hijos de `.nz-dash-grid`, `.nz-split`, `.nz-thirds`,
   `.nz-bento`, `.nz-grid-12`, `.nz-holy` y `.nz-article` nacen con `min-width: 0`,
   así que una tabla ancha encoge a su contenedor en vez de estirar la página.
+- **Lienzo que crece** (escritorio): `.nz-container` mide 72rem, y sube solo a
+  84rem desde 1200px y a 96rem desde 1440px. No hace falta tocar nada.
+- **Herramienta a pantalla completa**: una app, un panel o un tablero van con
+  `.nz-container--app` (sin tope). El texto de lectura sigue con `.nz-container`.
+- **La letra no crece con el monitor**: crece el lienzo. Los titulares tienen tope
+  (--nz-text-3xl 34px, --nz-text-4xl 50px) a propósito.
+
+## 4d. Tipografía: pesos y tamaños con juicio
+
+Nada de negritas porque sí: cuando todo está en negrita, nada destaca.
+
+- **El mínimo de interfaz es 13px** (`--nz-text-xs`). Los 12px (`--nz-text-2xs`)
+  son para **datos**: ejes, contadores, notas al pie. Nunca una etiqueta.
+- **Pesos por token**, no a mano: `--nz-peso-normal` (400) cuerpo ·
+  `--nz-peso-medio` (500) apoyo y filas activas · `--nz-peso-fuerte` (600) rótulos
+  de interfaz, insignias y botones · `--nz-peso-titulo` (700) **solo** titulares y
+  cifras grandes. Utilidades: `.nz-text--peso-medio`, `.nz-text--peso-fuerte`.
+- **El 800 está retirado** y nada por debajo de 16px lleva 700.
+- **La fuente viaja con el CSS**: Inter variable se sirve desde `tokens.css`
+  (`fuentes/*.woff2`). No enlaces Google Fonts: el sistema ya la trae y así la
+  letra es la misma en todas las máquinas, sin red.
 
 ## 4c. Composición: cómo se monta (contrato obligatorio)
 
@@ -101,8 +123,11 @@ Usar las clases correctas **no basta**. Antes de entregar, cumple el contrato de
 
 1. **0 emojis** como icono (solo el ❤️ de la atribución).
 2. **≤ 5** momentos de color saturado por página.
-3. **Un protagonista por sección**: la marca o el acento, nunca los dos de igual a igual.
-4. Ningún texto de interfaz **por debajo de 13px**.
+3. **Un protagonista por sección**: la marca o el acento, nunca los dos de igual a
+   igual. **Y el acento tiene que aparecer**: cada página lleva al menos un momento
+   de acento (el dato que importa, la 2ª serie, la acción secundaria), y la marca no
+   acapara más de dos tercios de los momentos de color.
+4. Ningún texto de interfaz **por debajo de 13px** (12px solo para datos).
 5. **Un `<h1>`**, jerarquía sin saltos y **≤ 4 tamaños** distintos.
 6. **Ancho por tipo de página**: una app o un panel va a **ancho completo**, no en columna
    estrecha (el error más común).
@@ -156,7 +181,7 @@ Aurora usa nombres en castellano en algunas familias. Aliases verificados:
 Los nombres de la tabla anterior son los que existen de verdad. Si una clase no
 aparece en `components.json`, **no la inventes**.
 
-## 6. Léxico de modificadores (igual en los 15 packs)
+## 6. Léxico de modificadores (igual en los 18 packs)
 
 - **Tamaño**: `--2xs --xs --sm --lg --xl`
 - **Tono**: `--brand --accent --success --warning --danger --info --neutral`
@@ -165,32 +190,40 @@ aparece en `components.json`, **no la inventes**.
 - **Forma**: `--square --rounded --pill` · **Elevación**: `--flat --raised`
 - **Estado**: `.is-active .is-disabled .is-loading .is-done .is-error .is-selected` o `[aria-current] [aria-selected]`
 
-## 7. Marca: elige 2 colores y todo el sistema cambia
+## 7. Marca y acento: dos colores con papeles distintos
 
 La marca **no se toca en CSS**: se elige con un atributo en el `<html>`.
 
 ```html
-<html lang="es" data-nz-theme="light" data-nz-marca="indigo">
+<html lang="es" data-nz-theme="light" data-nz-marca="aurora">
 ```
 
 - Presets incluidos: `aurora` (defecto, azul + naranja), `indigo`, `esmeralda`, `violeta`,
   `carmesi`. Un `data-nz-marca` desconocido cae en `aurora` sin romper nada.
+- **Los dos colores no son intercambiables**:
+  - **Marca** = estructura. Navegación activa, enlaces, foco, botón primario, 1ª serie.
+  - **Acento** = **el dato que importa y la acción secundaria**: el delta de un KPI,
+    la 2ª serie de un gráfico, el botón de acento, el filete de un titular
+    (`.nz-lead--accent`, `.nz-num--accent`, `.nz-kpi--accent`, `.nz-lbl--accent`,
+    `.nz-highlight--accent`, `.nz-list--accent`).
+  - **Cada página lleva acento**: si la página es toda azul, falta el acento. Y la
+    marca no acapara más de dos tercios de los momentos de color.
 - Marca propia: `python scripts/generar-marca.py miweb "#0ea5e9" "#f43f5e"` → `marcas/miweb.css`.
   El generador crea la rampa en OKLCH, la ancla a tu color y avisa si necesita ajuste por contraste.
 - Todo lo demás (`--nz-brand*`, `--nz-accent*`, foco, sombras de color y **el modo oscuro**)
   se **deriva solo** de esas dos rampas.
 
-Solo si necesitas afinar algo suelto (fuente, radio, ancho):
+Solo si necesitas afinar algo suelto (radio, ancho): la **fuente ya viene cargada**
+desde `tokens.css`, así que no hay que enlazar Google Fonts ni tocar `--nz-font`.
 
 ```css
 :root {
-  --nz-font: "Inter", system-ui, sans-serif;
   --nz-radius-md: 12px;
   --nz-container-max: 72rem;
 }
 ```
 
-Los 185 tokens están inventariados en `components.json` (sección
+Los 189 tokens están inventariados en `components.json` (sección
 `tokens_def`, con nombre, valor y sección). Nada fuera de ese catálogo.
 
 ## 8. Anti-patrones (NO lo hagas)
@@ -201,7 +234,13 @@ Los 185 tokens están inventariados en `components.json` (sección
 - ❌ Gradientes, `backdrop-filter` o `!important`: prohibidos por el manifiesto y la CI los detecta.
 - ❌ Clases globales sin `.nz-`: romperías la convivencia con otros frameworks.
 - ❌ Desktop-first: el sistema es mobile-first (base 1 columna, `min-width` para crecer).
-- ❌ Enlazar `@master` en producción: pinea la versión (`@v8.3.0`) o jsDelivr te servirá CSS viejo desde su caché.
+- ❌ Dejar media pantalla vacía en un monitor grande: un panel o una herramienta usan
+  `.nz-container--app`; el lienzo ya crece solo hasta 96rem desde 1440px.
+- ❌ `font-weight` a mano (700/800 sueltos) o negritas porque sí: usa `--nz-peso-*`.
+  El 800 no existe en el sistema y nada por debajo de 16px lleva 700.
+- ❌ Texto de interfaz a 12px: los 12px son para datos, no para etiquetas.
+- ❌ Enlazar Google Fonts (o cualquier CDN de fuentes): `tokens.css` ya sirve la fuente.
+- ❌ Enlazar `@master` en producción: pinea la versión (`@v8.4.0`) o jsDelivr te servirá CSS viejo desde su caché.
 
 ## 9. Verificar antes de entregar
 

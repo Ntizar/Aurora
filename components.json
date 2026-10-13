@@ -1,10 +1,10 @@
 {
  "name": "Aurora",
- "version": "8.3.0",
+ "version": "8.4.0",
  "type": "css-only design system",
  "namespace": ".nz-",
  "tokens": "tokens.css",
- "cdn": "https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v8.3.0/",
+ "cdn": "https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v8.4.0/",
  "manifiesto": {
   "gradientes": 0,
   "glass": 0,
@@ -19,11 +19,11 @@
   "objetivoTactil": "44px"
  },
  "resumen": {
-  "objetos": 2178,
+  "objetos": 2184,
   "familias": 409,
   "categorias": 18,
-  "demos": 650,
-  "tokens": 185,
+  "demos": 653,
+  "tokens": 189,
   "tokensDark": 43
  },
  "packs": {
@@ -31,9 +31,9 @@
    "categoria": 1,
    "nombre": "Layout y estructura",
    "descripcion": "El esqueleto de cualquier web: contenedores, rejillas y spans, filas, pilas, landmarks, sticky, bleed, regiones de página y helpers de flujo.",
-   "objetos": 177,
+   "objetos": 178,
    "familias": 66,
-   "demos": 51,
+   "demos": 52,
    "pagina": "paginas/01-layout.html"
   },
   "p2-navigation.css": {
@@ -49,9 +49,9 @@
    "categoria": 3,
    "nombre": "Tipografía",
    "descripcion": "Escala fluida móvil-first, tonos de titular, cuerpo, prose, listas, bloque, código, etiquetas, cifras, enlaces y utilidades de texto.",
-   "objetos": 130,
+   "objetos": 135,
    "familias": 41,
-   "demos": 42,
+   "demos": 44,
    "pagina": "paginas/03-typography.html"
   },
   "p4-actions.css": {
@@ -847,17 +847,37 @@
   },
   {
    "nombre": "--nz-font",
-   "valor": "\"Inter\", \"Inter Variable\", system-ui, -apple-system, \"Segoe UI\", Roboto, sans-serif",
+   "valor": "\"Inter var\", \"Inter\", system-ui, -apple-system, \"Segoe UI\", Roboto, sans-serif",
    "seccion": "ROLES TEMÁTICOS (light). Todo color de interfaz sale de aquí. "
   },
   {
    "nombre": "--nz-font-titulo",
-   "valor": "\"Inter\", \"Inter Variable\", system-ui, -apple-system, \"Segoe UI\", sans-serif",
+   "valor": "\"Inter var\", \"Inter\", system-ui, -apple-system, \"Segoe UI\", sans-serif",
    "seccion": "ROLES TEMÁTICOS (light). Todo color de interfaz sale de aquí. "
   },
   {
    "nombre": "--nz-font-mono",
    "valor": "\"JetBrains Mono\", ui-monospace, \"Cascadia Code\", \"SF Mono\", Consolas, monospace",
+   "seccion": "ROLES TEMÁTICOS (light). Todo color de interfaz sale de aquí. "
+  },
+  {
+   "nombre": "--nz-peso-normal",
+   "valor": "400",
+   "seccion": "ROLES TEMÁTICOS (light). Todo color de interfaz sale de aquí. "
+  },
+  {
+   "nombre": "--nz-peso-medio",
+   "valor": "500",
+   "seccion": "ROLES TEMÁTICOS (light). Todo color de interfaz sale de aquí. "
+  },
+  {
+   "nombre": "--nz-peso-fuerte",
+   "valor": "600",
+   "seccion": "ROLES TEMÁTICOS (light). Todo color de interfaz sale de aquí. "
+  },
+  {
+   "nombre": "--nz-peso-titulo",
+   "valor": "700",
    "seccion": "ROLES TEMÁTICOS (light). Todo color de interfaz sale de aquí. "
   },
   {
@@ -892,22 +912,22 @@
   },
   {
    "nombre": "--nz-text-xl",
-   "valor": "clamp(1.25rem, 1.18rem + 0.35vw, 1.375rem)",
+   "valor": "clamp(1.25rem, 1.16rem + 0.36vw, 1.4375rem)",
    "seccion": "ROLES TEMÁTICOS (light). Todo color de interfaz sale de aquí. "
   },
   {
    "nombre": "--nz-text-2xl",
-   "valor": "clamp(1.5rem, 1.36rem + 0.7vw, 1.75rem)",
+   "valor": "clamp(1.5rem, 1.37rem + 0.52vw, 1.6875rem)",
    "seccion": "ROLES TEMÁTICOS (light). Todo color de interfaz sale de aquí. "
   },
   {
    "nombre": "--nz-text-3xl",
-   "valor": "clamp(1.875rem, 1.62rem + 1.3vw, 2.375rem)",
+   "valor": "clamp(1.75rem, 1.46rem + 1.1vw, 2.125rem)",
    "seccion": "ROLES TEMÁTICOS (light). Todo color de interfaz sale de aquí. "
   },
   {
    "nombre": "--nz-text-4xl",
-   "valor": "clamp(2.5rem, 2rem + 2.4vw, 3.5rem)",
+   "valor": "clamp(2.25rem, 1.6rem + 2.6vw, 3.125rem)",
    "seccion": "ROLES TEMÁTICOS (light). Todo color de interfaz sale de aquí. "
   },
   {
@@ -1515,12 +1535,14 @@
    "demo": "paginas/01-layout.html",
    "clases": [
     "nz-container",
+    "nz-container--app",
     "nz-container--fixed",
     "nz-container--fluid",
     "nz-container--narrow",
     "nz-container--wide"
    ],
    "modificadores": [
+    "app",
     "fixed",
     "fluid",
     "narrow",
@@ -2856,9 +2878,11 @@
    "demo": "paginas/03-typography.html",
    "clases": [
     "nz-highlight",
+    "nz-highlight--accent",
     "nz-highlight--brand"
    ],
    "modificadores": [
+    "accent",
     "brand"
    ],
    "partes": []
@@ -2931,11 +2955,13 @@
    "demo": "paginas/03-typography.html",
    "clases": [
     "nz-lead",
+    "nz-lead--accent",
     "nz-lead--brand",
     "nz-lead--lg",
     "nz-lead--sm"
    ],
    "modificadores": [
+    "accent",
     "brand",
     "lg",
     "sm"
@@ -3082,23 +3108,29 @@
    "categoria": 3,
    "demo": "paginas/03-typography.html",
    "clases": [
+    "nz-text--accent-soft",
     "nz-text--brand-soft",
     "nz-text--danger",
     "nz-text--faint",
     "nz-text--large",
     "nz-text--mono",
     "nz-text--muted",
+    "nz-text--peso-fuerte",
+    "nz-text--peso-medio",
     "nz-text--small",
     "nz-text--success",
     "nz-text--warning"
    ],
    "modificadores": [
+    "accent-soft",
     "brand-soft",
     "danger",
     "faint",
     "large",
     "mono",
     "muted",
+    "peso-fuerte",
+    "peso-medio",
     "small",
     "success",
     "warning"

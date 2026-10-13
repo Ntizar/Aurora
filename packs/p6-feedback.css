@@ -10,10 +10,10 @@
 .nz-alert { display: flex; gap: var(--nz-space-3); padding: var(--nz-space-4); border-radius: var(--nz-radius-md); background: var(--nz-bg-soft); border: var(--nz-border-w) solid var(--nz-border-soft); }
 .nz-alert__icon { flex: none; font-size: var(--nz-text-lg); line-height: 1.4; }
 .nz-alert__body { display: flex; flex-direction: column; gap: var(--nz-space-1); min-width: 0; }
-.nz-alert__title { font-weight: 700; font-size: var(--nz-text-sm); color: var(--nz-text); }
+.nz-alert__title { font-weight: var(--nz-peso-fuerte); font-size: var(--nz-text-sm); color: var(--nz-text); }
 .nz-alert__msg { font-size: var(--nz-text-sm); color: var(--nz-text-soft); }
-.nz-alert__msg a { color: var(--nz-brand); font-weight: 600; }
-.nz-alert__action { align-self: flex-start; min-height: 44px; display: inline-flex; align-items: center; margin-top: var(--nz-space-1); padding: 0; border: 0; background: none; color: var(--nz-brand); font: inherit; font-size: var(--nz-text-xs); font-weight: 700; cursor: pointer; }
+.nz-alert__msg a { color: var(--nz-brand); font-weight: var(--nz-peso-fuerte); }
+.nz-alert__action { align-self: flex-start; min-height: 44px; display: inline-flex; align-items: center; margin-top: var(--nz-space-1); padding: 0; border: 0; background: none; color: var(--nz-brand); font: inherit; font-size: var(--nz-text-xs); font-weight: var(--nz-peso-fuerte); cursor: pointer; }
 .nz-alert__close { flex: none; margin-left: auto; align-self: flex-start; display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border: 0; border-radius: var(--nz-radius-full); background: transparent; color: inherit; font: inherit; cursor: pointer; opacity: .7; }
 .nz-alert__close:hover { opacity: 1; background: var(--nz-bg-inset); }
 .nz-alert--brand .nz-alert__close:hover { background: var(--nz-brand-tint); }
@@ -58,7 +58,7 @@
 .nz-callout--tip p::before { content: "💡 "; }
 
 /* ---- Badge de estado ---- */
-.nz-badge { display: inline-flex; align-items: center; gap: var(--nz-space-1); min-height: 22px; padding: 0 var(--nz-space-2); border-radius: var(--nz-radius-full); background: var(--nz-bg-inset); color: var(--nz-text-soft); font-size: var(--nz-text-2xs); font-weight: 800; text-transform: uppercase; letter-spacing: var(--nz-tracking-caps); }
+.nz-badge { display: inline-flex; align-items: center; gap: var(--nz-space-1); min-height: 22px; padding: 0 var(--nz-space-2); border-radius: var(--nz-radius-full); background: var(--nz-bg-inset); color: var(--nz-text-soft); font-size: var(--nz-text-xs); font-weight: var(--nz-peso-fuerte); text-transform: uppercase; letter-spacing: var(--nz-tracking-caps); }
 .nz-badge i { width: 6px; height: 6px; border-radius: var(--nz-radius-full); background: currentColor; }
 .nz-badge--brand { background: var(--nz-brand-soft); color: var(--nz-brand); }
 .nz-badge--success { background: var(--nz-success-soft); color: var(--nz-success); }
@@ -74,7 +74,7 @@
 .nz-badge--counter { min-width: 22px; justify-content: center; padding: 0 var(--nz-space-1); background: var(--nz-accent); color: var(--nz-gray-0); letter-spacing: 0; }
 
 /* ---- Chip ---- */
-.nz-chip { min-height: 44px; display: inline-flex; align-items: center; gap: var(--nz-space-1); padding: 0 var(--nz-space-4); border-radius: var(--nz-radius-full); border: var(--nz-border-w) solid var(--nz-border); background: var(--nz-surface); color: var(--nz-text-soft); font: inherit; font-size: var(--nz-text-sm); font-weight: 600; cursor: pointer; transition: background var(--nz-dur-fast) var(--nz-ease-out), color var(--nz-dur-fast) var(--nz-ease-out), border-color var(--nz-dur-fast) var(--nz-ease-out); }
+.nz-chip { min-height: 44px; display: inline-flex; align-items: center; gap: var(--nz-space-1); padding: 0 var(--nz-space-4); border-radius: var(--nz-radius-full); border: var(--nz-border-w) solid var(--nz-border); background: var(--nz-surface); color: var(--nz-text-soft); font: inherit; font-size: var(--nz-text-sm); font-weight: var(--nz-peso-fuerte); cursor: pointer; transition: background var(--nz-dur-fast) var(--nz-ease-out), color var(--nz-dur-fast) var(--nz-ease-out), border-color var(--nz-dur-fast) var(--nz-ease-out); }
 .nz-chip:hover { background: var(--nz-bg-soft); color: var(--nz-text); }
 .nz-chip.is-active, .nz-chip[aria-pressed="true"] { background: var(--nz-brand); border-color: var(--nz-brand); color: var(--nz-text-invert); }
 .nz-chip__x { width: 44px; height: 44px; display: inline-flex; align-items: center; justify-content: center; margin-right: calc(var(--nz-space-2) * -1); border-radius: var(--nz-radius-full); font-size: var(--nz-text-xs); cursor: pointer; }
@@ -97,8 +97,8 @@
 .nz-toast { position: fixed; left: 50%; bottom: calc(var(--nz-space-6) + env(safe-area-inset-bottom, 0px)); z-index: var(--nz-z-toast); transform: translateX(-50%) translateY(16px); opacity: 0; visibility: hidden; display: inline-flex; align-items: center; gap: var(--nz-space-3); max-width: min(92vw, 26rem); padding: var(--nz-space-3) var(--nz-space-4); border-radius: var(--nz-radius-md); background: var(--nz-gray-900); color: var(--nz-gray-50); font-size: var(--nz-text-sm); box-shadow: var(--nz-shadow-lg); transition: transform var(--nz-dur-base) var(--nz-ease-out), opacity var(--nz-dur-base) var(--nz-ease-out), visibility var(--nz-dur-base); }
 .nz-toast.is-on { transform: translateX(-50%); opacity: 1; visibility: visible; }
 .nz-toast__icon { font-size: var(--nz-text-md); line-height: 1; }
-.nz-toast__title { font-weight: 700; }
-.nz-toast__action { min-height: 44px; display: inline-flex; align-items: center; margin-left: auto; padding: 0; border: 0; background: none; color: var(--nz-orange-300); font: inherit; font-weight: 700; cursor: pointer; }
+.nz-toast__title { font-weight: var(--nz-peso-fuerte); }
+.nz-toast__action { min-height: 44px; display: inline-flex; align-items: center; margin-left: auto; padding: 0; border: 0; background: none; color: var(--nz-orange-300); font: inherit; font-weight: var(--nz-peso-fuerte); cursor: pointer; }
 .nz-toast__close { margin-left: auto; width: 44px; height: 44px; flex: none; border: 0; border-radius: var(--nz-radius-full); background: transparent; color: inherit; font: inherit; cursor: pointer; opacity: .7; }
 .nz-toast__close:hover { opacity: 1; background: var(--nz-gray-700); }
 .nz-toast--success .nz-toast__icon { color: var(--nz-green-500); }
@@ -119,7 +119,7 @@
 /* ---- Banner (aviso a ancho completo) ---- */
 .nz-banner { display: flex; align-items: center; gap: var(--nz-space-3); padding: var(--nz-space-3) var(--nz-space-4); background: var(--nz-bg-soft); border-bottom: var(--nz-border-w) solid var(--nz-border); color: var(--nz-text); font-size: var(--nz-text-sm); }
 .nz-banner__body { display: flex; align-items: center; gap: var(--nz-space-2); min-width: 0; }
-.nz-banner__action { min-height: 44px; display: inline-flex; align-items: center; margin-left: auto; padding: 0 var(--nz-space-4); border: 0; border-radius: var(--nz-radius-full); background: var(--nz-brand); color: var(--nz-text-invert); font: inherit; font-size: var(--nz-text-xs); font-weight: 700; cursor: pointer; }
+.nz-banner__action { min-height: 44px; display: inline-flex; align-items: center; margin-left: auto; padding: 0 var(--nz-space-4); border: 0; border-radius: var(--nz-radius-full); background: var(--nz-brand); color: var(--nz-text-invert); font: inherit; font-size: var(--nz-text-xs); font-weight: var(--nz-peso-fuerte); cursor: pointer; }
 .nz-banner__close { flex-shrink: 0; min-width: 44px; width: 44px; min-height: 44px; display: inline-flex; align-items: center; justify-content: center; border: 0; border-radius: var(--nz-radius-full); background: transparent; color: inherit; font: inherit; cursor: pointer; opacity: .7; }
 .nz-banner__close:hover { opacity: 1; background: var(--nz-bg-inset); }
 .nz-banner--brand { background: var(--nz-brand); border-bottom-color: var(--nz-brand-strong); color: var(--nz-text-invert); }
@@ -139,7 +139,7 @@
 @keyframes nzLoading { 0% { transform: translateX(-100%); } 100% { transform: translateX(350%); } }
 
 /* ---- Barra de sin conexión ---- */
-.nz-offline-bar { display: flex; align-items: center; gap: var(--nz-space-3); padding: var(--nz-space-2) var(--nz-space-4); background: var(--nz-warning-soft); color: var(--nz-warning); font-size: var(--nz-text-sm); font-weight: 600; }
+.nz-offline-bar { display: flex; align-items: center; gap: var(--nz-space-3); padding: var(--nz-space-2) var(--nz-space-4); background: var(--nz-warning-soft); color: var(--nz-warning); font-size: var(--nz-text-sm); font-weight: var(--nz-peso-fuerte); }
 .nz-offline-bar__action { margin-left: auto; }
 
 /* ---- Spinner ---- */
@@ -164,7 +164,7 @@
 
 /* ---- Cuenta atrás ---- */
 .nz-countdown { display: inline-flex; align-items: baseline; gap: var(--nz-space-2); padding: var(--nz-space-2) var(--nz-space-4); border-radius: var(--nz-radius-md); background: var(--nz-bg-inset); color: var(--nz-text); font-variant-numeric: tabular-nums; }
-.nz-countdown__num { font-family: var(--nz-font-mono); font-size: var(--nz-text-xl); font-weight: 800; letter-spacing: var(--nz-tracking-tight); }
+.nz-countdown__num { font-family: var(--nz-font-mono); font-size: var(--nz-text-xl); font-weight: var(--nz-peso-titulo); letter-spacing: var(--nz-tracking-tight); }
 .nz-countdown__label { font-size: var(--nz-text-xs); color: var(--nz-text-mute); text-transform: uppercase; letter-spacing: var(--nz-tracking-caps); }
 
 /* ---- Skeleton ---- */
@@ -184,7 +184,7 @@
 /* ---- Empty state ---- */
 .nz-empty { display: flex; flex-direction: column; align-items: center; gap: var(--nz-space-3); padding: var(--nz-space-10) var(--nz-space-6); text-align: center; border-radius: var(--nz-radius-lg); background: var(--nz-surface); }
 .nz-empty__icon { font-size: 2.5rem; line-height: 1; }
-.nz-empty__title { font-size: var(--nz-text-lg); font-weight: 700; color: var(--nz-text); margin: 0; }
+.nz-empty__title { font-size: var(--nz-text-lg); font-weight: var(--nz-peso-fuerte); color: var(--nz-text); margin: 0; }
 .nz-empty__body { max-width: 36ch; font-size: var(--nz-text-sm); color: var(--nz-text-soft); margin: 0; }
 .nz-empty__action { margin-top: var(--nz-space-2); }
 .nz-empty__kbd { display: inline-flex; align-items: center; gap: var(--nz-space-1); margin-top: var(--nz-space-1); font-size: var(--nz-text-xs); color: var(--nz-text-mute); }
@@ -195,14 +195,14 @@
 .nz-empty--bordered { background: var(--nz-surface); border: var(--nz-border-w-strong) dashed var(--nz-border-strong); }
 
 /* ---- Error inline (bajo un control o una acción) ---- */
-.nz-error { display: flex; align-items: center; gap: var(--nz-space-2); padding: var(--nz-space-2) var(--nz-space-3); border-radius: var(--nz-radius-sm); background: var(--nz-danger-soft); color: var(--nz-danger); font-size: var(--nz-text-sm); font-weight: 600; }
+.nz-error { display: flex; align-items: center; gap: var(--nz-space-2); padding: var(--nz-space-2) var(--nz-space-3); border-radius: var(--nz-radius-sm); background: var(--nz-danger-soft); color: var(--nz-danger); font-size: var(--nz-text-sm); font-weight: var(--nz-peso-fuerte); }
 .nz-error--brand { background: var(--nz-brand-soft); color: var(--nz-brand); }
 .nz-error--offline { background: var(--nz-bg-inset); color: var(--nz-text-mute); }
 
 /* ---- Error state (bloque de página) ---- */
 .nz-errorstate { display: flex; flex-direction: column; align-items: center; gap: var(--nz-space-3); padding: var(--nz-space-10) var(--nz-space-6); text-align: center; border-radius: var(--nz-radius-lg); background: var(--nz-danger-soft); }
-.nz-errorstate__code { font-family: var(--nz-font-mono); font-size: var(--nz-text-2xl); font-weight: 800; color: var(--nz-danger); }
-.nz-errorstate__title { font-size: var(--nz-text-lg); font-weight: 700; margin: 0; }
+.nz-errorstate__code { font-family: var(--nz-font-mono); font-size: var(--nz-text-2xl); font-weight: var(--nz-peso-titulo); color: var(--nz-danger); }
+.nz-errorstate__title { font-size: var(--nz-text-lg); font-weight: var(--nz-peso-fuerte); margin: 0; }
 .nz-errorstate__body { max-width: 36ch; font-size: var(--nz-text-sm); color: var(--nz-text-soft); margin: 0; }
 
 /* ---- Barra de progreso ---- */
@@ -215,15 +215,15 @@
 .nz-progress--thin { height: 4px; }
 .nz-progress--lg { height: 12px; }
 .nz-progress--with-label { height: 20px; }
-.nz-progress__value { position: absolute; top: 50%; right: var(--nz-space-2); transform: translateY(-50%); font-size: var(--nz-text-2xs); font-weight: 800; font-variant-numeric: tabular-nums; color: var(--nz-text); }
-.nz-progress__caption { display: flex; justify-content: space-between; gap: var(--nz-space-2); margin-top: var(--nz-space-1); font-size: var(--nz-text-2xs); color: var(--nz-text-mute); }
+.nz-progress__value { position: absolute; top: 50%; right: var(--nz-space-2); transform: translateY(-50%); font-size: var(--nz-text-2xs); font-weight: var(--nz-peso-titulo); font-variant-numeric: tabular-nums; color: var(--nz-text); }
+.nz-progress__caption { display: flex; justify-content: space-between; gap: var(--nz-space-2); margin-top: var(--nz-space-1); font-size: var(--nz-text-xs); color: var(--nz-text-mute); }
 .nz-progress--indeterminate .nz-progress__bar { width: 40%; animation: nzIndeterm 1.3s var(--nz-ease-soft) infinite; }
 @keyframes nzIndeterm { 0% { transform: translateX(-100%); } 100% { transform: translateX(3.5em); } }
 
 /* ---- Meter (nivel dentro de un rango) ---- */
 .nz-meter { position: relative; height: 20px; border-radius: var(--nz-radius-full); background: var(--nz-bg-inset); overflow: hidden; }
 .nz-meter__bar { height: 100%; border-radius: inherit; background: var(--nz-warning); transition: width var(--nz-dur-slow) var(--nz-ease-out); }
-.nz-meter__label { position: absolute; top: 50%; right: var(--nz-space-2); transform: translateY(-50%); font-size: var(--nz-text-2xs); font-weight: 800; font-variant-numeric: tabular-nums; color: var(--nz-text); }
+.nz-meter__label { position: absolute; top: 50%; right: var(--nz-space-2); transform: translateY(-50%); font-size: var(--nz-text-2xs); font-weight: var(--nz-peso-titulo); font-variant-numeric: tabular-nums; color: var(--nz-text); }
 .nz-meter--brand .nz-meter__bar { background: var(--nz-brand); }
 .nz-meter--success .nz-meter__bar { background: var(--nz-success); }
 .nz-meter--danger .nz-meter__bar { background: var(--nz-danger); }
@@ -236,7 +236,7 @@
 .nz-ring--accent .nz-ring__fill { stroke: var(--nz-accent); }
 .nz-ring--success .nz-ring__fill { stroke: var(--nz-success); }
 .nz-ring--warning .nz-ring__fill { stroke: var(--nz-warning); }
-.nz-ring__label { position: absolute; font-weight: 800; font-variant-numeric: tabular-nums; color: var(--nz-text); }
+.nz-ring__label { position: absolute; font-weight: var(--nz-peso-titulo); font-variant-numeric: tabular-nums; color: var(--nz-text); }
 .nz-ring--sm { width: 40px; height: 40px; }
 .nz-ring--sm .nz-ring__label { font-size: var(--nz-text-2xs); }
 .nz-ring--lg { width: 72px; height: 72px; }

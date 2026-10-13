@@ -31,7 +31,7 @@
   padding: var(--nz-space-4);
   border-bottom: var(--nz-border-w) solid var(--nz-border-soft);
 }
-.nz-panel__titulo { font-size: var(--nz-text-base); font-weight: 700; margin: 0; }
+.nz-panel__titulo { font-size: var(--nz-text-base); font-weight: var(--nz-peso-fuerte); margin: 0; }
 .nz-panel__sub { font-size: var(--nz-text-sm); color: var(--nz-text-soft); margin: 0; }
 .nz-panel__cuerpo { padding: var(--nz-space-4); }
 .nz-panel__acciones { display: flex; flex-wrap: wrap; gap: var(--nz-space-2); margin-left: auto; }
@@ -84,7 +84,7 @@
   background: var(--nz-brand-soft);
   color: var(--nz-text);
 }
-.nz-tabla-lote__seleccion { font-size: var(--nz-text-sm); font-weight: 700; }
+.nz-tabla-lote__seleccion { font-size: var(--nz-text-sm); font-weight: var(--nz-peso-fuerte); }
 .nz-tabla-lote__lote-acciones { display: flex; flex-wrap: wrap; gap: var(--nz-space-2); margin-left: auto; }
 
 /* ---- P05 Ficha de entidad: avatar + identidad + metadatos + acciones ---- */
@@ -98,7 +98,7 @@
 }
 .nz-ficha-entidad__cabecera { display: flex; align-items: center; gap: var(--nz-space-3); }
 .nz-ficha-entidad__identidad { display: grid; gap: var(--nz-space-0); min-width: 0; }
-.nz-ficha-entidad__nombre { font-size: var(--nz-text-base); font-weight: 700; }
+.nz-ficha-entidad__nombre { font-size: var(--nz-text-base); font-weight: var(--nz-peso-fuerte); }
 .nz-ficha-entidad__meta { font-size: var(--nz-text-xs); color: var(--nz-text-mute); }
 .nz-ficha-entidad__datos { display: grid; gap: var(--nz-space-2); }
 .nz-ficha-entidad__acciones { display: flex; flex-wrap: wrap; gap: var(--nz-space-2); }
@@ -116,10 +116,10 @@
   background: var(--nz-bg-inset);
   color: var(--nz-text-mute);
   font-size: var(--nz-text-xs);
-  font-weight: 800;
+  font-weight: var(--nz-peso-titulo);
 }
 .nz-linea-pasos__cuerpo { display: grid; gap: var(--nz-space-0); min-width: 0; padding-bottom: var(--nz-space-3); border-bottom: var(--nz-border-w) solid var(--nz-border-soft); }
-.nz-linea-pasos__titulo { font-size: var(--nz-text-sm); font-weight: 700; }
+.nz-linea-pasos__titulo { font-size: var(--nz-text-sm); font-weight: var(--nz-peso-fuerte); }
 .nz-linea-pasos__nota { font-size: var(--nz-text-xs); color: var(--nz-text-mute); }
 .nz-linea-pasos__paso.is-done .nz-linea-pasos__marca { background: var(--nz-success); color: var(--nz-text-invert); }
 .nz-linea-pasos__paso.is-active .nz-linea-pasos__marca { background: var(--nz-brand); color: var(--nz-text-invert); }
@@ -163,7 +163,7 @@
   padding-top: var(--nz-space-3);
   border-top: var(--nz-border-w) solid var(--nz-border);
   font-size: var(--nz-text-md);
-  font-weight: 800;
+  font-weight: var(--nz-peso-titulo);
 }
 .nz-resumen-pedido__pie { display: flex; flex-wrap: wrap; gap: var(--nz-space-2); }
 
@@ -177,9 +177,9 @@
   background: var(--nz-surface);
 }
 .nz-metrica-tendencia__cabecera { display: flex; align-items: center; justify-content: space-between; gap: var(--nz-space-2); }
-.nz-metrica-tendencia__etiqueta { font-size: var(--nz-text-2xs); font-weight: 800; letter-spacing: var(--nz-tracking-caps); text-transform: uppercase; color: var(--nz-text-mute); }
-.nz-metrica-tendencia__valor { font-size: var(--nz-text-2xl); font-weight: 800; font-variant-numeric: tabular-nums; }
-.nz-metrica-tendencia__tendencia { display: inline-flex; align-items: center; gap: var(--nz-space-1); font-size: var(--nz-text-xs); font-weight: 700; }
+.nz-metrica-tendencia__etiqueta { font-size: var(--nz-text-xs); font-weight: var(--nz-peso-titulo); letter-spacing: var(--nz-tracking-caps); text-transform: uppercase; color: var(--nz-text-mute); }
+.nz-metrica-tendencia__valor { font-size: var(--nz-text-2xl); font-weight: var(--nz-peso-titulo); font-variant-numeric: tabular-nums; }
+.nz-metrica-tendencia__tendencia { display: inline-flex; align-items: center; gap: var(--nz-space-1); font-size: var(--nz-text-xs); font-weight: var(--nz-peso-fuerte); }
 .nz-metrica-tendencia__pie { font-size: var(--nz-text-xs); color: var(--nz-text-mute); }
 
 /* ---- P11 Bandeja de avisos ---- */
@@ -194,7 +194,7 @@
 .nz-bandeja-avisos__item { display: flex; align-items: flex-start; gap: var(--nz-space-3); padding: var(--nz-space-3) var(--nz-space-4); border-bottom: var(--nz-border-w) solid var(--nz-border-soft); }
 .nz-bandeja-avisos__item:last-child { border-bottom: 0; }
 .nz-bandeja-avisos__cuerpo { flex: 1; min-width: 0; display: grid; gap: var(--nz-space-0); }
-.nz-bandeja-avisos__titulo { font-size: var(--nz-text-sm); font-weight: 700; }
+.nz-bandeja-avisos__titulo { font-size: var(--nz-text-sm); font-weight: var(--nz-peso-fuerte); }
 .nz-bandeja-avisos__texto { font-size: var(--nz-text-xs); color: var(--nz-text-mute); }
 .nz-bandeja-avisos__hora { font-size: var(--nz-text-2xs); color: var(--nz-text-faint); white-space: nowrap; }
 .nz-bandeja-avisos__item.is-nuevo { background: var(--nz-brand-soft); }
@@ -209,7 +209,7 @@
   background: var(--nz-surface);
 }
 .nz-panel-filtros__grupo { display: grid; gap: var(--nz-space-2); }
-.nz-panel-filtros__titulo { font-size: var(--nz-text-2xs); font-weight: 800; letter-spacing: var(--nz-tracking-caps); text-transform: uppercase; color: var(--nz-text-faint); }
+.nz-panel-filtros__titulo { font-size: var(--nz-text-xs); font-weight: var(--nz-peso-titulo); letter-spacing: var(--nz-tracking-caps); text-transform: uppercase; color: var(--nz-text-faint); }
 .nz-panel-filtros__pie { display: flex; flex-wrap: wrap; gap: var(--nz-space-2); }
 
 /* ---- P13 Estado vacío guiado con acción ---- */
@@ -232,7 +232,7 @@
   background: var(--nz-brand-soft);
   color: var(--nz-brand);
 }
-.nz-estado-vacio__titulo { margin: 0; font-size: var(--nz-text-lg); font-weight: 700; }
+.nz-estado-vacio__titulo { margin: 0; font-size: var(--nz-text-lg); font-weight: var(--nz-peso-fuerte); }
 .nz-estado-vacio__texto { max-width: 42ch; margin: 0; font-size: var(--nz-text-sm); color: var(--nz-text-soft); }
 .nz-estado-vacio__acciones { display: flex; flex-wrap: wrap; justify-content: center; gap: var(--nz-space-2); }
 
@@ -248,13 +248,13 @@
 .nz-tarjeta-curso__portada { display: grid; place-items: center; aspect-ratio: 16 / 9; background: var(--nz-bg-inset); color: var(--nz-text-faint); }
 .nz-tarjeta-curso__cuerpo { display: grid; gap: var(--nz-space-2); padding: var(--nz-space-4); }
 .nz-tarjeta-curso__meta { display: flex; flex-wrap: wrap; align-items: center; gap: var(--nz-space-2); }
-.nz-tarjeta-curso__titulo { font-size: var(--nz-text-base); font-weight: 700; }
+.nz-tarjeta-curso__titulo { font-size: var(--nz-text-base); font-weight: var(--nz-peso-fuerte); }
 .nz-tarjeta-curso__pie { display: flex; align-items: center; justify-content: space-between; gap: var(--nz-space-2); }
 
 /* ---- P15 Agenda de disponibilidad ---- */
 .nz-agenda-disponibilidad { display: grid; gap: var(--nz-space-4); }
 .nz-agenda-disponibilidad__dia { display: grid; gap: var(--nz-space-2); }
-.nz-agenda-disponibilidad__fecha { font-size: var(--nz-text-sm); font-weight: 700; color: var(--nz-text); }
+.nz-agenda-disponibilidad__fecha { font-size: var(--nz-text-sm); font-weight: var(--nz-peso-fuerte); color: var(--nz-text); }
 .nz-agenda-disponibilidad__franjas { display: flex; flex-wrap: wrap; gap: var(--nz-space-2); }
 .nz-agenda-disponibilidad__franja {
   min-height: 44px;
@@ -267,7 +267,7 @@
   color: var(--nz-text-soft);
   font: inherit;
   font-size: var(--nz-text-sm);
-  font-weight: 600;
+  font-weight: var(--nz-peso-fuerte);
   cursor: pointer;
 }
 .nz-agenda-disponibilidad__franja:hover { border-color: var(--nz-border-strong); color: var(--nz-text); }
@@ -301,7 +301,7 @@
 .nz-editor-campos { display: grid; gap: var(--nz-space-4); }
 .nz-editor-campos__campo { display: grid; gap: var(--nz-space-1); grid-template-columns: minmax(0, 1fr); }
 .nz-editor-campos__cabecera { display: flex; align-items: center; justify-content: space-between; gap: var(--nz-space-2); }
-.nz-editor-campos__etiqueta { font-size: var(--nz-text-sm); font-weight: 700; color: var(--nz-text); }
+.nz-editor-campos__etiqueta { font-size: var(--nz-text-sm); font-weight: var(--nz-peso-fuerte); color: var(--nz-text); }
 .nz-editor-campos__ayuda { font-size: var(--nz-text-xs); color: var(--nz-text-mute); }
 .nz-editor-campos__acciones { display: flex; gap: var(--nz-space-1); }
 @media (min-width: 640px) { .nz-editor-campos__campo { grid-template-columns: 14rem minmax(0, 1fr); align-items: start; gap: var(--nz-space-4); } }
@@ -326,9 +326,9 @@
   border-bottom: var(--nz-border-w-strong) solid var(--nz-border-strong);
 }
 .nz-cabecera-informe__top { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--nz-space-3); }
-.nz-cabecera-informe__marca { display: inline-flex; align-items: center; gap: var(--nz-space-2); font-weight: 800; }
+.nz-cabecera-informe__marca { display: inline-flex; align-items: center; gap: var(--nz-space-2); font-weight: var(--nz-peso-titulo); }
 .nz-cabecera-informe__meta { display: flex; flex-wrap: wrap; gap: var(--nz-space-1) var(--nz-space-4); font-size: var(--nz-text-xs); color: var(--nz-text-mute); }
-.nz-cabecera-informe__titulo { font-size: var(--nz-text-2xl); font-weight: 800; letter-spacing: var(--nz-tracking-tight); }
+.nz-cabecera-informe__titulo { font-size: var(--nz-text-2xl); font-weight: var(--nz-peso-titulo); letter-spacing: var(--nz-tracking-tight); }
 
 /* ---- P21 Pie de acciones pegajoso ---- */
 .nz-pie-acciones {
@@ -358,7 +358,7 @@
   background: var(--nz-surface);
 }
 .nz-lista-tareas__cuerpo { flex: 1; min-width: 0; display: grid; gap: var(--nz-space-0); }
-.nz-lista-tareas__titulo { font-size: var(--nz-text-sm); font-weight: 700; }
+.nz-lista-tareas__titulo { font-size: var(--nz-text-sm); font-weight: var(--nz-peso-fuerte); }
 .nz-lista-tareas__meta { font-size: var(--nz-text-xs); color: var(--nz-text-mute); }
 .nz-lista-tareas__tarea.is-done .nz-lista-tareas__titulo { color: var(--nz-text-mute); text-decoration: line-through; }
 
@@ -373,7 +373,7 @@
   box-shadow: var(--nz-shadow-lg);
 }
 .nz-bloque-precios__cabecera { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: var(--nz-space-2); }
-.nz-bloque-precios__importe { font-size: var(--nz-text-3xl); font-weight: 800; letter-spacing: var(--nz-tracking-tight); font-variant-numeric: tabular-nums; }
+.nz-bloque-precios__importe { font-size: var(--nz-text-3xl); font-weight: var(--nz-peso-titulo); letter-spacing: var(--nz-tracking-tight); font-variant-numeric: tabular-nums; }
 .nz-bloque-precios__lista { display: grid; gap: var(--nz-space-2); margin: 0; padding: 0; list-style: none; }
 .nz-bloque-precios__pie { display: flex; flex-wrap: wrap; gap: var(--nz-space-2); }
 
@@ -391,7 +391,7 @@
 }
 .nz-aviso-accion__icono { flex: none; display: inline-grid; place-items: center; width: 40px; height: 40px; border-radius: var(--nz-radius-full); background: var(--nz-brand-soft); color: var(--nz-brand); }
 .nz-aviso-accion__cuerpo { flex: 1; min-width: 0; display: grid; gap: var(--nz-space-0); }
-.nz-aviso-accion__titulo { font-size: var(--nz-text-sm); font-weight: 700; }
+.nz-aviso-accion__titulo { font-size: var(--nz-text-sm); font-weight: var(--nz-peso-fuerte); }
 .nz-aviso-accion__texto { font-size: var(--nz-text-xs); color: var(--nz-text-mute); }
 .nz-aviso-accion__acciones { display: flex; flex-wrap: wrap; gap: var(--nz-space-2); }
 
@@ -399,7 +399,7 @@
 .nz-perfil-pestanas { display: grid; gap: var(--nz-space-4); }
 .nz-perfil-pestanas__cabecera { display: flex; flex-wrap: wrap; align-items: center; gap: var(--nz-space-4); }
 .nz-perfil-pestanas__identidad { display: grid; gap: var(--nz-space-0); min-width: 0; }
-.nz-perfil-pestanas__nombre { font-size: var(--nz-text-lg); font-weight: 800; letter-spacing: var(--nz-tracking-tight); }
+.nz-perfil-pestanas__nombre { font-size: var(--nz-text-lg); font-weight: var(--nz-peso-titulo); letter-spacing: var(--nz-tracking-tight); }
 .nz-perfil-pestanas__meta { font-size: var(--nz-text-sm); color: var(--nz-text-mute); }
 .nz-perfil-pestanas__cuerpo { min-width: 0; }
 
@@ -407,8 +407,8 @@
 .nz-facturacion-estados { display: grid; gap: var(--nz-space-4); }
 .nz-facturacion-estados__resumen { display: flex; flex-wrap: wrap; gap: var(--nz-space-4); }
 .nz-facturacion-estados__importe { min-width: 10rem; display: grid; gap: var(--nz-space-0); }
-.nz-facturacion-estados__etiqueta { font-size: var(--nz-text-2xs); font-weight: 800; letter-spacing: var(--nz-tracking-caps); text-transform: uppercase; color: var(--nz-text-mute); }
-.nz-facturacion-estados__cifra { font-size: var(--nz-text-xl); font-weight: 800; font-variant-numeric: tabular-nums; }
+.nz-facturacion-estados__etiqueta { font-size: var(--nz-text-xs); font-weight: var(--nz-peso-titulo); letter-spacing: var(--nz-tracking-caps); text-transform: uppercase; color: var(--nz-text-mute); }
+.nz-facturacion-estados__cifra { font-size: var(--nz-text-xl); font-weight: var(--nz-peso-titulo); font-variant-numeric: tabular-nums; }
 
 /* ---- P27 Centro de notificaciones ---- */
 .nz-centro-notificaciones {
@@ -430,7 +430,7 @@
 /* ---- P28 Sección de preguntas frecuentes ---- */
 .nz-preguntas-frecuentes { display: grid; gap: var(--nz-space-2); }
 .nz-preguntas-frecuentes__item { padding: 0 var(--nz-space-4); border: var(--nz-border-w) solid var(--nz-border-soft); border-radius: var(--nz-radius-md); background: var(--nz-surface); }
-.nz-preguntas-frecuentes__pregunta { display: flex; align-items: center; gap: var(--nz-space-2); min-height: 44px; padding: var(--nz-space-3) 0; font-size: var(--nz-text-sm); font-weight: 700; color: var(--nz-text); cursor: pointer; }
+.nz-preguntas-frecuentes__pregunta { display: flex; align-items: center; gap: var(--nz-space-2); min-height: 44px; padding: var(--nz-space-3) 0; font-size: var(--nz-text-sm); font-weight: var(--nz-peso-fuerte); color: var(--nz-text); cursor: pointer; }
 .nz-preguntas-frecuentes__respuesta { padding-bottom: var(--nz-space-3); font-size: var(--nz-text-sm); color: var(--nz-text-soft); }
 
 /* ---- P29 Tarjeta de suscripción ---- */
@@ -443,7 +443,7 @@
   background: var(--nz-surface);
 }
 .nz-tarjeta-suscripcion__cabecera { display: flex; flex-wrap: wrap; align-items: center; gap: var(--nz-space-2); }
-.nz-tarjeta-suscripcion__plan { font-size: var(--nz-text-base); font-weight: 700; }
+.nz-tarjeta-suscripcion__plan { font-size: var(--nz-text-base); font-weight: var(--nz-peso-fuerte); }
 .nz-tarjeta-suscripcion__datos { display: grid; gap: var(--nz-space-2); }
 .nz-tarjeta-suscripcion__acciones { display: flex; flex-wrap: wrap; gap: var(--nz-space-2); }
 
@@ -457,7 +457,7 @@
   border-radius: var(--nz-radius-md);
   background: var(--nz-surface);
 }
-.nz-rejilla-estadisticas__valor { font-size: var(--nz-text-2xl); font-weight: 800; font-variant-numeric: tabular-nums; }
+.nz-rejilla-estadisticas__valor { font-size: var(--nz-text-2xl); font-weight: var(--nz-peso-titulo); font-variant-numeric: tabular-nums; }
 .nz-rejilla-estadisticas__etiqueta { font-size: var(--nz-text-xs); color: var(--nz-text-mute); }
 @media (min-width: 640px) { .nz-rejilla-estadisticas { grid-template-columns: repeat(2, 1fr); } }
 @media (min-width: 960px) { .nz-rejilla-estadisticas { grid-template-columns: repeat(4, 1fr); } }
@@ -466,7 +466,7 @@
 .nz-ficha-producto { display: grid; gap: var(--nz-space-4); grid-template-columns: minmax(0, 1fr); }
 .nz-ficha-producto__media { aspect-ratio: 4 / 3; border-radius: var(--nz-radius-lg); background: var(--nz-bg-inset); overflow: hidden; }
 .nz-ficha-producto__cuerpo { display: grid; align-content: start; gap: var(--nz-space-2); min-width: 0; }
-.nz-ficha-producto__nombre { font-size: var(--nz-text-xl); font-weight: 800; letter-spacing: var(--nz-tracking-tight); }
+.nz-ficha-producto__nombre { font-size: var(--nz-text-xl); font-weight: var(--nz-peso-titulo); letter-spacing: var(--nz-tracking-tight); }
 .nz-ficha-producto__variantes { display: flex; flex-wrap: wrap; gap: var(--nz-space-1); }
 .nz-ficha-producto__acciones { display: flex; flex-wrap: wrap; gap: var(--nz-space-2); }
 @media (min-width: 640px) { .nz-ficha-producto { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: start; } }
@@ -475,7 +475,7 @@
 .nz-caja-comentarios { display: grid; gap: var(--nz-space-4); }
 .nz-caja-comentarios__comentario { display: flex; align-items: flex-start; gap: var(--nz-space-3); padding: var(--nz-space-3) 0; border-bottom: var(--nz-border-w) solid var(--nz-border-soft); }
 .nz-caja-comentarios__cuerpo { flex: 1; min-width: 0; display: grid; gap: var(--nz-space-1); }
-.nz-caja-comentarios__autor { font-size: var(--nz-text-sm); font-weight: 700; }
+.nz-caja-comentarios__autor { font-size: var(--nz-text-sm); font-weight: var(--nz-peso-fuerte); }
 .nz-caja-comentarios__texto { font-size: var(--nz-text-sm); color: var(--nz-text-soft); }
 .nz-caja-comentarios__form { display: grid; gap: var(--nz-space-2); }
 .nz-caja-comentarios__form-acciones { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: var(--nz-space-2); }
@@ -491,8 +491,8 @@
 }
 .nz-tarjeta-contenido__media { aspect-ratio: 16 / 9; background: var(--nz-bg-inset); }
 .nz-tarjeta-contenido__cuerpo { display: grid; gap: var(--nz-space-2); padding: var(--nz-space-4); }
-.nz-tarjeta-contenido__etiqueta { font-size: var(--nz-text-2xs); font-weight: 800; letter-spacing: var(--nz-tracking-caps); text-transform: uppercase; color: var(--nz-text-faint); }
-.nz-tarjeta-contenido__titulo { font-size: var(--nz-text-base); font-weight: 700; line-height: var(--nz-leading-snug); }
+.nz-tarjeta-contenido__etiqueta { font-size: var(--nz-text-xs); font-weight: var(--nz-peso-titulo); letter-spacing: var(--nz-tracking-caps); text-transform: uppercase; color: var(--nz-text-faint); }
+.nz-tarjeta-contenido__titulo { font-size: var(--nz-text-base); font-weight: var(--nz-peso-fuerte); line-height: var(--nz-leading-snug); }
 .nz-tarjeta-contenido__texto { font-size: var(--nz-text-sm); color: var(--nz-text-soft); }
 .nz-tarjeta-contenido__pie { display: flex; align-items: center; gap: var(--nz-space-2); }
 .nz-tarjeta-contenido--interactiva { transition: box-shadow var(--nz-dur-base) var(--nz-ease-out); }
@@ -514,7 +514,7 @@
   color: var(--nz-text-soft);
   font: inherit;
   font-size: var(--nz-text-sm);
-  font-weight: 600;
+  font-weight: var(--nz-peso-fuerte);
   cursor: pointer;
 }
 .nz-selector-vista__opcion.is-active { background: var(--nz-surface); color: var(--nz-text); box-shadow: var(--nz-shadow-sm); }
@@ -539,7 +539,7 @@
   padding-top: var(--nz-space-2);
   border-top: var(--nz-border-w) solid var(--nz-border);
   font-size: var(--nz-text-md);
-  font-weight: 800;
+  font-weight: var(--nz-peso-titulo);
 }
 
 /* ---- P38 Tarjeta de equipo ---- */
@@ -554,7 +554,7 @@
   background: var(--nz-surface);
   text-align: center;
 }
-.nz-tarjeta-equipo__nombre { font-size: var(--nz-text-base); font-weight: 700; }
+.nz-tarjeta-equipo__nombre { font-size: var(--nz-text-base); font-weight: var(--nz-peso-fuerte); }
 .nz-tarjeta-equipo__rol { font-size: var(--nz-text-xs); color: var(--nz-text-mute); }
 @media (min-width: 640px) { .nz-tarjeta-equipo { grid-template-columns: repeat(2, 1fr); } }
 @media (min-width: 960px) { .nz-tarjeta-equipo { grid-template-columns: repeat(3, 1fr); } }
@@ -586,15 +586,15 @@
   background: var(--nz-surface);
 }
 .nz-formulario-seccion__cabecera { display: grid; gap: var(--nz-space-1); }
-.nz-formulario-seccion__titulo { font-size: var(--nz-text-lg); font-weight: 700; }
+.nz-formulario-seccion__titulo { font-size: var(--nz-text-lg); font-weight: var(--nz-peso-fuerte); }
 .nz-formulario-seccion__desc { font-size: var(--nz-text-sm); color: var(--nz-text-mute); }
 .nz-formulario-seccion__pie { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: var(--nz-space-2); }
 
 /* ---- P42 Filtro por rango ---- */
 .nz-filtro-rango { display: grid; gap: var(--nz-space-2); }
 .nz-filtro-rango__cabecera { display: flex; align-items: baseline; justify-content: space-between; gap: var(--nz-space-2); }
-.nz-filtro-rango__valor { font-size: var(--nz-text-sm); font-weight: 700; font-variant-numeric: tabular-nums; }
-.nz-filtro-rango__pie { display: flex; justify-content: space-between; font-size: var(--nz-text-2xs); color: var(--nz-text-faint); }
+.nz-filtro-rango__valor { font-size: var(--nz-text-sm); font-weight: var(--nz-peso-fuerte); font-variant-numeric: tabular-nums; }
+.nz-filtro-rango__pie { display: flex; justify-content: space-between; font-size: var(--nz-text-xs); color: var(--nz-text-faint); }
 
 /* ---- P43 Aviso de sistema / mantenimiento ---- */
 .nz-aviso-sistema {
@@ -607,7 +607,7 @@
   border-radius: var(--nz-radius-md);
   background: var(--nz-warning-soft);
 }
-.nz-aviso-sistema__titulo { font-size: var(--nz-text-sm); font-weight: 800; color: var(--nz-text); }
+.nz-aviso-sistema__titulo { font-size: var(--nz-text-sm); font-weight: var(--nz-peso-titulo); color: var(--nz-text); }
 .nz-aviso-sistema__texto { font-size: var(--nz-text-xs); color: var(--nz-text-soft); }
 .nz-aviso-sistema__acciones { display: flex; flex-wrap: wrap; gap: var(--nz-space-2); margin-left: auto; }
 
@@ -622,7 +622,7 @@
 }
 .nz-tarjeta-servicio__icono { flex: none; }
 .nz-tarjeta-servicio__cuerpo { flex: 1; min-width: 0; display: grid; gap: var(--nz-space-1); }
-.nz-tarjeta-servicio__titulo { font-size: var(--nz-text-base); font-weight: 700; }
+.nz-tarjeta-servicio__titulo { font-size: var(--nz-text-base); font-weight: var(--nz-peso-fuerte); }
 .nz-tarjeta-servicio__texto { font-size: var(--nz-text-sm); color: var(--nz-text-soft); }
 .nz-tarjeta-servicio__pie { display: flex; flex-wrap: wrap; align-items: center; gap: var(--nz-space-2); }
 
@@ -637,7 +637,7 @@
 }
 .nz-bloque-testimonio__cita { font-size: var(--nz-text-md); color: var(--nz-text); line-height: var(--nz-leading-snug); }
 .nz-bloque-testimonio__autor { display: flex; align-items: center; gap: var(--nz-space-3); }
-.nz-bloque-testimonio__nombre { font-size: var(--nz-text-sm); font-weight: 700; }
+.nz-bloque-testimonio__nombre { font-size: var(--nz-text-sm); font-weight: var(--nz-peso-fuerte); }
 .nz-bloque-testimonio__rol { font-size: var(--nz-text-xs); color: var(--nz-text-mute); }
 
 /* ---- P46 Menú de cuenta con cabecera ---- */
@@ -653,6 +653,6 @@
   box-shadow: var(--nz-shadow-lg);
 }
 .nz-menu-cuenta__cabecera { display: flex; align-items: center; gap: var(--nz-space-3); padding: var(--nz-space-2); }
-.nz-menu-cuenta__nombre { font-size: var(--nz-text-sm); font-weight: 700; }
+.nz-menu-cuenta__nombre { font-size: var(--nz-text-sm); font-weight: var(--nz-peso-fuerte); }
 .nz-menu-cuenta__correo { font-size: var(--nz-text-xs); color: var(--nz-text-mute); }
 .nz-menu-cuenta__lista { display: grid; gap: var(--nz-space-1); }

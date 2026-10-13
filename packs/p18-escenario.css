@@ -71,7 +71,7 @@
 .nz-esc-titular {
   font-family: var(--nz-font-titulo);
   font-size: var(--nz-esc-titular);
-  font-weight: 800;
+  font-weight: var(--nz-peso-titulo);
   line-height: var(--nz-leading-tight);
   letter-spacing: var(--nz-tracking-tight);
   text-wrap: balance;
@@ -80,7 +80,7 @@
 .nz-esc-editorial {
   font-family: var(--nz-font);
   font-size: var(--nz-esc-editorial);
-  font-weight: 300;
+  font-weight: var(--nz-peso-normal);   /* era 300: la variable se sirve 400-700 */
   line-height: var(--nz-leading-snug);
   letter-spacing: var(--nz-tracking-tight);
   text-wrap: pretty;
@@ -90,7 +90,7 @@
 .nz-esc-numeral {
   font-family: var(--nz-font-titulo);
   font-size: var(--nz-esc-numeral);
-  font-weight: 800;
+  font-weight: var(--nz-peso-titulo);
   line-height: var(--nz-leading-tight);
   letter-spacing: var(--nz-tracking-tight);
   font-variant-numeric: tabular-nums;
@@ -99,7 +99,7 @@
 .nz-esc-etiqueta {
   font-family: var(--nz-font-mono);
   font-size: var(--nz-esc-etiqueta);
-  font-weight: 700;
+  font-weight: var(--nz-peso-fuerte);
   letter-spacing: var(--nz-tracking-caps);
   text-transform: uppercase;
   color: var(--nz-text-mute);
@@ -148,7 +148,7 @@
 }
 .nz-nodo__valor {
   font-size: var(--nz-text-lg);
-  font-weight: 700;
+  font-weight: var(--nz-peso-fuerte);
   color: var(--nz-text);
 }
 .nz-nodo--acento {

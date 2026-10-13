@@ -63,6 +63,7 @@ ATRIBUCION = "Hecho con ❤️ por David Antizar"
 COLOR_RE = re.compile(
     r"nz-(?:btn|cta|badge|chip|lbl|kpi|alert)(?:--(?:primary|accent|brand|success|warning|danger|info))")
 FONT_PX_RE = re.compile(r"font-size\s*:\s*(\d+(?:\.\d+)?)px")
+PESO_RE = re.compile(r"font-weight\s*:\s*(\d{3})\b")
 TEXTO_VAR_RE = re.compile(r"var\((--nz-text-(?:2xs|xs|sm|base|md|lg|xl|2xl|3xl|4xl))\)")
 
 
@@ -91,6 +92,15 @@ def auditar_composicion(html):
     if marca >= 2 and acento >= 2:
         avisos.append(f"dos-protagonistas: {marca} de marca y {acento} de acento compiten en la misma página")
 
+    # 3b · el acento tiene que aparecer (v8.4): ni ausente ni de adorno
+    if marca and not acento:
+        avisos.append(f"acento-ausente: {marca} momento(s) de marca y 0 de acento — el acento es el "
+                      "dato que importa (.nz-num--accent, .nz-kpi--accent, .nz-lbl--accent, "
+                      ".nz-lead--accent, .nz-highlight--accent)")
+    elif acento and marca >= 3 * acento:
+        avisos.append(f"acento-testimonial: {marca} de marca por {acento} de acento — la marca no debe "
+                      "acaparar más de dos tercios de los momentos de color")
+
     # 4 · mínimo tipográfico (solo en CSS propio; el sistema ya garantiza el suyo)
     chicos = sorted({v for v in FONT_PX_RE.findall(html) if float(v) < 13})
     if chicos:
@@ -105,6 +115,12 @@ def auditar_composicion(html):
     usados = sorted(set(TEXTO_VAR_RE.findall(html)))
     if len(usados) > 4:
         avisos.append(f"escala-tipografica: {len(usados)} tamaños distintos (máx 4): {', '.join(usados)}")
+
+    # 6b · pesos a mano (v8.4): el peso es un token, no un número suelto
+    pesos = sorted({w for w in PESO_RE.findall(html) if w in ("700", "800")})
+    if pesos:
+        avisos.append(f"peso-a-mano: font-weight {', '.join(pesos)} escrito a mano — usa var(--nz-peso-*): "
+                      "400 cuerpo, 500 apoyo, 600 interfaz, 700 solo titulares y cifras (el 800 no existe)")
 
     # 7 · ancho por tipo de página
     es_app = bool(re.search(r"nz-appshell|nz-navbar|nz-dash-grid", html))
@@ -270,7 +286,7 @@ def selftest():
     # el lint cace también el pack que falta por enlazar.
     mala = f"""<!DOCTYPE html><html lang="es"><head>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Ntizar/Aurora@master/tokens.css">
-<style>.x {{ background: linear-gradient(90deg, red, blue); color: #ff0000; font-size: 11px }}</style>
+<style>.x {{ background: linear-gradient(90deg, red, blue); color: #ff0000; font-size: 11px; font-weight: 800 }}</style>
 </head><body><h1>Uno</h1><h1>Dos</h1><main class="nz-container nz-card nz-boton">\U0001F511 Hola</main></body></html>"""
 
     # Y una página BUENA: debe salir con 0 fallos (si no, hay falso positivo).
@@ -297,6 +313,7 @@ def selftest():
         ("emoji en UI (ley 1)", "emoji-en-ui" in texto),
         ("dos <h1> (ley 5)", "jerarquia" in texto),
         ("font-size < 13px (ley 4)", "minimo-tipografico" in texto),
+        ("peso a mano (ley 6b)", "peso-a-mano" in texto),
         ("página buena sin fallos", not f_buena),
     ]
     ok = True
