@@ -48,9 +48,10 @@ Verificación: `python scripts/auditar-uso.py tu-pagina.html` comprueba estas re
   `font-variant-numeric: tabular-nums`: un contador en una insignia sí va en negrita) y
   los **símbolos**, que no son texto.
   Utilidades: `.nz-text--peso-medio`, `.nz-text--peso-fuerte`.
-- **13px es el mínimo de la interfaz** (`--nz-text-xs`): etiquetas, insignias, estados.
-  Los **12px** (`--nz-text-2xs`) son para **datos**: ejes, contadores, notas al pie,
-  atajos de teclado. Una etiqueta nunca baja a 12px.
+- **13px es el mínimo de la interfaz** (`--nz-text-xs`): etiquetas, insignias, estados,
+  incluida la insignia pequeña (`.nz-badge--sm`: 13px de letra, 18px de alto — la
+  densidad se baja con el alto, no con la letra). Los **12px** (`--nz-text-2xs`) son para
+  **datos**: ejes, contadores, notas al pie, atajos de teclado. Una etiqueta nunca baja a 12px.
 - **La fuente la sirve el sistema**: Inter variable viaja en `tokens.css`
   (`fuentes/*.woff2`). No enlaces Google Fonts ni cambies `--nz-font` sin motivo: así la
   letra es la misma en Windows, Android, Linux y en una captura headless.

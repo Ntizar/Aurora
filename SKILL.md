@@ -1,14 +1,14 @@
 ---
 name: aurora-design-system
 description: "Usa al construir o tocar cualquier web con Aurora (Ntizar/Aurora). El repo manda: resuelve la versión vigente y pide LLM.md + components.json antes de escribir CSS."
-version: "8.4.1"
+version: "8.4.2"
 tags: [css, design-system, aurora, ntizar, agent-ready, movil, escritorio, tipografia]
 ---
 
 # Aurora — doctrina única (el repo es la orden máxima)
 
 Design system CSS puro, sin build, sin dependencias, namespaced bajo `.nz-`.
-**v8.4.1 · 2184 objetos · 409 familias · 653 demos · 18 categorías · 189 tokens.**
+**v8.4.2 · 2184 objetos · 409 familias · 653 demos · 18 categorías · 189 tokens.**
 *(Cabecera de testigo, no de autoridad: resuélvela con el PASO 0.)*
 
 > ⚠️ `Ntizar/Aurora` **manda sobre esta skill**. Esta skill es un puntero; el repo
@@ -28,7 +28,7 @@ procedimiento. Resuélvela en cada tarea:
 # a) con el repo clonado (lo normal en esta máquina) — la vía rápida
 #    (ajusta la carpeta al nombre de tu clon: Aurora-8, Aurora-7, Aurora…)
 git -C C:/Users/d_ant/Projects/Aurora-8 fetch --tags -q
-V=$(git -C C:/Users/d_ant/Projects/Aurora-8 describe --tags --abbrev=0)   # p.ej. v8.4.1
+V=$(git -C C:/Users/d_ant/Projects/Aurora-8 describe --tags --abbrev=0)   # p.ej. v8.4.2
 
 # b) sin repo — pregunta a GitHub
 curl -s https://api.github.com/repos/Ntizar/Aurora/tags | grep -m1 '"name"'

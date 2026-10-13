@@ -69,8 +69,8 @@
 .nz-badge--outline { background: transparent; box-shadow: inset 0 0 0 var(--nz-border-w) var(--nz-border-strong); color: var(--nz-text-soft); }
 .nz-badge--dot { padding-left: var(--nz-space-1); }
 .nz-badge--dot i { width: 8px; height: 8px; margin-left: var(--nz-space-1); }
-.nz-badge--sm { min-height: 18px; font-size: var(--nz-text-2xs); }
-.nz-badge--lg { min-height: 28px; padding: 0 var(--nz-space-3); font-size: var(--nz-text-xs); letter-spacing: var(--nz-tracking-tight); }
+.nz-badge--sm { min-height: 18px; font-size: var(--nz-text-xs); padding: 0 var(--nz-space-1); }
+.nz-badge--lg { min-height: 28px; padding: 0 var(--nz-space-3); font-size: var(--nz-text-sm); letter-spacing: var(--nz-tracking-tight); }
 .nz-badge--counter { min-width: 22px; justify-content: center; padding: 0 var(--nz-space-1); background: var(--nz-accent); color: var(--nz-gray-0); letter-spacing: 0; }
 
 /* ---- Chip ---- */

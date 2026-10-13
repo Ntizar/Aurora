@@ -1,10 +1,10 @@
 {
  "name": "Aurora",
- "version": "8.4.1",
+ "version": "8.4.2",
  "type": "css-only design system",
  "namespace": ".nz-",
  "tokens": "tokens.css",
- "cdn": "https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v8.4.1/",
+ "cdn": "https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v8.4.2/",
  "manifiesto": {
   "gradientes": 0,
   "glass": 0,
