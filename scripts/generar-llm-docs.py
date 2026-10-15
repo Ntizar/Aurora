@@ -9,6 +9,14 @@ packs en una página real, sin inventarse nada.
   · components.json → spec machine-readable completo (clases + tokens + alias + combos)
   · LLM.md          → guía de decisión en prosa, ~6 KB, para meter en contexto
 
+Novedades v9.1 (Fase B del plan Aurora 9):
+  · components.json por familia: clases, partes __, modificadores del léxico,
+    tokens --nz-* consumidos, markup mínimo de ejemplo (de specs/ reales) y
+    anti-patrones «noUsar»
+  · alias ampliados 32 → 150 al vocabulario natural de los LLMs (verificados
+    contra el censo; el generador aborta si alguno apunta a algo inexistente)
+  · llms.txt en la raíz apuntando a LLM.md, components.json y examples/
+
 Novedades v7.2:
   · inventario completo de tokens (--nz-*) desde tokens.css (root + dark)
   · alias inglés→clase real (la IA busca «tree», la clase es nz-arbol)
@@ -35,6 +43,7 @@ CDN = f"https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v{VERSION}/"
 # censo: la IA busca «hide-mobile» y la clase es nz-hide-movil, etc.
 # ---------------------------------------------------------------------------
 ALIAS = {
+    # Alias históricos (v7.2, verificados):
     "tree": "nz-arbol",
     "keyboard-shortcut": "nz-atajo-teclado",
     "kbd": "nz-atajo-teclado",
@@ -67,7 +76,343 @@ ALIAS = {
     "tooltip": "nz-popover",
     "spinner": "nz-spinner",
     "empty-state": "nz-empty",
+    # Vocabulario natural EN→ES de los LLMs (v9.1, verificado contra el censo):
+    "accordion": "nz-collapsible",
+    "alert": "nz-alert",
+    "avatar": "nz-avatar",
+    "backdrop": "nz-backdrop",
+    "badge": "nz-badge",
+    "banner": "nz-banner",
+    "bar-chart": "nz-chart-bar",
+    "bento-grid": "nz-bento",
+    "blockquote": "nz-blockquote",
+    "breadcrumb": "nz-breadcrumb",
+    "button": "nz-btn",
+    "callout": "nz-callout",
+    "cart": "nz-cart",
+    "chart": "nz-chart",
+    "chat": "nz-chat",
+    "checkbox": "nz-checkbox",
+    "checkout": "nz-checkout-steps",
+    "chip": "nz-chip",
+    "code": "nz-code",
+    "code-editor": "nz-codepad",
+    "collapsible": "nz-collapsible",
+    "comment": "nz-comment",
+    "container": "nz-container",
+    "context-menu": "nz-menu-pop",
+    "countdown": "nz-countdown",
+    "dialog": "nz-modal",
+    "diff": "nz-diff",
+    "divider": "nz-divider",
+    "dock": "nz-dock",
+    "donut-chart": "nz-chart-donut",
+    "drawer": "nz-drawer",
+    "dropdown": "nz-dropdown",
+    "dropzone": "nz-filezona",
+    "empty": "nz-empty",
+    "estado-vacio": "nz-estado-vacio",
+    "fab": "nz-fab",
+    "faq": "nz-preguntas-frecuentes",
+    "feed": "nz-feed",
+    "fieldset": "nz-fieldset",
+    "file-upload": "nz-filezona",
+    "floating-action-button": "nz-fab",
+    "footer": "nz-footer",
+    "form": "nz-field",
+    "gauge": "nz-chart-gauge",
+    "grid": "nz-grid-12",
+    "guided-empty-state": "nz-estado-vacio",
+    "guided-empty-state-es": "nz-estado-vacio",
+    "hashtag": "nz-hashtag",
+    "header": "nz-header",
+    "heatmap": "nz-heatmap",
+    "hero": "nz-hero-bleed",
+    "input": "nz-input",
+    "kanban": "nz-kanban",
+    "kpi-card": "nz-kpi",
+    "label": "nz-label",
+    "lightbox": "nz-lightbox",
+    "line-chart": "nz-chart-line",
+    "link": "nz-link",
+    "list": "nz-list",
+    "masonry": "nz-masonry",
+    "mention": "nz-mention",
+    "menu": "nz-menu",
+    "meter": "nz-meter",
+    "modal": "nz-modal",
+    "navbar": "nz-navbar",
+    "notification": "nz-notif",
+    "offcanvas": "nz-offcanvas",
+    "otp-input": "nz-otp",
+    "pagination": "nz-pagination",
+    "password": "nz-password",
+    "popover": "nz-popover",
+    "post": "nz-post",
+    "pricing": "nz-plans",
+    "pricing-table": "nz-pricetable",
+    "progress": "nz-progress",
+    "prompt": "nz-prompt",
+    "qr": "nz-qr",
+    "qr-code": "nz-qr",
+    "quote": "nz-quote",
+    "radio": "nz-radio",
+    "range-slider": "nz-range",
+    "rating": "nz-stars",
+    "scrim": "nz-scrim",
+    "search": "nz-search",
+    "segmented-control": "nz-segmented",
+    "select": "nz-select",
+    "share": "nz-share",
+    "sheet": "nz-sheet",
+    "sidebar": "nz-sidebar",
+    "skeleton": "nz-skeleton",
+    "skip-link": "nz-skip-link",
+    "slider": "nz-range",
+    "spacer": "nz-spacer",
+    "sparkline": "nz-sparkline",
+    "split-pane": "nz-splitpane",
+    "sr-only": "nz-visually-hidden",
+    "stack": "nz-stack",
+    "stars": "nz-stars",
+    "stat-card": "nz-kpi",
+    "statusbar": "nz-statusbar",
+    "stepper": "nz-stepper",
+    "switch": "nz-switch",
+    "table": "nz-table",
+    "table-of-contents": "nz-toc",
+    "tabs": "nz-tabs",
+    "textarea": "nz-textarea",
+    "thinking-indicator": "nz-thinking",
+    "timeline": "nz-timeline",
+    "toast": "nz-toast",
+    "toc": "nz-toc",
+    "tool-call": "nz-toolcall",
+    "toolbar": "nz-toolbar",
+    "tree-view": "nz-tree",
+    "truncate": "nz-truncate",
+    "typing-indicator": "nz-thinking",
+    "upload": "nz-filezona",
+    "visually-hidden": "nz-visually-hidden",
+    "window": "nz-window",
 }
+
+
+# ---------------------------------------------------------------------------
+# Anti-patrones: cuándo NO usar cada familia. Solo donde aplica; lo que no
+# está aquí no tiene trampa conocida. Verificado contra las demos reales.
+# ---------------------------------------------------------------------------
+ANTI_PATRONES = {
+    "nz-btn": [
+        "No lo uses para navegación entre páginas: usa `.nz-link` o un elemento del nav.",
+        "No hagas un botón por cada tono del léxico en la misma barra: ≤ 2 momentos de color por grupo.",
+    ],
+    "nz-chart-bar": [
+        "No para magnitudes dispares o de escala incompatible: usa `.nz-chart-tablebar`.",
+    ],
+    "nz-chart-line": [
+        "No para comparar partes de un todo: usa `.nz-chart-donut`.",
+        "No con series desordenadas en el eje X: la línea implica continuidad temporal.",
+    ],
+    "nz-chart-donut": [
+        "No con más de 5-6 porciones: se vuelve ilegible; usa una tabla o barras.",
+        "No para series temporales: usa `.nz-chart-line` o `.nz-chart-bar`.",
+    ],
+    "nz-kpi": [
+        "No lo uses como contenedor genérico de texto: es una cifra con contexto.",
+    ],
+    "nz-table": [
+        "Si la tabla no cabe y no apilas con `.nz-table-wrap--apilable` + `data-etiqueta`, se corta en móvil.",
+    ],
+    "nz-modal": [
+        "No lo uses para contenido de lectura larga: es una decisión, no una página.",
+        "No lo anides: un diálogo modal dentro de otro rompe el foco.",
+    ],
+    "nz-drawer": [
+        "No para contenido principal de la página: es un panel secundario.",
+    ],
+    "nz-toast": [
+        "No para información que el usuario deba consultar luego: es efímero; usa `.nz-alert` o `.nz-notif`.",
+        "No pongas acciones críticas (confirmar borrado) dentro de un toast.",
+    ],
+    "nz-alert": [
+        "No lo uses como decoración: cada alerta visible es un momento de color de los ≤5 por página.",
+    ],
+    "nz-badge": [
+        "No para texto largo ni frases: es una etiqueta de 1-3 palabras.",
+    ],
+    "nz-avatar": [
+        "No para logotipos de marca: usa `.nz-logomark` / `.nz-logo-nube`.",
+    ],
+    "nz-tabs": [
+        "No para pasos secuenciales de un proceso: eso es `.nz-stepper`.",
+    ],
+    "nz-stepper": [
+        "No para navegación libre entre secciones: los pasos tienen orden; eso es `.nz-tabs`.",
+    ],
+    "nz-popover": [
+        "No para contenido crítico ni interactivo complejo: es información contextual al vuelo.",
+    ],
+    "nz-pagination": [
+        "No para un scroll infinito o feed: la paginación es para conjuntos acotados.",
+    ],
+    "nz-skeleton": [
+        "No para cargas < 300ms: parpadea y estorba. Solo esperas perceptibles.",
+    ],
+    "nz-progress": [
+        "No para operaciones indeterminadas: para eso existe el spinner/`.nz-spinner`.",
+    ],
+    "nz-chat": [
+        "No como contenedor estático: el chat implica hilo con participación de dos partes.",
+    ],
+    "nz-prompt": [
+        "No lo uses como input de formulario normal: es la entrada de un asistente IA.",
+    ],
+    "nz-kanban": [
+        "No para más de 5-6 columnas: se rompe en móvil; agrupa estados.",
+    ],
+    "nz-galeria": [
+        "No para contenido crítico solo visible en el carrusel: lo que importa, fuera del carrusel.",
+    ],
+    "nz-hero-bleed": [
+        "Uno por página. No apiles héroes.",
+    ],
+    "nz-dash-grid": [
+        "No metas contenido de lectura larga: es una rejilla de módulos de datos.",
+    ],
+    "nz-collapsible": [
+        "No ocultes información esencial de decisión: si el usuario la necesita siempre, visible.",
+    ],
+    "nz-empty": [
+        "No como excusa: un estado vacío guía a la siguiente acción, no solo anuncia vacío.",
+    ],
+    "nz-arbol": [
+        "No para jerarquías de 2 niveles planas: una lista o el nav basta.",
+    ],
+    "nz-timeline": [
+        "No para eventos sin orden temporal: la línea implica cronología.",
+    ],
+    "nz-meter": [
+        "No para porcentajes que no empiezan en 0 o con valor negativo: mide un llenado.",
+    ],
+    "nz-switch": [
+        "No para acciones (guardar, aplicar): un switch es un estado persistente, no un botón.",
+    ],
+    "nz-navbar": [
+        "No para navegación interna de una vista: es la barra global de la página.",
+    ],
+}
+
+# ---------------------------------------------------------------------------
+# Léxico cerrado de modificadores (AGENTS.md §4). Sirve para separar, en cada
+# familia, qué modificadores son del léxico compartido y cuáles son propios.
+# ---------------------------------------------------------------------------
+MOD_LEXICO = {
+    "2xs", "xs", "sm", "lg", "xl", "2xl",
+    "brand", "accent", "success", "warning", "danger", "info", "neutral",
+    "solid", "soft", "outline", "ghost",
+    "vertical", "horizontal", "inline", "compact", "spacious", "center",
+    "between", "end",
+    "square", "rounded", "pill",
+    "flat", "raised",
+}
+
+
+def clases_declaradas_pack(pack):
+    """Clases que un pack declara como propias (mismo criterio del censo)."""
+    return bc.clases_declaradas(PACKS_DIR / pack)
+
+
+def reglas_css(pack):
+    """Lista de (selector, cuerpo) de primer nivel y de cualquier profundidad."""
+    css = (PACKS_DIR / pack).read_text(encoding="utf-8", errors="replace")
+    css = bc.COMENTARIO_CSS.sub(" ", css)
+    out, depth, buf, sel = [], 0, "", ""
+    for ch in css:
+        if ch == "{":
+            if depth == 0:
+                sel, buf = buf.strip(), ""
+            else:
+                buf += ch
+            depth += 1
+        elif ch == "}":
+            depth -= 1
+            if depth == 0:
+                out.append((sel, buf))
+                buf, sel = "", ""
+            else:
+                buf += ch
+        else:
+            buf += ch
+    return out
+
+
+CLASE_SEL = re.compile(r"\.(nz-[A-Za-z0-9_-]+)")
+TOKEN_VAR = re.compile(r"(--nz-[a-z0-9-]+)")
+CLASE_ATTR = re.compile(r'class="([^"]*)"')
+TAG = re.compile(r"<([a-zA-Z][a-zA-Z0-9]*)((?:\"[^\"]*\"|[^\">])*?)(/?)>", re.S)
+VOID = {"img", "br", "hr", "input", "link", "meta", "source",
+        "area", "base", "col", "embed", "track", "wbr"}
+
+
+def clases_de_markup_attr(attrs):
+    m = re.search(r'class="([^"]*)"', attrs)
+    return {t for t in m.group(1).split() if t.startswith("nz-")} if m else set()
+
+
+def fragmento_elemento(mu, m):
+    """HTML balanceado del elemento que empieza en m."""
+    if m.group(1).lower() in VOID or m.group(3):
+        return m.group(0)
+    tag = m.group(1)
+    depth = 0
+    for m2 in re.finditer(r"</?" + tag + r'(?:\"[^\"]*\"|[^\">])*?(/?)>', mu[m.start():], re.S):
+        f2 = m2.group(0)
+        depth += -1 if f2.startswith("</") else (0 if f2.endswith("/>") else 1)
+        if depth == 0:
+            return mu[m.start():m.start() + m2.end()]
+    return m.group(0)
+
+
+def markup_minimo(base, tope=1200):
+    """Markup mínimo de ejemplo de una familia: el elemento más pequeño de las
+    demos reales cuyo class lleva la familia. Preferido: el elemento raíz
+    (`.nz-base` o `.nz-base--mod`), no una sub-parte `__`. Nada a mano."""
+    mejor = None
+    for cat in sorted(specs_por_cat):
+        for demo in specs_por_cat[cat]["demos"]:
+            mu = demo["markup"]
+            for m in TAG.finditer(mu):
+                cls = clases_de_markup_attr(m.group(2))
+                if base not in {bc.base_de(c) for c in cls}:
+                    continue
+                cand = fragmento_elemento(mu, m)
+                if len(cand) > tope:
+                    continue
+                raiz = any(c2 == base or c2.startswith(base + "--") for c2 in cls)
+                clave = (0 if raiz else 1, len(cand))
+                if mejor is None or clave < mejor[0]:
+                    mejor = (clave, cat, demo, cand)
+    if mejor is None:
+        return {"demo": "", "titulo": "", "markup": ""}
+    clave, cat, demo, snip = mejor
+    return {"demo": f"paginas/{specs_por_cat[cat]['fichero']}",
+            "titulo": demo["titulo"], "markup": snip}
+
+
+def tokens_de_familia(familias_del_pack, pack):
+    """Tokens --nz-* que consume cada familia dentro de su pack."""
+    consumo = {}
+    for sel, body in reglas_css(pack):
+        cs = CLASE_SEL.findall(sel)
+        cs = [c for c in cs if bc.base_de(c) in familias_del_pack]
+        if not cs:
+            continue
+        toks = set(TOKEN_VAR.findall(body))
+        for f in {bc.base_de(c) for c in cs}:
+            consumo.setdefault(f, set()).update(toks)
+    return consumo
+
 
 # ---------------------------------------------------------------------------
 # Combos: qué packs enlazar según el tipo de página. Siempre tokens.css +
@@ -142,8 +487,10 @@ def inventario_tokens():
 
 
 def main():
+    global specs_por_cat
     packs, censo_cat, total_clases, total_bases = bc.censo()
     specs = {s["cat"]: s for s in bc.carga_specs()}
+    specs_por_cat = specs
     total_demos = sum(len(s["demos"]) for s in specs.values())
 
     objetos = {}
@@ -162,6 +509,26 @@ def main():
                 o["modificadores"].append(resto.split("--", 1)[1])
             if "__" in clase:
                 o["partes"].append(clase.split("__", 1)[1])
+
+    # --- v9.1: enriquecer cada familia (tokens consumidos, markup mínimo, anti-patrones) ---
+    global PACKS_DIR
+    PACKS_DIR = bc.PACKS
+    consumo_total = {}
+    for cat, datos in censo_cat.items():
+        consumo_total.update(tokens_de_familia(set(datos["bases"]), datos["pack"]))
+    for base, o in objetos.items():
+        toks = sorted(consumo_total.get(base, set()))
+        o["tokens"] = toks
+        o["nTokens"] = len(toks)
+        o["markup"] = markup_minimo(base)
+        ap = ANTI_PATRONES.get(base)
+        if ap:
+            o["noUsar"] = ap
+        # modificadores del léxico que la familia declara de verdad
+        mod_lexico = sorted(
+            m for m in o["modificadores"]
+            if m in MOD_LEXICO)
+        o["modificadoresLexico"] = mod_lexico
 
     # alias inverso: validar que la clase destino existe de verdad
     clases_totales = set()
@@ -202,6 +569,10 @@ def main():
             "demos": total_demos,
             "tokens": len(tokens),
             "tokensDark": len(dark),
+            "alias": len(alias_validos),
+            "familiasConMarkup": sum(1 for o in objetos.values() if o["markup"]["markup"]),
+            "familiasConAntiPatron": sum(1 for o in objetos.values() if "noUsar" in o),
+            "tokensConsumidosPorFamilias": len({t for o in objetos.values() for t in o["tokens"]}),
         },
         "packs": {
             datos_pack["pack"]: {
@@ -462,10 +833,59 @@ completa machine-readable), `paginas/` (catálogo con una demo viva por objeto),
 Hecho con ❤️ por David Antizar
 """
     (ROOT / "LLM.md").write_text(llm, encoding="utf-8")
+
+    # ---------- llms.txt (estándar para crawlers de LLMs) ----------
+    llms = f"""# Aurora — design system CSS puro (v{VERSION})
+
+> Sistema de diseño CSS-only, sin build y sin dependencias. Namespace `.nz-`,
+> tokens `--nz-*`, BEM, mobile-first. {total_clases} clases en {total_bases} familias,
+> {len(censo_cat)} packs. Sin gradientes, sin glass, sin `!important`.
+
+Documentos para agentes (léelos en este orden):
+
+- [LLM.md]({CDN}LLM.md): guía de decisión (~7 KB). Qué packs enlazar por CDN,
+  qué clases usar por necesidad, léxico de modificadores, marca/acento y
+  anti-patrones globales. Empieza aquí.
+- [components.json]({CDN}components.json): API machine-readable completa. Por
+  familia: clases, partes `__`, modificadores (los del léxico en
+  `modificadoresLexico`), tokens `--nz-*` que consume, markup mínimo de
+  ejemplo extraído de las demos reales y `noUsar` (anti-patrones). Alias
+  EN→ES en `alias`.
+- [examples/]({CDN}): 5 páginas completas listas para copiar (login,
+  dashboard, landing, chat-ia, forms).
+- [paginas/]({CDN}): catálogo vivo con una demo real por objeto.
+- [COMPOSICION.md]({CDN}COMPOSICION.md): contrato de composición que el lint
+  comprueba (protagonista, acento, jerarquía, densidad, estados).
+- [AGENTS.md]({CDN}AGENTS.md): reglas duras del repo.
+
+Reglas mínimas que no se negocian:
+
+1. No pegues los packs en el prompt (~340 KB). Enlaza por CDN pineado:
+   `{CDN}tokens.css` + `{CDN}packs/all.css` (o los packs que uses).
+2. `<html lang="es" data-nz-theme="light">` + `<body class="nz">`.
+3. Toda clase pública empieza por `.nz-`. Si no está en `components.json`,
+   no existe: no la inventes.
+4. Color siempre por token `var(--nz-*)`. Cero colores a mano, cero
+   gradientes, cero `backdrop-filter` (excepción: la capa `.nz-cristal`).
+5. Mobile-first: base 1 columna, se crece con `min-width`. Táctil 44px.
+6. Marca con `data-nz-marca="aurora|indigo|esmeralda|violeta|carmesi"`;
+   la marca es estructura, el acento es el dato que importa.
+
+Hecho con ❤️ por David Antizar
+"""
+    (ROOT / "llms.txt").write_text(llms, encoding="utf-8")
+
+    n_markup = sum(1 for o in objetos.values() if o["markup"]["markup"])
+    n_anti = sum(1 for o in objetos.values() if "noUsar" in o)
     print(f"components.json → {len(objetos)} familias, {total_clases} clases, "
           f"{len(tokens)} tokens (+{len(dark)} dark), {len(alias_validos)} alias, "
           f"{len(COMBOS)} combos")
+    print(f"  familias con markup mínimo: {n_markup}/{len(objetos)} · "
+          f"con anti-patrones: {n_anti} · "
+          f"tokens consumidos por familias: "
+          f"{len({t for o in objetos.values() for t in o['tokens']})}")
     print(f"LLM.md → {len(llm)} bytes")
+    print(f"llms.txt → {len(llms)} bytes")
 
 
 if __name__ == "__main__":

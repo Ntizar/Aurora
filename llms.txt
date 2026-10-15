@@ -1,0 +1,37 @@
+# Aurora — design system CSS puro (v8.4.2)
+
+> Sistema de diseño CSS-only, sin build y sin dependencias. Namespace `.nz-`,
+> tokens `--nz-*`, BEM, mobile-first. 2184 clases en 409 familias,
+> 18 packs. Sin gradientes, sin glass, sin `!important`.
+
+Documentos para agentes (léelos en este orden):
+
+- [LLM.md](https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v8.4.2/LLM.md): guía de decisión (~7 KB). Qué packs enlazar por CDN,
+  qué clases usar por necesidad, léxico de modificadores, marca/acento y
+  anti-patrones globales. Empieza aquí.
+- [components.json](https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v8.4.2/components.json): API machine-readable completa. Por
+  familia: clases, partes `__`, modificadores (los del léxico en
+  `modificadoresLexico`), tokens `--nz-*` que consume, markup mínimo de
+  ejemplo extraído de las demos reales y `noUsar` (anti-patrones). Alias
+  EN→ES en `alias`.
+- [examples/](https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v8.4.2/): 5 páginas completas listas para copiar (login,
+  dashboard, landing, chat-ia, forms).
+- [paginas/](https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v8.4.2/): catálogo vivo con una demo real por objeto.
+- [COMPOSICION.md](https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v8.4.2/COMPOSICION.md): contrato de composición que el lint
+  comprueba (protagonista, acento, jerarquía, densidad, estados).
+- [AGENTS.md](https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v8.4.2/AGENTS.md): reglas duras del repo.
+
+Reglas mínimas que no se negocian:
+
+1. No pegues los packs en el prompt (~340 KB). Enlaza por CDN pineado:
+   `https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v8.4.2/tokens.css` + `https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v8.4.2/packs/all.css` (o los packs que uses).
+2. `<html lang="es" data-nz-theme="light">` + `<body class="nz">`.
+3. Toda clase pública empieza por `.nz-`. Si no está en `components.json`,
+   no existe: no la inventes.
+4. Color siempre por token `var(--nz-*)`. Cero colores a mano, cero
+   gradientes, cero `backdrop-filter` (excepción: la capa `.nz-cristal`).
+5. Mobile-first: base 1 columna, se crece con `min-width`. Táctil 44px.
+6. Marca con `data-nz-marca="aurora|indigo|esmeralda|violeta|carmesi"`;
+   la marca es estructura, el acento es el dato que importa.
+
+Hecho con ❤️ por David Antizar
