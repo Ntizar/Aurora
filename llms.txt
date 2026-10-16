@@ -16,6 +16,10 @@ Documentos para agentes (léelos en este orden):
   EN→ES en `alias`.
 - [examples/](https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v8.4.2/): 5 páginas completas listas para copiar (login,
   dashboard, landing, chat-ia, forms).
+- [combos/](https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v8.4.2/): esqueleto markup de cada tipo de página (landing,
+  dashboard, chat-ia, login-form, e-commerce, escritorio-app, charla-beats,
+  prototipo) con clases reales validadas; mapa en `components.json`
+  (`combos` y `combosEsqueleto`).
 - [paginas/](https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v8.4.2/): catálogo vivo con una demo real por objeto.
 - [COMPOSICION.md](https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v8.4.2/COMPOSICION.md): contrato de composición que el lint
   comprueba (protagonista, acento, jerarquía, densidad, estados).
@@ -31,7 +35,7 @@ Reglas mínimas que no se negocian:
 4. Color siempre por token `var(--nz-*)`. Cero colores a mano, cero
    gradientes, cero `backdrop-filter` (excepción: la capa `.nz-cristal`).
 5. Mobile-first: base 1 columna, se crece con `min-width`. Táctil 44px.
-6. Marca con `data-nz-marca="aurora|indigo|esmeralda|violeta|carmesi"`;
+6. Marca con `data-nz-marca="aurora|indigo|esmeralda|violeta|carmesi|ntizar"`;
    la marca es estructura, el acento es el dato que importa.
 
 Hecho con ❤️ por David Antizar

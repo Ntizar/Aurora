@@ -16,6 +16,13 @@ Novedades v9.1 (Fase B del plan Aurora 9):
   · alias ampliados 32 → 150 al vocabulario natural de los LLMs (verificados
     contra el censo; el generador aborta si alguno apunta a algo inexistente)
   · llms.txt en la raíz apuntando a LLM.md, components.json y examples/
+  · punto 5 de la Fase B: cada combo genera además su MARKUP ESQUELETO en
+    combos/<combo>.html (receta de arranque completa con las clases reales
+    del sistema). Nada se escribe a mano: los bloques se EXTRAEN de las demos
+    reales de specs/ y se validan contra el censo de los packs — si una clase
+    del esqueleto no existe, o una familia no pertenece a los packs del combo,
+    el generador ABORTA. El esqueleto también viaja en components.json
+    (clave `combosEsqueleto`) para que un LLM lo descubra sin leer el disco.
 
 Novedades v7.2:
   · inventario completo de tokens (--nz-*) desde tokens.css (root + dark)
@@ -441,7 +448,7 @@ COMBOS = {
     },
     "escritorio-app": {
         "packs": ["p1-layout.css", "p2-navigation.css", "p3-typography.css",
-                  "p4-actions.css", "p8-data.css", "p15-apps.css"],
+                  "p4-actions.css", "p6-feedback.css", "p8-data.css", "p15-apps.css"],
         "tipico": "window + appnav + kanban/agenda + statusbar",
     },
     "e-commerce": {
@@ -459,6 +466,179 @@ COMBOS = {
         "tipico": "exploración rápida: un solo enlace con todos los packs",
     },
 }
+
+# Punto 5 de la Fase B: qué familias del sistema forman el esqueleto de cada
+# combo. El generador extrae el bloque de cada una de las demos reales de
+# specs/, valida todas las clases contra el censo y comprueba que la familia
+# declara clases en los packs del combo. Si algo no cuadra, ABORTA.
+FAMILIAS_COMBO = {
+    "landing": ["nz-hero-bleed", "nz-thirds", "nz-plans", "nz-badge",
+                 "nz-footer"],
+    "dashboard": ["nz-navbar", "nz-dash-grid", "nz-kpi", "nz-table",
+                   "nz-chart", "nz-chart-bar"],
+    "chat-ia": ["nz-chat", "nz-prompt", "nz-toolcall", "nz-taskplan"],
+    "login-form": ["nz-article", "nz-h2", "nz-lead", "nz-field", "nz-btn",
+                    "nz-alert"],
+    "escritorio-app": ["nz-window", "nz-appnav", "nz-kanban", "nz-statusbar"],
+    "e-commerce": ["nz-product", "nz-cart", "nz-checkout-steps",
+                    "nz-pricetable"],
+    "charla-beats": ["nz-recorrido", "nz-escenario", "nz-nodo", "nz-qr"],
+    "prototipo": ["nz-btn", "nz-field", "nz-alert", "nz-kpi"],
+}
+
+
+# ---------------------------------------------------------------------------
+# Punto 5 de la Fase B: markup esqueleto por combo. Cada combo declara QUÉ
+# familias del sistema forman su página típica; el generador EXTRAe el bloque
+# de cada familia de las demos reales de specs/ (nada a mano, nada inventado),
+# valida todas las clases contra el censo de los packs y compone una receta de
+# arranque completa en combos/<combo>.html. Si una clase no existe o una
+# familia no pertenece a los packs del combo, el generador ABORTA.
+# ---------------------------------------------------------------------------
+
+def _clases_de_markup_attr(attrs):
+    """Clases nz-* de una cadena de atributos de etiqueta de apertura."""
+    m = re.search(r'class="([^"]*)"', attrs)
+    return {t for t in m.group(1).split() if t.startswith("nz-")} if m else set()
+
+
+def _fragmento_elemento(mu, m):
+    """HTML balanceado del elemento que empieza en m (comparte lógica con
+    markup_minimo, pero sin tope: un bloque de combo puede ser más largo)."""
+    if m.group(1).lower() in VOID or m.group(3):
+        return m.group(0)
+    tag = m.group(1)
+    depth = 0
+    for m2 in re.finditer(r"</?" + tag + r'(?:\"[^\"]*\"|[^\">])*?(/?)>',
+                          mu[m.start():], re.S):
+        f2 = m2.group(0)
+        depth += -1 if f2.startswith("</") else (0 if f2.endswith("/>") else 1)
+        if depth == 0:
+            return mu[m.start():m.start() + m2.end()]
+    return m.group(0)
+
+
+def _recorta_clases_shell(frag):
+    """Quita de los class= las clases del shell del catálogo (demo-*, cat-*).
+
+    Algunas demos de rejilla usan .demo-box como caja de relleno dentro del
+    objeto real (el propio p1 usa demo-box en sus demos de layout). El
+    esqueleto debe llevar solo clases del sistema: se dean las nz-* y las cajas
+    quedan como <div> — con texto de la demo dentro, que es contenido, no clase.
+    """
+    def limpia(m):
+        nz = sorted(t for t in m.group(1).split() if t.startswith("nz-"))
+        return f'class="{" ".join(nz)}"' if nz else ""
+    return re.sub(r'class="([^"]*)"', limpia, frag)
+
+
+def markup_de_familia(base, clases_totales, tope=6000, admite_shell=True):
+    """Bloque de demo real de una familia, con criterio de preferencia:
+    1) demo sin clases del shell del catálogo; 2) class exactamente la familia
+    base (no solo un modificador); 3) raíz de familia (base o base--mod);
+    4) más clases nz-* usadas (más completo); 5) más corto. Devuelve None si no
+    hay ninguna demo que lo represente sin clases inventadas."""
+    mejor = None
+    for cat in sorted(specs_por_cat):
+        for demo in specs_por_cat[cat]["demos"]:
+            mu = demo["markup"]
+            con_shell = "demo-" in mu or "cat-" in mu
+            if con_shell and not admite_shell:
+                continue
+            for m in TAG.finditer(mu):
+                cls = _clases_de_markup_attr(m.group(2))
+                if base not in {bc.base_de(c) for c in cls}:
+                    continue
+                frag = _fragmento_elemento(mu, m)
+                usadas = set(bc.clases_de_markup(frag))
+                if any(c not in clases_totales for c in usadas):
+                    continue
+                if len(frag) > tope:
+                    continue
+                exacta = base in cls
+                raiz = any(c == base or c.startswith(base + "--") for c in cls)
+                clave = (1 if con_shell else 0, 0 if exacta else 1,
+                         0 if raiz else 1, -len(usadas), len(frag))
+                if mejor is None or clave < mejor[0]:
+                    mejor = (clave, frag)
+    if mejor is None:
+        return None
+    return _recorta_clases_shell(mejor[1])
+
+
+def _familia_en_packs(base, packs_combo):
+    """¿La familia declara clases en alguno de los packs del combo?"""
+    for pack in packs_combo:
+        f = PACKS_DIR / pack
+        if f.exists() and any(c == base or c.startswith(base + "__")
+                              or c.startswith(base + "--")
+                              for c in clases_declaradas_pack(pack)):
+            return True
+    return False
+
+
+def esqueleto_de_combo(nombre, combo, censo_cat, clases_totales):
+    """Devuelve (esqueleto, familias_usadas) del combo o aborta con error claro."""
+    packs_combo = combo["packs"]
+    prototipo = packs_combo == ["all.css"]
+    bloques = []
+    familias_usadas = []
+    for base in FAMILIAS_COMBO.get(nombre, []):
+        if base not in clases_totales:
+            sys.exit(f"COMBO ROTO: {nombre} pide la familia {base} "
+                     f"y no existe en el censo de los packs")
+        if not prototipo and not _familia_en_packs(base, packs_combo):
+            sys.exit(f"COMBO ROTO: la familia {base} del combo {nombre} "
+                     f"no declara clases en los packs del combo {packs_combo}")
+        frag = markup_de_familia(base, clases_totales)
+        if frag is None:
+            sys.exit(f"COMBO ROTO: la familia {base} del combo {nombre} "
+                     f"no tiene ninguna demo real en specs/ de la que extraer "
+                     f"su bloque (o sus demos usan clases fuera del censo)")
+        bloques.append((base, frag))
+        familias_usadas.append(base)
+    if not bloques:
+        sys.exit(f"COMBO ROTO: {nombre} no declara familias esqueleto "
+                 f"(FAMILIAS_COMBO)")
+    return bloques, familias_usadas
+
+
+def pagina_combo(nombre, combo, bloques, familias_usadas):
+    """Receta de arranque completa: <head> con los packs del combo en CDN +
+    el esqueleto de cada familia con comentario «Necesito X → uso Y»."""
+    L = []
+    A = L.append
+    cdn_links = "\n".join(
+        f'  <link rel="stylesheet" href="{CDN}packs/{p}">' if p != "all.css"
+        else f'  <link rel="stylesheet" href="{CDN}packs/all.css">'
+        for p in combo["packs"])
+    A(f'<!-- Esqueleto del combo «{nombre}» — GENERADO por '
+      f'scripts/generar-llm-docs.py, no se edita a mano.')
+    A(f'     Bloques extraídos de las demos reales de specs/ y validados')
+    A(f'     contra el censo de los packs: cada clase existe de verdad.')
+    A(f'     {combo["tipico"]}. -->')
+    A('<!DOCTYPE html>')
+    A('<html lang="es" data-nz-theme="light">')
+    A("<head>")
+    A('<meta charset="utf-8">')
+    A('<meta name="viewport" content="width=device-width, initial-scale=1">')
+    A(f"<title>Aurora · combo {nombre}</title>")
+    A(f'  <link rel="stylesheet" href="{CDN}tokens.css">')
+    A(cdn_links)
+    A("</head>")
+    A('<body class="nz">')
+    A('')
+    for base, frag in bloques:
+        A(f'  <!-- {base} (bloque de demo real) -->')
+        A("  " + frag)
+        A('')
+    A('<footer class="nz-footer nz-footer--compact">')
+    A(f'  Esqueleto del combo «{nombre}» de Aurora · Hecho con ❤️ por David Antizar')
+    A('</footer>')
+    A('')
+    A("</body>")
+    A("</html>")
+    return "\n".join(L) + "\n"
 
 
 def inventario_tokens():
@@ -545,6 +725,24 @@ def main():
     if len(tokens) < 100:
         sys.exit(f"INVENTARIO DE TOKENS SOSPECHOSO: solo {len(tokens)} en :root")
 
+    # --- punto 5 Fase B: esqueleto de cada combo → combos/<combo>.html ---
+    # Cada bloque sale de las demos reales de specs/ y pasa dos verificaciones
+    # duras: que todas sus clases existan en el censo de los packs y que la
+    # familia declare clases en los packs del combo. Si no, el generador aborta.
+    combos_dir = ROOT / "combos"
+    combos_dir.mkdir(exist_ok=True)
+    combos_esqueleto = {}
+    for nombre_combo, combo in COMBOS.items():
+        bloques, familias_usadas = esqueleto_de_combo(
+            nombre_combo, combo, censo_cat, clases_totales)
+        (combos_dir / f"{nombre_combo}.html").write_text(
+            pagina_combo(nombre_combo, combo, bloques, familias_usadas),
+            encoding="utf-8")
+        combos_esqueleto[nombre_combo] = {
+            "fichero": f"combos/{nombre_combo}.html",
+            "familias": familias_usadas,
+        }
+
     datos = {
         "name": "Aurora",
         "version": VERSION,
@@ -600,6 +798,7 @@ def main():
         },
         "alias": alias_validos,
         "combos": COMBOS,
+        "combosEsqueleto": combos_esqueleto,
         "tokens_def": tokens,
         "tokens_dark": dark,
         "objetos": objetos,
@@ -617,6 +816,10 @@ def main():
     filas_combos = "\n".join(
         f"| {nombre} | `tokens.css` + `{', '.join(c['packs'])}` | {c['tipico']} |"
         for nombre, c in COMBOS.items())
+
+    filas_esqueleto = "\n".join(
+        f"- `{esq['fichero']}` — esqueleto **{nombre}**: {', '.join(f'`{f}`' for f in esq['familias'])}"
+        for nombre, esq in sorted(combos_esqueleto.items()))
 
     filas_alias = "\n".join(
         f"| «{ingles}» | `{clase}` |"
@@ -651,6 +854,14 @@ van cada uno. Dark mode: cambia a `data-nz-theme="dark"` en el `<html>`.
 
 Carga **solo los packs que uses** en producción (cada uno pesa 12-40 KB) o
 `packs/all.css` para prototipos. `tokens.css` siempre primero.
+
+**Esqueletos listos para arrancar** (markup de cada tipo de página con las
+clases reales del sistema, extraído y validado de las demos — cópialos):
+
+{filas_esqueleto}
+
+La lista completa de familias y su fichero está en `components.json`
+(clave `combosEsqueleto`).
 
 ## 3. Mapa de categorías (API completa en `components.json`)
 
@@ -765,11 +976,11 @@ aparece en `components.json`, **no la inventes**.
 La marca **no se toca en CSS**: se elige con un atributo en el `<html>`.
 
 ```html
-<html lang="es" data-nz-theme="light" data-nz-marca="aurora">
+<html lang="es" data-nz-theme="light" data-nz-marca="ntizar">
 ```
 
 - Presets incluidos: `aurora` (defecto, azul + naranja), `indigo`, `esmeralda`, `violeta`,
-  `carmesi`. Un `data-nz-marca` desconocido cae en `aurora` sin romper nada.
+  `carmesi`, `ntizar` (azul eléctrico #0057ff + naranja #ff6a00). Un `data-nz-marca` desconocido cae en `aurora` sin romper nada.
 - **Los dos colores no son intercambiables**:
   - **Marca** = estructura. Navegación activa, enlaces, foco, botón primario, 1ª serie.
   - **Acento** = **el dato que importa y la acción secundaria**: el delta de un KPI,
@@ -853,6 +1064,10 @@ Documentos para agentes (léelos en este orden):
   EN→ES en `alias`.
 - [examples/]({CDN}): 5 páginas completas listas para copiar (login,
   dashboard, landing, chat-ia, forms).
+- [combos/]({CDN}): esqueleto markup de cada tipo de página (landing,
+  dashboard, chat-ia, login-form, e-commerce, escritorio-app, charla-beats,
+  prototipo) con clases reales validadas; mapa en `components.json`
+  (`combos` y `combosEsqueleto`).
 - [paginas/]({CDN}): catálogo vivo con una demo real por objeto.
 - [COMPOSICION.md]({CDN}COMPOSICION.md): contrato de composición que el lint
   comprueba (protagonista, acento, jerarquía, densidad, estados).
@@ -868,7 +1083,7 @@ Reglas mínimas que no se negocian:
 4. Color siempre por token `var(--nz-*)`. Cero colores a mano, cero
    gradientes, cero `backdrop-filter` (excepción: la capa `.nz-cristal`).
 5. Mobile-first: base 1 columna, se crece con `min-width`. Táctil 44px.
-6. Marca con `data-nz-marca="aurora|indigo|esmeralda|violeta|carmesi"`;
+6. Marca con `data-nz-marca="aurora|indigo|esmeralda|violeta|carmesi|ntizar"`;
    la marca es estructura, el acento es el dato que importa.
 
 Hecho con ❤️ por David Antizar
@@ -879,7 +1094,7 @@ Hecho con ❤️ por David Antizar
     n_anti = sum(1 for o in objetos.values() if "noUsar" in o)
     print(f"components.json → {len(objetos)} familias, {total_clases} clases, "
           f"{len(tokens)} tokens (+{len(dark)} dark), {len(alias_validos)} alias, "
-          f"{len(COMBOS)} combos")
+          f"{len(COMBOS)} combos ({len(combos_esqueleto)} con esqueleto)")
     print(f"  familias con markup mínimo: {n_markup}/{len(objetos)} · "
           f"con anti-patrones: {n_anti} · "
           f"tokens consumidos por familias: "

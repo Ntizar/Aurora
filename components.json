@@ -450,6 +450,7 @@
     "p2-navigation.css",
     "p3-typography.css",
     "p4-actions.css",
+    "p6-feedback.css",
     "p8-data.css",
     "p15-apps.css"
    ],
@@ -479,6 +480,85 @@
     "all.css"
    ],
    "tipico": "exploración rápida: un solo enlace con todos los packs"
+  }
+ },
+ "combosEsqueleto": {
+  "landing": {
+   "fichero": "combos/landing.html",
+   "familias": [
+    "nz-hero-bleed",
+    "nz-thirds",
+    "nz-plans",
+    "nz-badge",
+    "nz-footer"
+   ]
+  },
+  "dashboard": {
+   "fichero": "combos/dashboard.html",
+   "familias": [
+    "nz-navbar",
+    "nz-dash-grid",
+    "nz-kpi",
+    "nz-table",
+    "nz-chart",
+    "nz-chart-bar"
+   ]
+  },
+  "chat-ia": {
+   "fichero": "combos/chat-ia.html",
+   "familias": [
+    "nz-chat",
+    "nz-prompt",
+    "nz-toolcall",
+    "nz-taskplan"
+   ]
+  },
+  "login-form": {
+   "fichero": "combos/login-form.html",
+   "familias": [
+    "nz-article",
+    "nz-h2",
+    "nz-lead",
+    "nz-field",
+    "nz-btn",
+    "nz-alert"
+   ]
+  },
+  "escritorio-app": {
+   "fichero": "combos/escritorio-app.html",
+   "familias": [
+    "nz-window",
+    "nz-appnav",
+    "nz-kanban",
+    "nz-statusbar"
+   ]
+  },
+  "e-commerce": {
+   "fichero": "combos/e-commerce.html",
+   "familias": [
+    "nz-product",
+    "nz-cart",
+    "nz-checkout-steps",
+    "nz-pricetable"
+   ]
+  },
+  "charla-beats": {
+   "fichero": "combos/charla-beats.html",
+   "familias": [
+    "nz-recorrido",
+    "nz-escenario",
+    "nz-nodo",
+    "nz-qr"
+   ]
+  },
+  "prototipo": {
+   "fichero": "combos/prototipo.html",
+   "familias": [
+    "nz-btn",
+    "nz-field",
+    "nz-alert",
+    "nz-kpi"
+   ]
   }
  },
  "tokens_def": [

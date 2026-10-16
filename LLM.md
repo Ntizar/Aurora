@@ -26,13 +26,28 @@ van cada uno. Dark mode: cambia a `data-nz-theme="dark"` en el `<html>`.
 | dashboard | `tokens.css` + `p1-layout.css, p2-navigation.css, p3-typography.css, p4-actions.css, p8-data.css, p13-charts.css` | appshell + navbar + KPIs + tablas + gráficos |
 | chat-ia | `tokens.css` + `p1-layout.css, p3-typography.css, p4-actions.css, p5-forms.css, p14-ai.css` | chat + prompt + toolcall + taskplan + adjuntos |
 | login-form | `tokens.css` + `p1-layout.css, p3-typography.css, p4-actions.css, p5-forms.css, p6-feedback.css` | card centrada + field + input + botón + alerta de error |
-| escritorio-app | `tokens.css` + `p1-layout.css, p2-navigation.css, p3-typography.css, p4-actions.css, p8-data.css, p15-apps.css` | window + appnav + kanban/agenda + statusbar |
+| escritorio-app | `tokens.css` + `p1-layout.css, p2-navigation.css, p3-typography.css, p4-actions.css, p6-feedback.css, p8-data.css, p15-apps.css` | window + appnav + kanban/agenda + statusbar |
 | e-commerce | `tokens.css` + `p1-layout.css, p3-typography.css, p4-actions.css, p10-commerce.css, p8-data.css` | producto + cart + checkout-steps + pricetable |
 | charla-beats | `tokens.css` + `p1-layout.css, p3-typography.css, p4-actions.css, p18-escenario.css` | lienzo 16:9 + titular/editorial/numeral + nodos del diagrama + QR de cierre |
 | prototipo | `tokens.css` + `all.css` | exploración rápida: un solo enlace con todos los packs |
 
 Carga **solo los packs que uses** en producción (cada uno pesa 12-40 KB) o
 `packs/all.css` para prototipos. `tokens.css` siempre primero.
+
+**Esqueletos listos para arrancar** (markup de cada tipo de página con las
+clases reales del sistema, extraído y validado de las demos — cópialos):
+
+- `combos/charla-beats.html` — esqueleto **charla-beats**: `nz-recorrido`, `nz-escenario`, `nz-nodo`, `nz-qr`
+- `combos/chat-ia.html` — esqueleto **chat-ia**: `nz-chat`, `nz-prompt`, `nz-toolcall`, `nz-taskplan`
+- `combos/dashboard.html` — esqueleto **dashboard**: `nz-navbar`, `nz-dash-grid`, `nz-kpi`, `nz-table`, `nz-chart`, `nz-chart-bar`
+- `combos/e-commerce.html` — esqueleto **e-commerce**: `nz-product`, `nz-cart`, `nz-checkout-steps`, `nz-pricetable`
+- `combos/escritorio-app.html` — esqueleto **escritorio-app**: `nz-window`, `nz-appnav`, `nz-kanban`, `nz-statusbar`
+- `combos/landing.html` — esqueleto **landing**: `nz-hero-bleed`, `nz-thirds`, `nz-plans`, `nz-badge`, `nz-footer`
+- `combos/login-form.html` — esqueleto **login-form**: `nz-article`, `nz-h2`, `nz-lead`, `nz-field`, `nz-btn`, `nz-alert`
+- `combos/prototipo.html` — esqueleto **prototipo**: `nz-btn`, `nz-field`, `nz-alert`, `nz-kpi`
+
+La lista completa de familias y su fichero está en `components.json`
+(clave `combosEsqueleto`).
 
 ## 3. Mapa de categorías (API completa en `components.json`)
 
@@ -313,11 +328,11 @@ aparece en `components.json`, **no la inventes**.
 La marca **no se toca en CSS**: se elige con un atributo en el `<html>`.
 
 ```html
-<html lang="es" data-nz-theme="light" data-nz-marca="aurora">
+<html lang="es" data-nz-theme="light" data-nz-marca="ntizar">
 ```
 
 - Presets incluidos: `aurora` (defecto, azul + naranja), `indigo`, `esmeralda`, `violeta`,
-  `carmesi`. Un `data-nz-marca` desconocido cae en `aurora` sin romper nada.
+  `carmesi`, `ntizar` (azul eléctrico #0057ff + naranja #ff6a00). Un `data-nz-marca` desconocido cae en `aurora` sin romper nada.
 - **Los dos colores no son intercambiables**:
   - **Marca** = estructura. Navegación activa, enlaces, foco, botón primario, 1ª serie.
   - **Acento** = **el dato que importa y la acción secundaria**: el delta de un KPI,

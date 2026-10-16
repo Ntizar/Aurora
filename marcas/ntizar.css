@@ -1,0 +1,28 @@
+/* Aurora · marca «ntizar» — generado por scripts/generar-marca.py
+   marca #0057ff · acento #ff6a00 · rampas OKLCH de luz uniforme
+   marca y acento tal cual se pidieron
+   Activa con: <html data-nz-marca="ntizar">
+   Hecho con ❤️ por David Antizar */
+
+[data-nz-marca="ntizar"] {
+  /* rampa de marca (primario) */
+  --nz-marca-50: #ecf3ff;
+  --nz-marca-100: #dae7ff;
+  --nz-marca-200: #c1d7ff;
+  --nz-marca-300: #9abdff;
+  --nz-marca-400: #6599ff;
+  --nz-marca-500: #3a7aff;
+  --nz-marca-600: #0057ff;
+  --nz-marca-700: #004adc;
+  --nz-marca-800: #003cb7;
+  --nz-marca-900: #0a3693;
+  /* rampa de acento (secundario) */
+  --nz-acento-50: #ffddce;
+  --nz-acento-100: #ffd3c0;
+  --nz-acento-200: #ffc4aa;
+  --nz-acento-300: #ffad88;
+  --nz-acento-400: #ff8a53;
+  --nz-acento-500: #ff6a00;
+  --nz-acento-600: #ce5400;
+  --nz-acento-700: #ab4400;
+}

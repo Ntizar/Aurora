@@ -153,5 +153,34 @@
     "marca_ajustada_aa": false,
     "contraste_marca_600": 4.83,
     "contraste_ok": true
+  },
+  {
+    "nombre": "ntizar",
+    "marca": "#0057ff",
+    "acento": "#ff6a00",
+    "marca_rampa": {
+      "50": "#ecf3ff",
+      "100": "#dae7ff",
+      "200": "#c1d7ff",
+      "300": "#9abdff",
+      "400": "#6599ff",
+      "500": "#3a7aff",
+      "600": "#0057ff",
+      "700": "#004adc",
+      "800": "#003cb7",
+      "900": "#0a3693"
+    },
+    "acento_rampa": {
+      "50": "#ffddce",
+      "100": "#ffd3c0",
+      "200": "#ffc4aa",
+      "300": "#ffad88",
+      "400": "#ff8a53",
+      "500": "#ff6a00",
+      "600": "#ce5400",
+      "700": "#ab4400"
+    },
+    "marca_original": "#0057ff",
+    "acento_original": "#ff6a00"
   }
 ]
