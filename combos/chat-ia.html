@@ -1,0 +1,37 @@
+<!-- Esqueleto del combo «chat-ia» — GENERADO por scripts/generar-llm-docs.py, no se edita a mano.
+     Bloques extraídos de las demos reales de specs/ y validados
+     contra el censo de los packs: cada clase existe de verdad.
+     chat + prompt + toolcall + taskplan + adjuntos. -->
+<!DOCTYPE html>
+<html lang="es" data-nz-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Aurora · combo chat-ia</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v8.4.2/tokens.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v8.4.2/packs/p1-layout.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v8.4.2/packs/p3-typography.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v8.4.2/packs/p4-actions.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v8.4.2/packs/p5-forms.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v8.4.2/packs/p14-ai.css">
+</head>
+<body class="nz">
+
+  <!-- nz-chat (bloque de demo real) -->
+  <div class="nz-chat nz-chat--compacto"><div class="nz-chat__head"><span class="nz-chat__title">Soporte</span><span class="nz-chat__status">en linea</span></div><div class="nz-chat__body"><div class="nz-msg nz-msg--usuario"><span class="nz-msg__avatar" aria-hidden="true"></span><div class="nz-msg__body"><div class="nz-msg__author">usuario</div><div class="nz-msg__bubble"><p class="nz-msg__text">Mensaje de ejemplo con tono usuario.</p></div></div></div><div class="nz-msg nz-msg--asistente"><span class="nz-msg__avatar" aria-hidden="true"></span><div class="nz-msg__body"><div class="nz-msg__author">asistente</div><div class="nz-msg__bubble"><p class="nz-msg__text">Mensaje de ejemplo con tono asistente.</p></div></div></div></div></div>
+
+  <!-- nz-prompt (bloque de demo real) -->
+  <div class="nz-prompt"><button class="nz-prompt__attach" aria-label="Adjuntar archivo">+</button><textarea class="nz-prompt__input" rows="1" placeholder="Pregunta lo que quieras…" aria-label="Pregunta lo que quieras"></textarea><button class="nz-prompt__send">Enviar</button></div>
+
+  <!-- nz-toolcall (bloque de demo real) -->
+  <div class="nz-toolcall"><div class="nz-toolcall__head"><span class="nz-toolcall__name">guardar_nota</span><span class="nz-toolcall__status nz-toolcall__status--error">✗ error</span></div><div class="nz-toolcall__args">{ "texto": "…" }</div><div class="nz-toolcall__result">Permiso denegado por política</div></div>
+
+  <!-- nz-taskplan (bloque de demo real) -->
+  <div class="nz-taskplan"><div class="nz-taskplan__step nz-taskplan__step--done"><span class="nz-taskplan__num">1</span><div><span class="nz-taskplan__label">Leer el pliego</span><span class="nz-taskplan__detail">PDF de 42 páginas</span></div></div><div class="nz-taskplan__step nz-taskplan__step--active"><span class="nz-taskplan__num">2</span><div><span class="nz-taskplan__label">Extraer requisitos</span><span class="nz-taskplan__detail">trabajando…</span></div></div><div class="nz-taskplan__step"><span class="nz-taskplan__num">3</span><div><span class="nz-taskplan__label">Redactar informe</span></div></div><div class="nz-taskplan__step nz-taskplan__step--error"><span class="nz-taskplan__num">4</span><div><span class="nz-taskplan__label">Firmar</span><span class="nz-taskplan__detail">sin credenciales</span></div></div></div>
+
+<footer class="nz-footer nz-footer--compact">
+  Esqueleto del combo «chat-ia» de Aurora · Hecho con ❤️ por David Antizar
+</footer>
+
+</body>
+</html>

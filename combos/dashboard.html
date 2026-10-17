@@ -1,0 +1,44 @@
+<!-- Esqueleto del combo «dashboard» — GENERADO por scripts/generar-llm-docs.py, no se edita a mano.
+     Bloques extraídos de las demos reales de specs/ y validados
+     contra el censo de los packs: cada clase existe de verdad.
+     appshell + navbar + KPIs + tablas + gráficos. -->
+<!DOCTYPE html>
+<html lang="es" data-nz-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Aurora · combo dashboard</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v8.4.2/tokens.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v8.4.2/packs/p1-layout.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v8.4.2/packs/p2-navigation.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v8.4.2/packs/p3-typography.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v8.4.2/packs/p4-actions.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v8.4.2/packs/p8-data.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v8.4.2/packs/p13-charts.css">
+</head>
+<body class="nz">
+
+  <!-- nz-navbar (bloque de demo real) -->
+  <div class="nz-navbar nz-navbar--brand"><span class="nz-navbar__brand nz-navbar__brand--lg"><i></i>Aurora</span><span class="nz-navbar__links"><a href="#contenido" class="nz-navbar__link" aria-current="page">Panel</a><a href="#contenido" class="nz-navbar__link">Informes</a><a href="#contenido" class="nz-navbar__link">Equipo</a></span></div>
+
+  <!-- nz-dash-grid (bloque de demo real) -->
+  <div class="nz-dash-grid nz-dash-grid--2"><div >--2</div><div >--2</div></div>
+
+  <!-- nz-kpi (bloque de demo real) -->
+  <div class="nz-kpi nz-kpi--accent" style="max-width:13rem"><span class="nz-kpi__label">Visitas</span><span class="nz-kpi__value nz-kpi__value--accent">1 204</span><span class="nz-kpi__delta nz-kpi__delta--down">−4%</span></div>
+
+  <!-- nz-table (bloque de demo real) -->
+  <table class="nz-table nz-table--apilable"><thead><tr><th scope="col" class="nz-table__cell--checkbox"><span class="nz-checkbox"><input type="checkbox" aria-label="Seleccionar todo"><span class="nz-checkbox__box"></span></span></th><th scope="col">Pedido</th><th scope="col">Cliente</th><th scope="col" class="nz-table__right">Importe</th><th scope="col">Estado</th></tr></thead><tbody><tr><td><span class="nz-checkbox"><input type="checkbox" checked aria-label="Pedido 4188"><span class="nz-checkbox__box"></span></span></td><td data-etiqueta="Pedido"><span class="nz-table__strong">#4188</span></td><td data-etiqueta="Cliente">Marta Ruiz</td><td data-etiqueta="Importe" class="nz-table__num nz-table__right">1 240,00 €</td><td data-etiqueta="Estado"><span class="nz-table__status nz-table__status--ok">Pagado</span></td></tr><tr><td><span class="nz-checkbox"><input type="checkbox" checked aria-label="Pedido 4189"><span class="nz-checkbox__box"></span></span></td><td data-etiqueta="Pedido"><span class="nz-table__strong">#4189</span></td><td data-etiqueta="Cliente">Javier Vela</td><td data-etiqueta="Importe" class="nz-table__num nz-table__right">860,00 €</td><td data-etiqueta="Estado"><span class="nz-table__status nz-table__status--warn">Pendiente</span></td></tr><tr><td><span class="nz-checkbox"><input type="checkbox" aria-label="Pedido 4190"><span class="nz-checkbox__box"></span></span></td><td data-etiqueta="Pedido"><span class="nz-table__strong">#4190</span></td><td data-etiqueta="Cliente">Ana Beltrán</td><td data-etiqueta="Importe" class="nz-table__num nz-table__right">2 015,00 €</td><td data-etiqueta="Estado"><span class="nz-table__status nz-table__status--err">Vencido</span></td></tr></tbody></table>
+
+  <!-- nz-chart (bloque de demo real) -->
+  <figure class="nz-chart"><div class="nz-chart__head"><div><span class="nz-chart__title">Ingresos por mes</span><span class="nz-chart__sub">Últimos 6 meses</span></div><div class="nz-chart__actions"><button class="nz-btn nz-btn--ghost nz-btn--sm">Exportar</button></div></div><div class="nz-chart__body"><div class="nz-chart-bar nz-chart-bar--sm"><div class="nz-chart-bar__col"><div class="nz-chart-bar__bar" style="height:45%"></div><span class="nz-chart-bar__label">Ene</span></div><div class="nz-chart-bar__col"><div class="nz-chart-bar__bar" style="height:70%"></div><span class="nz-chart-bar__label">Feb</span></div><div class="nz-chart-bar__col"><div class="nz-chart-bar__bar" style="height:58%"></div><span class="nz-chart-bar__label">Mar</span></div></div></div><figcaption class="nz-chart__foot"><span class="nz-chart__source">Fuente: facturación interna</span></figcaption></figure>
+
+  <!-- nz-chart-bar (bloque de demo real) -->
+  <div class="nz-chart-bar"><div class="nz-chart-bar__col"><span class="nz-chart-bar__value">24</span><div class="nz-chart-bar__bar nz-chart-bar__bar--brand" style="height:50%"></div><span class="nz-chart-bar__label">Marca</span></div><div class="nz-chart-bar__col"><span class="nz-chart-bar__value">31</span><div class="nz-chart-bar__bar nz-chart-bar__bar--accent" style="height:65%"></div><span class="nz-chart-bar__label">Acento</span></div><div class="nz-chart-bar__col"><span class="nz-chart-bar__value">28</span><div class="nz-chart-bar__bar nz-chart-bar__bar--success" style="height:58%"></div><span class="nz-chart-bar__label">Bien</span></div><div class="nz-chart-bar__col"><span class="nz-chart-bar__value">17</span><div class="nz-chart-bar__bar nz-chart-bar__bar--warning" style="height:36%"></div><span class="nz-chart-bar__label">Aviso</span></div><div class="nz-chart-bar__col"><span class="nz-chart-bar__value">9</span><div class="nz-chart-bar__bar nz-chart-bar__bar--danger" style="height:20%"></div><span class="nz-chart-bar__label">Mal</span></div><div class="nz-chart-bar__col"><span class="nz-chart-bar__value">12</span><div class="nz-chart-bar__bar nz-chart-bar__bar--muted" style="height:26%"></div><span class="nz-chart-bar__label">Otros</span></div></div>
+
+<footer class="nz-footer nz-footer--compact">
+  Esqueleto del combo «dashboard» de Aurora · Hecho con ❤️ por David Antizar
+</footer>
+
+</body>
+</html>
