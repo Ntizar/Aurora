@@ -21,7 +21,10 @@ jobs:
         run: python scripts/validar-css.py
 
       - name: Lint de las recetas de examples/ y de las páginas del explorador
-        run: python scripts/auditar-uso.py base.html stress-test.html
+        run: python scripts/auditar-uso.py base.html stress-test.html examples/*.html
+
+      - name: Coherencia entre páginas, demos y versiones
+        run: python scripts/auditar-coherencia.py --check
 
       - name: Auditoría de tema (supervivencia al modo oscuro)
         run: python scripts/audit-tema.py

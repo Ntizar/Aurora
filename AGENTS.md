@@ -8,7 +8,7 @@ Si eres un agente (o una persona con prisa), lee esto antes de tocar nada.
 
 ---
 
-## 1. Las 9 reglas del sistema
+## 1. Las 10 reglas del sistema
 
 1. **Todo lo público vive bajo `.nz-`**. Nada de clases globales sueltas.
 2. **Todo valor es un token `--nz-*`**. Ni un `#2563eb` ni un `16px` de diseño a mano.
@@ -26,6 +26,9 @@ Si eres un agente (o una persona con prisa), lee esto antes de tocar nada.
    `.nz-split`, `.nz-bento`, `.nz-chart`, `.nz-chat`, `.nz-kanban-wrap`) consultan su
    contenedor. La base sigue siendo móvil; los escalones de contenedor solo suman.
    Cuando el objeto no es contenedor, se declara el contexto con `.nz-cq`.
+10. **Un icono es SVG `.nz-icon`.** Nunca un símbolo de texto (`▦`, `⚙`, `⌕`, `✎`, `▶`)
+    haciendo de icono: cambia de forma según la fuente del sistema y rompe la paridad
+    entre móvil, PC y capturas. `scripts/auditar-coherencia.py` lo caza.
 
 ## 2. Dónde va cada cosa
 

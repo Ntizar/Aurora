@@ -10,6 +10,14 @@ intermedio; se publican juntas aquí para que el CDN tenga una sola foto coheren
 
 ### Añadido
 
+- **Migración de iconos de texto a SVG**: 60 bloques de demos de 12 categorías, el shell
+  del catálogo y `examples/login.html`. Los símbolos (`▦ ⚙ ⌕ ✎ ▶`) cambian de forma según
+  la fuente del sistema; los SVG no.
+- `scripts/auditar-coherencia.py`: puerta que detecta iconos de texto, recetas forzadas a
+  dark, CDN con versión vieja y footers sin atribución. Baseline: 211 fallos; hoy: 0.
+- `docs/RUTA-COHERENCIA.md`: ruta por fases para coherencia total, responsive real y
+  detalles de buen gusto.
+
 - **Base de datos de diseño**: `base.html` (explorador con búsqueda, filtros, ficha,
   preview real y copia de markup) y `datos/base-diseno.json` (índice machine-readable
   de 411 familias, 2.186 clases, 189 tokens, 6 recetas, 5 ejemplos, 8 combos, 6 marcas,

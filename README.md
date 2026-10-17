@@ -223,8 +223,23 @@ pone en rojo **antes** de publicarse:
 | `audit-catalog.py` | auditoría campo a campo: lo declarado contra lo demostrado |
 | `auditar-base.py --check` | que `datos/base-diseno.json` esté sincronizado con su generador, sin referencias rotas, sin familias sin markup y sin tokens sin valor |
 | `auditar-responsive.py` | que al menos 4 packs mantengan container queries, 3 el escalón `@1440`, 2 el `@1200` y que `stress-test.html` siga pasando el lint |
+| `auditar-coherencia.py` | que no vuelvan los iconos de texto, las recetas forzadas a dark, los CDN viejos ni los footers sin atribución |
 | `auditar-uso.py --selftest` | que el lint del consumidor siga cazando los 13 defectos que debe cazar (clases inventadas, gradientes, negritas a mano, emojis…) |
 | `node --check` + regeneración | que el catálogo commiteado coincida con `specs/` |
+
+## Ruta de coherencia
+
+La coherencia no se improvisa: tiene una ruta con puertas. La primera fase ya está cerrada.
+
+- **Fase 1 · Superficie (cerrada):** iconos SVG en todo el catálogo (60 bloques de demos
+  migrados), un solo tema por receta, CDN al día y footers exactos. `211 → 0` incoherencias
+  detectadas por `auditar-coherencia.py`.
+- **Fase 2 · Responsive real (en curso):** matriz de 8 anchos × 12 patrones, cero desbordes,
+  táctil 44px y stress-test por patrón. La medición con navegador se hace en el PC.
+- **Fase 3 · Buen gusto:** densidad, ritmo, alineación óptica, estados y microinteracciones.
+- **Fase 4 · Cierre:** CI con todas las puertas, tag v10.0.0 y Pages.
+
+Detalle, criterios y deuda conocida: **[docs/RUTA-COHERENCIA.md](docs/RUTA-COHERENCIA.md)**.
 
 ## Trabajar en el sistema
 
