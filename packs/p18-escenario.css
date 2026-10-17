@@ -59,6 +59,16 @@
   color: var(--nz-text-mute);
 }
 .nz-escenario--profundo {
+  /* Un escenario profundo no depende del tema: redefine los tokens de texto
+     para que el contraste sea correcto también en light. */
+  --nz-text: var(--nz-gray-0);
+  --nz-text-soft: var(--nz-gray-300);
+  --nz-text-mute: var(--nz-gray-400);
+  --nz-text-faint: var(--nz-gray-500);
+  --nz-border-soft: var(--nz-gray-800);
+  --nz-border: var(--nz-gray-700);
+  --nz-surface: var(--nz-gray-900);
+  --nz-bg-soft: var(--nz-gray-900);
   background: var(--nz-gray-950);
   border-color: var(--nz-gray-800);
   color: var(--nz-gray-0);
