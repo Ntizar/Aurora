@@ -1,89 +1,89 @@
 {
- "cat": 4,
- "nombre": "Acciones y botones",
- "desc": "Botones con sus tonos, énfasis, tamaños y formas; grupos, selector segmentado, botones flotantes, cargadores, enlaces de acción y barras de herramientas. Todo con el objetivo táctil de 44px.",
- "pack": "p4-actions.css",
- "fichero": "04-actions.html",
- "demos": [
-  {
-   "titulo": "Acción principal y tonos",
-   "tag": ".nz-btn--primary · --accent · --success · --warning · --danger · --info · --neutral",
-   "markup": "<div class=\"nz-cluster\"><button class=\"nz-btn nz-btn--primary\">Primario</button><button class=\"nz-btn nz-btn--accent\">Acento</button><button class=\"nz-btn nz-btn--success\">Correcto</button><button class=\"nz-btn nz-btn--warning\">Aviso</button><button class=\"nz-btn nz-btn--danger\">Peligro</button><button class=\"nz-btn nz-btn--info\">Info</button><button class=\"nz-btn nz-btn--neutral\">Neutro</button></div>"
-  },
-  {
-   "titulo": "Énfasis del botón",
-   "tag": ".nz-btn--soft · --soft-accent · --soft-success · --soft-danger · --ghost · --outline",
-   "markup": "<div class=\"nz-cluster\"><button class=\"nz-btn nz-btn--soft\">Suave</button><button class=\"nz-btn nz-btn--soft-accent\">Suave acento</button><button class=\"nz-btn nz-btn--soft-success\">Suave ok</button><button class=\"nz-btn nz-btn--soft-danger\">Suave peligro</button><button class=\"nz-btn nz-btn--ghost\">Fantasma</button><button class=\"nz-btn nz-btn--outline\">Contorno</button></div>"
-  },
-  {
-   "titulo": "Botones de texto",
-   "tag": ".nz-btn--link · --text · --danger-text",
-   "markup": "<div class=\"nz-cluster\"><button class=\"nz-btn nz-btn--link\">Enlace subrayado</button><button class=\"nz-btn nz-btn--text\">Texto</button><button class=\"nz-btn nz-btn--text nz-btn--danger-text\">Eliminar</button></div>"
-  },
-  {
-   "titulo": "Tamaños de botón",
-   "tag": ".nz-btn--2xs · --xs · --sm · --lg · --xl · --2xl",
-   "markup": "<div class=\"nz-cluster\"><button class=\"nz-btn nz-btn--primary nz-btn--2xs\">2XS</button><button class=\"nz-btn nz-btn--primary nz-btn--xs\">XS</button><button class=\"nz-btn nz-btn--primary nz-btn--sm\">SM</button><button class=\"nz-btn nz-btn--primary\">Base</button><button class=\"nz-btn nz-btn--primary nz-btn--lg\">LG</button><button class=\"nz-btn nz-btn--primary nz-btn--xl\">XL</button><button class=\"nz-btn nz-btn--primary nz-btn--2xl\">2XL</button></div>"
-  },
-  {
-   "titulo": "Formas y anchos",
-   "tag": ".nz-btn--square · --rounded · --pill · --block · --full · --auto",
-   "markup": "<div class=\"nz-stack nz-stack--sm\"><div class=\"nz-cluster\"><button class=\"nz-btn nz-btn--primary nz-btn--square\">Cuadrado</button><button class=\"nz-btn nz-btn--primary nz-btn--rounded\">Redondeado</button><button class=\"nz-btn nz-btn--primary nz-btn--pill\">Píldora</button><button class=\"nz-btn nz-btn--primary nz-btn--auto\">Automático</button></div><div style=\"max-width:22rem\"><button class=\"nz-btn nz-btn--primary nz-btn--block\">Ancho completo</button></div><div style=\"max-width:22rem\"><button class=\"nz-btn nz-btn--ghost nz-btn--full\">Extremos separados<span class=\"nz-btn__icon\">→</span></button></div></div>"
-  },
-  {
-   "titulo": "Botón con icono y flecha",
-   "tag": ".nz-btn__icon · __arrow · __arrow--right · __arrow--left",
-   "markup": "<div class=\"nz-cluster\"><button class=\"nz-btn nz-btn--primary\"><span class=\"nz-btn__icon\">＋</span> Crear</button><button class=\"nz-btn nz-btn--ghost\">Siguiente<span class=\"nz-btn__arrow nz-btn__arrow--right\">→</span></button><button class=\"nz-btn nz-btn--ghost\"><span class=\"nz-btn__arrow nz-btn__arrow--left\">←</span> Anterior</button></div>"
-  },
-  {
-   "titulo": "Botones de solo icono",
-   "tag": ".nz-btn--icon · --icon-sm · --icon-lg · --icon-square",
-   "markup": "<div class=\"nz-cluster\"><button class=\"nz-btn nz-btn--primary nz-btn--icon\" aria-label=\"Añadir\">＋</button><button class=\"nz-btn nz-btn--ghost nz-btn--icon-sm\" aria-label=\"Editar\">✎</button><button class=\"nz-btn nz-btn--primary nz-btn--icon-lg\" aria-label=\"Reproducir\">▶</button><button class=\"nz-btn nz-btn--ghost nz-btn--icon-square\" aria-label=\"Ajustes\">⚙</button></div>"
-  },
-  {
-   "titulo": "Botón con contador",
-   "tag": ".nz-btn--badged · .nz-btn__badge",
-   "markup": "<button class=\"nz-btn nz-btn--ghost nz-btn--badged\">Mensajes<span class=\"nz-btn__badge\">7</span></button> <button class=\"nz-btn nz-btn--primary nz-btn--badged\">Notificaciones<span class=\"nz-btn__badge\">12</span></button>"
-  },
-  {
-   "titulo": "Estados del botón",
-   "tag": ".is-busy · .is-loading · .is-ok · .is-copied · :disabled · [aria-pressed]",
-   "markup": "<div class=\"nz-cluster\"><button class=\"nz-btn nz-btn--primary is-busy\" aria-busy=\"true\">Guardando…</button><button class=\"nz-btn nz-btn--primary is-loading\">Cargando…</button><button class=\"nz-btn nz-btn--primary is-ok\">✓ Guardado</button><button class=\"nz-btn nz-btn--ghost is-copied\">✓ Copiado</button><button class=\"nz-btn nz-btn--primary\" disabled>Deshabilitado</button><button class=\"nz-btn nz-btn--ghost\" aria-pressed=\"true\">Activo</button><button class=\"nz-btn nz-btn--ghost\" aria-pressed=\"false\">Inactivo</button></div>"
-  },
-  {
-   "titulo": "Botón con progreso interno",
-   "tag": ".nz-btn--progress · .nz-btn__progress",
-   "markup": "<button class=\"nz-btn nz-btn--primary nz-btn--progress\">Subiendo archivo…<span class=\"nz-btn__progress\"></span></button>"
-  },
-  {
-   "titulo": "Grupo de botones",
-   "tag": ".nz-btn-group · --joined · --vertical · --split · __caret",
-   "markup": "<div class=\"nz-stack nz-stack--sm\"><div class=\"nz-btn-group\"><button class=\"nz-btn nz-btn--ghost\">Uno</button><button class=\"nz-btn nz-btn--ghost\">Dos</button><button class=\"nz-btn nz-btn--ghost\">Tres</button></div><div class=\"nz-btn-group nz-btn-group--joined\"><button class=\"nz-btn nz-btn--ghost\">Izquierda</button><button class=\"nz-btn nz-btn--ghost\">Centro</button><button class=\"nz-btn nz-btn--ghost\">Derecha</button></div><div class=\"nz-btn-group nz-btn-group--vertical\" style=\"max-width:12rem\"><button class=\"nz-btn nz-btn--ghost\">Arriba</button><button class=\"nz-btn nz-btn--ghost\">Medio</button><button class=\"nz-btn nz-btn--ghost\">Abajo</button></div><div class=\"nz-btn-group nz-btn-group--split\"><button class=\"nz-btn nz-btn--primary\">Guardar</button><button class=\"nz-btn nz-btn--primary nz-btn-group__caret\" aria-label=\"Más opciones\">▾</button></div></div>"
-  },
-  {
-   "titulo": "Selector segmentado",
-   "tag": ".nz-segmented · --sm · --lg · --vertical · --full · --brand · --accent",
-   "markup": "<div class=\"nz-stack nz-stack--sm\"><div class=\"nz-segmented\"><button aria-selected=\"true\">Lista</button><button aria-selected=\"false\">Cuadrícula</button><button aria-selected=\"false\">Mapa</button></div><div class=\"nz-segmented nz-segmented--sm\"><button aria-selected=\"true\">Hoy</button><button aria-selected=\"false\">Semana</button></div><div class=\"nz-segmented nz-segmented--lg\"><button aria-selected=\"true\">Mensual</button><button aria-selected=\"false\">Anual</button></div><div class=\"nz-segmented nz-segmented--vertical\" style=\"max-width:10rem\"><button aria-selected=\"true\">Perfil</button><button aria-selected=\"false\">Cuenta</button><button aria-selected=\"false\">Facturas</button></div><div class=\"nz-segmented nz-segmented--full\"><button aria-selected=\"true\">Todo</button><button aria-selected=\"false\">Abiertos</button><button aria-selected=\"false\">Cerrados</button></div><div class=\"nz-segmented nz-segmented--brand\"><button aria-selected=\"true\">Marca</button><button aria-selected=\"false\">Otra</button></div><div class=\"nz-segmented nz-segmented--accent\"><button aria-selected=\"true\">Acento</button><button aria-selected=\"false\">Otra</button></div></div>"
-  },
-  {
-   "titulo": "Botones flotantes (FAB)",
-   "tag": ".nz-fab · --accent · --lg · --sm · --extended · --bottom-left",
-   "markup": "<div class=\"nz-cluster\"><button class=\"nz-fab nz-fab--sm\" aria-label=\"Nuevo pequeño\">＋</button><button class=\"nz-fab\" aria-label=\"Nuevo\">＋</button><button class=\"nz-fab nz-fab--lg\" aria-label=\"Nuevo grande\">＋</button><button class=\"nz-fab nz-fab--accent\" aria-label=\"Nuevo acento\">＋</button><button class=\"nz-fab nz-fab--extended\">＋ Crear pedido</button><button class=\"nz-fab nz-fab--bottom-left\" aria-label=\"Nuevo a la izquierda\">＋</button></div>"
-  },
-  {
-   "titulo": "Cargadores en línea",
-   "tag": ".nz-spin · --sm · --lg · --brand · --accent",
-   "markup": "<div class=\"nz-cluster\"><span class=\"nz-spin nz-spin--sm\"></span><span class=\"nz-spin\"></span><span class=\"nz-spin nz-spin--lg\"></span><span class=\"nz-spin nz-spin--brand\"></span><span class=\"nz-spin nz-spin--accent\"></span><span class=\"nz-btn nz-btn--primary\"><span class=\"nz-spin nz-spin--sm\"></span> Procesando…</span></div>"
-  },
-  {
-   "titulo": "Enlaces de acción",
-   "tag": ".nz-cta · __arrow · --accent · --sm · --lg · --muted · --underline",
-   "markup": "<div class=\"nz-cluster\"><a class=\"nz-cta\" href=\"#\">Explorar<span class=\"nz-cta__arrow\">→</span></a><a class=\"nz-cta nz-cta--accent\" href=\"#\">Comprar</a><a class=\"nz-cta nz-cta--sm\" href=\"#\">Pequeño</a><a class=\"nz-cta nz-cta--lg\" href=\"#\">Grande</a><a class=\"nz-cta nz-cta--muted\" href=\"#\">Discreto</a><a class=\"nz-cta nz-cta--underline\" href=\"#\">Subrayado</a></div>"
-  },
-  {
-   "titulo": "Barra de herramientas",
-   "tag": ".nz-toolbar · __spacer · __group · __divider · --compact · --sticky · --brand",
-   "markup": "<div class=\"nz-stack nz-stack--sm\"><div class=\"nz-toolbar\"><button class=\"nz-btn nz-btn--ghost nz-btn--sm\">Abrir</button><button class=\"nz-btn nz-btn--ghost nz-btn--sm\">Editar</button><span class=\"nz-toolbar__divider\"></span><div class=\"nz-toolbar__group\"><button class=\"nz-btn nz-btn--ghost nz-btn--sm\" aria-label=\"Negrita\">B</button><button class=\"nz-btn nz-btn--ghost nz-btn--sm\" aria-label=\"Cursiva\">I</button></div><span class=\"nz-toolbar__spacer\"></span><button class=\"nz-btn nz-btn--primary nz-btn--sm\">Exportar</button></div><div class=\"nz-toolbar nz-toolbar--compact\"><button class=\"nz-btn nz-btn--ghost nz-btn--xs\">Corto</button><button class=\"nz-btn nz-btn--ghost nz-btn--xs\">Compacto</button></div><div class=\"nz-toolbar nz-toolbar--brand\"><button class=\"nz-btn nz-btn--ghost nz-btn--sm\">Marca</button><span class=\"nz-toolbar__spacer\"></span><button class=\"nz-btn nz-btn--accent nz-btn--sm\">Destacar</button></div><div class=\"nz-toolbar nz-toolbar--sticky\"><button class=\"nz-btn nz-btn--ghost nz-btn--sm\">Pegajosa</button></div></div>"
-  }
- ]
+  "cat": 4,
+  "nombre": "Acciones y botones",
+  "desc": "Botones con sus tonos, énfasis, tamaños y formas; grupos, selector segmentado, botones flotantes, cargadores, enlaces de acción y barras de herramientas. Todo con el objetivo táctil de 44px.",
+  "pack": "p4-actions.css",
+  "fichero": "04-actions.html",
+  "demos": [
+    {
+      "titulo": "Acción principal y tonos",
+      "tag": ".nz-btn--primary · --accent · --success · --warning · --danger · --info · --neutral",
+      "markup": "<div class=\"nz-cluster\"><button class=\"nz-btn nz-btn--primary\">Primario</button><button class=\"nz-btn nz-btn--accent\">Acento</button><button class=\"nz-btn nz-btn--success\">Correcto</button><button class=\"nz-btn nz-btn--warning\">Aviso</button><button class=\"nz-btn nz-btn--danger\">Peligro</button><button class=\"nz-btn nz-btn--info\">Info</button><button class=\"nz-btn nz-btn--neutral\">Neutro</button></div>"
+    },
+    {
+      "titulo": "Énfasis del botón",
+      "tag": ".nz-btn--soft · --soft-accent · --soft-success · --soft-danger · --ghost · --outline",
+      "markup": "<div class=\"nz-cluster\"><button class=\"nz-btn nz-btn--soft\">Suave</button><button class=\"nz-btn nz-btn--soft-accent\">Suave acento</button><button class=\"nz-btn nz-btn--soft-success\">Suave ok</button><button class=\"nz-btn nz-btn--soft-danger\">Suave peligro</button><button class=\"nz-btn nz-btn--ghost\">Fantasma</button><button class=\"nz-btn nz-btn--outline\">Contorno</button></div>"
+    },
+    {
+      "titulo": "Botones de texto",
+      "tag": ".nz-btn--link · --text · --danger-text",
+      "markup": "<div class=\"nz-cluster\"><button class=\"nz-btn nz-btn--link\">Enlace subrayado</button><button class=\"nz-btn nz-btn--text\">Texto</button><button class=\"nz-btn nz-btn--text nz-btn--danger-text\">Eliminar</button></div>"
+    },
+    {
+      "titulo": "Tamaños de botón",
+      "tag": ".nz-btn--2xs · --xs · --sm · --lg · --xl · --2xl",
+      "markup": "<div class=\"nz-cluster\"><button class=\"nz-btn nz-btn--primary nz-btn--2xs\">2XS</button><button class=\"nz-btn nz-btn--primary nz-btn--xs\">XS</button><button class=\"nz-btn nz-btn--primary nz-btn--sm\">SM</button><button class=\"nz-btn nz-btn--primary\">Base</button><button class=\"nz-btn nz-btn--primary nz-btn--lg\">LG</button><button class=\"nz-btn nz-btn--primary nz-btn--xl\">XL</button><button class=\"nz-btn nz-btn--primary nz-btn--2xl\">2XL</button></div>"
+    },
+    {
+      "titulo": "Formas y anchos",
+      "tag": ".nz-btn--square · --rounded · --pill · --block · --full · --auto",
+      "markup": "<div class=\"nz-stack nz-stack--sm\"><div class=\"nz-cluster\"><button class=\"nz-btn nz-btn--primary nz-btn--square\">Cuadrado</button><button class=\"nz-btn nz-btn--primary nz-btn--rounded\">Redondeado</button><button class=\"nz-btn nz-btn--primary nz-btn--pill\">Píldora</button><button class=\"nz-btn nz-btn--primary nz-btn--auto\">Automático</button></div><div style=\"max-width:22rem\"><button class=\"nz-btn nz-btn--primary nz-btn--block\">Ancho completo</button></div><div style=\"max-width:22rem\"><button class=\"nz-btn nz-btn--ghost nz-btn--full\">Extremos separados<span class=\"nz-btn__icon\">→</span></button></div></div>"
+    },
+    {
+      "titulo": "Botón con icono y flecha",
+      "tag": ".nz-btn__icon · __arrow · __arrow--right · __arrow--left",
+      "markup": "<div class=\"nz-cluster\"><button class=\"nz-btn nz-btn--primary\"><span class=\"nz-btn__icon\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 5v14M5 12h14\"/></svg></span> Crear</button><button class=\"nz-btn nz-btn--ghost\">Siguiente<span class=\"nz-btn__arrow nz-btn__arrow--right\">→</span></button><button class=\"nz-btn nz-btn--ghost\"><span class=\"nz-btn__arrow nz-btn__arrow--left\">←</span> Anterior</button></div>"
+    },
+    {
+      "titulo": "Botones de solo icono",
+      "tag": ".nz-btn--icon · --icon-sm · --icon-lg · --icon-square",
+      "markup": "<div class=\"nz-cluster\"><button class=\"nz-btn nz-btn--primary nz-btn--icon\" aria-label=\"Añadir\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 5v14M5 12h14\"/></svg></button><button class=\"nz-btn nz-btn--ghost nz-btn--icon-sm\" aria-label=\"Editar\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M4 20h4L20 8l-4-4L4 16z\"/><path d=\"M14 6l4 4\"/></svg></button><button class=\"nz-btn nz-btn--primary nz-btn--icon-lg\" aria-label=\"Reproducir\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"m8 5 11 7-11 7z\"/></svg></button><button class=\"nz-btn nz-btn--ghost nz-btn--icon-square\" aria-label=\"Ajustes\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"3\"/><path d=\"M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09a1.65 1.65 0 0 0-1-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09a1.65 1.65 0 0 0 1.51-1 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33h.09a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51h.09a1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82v.09a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z\"/></svg></button></div>"
+    },
+    {
+      "titulo": "Botón con contador",
+      "tag": ".nz-btn--badged · .nz-btn__badge",
+      "markup": "<button class=\"nz-btn nz-btn--ghost nz-btn--badged\">Mensajes<span class=\"nz-btn__badge\">7</span></button> <button class=\"nz-btn nz-btn--primary nz-btn--badged\">Notificaciones<span class=\"nz-btn__badge\">12</span></button>"
+    },
+    {
+      "titulo": "Estados del botón",
+      "tag": ".is-busy · .is-loading · .is-ok · .is-copied · :disabled · [aria-pressed]",
+      "markup": "<div class=\"nz-cluster\"><button class=\"nz-btn nz-btn--primary is-busy\" aria-busy=\"true\">Guardando…</button><button class=\"nz-btn nz-btn--primary is-loading\">Cargando…</button><button class=\"nz-btn nz-btn--primary is-ok\">✓ Guardado</button><button class=\"nz-btn nz-btn--ghost is-copied\">✓ Copiado</button><button class=\"nz-btn nz-btn--primary\" disabled>Deshabilitado</button><button class=\"nz-btn nz-btn--ghost\" aria-pressed=\"true\">Activo</button><button class=\"nz-btn nz-btn--ghost\" aria-pressed=\"false\">Inactivo</button></div>"
+    },
+    {
+      "titulo": "Botón con progreso interno",
+      "tag": ".nz-btn--progress · .nz-btn__progress",
+      "markup": "<button class=\"nz-btn nz-btn--primary nz-btn--progress\">Subiendo archivo…<span class=\"nz-btn__progress\"></span></button>"
+    },
+    {
+      "titulo": "Grupo de botones",
+      "tag": ".nz-btn-group · --joined · --vertical · --split · __caret",
+      "markup": "<div class=\"nz-stack nz-stack--sm\"><div class=\"nz-btn-group\"><button class=\"nz-btn nz-btn--ghost\">Uno</button><button class=\"nz-btn nz-btn--ghost\">Dos</button><button class=\"nz-btn nz-btn--ghost\">Tres</button></div><div class=\"nz-btn-group nz-btn-group--joined\"><button class=\"nz-btn nz-btn--ghost\">Izquierda</button><button class=\"nz-btn nz-btn--ghost\">Centro</button><button class=\"nz-btn nz-btn--ghost\">Derecha</button></div><div class=\"nz-btn-group nz-btn-group--vertical\" style=\"max-width:12rem\"><button class=\"nz-btn nz-btn--ghost\">Arriba</button><button class=\"nz-btn nz-btn--ghost\">Medio</button><button class=\"nz-btn nz-btn--ghost\">Abajo</button></div><div class=\"nz-btn-group nz-btn-group--split\"><button class=\"nz-btn nz-btn--primary\">Guardar</button><button class=\"nz-btn nz-btn--primary nz-btn-group__caret\" aria-label=\"Más opciones\">▾</button></div></div>"
+    },
+    {
+      "titulo": "Selector segmentado",
+      "tag": ".nz-segmented · --sm · --lg · --vertical · --full · --brand · --accent",
+      "markup": "<div class=\"nz-stack nz-stack--sm\"><div class=\"nz-segmented\"><button aria-selected=\"true\">Lista</button><button aria-selected=\"false\">Cuadrícula</button><button aria-selected=\"false\">Mapa</button></div><div class=\"nz-segmented nz-segmented--sm\"><button aria-selected=\"true\">Hoy</button><button aria-selected=\"false\">Semana</button></div><div class=\"nz-segmented nz-segmented--lg\"><button aria-selected=\"true\">Mensual</button><button aria-selected=\"false\">Anual</button></div><div class=\"nz-segmented nz-segmented--vertical\" style=\"max-width:10rem\"><button aria-selected=\"true\">Perfil</button><button aria-selected=\"false\">Cuenta</button><button aria-selected=\"false\">Facturas</button></div><div class=\"nz-segmented nz-segmented--full\"><button aria-selected=\"true\">Todo</button><button aria-selected=\"false\">Abiertos</button><button aria-selected=\"false\">Cerrados</button></div><div class=\"nz-segmented nz-segmented--brand\"><button aria-selected=\"true\">Marca</button><button aria-selected=\"false\">Otra</button></div><div class=\"nz-segmented nz-segmented--accent\"><button aria-selected=\"true\">Acento</button><button aria-selected=\"false\">Otra</button></div></div>"
+    },
+    {
+      "titulo": "Botones flotantes (FAB)",
+      "tag": ".nz-fab · --accent · --lg · --sm · --extended · --bottom-left",
+      "markup": "<div class=\"nz-cluster\"><button class=\"nz-fab nz-fab--sm\" aria-label=\"Nuevo pequeño\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 5v14M5 12h14\"/></svg></button><button class=\"nz-fab\" aria-label=\"Nuevo\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 5v14M5 12h14\"/></svg></button><button class=\"nz-fab nz-fab--lg\" aria-label=\"Nuevo grande\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 5v14M5 12h14\"/></svg></button><button class=\"nz-fab nz-fab--accent\" aria-label=\"Nuevo acento\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 5v14M5 12h14\"/></svg></button><button class=\"nz-fab nz-fab--extended\">＋ Crear pedido</button><button class=\"nz-fab nz-fab--bottom-left\" aria-label=\"Nuevo a la izquierda\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 5v14M5 12h14\"/></svg></button></div>"
+    },
+    {
+      "titulo": "Cargadores en línea",
+      "tag": ".nz-spin · --sm · --lg · --brand · --accent",
+      "markup": "<div class=\"nz-cluster\"><span class=\"nz-spin nz-spin--sm\"></span><span class=\"nz-spin\"></span><span class=\"nz-spin nz-spin--lg\"></span><span class=\"nz-spin nz-spin--brand\"></span><span class=\"nz-spin nz-spin--accent\"></span><span class=\"nz-btn nz-btn--primary\"><span class=\"nz-spin nz-spin--sm\"></span> Procesando…</span></div>"
+    },
+    {
+      "titulo": "Enlaces de acción",
+      "tag": ".nz-cta · __arrow · --accent · --sm · --lg · --muted · --underline",
+      "markup": "<div class=\"nz-cluster\"><a class=\"nz-cta\" href=\"#\">Explorar<span class=\"nz-cta__arrow\">→</span></a><a class=\"nz-cta nz-cta--accent\" href=\"#\">Comprar</a><a class=\"nz-cta nz-cta--sm\" href=\"#\">Pequeño</a><a class=\"nz-cta nz-cta--lg\" href=\"#\">Grande</a><a class=\"nz-cta nz-cta--muted\" href=\"#\">Discreto</a><a class=\"nz-cta nz-cta--underline\" href=\"#\">Subrayado</a></div>"
+    },
+    {
+      "titulo": "Barra de herramientas",
+      "tag": ".nz-toolbar · __spacer · __group · __divider · --compact · --sticky · --brand",
+      "markup": "<div class=\"nz-stack nz-stack--sm\"><div class=\"nz-toolbar\"><button class=\"nz-btn nz-btn--ghost nz-btn--sm\">Abrir</button><button class=\"nz-btn nz-btn--ghost nz-btn--sm\">Editar</button><span class=\"nz-toolbar__divider\"></span><div class=\"nz-toolbar__group\"><button class=\"nz-btn nz-btn--ghost nz-btn--sm\" aria-label=\"Negrita\">B</button><button class=\"nz-btn nz-btn--ghost nz-btn--sm\" aria-label=\"Cursiva\">I</button></div><span class=\"nz-toolbar__spacer\"></span><button class=\"nz-btn nz-btn--primary nz-btn--sm\">Exportar</button></div><div class=\"nz-toolbar nz-toolbar--compact\"><button class=\"nz-btn nz-btn--ghost nz-btn--xs\">Corto</button><button class=\"nz-btn nz-btn--ghost nz-btn--xs\">Compacto</button></div><div class=\"nz-toolbar nz-toolbar--brand\"><button class=\"nz-btn nz-btn--ghost nz-btn--sm\">Marca</button><span class=\"nz-toolbar__spacer\"></span><button class=\"nz-btn nz-btn--accent nz-btn--sm\">Destacar</button></div><div class=\"nz-toolbar nz-toolbar--sticky\"><button class=\"nz-btn nz-btn--ghost nz-btn--sm\">Pegajosa</button></div></div>"
+    }
+  ]
 }

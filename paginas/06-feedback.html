@@ -11,6 +11,7 @@
 <link rel="stylesheet" href="../packs/p3-typography.css">
 <link rel="stylesheet" href="../packs/p4-actions.css">
 <link rel="stylesheet" href="../packs/p6-feedback.css">
+<link rel="stylesheet" href="../packs/p9-media.css">
 <link rel="stylesheet" href="../packs/p12-system.css">
 </head>
 <body class="nz">
@@ -19,8 +20,8 @@
 <a class="cat-brandmark" href="../index.html"><i></i><i></i> Aurora</a>
 <span class="cat-count">06 · 153 objetos · 52 demos</span>
 <span class="cat-topbar__tools">
-<a class="cat-icobtn" href="../index.html" title="Portada" aria-label="Volver a la portada">⌂</a>
-<button class="cat-icobtn" id="btnTheme" aria-label="Cambiar tema" title="Light / Dark">◐</button>
+<a class="cat-icobtn" href="../index.html" title="Portada" aria-label="Volver a la portada"><svg class="nz-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg></a>
+<button class="cat-icobtn" id="btnTheme" aria-label="Cambiar tema" title="Light / Dark"><svg class="nz-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button>
 </span>
 </header>
 <nav class="cat-nav-pages" aria-label="Categorías del catálogo">
@@ -52,13 +53,13 @@
       <span class="nz-badge nz-badge--brand"><i></i>153 objetos</span>
       <span class="nz-badge nz-badge--neutral">19 familias</span>
       <span class="nz-badge nz-badge--accent">52 demos en vivo</span>
-      <span class="nz-badge nz-badge--neutral">24 clases distintas usadas</span>
+      <span class="nz-badge nz-badge--neutral">25 clases distintas usadas</span>
       <a class="nz-badge nz-badge--brand" href="../packs/p6-feedback.css">p6-feedback.css</a>
     </div>
   </div>
   <div class="cat-tools">
     <div class="cat-search">
-      <span class="cat-search__icon" aria-hidden="true">⌕</span>
+      <span class="cat-search__icon" aria-hidden="true"><svg class="nz-icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></span>
       <input class="cat-search__input" id="catBuscar" type="search" placeholder="Buscar en esta categoría… (pulsa /)" aria-label="Buscar objeto en esta categoría">
       <span class="cat-search__count" id="catContador">52 objetos</span>
     </div>
@@ -74,13 +75,13 @@
       <button type="button" class="cat-filters__chip" data-filtro="nz-empty" aria-pressed="false">.empty</button>
       <button type="button" class="cat-filters__chip" data-filtro="nz-error" aria-pressed="false">.error</button>
       <button type="button" class="cat-filters__chip" data-filtro="nz-errorstate" aria-pressed="false">.errorstate</button>
+      <button type="button" class="cat-filters__chip" data-filtro="nz-icon" aria-pressed="false">.icon</button>
       <button type="button" class="cat-filters__chip" data-filtro="nz-kbd" aria-pressed="false">.kbd</button>
       <button type="button" class="cat-filters__chip" data-filtro="nz-loading-bar" aria-pressed="false">.loading-bar</button>
       <button type="button" class="cat-filters__chip" data-filtro="nz-meter" aria-pressed="false">.meter</button>
       <button type="button" class="cat-filters__chip" data-filtro="nz-offline-bar" aria-pressed="false">.offline-bar</button>
       <button type="button" class="cat-filters__chip" data-filtro="nz-progress" aria-pressed="false">.progress</button>
-      <button type="button" class="cat-filters__chip" data-filtro="nz-pulse" aria-pressed="false">.pulse</button>
-      <button type="button" class="cat-filters__chip" data-filtro="nz-ring" aria-pressed="false">.ring</button></div>
+      <button type="button" class="cat-filters__chip" data-filtro="nz-pulse" aria-pressed="false">.pulse</button></div>
   </div>
   <section class="cat-demo cat-in" data-cat="nz-alert">
     <div class="cat-demo__title"><span class="cat-demo__num">1</span><span class="cat-demo__name">Alertas</span><span class="cat-demo__tag">.nz-alert--info/success/warning/danger</span></div>
@@ -88,16 +89,16 @@
       <div class="nz-alert nz-alert--info"><span class="nz-alert__icon">ℹ</span><div class="nz-alert__body"><span class="nz-alert__title">Información</span><span class="nz-alert__msg">Mensaje informativo.</span></div></div>
     </div>
   </section>
-  <section class="cat-demo cat-in" data-cat="nz-alert">
+  <section class="cat-demo cat-in" data-cat="nz-alert nz-icon">
     <div class="cat-demo__title"><span class="cat-demo__num">2</span><span class="cat-demo__name">Alerta de éxito</span><span class="cat-demo__tag">.nz-alert--success</span></div>
     <div class="cat-stage">
-      <div class="nz-alert nz-alert--success"><span class="nz-alert__icon">✓</span><div class="nz-alert__body"><span class="nz-alert__title">Guardado</span><span class="nz-alert__msg">Los cambios se aplicaron.</span></div></div>
+      <div class="nz-alert nz-alert--success"><span class="nz-alert__icon"><svg class="nz-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span><div class="nz-alert__body"><span class="nz-alert__title">Guardado</span><span class="nz-alert__msg">Los cambios se aplicaron.</span></div></div>
     </div>
   </section>
-  <section class="cat-demo cat-in" data-cat="nz-alert">
+  <section class="cat-demo cat-in" data-cat="nz-alert nz-icon">
     <div class="cat-demo__title"><span class="cat-demo__num">3</span><span class="cat-demo__name">Alerta de error</span><span class="cat-demo__tag">.nz-alert--danger</span></div>
     <div class="cat-stage">
-      <div class="nz-alert nz-alert--danger"><span class="nz-alert__icon">✕</span><div class="nz-alert__body"><span class="nz-alert__title">Error</span><span class="nz-alert__msg">Algo falló.</span></div></div>
+      <div class="nz-alert nz-alert--danger"><span class="nz-alert__icon"><svg class="nz-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg></span><div class="nz-alert__body"><span class="nz-alert__title">Error</span><span class="nz-alert__msg">Algo falló.</span></div></div>
     </div>
   </section>
   <section class="cat-demo cat-in" data-cat="nz-callout">
@@ -154,10 +155,10 @@
       <div class="nz-cluster nz-cluster--spacious"><span class="nz-spinner"></span><span class="nz-spinner nz-spinner--accent"></span></div>
     </div>
   </section>
-  <section class="cat-demo cat-in" data-cat="nz-toast">
+  <section class="cat-demo cat-in" data-cat="nz-icon nz-toast">
     <div class="cat-demo__title"><span class="cat-demo__num">13</span><span class="cat-demo__name">Toast</span><span class="cat-demo__tag">.nz-toast.is-on</span></div>
     <div class="cat-stage">
-      <div class="nz-toast nz-toast--success is-on" style="position:static;transform:none"><span class="nz-toast__icon">✓</span><span class="nz-toast__title">Guardado</span>Los cambios se aplicaron.</div>
+      <div class="nz-toast nz-toast--success is-on" style="position:static;transform:none"><span class="nz-toast__icon"><svg class="nz-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span><span class="nz-toast__title">Guardado</span>Los cambios se aplicaron.</div>
     </div>
   </section>
   <section class="cat-demo cat-in" data-cat="nz-errorstate">
@@ -166,10 +167,10 @@
       <div class="nz-errorstate"><span class="nz-errorstate__code">500</span><p class="nz-errorstate__title">Algo se rompió</p><p class="nz-errorstate__body">Vuelve a intentarlo en unos segundos.</p></div>
     </div>
   </section>
-  <section class="cat-demo cat-in" data-cat="nz-alert nz-stack">
+  <section class="cat-demo cat-in" data-cat="nz-alert nz-icon nz-stack">
     <div class="cat-demo__title"><span class="cat-demo__num">15</span><span class="cat-demo__name">Alertas brand y warning</span><span class="cat-demo__tag">.nz-alert--brand · --warning</span></div>
     <div class="cat-stage">
-      <div class="nz-stack nz-stack--xs"><div class="nz-alert nz-alert--brand"><span class="nz-alert__icon">◈</span><div class="nz-alert__body"><span class="nz-alert__title">Novedad</span><span class="nz-alert__msg">Nuevo pack disponible.</span></div></div><div class="nz-alert nz-alert--warning"><span class="nz-alert__icon">⚠</span><div class="nz-alert__body"><span class="nz-alert__title">Atención</span><span class="nz-alert__msg">Revisa la configuración.</span></div></div></div>
+      <div class="nz-stack nz-stack--xs"><div class="nz-alert nz-alert--brand"><span class="nz-alert__icon"><svg class="nz-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.4 7.6L22 12l-7.6 2.4L12 22l-2.4-7.6L2 12l7.6-2.4z"/></svg></span><div class="nz-alert__body"><span class="nz-alert__title">Novedad</span><span class="nz-alert__msg">Nuevo pack disponible.</span></div></div><div class="nz-alert nz-alert--warning"><span class="nz-alert__icon">⚠</span><div class="nz-alert__body"><span class="nz-alert__title">Atención</span><span class="nz-alert__msg">Revisa la configuración.</span></div></div></div>
     </div>
   </section>
   <section class="cat-demo cat-in" data-cat="nz-callout nz-stack">
@@ -184,10 +185,10 @@
       <div><span class="nz-badge nz-badge--accent"><i></i>Acento</span><span class="nz-badge nz-badge--neutral">Neutro</span></div>
     </div>
   </section>
-  <section class="cat-demo cat-in" data-cat="nz-chip">
+  <section class="cat-demo cat-in" data-cat="nz-chip nz-icon">
     <div class="cat-demo__title"><span class="cat-demo__num">18</span><span class="cat-demo__name">Chip con cerrar</span><span class="cat-demo__tag">.nz-chip__x</span></div>
     <div class="cat-stage">
-      <button class="nz-chip is-active">Agua <span class="nz-chip__x">✕</span></button>
+      <button class="nz-chip is-active">Agua <span class="nz-chip__x"><svg class="nz-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg></span></button>
     </div>
   </section>
   <section class="cat-demo cat-in" data-cat="nz-progress nz-stack">
@@ -202,10 +203,10 @@
       <div class="nz-skeleton" style="max-width:16rem"><div class="nz-skeleton__block"></div><div class="nz-skeleton__line nz-skeleton__line--muted"></div></div>
     </div>
   </section>
-  <section class="cat-demo cat-in" data-cat="nz-toast">
+  <section class="cat-demo cat-in" data-cat="nz-icon nz-toast">
     <div class="cat-demo__title"><span class="cat-demo__num">21</span><span class="cat-demo__name">Toast error y cierre</span><span class="cat-demo__tag">.nz-toast--error · __close</span></div>
     <div class="cat-stage">
-      <div class="nz-toast nz-toast--error is-on" style="position:static;transform:none"><span class="nz-toast__icon">✕</span><span class="nz-toast__title">No se pudo guardar</span><button class="nz-toast__close" aria-label="Cerrar">✕</button></div>
+      <div class="nz-toast nz-toast--error is-on" style="position:static;transform:none"><span class="nz-toast__icon"><svg class="nz-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg></span><span class="nz-toast__title">No se pudo guardar</span><button class="nz-toast__close" aria-label="Cerrar"><svg class="nz-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg></button></div>
     </div>
   </section>
   <section class="cat-demo cat-in" data-cat="nz-statusbar">
@@ -226,22 +227,22 @@
       <div class="nz-stack nz-stack--sm"><div class="nz-alert nz-alert--neutral"><span class="nz-alert__icon">◍</span><div class="nz-alert__body"><span class="nz-alert__title">Sin novedades</span><span class="nz-alert__msg">No hay cambios desde tu última visita.</span></div></div><div class="nz-alert nz-alert--outline"><span class="nz-alert__icon">ℹ</span><div class="nz-alert__body"><span class="nz-alert__title">Modo borrador</span><span class="nz-alert__msg">Los cambios no se publican hasta que pulses Guardar.</span></div></div></div>
     </div>
   </section>
-  <section class="cat-demo cat-in" data-cat="nz-alert nz-stack">
+  <section class="cat-demo cat-in" data-cat="nz-alert nz-icon nz-stack">
     <div class="cat-demo__title"><span class="cat-demo__num">25</span><span class="cat-demo__name">Alerta pequeña y grande</span><span class="cat-demo__tag">.nz-alert--sm · --lg</span></div>
     <div class="cat-stage">
-      <div class="nz-stack nz-stack--sm"><div class="nz-alert nz-alert--sm nz-alert--success"><span class="nz-alert__icon">✓</span><div class="nz-alert__body"><span class="nz-alert__title">Guardado</span></div></div><div class="nz-alert nz-alert--lg nz-alert--info"><span class="nz-alert__icon">ℹ</span><div class="nz-alert__body"><span class="nz-alert__title">Actualización disponible</span><span class="nz-alert__msg">Hay una versión nueva del catálogo con doce objetos más.</span></div></div></div>
+      <div class="nz-stack nz-stack--sm"><div class="nz-alert nz-alert--sm nz-alert--success"><span class="nz-alert__icon"><svg class="nz-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span><div class="nz-alert__body"><span class="nz-alert__title">Guardado</span></div></div><div class="nz-alert nz-alert--lg nz-alert--info"><span class="nz-alert__icon">ℹ</span><div class="nz-alert__body"><span class="nz-alert__title">Actualización disponible</span><span class="nz-alert__msg">Hay una versión nueva del catálogo con doce objetos más.</span></div></div></div>
     </div>
   </section>
-  <section class="cat-demo cat-in" data-cat="nz-alert">
+  <section class="cat-demo cat-in" data-cat="nz-alert nz-icon">
     <div class="cat-demo__title"><span class="cat-demo__num">26</span><span class="cat-demo__name">Alerta descartable con acción</span><span class="cat-demo__tag">.nz-alert--dismissible · __close · __action</span></div>
     <div class="cat-stage">
-      <div class="nz-alert nz-alert--warning nz-alert--dismissible"><span class="nz-alert__icon">⚠</span><div class="nz-alert__body"><span class="nz-alert__title">Cuota casi agotada</span><span class="nz-alert__msg">Te queda un 8 % del plan mensual.</span><button class="nz-alert__action">Ampliar plan</button></div><button class="nz-alert__close" aria-label="Descartar aviso">✕</button></div>
+      <div class="nz-alert nz-alert--warning nz-alert--dismissible"><span class="nz-alert__icon">⚠</span><div class="nz-alert__body"><span class="nz-alert__title">Cuota casi agotada</span><span class="nz-alert__msg">Te queda un 8 % del plan mensual.</span><button class="nz-alert__action">Ampliar plan</button></div><button class="nz-alert__close" aria-label="Descartar aviso"><svg class="nz-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg></button></div>
     </div>
   </section>
-  <section class="cat-demo cat-in" data-cat="nz-alert">
+  <section class="cat-demo cat-in" data-cat="nz-alert nz-icon">
     <div class="cat-demo__title"><span class="cat-demo__num">27</span><span class="cat-demo__name">Alerta flotante</span><span class="cat-demo__tag">.nz-alert--floating</span></div>
     <div class="cat-stage">
-      <div class="nz-alert nz-alert--floating nz-alert--brand" style="position:static;transform:none"><span class="nz-alert__icon">◈</span><div class="nz-alert__body"><span class="nz-alert__title">Publicado</span><span class="nz-alert__msg">Tu página ya está en línea.</span></div></div>
+      <div class="nz-alert nz-alert--floating nz-alert--brand" style="position:static;transform:none"><span class="nz-alert__icon"><svg class="nz-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.4 7.6L22 12l-7.6 2.4L12 22l-2.4-7.6L2 12l7.6-2.4z"/></svg></span><div class="nz-alert__body"><span class="nz-alert__title">Publicado</span><span class="nz-alert__msg">Tu página ya está en línea.</span></div></div>
     </div>
   </section>
   <section class="cat-demo cat-in" data-cat="nz-callout nz-stack">
@@ -268,10 +269,10 @@
       <div class="nz-cluster nz-cluster--compact"><span class="nz-chip nz-chip--brand">Marca</span><span class="nz-chip nz-chip--accent">Acento</span><span class="nz-chip nz-chip--success">Activo</span><span class="nz-chip nz-chip--danger">Caído</span></div>
     </div>
   </section>
-  <section class="cat-demo cat-in" data-cat="nz-chip nz-cluster">
+  <section class="cat-demo cat-in" data-cat="nz-chip nz-cluster nz-icon">
     <div class="cat-demo__title"><span class="cat-demo__num">32</span><span class="cat-demo__name">Chips con punto, tamaños y quitables</span><span class="cat-demo__tag">.nz-chip__dot · --sm/--lg/--removable</span></div>
     <div class="cat-stage">
-      <div class="nz-cluster nz-cluster--compact"><span class="nz-chip nz-chip--sm"><span class="nz-chip__dot"></span>Pequeño</span><span class="nz-chip nz-chip--lg"><span class="nz-chip__dot"></span>Grande</span><span class="nz-chip nz-chip--brand nz-chip--removable">Web<span class="nz-chip__x">✕</span></span></div>
+      <div class="nz-cluster nz-cluster--compact"><span class="nz-chip nz-chip--sm"><span class="nz-chip__dot"></span>Pequeño</span><span class="nz-chip nz-chip--lg"><span class="nz-chip__dot"></span>Grande</span><span class="nz-chip nz-chip--brand nz-chip--removable">Web<span class="nz-chip__x"><svg class="nz-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg></span></span></div>
     </div>
   </section>
   <section class="cat-demo cat-in" data-cat="nz-skeleton nz-stack">
@@ -328,10 +329,10 @@
       <div class="nz-stack nz-stack--sm"><div class="nz-statusbar nz-statusbar--brand"><span>Publicando cambios</span><span class="nz-statusbar__spacer"></span><span>62 %</span></div><div class="nz-statusbar nz-statusbar--info"><span>Sincronizado hace 2 minutos</span></div><div class="nz-statusbar nz-statusbar--warning"><span>Cuota al 92 %</span><span class="nz-statusbar__spacer"></span><span>Ampliar</span></div></div>
     </div>
   </section>
-  <section class="cat-demo cat-in" data-cat="nz-stack nz-toast">
+  <section class="cat-demo cat-in" data-cat="nz-icon nz-stack nz-toast">
     <div class="cat-demo__title"><span class="cat-demo__num">42</span><span class="cat-demo__name">Toast de marca e informativo</span><span class="cat-demo__tag">.nz-toast--brand/--info · __title</span></div>
     <div class="cat-stage">
-      <div class="nz-stack nz-stack--sm"><div class="nz-toast nz-toast--brand is-on" style="position:static;transform:none"><span class="nz-toast__icon">◈</span><span class="nz-toast__title">Catálogo actualizado</span>Doce objetos nuevos.</div><div class="nz-toast nz-toast--info is-on" style="position:static;transform:none"><span class="nz-toast__icon">ℹ</span>Sincronizando en segundo plano</div></div>
+      <div class="nz-stack nz-stack--sm"><div class="nz-toast nz-toast--brand is-on" style="position:static;transform:none"><span class="nz-toast__icon"><svg class="nz-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.4 7.6L22 12l-7.6 2.4L12 22l-2.4-7.6L2 12l7.6-2.4z"/></svg></span><span class="nz-toast__title">Catálogo actualizado</span>Doce objetos nuevos.</div><div class="nz-toast nz-toast--info is-on" style="position:static;transform:none"><span class="nz-toast__icon">ℹ</span>Sincronizando en segundo plano</div></div>
     </div>
   </section>
   <section class="cat-demo cat-in" data-cat="nz-stack nz-toast">
@@ -346,10 +347,10 @@
       <div class="nz-stack nz-stack--sm"><div class="nz-banner"><div class="nz-banner__body">🎉 Ya está disponible Aurora.1</div></div><div class="nz-banner nz-banner--brand"><div class="nz-banner__body">Nuevo pack de gráficos incluido</div></div><div class="nz-banner nz-banner--accent"><div class="nz-banner__body">Prueba el modo oscuro desde la portada</div></div></div>
     </div>
   </section>
-  <section class="cat-demo cat-in" data-cat="nz-banner">
+  <section class="cat-demo cat-in" data-cat="nz-banner nz-icon">
     <div class="cat-demo__title"><span class="cat-demo__num">45</span><span class="cat-demo__name">Banner con acción y cierre</span><span class="cat-demo__tag">.nz-banner__action · __close</span></div>
     <div class="cat-stage">
-      <div class="nz-banner"><div class="nz-banner__body">Usamos cookies para medir visitas</div><button class="nz-banner__action">Aceptar</button><button class="nz-banner__close" aria-label="Cerrar aviso">✕</button></div>
+      <div class="nz-banner"><div class="nz-banner__body">Usamos cookies para medir visitas</div><button class="nz-banner__action">Aceptar</button><button class="nz-banner__close" aria-label="Cerrar aviso"><svg class="nz-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg></button></div>
     </div>
   </section>
   <section class="cat-demo cat-in" data-cat="nz-loading-bar nz-stack nz-text">

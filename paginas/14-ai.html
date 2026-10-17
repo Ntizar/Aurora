@@ -20,8 +20,8 @@
 <a class="cat-brandmark" href="../index.html"><i></i><i></i> Aurora</a>
 <span class="cat-count">14 · 180 objetos · 32 demos</span>
 <span class="cat-topbar__tools">
-<a class="cat-icobtn" href="../index.html" title="Portada" aria-label="Volver a la portada">⌂</a>
-<button class="cat-icobtn" id="btnTheme" aria-label="Cambiar tema" title="Light / Dark">◐</button>
+<a class="cat-icobtn" href="../index.html" title="Portada" aria-label="Volver a la portada"><svg class="nz-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg></a>
+<button class="cat-icobtn" id="btnTheme" aria-label="Cambiar tema" title="Light / Dark"><svg class="nz-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button>
 </span>
 </header>
 <nav class="cat-nav-pages" aria-label="Categorías del catálogo">
@@ -53,13 +53,13 @@
       <span class="nz-badge nz-badge--brand"><i></i>180 objetos</span>
       <span class="nz-badge nz-badge--neutral">28 familias</span>
       <span class="nz-badge nz-badge--accent">32 demos en vivo</span>
-      <span class="nz-badge nz-badge--neutral">32 clases distintas usadas</span>
+      <span class="nz-badge nz-badge--neutral">33 clases distintas usadas</span>
       <a class="nz-badge nz-badge--brand" href="../packs/p14-ai.css">p14-ai.css</a>
     </div>
   </div>
   <div class="cat-tools">
     <div class="cat-search">
-      <span class="cat-search__icon" aria-hidden="true">⌕</span>
+      <span class="cat-search__icon" aria-hidden="true"><svg class="nz-icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></span>
       <input class="cat-search__input" id="catBuscar" type="search" placeholder="Buscar en esta categoría… (pulsa /)" aria-label="Buscar objeto en esta categoría">
       <span class="cat-search__count" id="catContador">32 objetos</span>
     </div>
@@ -80,8 +80,8 @@
       <button type="button" class="cat-filters__chip" data-filtro="nz-embed-grid" aria-pressed="false">.embed-grid</button>
       <button type="button" class="cat-filters__chip" data-filtro="nz-feedback" aria-pressed="false">.feedback</button>
       <button type="button" class="cat-filters__chip" data-filtro="nz-guardrail" aria-pressed="false">.guardrail</button>
-      <button type="button" class="cat-filters__chip" data-filtro="nz-kgraph" aria-pressed="false">.kgraph</button>
-      <button type="button" class="cat-filters__chip" data-filtro="nz-model-compare" aria-pressed="false">.model-compare</button></div>
+      <button type="button" class="cat-filters__chip" data-filtro="nz-icon" aria-pressed="false">.icon</button>
+      <button type="button" class="cat-filters__chip" data-filtro="nz-kgraph" aria-pressed="false">.kgraph</button></div>
   </div>
   <section class="cat-demo cat-in" data-cat="nz-chat nz-msg nz-prompt">
     <div class="cat-demo__title"><span class="cat-demo__num">1</span><span class="cat-demo__name">Panel de conversación completo</span><span class="cat-demo__tag">.nz-chat · __head · __title · __status · __body · __foot</span></div>
@@ -125,10 +125,10 @@
       <div><div class="nz-prompt"><button class="nz-prompt__attach" aria-label="Adjuntar archivo">+</button><textarea class="nz-prompt__input" rows="1" placeholder="Pregunta lo que quieras…" aria-label="Pregunta lo que quieras"></textarea><button class="nz-prompt__send">Enviar</button></div><p class="nz-prompt__hint">Pulsa Intro para enviar · Mayús+Intro para salto de línea</p></div>
     </div>
   </section>
-  <section class="cat-demo cat-in" data-cat="nz-attach">
+  <section class="cat-demo cat-in" data-cat="nz-attach nz-icon">
     <div class="cat-demo__title"><span class="cat-demo__num">8</span><span class="cat-demo__name">Adjuntos</span><span class="cat-demo__tag">.nz-attach · __item · __thumb · __name · __remove</span></div>
     <div class="cat-stage">
-      <div class="nz-attach"><span class="nz-attach__item"><span class="nz-attach__thumb">PDF</span><span class="nz-attach__name">pliego-lote-3.pdf</span><button class="nz-attach__remove" aria-label="Quitar">✕</button></span><span class="nz-attach__item"><span class="nz-attach__thumb">CSV</span><span class="nz-attach__name">presupuesto.csv</span><button class="nz-attach__remove" aria-label="Quitar">✕</button></span></div>
+      <div class="nz-attach"><span class="nz-attach__item"><span class="nz-attach__thumb">PDF</span><span class="nz-attach__name">pliego-lote-3.pdf</span><button class="nz-attach__remove" aria-label="Quitar"><svg class="nz-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg></button></span><span class="nz-attach__item"><span class="nz-attach__thumb">CSV</span><span class="nz-attach__name">presupuesto.csv</span><button class="nz-attach__remove" aria-label="Quitar"><svg class="nz-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg></button></span></div>
     </div>
   </section>
   <section class="cat-demo cat-in" data-cat="nz-modelpick">
@@ -233,10 +233,10 @@
       <div class="nz-chat-history"><span class="nz-chat-history__title">Recientes</span><a class="nz-chat-history__item nz-chat-history__item--active" href="#">Pliego lote 3<span class="nz-chat-history__time">10:02</span></a><a class="nz-chat-history__item" href="#">Presupuesto obra<span class="nz-chat-history__time">ayer</span></a><a class="nz-chat-history__item" href="#">Normativa CTE<span class="nz-chat-history__time">lunes</span></a></div>
     </div>
   </section>
-  <section class="cat-demo cat-in" data-cat="nz-chat nz-chat-empty nz-stack">
+  <section class="cat-demo cat-in" data-cat="nz-chat nz-chat-empty nz-icon nz-stack">
     <div class="cat-demo__title"><span class="cat-demo__num">26</span><span class="cat-demo__name">Chat vacío con sugerencias</span><span class="cat-demo__tag">.nz-chat__empty · __suggests · __suggest · .nz-chat-empty · __icon · __title · __text · __suggests</span></div>
     <div class="cat-stage">
-      <div class="nz-stack nz-stack--sm"><div class="nz-chat nz-chat--sm"><div class="nz-chat__empty"><b>Empieza una conversación</b><span>Pregunta lo que necesites sobre los pliegos.</span><div class="nz-chat__suggests"><button class="nz-chat__suggest">Resume un pliego</button><button class="nz-chat__suggest">Compara dos lotes</button><button class="nz-chat__suggest">Busca por importe</button></div></div></div><div class="nz-chat-empty"><span class="nz-chat-empty__icon">◈</span><span class="nz-chat-empty__title">Tu asistente de licitaciones</span><p class="nz-chat-empty__text">Lee pliegos, extrae requisitos y redacta borradores con citas verificables.</p><div class="nz-chat-empty__suggests"><button class="nz-chat__suggest">Ver ejemplo</button><button class="nz-chat__suggest">Cómo funciona</button></div></div></div>
+      <div class="nz-stack nz-stack--sm"><div class="nz-chat nz-chat--sm"><div class="nz-chat__empty"><b>Empieza una conversación</b><span>Pregunta lo que necesites sobre los pliegos.</span><div class="nz-chat__suggests"><button class="nz-chat__suggest">Resume un pliego</button><button class="nz-chat__suggest">Compara dos lotes</button><button class="nz-chat__suggest">Busca por importe</button></div></div></div><div class="nz-chat-empty"><span class="nz-chat-empty__icon"><svg class="nz-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.4 7.6L22 12l-7.6 2.4L12 22l-2.4-7.6L2 12l7.6-2.4z"/></svg></span><span class="nz-chat-empty__title">Tu asistente de licitaciones</span><p class="nz-chat-empty__text">Lee pliegos, extrae requisitos y redacta borradores con citas verificables.</p><div class="nz-chat-empty__suggests"><button class="nz-chat__suggest">Ver ejemplo</button><button class="nz-chat__suggest">Cómo funciona</button></div></div></div>
     </div>
   </section>
   <section class="cat-demo cat-in" data-cat="nz-msg">

@@ -83,7 +83,7 @@
     {
       "titulo": "Nota de alto contraste",
       "tag": ".nz-high-contrast-note",
-      "markup": "<div class=\"nz-high-contrast-note\"><span class=\"nz-high-contrast-note__icon\">◐</span><span>Con el modo de alto contraste del sistema, los bordes duros los pone el navegador: aquí no forzamos colores.</span></div>"
+      "markup": "<div class=\"nz-high-contrast-note\"><span class=\"nz-high-contrast-note__icon\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"9\"/><path d=\"M12 3v18\"/></svg></span><span>Con el modo de alto contraste del sistema, los bordes duros los pone el navegador: aquí no forzamos colores.</span></div>"
     },
     {
       "titulo": "Landmarks del documento",

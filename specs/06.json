@@ -13,12 +13,12 @@
     {
       "titulo": "Alerta de éxito",
       "tag": ".nz-alert--success",
-      "markup": "<div class=\"nz-alert nz-alert--success\"><span class=\"nz-alert__icon\">✓</span><div class=\"nz-alert__body\"><span class=\"nz-alert__title\">Guardado</span><span class=\"nz-alert__msg\">Los cambios se aplicaron.</span></div></div>"
+      "markup": "<div class=\"nz-alert nz-alert--success\"><span class=\"nz-alert__icon\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M20 6 9 17l-5-5\"/></svg></span><div class=\"nz-alert__body\"><span class=\"nz-alert__title\">Guardado</span><span class=\"nz-alert__msg\">Los cambios se aplicaron.</span></div></div>"
     },
     {
       "titulo": "Alerta de error",
       "tag": ".nz-alert--danger",
-      "markup": "<div class=\"nz-alert nz-alert--danger\"><span class=\"nz-alert__icon\">✕</span><div class=\"nz-alert__body\"><span class=\"nz-alert__title\">Error</span><span class=\"nz-alert__msg\">Algo falló.</span></div></div>"
+      "markup": "<div class=\"nz-alert nz-alert--danger\"><span class=\"nz-alert__icon\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M18 6 6 18M6 6l12 12\"/></svg></span><div class=\"nz-alert__body\"><span class=\"nz-alert__title\">Error</span><span class=\"nz-alert__msg\">Algo falló.</span></div></div>"
     },
     {
       "titulo": "Callout",
@@ -68,7 +68,7 @@
     {
       "titulo": "Toast",
       "tag": ".nz-toast.is-on",
-      "markup": "<div class=\"nz-toast nz-toast--success is-on\" style=\"position:static;transform:none\"><span class=\"nz-toast__icon\">✓</span><span class=\"nz-toast__title\">Guardado</span>Los cambios se aplicaron.</div>"
+      "markup": "<div class=\"nz-toast nz-toast--success is-on\" style=\"position:static;transform:none\"><span class=\"nz-toast__icon\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M20 6 9 17l-5-5\"/></svg></span><span class=\"nz-toast__title\">Guardado</span>Los cambios se aplicaron.</div>"
     },
     {
       "titulo": "Error state",
@@ -78,7 +78,7 @@
     {
       "titulo": "Alertas brand y warning",
       "tag": ".nz-alert--brand · --warning",
-      "markup": "<div class=\"nz-stack nz-stack--xs\"><div class=\"nz-alert nz-alert--brand\"><span class=\"nz-alert__icon\">◈</span><div class=\"nz-alert__body\"><span class=\"nz-alert__title\">Novedad</span><span class=\"nz-alert__msg\">Nuevo pack disponible.</span></div></div><div class=\"nz-alert nz-alert--warning\"><span class=\"nz-alert__icon\">⚠</span><div class=\"nz-alert__body\"><span class=\"nz-alert__title\">Atención</span><span class=\"nz-alert__msg\">Revisa la configuración.</span></div></div></div>"
+      "markup": "<div class=\"nz-stack nz-stack--xs\"><div class=\"nz-alert nz-alert--brand\"><span class=\"nz-alert__icon\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 2l2.4 7.6L22 12l-7.6 2.4L12 22l-2.4-7.6L2 12l7.6-2.4z\"/></svg></span><div class=\"nz-alert__body\"><span class=\"nz-alert__title\">Novedad</span><span class=\"nz-alert__msg\">Nuevo pack disponible.</span></div></div><div class=\"nz-alert nz-alert--warning\"><span class=\"nz-alert__icon\">⚠</span><div class=\"nz-alert__body\"><span class=\"nz-alert__title\">Atención</span><span class=\"nz-alert__msg\">Revisa la configuración.</span></div></div></div>"
     },
     {
       "titulo": "Callouts",
@@ -93,7 +93,7 @@
     {
       "titulo": "Chip con cerrar",
       "tag": ".nz-chip__x",
-      "markup": "<button class=\"nz-chip is-active\">Agua <span class=\"nz-chip__x\">✕</span></button>"
+      "markup": "<button class=\"nz-chip is-active\">Agua <span class=\"nz-chip__x\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M18 6 6 18M6 6l12 12\"/></svg></span></button>"
     },
     {
       "titulo": "Progreso variantes",
@@ -108,7 +108,7 @@
     {
       "titulo": "Toast error y cierre",
       "tag": ".nz-toast--error · __close",
-      "markup": "<div class=\"nz-toast nz-toast--error is-on\" style=\"position:static;transform:none\"><span class=\"nz-toast__icon\">✕</span><span class=\"nz-toast__title\">No se pudo guardar</span><button class=\"nz-toast__close\" aria-label=\"Cerrar\">✕</button></div>"
+      "markup": "<div class=\"nz-toast nz-toast--error is-on\" style=\"position:static;transform:none\"><span class=\"nz-toast__icon\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M18 6 6 18M6 6l12 12\"/></svg></span><span class=\"nz-toast__title\">No se pudo guardar</span><button class=\"nz-toast__close\" aria-label=\"Cerrar\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M18 6 6 18M6 6l12 12\"/></svg></button></div>"
     },
     {
       "titulo": "Status bar error",
@@ -128,17 +128,17 @@
     {
       "titulo": "Alerta pequeña y grande",
       "tag": ".nz-alert--sm · --lg",
-      "markup": "<div class=\"nz-stack nz-stack--sm\"><div class=\"nz-alert nz-alert--sm nz-alert--success\"><span class=\"nz-alert__icon\">✓</span><div class=\"nz-alert__body\"><span class=\"nz-alert__title\">Guardado</span></div></div><div class=\"nz-alert nz-alert--lg nz-alert--info\"><span class=\"nz-alert__icon\">ℹ</span><div class=\"nz-alert__body\"><span class=\"nz-alert__title\">Actualización disponible</span><span class=\"nz-alert__msg\">Hay una versión nueva del catálogo con doce objetos más.</span></div></div></div>"
+      "markup": "<div class=\"nz-stack nz-stack--sm\"><div class=\"nz-alert nz-alert--sm nz-alert--success\"><span class=\"nz-alert__icon\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M20 6 9 17l-5-5\"/></svg></span><div class=\"nz-alert__body\"><span class=\"nz-alert__title\">Guardado</span></div></div><div class=\"nz-alert nz-alert--lg nz-alert--info\"><span class=\"nz-alert__icon\">ℹ</span><div class=\"nz-alert__body\"><span class=\"nz-alert__title\">Actualización disponible</span><span class=\"nz-alert__msg\">Hay una versión nueva del catálogo con doce objetos más.</span></div></div></div>"
     },
     {
       "titulo": "Alerta descartable con acción",
       "tag": ".nz-alert--dismissible · __close · __action",
-      "markup": "<div class=\"nz-alert nz-alert--warning nz-alert--dismissible\"><span class=\"nz-alert__icon\">⚠</span><div class=\"nz-alert__body\"><span class=\"nz-alert__title\">Cuota casi agotada</span><span class=\"nz-alert__msg\">Te queda un 8 % del plan mensual.</span><button class=\"nz-alert__action\">Ampliar plan</button></div><button class=\"nz-alert__close\" aria-label=\"Descartar aviso\">✕</button></div>"
+      "markup": "<div class=\"nz-alert nz-alert--warning nz-alert--dismissible\"><span class=\"nz-alert__icon\">⚠</span><div class=\"nz-alert__body\"><span class=\"nz-alert__title\">Cuota casi agotada</span><span class=\"nz-alert__msg\">Te queda un 8 % del plan mensual.</span><button class=\"nz-alert__action\">Ampliar plan</button></div><button class=\"nz-alert__close\" aria-label=\"Descartar aviso\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M18 6 6 18M6 6l12 12\"/></svg></button></div>"
     },
     {
       "titulo": "Alerta flotante",
       "tag": ".nz-alert--floating",
-      "markup": "<div class=\"nz-alert nz-alert--floating nz-alert--brand\" style=\"position:static;transform:none\"><span class=\"nz-alert__icon\">◈</span><div class=\"nz-alert__body\"><span class=\"nz-alert__title\">Publicado</span><span class=\"nz-alert__msg\">Tu página ya está en línea.</span></div></div>"
+      "markup": "<div class=\"nz-alert nz-alert--floating nz-alert--brand\" style=\"position:static;transform:none\"><span class=\"nz-alert__icon\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 2l2.4 7.6L22 12l-7.6 2.4L12 22l-2.4-7.6L2 12l7.6-2.4z\"/></svg></span><div class=\"nz-alert__body\"><span class=\"nz-alert__title\">Publicado</span><span class=\"nz-alert__msg\">Tu página ya está en línea.</span></div></div>"
     },
     {
       "titulo": "Callouts de tono",
@@ -163,7 +163,7 @@
     {
       "titulo": "Chips con punto, tamaños y quitables",
       "tag": ".nz-chip__dot · --sm/--lg/--removable",
-      "markup": "<div class=\"nz-cluster nz-cluster--compact\"><span class=\"nz-chip nz-chip--sm\"><span class=\"nz-chip__dot\"></span>Pequeño</span><span class=\"nz-chip nz-chip--lg\"><span class=\"nz-chip__dot\"></span>Grande</span><span class=\"nz-chip nz-chip--brand nz-chip--removable\">Web<span class=\"nz-chip__x\">✕</span></span></div>"
+      "markup": "<div class=\"nz-cluster nz-cluster--compact\"><span class=\"nz-chip nz-chip--sm\"><span class=\"nz-chip__dot\"></span>Pequeño</span><span class=\"nz-chip nz-chip--lg\"><span class=\"nz-chip__dot\"></span>Grande</span><span class=\"nz-chip nz-chip--brand nz-chip--removable\">Web<span class=\"nz-chip__x\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M18 6 6 18M6 6l12 12\"/></svg></span></span></div>"
     },
     {
       "titulo": "Skeleton de texto, avatar, botón y gráfico",
@@ -213,7 +213,7 @@
     {
       "titulo": "Toast de marca e informativo",
       "tag": ".nz-toast--brand/--info · __title",
-      "markup": "<div class=\"nz-stack nz-stack--sm\"><div class=\"nz-toast nz-toast--brand is-on\" style=\"position:static;transform:none\"><span class=\"nz-toast__icon\">◈</span><span class=\"nz-toast__title\">Catálogo actualizado</span>Doce objetos nuevos.</div><div class=\"nz-toast nz-toast--info is-on\" style=\"position:static;transform:none\"><span class=\"nz-toast__icon\">ℹ</span>Sincronizando en segundo plano</div></div>"
+      "markup": "<div class=\"nz-stack nz-stack--sm\"><div class=\"nz-toast nz-toast--brand is-on\" style=\"position:static;transform:none\"><span class=\"nz-toast__icon\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 2l2.4 7.6L22 12l-7.6 2.4L12 22l-2.4-7.6L2 12l7.6-2.4z\"/></svg></span><span class=\"nz-toast__title\">Catálogo actualizado</span>Doce objetos nuevos.</div><div class=\"nz-toast nz-toast--info is-on\" style=\"position:static;transform:none\"><span class=\"nz-toast__icon\">ℹ</span>Sincronizando en segundo plano</div></div>"
     },
     {
       "titulo": "Toast arriba y abajo con acción",
@@ -228,7 +228,7 @@
     {
       "titulo": "Banner con acción y cierre",
       "tag": ".nz-banner__action · __close",
-      "markup": "<div class=\"nz-banner\"><div class=\"nz-banner__body\">Usamos cookies para medir visitas</div><button class=\"nz-banner__action\">Aceptar</button><button class=\"nz-banner__close\" aria-label=\"Cerrar aviso\">✕</button></div>"
+      "markup": "<div class=\"nz-banner\"><div class=\"nz-banner__body\">Usamos cookies para medir visitas</div><button class=\"nz-banner__action\">Aceptar</button><button class=\"nz-banner__close\" aria-label=\"Cerrar aviso\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M18 6 6 18M6 6l12 12\"/></svg></button></div>"
     },
     {
       "titulo": "Barra de carga superior",

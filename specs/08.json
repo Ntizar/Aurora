@@ -1,209 +1,209 @@
-{
-  "cat": 8,
-  "nombre": "Datos, tablas y listas",
-  "desc": "Tablas (densidad, sticky, bordes, toolbar y filtros; apilable en móvil), KPIs, listas y filas de registro, timeline, definition lists, árbol, matriz de calor, comparativa y números medidores.",
-  "pack": "p8-data.css",
-  "fichero": "08-data.html",
-  "demos": [
-    {
-      "titulo": "Tabla",
-      "tag": ".nz-table · __right · __num · __strong · __status--ok · __status--warn",
-      "markup": "<div class=\"nz-table-wrap\"><table class=\"nz-table\"><thead><tr><th>Material</th><th class=\"nz-table__right\">Cantidad</th><th>Estado</th></tr></thead> <tbody><tr><td class=\"nz-table__strong\">Agua potable</td><td class=\"nz-table__num nz-table__right\">12</td><td><span class=\"nz-table__status nz-table__status--ok\"><i></i>OK</span></td></tr> <tr><td>Comida liofilizada</td><td class=\"nz-table__num nz-table__right\">8</td><td><span class=\"nz-table__status nz-table__status--warn\"><i></i>Bajo</span></td></tr></tbody></table></div>"
-    },
-    {
-      "titulo": "Tabla apilable (móvil)",
-      "tag": ".nz-table--apilable · data-etiqueta · .nz-table-wrap--apilable",
-      "markup": "<div class=\"nz-table-wrap nz-table-wrap--apilable\"><table class=\"nz-table nz-table--apilable\"><thead><tr><th>Entregable</th><th>Entrega</th><th class=\"nz-table__right\">Horas</th></tr></thead><tbody><tr><th scope=\"row\">Informe de requisitos</th><td data-etiqueta=\"Entrega\">oct 2026</td><td class=\"nz-table__num nz-table__right\" data-etiqueta=\"Horas\">32 h</td></tr><tr><th scope=\"row\">Prototipo UX navegable</th><td data-etiqueta=\"Entrega\">dic 2026</td><td class=\"nz-table__num nz-table__right\" data-etiqueta=\"Horas\">54 h</td></tr><tr><th scope=\"row\">Puesta en producción</th><td data-etiqueta=\"Entrega\">mar 2027</td><td class=\"nz-table__num nz-table__right\" data-etiqueta=\"Horas\">30 h</td></tr></tbody></table></div>"
-    },
-    {
-      "titulo": "Tabla rayada y sin bordes",
-      "tag": ".nz-table--striped · --borderless · __muted",
-      "markup": "<div class=\"nz-table-wrap\"><table class=\"nz-table nz-table--striped nz-table--borderless\"><tbody> <tr><td>Fila 1</td><td class=\"nz-table__num\">10</td></tr><tr><td>Fila 2</td><td class=\"nz-table__num\">20</td></tr> <tr><td class=\"nz-table__muted\">Fila atenuada</td><td class=\"nz-table__num\">30</td></tr><tr><td>Fila 4</td><td class=\"nz-table__num\">40</td></tr></tbody></table></div>"
-    },
-    {
-      "titulo": "Tabla compacta y tabla confortable",
-      "tag": ".nz-table--compact · --comfortable",
-      "markup": "<div class=\"nz-stack nz-stack--sm\"><div class=\"nz-table-wrap\"><table class=\"nz-table nz-table--compact\"><thead><tr><th>Ruta</th><th>Salidas</th></tr></thead><tbody> <tr><td>C-01</td><td class=\"nz-table__num\">18</td></tr><tr><td>C-02</td><td class=\"nz-table__num\">24</td></tr></tbody></table></div> <div class=\"nz-table-wrap\"><table class=\"nz-table nz-table--comfortable\"><tbody><tr><td>C-03</td><td class=\"nz-table__num\">31</td></tr><tr><td>C-04</td><td class=\"nz-table__num\">27</td></tr></tbody></table></div></div>"
-    },
-    {
-      "titulo": "Tabla pequeña con columna ordenada",
-      "tag": ".nz-table--sm · __sort",
-      "markup": "<div class=\"nz-table-wrap\"><table class=\"nz-table nz-table--sm\"><thead><tr><th><span class=\"nz-table__sort\">Parada</span></th><th class=\"nz-table__right\">Pasajeros</th></tr></thead> <tbody><tr><td>Sol</td><td class=\"nz-table__num nz-table__right\">1 208</td></tr><tr><td>Mayor</td><td class=\"nz-table__num nz-table__right\">964</td></tr></tbody></table></div>"
-    },
-    {
-      "titulo": "Tabla con bordes y hover de marca",
-      "tag": ".nz-table--bordered · --hover",
-      "markup": "<div class=\"nz-table-wrap\"><table class=\"nz-table nz-table--bordered nz-table--hover\"><thead><tr><th>Código</th><th>Importe</th></tr></thead> <tbody><tr><td>FAC-118</td><td class=\"nz-table__num\">240 €</td></tr><tr><td>FAC-119</td><td class=\"nz-table__num\">1 320 €</td></tr></tbody></table></div>"
-    },
-    {
-      "titulo": "Tabla con cabecera fija y título",
-      "tag": ".nz-table--sticky-head · __caption",
-      "markup": "<div class=\"nz-table-wrap\" style=\"max-height:9rem;overflow-y:auto\"><table class=\"nz-table nz-table--sticky-head\"> <caption class=\"nz-table__caption\">Inventario por almacén · actualizado a las 09:40</caption> <thead><tr><th>Almacén</th><th class=\"nz-table__right\">Unidades</th></tr></thead> <tbody><tr><td>Norte</td><td class=\"nz-table__num nz-table__right\">820</td></tr><tr><td>Sur</td><td class=\"nz-table__num nz-table__right\">415</td></tr> <tr><td>Este</td><td class=\"nz-table__num nz-table__right\">302</td></tr><tr><td>Oeste</td><td class=\"nz-table__num nz-table__right\">188</td></tr></tbody></table></div>"
-    },
-    {
-      "titulo": "Celdas de tabla especializadas",
-      "tag": ".nz-table__cell--num · --actions · --checkbox · --wide",
-      "markup": "<div class=\"nz-table-wrap\"><table class=\"nz-table\"><thead><tr><th class=\"nz-table__cell--checkbox\">Sel.</th><th class=\"nz-table__cell--wide\">Descripción</th><th class=\"nz-table__cell--num\">Total</th><th class=\"nz-table__cell--actions\">Acciones</th></tr></thead> <tbody><tr><td class=\"nz-table__cell--checkbox\"><input type=\"checkbox\" aria-label=\"Seleccionar\"></td><td class=\"nz-table__cell--wide\">Cuadro eléctrico de la nave 3 con protecciones diferenciales</td><td class=\"nz-table__cell--num\">2</td><td class=\"nz-table__cell--actions\"><button class=\"nz-btn nz-btn--icon-sm nz-btn--ghost\" aria-label=\"editar\">✎</button></td></tr></tbody></table></div>"
-    },
-    {
-      "titulo": "Barra de herramientas y filtros de tabla",
-      "tag": ".nz-table__toolbar · __toolbar-spacer · __filters",
-      "markup": "<div class=\"nz-table-wrap\"><div class=\"nz-table__toolbar\"><span class=\"nz-table__strong\">Facturas</span><span class=\"nz-badge nz-badge--brand\">128</span><span class=\"nz-table__toolbar-spacer\"></span><button class=\"nz-btn nz-btn--sm nz-btn--ghost\">Exportar</button></div> <div class=\"nz-table__filters\"><span class=\"nz-chip is-active\">Todas</span><span class=\"nz-chip\">Pendientes</span><span class=\"nz-chip\">Pagadas</span></div> <table class=\"nz-table\"><tbody><tr><td class=\"nz-table__strong\">FAC-118</td><td class=\"nz-table__num\">240 €</td></tr><tr><td>FAC-119</td><td class=\"nz-table__num\">1 320 €</td></tr></tbody></table> <div class=\"nz-table__foot\"><span>2 de 128</span><span>Total 1 560 €</span></div></div>"
-    },
-    {
-      "titulo": "Tabla sin resultados",
-      "tag": ".nz-table__empty",
-      "markup": "<div class=\"nz-table-wrap\"><table class=\"nz-table\"><thead><tr><th>Cliente</th><th>Estado</th></tr></thead> <tbody><tr><td class=\"nz-table__empty\" colspan=\"2\">Sin resultados para este filtro</td></tr></tbody></table></div>"
-    },
-    {
-      "titulo": "Fila seleccionable y fila pulsable",
-      "tag": ".nz-table__row--selected · --clickable · __status--err · --brand",
-      "markup": "<div class=\"nz-table-wrap\"><table class=\"nz-table\"><tbody> <tr class=\"nz-table__row--clickable nz-table__row--selected\"><td class=\"nz-table__strong\">Seleccionada</td><td>✓</td><td><span class=\"nz-table__status nz-table__status--brand\"><i></i>Nuevo</span></td></tr> <tr class=\"nz-table__row--clickable\"><td>Pulsable</td><td></td><td><span class=\"nz-table__status nz-table__status--err\"><i></i>Error</span></td></tr></tbody></table></div>"
-    },
-    {
-      "titulo": "KPI",
-      "tag": ".nz-kpi · __label · __value · __value--brand · __delta · __delta--up",
-      "markup": "<div class=\"nz-kpi\" style=\"max-width:14rem\"><span class=\"nz-kpi__label\">Ingresos</span><span class=\"nz-kpi__value nz-kpi__value--brand\">3 420 €</span><span class=\"nz-kpi__delta nz-kpi__delta--up\">+12% vs ayer</span></div>"
-    },
-    {
-      "titulo": "KPI de marca y KPI de acento",
-      "tag": ".nz-kpi--brand · --accent · __value--accent · __delta--down · --flat",
-      "markup": "<div class=\"nz-cluster\"><div class=\"nz-kpi nz-kpi--brand\" style=\"max-width:13rem\"><span class=\"nz-kpi__label\">Cobertura</span><span class=\"nz-kpi__value\">78%</span><span class=\"nz-kpi__delta nz-kpi__delta--flat\">sin cambios</span></div> <div class=\"nz-kpi nz-kpi--accent\" style=\"max-width:13rem\"><span class=\"nz-kpi__label\">Visitas</span><span class=\"nz-kpi__value nz-kpi__value--accent\">1 204</span><span class=\"nz-kpi__delta nz-kpi__delta--down\">−4%</span></div></div>"
-    },
-    {
-      "titulo": "KPI pequeño y KPI grande",
-      "tag": ".nz-kpi--sm · --lg",
-      "markup": "<div class=\"nz-cluster\"><div class=\"nz-kpi nz-kpi--sm\" style=\"max-width:10rem\"><span class=\"nz-kpi__label\">Cola</span><span class=\"nz-kpi__value\">12</span></div> <div class=\"nz-kpi nz-kpi--lg\" style=\"max-width:18rem\"><span class=\"nz-kpi__label\">Facturación anual</span><span class=\"nz-kpi__value\">184 500 €</span><span class=\"nz-kpi__delta nz-kpi__delta--up\">+8,4%</span></div></div>"
-    },
-    {
-      "titulo": "KPI con borde, con icono y en línea",
-      "tag": ".nz-kpi--bordered · __icon · --inline",
-      "markup": "<div class=\"nz-stack nz-stack--sm\"><div class=\"nz-kpi nz-kpi--bordered\" style=\"max-width:16rem\"><span class=\"nz-kpi__icon\">◈</span><span class=\"nz-kpi__label\">Sesiones</span><span class=\"nz-kpi__value\">9 318</span></div> <div class=\"nz-kpi nz-kpi--inline\" style=\"max-width:20rem\"><span class=\"nz-kpi__label\">Media</span><span class=\"nz-kpi__value\">4,9</span><span class=\"nz-kpi__delta nz-kpi__delta--up\">+0,2</span></div></div>"
-    },
-    {
-      "titulo": "KPI con objetivo y sparkline",
-      "tag": ".nz-kpi__target · __spark · .nz-spark__bar",
-      "markup": "<div class=\"nz-kpi\" style=\"max-width:15rem\"><span class=\"nz-kpi__label\">Objetivo mensual</span><span class=\"nz-kpi__value\">72%</span><div class=\"nz-kpi__target\"><i style=\"width:72%\"></i></div> <div class=\"nz-kpi__spark\"><div class=\"nz-spark\"><i class=\"nz-spark__bar\" style=\"height:40%\"></i><i class=\"nz-spark__bar\" style=\"height:65%\"></i><i class=\"nz-spark__bar\" style=\"height:52%\"></i><i class=\"nz-spark__bar\" style=\"height:80%\"></i><i class=\"nz-spark__bar\" style=\"height:70%\"></i></div></div></div>"
-    },
-    {
-      "titulo": "Sparkline con barra activa y tamaño grande",
-      "tag": ".nz-spark · __bar · __bar--active · --lg",
-      "markup": "<div class=\"nz-spark nz-spark--lg\" style=\"max-width:16rem\"><i class=\"nz-spark__bar\" style=\"height:30%\"></i><i class=\"nz-spark__bar\" style=\"height:55%\"></i><i class=\"nz-spark__bar nz-spark__bar--active\" style=\"height:90%\"></i><i class=\"nz-spark__bar\" style=\"height:62%\"></i><i class=\"nz-spark__bar\" style=\"height:74%\"></i><i class=\"nz-spark__bar\" style=\"height:48%\"></i></div>"
-    },
-    {
-      "titulo": "Sparkline de marca y de acento",
-      "tag": ".nz-spark--brand · --accent",
-      "markup": "<div class=\"nz-cluster\"><div class=\"nz-spark nz-spark--brand\" style=\"max-width:12rem\"><i class=\"nz-spark__bar\" style=\"height:35%\"></i><i class=\"nz-spark__bar\" style=\"height:60%\"></i><i class=\"nz-spark__bar\" style=\"height:80%\"></i><i class=\"nz-spark__bar\" style=\"height:45%\"></i></div> <div class=\"nz-spark nz-spark--accent\" style=\"max-width:12rem\"><i class=\"nz-spark__bar\" style=\"height:50%\"></i><i class=\"nz-spark__bar\" style=\"height:30%\"></i><i class=\"nz-spark__bar\" style=\"height:70%\"></i><i class=\"nz-spark__bar\" style=\"height:55%\"></i></div></div>"
-    },
-    {
-      "titulo": "Filas de lista",
-      "tag": ".nz-list-row · __body · __title · __meta · __actions · --brand",
-      "markup": "<div><div class=\"nz-list-row nz-list-row--brand\"><span class=\"nz-record__avatar\">DA</span><div class=\"nz-list-row__body\"><span class=\"nz-list-row__title\">David Antizar</span><span class=\"nz-list-row__meta\">Editor · hace 2 min</span></div><div class=\"nz-list-row__actions\"><button class=\"nz-btn nz-btn--icon-sm nz-btn--ghost\" aria-label=\"abrir\">›</button></div></div> <div class=\"nz-list-row\"><span class=\"nz-record__avatar\">ML</span><div class=\"nz-list-row__body\"><span class=\"nz-list-row__title\">Marta Leal</span><span class=\"nz-list-row__meta\">Revisora · ayer</span></div><div class=\"nz-list-row__actions\"><span class=\"nz-badge nz-badge--success\">OK</span></div></div></div>"
-    },
-    {
-      "titulo": "Registro",
-      "tag": ".nz-records · .nz-record · __thumb · __body · __title · __meta · __value",
-      "markup": "<div class=\"nz-records\"><div class=\"nz-record\"><span class=\"nz-record__thumb\"></span><div class=\"nz-record__body\"><span class=\"nz-record__title\">Kit familiar</span><span class=\"nz-record__meta\">18 unidades · revisado</span></div><span class=\"nz-record__value nz-record__value--brand\">▲</span></div></div>"
-    },
-    {
-      "titulo": "Registro con avatar, etiqueta y acciones",
-      "tag": ".nz-record__avatar · __tag · __actions · --brand · --danger",
-      "markup": "<div class=\"nz-records\"><div class=\"nz-record nz-record--brand\"><span class=\"nz-record__avatar\">AL</span><div class=\"nz-record__body\"><span class=\"nz-record__title\">Albarán 2291</span><span class=\"nz-record__tag\">Pendiente de firma</span></div><div class=\"nz-record__actions\"><button class=\"nz-btn nz-btn--icon-sm nz-btn--ghost\" aria-label=\"firmar\">✎</button></div></div> <div class=\"nz-record nz-record--danger\"><span class=\"nz-record__avatar\">!</span><div class=\"nz-record__body\"><span class=\"nz-record__title\">Albarán 2294</span><span class=\"nz-record__tag\">Rechazado</span></div><div class=\"nz-record__actions\"><button class=\"nz-btn nz-btn--icon-sm nz-btn--ghost\" aria-label=\"revisar\">↻</button></div></div></div>"
-    },
-    {
-      "titulo": "Registros con meta de error y de marca",
-      "tag": ".nz-record__meta--error · __meta--brand",
-      "markup": "<div class=\"nz-records\"><div class=\"nz-record\"><div class=\"nz-record__body\"><span class=\"nz-record__title\">Fallo de sincronización</span><span class=\"nz-record__meta nz-record__meta--error\">Error de red en el nodo 2</span></div></div> <div class=\"nz-record\"><div class=\"nz-record__body\"><span class=\"nz-record__title\">Sincronización correcta</span><span class=\"nz-record__meta nz-record__meta--brand\">Última pasada completa</span></div></div></div>"
-    },
-    {
-      "titulo": "Timeline",
-      "tag": ".nz-timeline · __item · __dot · __time · __title · __desc",
-      "markup": "<div class=\"nz-timeline\"><div class=\"nz-timeline__item\"><span class=\"nz-timeline__dot\"></span><span class=\"nz-timeline__time\">Hoy · 09:40</span><span class=\"nz-timeline__title\">Revisado</span><span class=\"nz-timeline__desc\">Todo en orden</span></div> <div class=\"nz-timeline__item\"><span class=\"nz-timeline__dot nz-timeline__dot--accent\"></span><span class=\"nz-timeline__time\">Ayer · 18:10</span><span class=\"nz-timeline__title\">Añadido</span></div></div>"
-    },
-    {
-      "titulo": "Timeline con tarjeta y puntos de color",
-      "tag": ".nz-timeline__card · __dot--brand · --accent · --success · --error · --muted",
-      "markup": "<div class=\"nz-timeline\"><div class=\"nz-timeline__item\"><span class=\"nz-timeline__dot nz-timeline__dot--brand\"></span><span class=\"nz-timeline__title\">Despliegue</span><span class=\"nz-timeline__card\">Versión 7.1.0 publicada en producción.</span></div> <div class=\"nz-timeline__item\"><span class=\"nz-timeline__dot nz-timeline__dot--success\"></span><span class=\"nz-timeline__title\">Verificado</span></div> <div class=\"nz-timeline__item\"><span class=\"nz-timeline__dot nz-timeline__dot--error\"></span><span class=\"nz-timeline__title\">Reintento</span></div> <div class=\"nz-timeline__item\"><span class=\"nz-timeline__dot nz-timeline__dot--muted\"></span><span class=\"nz-timeline__title\">Pendiente</span></div></div>"
-    },
-    {
-      "titulo": "Timeline compacto",
-      "tag": ".nz-timeline--compact · --brand",
-      "markup": "<div class=\"nz-timeline nz-timeline--compact nz-timeline--brand\"><div class=\"nz-timeline__item\"><span class=\"nz-timeline__dot\"></span><span class=\"nz-timeline__title\">Alta del pedido</span></div> <div class=\"nz-timeline__item\"><span class=\"nz-timeline__dot\"></span><span class=\"nz-timeline__title\">Preparado en almacén</span></div> <div class=\"nz-timeline__item\"><span class=\"nz-timeline__dot\"></span><span class=\"nz-timeline__title\">En reparto</span></div></div>"
-    },
-    {
-      "titulo": "Timeline horizontal",
-      "tag": ".nz-timeline--horizontal",
-      "markup": "<div class=\"nz-timeline nz-timeline--horizontal\"><div class=\"nz-timeline__item\"><span class=\"nz-timeline__dot\"></span><span class=\"nz-timeline__time\">Ene</span><span class=\"nz-timeline__title\">Alta</span></div> <div class=\"nz-timeline__item\"><span class=\"nz-timeline__dot\"></span><span class=\"nz-timeline__time\">Feb</span><span class=\"nz-timeline__title\">Auditoría</span></div> <div class=\"nz-timeline__item\"><span class=\"nz-timeline__dot\"></span><span class=\"nz-timeline__time\">Mar</span><span class=\"nz-timeline__title\">Cierre</span></div></div>"
-    },
-    {
-      "titulo": "Definition list",
-      "tag": ".nz-dl · __row · __dt · __dd · __dd--brand",
-      "markup": "<div class=\"nz-dl\" style=\"max-width:22rem\"><div class=\"nz-dl__row\"><dt class=\"nz-dl__dt\">Categoría</dt><dd class=\"nz-dl__dd\">Supervivencia</dd></div> <div class=\"nz-dl__row\"><dt class=\"nz-dl__dt\">Precio</dt><dd class=\"nz-dl__dd nz-dl__dd--brand\">34 €</dd></div></div>"
-    },
-    {
-      "titulo": "Definition list a dos y tres columnas",
-      "tag": ".nz-dl--2col · --3col",
-      "markup": "<div class=\"nz-stack nz-stack--lg\"><div class=\"nz-dl nz-dl--2col\" style=\"max-width:22rem\"><div class=\"nz-dl__row\"><dt class=\"nz-dl__dt\">Alto</dt><dd class=\"nz-dl__dd\">2 m</dd></div><div class=\"nz-dl__row\"><dt class=\"nz-dl__dt\">Ancho</dt><dd class=\"nz-dl__dd\">80 cm</dd></div></div> <div class=\"nz-dl nz-dl--3col\" style=\"max-width:30rem\"><div class=\"nz-dl__row\"><dt class=\"nz-dl__dt\">Peso</dt><dd class=\"nz-dl__dd\">4,2 kg</dd></div><div class=\"nz-dl__row\"><dt class=\"nz-dl__dt\">Material</dt><dd class=\"nz-dl__dd\">Acero</dd></div><div class=\"nz-dl__row\"><dt class=\"nz-dl__dt\">Garantía</dt><dd class=\"nz-dl__dd\">3 años</dd></div></div></div>"
-    },
-    {
-      "titulo": "Definition list en línea y rayada",
-      "tag": ".nz-dl--inline · --striped",
-      "markup": "<div class=\"nz-stack nz-stack--lg\"><div class=\"nz-dl nz-dl--inline\"><div class=\"nz-dl__row\"><dt class=\"nz-dl__dt\">Ref.</dt><dd class=\"nz-dl__dd\">A7-118</dd></div><div class=\"nz-dl__row\"><dt class=\"nz-dl__dt\">Serie</dt><dd class=\"nz-dl__dd\">2026</dd></div><div class=\"nz-dl__row\"><dt class=\"nz-dl__dt\">Estado</dt><dd class=\"nz-dl__dd nz-dl__dd--brand\">Activo</dd></div></div> <div class=\"nz-dl nz-dl--striped\" style=\"max-width:22rem\"><div class=\"nz-dl__row\"><dt class=\"nz-dl__dt\">Enero</dt><dd class=\"nz-dl__dd\">12 400 €</dd></div><div class=\"nz-dl__row\"><dt class=\"nz-dl__dt\">Febrero</dt><dd class=\"nz-dl__dd\">9 800 €</dd></div><div class=\"nz-dl__row\"><dt class=\"nz-dl__dt\">Marzo</dt><dd class=\"nz-dl__dd\">13 150 €</dd></div></div></div>"
-    },
-    {
-      "titulo": "Etiqueta de estadística y número medidor",
-      "tag": ".nz-stat-badge · .nz-gauge-num · __value · __unit · __delta · __delta--up · __label",
-      "markup": "<div class=\"nz-cluster\"><span class=\"nz-stat-badge\"><b>4,9</b><span>/ 5</span></span> <div class=\"nz-gauge-num\"><span class=\"nz-gauge-num__value\">18,4<span class=\"nz-gauge-num__unit\">kg</span></span><span class=\"nz-gauge-num__delta nz-gauge-num__delta--up\">+1,2 kg</span><span class=\"nz-gauge-num__label\">Carga media por bulto</span></div></div>"
-    },
-    {
-      "titulo": "Número medidor de marca y en caída",
-      "tag": ".nz-gauge-num--brand · __delta--down",
-      "markup": "<div class=\"nz-gauge-num nz-gauge-num--brand\"><span class=\"nz-gauge-num__value\">97,2<span class=\"nz-gauge-num__unit\">%</span></span><span class=\"nz-gauge-num__delta nz-gauge-num__delta--down\">−0,6 puntos</span><span class=\"nz-gauge-num__label\">Disponibilidad del servicio</span></div>"
-    },
-    {
-      "titulo": "Grid de datos",
-      "tag": ".nz-datagrid · __cell--edit",
-      "markup": "<div class=\"nz-datagrid\" style=\"max-width:26rem\"><div class=\"nz-kpi nz-kpi--sm\"><span class=\"nz-kpi__label\">A</span><span class=\"nz-kpi__value\">12</span></div><div class=\"nz-kpi nz-kpi--sm\"><span class=\"nz-kpi__label\">B</span><span class=\"nz-kpi__value\">8</span></div> <div class=\"nz-datagrid__cell--edit\"><span class=\"nz-kpi__label\">Nuevo dato</span><span class=\"nz-kpi__value\">+</span></div></div>"
-    },
-    {
-      "titulo": "Grid de datos denso y rayado",
-      "tag": ".nz-datagrid--dense · --zebra",
-      "markup": "<div class=\"nz-datagrid nz-datagrid--dense nz-datagrid--zebra\" style=\"max-width:26rem\"><div class=\"nz-kpi nz-kpi--sm\"><span class=\"nz-kpi__label\">A</span><span class=\"nz-kpi__value\">12</span></div> <div class=\"nz-kpi nz-kpi--sm\"><span class=\"nz-kpi__label\">B</span><span class=\"nz-kpi__value\">8</span></div><div class=\"nz-kpi nz-kpi--sm\"><span class=\"nz-kpi__label\">C</span><span class=\"nz-kpi__value\">21</span></div> <div class=\"nz-kpi nz-kpi--sm\"><span class=\"nz-kpi__label\">D</span><span class=\"nz-kpi__value\">5</span></div></div>"
-    },
-    {
-      "titulo": "Estados inline",
-      "tag": ".nz-inlinestat · --ok · --warn · --err · --brand · --muted",
-      "markup": "<div class=\"nz-cluster\"><span class=\"nz-inlinestat nz-inlinestat--ok\"><i></i>Disponible</span><span class=\"nz-inlinestat nz-inlinestat--warn\"><i></i>Aviso</span><span class=\"nz-inlinestat nz-inlinestat--err\"><i></i>Crítico</span><span class=\"nz-inlinestat nz-inlinestat--brand\"><i></i>Nuevo</span><span class=\"nz-inlinestat nz-inlinestat--muted\"><i></i>Sin datos</span></div>"
-    },
-    {
-      "titulo": "Árbol jerárquico",
-      "tag": ".nz-arbol · __node · __toggle · __group · __leaf",
-      "markup": "<details class=\"nz-arbol__node nz-arbol\" open><summary class=\"nz-arbol__toggle\">Proyecto Aurora</summary> <div class=\"nz-arbol__group\"><details class=\"nz-arbol__node\"><summary class=\"nz-arbol__toggle\">Diseño</summary><div class=\"nz-arbol__group\"><a href=\"#contenido\" class=\"nz-arbol__leaf\">Tokens</a><a href=\"#contenido\" class=\"nz-arbol__leaf\">Packs</a></div></details> <a href=\"#contenido\" class=\"nz-arbol__leaf\">Documentación</a><a href=\"#contenido\" class=\"nz-arbol__leaf\">Auditoría</a></div></details>"
-    },
-    {
-      "titulo": "Matriz de calor",
-      "tag": ".nz-matrix · __cell · --low · --mid · --high · --top · __label",
-      "markup": "<div class=\"nz-stack nz-stack--sm\" style=\"max-width:28rem\"><div class=\"nz-matrix\"><span class=\"nz-matrix__cell\"></span><span class=\"nz-matrix__cell nz-matrix__cell--low\"></span><span class=\"nz-matrix__cell nz-matrix__cell--mid\"></span><span class=\"nz-matrix__cell nz-matrix__cell--high\"></span> <span class=\"nz-matrix__cell nz-matrix__cell--high\"></span><span class=\"nz-matrix__cell nz-matrix__cell--top\"></span><span class=\"nz-matrix__cell nz-matrix__cell--mid\"></span><span class=\"nz-matrix__cell nz-matrix__cell--low\"></span> <span class=\"nz-matrix__cell nz-matrix__cell--low\"></span><span class=\"nz-matrix__cell nz-matrix__cell--mid\"></span><span class=\"nz-matrix__cell\"></span><span class=\"nz-matrix__cell nz-matrix__cell--low\"></span> <span class=\"nz-matrix__cell nz-matrix__cell--mid\"></span><span class=\"nz-matrix__cell nz-matrix__cell--high\"></span><span class=\"nz-matrix__cell nz-matrix__cell--top\"></span><span class=\"nz-matrix__cell nz-matrix__cell--high\"></span></div> <span class=\"nz-matrix__label\">Actividad por franja horaria · 4 semanas</span></div>"
-    },
-    {
-      "titulo": "Tabla de comparación",
-      "tag": ".nz-compare · __head · __feature · __col--featured · __check · __no · __foot",
-      "markup": "<div class=\"nz-table-wrap\"><table class=\"nz-compare\"><thead><tr><th class=\"nz-compare__head\">Característica</th><th class=\"nz-compare__head\">Base</th><th class=\"nz-compare__head nz-compare__col--featured\">Pro</th></tr></thead> <tbody><tr><td class=\"nz-compare__feature\">Packs CSS</td><td>6</td><td class=\"nz-compare__col--featured\">12</td></tr> <tr><td class=\"nz-compare__feature\">Tema oscuro</td><td><span class=\"nz-compare__no\">✕</span></td><td class=\"nz-compare__col--featured\"><span class=\"nz-compare__check\">✓</span></td></tr> <tr><td class=\"nz-compare__feature\">Auditoría</td><td><span class=\"nz-compare__no\">✕</span></td><td class=\"nz-compare__col--featured\"><span class=\"nz-compare__check\">✓</span></td></tr></tbody> <tfoot><tr><td class=\"nz-compare__foot\" colspan=\"3\">Precios sin IVA · actualizado en marzo</td></tr></tfoot></table></div>"
-    },
-    {
-      "titulo": "Arbol · estados de nodo y hoja",
-      "tag": ".nz-arbol__node.is-selected / __leaf.is-error",
-      "markup": "<ul class=\"nz-arbol\"><li class=\"nz-arbol__node is-selected\"><span class=\"nz-arbol__toggle\">Proyecto</span><ul class=\"nz-arbol__group\"><li><a class=\"nz-arbol__leaf\" href=\"#\">docs</a></li><li><a class=\"nz-arbol__leaf is-done\" href=\"#\">CHANGELOG.md</a></li><li><a class=\"nz-arbol__leaf is-error\" href=\"#\">secreto.env</a></li></ul></li></ul>"
-    },
-    {
-      "titulo": "Registros · densidad",
-      "tag": ".nz-records--dense / --spacious",
-      "markup": "<div class=\"nz-records nz-records--dense\"><div class=\"nz-record\">Densa · fila 1</div><div class=\"nz-record\">Densa · fila 2</div></div><div class=\"nz-records nz-records--spacious\" style=\"margin-top:1rem\"><div class=\"nz-record\">Amplia · fila 1</div><div class=\"nz-record\">Amplia · fila 2</div></div>"
-    },
-    {
-      "titulo": "Registro · tono y seleccion",
-      "tag": ".nz-record--success / --warning / .is-selected",
-      "markup": "<div class=\"nz-records\"><div class=\"nz-record nz-record--success\">Pago confirmado</div><div class=\"nz-record nz-record--warning\">Stock bajo: 3 unidades</div><div class=\"nz-record is-selected\">Factura 2026-114 seleccionada</div></div>"
-    }
-  ]
-}
+{
+  "cat": 8,
+  "nombre": "Datos, tablas y listas",
+  "desc": "Tablas (densidad, sticky, bordes, toolbar y filtros; apilable en móvil), KPIs, listas y filas de registro, timeline, definition lists, árbol, matriz de calor, comparativa y números medidores.",
+  "pack": "p8-data.css",
+  "fichero": "08-data.html",
+  "demos": [
+    {
+      "titulo": "Tabla",
+      "tag": ".nz-table · __right · __num · __strong · __status--ok · __status--warn",
+      "markup": "<div class=\"nz-table-wrap\"><table class=\"nz-table\"><thead><tr><th>Material</th><th class=\"nz-table__right\">Cantidad</th><th>Estado</th></tr></thead> <tbody><tr><td class=\"nz-table__strong\">Agua potable</td><td class=\"nz-table__num nz-table__right\">12</td><td><span class=\"nz-table__status nz-table__status--ok\"><i></i>OK</span></td></tr> <tr><td>Comida liofilizada</td><td class=\"nz-table__num nz-table__right\">8</td><td><span class=\"nz-table__status nz-table__status--warn\"><i></i>Bajo</span></td></tr></tbody></table></div>"
+    },
+    {
+      "titulo": "Tabla apilable (móvil)",
+      "tag": ".nz-table--apilable · data-etiqueta · .nz-table-wrap--apilable",
+      "markup": "<div class=\"nz-table-wrap nz-table-wrap--apilable\"><table class=\"nz-table nz-table--apilable\"><thead><tr><th>Entregable</th><th>Entrega</th><th class=\"nz-table__right\">Horas</th></tr></thead><tbody><tr><th scope=\"row\">Informe de requisitos</th><td data-etiqueta=\"Entrega\">oct 2026</td><td class=\"nz-table__num nz-table__right\" data-etiqueta=\"Horas\">32 h</td></tr><tr><th scope=\"row\">Prototipo UX navegable</th><td data-etiqueta=\"Entrega\">dic 2026</td><td class=\"nz-table__num nz-table__right\" data-etiqueta=\"Horas\">54 h</td></tr><tr><th scope=\"row\">Puesta en producción</th><td data-etiqueta=\"Entrega\">mar 2027</td><td class=\"nz-table__num nz-table__right\" data-etiqueta=\"Horas\">30 h</td></tr></tbody></table></div>"
+    },
+    {
+      "titulo": "Tabla rayada y sin bordes",
+      "tag": ".nz-table--striped · --borderless · __muted",
+      "markup": "<div class=\"nz-table-wrap\"><table class=\"nz-table nz-table--striped nz-table--borderless\"><tbody> <tr><td>Fila 1</td><td class=\"nz-table__num\">10</td></tr><tr><td>Fila 2</td><td class=\"nz-table__num\">20</td></tr> <tr><td class=\"nz-table__muted\">Fila atenuada</td><td class=\"nz-table__num\">30</td></tr><tr><td>Fila 4</td><td class=\"nz-table__num\">40</td></tr></tbody></table></div>"
+    },
+    {
+      "titulo": "Tabla compacta y tabla confortable",
+      "tag": ".nz-table--compact · --comfortable",
+      "markup": "<div class=\"nz-stack nz-stack--sm\"><div class=\"nz-table-wrap\"><table class=\"nz-table nz-table--compact\"><thead><tr><th>Ruta</th><th>Salidas</th></tr></thead><tbody> <tr><td>C-01</td><td class=\"nz-table__num\">18</td></tr><tr><td>C-02</td><td class=\"nz-table__num\">24</td></tr></tbody></table></div> <div class=\"nz-table-wrap\"><table class=\"nz-table nz-table--comfortable\"><tbody><tr><td>C-03</td><td class=\"nz-table__num\">31</td></tr><tr><td>C-04</td><td class=\"nz-table__num\">27</td></tr></tbody></table></div></div>"
+    },
+    {
+      "titulo": "Tabla pequeña con columna ordenada",
+      "tag": ".nz-table--sm · __sort",
+      "markup": "<div class=\"nz-table-wrap\"><table class=\"nz-table nz-table--sm\"><thead><tr><th><span class=\"nz-table__sort\">Parada</span></th><th class=\"nz-table__right\">Pasajeros</th></tr></thead> <tbody><tr><td>Sol</td><td class=\"nz-table__num nz-table__right\">1 208</td></tr><tr><td>Mayor</td><td class=\"nz-table__num nz-table__right\">964</td></tr></tbody></table></div>"
+    },
+    {
+      "titulo": "Tabla con bordes y hover de marca",
+      "tag": ".nz-table--bordered · --hover",
+      "markup": "<div class=\"nz-table-wrap\"><table class=\"nz-table nz-table--bordered nz-table--hover\"><thead><tr><th>Código</th><th>Importe</th></tr></thead> <tbody><tr><td>FAC-118</td><td class=\"nz-table__num\">240 €</td></tr><tr><td>FAC-119</td><td class=\"nz-table__num\">1 320 €</td></tr></tbody></table></div>"
+    },
+    {
+      "titulo": "Tabla con cabecera fija y título",
+      "tag": ".nz-table--sticky-head · __caption",
+      "markup": "<div class=\"nz-table-wrap\" style=\"max-height:9rem;overflow-y:auto\"><table class=\"nz-table nz-table--sticky-head\"> <caption class=\"nz-table__caption\">Inventario por almacén · actualizado a las 09:40</caption> <thead><tr><th>Almacén</th><th class=\"nz-table__right\">Unidades</th></tr></thead> <tbody><tr><td>Norte</td><td class=\"nz-table__num nz-table__right\">820</td></tr><tr><td>Sur</td><td class=\"nz-table__num nz-table__right\">415</td></tr> <tr><td>Este</td><td class=\"nz-table__num nz-table__right\">302</td></tr><tr><td>Oeste</td><td class=\"nz-table__num nz-table__right\">188</td></tr></tbody></table></div>"
+    },
+    {
+      "titulo": "Celdas de tabla especializadas",
+      "tag": ".nz-table__cell--num · --actions · --checkbox · --wide",
+      "markup": "<div class=\"nz-table-wrap\"><table class=\"nz-table\"><thead><tr><th class=\"nz-table__cell--checkbox\">Sel.</th><th class=\"nz-table__cell--wide\">Descripción</th><th class=\"nz-table__cell--num\">Total</th><th class=\"nz-table__cell--actions\">Acciones</th></tr></thead> <tbody><tr><td class=\"nz-table__cell--checkbox\"><input type=\"checkbox\" aria-label=\"Seleccionar\"></td><td class=\"nz-table__cell--wide\">Cuadro eléctrico de la nave 3 con protecciones diferenciales</td><td class=\"nz-table__cell--num\">2</td><td class=\"nz-table__cell--actions\"><button class=\"nz-btn nz-btn--icon-sm nz-btn--ghost\" aria-label=\"editar\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M4 20h4L20 8l-4-4L4 16z\"/><path d=\"M14 6l4 4\"/></svg></button></td></tr></tbody></table></div>"
+    },
+    {
+      "titulo": "Barra de herramientas y filtros de tabla",
+      "tag": ".nz-table__toolbar · __toolbar-spacer · __filters",
+      "markup": "<div class=\"nz-table-wrap\"><div class=\"nz-table__toolbar\"><span class=\"nz-table__strong\">Facturas</span><span class=\"nz-badge nz-badge--brand\">128</span><span class=\"nz-table__toolbar-spacer\"></span><button class=\"nz-btn nz-btn--sm nz-btn--ghost\">Exportar</button></div> <div class=\"nz-table__filters\"><span class=\"nz-chip is-active\">Todas</span><span class=\"nz-chip\">Pendientes</span><span class=\"nz-chip\">Pagadas</span></div> <table class=\"nz-table\"><tbody><tr><td class=\"nz-table__strong\">FAC-118</td><td class=\"nz-table__num\">240 €</td></tr><tr><td>FAC-119</td><td class=\"nz-table__num\">1 320 €</td></tr></tbody></table> <div class=\"nz-table__foot\"><span>2 de 128</span><span>Total 1 560 €</span></div></div>"
+    },
+    {
+      "titulo": "Tabla sin resultados",
+      "tag": ".nz-table__empty",
+      "markup": "<div class=\"nz-table-wrap\"><table class=\"nz-table\"><thead><tr><th>Cliente</th><th>Estado</th></tr></thead> <tbody><tr><td class=\"nz-table__empty\" colspan=\"2\">Sin resultados para este filtro</td></tr></tbody></table></div>"
+    },
+    {
+      "titulo": "Fila seleccionable y fila pulsable",
+      "tag": ".nz-table__row--selected · --clickable · __status--err · --brand",
+      "markup": "<div class=\"nz-table-wrap\"><table class=\"nz-table\"><tbody> <tr class=\"nz-table__row--clickable nz-table__row--selected\"><td class=\"nz-table__strong\">Seleccionada</td><td><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M20 6 9 17l-5-5\"/></svg></td><td><span class=\"nz-table__status nz-table__status--brand\"><i></i>Nuevo</span></td></tr> <tr class=\"nz-table__row--clickable\"><td>Pulsable</td><td></td><td><span class=\"nz-table__status nz-table__status--err\"><i></i>Error</span></td></tr></tbody></table></div>"
+    },
+    {
+      "titulo": "KPI",
+      "tag": ".nz-kpi · __label · __value · __value--brand · __delta · __delta--up",
+      "markup": "<div class=\"nz-kpi\" style=\"max-width:14rem\"><span class=\"nz-kpi__label\">Ingresos</span><span class=\"nz-kpi__value nz-kpi__value--brand\">3 420 €</span><span class=\"nz-kpi__delta nz-kpi__delta--up\">+12% vs ayer</span></div>"
+    },
+    {
+      "titulo": "KPI de marca y KPI de acento",
+      "tag": ".nz-kpi--brand · --accent · __value--accent · __delta--down · --flat",
+      "markup": "<div class=\"nz-cluster\"><div class=\"nz-kpi nz-kpi--brand\" style=\"max-width:13rem\"><span class=\"nz-kpi__label\">Cobertura</span><span class=\"nz-kpi__value\">78%</span><span class=\"nz-kpi__delta nz-kpi__delta--flat\">sin cambios</span></div> <div class=\"nz-kpi nz-kpi--accent\" style=\"max-width:13rem\"><span class=\"nz-kpi__label\">Visitas</span><span class=\"nz-kpi__value nz-kpi__value--accent\">1 204</span><span class=\"nz-kpi__delta nz-kpi__delta--down\">−4%</span></div></div>"
+    },
+    {
+      "titulo": "KPI pequeño y KPI grande",
+      "tag": ".nz-kpi--sm · --lg",
+      "markup": "<div class=\"nz-cluster\"><div class=\"nz-kpi nz-kpi--sm\" style=\"max-width:10rem\"><span class=\"nz-kpi__label\">Cola</span><span class=\"nz-kpi__value\">12</span></div> <div class=\"nz-kpi nz-kpi--lg\" style=\"max-width:18rem\"><span class=\"nz-kpi__label\">Facturación anual</span><span class=\"nz-kpi__value\">184 500 €</span><span class=\"nz-kpi__delta nz-kpi__delta--up\">+8,4%</span></div></div>"
+    },
+    {
+      "titulo": "KPI con borde, con icono y en línea",
+      "tag": ".nz-kpi--bordered · __icon · --inline",
+      "markup": "<div class=\"nz-stack nz-stack--sm\"><div class=\"nz-kpi nz-kpi--bordered\" style=\"max-width:16rem\"><span class=\"nz-kpi__icon\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 2l2.4 7.6L22 12l-7.6 2.4L12 22l-2.4-7.6L2 12l7.6-2.4z\"/></svg></span><span class=\"nz-kpi__label\">Sesiones</span><span class=\"nz-kpi__value\">9 318</span></div> <div class=\"nz-kpi nz-kpi--inline\" style=\"max-width:20rem\"><span class=\"nz-kpi__label\">Media</span><span class=\"nz-kpi__value\">4,9</span><span class=\"nz-kpi__delta nz-kpi__delta--up\">+0,2</span></div></div>"
+    },
+    {
+      "titulo": "KPI con objetivo y sparkline",
+      "tag": ".nz-kpi__target · __spark · .nz-spark__bar",
+      "markup": "<div class=\"nz-kpi\" style=\"max-width:15rem\"><span class=\"nz-kpi__label\">Objetivo mensual</span><span class=\"nz-kpi__value\">72%</span><div class=\"nz-kpi__target\"><i style=\"width:72%\"></i></div> <div class=\"nz-kpi__spark\"><div class=\"nz-spark\"><i class=\"nz-spark__bar\" style=\"height:40%\"></i><i class=\"nz-spark__bar\" style=\"height:65%\"></i><i class=\"nz-spark__bar\" style=\"height:52%\"></i><i class=\"nz-spark__bar\" style=\"height:80%\"></i><i class=\"nz-spark__bar\" style=\"height:70%\"></i></div></div></div>"
+    },
+    {
+      "titulo": "Sparkline con barra activa y tamaño grande",
+      "tag": ".nz-spark · __bar · __bar--active · --lg",
+      "markup": "<div class=\"nz-spark nz-spark--lg\" style=\"max-width:16rem\"><i class=\"nz-spark__bar\" style=\"height:30%\"></i><i class=\"nz-spark__bar\" style=\"height:55%\"></i><i class=\"nz-spark__bar nz-spark__bar--active\" style=\"height:90%\"></i><i class=\"nz-spark__bar\" style=\"height:62%\"></i><i class=\"nz-spark__bar\" style=\"height:74%\"></i><i class=\"nz-spark__bar\" style=\"height:48%\"></i></div>"
+    },
+    {
+      "titulo": "Sparkline de marca y de acento",
+      "tag": ".nz-spark--brand · --accent",
+      "markup": "<div class=\"nz-cluster\"><div class=\"nz-spark nz-spark--brand\" style=\"max-width:12rem\"><i class=\"nz-spark__bar\" style=\"height:35%\"></i><i class=\"nz-spark__bar\" style=\"height:60%\"></i><i class=\"nz-spark__bar\" style=\"height:80%\"></i><i class=\"nz-spark__bar\" style=\"height:45%\"></i></div> <div class=\"nz-spark nz-spark--accent\" style=\"max-width:12rem\"><i class=\"nz-spark__bar\" style=\"height:50%\"></i><i class=\"nz-spark__bar\" style=\"height:30%\"></i><i class=\"nz-spark__bar\" style=\"height:70%\"></i><i class=\"nz-spark__bar\" style=\"height:55%\"></i></div></div>"
+    },
+    {
+      "titulo": "Filas de lista",
+      "tag": ".nz-list-row · __body · __title · __meta · __actions · --brand",
+      "markup": "<div><div class=\"nz-list-row nz-list-row--brand\"><span class=\"nz-record__avatar\">DA</span><div class=\"nz-list-row__body\"><span class=\"nz-list-row__title\">David Antizar</span><span class=\"nz-list-row__meta\">Editor · hace 2 min</span></div><div class=\"nz-list-row__actions\"><button class=\"nz-btn nz-btn--icon-sm nz-btn--ghost\" aria-label=\"abrir\">›</button></div></div> <div class=\"nz-list-row\"><span class=\"nz-record__avatar\">ML</span><div class=\"nz-list-row__body\"><span class=\"nz-list-row__title\">Marta Leal</span><span class=\"nz-list-row__meta\">Revisora · ayer</span></div><div class=\"nz-list-row__actions\"><span class=\"nz-badge nz-badge--success\">OK</span></div></div></div>"
+    },
+    {
+      "titulo": "Registro",
+      "tag": ".nz-records · .nz-record · __thumb · __body · __title · __meta · __value",
+      "markup": "<div class=\"nz-records\"><div class=\"nz-record\"><span class=\"nz-record__thumb\"></span><div class=\"nz-record__body\"><span class=\"nz-record__title\">Kit familiar</span><span class=\"nz-record__meta\">18 unidades · revisado</span></div><span class=\"nz-record__value nz-record__value--brand\">▲</span></div></div>"
+    },
+    {
+      "titulo": "Registro con avatar, etiqueta y acciones",
+      "tag": ".nz-record__avatar · __tag · __actions · --brand · --danger",
+      "markup": "<div class=\"nz-records\"><div class=\"nz-record nz-record--brand\"><span class=\"nz-record__avatar\">AL</span><div class=\"nz-record__body\"><span class=\"nz-record__title\">Albarán 2291</span><span class=\"nz-record__tag\">Pendiente de firma</span></div><div class=\"nz-record__actions\"><button class=\"nz-btn nz-btn--icon-sm nz-btn--ghost\" aria-label=\"firmar\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M4 20h4L20 8l-4-4L4 16z\"/><path d=\"M14 6l4 4\"/></svg></button></div></div> <div class=\"nz-record nz-record--danger\"><span class=\"nz-record__avatar\">!</span><div class=\"nz-record__body\"><span class=\"nz-record__title\">Albarán 2294</span><span class=\"nz-record__tag\">Rechazado</span></div><div class=\"nz-record__actions\"><button class=\"nz-btn nz-btn--icon-sm nz-btn--ghost\" aria-label=\"revisar\">↻</button></div></div></div>"
+    },
+    {
+      "titulo": "Registros con meta de error y de marca",
+      "tag": ".nz-record__meta--error · __meta--brand",
+      "markup": "<div class=\"nz-records\"><div class=\"nz-record\"><div class=\"nz-record__body\"><span class=\"nz-record__title\">Fallo de sincronización</span><span class=\"nz-record__meta nz-record__meta--error\">Error de red en el nodo 2</span></div></div> <div class=\"nz-record\"><div class=\"nz-record__body\"><span class=\"nz-record__title\">Sincronización correcta</span><span class=\"nz-record__meta nz-record__meta--brand\">Última pasada completa</span></div></div></div>"
+    },
+    {
+      "titulo": "Timeline",
+      "tag": ".nz-timeline · __item · __dot · __time · __title · __desc",
+      "markup": "<div class=\"nz-timeline\"><div class=\"nz-timeline__item\"><span class=\"nz-timeline__dot\"></span><span class=\"nz-timeline__time\">Hoy · 09:40</span><span class=\"nz-timeline__title\">Revisado</span><span class=\"nz-timeline__desc\">Todo en orden</span></div> <div class=\"nz-timeline__item\"><span class=\"nz-timeline__dot nz-timeline__dot--accent\"></span><span class=\"nz-timeline__time\">Ayer · 18:10</span><span class=\"nz-timeline__title\">Añadido</span></div></div>"
+    },
+    {
+      "titulo": "Timeline con tarjeta y puntos de color",
+      "tag": ".nz-timeline__card · __dot--brand · --accent · --success · --error · --muted",
+      "markup": "<div class=\"nz-timeline\"><div class=\"nz-timeline__item\"><span class=\"nz-timeline__dot nz-timeline__dot--brand\"></span><span class=\"nz-timeline__title\">Despliegue</span><span class=\"nz-timeline__card\">Versión 7.1.0 publicada en producción.</span></div> <div class=\"nz-timeline__item\"><span class=\"nz-timeline__dot nz-timeline__dot--success\"></span><span class=\"nz-timeline__title\">Verificado</span></div> <div class=\"nz-timeline__item\"><span class=\"nz-timeline__dot nz-timeline__dot--error\"></span><span class=\"nz-timeline__title\">Reintento</span></div> <div class=\"nz-timeline__item\"><span class=\"nz-timeline__dot nz-timeline__dot--muted\"></span><span class=\"nz-timeline__title\">Pendiente</span></div></div>"
+    },
+    {
+      "titulo": "Timeline compacto",
+      "tag": ".nz-timeline--compact · --brand",
+      "markup": "<div class=\"nz-timeline nz-timeline--compact nz-timeline--brand\"><div class=\"nz-timeline__item\"><span class=\"nz-timeline__dot\"></span><span class=\"nz-timeline__title\">Alta del pedido</span></div> <div class=\"nz-timeline__item\"><span class=\"nz-timeline__dot\"></span><span class=\"nz-timeline__title\">Preparado en almacén</span></div> <div class=\"nz-timeline__item\"><span class=\"nz-timeline__dot\"></span><span class=\"nz-timeline__title\">En reparto</span></div></div>"
+    },
+    {
+      "titulo": "Timeline horizontal",
+      "tag": ".nz-timeline--horizontal",
+      "markup": "<div class=\"nz-timeline nz-timeline--horizontal\"><div class=\"nz-timeline__item\"><span class=\"nz-timeline__dot\"></span><span class=\"nz-timeline__time\">Ene</span><span class=\"nz-timeline__title\">Alta</span></div> <div class=\"nz-timeline__item\"><span class=\"nz-timeline__dot\"></span><span class=\"nz-timeline__time\">Feb</span><span class=\"nz-timeline__title\">Auditoría</span></div> <div class=\"nz-timeline__item\"><span class=\"nz-timeline__dot\"></span><span class=\"nz-timeline__time\">Mar</span><span class=\"nz-timeline__title\">Cierre</span></div></div>"
+    },
+    {
+      "titulo": "Definition list",
+      "tag": ".nz-dl · __row · __dt · __dd · __dd--brand",
+      "markup": "<div class=\"nz-dl\" style=\"max-width:22rem\"><div class=\"nz-dl__row\"><dt class=\"nz-dl__dt\">Categoría</dt><dd class=\"nz-dl__dd\">Supervivencia</dd></div> <div class=\"nz-dl__row\"><dt class=\"nz-dl__dt\">Precio</dt><dd class=\"nz-dl__dd nz-dl__dd--brand\">34 €</dd></div></div>"
+    },
+    {
+      "titulo": "Definition list a dos y tres columnas",
+      "tag": ".nz-dl--2col · --3col",
+      "markup": "<div class=\"nz-stack nz-stack--lg\"><div class=\"nz-dl nz-dl--2col\" style=\"max-width:22rem\"><div class=\"nz-dl__row\"><dt class=\"nz-dl__dt\">Alto</dt><dd class=\"nz-dl__dd\">2 m</dd></div><div class=\"nz-dl__row\"><dt class=\"nz-dl__dt\">Ancho</dt><dd class=\"nz-dl__dd\">80 cm</dd></div></div> <div class=\"nz-dl nz-dl--3col\" style=\"max-width:30rem\"><div class=\"nz-dl__row\"><dt class=\"nz-dl__dt\">Peso</dt><dd class=\"nz-dl__dd\">4,2 kg</dd></div><div class=\"nz-dl__row\"><dt class=\"nz-dl__dt\">Material</dt><dd class=\"nz-dl__dd\">Acero</dd></div><div class=\"nz-dl__row\"><dt class=\"nz-dl__dt\">Garantía</dt><dd class=\"nz-dl__dd\">3 años</dd></div></div></div>"
+    },
+    {
+      "titulo": "Definition list en línea y rayada",
+      "tag": ".nz-dl--inline · --striped",
+      "markup": "<div class=\"nz-stack nz-stack--lg\"><div class=\"nz-dl nz-dl--inline\"><div class=\"nz-dl__row\"><dt class=\"nz-dl__dt\">Ref.</dt><dd class=\"nz-dl__dd\">A7-118</dd></div><div class=\"nz-dl__row\"><dt class=\"nz-dl__dt\">Serie</dt><dd class=\"nz-dl__dd\">2026</dd></div><div class=\"nz-dl__row\"><dt class=\"nz-dl__dt\">Estado</dt><dd class=\"nz-dl__dd nz-dl__dd--brand\">Activo</dd></div></div> <div class=\"nz-dl nz-dl--striped\" style=\"max-width:22rem\"><div class=\"nz-dl__row\"><dt class=\"nz-dl__dt\">Enero</dt><dd class=\"nz-dl__dd\">12 400 €</dd></div><div class=\"nz-dl__row\"><dt class=\"nz-dl__dt\">Febrero</dt><dd class=\"nz-dl__dd\">9 800 €</dd></div><div class=\"nz-dl__row\"><dt class=\"nz-dl__dt\">Marzo</dt><dd class=\"nz-dl__dd\">13 150 €</dd></div></div></div>"
+    },
+    {
+      "titulo": "Etiqueta de estadística y número medidor",
+      "tag": ".nz-stat-badge · .nz-gauge-num · __value · __unit · __delta · __delta--up · __label",
+      "markup": "<div class=\"nz-cluster\"><span class=\"nz-stat-badge\"><b>4,9</b><span>/ 5</span></span> <div class=\"nz-gauge-num\"><span class=\"nz-gauge-num__value\">18,4<span class=\"nz-gauge-num__unit\">kg</span></span><span class=\"nz-gauge-num__delta nz-gauge-num__delta--up\">+1,2 kg</span><span class=\"nz-gauge-num__label\">Carga media por bulto</span></div></div>"
+    },
+    {
+      "titulo": "Número medidor de marca y en caída",
+      "tag": ".nz-gauge-num--brand · __delta--down",
+      "markup": "<div class=\"nz-gauge-num nz-gauge-num--brand\"><span class=\"nz-gauge-num__value\">97,2<span class=\"nz-gauge-num__unit\">%</span></span><span class=\"nz-gauge-num__delta nz-gauge-num__delta--down\">−0,6 puntos</span><span class=\"nz-gauge-num__label\">Disponibilidad del servicio</span></div>"
+    },
+    {
+      "titulo": "Grid de datos",
+      "tag": ".nz-datagrid · __cell--edit",
+      "markup": "<div class=\"nz-datagrid\" style=\"max-width:26rem\"><div class=\"nz-kpi nz-kpi--sm\"><span class=\"nz-kpi__label\">A</span><span class=\"nz-kpi__value\">12</span></div><div class=\"nz-kpi nz-kpi--sm\"><span class=\"nz-kpi__label\">B</span><span class=\"nz-kpi__value\">8</span></div> <div class=\"nz-datagrid__cell--edit\"><span class=\"nz-kpi__label\">Nuevo dato</span><span class=\"nz-kpi__value\">+</span></div></div>"
+    },
+    {
+      "titulo": "Grid de datos denso y rayado",
+      "tag": ".nz-datagrid--dense · --zebra",
+      "markup": "<div class=\"nz-datagrid nz-datagrid--dense nz-datagrid--zebra\" style=\"max-width:26rem\"><div class=\"nz-kpi nz-kpi--sm\"><span class=\"nz-kpi__label\">A</span><span class=\"nz-kpi__value\">12</span></div> <div class=\"nz-kpi nz-kpi--sm\"><span class=\"nz-kpi__label\">B</span><span class=\"nz-kpi__value\">8</span></div><div class=\"nz-kpi nz-kpi--sm\"><span class=\"nz-kpi__label\">C</span><span class=\"nz-kpi__value\">21</span></div> <div class=\"nz-kpi nz-kpi--sm\"><span class=\"nz-kpi__label\">D</span><span class=\"nz-kpi__value\">5</span></div></div>"
+    },
+    {
+      "titulo": "Estados inline",
+      "tag": ".nz-inlinestat · --ok · --warn · --err · --brand · --muted",
+      "markup": "<div class=\"nz-cluster\"><span class=\"nz-inlinestat nz-inlinestat--ok\"><i></i>Disponible</span><span class=\"nz-inlinestat nz-inlinestat--warn\"><i></i>Aviso</span><span class=\"nz-inlinestat nz-inlinestat--err\"><i></i>Crítico</span><span class=\"nz-inlinestat nz-inlinestat--brand\"><i></i>Nuevo</span><span class=\"nz-inlinestat nz-inlinestat--muted\"><i></i>Sin datos</span></div>"
+    },
+    {
+      "titulo": "Árbol jerárquico",
+      "tag": ".nz-arbol · __node · __toggle · __group · __leaf",
+      "markup": "<details class=\"nz-arbol__node nz-arbol\" open><summary class=\"nz-arbol__toggle\">Proyecto Aurora</summary> <div class=\"nz-arbol__group\"><details class=\"nz-arbol__node\"><summary class=\"nz-arbol__toggle\">Diseño</summary><div class=\"nz-arbol__group\"><a href=\"#contenido\" class=\"nz-arbol__leaf\">Tokens</a><a href=\"#contenido\" class=\"nz-arbol__leaf\">Packs</a></div></details> <a href=\"#contenido\" class=\"nz-arbol__leaf\">Documentación</a><a href=\"#contenido\" class=\"nz-arbol__leaf\">Auditoría</a></div></details>"
+    },
+    {
+      "titulo": "Matriz de calor",
+      "tag": ".nz-matrix · __cell · --low · --mid · --high · --top · __label",
+      "markup": "<div class=\"nz-stack nz-stack--sm\" style=\"max-width:28rem\"><div class=\"nz-matrix\"><span class=\"nz-matrix__cell\"></span><span class=\"nz-matrix__cell nz-matrix__cell--low\"></span><span class=\"nz-matrix__cell nz-matrix__cell--mid\"></span><span class=\"nz-matrix__cell nz-matrix__cell--high\"></span> <span class=\"nz-matrix__cell nz-matrix__cell--high\"></span><span class=\"nz-matrix__cell nz-matrix__cell--top\"></span><span class=\"nz-matrix__cell nz-matrix__cell--mid\"></span><span class=\"nz-matrix__cell nz-matrix__cell--low\"></span> <span class=\"nz-matrix__cell nz-matrix__cell--low\"></span><span class=\"nz-matrix__cell nz-matrix__cell--mid\"></span><span class=\"nz-matrix__cell\"></span><span class=\"nz-matrix__cell nz-matrix__cell--low\"></span> <span class=\"nz-matrix__cell nz-matrix__cell--mid\"></span><span class=\"nz-matrix__cell nz-matrix__cell--high\"></span><span class=\"nz-matrix__cell nz-matrix__cell--top\"></span><span class=\"nz-matrix__cell nz-matrix__cell--high\"></span></div> <span class=\"nz-matrix__label\">Actividad por franja horaria · 4 semanas</span></div>"
+    },
+    {
+      "titulo": "Tabla de comparación",
+      "tag": ".nz-compare · __head · __feature · __col--featured · __check · __no · __foot",
+      "markup": "<div class=\"nz-table-wrap\"><table class=\"nz-compare\"><thead><tr><th class=\"nz-compare__head\">Característica</th><th class=\"nz-compare__head\">Base</th><th class=\"nz-compare__head nz-compare__col--featured\">Pro</th></tr></thead> <tbody><tr><td class=\"nz-compare__feature\">Packs CSS</td><td>6</td><td class=\"nz-compare__col--featured\">12</td></tr> <tr><td class=\"nz-compare__feature\">Tema oscuro</td><td><span class=\"nz-compare__no\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M18 6 6 18M6 6l12 12\"/></svg></span></td><td class=\"nz-compare__col--featured\"><span class=\"nz-compare__check\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M20 6 9 17l-5-5\"/></svg></span></td></tr> <tr><td class=\"nz-compare__feature\">Auditoría</td><td><span class=\"nz-compare__no\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M18 6 6 18M6 6l12 12\"/></svg></span></td><td class=\"nz-compare__col--featured\"><span class=\"nz-compare__check\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M20 6 9 17l-5-5\"/></svg></span></td></tr></tbody> <tfoot><tr><td class=\"nz-compare__foot\" colspan=\"3\">Precios sin IVA · actualizado en marzo</td></tr></tfoot></table></div>"
+    },
+    {
+      "titulo": "Arbol · estados de nodo y hoja",
+      "tag": ".nz-arbol__node.is-selected / __leaf.is-error",
+      "markup": "<ul class=\"nz-arbol\"><li class=\"nz-arbol__node is-selected\"><span class=\"nz-arbol__toggle\">Proyecto</span><ul class=\"nz-arbol__group\"><li><a class=\"nz-arbol__leaf\" href=\"#\">docs</a></li><li><a class=\"nz-arbol__leaf is-done\" href=\"#\">CHANGELOG.md</a></li><li><a class=\"nz-arbol__leaf is-error\" href=\"#\">secreto.env</a></li></ul></li></ul>"
+    },
+    {
+      "titulo": "Registros · densidad",
+      "tag": ".nz-records--dense / --spacious",
+      "markup": "<div class=\"nz-records nz-records--dense\"><div class=\"nz-record\">Densa · fila 1</div><div class=\"nz-record\">Densa · fila 2</div></div><div class=\"nz-records nz-records--spacious\" style=\"margin-top:1rem\"><div class=\"nz-record\">Amplia · fila 1</div><div class=\"nz-record\">Amplia · fila 2</div></div>"
+    },
+    {
+      "titulo": "Registro · tono y seleccion",
+      "tag": ".nz-record--success / --warning / .is-selected",
+      "markup": "<div class=\"nz-records\"><div class=\"nz-record nz-record--success\">Pago confirmado</div><div class=\"nz-record nz-record--warning\">Stock bajo: 3 unidades</div><div class=\"nz-record is-selected\">Factura 2026-114 seleccionada</div></div>"
+    }
+  ]
+}

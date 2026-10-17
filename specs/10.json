@@ -143,12 +143,12 @@
     {
       "titulo": "Pasos de compra",
       "tag": ".nz-checkout-steps",
-      "markup": "<ol class=\"nz-checkout-steps\"><li class=\"nz-checkout-steps__step nz-checkout-steps__step--done\"><span class=\"nz-checkout-steps__num\">✓</span><span class=\"nz-checkout-steps__label\">Carrito</span></li><li class=\"nz-checkout-steps__step nz-checkout-steps__step--done\"><span class=\"nz-checkout-steps__num\">✓</span><span class=\"nz-checkout-steps__label\">Envío</span></li><li class=\"nz-checkout-steps__step\" aria-current=\"step\"><span class=\"nz-checkout-steps__num\">3</span><span class=\"nz-checkout-steps__label\">Pago</span></li><li class=\"nz-checkout-steps__step\"><span class=\"nz-checkout-steps__num\">4</span><span class=\"nz-checkout-steps__label\">Confirmar</span></li></ol>"
+      "markup": "<ol class=\"nz-checkout-steps\"><li class=\"nz-checkout-steps__step nz-checkout-steps__step--done\"><span class=\"nz-checkout-steps__num\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M20 6 9 17l-5-5\"/></svg></span><span class=\"nz-checkout-steps__label\">Carrito</span></li><li class=\"nz-checkout-steps__step nz-checkout-steps__step--done\"><span class=\"nz-checkout-steps__num\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M20 6 9 17l-5-5\"/></svg></span><span class=\"nz-checkout-steps__label\">Envío</span></li><li class=\"nz-checkout-steps__step\" aria-current=\"step\"><span class=\"nz-checkout-steps__num\">3</span><span class=\"nz-checkout-steps__label\">Pago</span></li><li class=\"nz-checkout-steps__step\"><span class=\"nz-checkout-steps__num\">4</span><span class=\"nz-checkout-steps__label\">Confirmar</span></li></ol>"
     },
     {
       "titulo": "Pasos de compra en vertical",
       "tag": ".nz-checkout-steps--vertical",
-      "markup": "<ol class=\"nz-checkout-steps nz-checkout-steps--vertical\"><li class=\"nz-checkout-steps__step nz-checkout-steps__step--done\"><span class=\"nz-checkout-steps__num\">✓</span><span class=\"nz-checkout-steps__label\">Carrito revisado</span></li><li class=\"nz-checkout-steps__step\"><span class=\"nz-checkout-steps__num\">2</span><span class=\"nz-checkout-steps__label\">Elige el envío</span></li></ol>"
+      "markup": "<ol class=\"nz-checkout-steps nz-checkout-steps--vertical\"><li class=\"nz-checkout-steps__step nz-checkout-steps__step--done\"><span class=\"nz-checkout-steps__num\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M20 6 9 17l-5-5\"/></svg></span><span class=\"nz-checkout-steps__label\">Carrito revisado</span></li><li class=\"nz-checkout-steps__step\"><span class=\"nz-checkout-steps__num\">2</span><span class=\"nz-checkout-steps__label\">Elige el envío</span></li></ol>"
     },
     {
       "titulo": "Resumen de compra",

@@ -53,7 +53,7 @@
     {
       "titulo": "Búsqueda",
       "tag": ".nz-search__icon",
-      "markup": "<div class=\"nz-search\" style=\"max-width:16rem\"><span class=\"nz-search__icon\">⌕</span><input class=\"nz-input\" placeholder=\"Buscar…\" aria-label=\"Buscar\"></div>"
+      "markup": "<div class=\"nz-search\" style=\"max-width:16rem\"><span class=\"nz-search__icon\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><circle cx=\"11\" cy=\"11\" r=\"7\"/><path d=\"m20 20-3.5-3.5\"/></svg></span><input class=\"nz-input\" placeholder=\"Buscar…\" aria-label=\"Buscar\"></div>"
     },
     {
       "titulo": "Cantidad",
@@ -93,7 +93,7 @@
     {
       "titulo": "Búsqueda con limpiar",
       "tag": ".nz-search__clear",
-      "markup": "<div class=\"nz-search\" style=\"max-width:16rem\"><span class=\"nz-search__icon\">⌕</span><input class=\"nz-input\" value=\"aurora\" aria-label=\"Campo de texto\"><button class=\"nz-search__clear\">✕</button></div>"
+      "markup": "<div class=\"nz-search\" style=\"max-width:16rem\"><span class=\"nz-search__icon\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><circle cx=\"11\" cy=\"11\" r=\"7\"/><path d=\"m20 20-3.5-3.5\"/></svg></span><input class=\"nz-input\" value=\"aurora\" aria-label=\"Campo de texto\"><button class=\"nz-search__clear\" aria-label=\"Limpiar\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M18 6 6 18M6 6l12 12\"/></svg></button></div>"
     },
     {
       "titulo": "Etiquetas sueltas",
@@ -168,7 +168,7 @@
     {
       "titulo": "Búsqueda compacta y a lo ancho",
       "tag": ".nz-search--sm · --full",
-      "markup": "<div class=\"nz-stack nz-stack--sm\" style=\"max-width:22rem\"><div class=\"nz-search nz-search--sm\"><span class=\"nz-search__icon\">⌕</span><input class=\"nz-input\" placeholder=\"Buscar objeto…\" aria-label=\"Buscar objeto\"><button class=\"nz-search__clear\" aria-label=\"Limpiar\">✕</button></div><div class=\"nz-cluster nz-cluster--nowrap\"><div class=\"nz-search nz-search--full\"><span class=\"nz-search__icon\">⌕</span><input class=\"nz-input\" placeholder=\"Buscar en el catálogo\" aria-label=\"Buscar en el catálogo\"></div><button class=\"nz-btn nz-btn--primary\">Ir</button></div></div>"
+      "markup": "<div class=\"nz-stack nz-stack--sm\" style=\"max-width:22rem\"><div class=\"nz-search nz-search--sm\"><span class=\"nz-search__icon\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><circle cx=\"11\" cy=\"11\" r=\"7\"/><path d=\"m20 20-3.5-3.5\"/></svg></span><input class=\"nz-input\" placeholder=\"Buscar objeto…\" aria-label=\"Buscar objeto\"><button class=\"nz-search__clear\" aria-label=\"Limpiar\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M18 6 6 18M6 6l12 12\"/></svg></button></div><div class=\"nz-cluster nz-cluster--nowrap\"><div class=\"nz-search nz-search--full\"><span class=\"nz-search__icon\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><circle cx=\"11\" cy=\"11\" r=\"7\"/><path d=\"m20 20-3.5-3.5\"/></svg></span><input class=\"nz-input\" placeholder=\"Buscar en el catálogo\" aria-label=\"Buscar en el catálogo\"></div><button class=\"nz-btn nz-btn--primary\">Ir</button></div></div>"
     },
     {
       "titulo": "Contraseña con ver y ocultar",

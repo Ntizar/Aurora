@@ -43,7 +43,7 @@
     {
       "titulo": "Adjuntos",
       "tag": ".nz-attach · __item · __thumb · __name · __remove",
-      "markup": "<div class=\"nz-attach\"><span class=\"nz-attach__item\"><span class=\"nz-attach__thumb\">PDF</span><span class=\"nz-attach__name\">pliego-lote-3.pdf</span><button class=\"nz-attach__remove\" aria-label=\"Quitar\">✕</button></span><span class=\"nz-attach__item\"><span class=\"nz-attach__thumb\">CSV</span><span class=\"nz-attach__name\">presupuesto.csv</span><button class=\"nz-attach__remove\" aria-label=\"Quitar\">✕</button></span></div>"
+      "markup": "<div class=\"nz-attach\"><span class=\"nz-attach__item\"><span class=\"nz-attach__thumb\">PDF</span><span class=\"nz-attach__name\">pliego-lote-3.pdf</span><button class=\"nz-attach__remove\" aria-label=\"Quitar\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M18 6 6 18M6 6l12 12\"/></svg></button></span><span class=\"nz-attach__item\"><span class=\"nz-attach__thumb\">CSV</span><span class=\"nz-attach__name\">presupuesto.csv</span><button class=\"nz-attach__remove\" aria-label=\"Quitar\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M18 6 6 18M6 6l12 12\"/></svg></button></span></div>"
     },
     {
       "titulo": "Selector de modelo",
@@ -133,7 +133,7 @@
     {
       "titulo": "Chat vacío con sugerencias",
       "tag": ".nz-chat__empty · __suggests · __suggest · .nz-chat-empty · __icon · __title · __text · __suggests",
-      "markup": "<div class=\"nz-stack nz-stack--sm\"><div class=\"nz-chat nz-chat--sm\"><div class=\"nz-chat__empty\"><b>Empieza una conversación</b><span>Pregunta lo que necesites sobre los pliegos.</span><div class=\"nz-chat__suggests\"><button class=\"nz-chat__suggest\">Resume un pliego</button><button class=\"nz-chat__suggest\">Compara dos lotes</button><button class=\"nz-chat__suggest\">Busca por importe</button></div></div></div><div class=\"nz-chat-empty\"><span class=\"nz-chat-empty__icon\">◈</span><span class=\"nz-chat-empty__title\">Tu asistente de licitaciones</span><p class=\"nz-chat-empty__text\">Lee pliegos, extrae requisitos y redacta borradores con citas verificables.</p><div class=\"nz-chat-empty__suggests\"><button class=\"nz-chat__suggest\">Ver ejemplo</button><button class=\"nz-chat__suggest\">Cómo funciona</button></div></div></div>"
+      "markup": "<div class=\"nz-stack nz-stack--sm\"><div class=\"nz-chat nz-chat--sm\"><div class=\"nz-chat__empty\"><b>Empieza una conversación</b><span>Pregunta lo que necesites sobre los pliegos.</span><div class=\"nz-chat__suggests\"><button class=\"nz-chat__suggest\">Resume un pliego</button><button class=\"nz-chat__suggest\">Compara dos lotes</button><button class=\"nz-chat__suggest\">Busca por importe</button></div></div></div><div class=\"nz-chat-empty\"><span class=\"nz-chat-empty__icon\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 2l2.4 7.6L22 12l-7.6 2.4L12 22l-2.4-7.6L2 12l7.6-2.4z\"/></svg></span><span class=\"nz-chat-empty__title\">Tu asistente de licitaciones</span><p class=\"nz-chat-empty__text\">Lee pliegos, extrae requisitos y redacta borradores con citas verificables.</p><div class=\"nz-chat-empty__suggests\"><button class=\"nz-chat__suggest\">Ver ejemplo</button><button class=\"nz-chat__suggest\">Cómo funciona</button></div></div></div>"
     },
     {
       "titulo": "Mensaje · tono del interlocutor",

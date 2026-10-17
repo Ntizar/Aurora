@@ -10,6 +10,7 @@
 <link rel="stylesheet" href="../packs/p1-layout.css">
 <link rel="stylesheet" href="../packs/p4-actions.css">
 <link rel="stylesheet" href="../packs/p6-feedback.css">
+<link rel="stylesheet" href="../packs/p9-media.css">
 <link rel="stylesheet" href="../packs/p12-system.css">
 </head>
 <body class="nz">
@@ -18,8 +19,8 @@
 <a class="cat-brandmark" href="../index.html"><i></i><i></i> Aurora</a>
 <span class="cat-count">04 · 78 objetos · 16 demos</span>
 <span class="cat-topbar__tools">
-<a class="cat-icobtn" href="../index.html" title="Portada" aria-label="Volver a la portada">⌂</a>
-<button class="cat-icobtn" id="btnTheme" aria-label="Cambiar tema" title="Light / Dark">◐</button>
+<a class="cat-icobtn" href="../index.html" title="Portada" aria-label="Volver a la portada"><svg class="nz-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg></a>
+<button class="cat-icobtn" id="btnTheme" aria-label="Cambiar tema" title="Light / Dark"><svg class="nz-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button>
 </span>
 </header>
 <nav class="cat-nav-pages" aria-label="Categorías del catálogo">
@@ -51,13 +52,13 @@
       <span class="nz-badge nz-badge--brand"><i></i>78 objetos</span>
       <span class="nz-badge nz-badge--neutral">7 familias</span>
       <span class="nz-badge nz-badge--accent">16 demos en vivo</span>
-      <span class="nz-badge nz-badge--neutral">9 clases distintas usadas</span>
+      <span class="nz-badge nz-badge--neutral">10 clases distintas usadas</span>
       <a class="nz-badge nz-badge--brand" href="../packs/p4-actions.css">p4-actions.css</a>
     </div>
   </div>
   <div class="cat-tools">
     <div class="cat-search">
-      <span class="cat-search__icon" aria-hidden="true">⌕</span>
+      <span class="cat-search__icon" aria-hidden="true"><svg class="nz-icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></span>
       <input class="cat-search__input" id="catBuscar" type="search" placeholder="Buscar en esta categoría… (pulsa /)" aria-label="Buscar objeto en esta categoría">
       <span class="cat-search__count" id="catContador">16 objetos</span>
     </div>
@@ -67,6 +68,7 @@
       <button type="button" class="cat-filters__chip" data-filtro="nz-cluster" aria-pressed="false">.cluster</button>
       <button type="button" class="cat-filters__chip" data-filtro="nz-cta" aria-pressed="false">.cta</button>
       <button type="button" class="cat-filters__chip" data-filtro="nz-fab" aria-pressed="false">.fab</button>
+      <button type="button" class="cat-filters__chip" data-filtro="nz-icon" aria-pressed="false">.icon</button>
       <button type="button" class="cat-filters__chip" data-filtro="nz-segmented" aria-pressed="false">.segmented</button>
       <button type="button" class="cat-filters__chip" data-filtro="nz-spin" aria-pressed="false">.spin</button>
       <button type="button" class="cat-filters__chip" data-filtro="nz-stack" aria-pressed="false">.stack</button>
@@ -102,16 +104,16 @@
       <div class="nz-stack nz-stack--sm"><div class="nz-cluster"><button class="nz-btn nz-btn--primary nz-btn--square">Cuadrado</button><button class="nz-btn nz-btn--primary nz-btn--rounded">Redondeado</button><button class="nz-btn nz-btn--primary nz-btn--pill">Píldora</button><button class="nz-btn nz-btn--primary nz-btn--auto">Automático</button></div><div style="max-width:22rem"><button class="nz-btn nz-btn--primary nz-btn--block">Ancho completo</button></div><div style="max-width:22rem"><button class="nz-btn nz-btn--ghost nz-btn--full">Extremos separados<span class="nz-btn__icon">→</span></button></div></div>
     </div>
   </section>
-  <section class="cat-demo cat-in" data-cat="nz-btn nz-cluster">
+  <section class="cat-demo cat-in" data-cat="nz-btn nz-cluster nz-icon">
     <div class="cat-demo__title"><span class="cat-demo__num">6</span><span class="cat-demo__name">Botón con icono y flecha</span><span class="cat-demo__tag">.nz-btn__icon · __arrow · __arrow--right · __arrow--left</span></div>
     <div class="cat-stage">
-      <div class="nz-cluster"><button class="nz-btn nz-btn--primary"><span class="nz-btn__icon">＋</span> Crear</button><button class="nz-btn nz-btn--ghost">Siguiente<span class="nz-btn__arrow nz-btn__arrow--right">→</span></button><button class="nz-btn nz-btn--ghost"><span class="nz-btn__arrow nz-btn__arrow--left">←</span> Anterior</button></div>
+      <div class="nz-cluster"><button class="nz-btn nz-btn--primary"><span class="nz-btn__icon"><svg class="nz-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span> Crear</button><button class="nz-btn nz-btn--ghost">Siguiente<span class="nz-btn__arrow nz-btn__arrow--right">→</span></button><button class="nz-btn nz-btn--ghost"><span class="nz-btn__arrow nz-btn__arrow--left">←</span> Anterior</button></div>
     </div>
   </section>
-  <section class="cat-demo cat-in" data-cat="nz-btn nz-cluster">
+  <section class="cat-demo cat-in" data-cat="nz-btn nz-cluster nz-icon">
     <div class="cat-demo__title"><span class="cat-demo__num">7</span><span class="cat-demo__name">Botones de solo icono</span><span class="cat-demo__tag">.nz-btn--icon · --icon-sm · --icon-lg · --icon-square</span></div>
     <div class="cat-stage">
-      <div class="nz-cluster"><button class="nz-btn nz-btn--primary nz-btn--icon" aria-label="Añadir">＋</button><button class="nz-btn nz-btn--ghost nz-btn--icon-sm" aria-label="Editar">✎</button><button class="nz-btn nz-btn--primary nz-btn--icon-lg" aria-label="Reproducir">▶</button><button class="nz-btn nz-btn--ghost nz-btn--icon-square" aria-label="Ajustes">⚙</button></div>
+      <div class="nz-cluster"><button class="nz-btn nz-btn--primary nz-btn--icon" aria-label="Añadir"><svg class="nz-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></button><button class="nz-btn nz-btn--ghost nz-btn--icon-sm" aria-label="Editar"><svg class="nz-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h4L20 8l-4-4L4 16z"/><path d="M14 6l4 4"/></svg></button><button class="nz-btn nz-btn--primary nz-btn--icon-lg" aria-label="Reproducir"><svg class="nz-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m8 5 11 7-11 7z"/></svg></button><button class="nz-btn nz-btn--ghost nz-btn--icon-square" aria-label="Ajustes"><svg class="nz-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09a1.65 1.65 0 0 0-1-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09a1.65 1.65 0 0 0 1.51-1 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33h.09a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51h.09a1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82v.09a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></button></div>
     </div>
   </section>
   <section class="cat-demo cat-in" data-cat="nz-btn">
@@ -144,10 +146,10 @@
       <div class="nz-stack nz-stack--sm"><div class="nz-segmented"><button aria-selected="true">Lista</button><button aria-selected="false">Cuadrícula</button><button aria-selected="false">Mapa</button></div><div class="nz-segmented nz-segmented--sm"><button aria-selected="true">Hoy</button><button aria-selected="false">Semana</button></div><div class="nz-segmented nz-segmented--lg"><button aria-selected="true">Mensual</button><button aria-selected="false">Anual</button></div><div class="nz-segmented nz-segmented--vertical" style="max-width:10rem"><button aria-selected="true">Perfil</button><button aria-selected="false">Cuenta</button><button aria-selected="false">Facturas</button></div><div class="nz-segmented nz-segmented--full"><button aria-selected="true">Todo</button><button aria-selected="false">Abiertos</button><button aria-selected="false">Cerrados</button></div><div class="nz-segmented nz-segmented--brand"><button aria-selected="true">Marca</button><button aria-selected="false">Otra</button></div><div class="nz-segmented nz-segmented--accent"><button aria-selected="true">Acento</button><button aria-selected="false">Otra</button></div></div>
     </div>
   </section>
-  <section class="cat-demo cat-in" data-cat="nz-cluster nz-fab">
+  <section class="cat-demo cat-in" data-cat="nz-cluster nz-fab nz-icon">
     <div class="cat-demo__title"><span class="cat-demo__num">13</span><span class="cat-demo__name">Botones flotantes (FAB)</span><span class="cat-demo__tag">.nz-fab · --accent · --lg · --sm · --extended · --bottom-left</span></div>
     <div class="cat-stage">
-      <div class="nz-cluster"><button class="nz-fab nz-fab--sm" aria-label="Nuevo pequeño">＋</button><button class="nz-fab" aria-label="Nuevo">＋</button><button class="nz-fab nz-fab--lg" aria-label="Nuevo grande">＋</button><button class="nz-fab nz-fab--accent" aria-label="Nuevo acento">＋</button><button class="nz-fab nz-fab--extended">＋ Crear pedido</button><button class="nz-fab nz-fab--bottom-left" aria-label="Nuevo a la izquierda">＋</button></div>
+      <div class="nz-cluster"><button class="nz-fab nz-fab--sm" aria-label="Nuevo pequeño"><svg class="nz-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></button><button class="nz-fab" aria-label="Nuevo"><svg class="nz-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></button><button class="nz-fab nz-fab--lg" aria-label="Nuevo grande"><svg class="nz-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></button><button class="nz-fab nz-fab--accent" aria-label="Nuevo acento"><svg class="nz-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></button><button class="nz-fab nz-fab--extended">＋ Crear pedido</button><button class="nz-fab nz-fab--bottom-left" aria-label="Nuevo a la izquierda"><svg class="nz-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></button></div>
     </div>
   </section>
   <section class="cat-demo cat-in" data-cat="nz-btn nz-cluster nz-spin">

@@ -12,6 +12,7 @@
 <link rel="stylesheet" href="../packs/p6-feedback.css">
 <link rel="stylesheet" href="../packs/p7-overlays.css">
 <link rel="stylesheet" href="../packs/p8-data.css">
+<link rel="stylesheet" href="../packs/p9-media.css">
 <link rel="stylesheet" href="../packs/p12-system.css">
 </head>
 <body class="nz">
@@ -20,8 +21,8 @@
 <a class="cat-brandmark" href="../index.html"><i></i><i></i> Aurora</a>
 <span class="cat-count">07 · 118 objetos · 34 demos</span>
 <span class="cat-topbar__tools">
-<a class="cat-icobtn" href="../index.html" title="Portada" aria-label="Volver a la portada">⌂</a>
-<button class="cat-icobtn" id="btnTheme" aria-label="Cambiar tema" title="Light / Dark">◐</button>
+<a class="cat-icobtn" href="../index.html" title="Portada" aria-label="Volver a la portada"><svg class="nz-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg></a>
+<button class="cat-icobtn" id="btnTheme" aria-label="Cambiar tema" title="Light / Dark"><svg class="nz-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button>
 </span>
 </header>
 <nav class="cat-nav-pages" aria-label="Categorías del catálogo">
@@ -53,13 +54,13 @@
       <span class="nz-badge nz-badge--brand"><i></i>118 objetos</span>
       <span class="nz-badge nz-badge--neutral">12 familias</span>
       <span class="nz-badge nz-badge--accent">34 demos en vivo</span>
-      <span class="nz-badge nz-badge--neutral">19 clases distintas usadas</span>
+      <span class="nz-badge nz-badge--neutral">20 clases distintas usadas</span>
       <a class="nz-badge nz-badge--brand" href="../packs/p7-overlays.css">p7-overlays.css</a>
     </div>
   </div>
   <div class="cat-tools">
     <div class="cat-search">
-      <span class="cat-search__icon" aria-hidden="true">⌕</span>
+      <span class="cat-search__icon" aria-hidden="true"><svg class="nz-icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></span>
       <input class="cat-search__input" id="catBuscar" type="search" placeholder="Buscar en esta categoría… (pulsa /)" aria-label="Buscar objeto en esta categoría">
       <span class="cat-search__count" id="catContador">34 objetos</span>
     </div>
@@ -71,6 +72,7 @@
       <button type="button" class="cat-filters__chip" data-filtro="nz-cmd" aria-pressed="false">.cmd</button>
       <button type="button" class="cat-filters__chip" data-filtro="nz-confirm" aria-pressed="false">.confirm</button>
       <button type="button" class="cat-filters__chip" data-filtro="nz-drawer" aria-pressed="false">.drawer</button>
+      <button type="button" class="cat-filters__chip" data-filtro="nz-icon" aria-pressed="false">.icon</button>
       <button type="button" class="cat-filters__chip" data-filtro="nz-inlinestat" aria-pressed="false">.inlinestat</button>
       <button type="button" class="cat-filters__chip" data-filtro="nz-lightbox" aria-pressed="false">.lightbox</button>
       <button type="button" class="cat-filters__chip" data-filtro="nz-menu-pop" aria-pressed="false">.menu-pop</button>
@@ -80,37 +82,36 @@
       <button type="button" class="cat-filters__chip" data-filtro="nz-record" aria-pressed="false">.record</button>
       <button type="button" class="cat-filters__chip" data-filtro="nz-sheet" aria-pressed="false">.sheet</button>
       <button type="button" class="cat-filters__chip" data-filtro="nz-stack" aria-pressed="false">.stack</button>
-      <button type="button" class="cat-filters__chip" data-filtro="nz-tip" aria-pressed="false">.tip</button>
-      <button type="button" class="cat-filters__chip" data-filtro="nz-toast-stack" aria-pressed="false">.toast-stack</button></div>
+      <button type="button" class="cat-filters__chip" data-filtro="nz-tip" aria-pressed="false">.tip</button></div>
   </div>
-  <section class="cat-demo cat-in" data-cat="nz-btn nz-modal nz-vh">
+  <section class="cat-demo cat-in" data-cat="nz-btn nz-icon nz-modal nz-vh">
     <div class="cat-demo__title"><span class="cat-demo__num">1</span><span class="cat-demo__name">Modal</span><span class="cat-demo__tag">.nz-modal · __dialog · __head · __title · __close · __body · __foot</span></div>
     <div class="cat-stage">
-      <label class="nz-btn nz-btn--primary" for="mo-a">Abrir modal</label> <div class="nz-modal"><input class="nz-vh" type="checkbox" id="mo-a"> <label class="nz-modal__scrim" for="mo-a"></label> <div class="nz-modal__dialog"><div class="nz-modal__head"><h3 class="nz-modal__title">Confirmar pedido</h3><label class="nz-modal__close" for="mo-a">✕</label></div> <p class="nz-modal__body">¿Enviamos el pedido a almacén?</p> <div class="nz-modal__foot"><label class="nz-btn nz-btn--ghost" for="mo-a">Cancelar</label><label class="nz-btn nz-btn--primary" for="mo-a">Enviar</label></div></div></div>
+      <label class="nz-btn nz-btn--primary" for="mo-a">Abrir modal</label> <div class="nz-modal"><input class="nz-vh" type="checkbox" id="mo-a"> <label class="nz-modal__scrim" for="mo-a"></label> <div class="nz-modal__dialog"><div class="nz-modal__head"><h3 class="nz-modal__title">Confirmar pedido</h3><label class="nz-modal__close" for="mo-a"><svg class="nz-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg></label></div> <p class="nz-modal__body">¿Enviamos el pedido a almacén?</p> <div class="nz-modal__foot"><label class="nz-btn nz-btn--ghost" for="mo-a">Cancelar</label><label class="nz-btn nz-btn--primary" for="mo-a">Enviar</label></div></div></div>
     </div>
   </section>
-  <section class="cat-demo cat-in" data-cat="nz-btn nz-modal nz-vh">
+  <section class="cat-demo cat-in" data-cat="nz-btn nz-icon nz-modal nz-vh">
     <div class="cat-demo__title"><span class="cat-demo__num">2</span><span class="cat-demo__name">Modal pequeño y centrado</span><span class="cat-demo__tag">.nz-modal--sm · --centrado · __icon · __meta</span></div>
     <div class="cat-stage">
-      <label class="nz-btn nz-btn--ghost" for="mo-b">Modal pequeño</label> <div class="nz-modal nz-modal--sm nz-modal--centrado"><input class="nz-vh" type="checkbox" id="mo-b"> <label class="nz-modal__scrim" for="mo-b"></label> <div class="nz-modal__dialog"><div class="nz-modal__head"><span class="nz-modal__icon">✓</span><h3 class="nz-modal__title">Guardado</h3><span class="nz-modal__meta">hace un momento</span></div> <p class="nz-modal__body">El informe se ha guardado en tu espacio.</p> <div class="nz-modal__foot"><label class="nz-btn nz-btn--primary" for="mo-b">Vale</label></div></div></div>
+      <label class="nz-btn nz-btn--ghost" for="mo-b">Modal pequeño</label> <div class="nz-modal nz-modal--sm nz-modal--centrado"><input class="nz-vh" type="checkbox" id="mo-b"> <label class="nz-modal__scrim" for="mo-b"></label> <div class="nz-modal__dialog"><div class="nz-modal__head"><span class="nz-modal__icon"><svg class="nz-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span><h3 class="nz-modal__title">Guardado</h3><span class="nz-modal__meta">hace un momento</span></div> <p class="nz-modal__body">El informe se ha guardado en tu espacio.</p> <div class="nz-modal__foot"><label class="nz-btn nz-btn--primary" for="mo-b">Vale</label></div></div></div>
     </div>
   </section>
-  <section class="cat-demo cat-in" data-cat="nz-btn nz-modal nz-vh">
+  <section class="cat-demo cat-in" data-cat="nz-btn nz-icon nz-modal nz-vh">
     <div class="cat-demo__title"><span class="cat-demo__num">3</span><span class="cat-demo__name">Modal grande con cuerpo con scroll y aviso</span><span class="cat-demo__tag">.nz-modal--lg · __icon--danger · __body--scroll</span></div>
     <div class="cat-stage">
-      <label class="nz-btn nz-btn--ghost" for="mo-c">Modal grande</label> <div class="nz-modal nz-modal--lg"><input class="nz-vh" type="checkbox" id="mo-c"> <label class="nz-modal__scrim" for="mo-c"></label> <div class="nz-modal__dialog"><div class="nz-modal__head"><span class="nz-modal__icon nz-modal__icon--danger">!</span><h3 class="nz-modal__title">Registro de incidencias</h3><label class="nz-modal__close" for="mo-c">✕</label></div> <div class="nz-modal__body nz-modal__body--scroll"><p>09:12 · Sin conexión con el servidor de datos.</p><p>09:18 · Reintento correcto.</p><p>09:24 · Latencia alta en la réplica.</p><p>09:31 · Cola de sincronización al 40%.</p><p>09:40 · Cola al 15%.</p><p>09:48 · Todo al día.</p></div> <div class="nz-modal__foot"><label class="nz-btn nz-btn--ghost" for="mo-c">Cerrar</label></div></div></div>
+      <label class="nz-btn nz-btn--ghost" for="mo-c">Modal grande</label> <div class="nz-modal nz-modal--lg"><input class="nz-vh" type="checkbox" id="mo-c"> <label class="nz-modal__scrim" for="mo-c"></label> <div class="nz-modal__dialog"><div class="nz-modal__head"><span class="nz-modal__icon nz-modal__icon--danger">!</span><h3 class="nz-modal__title">Registro de incidencias</h3><label class="nz-modal__close" for="mo-c"><svg class="nz-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg></label></div> <div class="nz-modal__body nz-modal__body--scroll"><p>09:12 · Sin conexión con el servidor de datos.</p><p>09:18 · Reintento correcto.</p><p>09:24 · Latencia alta en la réplica.</p><p>09:31 · Cola de sincronización al 40%.</p><p>09:40 · Cola al 15%.</p><p>09:48 · Todo al día.</p></div> <div class="nz-modal__foot"><label class="nz-btn nz-btn--ghost" for="mo-c">Cerrar</label></div></div></div>
     </div>
   </section>
-  <section class="cat-demo cat-in" data-cat="nz-btn nz-modal nz-vh">
+  <section class="cat-demo cat-in" data-cat="nz-btn nz-icon nz-modal nz-vh">
     <div class="cat-demo__title"><span class="cat-demo__num">4</span><span class="cat-demo__name">Modal a pantalla completa</span><span class="cat-demo__tag">.nz-modal--full · __dialog</span></div>
     <div class="cat-stage">
-      <label class="nz-btn nz-btn--primary" for="mo-d">Modal completo</label> <div class="nz-modal nz-modal--full"><input class="nz-vh" type="checkbox" id="mo-d"> <label class="nz-modal__scrim" for="mo-d"></label> <div class="nz-modal__dialog"><div class="nz-modal__head"><h3 class="nz-modal__title">Editor a pantalla completa</h3><label class="nz-modal__close" for="mo-d">✕</label></div> <p class="nz-modal__body">Ocupa todo el viewport en móvil y en escritorio.</p></div></div>
+      <label class="nz-btn nz-btn--primary" for="mo-d">Modal completo</label> <div class="nz-modal nz-modal--full"><input class="nz-vh" type="checkbox" id="mo-d"> <label class="nz-modal__scrim" for="mo-d"></label> <div class="nz-modal__dialog"><div class="nz-modal__head"><h3 class="nz-modal__title">Editor a pantalla completa</h3><label class="nz-modal__close" for="mo-d"><svg class="nz-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg></label></div> <p class="nz-modal__body">Ocupa todo el viewport en móvil y en escritorio.</p></div></div>
     </div>
   </section>
-  <section class="cat-demo cat-in" data-cat="nz-btn nz-modal nz-vh">
+  <section class="cat-demo cat-in" data-cat="nz-btn nz-icon nz-modal nz-vh">
     <div class="cat-demo__title"><span class="cat-demo__num">5</span><span class="cat-demo__name">Modal que se comporta como sheet en móvil</span><span class="cat-demo__tag">.nz-modal--sheet-movil</span></div>
     <div class="cat-stage">
-      <label class="nz-btn nz-btn--soft" for="mo-e">Sheet móvil</label> <div class="nz-modal nz-modal--sheet-movil"><input class="nz-vh" type="checkbox" id="mo-e"> <label class="nz-modal__scrim" for="mo-e"></label> <div class="nz-modal__dialog"><div class="nz-modal__head"><h3 class="nz-modal__title">Filtros rápidos</h3><label class="nz-modal__close" for="mo-e">✕</label></div> <p class="nz-modal__body">En móvil sube desde abajo; desde 640px se centra.</p></div></div>
+      <label class="nz-btn nz-btn--soft" for="mo-e">Sheet móvil</label> <div class="nz-modal nz-modal--sheet-movil"><input class="nz-vh" type="checkbox" id="mo-e"> <label class="nz-modal__scrim" for="mo-e"></label> <div class="nz-modal__dialog"><div class="nz-modal__head"><h3 class="nz-modal__title">Filtros rápidos</h3><label class="nz-modal__close" for="mo-e"><svg class="nz-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg></label></div> <p class="nz-modal__body">En móvil sube desde abajo; desde 640px se centra.</p></div></div>
     </div>
   </section>
   <section class="cat-demo cat-in" data-cat="nz-btn nz-modal nz-vh">
@@ -119,10 +120,10 @@
       <label class="nz-btn nz-btn--ghost" for="mo-f">Pie repartido</label> <div class="nz-modal"><input class="nz-vh" type="checkbox" id="mo-f"> <label class="nz-modal__scrim" for="mo-f"></label> <div class="nz-modal__dialog"><div class="nz-modal__head"><h3 class="nz-modal__title">Publicar cambios</h3></div> <p class="nz-modal__body">Los cambios quedan visibles al publicar.</p> <div class="nz-modal__foot nz-modal__foot--between"><label class="nz-btn nz-btn--text" for="mo-f">Más tarde</label><label class="nz-btn nz-btn--primary" for="mo-f">Publicar</label></div></div></div>
     </div>
   </section>
-  <section class="cat-demo cat-in" data-cat="nz-btn nz-drawer nz-menu-pop nz-modal nz-vh">
+  <section class="cat-demo cat-in" data-cat="nz-btn nz-drawer nz-icon nz-menu-pop nz-modal nz-vh">
     <div class="cat-demo__title"><span class="cat-demo__num">7</span><span class="cat-demo__name">Drawer izquierdo con grupos de enlaces</span><span class="cat-demo__tag">.nz-drawer · __scrim · __panel · __head · __title · __body · __group · __group-title</span></div>
     <div class="cat-stage">
-      <label class="nz-btn nz-btn--primary" for="dr-a">Abrir panel</label> <div class="nz-drawer"><input class="nz-vh" type="checkbox" id="dr-a"> <label class="nz-drawer__scrim" for="dr-a"></label> <div class="nz-drawer__panel nz-drawer__panel--left"><div class="nz-drawer__head"><span class="nz-drawer__title">Ajustes</span><label class="nz-modal__close" for="dr-a">✕</label></div> <div class="nz-drawer__body"><div class="nz-drawer__group"><span class="nz-drawer__group-title">Cuenta</span><a href="#contenido" class="nz-menu-pop__item">Perfil</a><a href="#contenido" class="nz-menu-pop__item">Seguridad</a></div> <div class="nz-drawer__group"><span class="nz-drawer__group-title">Apariencia</span><a href="#contenido" class="nz-menu-pop__item">Tema claro y oscuro</a></div></div></div></div>
+      <label class="nz-btn nz-btn--primary" for="dr-a">Abrir panel</label> <div class="nz-drawer"><input class="nz-vh" type="checkbox" id="dr-a"> <label class="nz-drawer__scrim" for="dr-a"></label> <div class="nz-drawer__panel nz-drawer__panel--left"><div class="nz-drawer__head"><span class="nz-drawer__title">Ajustes</span><label class="nz-modal__close" for="dr-a"><svg class="nz-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg></label></div> <div class="nz-drawer__body"><div class="nz-drawer__group"><span class="nz-drawer__group-title">Cuenta</span><a href="#contenido" class="nz-menu-pop__item">Perfil</a><a href="#contenido" class="nz-menu-pop__item">Seguridad</a></div> <div class="nz-drawer__group"><span class="nz-drawer__group-title">Apariencia</span><a href="#contenido" class="nz-menu-pop__item">Tema claro y oscuro</a></div></div></div></div>
     </div>
   </section>
   <section class="cat-demo cat-in" data-cat="nz-btn nz-cmd nz-drawer nz-vh">
@@ -209,10 +210,10 @@
       <div class="nz-menu-pop nz-menu-pop--compact"><input class="nz-vh" type="checkbox" id="mc-d"> <label class="nz-btn nz-btn--ghost" for="mc-d">Compacto</label> <div class="nz-menu-pop__list"><button class="nz-menu-pop__item">Renombrar</button><button class="nz-menu-pop__item nz-menu-pop__item--disabled">Mover a carpeta</button><button class="nz-menu-pop__item">Descargar</button></div></div>
     </div>
   </section>
-  <section class="cat-demo cat-in" data-cat="nz-btn nz-cmd nz-vh">
+  <section class="cat-demo cat-in" data-cat="nz-btn nz-cmd nz-icon nz-vh">
     <div class="cat-demo__title"><span class="cat-demo__num">22</span><span class="cat-demo__name">Command palette</span><span class="cat-demo__tag">.nz-cmd · __scrim · __panel · __input · __list · __item · __item--active · __icon · __foot · __kbd</span></div>
     <div class="cat-stage">
-      <label class="nz-btn nz-btn--primary" for="cm-a">Abrir ⌘K</label> <div class="nz-cmd"><input class="nz-vh" type="checkbox" id="cm-a"> <label class="nz-cmd__scrim" for="cm-a"></label> <div class="nz-cmd__panel"><span class="nz-cmd__kbd">esc</span><input class="nz-cmd__input" placeholder="Buscar un comando…" aria-label="Buscar un comando"> <div class="nz-cmd__list"><div class="nz-cmd__item nz-cmd__item--active"><span class="nz-cmd__icon">◈</span>Abrir informe</div><div class="nz-cmd__item"><span class="nz-cmd__icon">▦</span>Ejecutar consulta</div></div> <div class="nz-cmd__foot"><span><kbd>↑</kbd><kbd>↓</kbd> navegar</span><span><kbd>↵</kbd> elegir</span></div></div></div>
+      <label class="nz-btn nz-btn--primary" for="cm-a">Abrir ⌘K</label> <div class="nz-cmd"><input class="nz-vh" type="checkbox" id="cm-a"> <label class="nz-cmd__scrim" for="cm-a"></label> <div class="nz-cmd__panel"><span class="nz-cmd__kbd">esc</span><input class="nz-cmd__input" placeholder="Buscar un comando…" aria-label="Buscar un comando"> <div class="nz-cmd__list"><div class="nz-cmd__item nz-cmd__item--active"><span class="nz-cmd__icon"><svg class="nz-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.4 7.6L22 12l-7.6 2.4L12 22l-2.4-7.6L2 12l7.6-2.4z"/></svg></span>Abrir informe</div><div class="nz-cmd__item"><span class="nz-cmd__icon"><svg class="nz-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg></span>Ejecutar consulta</div></div> <div class="nz-cmd__foot"><span><kbd>↑</kbd><kbd>↓</kbd> navegar</span><span><kbd>↵</kbd> elegir</span></div></div></div>
     </div>
   </section>
   <section class="cat-demo cat-in" data-cat="nz-btn nz-cmd nz-vh">
@@ -245,16 +246,16 @@
       <div class="nz-confirm nz-confirm--danger"><span class="nz-confirm__icon">!</span><span class="nz-confirm__title">¿Vaciar la papelera?</span><p class="nz-confirm__text">Se perderán 14 elementos. No se puede deshacer.</p><div class="nz-confirm__actions"><button class="nz-sheet__action">Cancelar</button><button class="nz-sheet__action nz-sheet__action--danger">Vaciar</button></div></div>
     </div>
   </section>
-  <section class="cat-demo cat-in" data-cat="nz-confirm nz-sheet">
+  <section class="cat-demo cat-in" data-cat="nz-confirm nz-icon nz-sheet">
     <div class="cat-demo__title"><span class="cat-demo__num">28</span><span class="cat-demo__name">Confirmación de marca</span><span class="cat-demo__tag">.nz-confirm--brand</span></div>
     <div class="cat-stage">
-      <div class="nz-confirm nz-confirm--brand"><span class="nz-confirm__icon">✓</span><span class="nz-confirm__title">Sincronización terminada</span><p class="nz-confirm__text">1 248 registros actualizados sin errores.</p><div class="nz-confirm__actions"><button class="nz-sheet__action">Ver el resumen</button></div></div>
+      <div class="nz-confirm nz-confirm--brand"><span class="nz-confirm__icon"><svg class="nz-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span><span class="nz-confirm__title">Sincronización terminada</span><p class="nz-confirm__text">1 248 registros actualizados sin errores.</p><div class="nz-confirm__actions"><button class="nz-sheet__action">Ver el resumen</button></div></div>
     </div>
   </section>
-  <section class="cat-demo cat-in" data-cat="nz-lightbox">
+  <section class="cat-demo cat-in" data-cat="nz-icon nz-lightbox">
     <div class="cat-demo__title"><span class="cat-demo__num">29</span><span class="cat-demo__name">Lightbox</span><span class="cat-demo__tag">.nz-lightbox · __img · __close · __caption · __nav · __nav--prev · __nav--next</span></div>
     <div class="cat-stage">
-      <div class="nz-lightbox"><button class="nz-lightbox__nav nz-lightbox__nav--prev" aria-label="anterior">‹</button><img class="nz-lightbox__img" src="data:image/svg+xml;utf8,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%27640%27 height=%27360%27%3E%3Crect width=%27640%27 height=%27360%27 fill=%27%23e5e7eb%27/%3E%3C/svg%3E" alt="Foto ampliada"><button class="nz-lightbox__nav nz-lightbox__nav--next" aria-label="siguiente">›</button><button class="nz-lightbox__close" aria-label="cerrar">✕</button><span class="nz-lightbox__caption">Plano de planta · imagen 3 de 12</span></div>
+      <div class="nz-lightbox"><button class="nz-lightbox__nav nz-lightbox__nav--prev" aria-label="anterior">‹</button><img class="nz-lightbox__img" src="data:image/svg+xml;utf8,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%27640%27 height=%27360%27%3E%3Crect width=%27640%27 height=%27360%27 fill=%27%23e5e7eb%27/%3E%3C/svg%3E" alt="Foto ampliada"><button class="nz-lightbox__nav nz-lightbox__nav--next" aria-label="siguiente">›</button><button class="nz-lightbox__close" aria-label="cerrar"><svg class="nz-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg></button><span class="nz-lightbox__caption">Plano de planta · imagen 3 de 12</span></div>
     </div>
   </section>
   <section class="cat-demo cat-in" data-cat="nz-btn nz-modal nz-offcanvas nz-record">
