@@ -3,11 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>Aurora · Design System Ntizar · 2184 objetos de frontend</title>
-<meta name="description" content="Design system CSS de Ntizar: 2184 objetos en 18 categorías. Elige dos colores y el sistema entero se rehace. Mobile-first, táctil 44px, light y dark.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400..800&display=swap">
+<title>Aurora · Design System Ntizar · 2186 objetos de frontend</title>
+<meta name="description" content="Design system CSS de Ntizar: 2186 objetos en 18 categorías. Elige dos colores y el sistema entero se rehace. Mobile-first, táctil 44px, light y dark.">
 <link rel="stylesheet" href="tokens.css">
 <link rel="stylesheet" href="packs/p0-catalog.css">
 <link rel="stylesheet" href="packs/p1-layout.css">
@@ -78,8 +75,9 @@
 
   <header class="cat-topbar">
     <span class="cat-brandmark"><i></i><i></i> Aurora</span>
-    <span class="cat-count">v8.4.2 · motor de temas</span>
+    <span class="cat-count">v9.2.0 · motor de temas</span>
     <span class="cat-topbar__tools">
+      <a class="cat-icobtn" href="base.html" title="Base de datos de diseño" aria-label="Base de datos de diseño">▦</a>
       <a class="cat-icobtn" href="audit/index.html" title="Auditoría del sistema" aria-label="Auditoría del sistema">✓</a>
       <button class="cat-icobtn" id="btnTheme" aria-label="Cambiar tema" title="Light / Dark">◐</button>
     </span>
@@ -88,9 +86,10 @@
   <section class="cat-hero cat-in">
     <p class="cat-eyebrow">Design System Ntizar</p>
     <h1>Aurora</h1>
-    <p class="cat-hero__sub">2184 objetos de frontend para montar cualquier web. Elige dos colores y el sistema entero se rehace. Sólido y con sombras de verdad: sin gradientes, sin glass, sin IA-slop. Mobile-first de verdad.</p>
+    <p class="cat-hero__sub">2186 objetos de frontend para montar cualquier web. Elige dos colores y el sistema entero se rehace. Sólido y con sombras de verdad: sin gradientes, sin glass, sin IA-slop. Mobile-first de verdad.</p>
     <div class="cat-ctas">
       <a class="nz-btn nz-btn--primary" href="recetas/index.html">Ver las recetas</a>
+      <a class="nz-btn nz-btn--accent" href="base.html">Abrir la base de datos</a>
       <a class="nz-btn nz-btn--soft" href="paginas/01-layout.html">Explorar el catálogo</a>
       <a class="nz-btn nz-btn--ghost" href="COMPOSICION.md">Contrato de composición</a>
       <span class="cat-hint">Y abajo puedes cambiar los colores, la tipografía y el acabado en vivo</span>
@@ -103,10 +102,10 @@
       <div class="objResultados" id="objResultados" hidden></div>
     </div>
     <div class="cat-stats">
-      <div class="cat-stat"><b><span data-cuenta="2184">0</span></b><span>objetos</span></div>
+      <div class="cat-stat"><b><span data-cuenta="2186">0</span></b><span>objetos</span></div>
       <div class="cat-stat"><b>18</b><span>categorías</span></div>
-      <div class="cat-stat"><b>653</b><span>demos en vivo</span></div>
-      <div class="cat-stat"><b><span data-cuenta="409">0</span></b><span>familias</span></div>
+      <div class="cat-stat"><b>655</b><span>demos en vivo</span></div>
+      <div class="cat-stat"><b><span data-cuenta="411">0</span></b><span>familias</span></div>
       <div class="cat-stat"><b>2</b><span>temas</span></div>
       <div class="cat-stat"><b>0</b><span>gradientes</span></div>
       <div class="cat-stat"><b>0</b><span>glass</span></div>
@@ -182,17 +181,30 @@
         </div>
       </div>
 
-      <p class="cat-hint">En tus proyectos se usa igual: <code>&lt;html data-nz-marca="indigo"&gt;</code>, tu propia rampa con <code>python scripts/generar-marca.py</code>, el vidrio con <code>data-nz-estilo="cristal"</code> (categoría 16) y la tipografía con <code>--nz-font</code>.</p>
+      <p class="cat-hint">En tus proyectos se usa igual: <code>&lt;html data-nz-marca="indigo"&gt;</code>, tu propia rampa con <code>python scripts/generar-marca.py</code>, el vidrio con <code>data-nz-estilo="cristal"</code> (categoría 16) y la tipografía con <code>--nz-font</code>. El probador carga las fuentes de muestra solo aquí; en un producto, Inter viaja dentro de <code>tokens.css</code>.</p>
     </section>
 
     <section class="cat-in" style="--d:.07s;margin-block:var(--nz-space-12)">
-      <h2 class="cat-h2">El sistema, en cuatro ideas</h2>
+      <h2 class="cat-h2">El sistema, en cinco ideas</h2>
       <div class="cat-ideas">
+        <a class="cat-idea" href="base.html"><b>Base de datos de diseño</b><span>Todo el sistema consultable: busca por lo que quieres construir y copia el markup real.</span></a>
         <a class="cat-idea" href="marcas/index.html"><b>Motor de temas</b><span>Dos colores y cambia todo. Cinco marcas listas y generador OKLCH con contraste AA.</span></a>
         <a class="cat-idea" href="COMPOSICION.md"><b>Contrato de composición</b><span>Doce leyes: cero emojis, presupuesto de color, ancho por tipo de página.</span></a>
         <a class="cat-idea" href="recetas/index.html"><b>Recetas canónicas</b><span>Admin, dashboard, ajustes, acceso e informe. Cópialas y adapta.</span></a>
         <a class="cat-idea" href="audit/index.html"><b>Arnés de verificación</b><span>El lint caza emojis, jerarquía, presupuesto de color y tipografía mínima.</span></a>
       </div>
+    </section>
+
+    <section class="cat-in" style="--d:.075s;margin-block:var(--nz-space-12)">
+      <h2 class="cat-h2">La base de datos de diseño</h2>
+      <p class="cat-p">No es una carpeta de snippets: es un índice consultable de todo el sistema. Busca por lo que quieres construir —«tabla apilable», «dashboard», «acento»— y obtén la familia con su markup real, los tokens que consume, la demo viva y las recetas completas. Cada ficha se copia con un botón.</p>
+      <div class="cat-ideas">
+        <a class="cat-idea" href="base.html#f=nz-table"><b>411 familias</b><span>Componentes y patrones con clases, partes, modificadores, tokens y cuándo usarlos.</span></a>
+        <a class="cat-idea" href="base.html#f=--nz-marca-600"><b>189 tokens</b><span>Marca y base, color, tipografía, espacio, geometría, foco y movimiento. Con su valor.</span></a>
+        <a class="cat-idea" href="base.html#f=recetas%2Fdashboard.html"><b>11 páginas</b><span>Recetas canónicas y arranques mínimos: admin, dashboard, ajustes, acceso, informe, landing y chat.</span></a>
+        <a class="cat-idea" href="base.html#f=dashboard"><b>8 combos</b><span>Esqueletos de página por tipo, con los packs exactos que hay que enlazar.</span></a>
+      </div>
+      <p style="margin-top:var(--nz-space-4)"><a class="nz-btn nz-btn--accent" href="base.html">Abrir el explorador</a></p>
     </section>
 
     <section class="cat-in" style="--d:.08s;margin-block:var(--nz-space-12)">
@@ -269,12 +281,12 @@
     </section>
 
     <section class="cat-in" style="--d:.1s;margin-block:var(--nz-space-12)">
-      <h2 style="font-size:var(--nz-text-xl);letter-spacing:var(--nz-tracking-tight)">18 categorías · 2184 objetos</h2>
+      <h2 style="font-size:var(--nz-text-xl);letter-spacing:var(--nz-tracking-tight)">18 categorías · 2186 objetos</h2>
       <div class="cat-grid" style="margin-top:var(--nz-space-4)">
         <a class="cat-cat cat-cat--wide cat-in" href="paginas/01-layout.html">
           <span class="cat-cat__n">01</span>
           <span class="cat-cat__name">Layout y estructura</span>
-          <span class="cat-cat__meta">178 objetos · 52 demos</span>
+          <span class="cat-cat__meta">179 objetos · 53 demos</span>
           <span class="cat-cat__arrow">→</span>
         </a>
         <a class="cat-cat cat-in" href="paginas/02-navigation.html">
@@ -358,7 +370,7 @@
         <a class="cat-cat cat-in" href="paginas/15-apps.html">
           <span class="cat-cat__n">15</span>
           <span class="cat-cat__name">Apps y escritorio</span>
-          <span class="cat-cat__meta">74 objetos · 37 demos</span>
+          <span class="cat-cat__meta">75 objetos · 38 demos</span>
           <span class="cat-cat__arrow">→</span>
         </a>
         <a class="cat-cat cat-in" href="paginas/16-cristal.html">
@@ -399,7 +411,7 @@
         </div>
         <div class="cat-live-card">
           <h3>Cuenta atrás</h3>
-          <div class="cat-live-slot"><span class="nz-num nz-num--stat" data-cuenta="2184">0</span></div>
+          <div class="cat-live-slot"><span class="nz-num nz-num--stat" data-cuenta="2186">0</span></div>
         </div>
       </div>
     </section>
@@ -407,7 +419,7 @@
   </main>
 
   <footer class="cat-footer">
-    Aurora · Hecho con ❤️ por David Antizar · 2184 objetos, 653 demos, 1 sistema
+    Aurora · Hecho con ❤️ por David Antizar · 2186 objetos, 655 demos, 1 sistema
   </footer>
 
 </div>

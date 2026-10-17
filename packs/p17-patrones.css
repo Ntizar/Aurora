@@ -657,3 +657,9 @@
 .nz-menu-cuenta__nombre { font-size: var(--nz-text-sm); font-weight: var(--nz-peso-fuerte); }
 .nz-menu-cuenta__correo { font-size: var(--nz-text-xs); color: var(--nz-text-mute); }
 .nz-menu-cuenta__lista { display: grid; gap: var(--nz-space-1); }
+
+/* ---- v9.2 · escalón ancho de los patrones compuestos ---- */
+@media (min-width: 1440px) {
+  .nz-comparador-planes__planes { gap: var(--nz-space-5); }
+  .nz-rejilla-estadisticas { gap: var(--nz-space-5); }
+}

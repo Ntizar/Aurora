@@ -93,7 +93,7 @@
 .nz-cluster--nowrap { flex-wrap: nowrap; overflow-x: auto; }
 
 /* ---- 11 Split layout (repartos) ---- */
-.nz-split { display: grid; gap: var(--nz-space-6); grid-template-columns: 1fr; }
+.nz-split { display: grid; gap: var(--nz-space-6); grid-template-columns: 1fr; container-type: inline-size; }
 .nz-split--2-1 { grid-template-columns: 1fr; }
 .nz-split--3-2 { grid-template-columns: 1fr; }
 .nz-split--40-60 { grid-template-columns: 1fr; }
@@ -121,7 +121,7 @@
 }
 
 /* ---- 13 Layout de tres columnas ---- */
-.nz-thirds { display: grid; gap: var(--nz-space-4); grid-template-columns: 1fr; }
+.nz-thirds { display: grid; gap: var(--nz-space-4); grid-template-columns: 1fr; container-type: inline-size; }
 .nz-thirds--compact { gap: var(--nz-space-2); }
 .nz-thirds--spacious { gap: var(--nz-space-6); }
 @media (min-width: 640px) { .nz-thirds { grid-template-columns: repeat(2, 1fr); } }
@@ -204,13 +204,13 @@
 @media (min-width: 960px) { .nz-masonry { columns: 3; } .nz-masonry--4 { columns: 4; } }
 
 /* ---- 25 Bento grid ---- */
-.nz-bento { display: grid; gap: var(--nz-space-4); grid-template-columns: repeat(2, 1fr); }
+.nz-bento { display: grid; gap: var(--nz-space-4); grid-template-columns: repeat(2, 1fr); container-type: inline-size; }
 .nz-bento > .nz-bento__wide { grid-column: span 2; }
 .nz-bento > .nz-bento__tall { grid-row: span 2; }
 @media (min-width: 960px) { .nz-bento { grid-template-columns: repeat(4, 1fr); } .nz-bento > .nz-bento__wide { grid-column: span 2; } }
 
 /* ---- 26 Dashboard grid ---- */
-.nz-dash-grid { display: grid; gap: var(--nz-space-4); grid-template-columns: 1fr; }
+.nz-dash-grid { display: grid; gap: var(--nz-space-4); grid-template-columns: 1fr; container-type: inline-size; }
 .nz-dash-grid--2 { grid-template-columns: 1fr; }
 .nz-dash-grid--4 { grid-template-columns: 1fr; }
 .nz-dash-grid--sidebar { grid-template-columns: 1fr; }
@@ -358,3 +358,33 @@
 .nz-hero-bleed--brand { background: var(--nz-brand); color: var(--nz-text-invert); }
 .nz-collapsible.is-open { border-left: var(--nz-border-w-strong) solid var(--nz-brand); }
 .nz-route.is-active { border-left: var(--nz-border-w-strong) solid var(--nz-brand); padding-left: var(--nz-space-4); }
+
+/* ---- v9.2 · escalón de escritorio ancho ----
+   El lienzo ya crece en tokens.css; aquí respira la rejilla. La letra no crece. */
+@media (min-width: 1440px) {
+  .nz-dash-grid { gap: var(--nz-space-5); }
+  .nz-bento { gap: var(--nz-space-5); }
+  .nz-split { gap: var(--nz-space-8); }
+  .nz-thirds { gap: var(--nz-space-5); }
+}
+
+/* ---- v9.2 · contexto de consulta explícito y rejillas por contenedor ----
+   .nz-cq declara el contenedor cuando el objeto no lo es (un marco de prueba,
+   un drawer, una columna de sidebar). Las rejillas responden a ese ancho, no
+   al del monitor: el mismo dashboard cabe en 320px sin cambiar una clase. */
+.nz-cq { container-type: inline-size; }
+@container (max-width: 47.99rem) {
+  .nz-dash-grid,
+  .nz-dash-grid--2,
+  .nz-dash-grid--4,
+  .nz-dash-grid--sidebar { grid-template-columns: 1fr; }
+}
+@container (min-width: 40rem) {
+  .nz-dash-grid--2,
+  .nz-dash-grid--4 { grid-template-columns: repeat(2, 1fr); }
+}
+@container (min-width: 56rem) {
+  .nz-dash-grid { grid-template-columns: repeat(3, 1fr); }
+  .nz-dash-grid--4 { grid-template-columns: repeat(4, 1fr); }
+  .nz-dash-grid--sidebar { grid-template-columns: 18rem minmax(0, 1fr); }
+}

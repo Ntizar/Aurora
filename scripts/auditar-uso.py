@@ -148,6 +148,9 @@ def cargar_censo():
 def auditar(html, clase_a_familia, packs_conocidos):
     """Devuelve (fallos, avisos, info) de una página."""
     fallos, avisos = [], []
+    # Una página del propio catálogo (enlaza el shell p0) puede usar .cat-* y
+    # p0-catalog.css: son suyos, no clases del sistema que un consumidor copie.
+    es_shell = "p0-catalog.css" in html
 
     # --- 1. CSS enlazado (CDN o local, para las páginas del repo) ------------
     enlaces = CDN_RE.findall(html)
@@ -162,7 +165,10 @@ def auditar(html, clase_a_familia, packs_conocidos):
         avisos.append("tokens.css no está enlazado: los packs lo necesitan para resolver los tokens")
     for fichero in ficheros:
         if fichero.startswith("packs/") and fichero != "packs/all.css":
-            if fichero[len("packs/"):] not in packs_conocidos:
+            nombre = fichero[len("packs/"):]
+            if es_shell and nombre == "p0-catalog.css":
+                continue
+            if nombre not in packs_conocidos:
                 fallos.append(f"Pack enlazado que no existe en el sistema: {fichero}")
 
     # --- 2. Clases -----------------------------------------------------------
@@ -174,6 +180,8 @@ def auditar(html, clase_a_familia, packs_conocidos):
     for c in invented:
         fallos.append(f"Clase inventada (no está en components.json): .{c}")
     for c in sorted({c for c in vistas if c.startswith(("cat-", "demo-"))}):
+        if es_shell:
+            continue
         fallos.append(f"Clase del shell del catálogo (no es del sistema): .{c}")
 
     # --- 3. Packs necesarios vs enlazados ------------------------------------
@@ -188,6 +196,8 @@ def auditar(html, clase_a_familia, packs_conocidos):
         for p in sorted(necesarios - enlazados):
             fallos.append(f"Falta por enlazar el pack {p} (lo usan clases de la página)")
         for p in sorted(enlazados - necesarios - {"all.css"}):
+            if es_shell and p == "p0-catalog.css":
+                continue
             avisos.append(f"Pack enlazado sin uso aparente: {p} (peso muerto, valora quitarlo)")
 
     # --- 4. Manifiesto en <style> y style="" ---------------------------------

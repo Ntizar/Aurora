@@ -3,19 +3,20 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>Aurora · 01 Layout y estructura · 178 objetos</title>
+<title>Aurora · 01 Layout y estructura · 179 objetos</title>
 <meta name="description" content="El esqueleto de cualquier web: contenedores, rejillas y spans, filas, pilas, landmarks, sticky, bleed, regiones de página y helpers de flujo.">
 <link rel="stylesheet" href="../tokens.css">
 <link rel="stylesheet" href="../packs/p0-catalog.css">
 <link rel="stylesheet" href="../packs/p1-layout.css">
 <link rel="stylesheet" href="../packs/p6-feedback.css">
+<link rel="stylesheet" href="../packs/p8-data.css">
 <link rel="stylesheet" href="../packs/p12-system.css">
 </head>
 <body class="nz">
 <a class="nz-skip-link" href="#contenido">Saltar al contenido</a>
 <header class="cat-topbar">
 <a class="cat-brandmark" href="../index.html"><i></i><i></i> Aurora</a>
-<span class="cat-count">01 · 178 objetos · 52 demos</span>
+<span class="cat-count">01 · 179 objetos · 53 demos</span>
 <span class="cat-topbar__tools">
 <a class="cat-icobtn" href="../index.html" title="Portada" aria-label="Volver a la portada">⌂</a>
 <button class="cat-icobtn" id="btnTheme" aria-label="Cambiar tema" title="Light / Dark">◐</button>
@@ -43,14 +44,14 @@
 </nav>
 <main class="nz-container cat-main" id="contenido">
   <div class="cat-pagehead">
-    <p class="cat-pagehead__over">Categoría 01 de 18 · 178 objetos · 52 demos</p>
+    <p class="cat-pagehead__over">Categoría 01 de 18 · 179 objetos · 53 demos</p>
     <h1>Layout y estructura</h1>
     <p>El esqueleto de cualquier web: contenedores, rejillas y spans, filas, pilas, landmarks, sticky, bleed, regiones de página y helpers de flujo.</p>
     <div class="cat-pagehead__stats">
-      <span class="nz-badge nz-badge--brand"><i></i>178 objetos</span>
-      <span class="nz-badge nz-badge--neutral">66 familias</span>
-      <span class="nz-badge nz-badge--accent">52 demos en vivo</span>
-      <span class="nz-badge nz-badge--neutral">66 clases distintas usadas</span>
+      <span class="nz-badge nz-badge--brand"><i></i>179 objetos</span>
+      <span class="nz-badge nz-badge--neutral">67 familias</span>
+      <span class="nz-badge nz-badge--accent">53 demos en vivo</span>
+      <span class="nz-badge nz-badge--neutral">68 clases distintas usadas</span>
       <a class="nz-badge nz-badge--brand" href="../packs/p1-layout.css">p1-layout.css</a>
     </div>
   </div>
@@ -58,7 +59,7 @@
     <div class="cat-search">
       <span class="cat-search__icon" aria-hidden="true">⌕</span>
       <input class="cat-search__input" id="catBuscar" type="search" placeholder="Buscar en esta categoría… (pulsa /)" aria-label="Buscar objeto en esta categoría">
-      <span class="cat-search__count" id="catContador">52 objetos</span>
+      <span class="cat-search__count" id="catContador">53 objetos</span>
     </div>
     <div class="cat-filters" role="group" aria-label="Filtrar por familia de objeto"><button type="button" class="cat-filters__chip" data-filtro="todo" aria-pressed="true">Todo</button>
       <button type="button" class="cat-filters__chip" data-filtro="nz-appshell" aria-pressed="false">.appshell</button>
@@ -74,11 +75,11 @@
       <button type="button" class="cat-filters__chip" data-filtro="nz-col" aria-pressed="false">.col</button>
       <button type="button" class="cat-filters__chip" data-filtro="nz-collapsible" aria-pressed="false">.collapsible</button>
       <button type="button" class="cat-filters__chip" data-filtro="nz-container" aria-pressed="false">.container</button>
+      <button type="button" class="cat-filters__chip" data-filtro="nz-cq" aria-pressed="false">.cq</button>
       <button type="button" class="cat-filters__chip" data-filtro="nz-dash-grid" aria-pressed="false">.dash-grid</button>
       <button type="button" class="cat-filters__chip" data-filtro="nz-divider" aria-pressed="false">.divider</button>
       <button type="button" class="cat-filters__chip" data-filtro="nz-drawer-layout" aria-pressed="false">.drawer-layout</button>
-      <button type="button" class="cat-filters__chip" data-filtro="nz-footer" aria-pressed="false">.footer</button>
-      <button type="button" class="cat-filters__chip" data-filtro="nz-grid-12" aria-pressed="false">.grid-12</button></div>
+      <button type="button" class="cat-filters__chip" data-filtro="nz-footer" aria-pressed="false">.footer</button></div>
   </div>
   <section class="cat-demo cat-in" data-cat="nz-root">
     <div class="cat-demo__title"><span class="cat-demo__num">1</span><span class="cat-demo__name">Viewport / contenedor raíz</span><span class="cat-demo__tag">.nz-root</span></div>
@@ -392,6 +393,12 @@
       <div class="nz-container nz-container--app"><div class="nz-article"><p style="margin:0">Un panel, un tablero o una tabla van a todo el ancho: <strong>.nz-container--app</strong> quita el tope del lienzo (en escritorio, de 1152px a 1536px). La prosa de lectura sigue con .nz-container, y en móvil las dos son iguales.</p></div></div>
     </div>
   </section>
+  <section class="cat-demo cat-in" data-cat="nz-cq nz-dash-grid nz-kpi">
+    <div class="cat-demo__title"><span class="cat-demo__num">53</span><span class="cat-demo__name">Contenedor de consulta: la rejilla responde a su sitio</span><span class="cat-demo__tag">.nz-cq · .nz-dash-grid--4</span></div>
+    <div class="cat-stage">
+      <div class="nz-cq" style="width:22rem;border:var(--nz-border-w) solid var(--nz-border);border-radius:var(--nz-radius-md);padding:var(--nz-space-2)"><div class="nz-dash-grid nz-dash-grid--4"><div class="nz-kpi"><span class="nz-kpi__label">A</span><span class="nz-kpi__value">1</span></div><div class="nz-kpi"><span class="nz-kpi__label">B</span><span class="nz-kpi__value">2</span></div><div class="nz-kpi"><span class="nz-kpi__label">C</span><span class="nz-kpi__value">3</span></div><div class="nz-kpi"><span class="nz-kpi__label">D</span><span class="nz-kpi__value">4</span></div></div></div>
+    </div>
+  </section>
   <div class="cat-empty" id="catVacio" hidden><b>Nada por aquí</b>Prueba con otro término o quita el filtro.</div>
 </main>
 <div class="cat-nav-pages" style="justify-content:center;border-top:1px solid var(--nz-border-soft)">
@@ -399,7 +406,7 @@
   <a href="02-navigation.html">02 Navegación →</a>
 </div>
 <footer class="cat-footer">
-  Aurora · Design System Ntizar · Categoría 01 de 18 · 2184 objetos · 653 demos · Hecho con ❤️ por David Antizar
+  Aurora · Design System Ntizar · Categoría 01 de 18 · 2186 objetos · 655 demos · Hecho con ❤️ por David Antizar
 </footer>
 <script src="../js/catalog.js"></script>
 <script src="../js/graficos.js"></script>

@@ -1,10 +1,10 @@
 {
  "name": "Aurora",
- "version": "8.4.2",
+ "version": "9.2.0",
  "type": "css-only design system",
  "namespace": ".nz-",
  "tokens": "tokens.css",
- "cdn": "https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v8.4.2/",
+ "cdn": "https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v9.2.0/",
  "manifiesto": {
   "gradientes": 0,
   "glass": 0,
@@ -19,14 +19,14 @@
   "objetivoTactil": "44px"
  },
  "resumen": {
-  "objetos": 2184,
-  "familias": 409,
+  "objetos": 2186,
+  "familias": 411,
   "categorias": 18,
-  "demos": 653,
+  "demos": 655,
   "tokens": 189,
   "tokensDark": 43,
   "alias": 150,
-  "familiasConMarkup": 409,
+  "familiasConMarkup": 411,
   "familiasConAntiPatron": 31,
   "tokensConsumidosPorFamilias": 136
  },
@@ -35,9 +35,9 @@
    "categoria": 1,
    "nombre": "Layout y estructura",
    "descripcion": "El esqueleto de cualquier web: contenedores, rejillas y spans, filas, pilas, landmarks, sticky, bleed, regiones de página y helpers de flujo.",
-   "objetos": 178,
-   "familias": 66,
-   "demos": 52,
+   "objetos": 179,
+   "familias": 67,
+   "demos": 53,
    "pagina": "paginas/01-layout.html"
   },
   "p2-navigation.css": {
@@ -161,9 +161,9 @@
    "categoria": 15,
    "nombre": "Apps y escritorio",
    "descripcion": "Ventana de aplicación, barras de app, editor de código, terminal, árbol de archivos, kanban, calendario, ajustes, spotlight, bandeja, dock y diálogos de sistema.",
-   "objetos": 74,
-   "familias": 30,
-   "demos": 37,
+   "objetos": 75,
+   "familias": 31,
+   "demos": 38,
    "pagina": "paginas/15-apps.html"
   },
   "p16-cristal.css": {
@@ -1904,6 +1904,24 @@
     "demo": "paginas/01-layout.html",
     "titulo": "Contenedores: página, fluido, fijo, ancho y estrecho",
     "markup": "<div class=\"nz-container demo-box\">página · max 72rem</div>"
+   },
+   "modificadoresLexico": []
+  },
+  "nz-cq": {
+   "pack": "p1-layout.css",
+   "categoria": 1,
+   "demo": "paginas/01-layout.html",
+   "clases": [
+    "nz-cq"
+   ],
+   "modificadores": [],
+   "partes": [],
+   "tokens": [],
+   "nTokens": 0,
+   "markup": {
+    "demo": "paginas/01-layout.html",
+    "titulo": "Contenedor de consulta: la rejilla responde a su sitio",
+    "markup": "<div class=\"nz-cq\" style=\"width:22rem;border:var(--nz-border-w) solid var(--nz-border);border-radius:var(--nz-radius-md);padding:var(--nz-space-2)\"><div class=\"nz-dash-grid nz-dash-grid--4\"><div class=\"nz-kpi\"><span class=\"nz-kpi__label\">A</span><span class=\"nz-kpi__value\">1</span></div><div class=\"nz-kpi\"><span class=\"nz-kpi__label\">B</span><span class=\"nz-kpi__value\">2</span></div><div class=\"nz-kpi\"><span class=\"nz-kpi__label\">C</span><span class=\"nz-kpi__value\">3</span></div><div class=\"nz-kpi\"><span class=\"nz-kpi__label\">D</span><span class=\"nz-kpi__value\">4</span></div></div></div>"
    },
    "modificadoresLexico": []
   },
@@ -8674,9 +8692,9 @@
    ],
    "nTokens": 31,
    "markup": {
-    "demo": "paginas/08-data.html",
-    "titulo": "Grid de datos",
-    "markup": "<div class=\"nz-kpi nz-kpi--sm\"><span class=\"nz-kpi__label\">B</span><span class=\"nz-kpi__value\">8</span></div>"
+    "demo": "paginas/01-layout.html",
+    "titulo": "Contenedor de consulta: la rejilla responde a su sitio",
+    "markup": "<div class=\"nz-kpi\"><span class=\"nz-kpi__label\">A</span><span class=\"nz-kpi__value\">1</span></div>"
    },
    "noUsar": [
     "No lo uses como contenedor genérico de texto: es una cifra con contexto."
@@ -15646,12 +15664,30 @@
    "nTokens": 30,
    "markup": {
     "demo": "paginas/15-apps.html",
-    "titulo": "Kanban · destino de arrastre y columna resuelta",
-    "markup": "<div class=\"nz-kanban\"><div class=\"nz-kanban__col\"><strong>Por hacer</strong><div class=\"nz-kanban__card\">Revisar copys</div></div><div class=\"nz-kanban__col is-over\"><strong>Soltar aqui</strong><div class=\"nz-kanban__card\">Maquetar hero</div></div><div class=\"nz-kanban__col is-done\"><strong>Hecho</strong><div class=\"nz-kanban__card\">Redactar brief</div></div></div>"
+    "titulo": "Kanban en un contenedor estrecho",
+    "markup": "<div class=\"nz-kanban\"><div class=\"nz-kanban__col\"><header>Por hacer</header><div class=\"nz-kanban__card\">Revisar copys</div></div><div class=\"nz-kanban__col\"><header>Hecho</header><div class=\"nz-kanban__card is-done\">Brief</div></div></div>"
    },
    "noUsar": [
     "No para más de 5-6 columnas: se rompe en móvil; agrupa estados."
    ],
+   "modificadoresLexico": []
+  },
+  "nz-kanban-wrap": {
+   "pack": "p15-apps.css",
+   "categoria": 15,
+   "demo": "paginas/15-apps.html",
+   "clases": [
+    "nz-kanban-wrap"
+   ],
+   "modificadores": [],
+   "partes": [],
+   "tokens": [],
+   "nTokens": 0,
+   "markup": {
+    "demo": "paginas/15-apps.html",
+    "titulo": "Kanban en un contenedor estrecho",
+    "markup": "<div class=\"nz-kanban-wrap\" style=\"width:20rem\"><div class=\"nz-kanban\"><div class=\"nz-kanban__col\"><header>Por hacer</header><div class=\"nz-kanban__card\">Revisar copys</div></div><div class=\"nz-kanban__col\"><header>Hecho</header><div class=\"nz-kanban__card is-done\">Brief</div></div></div></div>"
+   },
    "modificadoresLexico": []
   },
   "nz-launcher": {

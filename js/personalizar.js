@@ -149,7 +149,7 @@
 
   /* ---------- tipografía bajo demanda ---------- */
   var FUENTES = {
-    inter: { nombre: 'Inter', param: 'Inter:wght@400..800', pila: '"Inter", "Inter Variable", system-ui, sans-serif' },
+    inter: { nombre: 'Inter', param: null, pila: '"Inter", "Inter Variable", system-ui, sans-serif' },
     geist: { nombre: 'Geist', param: 'Geist:wght@400..800', pila: '"Geist", system-ui, sans-serif' },
     manrope: { nombre: 'Manrope', param: 'Manrope:wght@400..800', pila: '"Manrope", system-ui, sans-serif' },
     jakarta: { nombre: 'Plus Jakarta Sans', param: 'Plus+Jakarta+Sans:wght@400..800', pila: '"Plus Jakarta Sans", system-ui, sans-serif' },

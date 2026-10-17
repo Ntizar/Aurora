@@ -284,3 +284,14 @@
 @media (min-width: 960px) {
   .nz-modelpick__btn { min-height: 36px; }
 }
+
+/* ---- v9.2 · chat por contenedor ---- */
+.nz-chat { container-type: inline-size; }
+@container (max-width: 30rem) {
+  .nz-chat__head { padding: var(--nz-space-2) var(--nz-space-3); }
+  .nz-chat__body { padding: var(--nz-space-3); gap: var(--nz-space-3); }
+  .nz-msg__bubble { padding: var(--nz-space-2) var(--nz-space-3); }
+}
+@container (min-width: 48rem) {
+  .nz-msg__bubble { max-width: 36rem; }
+}

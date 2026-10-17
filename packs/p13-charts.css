@@ -360,3 +360,23 @@
   [data-nz-anim] .nz-chart-line__svg, [data-nz-anim] .nz-chart-donut__svg,
   [data-nz-anim] .nz-chart-gauge__svg, [data-nz-anim] .nz-heatmap__cell { opacity: 1; transition: none; }
 }
+
+/* ---- v9.2 · el gráfico responde a SU contenedor, no al viewport ----
+   Un chart en un sidebar de 320px no debe comportarse como uno a página completa.
+   La base sigue siendo móvil; los escalones de contenedor solo suman. */
+.nz-chart { container-type: inline-size; }
+@container (min-width: 30rem) {
+  .nz-chart__head { align-items: center; }
+  .nz-chart__body { min-height: 10rem; }
+}
+@container (min-width: 48rem) {
+  .nz-chart__body { min-height: 12rem; }
+  .nz-chart__source { font-size: var(--nz-text-xs); }
+}
+@container (max-width: 20rem) {
+  .nz-chart { padding: var(--nz-space-3); }
+  .nz-chart__title { font-size: var(--nz-text-sm); }
+  .nz-chart__actions { margin-left: 0; }
+}
+@media (min-width: 1200px) { .nz-chart-bar--lg { height: 14rem; } }
+@media (min-width: 1440px) { .nz-chart--lg { padding: var(--nz-space-8); } }

@@ -20,8 +20,8 @@ jobs:
       - name: Validar el sistema (manifiesto + cobertura + HTML)
         run: python scripts/validar-css.py
 
-      - name: Lint de las recetas de examples/ (el consumidor modelo)
-        run: python scripts/auditar-uso.py
+      - name: Lint de las recetas de examples/ y de las páginas del explorador
+        run: python scripts/auditar-uso.py base.html stress-test.html
 
       - name: Auditoría de tema (supervivencia al modo oscuro)
         run: python scripts/audit-tema.py
@@ -29,20 +29,32 @@ jobs:
       - name: Auditoría de accesibilidad de las demos
         run: python scripts/audit-a11y.py
 
-      - name: Comprobar la sintaxis del JavaScript del catálogo
-        run: node --check js/catalog.js
-
-      - name: Regenerar el catálogo y comprobar que no hay diferencias
+      - name: Comprobar la sintaxis del JavaScript
         run: |
+          node --check js/catalog.js
+          node --check js/base-datos.js
+
+      - name: Base de datos de diseño (integridad y sincronía)
+        run: |
+          python scripts/generar-base-datos.py --check
+          python scripts/auditar-base.py --check --min-familias 411 --min-tokens 189
+
+      - name: Responsive multifunción (container queries y stress test)
+        run: python scripts/auditar-responsive.py
+
+      - name: Regenerar y comprobar que no hay diferencias
+        run: |
+          python scripts/generar-base-datos.py
+          python scripts/generar-llm-docs.py
           python scripts/build-catalog.py
           python scripts/audit-catalog.py
           python scripts/audit-html.py
-          if ! git diff --quiet -- index.html paginas datos packs/all.css audit; then
-            echo "::error::Lo generado no coincide con lo commiteado. Ejecuta build-catalog.py, audit-catalog.py y audit-html.py, y commitea el resultado."
-            git --no-pager diff --stat -- index.html paginas datos packs/all.css audit
+          if ! git diff --quiet -- index.html paginas datos packs/all.css audit components.json LLM.md llms.txt combos; then
+            echo "::error::Lo generado no coincide con lo commiteado. Ejecuta generar-base-datos.py, generar-llm-docs.py, build-catalog.py, audit-catalog.py y audit-html.py, y commitea el resultado."
+            git --no-pager diff --stat -- index.html paginas datos packs/all.css audit components.json LLM.md llms.txt combos
             exit 1
           fi
-          echo "Catálogo, índice de objetos e informe de auditoría sincronizados con specs/ y los packs."
+          echo "Catálogo, base de datos, API LLM e informe de auditoría sincronizados con specs/ y los packs."
 
       - name: Resumen de la auditoría
         run: |
@@ -52,6 +64,6 @@ jobs:
       - name: Publicar el informe de auditoría
         uses: actions/upload-artifact@v4
         with:
-          name: auditoria-aurora7
+          name: auditoria-aurora
           path: audit/
           if-no-files-found: ignore

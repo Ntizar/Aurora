@@ -42,7 +42,7 @@ sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
 bc = import_module("build-catalog")
 
 ROOT = bc.ROOT
-VERSION = "8.4.2"
+VERSION = "9.2.0"
 CDN = f"https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v{VERSION}/"
 
 # ---------------------------------------------------------------------------
@@ -1037,6 +1037,11 @@ antes de darlo por bueno y corrige lo que marque.
 Recetas completas y funcionando en `examples/` (login, dashboard, landing,
 chat-ia, forms): cópialas como punto de partida.
 
+**Base de datos de diseño:** `base.html` es el explorador (búsqueda por lo que
+quieres construir, ficha con markup y preview) y `datos/base-diseno.json` es el
+índice machine-readable: {total_bases} familias con su markup, {len(tokens)} tokens,
+recetas, combos, marcas y las 12 leyes. Consúltalo antes de leer un pack.
+
 Docs hermanas: `AGENTS.md` (reglas duras del repo), `components.json` (API
 completa machine-readable), `paginas/` (catálogo con una demo viva por objeto),
 `README.md`.
@@ -1064,6 +1069,9 @@ Documentos para agentes (léelos en este orden):
   EN→ES en `alias`.
 - [examples/]({CDN}): 5 páginas completas listas para copiar (login,
   dashboard, landing, chat-ia, forms).
+- [base.html]({CDN}base.html) y [datos/base-diseno.json]({CDN}datos/base-diseno.json):
+  base de datos de diseño consultable. {total_bases} familias con markup, tokens,
+  recetas, combos y marcas en un índice; búscalo antes de leer un pack.
 - [combos/]({CDN}): esqueleto markup de cada tipo de página (landing,
   dashboard, chat-ia, login-form, e-commerce, escritorio-app, charla-beats,
   prototipo) con clases reales validadas; mapa en `components.json`

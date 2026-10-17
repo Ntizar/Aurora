@@ -264,6 +264,11 @@
       "titulo": "Contenedor de herramienta: todo el ancho",
       "tag": ".nz-container--app",
       "markup": "<div class=\"nz-container nz-container--app\"><div class=\"nz-article\"><p style=\"margin:0\">Un panel, un tablero o una tabla van a todo el ancho: <strong>.nz-container--app</strong> quita el tope del lienzo (en escritorio, de 1152px a 1536px). La prosa de lectura sigue con .nz-container, y en móvil las dos son iguales.</p></div></div>"
+    },
+    {
+      "titulo": "Contenedor de consulta: la rejilla responde a su sitio",
+      "tag": ".nz-cq · .nz-dash-grid--4",
+      "markup": "<div class=\"nz-cq\" style=\"width:22rem;border:var(--nz-border-w) solid var(--nz-border);border-radius:var(--nz-radius-md);padding:var(--nz-space-2)\"><div class=\"nz-dash-grid nz-dash-grid--4\"><div class=\"nz-kpi\"><span class=\"nz-kpi__label\">A</span><span class=\"nz-kpi__value\">1</span></div><div class=\"nz-kpi\"><span class=\"nz-kpi__label\">B</span><span class=\"nz-kpi__value\">2</span></div><div class=\"nz-kpi\"><span class=\"nz-kpi__label\">C</span><span class=\"nz-kpi__value\">3</span></div><div class=\"nz-kpi\"><span class=\"nz-kpi__label\">D</span><span class=\"nz-kpi__value\">4</span></div></div></div>"
     }
   ]
 }

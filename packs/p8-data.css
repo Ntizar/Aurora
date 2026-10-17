@@ -283,3 +283,13 @@
 .nz-record--success { box-shadow: inset 3px 0 0 var(--nz-success), var(--nz-shadow-sm); }
 .nz-record--warning { box-shadow: inset 3px 0 0 var(--nz-warning), var(--nz-shadow-sm); }
 .nz-record.is-selected { box-shadow: 0 0 0 2px var(--nz-brand), var(--nz-shadow-sm); }
+
+/* ---- v9.2 · tabla por contenedor (sin declarar container-type propio:
+   el contexto lo pone .nz-dash-grid / .nz-split, y así el sticky-head no se toca) ---- */
+@container (max-width: 44rem) {
+  .nz-table__toolbar { padding-inline: var(--nz-space-2); }
+  .nz-table--comfortable :is(th, td) { padding-inline: var(--nz-space-2); }
+}
+@container (min-width: 64rem) {
+  .nz-table--comfortable :is(th, td) { padding-inline: var(--nz-space-4); }
+}

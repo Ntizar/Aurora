@@ -361,3 +361,16 @@
 .nz-dock--sm .nz-dock__item { min-width: 36px; min-height: 36px; font-size: var(--nz-text-sm); }
 .nz-dock--lg .nz-dock__item { min-width: 56px; min-height: 56px; font-size: var(--nz-text-lg); }
 .nz-dock__item.is-active { background: var(--nz-brand-soft); color: var(--nz-brand); }
+
+/* ---- v9.2 · kanban por contenedor ----
+   El kanban no decide por el ancho de la ventana: decide por el ancho del sitio
+   donde vive. En un drawer de 480px se queda en filas aunque el monitor sea 4K. */
+.nz-kanban-wrap { container-type: inline-size; }
+@container (max-width: 47.99rem) {
+  .nz-kanban { grid-auto-flow: row; grid-auto-columns: auto; overflow: visible; }
+}
+@container (min-width: 48rem) {
+  .nz-kanban { grid-auto-flow: column; grid-auto-columns: minmax(15rem, 1fr); overflow-x: auto; }
+}
+@media (min-width: 1200px) { .nz-kanban { grid-auto-columns: minmax(16rem, 1fr); } }
+@media (min-width: 1440px) { .nz-kanban { grid-auto-columns: minmax(17rem, 1fr); } }

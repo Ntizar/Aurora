@@ -42,6 +42,31 @@ PACKS_COMPONENTES = [f"p{i}-{n}.css" for i, n in [
 PACKS_CRISTAL = {"p16-cristal.css"}
 
 
+def cifras_base():
+    """Cifras de la base de datos de diseño. Fuente: datos/base-diseno.json.
+
+    Si aún no se ha generado, se derivan de components.json y del disco para que
+    la portada nunca invente un número. El flujo correcto es generar-base-datos.py
+    antes de build-catalog.py.
+    """
+    ruta = DATOS / "base-diseno.json"
+    if ruta.is_file():
+        try:
+            return json.loads(ruta.read_text(encoding="utf-8"))["resumen"]
+        except (OSError, KeyError, json.JSONDecodeError):
+            pass
+    comp = json.loads((ROOT / "components.json").read_text(encoding="utf-8"))
+    r = comp.get("resumen", {})
+    canonicas = len([p for p in (ROOT / "recetas").glob("*.html") if p.stem != "index"])
+    ejemplos = len(list((ROOT / "examples").glob("*.html")))
+    return {
+        "familias": r.get("familias", 0),
+        "tokens": r.get("tokens", 0),
+        "paginas": canonicas + ejemplos,
+        "combos": len(comp.get("combos", {})),
+    }
+
+
 # ------------------------------------------------------------------
 # Contar clases declaradas (objetos) leyendo el CSS de verdad
 # ------------------------------------------------------------------
@@ -402,6 +427,7 @@ CSS_PORTADA = """
 
 
 def portada(specs, censo_cat, totales, packs):
+    base = cifras_base()
     filas = []
     for s in specs:
         n = s["cat"]
@@ -422,9 +448,6 @@ def portada(specs, censo_cat, totales, packs):
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Aurora · Design System Ntizar · {t['clases']} objetos de frontend</title>
 <meta name="description" content="Design system CSS de Ntizar: {t['clases']} objetos en {t['categorias']} categorías. Elige dos colores y el sistema entero se rehace. Mobile-first, táctil 44px, light y dark.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400..800&display=swap">
 <link rel="stylesheet" href="tokens.css">
 <link rel="stylesheet" href="packs/{PACK_SHELL}">
 <!--PACKS-->
@@ -445,6 +468,7 @@ def portada(specs, censo_cat, totales, packs):
     <span class="cat-brandmark"><i></i><i></i> Aurora</span>
     <span class="cat-count">v{VERSION} · motor de temas</span>
     <span class="cat-topbar__tools">
+      <a class="cat-icobtn" href="base.html" title="Base de datos de diseño" aria-label="Base de datos de diseño">▦</a>
       <a class="cat-icobtn" href="audit/index.html" title="Auditoría del sistema" aria-label="Auditoría del sistema">✓</a>
       <button class="cat-icobtn" id="btnTheme" aria-label="Cambiar tema" title="Light / Dark">◐</button>
     </span>
@@ -456,6 +480,7 @@ def portada(specs, censo_cat, totales, packs):
     <p class="cat-hero__sub">{t['clases']} objetos de frontend para montar cualquier web. Elige dos colores y el sistema entero se rehace. Sólido y con sombras de verdad: sin gradientes, sin glass, sin IA-slop. Mobile-first de verdad.</p>
     <div class="cat-ctas">
       <a class="nz-btn nz-btn--primary" href="recetas/index.html">Ver las recetas</a>
+      <a class="nz-btn nz-btn--accent" href="base.html">Abrir la base de datos</a>
       <a class="nz-btn nz-btn--soft" href="paginas/01-layout.html">Explorar el catálogo</a>
       <a class="nz-btn nz-btn--ghost" href="COMPOSICION.md">Contrato de composición</a>
       <span class="cat-hint">Y abajo puedes cambiar los colores, la tipografía y el acabado en vivo</span>
@@ -547,17 +572,30 @@ def portada(specs, censo_cat, totales, packs):
         </div>
       </div>
 
-      <p class="cat-hint">En tus proyectos se usa igual: <code>&lt;html data-nz-marca="indigo"&gt;</code>, tu propia rampa con <code>python scripts/generar-marca.py</code>, el vidrio con <code>data-nz-estilo="cristal"</code> (categoría 16) y la tipografía con <code>--nz-font</code>.</p>
+      <p class="cat-hint">En tus proyectos se usa igual: <code>&lt;html data-nz-marca="indigo"&gt;</code>, tu propia rampa con <code>python scripts/generar-marca.py</code>, el vidrio con <code>data-nz-estilo="cristal"</code> (categoría 16) y la tipografía con <code>--nz-font</code>. El probador carga las fuentes de muestra solo aquí; en un producto, Inter viaja dentro de <code>tokens.css</code>.</p>
     </section>
 
     <section class="cat-in" style="--d:.07s;margin-block:var(--nz-space-12)">
-      <h2 class="cat-h2">El sistema, en cuatro ideas</h2>
+      <h2 class="cat-h2">El sistema, en cinco ideas</h2>
       <div class="cat-ideas">
+        <a class="cat-idea" href="base.html"><b>Base de datos de diseño</b><span>Todo el sistema consultable: busca por lo que quieres construir y copia el markup real.</span></a>
         <a class="cat-idea" href="marcas/index.html"><b>Motor de temas</b><span>Dos colores y cambia todo. Cinco marcas listas y generador OKLCH con contraste AA.</span></a>
         <a class="cat-idea" href="COMPOSICION.md"><b>Contrato de composición</b><span>Doce leyes: cero emojis, presupuesto de color, ancho por tipo de página.</span></a>
         <a class="cat-idea" href="recetas/index.html"><b>Recetas canónicas</b><span>Admin, dashboard, ajustes, acceso e informe. Cópialas y adapta.</span></a>
         <a class="cat-idea" href="audit/index.html"><b>Arnés de verificación</b><span>El lint caza emojis, jerarquía, presupuesto de color y tipografía mínima.</span></a>
       </div>
+    </section>
+
+    <section class="cat-in" style="--d:.075s;margin-block:var(--nz-space-12)">
+      <h2 class="cat-h2">La base de datos de diseño</h2>
+      <p class="cat-p">No es una carpeta de snippets: es un índice consultable de todo el sistema. Busca por lo que quieres construir —«tabla apilable», «dashboard», «acento»— y obtén la familia con su markup real, los tokens que consume, la demo viva y las recetas completas. Cada ficha se copia con un botón.</p>
+      <div class="cat-ideas">
+        <a class="cat-idea" href="base.html#f=nz-table"><b>{base['familias']} familias</b><span>Componentes y patrones con clases, partes, modificadores, tokens y cuándo usarlos.</span></a>
+        <a class="cat-idea" href="base.html#f=--nz-marca-600"><b>{base['tokens']} tokens</b><span>Marca y base, color, tipografía, espacio, geometría, foco y movimiento. Con su valor.</span></a>
+        <a class="cat-idea" href="base.html#f=recetas%2Fdashboard.html"><b>{base['paginas']} páginas</b><span>Recetas canónicas y arranques mínimos: admin, dashboard, ajustes, acceso, informe, landing y chat.</span></a>
+        <a class="cat-idea" href="base.html#f=dashboard"><b>{base['combos']} combos</b><span>Esqueletos de página por tipo, con los packs exactos que hay que enlazar.</span></a>
+      </div>
+      <p style="margin-top:var(--nz-space-4)"><a class="nz-btn nz-btn--accent" href="base.html">Abrir el explorador</a></p>
     </section>
 
     <section class="cat-in" style="--d:.08s;margin-block:var(--nz-space-12)">

@@ -1,14 +1,14 @@
 ---
 name: aurora-design-system
 description: "Usa al construir o tocar cualquier web con Aurora (Ntizar/Aurora). El repo manda: resuelve la versión vigente y pide LLM.md + components.json antes de escribir CSS."
-version: "8.4.2"
+version: "9.2.0"
 tags: [css, design-system, aurora, ntizar, agent-ready, movil, escritorio, tipografia]
 ---
 
 # Aurora — doctrina única (el repo es la orden máxima)
 
 Design system CSS puro, sin build, sin dependencias, namespaced bajo `.nz-`.
-**v8.4.2 · 2184 objetos · 409 familias · 653 demos · 18 categorías · 189 tokens.**
+**v9.2.0 · 2186 objetos · 411 familias · 655 demos · 18 categorías · 189 tokens.**
 *(Cabecera de testigo, no de autoridad: resuélvela con el PASO 0.)*
 
 > ⚠️ `Ntizar/Aurora` **manda sobre esta skill**. Esta skill es un puntero; el repo
@@ -28,7 +28,7 @@ procedimiento. Resuélvela en cada tarea:
 # a) con el repo clonado (lo normal en esta máquina) — la vía rápida
 #    (ajusta la carpeta al nombre de tu clon: Aurora-8, Aurora-7, Aurora…)
 git -C C:/Users/d_ant/Projects/Aurora-8 fetch --tags -q
-V=$(git -C C:/Users/d_ant/Projects/Aurora-8 describe --tags --abbrev=0)   # p.ej. v8.4.2
+V=$(git -C C:/Users/d_ant/Projects/Aurora-8 describe --tags --abbrev=0)   # p.ej. v9.2.0
 
 # b) sin repo — pregunta a GitHub
 curl -s https://api.github.com/repos/Ntizar/Aurora/tags | grep -m1 '"name"'
@@ -90,13 +90,13 @@ nueva del sistema no te deja ciego: solo obliga a refrescar la cabecera.
 ```html
 <html lang="es" data-nz-theme="light">   <!-- o "dark" -->
 <head>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v8.3.0/tokens.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v8.3.0/packs/all.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v9.2.0/tokens.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v9.2.0/packs/all.css">
 </head>
 <body class="nz">
 ```
 
-Sustituye `v8.0.0` por **`$V`** (el tag que resolviste en el PASO 0): el ejemplo es de la
+Sustituye `v9.2.0` por **`$V`** (el tag que resolviste en el PASO 0): el ejemplo es de la
 última vez que se tocó esta cabecera. `all.css` solo para prototipos; en producción enlaza
 los packs que uses (12-40 KB cada uno). Purga: `curl https://purge.jsdelivr.net/gh/Ntizar/Aurora@$V/<fichero>`.
 
@@ -187,7 +187,7 @@ El lint lo comprueba (`acento-ausente`, `acento-testimonial`).
 
 ## 6. Flujo del agente para generar HTML con Aurora
 
-1. **PASO 0**: resuelve `$V` y lee `LLM.md` + `components.json` del repo.
+1. **PASO 0**: resuelve `$V` y lee `LLM.md` + `components.json` del repo. Si buscas por necesidad («tabla apilable», «dashboard», «acento»), empieza por `base.html` o `datos/base-diseno.json`: es el índice que ya trae markup, tokens y anti-patrón.
 2. **Copia una receta de `examples/`** y quítale lo que no uses.
 3. **Escribe el HTML** con los objetos del censo, mobile-first, tokens, 44px.
 4. **Verifica el HTML**: `python scripts/auditar-uso.py tu-pagina.html` → clases inventadas, packs que faltan, gradientes, colores a mano, desktop-first, atribución. 0 fallos o no está terminado.
@@ -218,6 +218,9 @@ El lint lo comprueba (`acento-ausente`, `acento-testimonial`).
 | Presentar una charla en beats (p18) | `.nz-escenario` (+ `--lienzo`, `--profundo`) con `.nz-esc-titular/editorial/numeral/etiqueta/dato`, `.nz-nodo`, `.nz-enlace`, `.nz-qr` |
 | Escritorio (p15) | `.nz-window`, `.nz-appnav`, `.nz-kanban`, `.nz-actbar`, `.nz-statusbar` |
 | Herramienta a pantalla completa (p1) | `.nz-container--app` (junto a `.nz-container`) |
+| Buscar por necesidad, no por clase | `base.html` (explorador) · `datos/base-diseno.json` (índice machine-readable) |
+| Que un objeto responda a su contenedor, no al monitor (v9.2) | `.nz-cq` en el marco + `.nz-dash-grid`/`.nz-split`/`.nz-bento`; `.nz-chart`, `.nz-chat`, `.nz-kanban-wrap` ya son contenedores |
+| Kanban en un sidebar estrecho | `.nz-kanban-wrap` > `.nz-kanban`: en <48rem se queda en filas |
 | El dato que importa en acento (p3/p8) | `.nz-num--accent`, `.nz-kpi--accent`, `.nz-lbl--accent`, `.nz-lead--accent`, `.nz-text--accent-soft`, `.nz-highlight--accent` |
 | Énfasis sin negrita | `.nz-text--peso-medio`, `.nz-text--peso-fuerte` |
 
@@ -234,6 +237,7 @@ forma `--square/--rounded/--pill`, elevación `--flat/--raised`, estados `.is-ac
 4. Footer exacto con atribución.
 5. Móvil medido, no admirado: `scrollWidth == clientWidth` a 320/360/390 en todas las pestañas; táctil 44px.
 6. Escritorio y print (si es informe) sin regresión. Mirar la página en preview.
+7. Si tocaste el sistema: `generar-base-datos.py && auditar-base.py --check && auditar-responsive.py` en verde. La base de datos y los container queries no se degradan en silencio.
 
 ## 9. Ampliar el repo (aquí va todo el CSS bueno)
 
@@ -286,7 +290,16 @@ Criterio de admisión: (a) resuelve un problema real y repetido, (b) es mobile-f
   (40% de la pantalla, medido). El lienzo crece; la letra no.
 - ❌ **Enlazar Google Fonts o cualquier CDN de fuentes** en un producto Aurora: la letra
   ya viene en el sistema, y una dependencia externa rompe las capturas headless y la
-  paridad entre máquinas.
+  paridad entre máquinas. La portada lo hacía con Inter (duplicaba la fuente que sirve
+  `tokens.css`); corregido en 9.2: el `<link>` externo sobra.
+- ❌ **Editar a mano `components.json` o `datos/base-diseno.json`.** Son salidas de
+  generador: la CI las compara y `auditar-base.py --check` caza cualquier retoque. Se
+  cambia la fuente (`specs/`, packs, `recetas/`, `marcas/`) y se regenera.
+- ❌ **Resolver un objeto compuesto solo con `@media`.** Un chart o un kanban dentro de
+  un sidebar de 320px se rompe aunque el monitor sea 4K. Los objetos compuestos consultan
+  su contenedor; si el objeto no es contenedor, se declara el contexto con `.nz-cq`.
+- ❌ **Declarar `container-type` en `.nz-table-wrap`.** El `thead` sticky necesita su
+  propio scroll container; el contexto de consulta lo ponen `.nz-dash-grid` y `.nz-split`.
 - ❌ **Dejar el patrón resuelto en el proyecto y no subirlo al repo.**
 
 ## 11. Excepciones vigentes (cuándo NO usar Aurora)
@@ -306,7 +319,7 @@ mesh/orbs/3D desaparecen). Receta y script de medición en `references/migracion
    pasa además `audit-a11y.py` (inputs sin etiqueta), `audit-tema.py` (supervivencia a modo
    oscuro), `audit-catalog.py`, `audit-html.py` y `auditar-uso.py`. Pushear con la CI en rojo es
    pushear a medias. Cadena completa:
-   `python scripts/validar-css.py && python scripts/audit-catalog.py && python scripts/audit-html.py && python scripts/audit-a11y.py && python scripts/audit-tema.py && python scripts/auditar-uso.py --selftest`
+   `python scripts/validar-css.py && python scripts/audit-catalog.py && python scripts/audit-html.py && python scripts/audit-a11y.py && python scripts/audit-tema.py && python scripts/auditar-base.py --check && python scripts/auditar-responsive.py && python scripts/auditar-uso.py --selftest`
 2. **El estado inicial de una animación NUNCA es 0.** Arrancar en `scaleY(0)` / `opacity: 0` y
    confiar en que el JS revele deja el dato invisible si el JS falla, si una captura headless
    congela la animación o si la pestaña está en segundo plano. Arranca en `0.55` y pon red de
@@ -330,6 +343,18 @@ mesh/orbs/3D desaparecen). Receta y script de medición en `references/migracion
    v8.4 (40% de pantalla vacía, Inter que nunca se cargaba, 19-26% de negritas) no se ven
    mirando una captura con cariño: se ven con `getBoundingClientRect()`, midiendo el ancho
    de un texto contra una familia inventada y contando `getComputedStyle().fontWeight`.
+7. **Una base de datos que se escribe a mano miente.** `components.json` ya tenía 409
+   familias con markup real, pero nadie podía consultarlo sin cargar 487 KB. La base de
+   datos (`datos/base-diseno.json` + `base.html`) se **deriva** de las fuentes y se audita;
+   si se retoca a mano, la siguiente regeneración la pisa y `--check` lo caza. El índice no
+   es un documento: es una salida de build.
+8. **El responsive de un design system no es solo `@media`.** Los objetos viven dentro de
+   sidebars, drawers y modales; un chart a 320px no puede comportarse como uno a página
+   completa. Medido antes de v9.2: **0 container queries en los packs y un solo `@1200`**.
+   Se arregla declarando `container-type` en los contenedores correctos (nunca en
+   `.nz-table-wrap`, que rompe el sticky-head) y con una prueba viva —`stress-test.html`—
+   que enseña el mismo panel en cuatro anchos. Lo que no se mide en su contenedor se
+   rompe en silencio.
 
 ## 14. Referencias
 

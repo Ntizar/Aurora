@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es" data-nz-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Base de datos de diseño · Aurora</title>
+  <meta name="description" content="Todo Aurora consultable en un sitio: familias con markup real, tokens con su valor, recetas completas, combos y marcas. La base de datos de diseño del sistema.">
+  <link rel="stylesheet" href="tokens.css">
+  <link rel="stylesheet" href="packs/all.css">
+  <link rel="stylesheet" href="packs/p0-catalog.css">
+  <script src="js/base-datos.js" defer></script>
+</head>
+<body class="nz">
+  <a class="nz-skip-link" href="#contenido">Saltar al contenido</a>
+
+  <header class="cat-topbar">
+    <a class="cat-brandmark" href="index.html"><i></i><i></i> Aurora</a>
+    <span class="cat-count" id="baseContador" aria-live="polite">Cargando la base…</span>
+    <div class="cat-topbar__tools">
+      <a class="cat-icobtn" href="index.html" title="Catálogo" aria-label="Volver al catálogo">⌂</a>
+      <a class="cat-icobtn" href="recetas/index.html" title="Recetas" aria-label="Recetas canónicas">¶</a>
+      <button class="cat-icobtn" id="btnTheme" aria-label="Cambiar tema" title="Light / Dark">◐</button>
+    </div>
+  </header>
+
+  <main class="cat-main" id="contenido">
+    <div class="nz-container">
+      <div class="cat-pagehead">
+        <p class="cat-pagehead__over">Base de datos de diseño</p>
+        <h1>Todo Aurora, <em>consultable</em>.</h1>
+        <p>Una sola puerta para el sistema entero: familias con su markup real, tokens con su valor, recetas completas, esqueletos de página, marcas y las leyes de composición. Busca por lo que quieres construir, no por el nombre de la clase.</p>
+        <div class="cat-pagehead__stats" id="baseStats">
+          <span class="nz-badge nz-badge--brand">Familias</span>
+          <span class="nz-badge nz-badge--neutral">Tokens</span>
+          <span class="nz-badge nz-badge--neutral">Páginas</span>
+          <span class="nz-badge nz-badge--accent">Combos</span>
+        </div>
+      </div>
+
+      <div class="cat-tools">
+        <div class="cat-search">
+          <span class="cat-search__icon" aria-hidden="true">⌕</span>
+          <label class="nz-visually-hidden" for="baseBuscar">Buscar en la base de datos</label>
+          <input class="cat-search__input" id="baseBuscar" type="search" autocomplete="off" spellcheck="false" placeholder="Prueba «tabla apilable», «dashboard», «acento», «kanban»…">
+          <span class="cat-search__count" id="baseCuenta">—</span>
+        </div>
+        <div class="cat-filters" role="group" aria-label="Filtrar por tipo de objeto">
+          <button class="cat-filters__chip" data-filtro="todo" aria-pressed="true">Todo</button>
+          <button class="cat-filters__chip" data-filtro="familia" aria-pressed="false">Familias</button>
+          <button class="cat-filters__chip" data-filtro="token" aria-pressed="false">Tokens</button>
+          <button class="cat-filters__chip" data-filtro="receta" aria-pressed="false">Recetas</button>
+          <button class="cat-filters__chip" data-filtro="combo" aria-pressed="false">Combos</button>
+          <button class="cat-filters__chip" data-filtro="marca" aria-pressed="false">Marcas</button>
+          <button class="cat-filters__chip" data-filtro="principio" aria-pressed="false">Leyes</button>
+          <button class="cat-filters__chip" data-filtro="categoria" aria-pressed="false">Categorías</button>
+        </div>
+      </div>
+
+      <div class="cat-base-layout">
+        <section aria-label="Resultados">
+          <div class="cat-base-grid" id="baseResultados"></div>
+          <div class="cat-empty" id="baseVacio" hidden>
+            <b>Nada por aquí</b>
+            Prueba con otra palabra: el buscador entiende alias en inglés («tree», «drawer»), partes y modificadores.
+          </div>
+        </section>
+
+        <aside class="cat-base-ficha" id="baseFicha" aria-live="polite" aria-label="Ficha del objeto">
+          <div class="cat-base-ficha__intro">
+            <p class="cat-pagehead__over">Ficha</p>
+            <h2>Elige un objeto</h2>
+            <p>Haz clic en cualquier tarjeta y aquí verás la preview real, el markup, los tokens y cuándo usarlo. Se copia con un botón.</p>
+            <p class="cat-base-hint">Atajo: pulsa <kbd class="nz-kbd">/</kbd> para buscar y <kbd class="nz-kbd">Esc</kbd> para limpiar.</p>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <footer class="cat-footer">
+    Aurora · Hecho con ❤️ por David Antizar · base de datos de diseño
+  </footer>
+</body>
+</html>

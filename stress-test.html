@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="es" data-nz-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Stress test · el mismo panel en cuatro contenedores · Aurora</title>
+  <meta name="description" content="La prueba viva del responsive multifunción de Aurora: el mismo dashboard dentro de 320, 480, 768 y el ancho completo, sin cambiar una clase.">
+  <link rel="stylesheet" href="tokens.css">
+  <link rel="stylesheet" href="packs/all.css">
+  <style>
+    /* Shell de la prueba. Solo geometría y superficies; los objetos son .nz-*. */
+    .stress-main { padding-block: var(--nz-space-8); }
+    .stress-marcos { display: grid; gap: var(--nz-space-6); margin-top: var(--nz-space-8); }
+    .stress-marco { padding: var(--nz-space-3); border: var(--nz-border-w) solid var(--nz-border-soft); border-radius: var(--nz-radius-xl); background: var(--nz-bg-soft); }
+    .stress-marco__head { display: flex; align-items: center; gap: var(--nz-space-2); flex-wrap: wrap; margin-bottom: var(--nz-space-3); }
+    .stress-marco__head h2 { margin: 0; font-size: var(--nz-text-md); letter-spacing: var(--nz-tracking-tight); }
+    .stress-marco__head code { margin-left: auto; font-family: var(--nz-font-mono); font-size: var(--nz-text-2xs); color: var(--nz-text-mute); }
+    .stress-lienzo { width: min(100%, var(--ancho, 100%)); margin-inline: auto; padding: var(--nz-space-3); border: var(--nz-border-w) solid var(--nz-border); border-radius: var(--nz-radius-lg); background: var(--nz-bg); overflow: hidden; }
+    .stress-lienzo .nz-dash-grid { margin-bottom: var(--nz-space-3); }
+    .stress-lienzo .nz-chart { margin: 0; }
+    .stress-lienzo .nz-kanban { margin: 0; }
+    .stress-lienzo .nz-table-wrap { margin-top: var(--nz-space-3); }
+    .stress-nota { margin-top: var(--nz-space-2); font-size: var(--nz-text-xs); color: var(--nz-text-mute); }
+    @media (min-width: 1200px) {
+      .stress-marcos { grid-template-columns: 1fr 1fr; align-items: start; }
+    }
+  </style>
+</head>
+<body class="nz">
+  <a class="nz-skip-link" href="#contenido">Saltar al contenido</a>
+
+  <main class="nz-main stress-main" id="contenido">
+    <div class="nz-container">
+      <p class="nz-eyebrow">Responsive multifunción · v9.2</p>
+      <h1 class="nz-h1">El mismo panel, en <span class="nz-text--accent-soft">cuatro contenedores</span>.</h1>
+      <p class="nz-lead">Mismo HTML, mismas clases, mismo CSS. Ningún objeto sabe el ancho del monitor: cada uno consulta el ancho del sitio donde vive. Un gráfico en un drawer de 320&nbsp;px no se comporta como uno a página completa.</p>
+      <div class="nz-cluster nz-cluster--compact">
+        <span class="nz-badge nz-badge--brand">320 px · drawer</span>
+        <span class="nz-badge nz-badge--neutral">480 px · sidebar</span>
+        <span class="nz-badge nz-badge--neutral">768 px · columna</span>
+        <span class="nz-badge nz-badge--accent">ancho completo</span>
+      </div>
+
+      <div class="stress-marcos">
+
+        <!-- 01 · drawer -->
+        <section class="stress-marco" aria-labelledby="marco-320">
+          <div class="stress-marco__head">
+            <h2 id="marco-320">Drawer</h2>
+            <span class="nz-badge nz-badge--brand">320 px</span>
+            <code>--ancho: 20rem</code>
+          </div>
+          <div class="stress-lienzo nz-cq" style="--ancho: 20rem">
+            <div class="nz-dash-grid nz-dash-grid--4">
+              <div class="nz-kpi nz-kpi--brand"><span class="nz-kpi__label">Usuarios</span><span class="nz-kpi__value">18 420</span><span class="nz-kpi__delta nz-kpi__delta--up">+6,2 %</span></div>
+              <div class="nz-kpi"><span class="nz-kpi__label">Sesiones</span><span class="nz-kpi__value">92 138</span><span class="nz-kpi__delta nz-kpi__delta--up">+3,4 %</span></div>
+              <div class="nz-kpi"><span class="nz-kpi__label">Conversión</span><span class="nz-kpi__value">4,8 %</span><span class="nz-kpi__delta nz-kpi__delta--flat">sin cambios</span></div>
+              <div class="nz-kpi"><span class="nz-kpi__label">Tiempo</span><span class="nz-kpi__value">6m 12s</span><span class="nz-kpi__delta nz-kpi__delta--down">−0,4 %</span></div>
+            </div>
+            <figure class="nz-chart nz-chart--sm">
+              <div class="nz-chart__head"><div><span class="nz-chart__title">Sesiones por día</span><span class="nz-chart__sub">Última semana</span></div></div>
+              <div class="nz-chart__body"><div class="nz-chart-bar nz-chart-bar--sm">
+                <div class="nz-chart-bar__col"><div class="nz-chart-bar__bar" style="height:52%"></div><span class="nz-chart-bar__label">L</span></div>
+                <div class="nz-chart-bar__col"><div class="nz-chart-bar__bar nz-chart-bar__bar--brand" style="height:60%"></div><span class="nz-chart-bar__label">M</span></div>
+                <div class="nz-chart-bar__col"><div class="nz-chart-bar__bar nz-chart-bar__bar--brand" style="height:68%"></div><span class="nz-chart-bar__label">X</span></div>
+                <div class="nz-chart-bar__col"><div class="nz-chart-bar__bar nz-chart-bar__bar--brand" style="height:76%"></div><span class="nz-chart-bar__label">J</span></div>
+                <div class="nz-chart-bar__col"><div class="nz-chart-bar__bar nz-chart-bar__bar--brand" style="height:92%"></div><span class="nz-chart-bar__label">V</span></div>
+              </div></div>
+            </figure>
+            <div class="nz-kanban-wrap"><div class="nz-kanban">
+              <div class="nz-kanban__col"><header>Por hacer <small>3</small></header><div class="nz-kanban__card">Revisar copys</div><div class="nz-kanban__card">Medir contraste</div></div>
+              <div class="nz-kanban__col"><header>En curso <small>2</small></header><div class="nz-kanban__card is-accent">Maquetar hero</div></div>
+              <div class="nz-kanban__col"><header>Hecho <small>4</small></header><div class="nz-kanban__card is-done">Redactar brief</div></div>
+            </div></div>
+            <div class="nz-table-wrap nz-table-wrap--apilable">
+              <table class="nz-table nz-table--apilable">
+                <thead><tr><th>Entrega</th><th>Estado</th><th class="nz-table__right">Horas</th></tr></thead>
+                <tbody>
+                  <tr><th scope="row">Informe</th><td data-etiqueta="Estado"><span class="nz-table__status nz-table__status--ok">Listo</span></td><td class="nz-table__num nz-table__right" data-etiqueta="Horas">32</td></tr>
+                  <tr><th scope="row">Panel</th><td data-etiqueta="Estado"><span class="nz-table__status nz-table__status--warn">En curso</span></td><td class="nz-table__num nz-table__right" data-etiqueta="Horas">18</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="stress-nota">Todo cabe. La tabla se apila, el kanban se queda en filas y el gráfico reduce su altura.</p>
+          </div>
+        </section>
+
+        <!-- 02 · sidebar -->
+        <section class="stress-marco" aria-labelledby="marco-480">
+          <div class="stress-marco__head">
+            <h2 id="marco-480">Sidebar</h2>
+            <span class="nz-badge nz-badge--neutral">480 px</span>
+            <code>--ancho: 30rem</code>
+          </div>
+          <div class="stress-lienzo nz-cq" style="--ancho: 30rem">
+            <div class="nz-dash-grid nz-dash-grid--2">
+              <div class="nz-kpi nz-kpi--brand"><span class="nz-kpi__label">Usuarios</span><span class="nz-kpi__value">18 420</span><span class="nz-kpi__delta nz-kpi__delta--up">+6,2 %</span></div>
+              <div class="nz-kpi"><span class="nz-kpi__label">Sesiones</span><span class="nz-kpi__value">92 138</span><span class="nz-kpi__delta nz-kpi__delta--up">+3,4 %</span></div>
+            </div>
+            <figure class="nz-chart">
+              <div class="nz-chart__head"><div><span class="nz-chart__title">Sesiones por día</span><span class="nz-chart__sub">Última semana</span></div></div>
+              <div class="nz-chart__body"><div class="nz-chart-bar">
+                <div class="nz-chart-bar__col"><div class="nz-chart-bar__bar" style="height:52%"></div><span class="nz-chart-bar__label">L</span></div>
+                <div class="nz-chart-bar__col"><div class="nz-chart-bar__bar nz-chart-bar__bar--brand" style="height:60%"></div><span class="nz-chart-bar__label">M</span></div>
+                <div class="nz-chart-bar__col"><div class="nz-chart-bar__bar nz-chart-bar__bar--brand" style="height:68%"></div><span class="nz-chart-bar__label">X</span></div>
+                <div class="nz-chart-bar__col"><div class="nz-chart-bar__bar nz-chart-bar__bar--brand" style="height:76%"></div><span class="nz-chart-bar__label">J</span></div>
+                <div class="nz-chart-bar__col"><div class="nz-chart-bar__bar nz-chart-bar__bar--brand" style="height:92%"></div><span class="nz-chart-bar__label">V</span></div>
+                <div class="nz-chart-bar__col"><div class="nz-chart-bar__bar" style="height:44%"></div><span class="nz-chart-bar__label">S</span></div>
+                <div class="nz-chart-bar__col"><div class="nz-chart-bar__bar" style="height:36%"></div><span class="nz-chart-bar__label">D</span></div>
+              </div></div>
+            </figure>
+            <div class="nz-kanban-wrap"><div class="nz-kanban">
+              <div class="nz-kanban__col"><header>Por hacer <small>3</small></header><div class="nz-kanban__card">Revisar copys</div><div class="nz-kanban__card">Medir contraste</div></div>
+              <div class="nz-kanban__col"><header>En curso <small>2</small></header><div class="nz-kanban__card is-accent">Maquetar hero</div></div>
+              <div class="nz-kanban__col"><header>Hecho <small>4</small></header><div class="nz-kanban__card is-done">Redactar brief</div></div>
+            </div></div>
+          </div>
+        </section>
+
+        <!-- 03 · columna -->
+        <section class="stress-marco" aria-labelledby="marco-768">
+          <div class="stress-marco__head">
+            <h2 id="marco-768">Columna de contenido</h2>
+            <span class="nz-badge nz-badge--neutral">768 px</span>
+            <code>--ancho: 48rem</code>
+          </div>
+          <div class="stress-lienzo nz-cq" style="--ancho: 48rem">
+            <div class="nz-dash-grid nz-dash-grid--4">
+              <div class="nz-kpi nz-kpi--brand"><span class="nz-kpi__label">Usuarios</span><span class="nz-kpi__value">18 420</span><span class="nz-kpi__delta nz-kpi__delta--up">+6,2 %</span></div>
+              <div class="nz-kpi"><span class="nz-kpi__label">Sesiones</span><span class="nz-kpi__value">92 138</span><span class="nz-kpi__delta nz-kpi__delta--up">+3,4 %</span></div>
+              <div class="nz-kpi"><span class="nz-kpi__label">Conversión</span><span class="nz-kpi__value">4,8 %</span><span class="nz-kpi__delta nz-kpi__delta--flat">sin cambios</span></div>
+              <div class="nz-kpi"><span class="nz-kpi__label">Tiempo</span><span class="nz-kpi__value">6m 12s</span><span class="nz-kpi__delta nz-kpi__delta--down">−0,4 %</span></div>
+            </div>
+            <div class="nz-dash-grid nz-dash-grid--2">
+              <figure class="nz-chart">
+                <div class="nz-chart__head"><div><span class="nz-chart__title">Sesiones por día</span><span class="nz-chart__sub">Última semana</span></div></div>
+                <div class="nz-chart__body"><div class="nz-chart-bar">
+                  <div class="nz-chart-bar__col"><div class="nz-chart-bar__bar" style="height:52%"></div><span class="nz-chart-bar__label">L</span></div>
+                  <div class="nz-chart-bar__col"><div class="nz-chart-bar__bar nz-chart-bar__bar--brand" style="height:60%"></div><span class="nz-chart-bar__label">M</span></div>
+                  <div class="nz-chart-bar__col"><div class="nz-chart-bar__bar nz-chart-bar__bar--brand" style="height:68%"></div><span class="nz-chart-bar__label">X</span></div>
+                  <div class="nz-chart-bar__col"><div class="nz-chart-bar__bar nz-chart-bar__bar--brand" style="height:76%"></div><span class="nz-chart-bar__label">J</span></div>
+                  <div class="nz-chart-bar__col"><div class="nz-chart-bar__bar nz-chart-bar__bar--brand" style="height:92%"></div><span class="nz-chart-bar__label">V</span></div>
+                </div></div>
+              </figure>
+              <div class="nz-kanban-wrap"><div class="nz-kanban">
+                <div class="nz-kanban__col"><header>Por hacer <small>3</small></header><div class="nz-kanban__card">Revisar copys</div></div>
+                <div class="nz-kanban__col"><header>En curso <small>2</small></header><div class="nz-kanban__card is-accent">Maquetar hero</div></div>
+                <div class="nz-kanban__col"><header>Hecho <small>4</small></header><div class="nz-kanban__card is-done">Redactar brief</div></div>
+              </div></div>
+            </div>
+            <div class="nz-table-wrap nz-table-wrap--apilable">
+              <table class="nz-table nz-table--apilable">
+                <thead><tr><th>Entrega</th><th>Responsable</th><th>Estado</th><th class="nz-table__right">Horas</th></tr></thead>
+                <tbody>
+                  <tr><th scope="row">Informe</th><td data-etiqueta="Responsable">Ana</td><td data-etiqueta="Estado"><span class="nz-table__status nz-table__status--ok">Listo</span></td><td class="nz-table__num nz-table__right" data-etiqueta="Horas">32</td></tr>
+                  <tr><th scope="row">Panel</th><td data-etiqueta="Responsable">Luis</td><td data-etiqueta="Estado"><span class="nz-table__status nz-table__status--warn">En curso</span></td><td class="nz-table__num nz-table__right" data-etiqueta="Horas">18</td></tr>
+                  <tr><th scope="row">Auditoría</th><td data-etiqueta="Responsable">Marta</td><td data-etiqueta="Estado"><span class="nz-table__status nz-table__status--err">Bloqueado</span></td><td class="nz-table__num nz-table__right" data-etiqueta="Horas">6</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- 04 · página completa -->
+        <section class="stress-marco" aria-labelledby="marco-full">
+          <div class="stress-marco__head">
+            <h2 id="marco-full">Página completa</h2>
+            <span class="nz-badge nz-badge--accent">ancho completo</span>
+            <code>--ancho: 100%</code>
+          </div>
+          <div class="stress-lienzo nz-cq" style="--ancho: 100%">
+            <div class="nz-dash-grid nz-dash-grid--4">
+              <div class="nz-kpi nz-kpi--brand"><span class="nz-kpi__label">Usuarios activos</span><span class="nz-kpi__value">18 420</span><span class="nz-kpi__delta nz-kpi__delta--up">+6,2 % este mes</span></div>
+              <div class="nz-kpi"><span class="nz-kpi__label">Sesiones</span><span class="nz-kpi__value">92 138</span><span class="nz-kpi__delta nz-kpi__delta--up">+3,4 %</span></div>
+              <div class="nz-kpi"><span class="nz-kpi__label">Conversión</span><span class="nz-kpi__value">4,8 %</span><span class="nz-kpi__delta nz-kpi__delta--flat">sin cambios</span></div>
+              <div class="nz-kpi"><span class="nz-kpi__label">Tiempo medio</span><span class="nz-kpi__value">6m 12s</span><span class="nz-kpi__delta nz-kpi__delta--down">−0,4 %</span></div>
+            </div>
+            <div class="nz-dash-grid nz-dash-grid--2">
+              <figure class="nz-chart">
+                <div class="nz-chart__head"><div><span class="nz-chart__title">Sesiones por día</span><span class="nz-chart__sub">Última semana</span></div><div class="nz-chart__actions"><button class="nz-btn nz-btn--ghost nz-btn--sm" type="button">Semana</button><button class="nz-btn nz-btn--ghost nz-btn--sm" type="button">Mes</button></div></div>
+                <div class="nz-chart__body"><div class="nz-chart-bar">
+                  <div class="nz-chart-bar__col"><span class="nz-chart-bar__value">11,2</span><div class="nz-chart-bar__bar" style="height:52%"></div><span class="nz-chart-bar__label">L</span></div>
+                  <div class="nz-chart-bar__col"><span class="nz-chart-bar__value">12,8</span><div class="nz-chart-bar__bar nz-chart-bar__bar--brand" style="height:60%"></div><span class="nz-chart-bar__label">M</span></div>
+                  <div class="nz-chart-bar__col"><span class="nz-chart-bar__value">14,1</span><div class="nz-chart-bar__bar nz-chart-bar__bar--brand" style="height:68%"></div><span class="nz-chart-bar__label">X</span></div>
+                  <div class="nz-chart-bar__col"><span class="nz-chart-bar__value">15,6</span><div class="nz-chart-bar__bar nz-chart-bar__bar--brand" style="height:76%"></div><span class="nz-chart-bar__label">J</span></div>
+                  <div class="nz-chart-bar__col"><span class="nz-chart-bar__value">18,9</span><div class="nz-chart-bar__bar nz-chart-bar__bar--brand" style="height:92%"></div><span class="nz-chart-bar__label">V</span></div>
+                  <div class="nz-chart-bar__col"><span class="nz-chart-bar__value">9,4</span><div class="nz-chart-bar__bar" style="height:44%"></div><span class="nz-chart-bar__label">S</span></div>
+                  <div class="nz-chart-bar__col"><span class="nz-chart-bar__value">7,7</span><div class="nz-chart-bar__bar" style="height:36%"></div><span class="nz-chart-bar__label">D</span></div>
+                </div></div>
+              </figure>
+              <div class="nz-kanban-wrap"><div class="nz-kanban">
+                <div class="nz-kanban__col"><header>Por hacer <small>3</small></header><div class="nz-kanban__card">Revisar copys</div><div class="nz-kanban__card">Medir contraste</div></div>
+                <div class="nz-kanban__col"><header>En curso <small>2</small></header><div class="nz-kanban__card is-accent">Maquetar hero</div></div>
+                <div class="nz-kanban__col"><header>Hecho <small>4</small></header><div class="nz-kanban__card is-done">Redactar brief</div></div>
+              </div></div>
+            </div>
+            <div class="nz-table-wrap nz-table-wrap--apilable">
+              <table class="nz-table nz-table--apilable">
+                <thead><tr><th>Entrega</th><th>Responsable</th><th>Estado</th><th class="nz-table__right">Horas</th><th class="nz-table__right">Avance</th></tr></thead>
+                <tbody>
+                  <tr><th scope="row">Informe ejecutivo</th><td data-etiqueta="Responsable">Ana</td><td data-etiqueta="Estado"><span class="nz-table__status nz-table__status--ok">Listo</span></td><td class="nz-table__num nz-table__right" data-etiqueta="Horas">32</td><td class="nz-table__num nz-table__right" data-etiqueta="Avance">100 %</td></tr>
+                  <tr><th scope="row">Panel de indicadores</th><td data-etiqueta="Responsable">Luis</td><td data-etiqueta="Estado"><span class="nz-table__status nz-table__status--warn">En curso</span></td><td class="nz-table__num nz-table__right" data-etiqueta="Horas">18</td><td class="nz-table__num nz-table__right" data-etiqueta="Avance">62 %</td></tr>
+                  <tr><th scope="row">Auditoría de accesibilidad</th><td data-etiqueta="Responsable">Marta</td><td data-etiqueta="Estado"><span class="nz-table__status nz-table__status--err">Bloqueado</span></td><td class="nz-table__num nz-table__right" data-etiqueta="Horas">6</td><td class="nz-table__num nz-table__right" data-etiqueta="Avance">12 %</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+      </div>
+
+      <div class="nz-alert nz-alert--info" style="margin-top: var(--nz-space-8)">
+        <div class="nz-alert__body"><p class="nz-alert__msg"><b>Cómo se prueba:</b> los cuatro marcos tienen el mismo HTML y las mismas clases. Lo único que cambia es el ancho del contenedor. Si el panel se adapta en los cuatro, el sistema es multifunción; si no, el fallo es del CSS, no del ejemplo.</p></div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="nz-footer">
+    <div class="nz-container">Aurora · Hecho con ❤️ por David Antizar · stress test de contenedores</div>
+  </footer>
+</body>
+</html>

@@ -1,10 +1,10 @@
 {
  "resumen": {
-  "objetos_declarados": 2184,
-  "familias": 409,
-  "demos": 653,
+  "objetos_declarados": 2186,
+  "familias": 411,
+  "demos": 655,
   "categorias": 18,
-  "clases_usadas_en_demos": 2184,
+  "clases_usadas_en_demos": 2186,
   "clases_sin_demo": 0,
   "familias_sin_demo": 0,
   "fantasmas": 0,
@@ -14,15 +14,15 @@
   "glass": 0,
   "gradientes": 0,
   "important": 1,
-  "familias_sin_variantes": 164,
+  "familias_sin_variantes": 166,
   "packs": 18
  },
  "packs": {
   "p1-layout.css": {
-   "lineas": 361,
-   "bytes": 21635,
-   "clases": 178,
-   "familias": 66,
+   "lineas": 391,
+   "bytes": 22934,
+   "clases": 179,
+   "familias": 67,
    "hex": 0,
    "gradientes": 0,
    "glass": 0,
@@ -59,8 +59,8 @@
    "important": 1
   },
   "p13-charts.css": {
-   "lineas": 363,
-   "bytes": 28510,
+   "lineas": 383,
+   "bytes": 29351,
    "clases": 216,
    "familias": 22,
    "hex": 0,
@@ -69,8 +69,8 @@
    "important": 0
   },
   "p14-ai.css": {
-   "lineas": 287,
-   "bytes": 24555,
+   "lineas": 298,
+   "bytes": 24958,
    "clases": 180,
    "familias": 28,
    "hex": 0,
@@ -79,10 +79,10 @@
    "important": 0
   },
   "p15-apps.css": {
-   "lineas": 364,
-   "bytes": 42477,
-   "clases": 74,
-   "familias": 30,
+   "lineas": 377,
+   "bytes": 43156,
+   "clases": 75,
+   "familias": 31,
    "hex": 0,
    "gradientes": 0,
    "glass": 0,
@@ -99,8 +99,8 @@
    "important": 0
   },
   "p17-patrones.css": {
-   "lineas": 660,
-   "bytes": 34866,
+   "lineas": 666,
+   "bytes": 35079,
    "clases": 224,
    "familias": 46,
    "hex": 0,
@@ -179,8 +179,8 @@
    "important": 0
   },
   "p8-data.css": {
-   "lineas": 286,
-   "bytes": 23525,
+   "lineas": 296,
+   "bytes": 23972,
    "clases": 145,
    "familias": 16,
    "hex": 0,
@@ -203,9 +203,9 @@
   "1": {
    "nombre": "Layout y estructura",
    "pack": "p1-layout.css",
-   "demos": 52,
-   "objetos": 178,
-   "familias": 66,
+   "demos": 53,
+   "objetos": 179,
+   "familias": 67,
    "sin_demo": [],
    "familias_sin_demo": []
   },
@@ -329,9 +329,9 @@
   "15": {
    "nombre": "Apps y escritorio",
    "pack": "p15-apps.css",
-   "demos": 37,
-   "objetos": 74,
-   "familias": 30,
+   "demos": 38,
+   "objetos": 75,
+   "familias": 31,
    "sin_demo": [],
    "familias_sin_demo": []
   },
@@ -1949,6 +1949,14 @@
    "partes": [],
    "demostrado": true
   },
+  "nz-cq": {
+   "cat": 1,
+   "pack": "p1-layout.css",
+   "n_clases": 1,
+   "mods": [],
+   "partes": [],
+   "demostrado": true
+  },
   "nz-cristal": {
    "cat": 16,
    "pack": "p16-cristal.css",
@@ -3149,6 +3157,14 @@
     "card",
     "col"
    ],
+   "demostrado": true
+  },
+  "nz-kanban-wrap": {
+   "cat": 15,
+   "pack": "p15-apps.css",
+   "n_clases": 1,
+   "mods": [],
+   "partes": [],
    "demostrado": true
   },
   "nz-kbd": {
@@ -6169,6 +6185,7 @@
   "nz-columns-3",
   "nz-comparador-planes",
   "nz-comparativa-productos",
+  "nz-cq",
   "nz-cristal-barra",
   "nz-dateline",
   "nz-desglose-precio",
@@ -6195,6 +6212,7 @@
   "nz-input-icon",
   "nz-inspector",
   "nz-kanban",
+  "nz-kanban-wrap",
   "nz-launcher",
   "nz-linea-pasos",
   "nz-lista-tareas",

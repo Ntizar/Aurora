@@ -189,6 +189,11 @@
       "titulo": "Ventana grande",
       "tag": ".nz-window--lg",
       "markup": "<div class=\"nz-window nz-window--lg\"><div class=\"nz-window__titlebar\"><strong>Grande</strong></div><div class=\"nz-window__body\"><p>Contenido de la ventana.</p></div></div>"
+    },
+    {
+      "titulo": "Kanban en un contenedor estrecho",
+      "tag": ".nz-kanban-wrap · .nz-kanban",
+      "markup": "<div class=\"nz-kanban-wrap\" style=\"width:20rem\"><div class=\"nz-kanban\"><div class=\"nz-kanban__col\"><header>Por hacer</header><div class=\"nz-kanban__card\">Revisar copys</div></div><div class=\"nz-kanban__col\"><header>Hecho</header><div class=\"nz-kanban__card is-done\">Brief</div></div></div></div>"
     }
   ]
 }
