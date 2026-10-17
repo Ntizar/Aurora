@@ -41,6 +41,11 @@ intermedio; se publican juntas aquí para que el CDN tenga una sola foto coheren
 
 - En móvil, la ficha del explorador aparece **antes** de la lista de resultados (`order: -1`):
   al tocar una tarjeta se lee la ficha sin recorrer 655 tarjetas. En escritorio sigue a la derecha.
+- Los símbolos de texto de la barra y el buscador (`⌂ ¶ ◐ ▦ ✓ ⌕`) pasan a SVG `.nz-icon`:
+  la ley 10 del sistema prohíbe fuentes de iconos improvisadas.
+- La base de datos estrena dirección **editorial**: hero asimétrico con una `A` de fondo,
+  índice de categorías tipo revista, rejilla de archivo numerada y ficha con lomo de acento.
+  Sin gradientes ni glass: papel y tinta.
 
 ### Eliminado
 

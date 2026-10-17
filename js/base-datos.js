@@ -392,13 +392,36 @@
       entradas = construir(d);
       pintar();
 
-      var stats = $("#baseStats");
-      if (stats) {
-        stats.innerHTML =
-          '<span class="nz-badge nz-badge--brand">' + d.resumen.familias + " familias</span>" +
-          '<span class="nz-badge nz-badge--neutral">' + d.resumen.tokens + " tokens</span>" +
-          '<span class="nz-badge nz-badge--neutral">' + d.resumen.paginas + " páginas</span>" +
-          '<span class="nz-badge nz-badge--accent">' + d.resumen.combos + " combos</span>";
+      // Cifras del hero: se rellenan del índice, nunca a mano.
+      $$("[data-cifra]").forEach(function (el) {
+        var clave = el.getAttribute("data-cifra");
+        el.textContent = d.resumen[clave] != null ? d.resumen[clave] : "—";
+      });
+
+      // Índice de categorías, generado del JSON (sin 18 enlaces a mano).
+      var indice = $("#baseIndice");
+      if (indice) {
+        indice.innerHTML = d.categorias.map(function (c) {
+          var n = ("0" + c.id).slice(-2);
+          return '<a class="cat-base-indice__item" href="#f=cat-' + c.id + '" data-cat="' + c.id + '">' +
+            "<b>" + n + "</b><span>" + esc(c.nombre) + "</span><i>" + c.objetos + " objetos</i></a>";
+        }).join("");
+        indice.addEventListener("click", function (ev) {
+          var a = ev.target.closest ? ev.target.closest("a[data-cat]") : null;
+          if (!a) return;
+          ev.preventDefault();
+          var en = entradas.filter(function (x) { return x.id === "cat-" + a.getAttribute("data-cat"); })[0];
+          if (en) abrirFicha(en);
+        });
+      }
+
+      var cta = $('a[href="#baseBuscar"]');
+      if (cta && buscador) {
+        cta.addEventListener("click", function (ev) {
+          ev.preventDefault();
+          buscador.focus();
+          if (buscador.scrollIntoView) buscador.scrollIntoView({ behavior: "smooth", block: "center" });
+        });
       }
 
       var hash = /^#f=(.+)$/.exec(location.hash);

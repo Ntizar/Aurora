@@ -23,21 +23,32 @@
     </div>
   </header>
 
-  <main class="cat-main" id="contenido">
+  <main class="cat-main cat-base-main" id="contenido">
     <div class="nz-container">
-      <div class="cat-pagehead">
-        <p class="cat-pagehead__over">Base de datos de diseño</p>
-        <h1>Todo Aurora, <em>consultable</em>.</h1>
-        <p>Una sola puerta para el sistema entero: familias con su markup real, tokens con su valor, recetas completas, esqueletos de página, marcas y las leyes de composición. Busca por lo que quieres construir, no por el nombre de la clase.</p>
-        <div class="cat-pagehead__stats" id="baseStats">
-          <span class="nz-badge nz-badge--brand">Familias</span>
-          <span class="nz-badge nz-badge--neutral">Tokens</span>
-          <span class="nz-badge nz-badge--neutral">Páginas</span>
-          <span class="nz-badge nz-badge--accent">Combos</span>
-        </div>
-      </div>
 
-      <div class="cat-tools">
+      <section class="cat-base-hero">
+        <span class="cat-base-hero__letra" aria-hidden="true">A</span>
+        <div class="cat-base-hero__texto">
+          <p class="cat-pagehead__over">Base de datos de diseño · el sistema entero</p>
+          <h1 class="cat-base-hero__titulo">Todo el sistema,<br><em class="nz-text--accent-soft">en una sola mirada.</em></h1>
+          <p class="cat-base-hero__lead">Familias con su markup real, tokens con su valor, recetas completas, esqueletos de página y las leyes de composición. Busca por lo que quieres construir, no por el nombre de la clase.</p>
+          <div class="cat-base-hero__acciones">
+            <a class="nz-btn nz-btn--primary nz-btn--lg" href="#baseBuscar">Buscar en la base</a>
+            <a class="nz-btn nz-btn--ghost nz-btn--lg" href="stress-test.html">Ver el stress test</a>
+          </div>
+        </div>
+        <aside class="cat-base-hero__ficha" aria-label="Cifras de la base de datos">
+          <div class="cat-base-cifra"><b data-cifra="familias">—</b><span>familias</span></div>
+          <div class="cat-base-cifra"><b data-cifra="tokens">—</b><span>tokens</span></div>
+          <div class="cat-base-cifra"><b data-cifra="paginas">—</b><span>páginas</span></div>
+          <div class="cat-base-cifra"><b data-cifra="combos">—</b><span>combos</span></div>
+          <p class="cat-base-hero__nota">Generado desde la fuente única y auditado en CI. Sin copias a mano.</p>
+        </aside>
+      </section>
+
+      <nav class="cat-base-indice" id="baseIndice" aria-label="Índice de categorías"></nav>
+
+      <div class="cat-tools cat-base-tools">
         <div class="cat-search">
           <span class="cat-search__icon" aria-hidden="true"><svg class="nz-icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></span>
           <label class="nz-visually-hidden" for="baseBuscar">Buscar en la base de datos</label>
