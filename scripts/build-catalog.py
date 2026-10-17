@@ -468,9 +468,9 @@ def portada(specs, censo_cat, totales, packs):
     <span class="cat-brandmark"><i></i><i></i> Aurora</span>
     <span class="cat-count">v{VERSION} · motor de temas</span>
     <span class="cat-topbar__tools">
-      <a class="cat-icobtn" href="base.html" title="Base de datos de diseño" aria-label="Base de datos de diseño">▦</a>
-      <a class="cat-icobtn" href="audit/index.html" title="Auditoría del sistema" aria-label="Auditoría del sistema">✓</a>
-      <button class="cat-icobtn" id="btnTheme" aria-label="Cambiar tema" title="Light / Dark">◐</button>
+      <a class="cat-icobtn" href="base.html" title="Base de datos de diseño" aria-label="Base de datos de diseño"><svg class="nz-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg></a>
+      <a class="cat-icobtn" href="audit/index.html" title="Auditoría del sistema" aria-label="Auditoría del sistema"><svg class="nz-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></a>
+      <button class="cat-icobtn" id="btnTheme" aria-label="Cambiar tema" title="Light / Dark"><svg class="nz-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button>
     </span>
   </header>
 
@@ -487,7 +487,7 @@ def portada(specs, censo_cat, totales, packs):
     </div>
     <div class="objBuscar">
       <div class="cat-search">
-        <span class="cat-search__icon" aria-hidden="true">⌕</span>
+        <span class="cat-search__icon" aria-hidden="true"><svg class="nz-icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></span>
         <input class="cat-search__input" id="objBuscar" type="search" placeholder="Buscar un objeto: btn, modal, chart… (pulsa /)" aria-label="Buscar objeto en todo el sistema">
       </div>
       <div class="objResultados" id="objResultados" hidden></div>
