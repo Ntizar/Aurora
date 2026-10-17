@@ -145,9 +145,15 @@
 .nz-toolbar--sticky { position: sticky; top: 0; z-index: var(--nz-z-sticky); }
 .nz-toolbar--brand { background: var(--nz-brand); color: var(--nz-text-invert); }
 .nz-toolbar--brand .nz-btn--ghost { color: var(--nz-text-invert); box-shadow: inset 0 0 0 var(--nz-border-w-strong) var(--nz-blue-300); }
+/* El buscador de una toolbar ocupa su fila en móvil: si no, el placeholder
+   se corta y el campo se queda con el ancho del texto. */
+.nz-toolbar > .nz-field { flex: 1 1 100%; min-width: 0; }
+.nz-toolbar > .nz-segmented { flex: 1 1 100%; }
 
 @media (min-width: 640px) {
   .nz-toolbar { flex-wrap: nowrap; }
+  .nz-toolbar > .nz-field { flex: 1 1 14rem; }
+  .nz-toolbar > .nz-segmented { flex: 0 1 auto; }
 }
 @media (prefers-reduced-motion: reduce) {
   .nz-spin { animation-duration: 1.6s; }
