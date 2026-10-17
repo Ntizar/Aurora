@@ -188,7 +188,7 @@
 .cat-base-card__meta { margin-top: auto; font-size: var(--nz-text-xs); color: var(--nz-text-faint); font-variant-numeric: tabular-nums; }
 .cat-base-swatch { width: 1.25rem; height: 1.25rem; flex: none; border-radius: var(--nz-radius-full); background: var(--swatch, var(--nz-bg-inset)); border: var(--nz-border-w) solid var(--nz-border); box-shadow: var(--nz-shadow-xs); }
 
-.cat-base-ficha { padding: var(--nz-space-5); border: var(--nz-border-w) solid var(--nz-border-soft); border-radius: var(--nz-radius-lg); background: var(--nz-surface); box-shadow: var(--nz-shadow-sm); }
+.cat-base-ficha { order: -1; padding: var(--nz-space-5); border: var(--nz-border-w) solid var(--nz-border-soft); border-radius: var(--nz-radius-lg); background: var(--nz-surface); box-shadow: var(--nz-shadow-sm); }
 .cat-base-ficha__head { display: flex; align-items: center; justify-content: space-between; gap: var(--nz-space-2); }
 .cat-base-ficha h2 { margin: var(--nz-space-2) 0 var(--nz-space-1); font-size: var(--nz-text-xl); line-height: var(--nz-leading-tight); letter-spacing: var(--nz-tracking-tight); }
 .cat-base-ficha__id { margin: 0 0 var(--nz-space-3); font-family: var(--nz-font-mono); font-size: var(--nz-text-xs); color: var(--nz-brand); overflow-wrap: anywhere; }
@@ -222,5 +222,5 @@
 
 @media (min-width: 1200px) {
   .cat-base-layout { grid-template-columns: minmax(0, 1fr) 26rem; gap: var(--nz-space-5); }
-  .cat-base-ficha { position: sticky; top: 5rem; max-height: calc(100dvh - 6rem); overflow: auto; }
+  .cat-base-ficha { order: 0; position: sticky; top: 5rem; max-height: calc(100dvh - 6rem); overflow: auto; }
 }

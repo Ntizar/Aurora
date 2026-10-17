@@ -37,6 +37,11 @@ intermedio; se publican juntas aquí para que el CDN tenga una sola foto coheren
   README, AGENTS y SKILL.
 - Reglas duras: 9 en vez de 7 (base de datos generada y responsive por contenedor).
 
+### Corregido
+
+- En móvil, la ficha del explorador aparece **antes** de la lista de resultados (`order: -1`):
+  al tocar una tarjeta se lee la ficha sin recorrer 655 tarjetas. En escritorio sigue a la derecha.
+
 ### Eliminado
 
 - `PLAN-AURORA.md` y `PLAN-AURORA-9.md` de la raíz → `docs/planes/`.
