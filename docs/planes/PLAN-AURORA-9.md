@@ -7,7 +7,7 @@
 > **Alcance:** `Ntizar/Aurora` (v8.4.2). Es el plan que sigue a PLAN-AURORA.md (v7.2.2 →
 > v8.4.2, ejecutado): no repite tipografía/color/marcas/composición, que ya están resueltos.
 >
-> **Fecha:** 2026-10-15 · Autor: Mastermind · Estado: **propuesta, pendiente de ✅**
+> **Fecha:** 2026-10-15 · Autor: Mastermind · Estado: **ejecutado en v9.2.0 (2026-10-17)**
 
 ---
 
