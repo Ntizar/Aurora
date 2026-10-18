@@ -194,6 +194,22 @@ El lint lo comprueba (`acento-ausente`, `acento-testimonial`).
 5. **Mídelo en móvil de verdad**, no de vista: viewport a 320/360/390 y comprobar que `document.scrollingElement.scrollWidth == clientWidth` en todas las pestañas/secciones. Es la prueba objetiva de que nada se sale.
 6. Verificación visual en preview (el lint no ve la estética). Texto por código (`grep`), no por visión: `vision_analyze` alucina erratas.
 
+### 6b. Método de diseño antes de escribir HTML (brief → critique → harden → polish)
+
+1. **Brief** (3-5 líneas, explícitas): quién usa la página y en qué situación, la tarea
+   principal que debe poder hacer en 30 segundos, y qué se conserva (marca, hechos, comportamiento).
+2. **Critique** (sin tocar nada): ¿el dato que importa está en acento?, ¿la página guía la
+   tarea? Salida: 3 fortalezas a conservar + prioridades. Solo después se escribe código.
+3. **Harden** (el paso que más bugs evita): probar datos extremos y fallos ANTES de entregar —
+   texto de 60+ caracteres sin romper (nunca `nowrap` a ciegas), vacío (`.is-empty` con acción),
+   error que no pierde lo escrito, doble submit (`.is-loading`), cifras dispares
+   (`nz-chart-tablebar`/bullet escalonado), listas largas (paginación, no desborde). Medir, no admirar.
+4. **Polish**: el checklist §8, cuando la dirección y los estados de fallo ya están resueltos.
+
+Checklists completos: `references/metodo-diseno.md` (skill local). Método absorbido de
+Impeccable (impeccable.style) como metodología, nunca como dependencia: no instalar su
+paquete ni generar `DESIGN.md`/`.impeccable/` — duplicarían `LLM.md` + `components.json`.
+
 ## 7. Necesito X → uso Y (verificado contra el censo)
 
 | Necesito | Clases |
@@ -301,6 +317,8 @@ Criterio de admisión: (a) resuelve un problema real y repetido, (b) es mobile-f
 - ❌ **Declarar `container-type` en `.nz-table-wrap`.** El `thead` sticky necesita su
   propio scroll container; el contexto de consulta lo ponen `.nz-dash-grid` y `.nz-split`.
 - ❌ **Dejar el patrón resuelto en el proyecto y no subirlo al repo.**
+- ❌ **Un `.nz-segmented` de 3+ opciones dentro de un panel estrecho (inspector de 20rem) sin wrap**: la última opción se trunca fuera del panel. `flex-wrap: wrap` en los segmented del panel (página herramienta → `references/paginas-herramienta.md`).
+- ❌ **`pre { white-space: pre }` dentro de una rejilla hecha a mano sin `min-width: 0` en el ítem**: el ancho intrínseco del código empuja el track y el documento desborda en móvil — aunque los objetos del sistema ya traigan `min-width: 0`, una rejilla local no lo hereda.
 
 ## 11. Excepciones vigentes (cuándo NO usar Aurora)
 
@@ -355,6 +373,12 @@ mesh/orbs/3D desaparecen). Receta y script de medición en `references/migracion
    `.nz-table-wrap`, que rompe el sticky-head) y con una prueba viva —`stress-test.html`—
    que enseña el mismo panel en cuatro anchos. Lo que no se mide en su contenedor se
    rompe en silencio.
+9. **El recoloreado en vivo se rompe por la UX, no por el CSS.** Las variables hacen
+   su trabajo (`fill: var(--serie-N)` recolorea sin re-render), pero recrear los
+   pickers dentro del handler `input` corta el arrastre a mitad de gesto, y cambiar
+   de tema sin re-aplicar la paleta activa deja colores ilegibles en el nuevo tema.
+   Pickers creados una vez, estado «a mano» cuando el usuario toca un picker, y cada
+   paleta con tonos light y dark propios.
 
 ## 14. Referencias
 
@@ -362,5 +386,7 @@ mesh/orbs/3D desaparecen). Receta y script de medición en `references/migracion
 - **`Ntizar/Aurora`** — la orden máxima. `LLM.md`, `components.json`, `AGENTS.md`, `COMPOSICION.md`, `examples/`, `recetas/`, `specs/`, `paginas/`, `audit/`, `scripts/auditar-uso.py`.
 - Este mismo `SKILL.md` **dentro del repo** (la CI valida que no se separe).
 - `references/migracion-v6-a-v7.md` y el caso Aurora en la skill `design-system-coherence-audit`.
+- `references/metodo-diseno.md` — checklists del método de diseño (brief → critique → harden → polish).
+- `references/paginas-herramienta.md` — patrón inspector para páginas-herramienta y playgrounds: layout una vista, fit puro del lienzo, pickers y paletas en vivo, guía generada del mismo módulo.
 
 Hecho con ❤️ por David Antizar
