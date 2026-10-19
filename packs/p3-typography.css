@@ -10,7 +10,7 @@
    Cero gradientes, cero glass. Hecho con ❤️ por David Antizar
    ============================================================ */
 
-/* ---- 01 Escala (fluida, mobile-first — tokens ya definidos) ---- */
+/* ---- 01 Escala (fluida, responsive first — tokens ya definidos) ---- */
 .nz-display { font-size: var(--nz-text-4xl); font-weight: var(--nz-peso-titulo); line-height: var(--nz-leading-tight); letter-spacing: var(--nz-tracking-tight); }
 .nz-h1 { font-size: var(--nz-text-3xl); font-weight: var(--nz-peso-titulo); line-height: var(--nz-leading-tight); letter-spacing: var(--nz-tracking-tight); }
 .nz-h2 { font-size: var(--nz-text-2xl); font-weight: var(--nz-peso-titulo); line-height: var(--nz-leading-tight); letter-spacing: var(--nz-tracking-tight); }
@@ -176,7 +176,7 @@
 .nz-pretty { text-wrap: pretty; }
 .nz-indent { text-indent: var(--nz-space-6); }
 
-/* ---- 16 Columnas de texto (mobile-first) ---- */
+/* ---- 16 Columnas de texto (responsive first) ---- */
 .nz-columns-2 { columns: 1; column-gap: var(--nz-space-6); }
 .nz-columns-3 { columns: 1; column-gap: var(--nz-space-6); }
 @media (min-width: 640px) { .nz-columns-2 { columns: 2; } .nz-columns-3 { columns: 2; } }

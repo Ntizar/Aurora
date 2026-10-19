@@ -216,7 +216,7 @@ def auditar(html, clase_a_familia, packs_conocidos):
                 avisos.append(
                     f"{len(toques)} color(es) {etiqueta} a mano en {nombre}: usa var(--nz-*) ({', '.join(toques[:3])}…)")
     if "@media" in bloques and re.search(r"@media[^{]*max-width", bloques):
-        avisos.append("@media (max-width) detectado: Aurora es mobile-first (base 1 columna + min-width)")
+        avisos.append("@media (max-width) detectado: Aurora es responsive first (base 1 columna + min-width, contenedor primero)")
 
     # --- 5. Estructura mínima -------------------------------------------------
     if not re.search(r'<html[^>]*lang="es"', html):

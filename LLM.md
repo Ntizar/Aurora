@@ -8,8 +8,8 @@ Design system CSS puro, sin dependencias ni build. 2186 objetos en 18 categoría
 ```html
 <html lang="es" data-nz-theme="light">
 <head>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v9.3.0/tokens.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v9.3.0/packs/all.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v9.3.1/tokens.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v9.3.1/packs/all.css">
 </head>
 <body class="nz">
 ```
@@ -381,14 +381,15 @@ Los 234 tokens están inventariados en `components.json` (sección
   `scripts/auditar-contraste.py` lo caza.
 - ❌ Gradientes, `backdrop-filter` o `!important`: prohibidos por el manifiesto y la CI los detecta.
 - ❌ Clases globales sin `.nz-`: romperías la convivencia con otros frameworks.
-- ❌ Desktop-first: el sistema es mobile-first (base 1 columna, `min-width` para crecer).
+- ❌ Desktop-first: el sistema es responsive first (base móvil en 1 columna, crece con
+  `min-width` hasta el escritorio, y los objetos responden a su contenedor).
 - ❌ Dejar media pantalla vacía en un monitor grande: un panel o una herramienta usan
   `.nz-container--app`; el lienzo ya crece solo hasta 96rem desde 1440px.
 - ❌ `font-weight` a mano (700/800 sueltos) o negritas porque sí: usa `--nz-peso-*`.
   El 800 no existe en el sistema y nada por debajo de 16px lleva 700.
 - ❌ Texto de interfaz a 12px: los 12px son para datos, no para etiquetas.
 - ❌ Enlazar Google Fonts (o cualquier CDN de fuentes): `tokens.css` ya sirve la fuente.
-- ❌ Enlazar `@master` en producción: pinea la versión (`@v9.3.0`) o jsDelivr te servirá CSS viejo desde su caché.
+- ❌ Enlazar `@master` en producción: pinea la versión (`@v9.3.1`) o jsDelivr te servirá CSS viejo desde su caché.
 
 ## 9. Verificar antes de entregar
 

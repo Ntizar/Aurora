@@ -5,7 +5,7 @@
    tooltips (arriba/abajo, brand, acento), menú contextual (contexto, compacto,
    denso), command palette (sm, con preview, grupos, vacío), backdrop,
    confirmación, lightbox, offcanvas y pila de toasts.
-   Sin JS: checkbox/radio hack accesible. Mobile-first, táctil 44px.
+   Sin JS: checkbox/radio hack accesible. Responsive first, táctil 44px.
    ============================================================ */
 
 /* ---- Modal ---- */

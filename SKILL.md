@@ -1,14 +1,14 @@
 ---
 name: aurora-design-system
 description: "Usa al construir o tocar cualquier web con Aurora (Ntizar/Aurora). El repo manda: resuelve la versión vigente y pide LLM.md + components.json antes de escribir CSS."
-version: "9.3.0"
+version: "9.3.1"
 tags: [css, design-system, aurora, ntizar, agent-ready, movil, escritorio, tipografia]
 ---
 
 # Aurora — doctrina única (el repo es la orden máxima)
 
 Design system CSS puro, sin build, sin dependencias, namespaced bajo `.nz-`.
-**v9.3.0 · 2186 objetos · 411 familias · 655 demos · 18 categorías · 189 tokens · 59 gemelas OKLch.**
+**v9.3.1 · 2186 objetos · 411 familias · 655 demos · 18 categorías · 189 tokens · 59 gemelas OKLch.**
 *(Cabecera de testigo, no de autoridad: resuélvela con el PASO 0.)*
 
 > ⚠️ `Ntizar/Aurora` **manda sobre esta skill**. Esta skill es un puntero; el repo
@@ -163,7 +163,7 @@ El lint lo comprueba (`acento-ausente`, `acento-testimonial`).
 2. Todo valor es un token `var(--nz-*)` — ni un `#2563eb` ni un `16px` a mano.
 3. **0 gradientes, 0 `backdrop-filter`, 0 `!important`** (excepciones: `.nz-visually-hidden`, `.nz-print-hide`, helpers de visibilidad con sufijo `[class]`).
 4. BEM: `.nz-thing`, `__parte`, `--modificador`, estado `.is-x` o `[aria-*]`.
-5. Mobile-first real: base 1 columna, crecer con `@media (min-width: 640/960/1200)`. Nunca `max-width` como estrategia (los `max-width` de consumidor solo para apagar un patrón móvil, nunca para construirlo).
+5. Responsive first: contenedor primero (container queries), base móvil en 1 columna y crecer con `@media (min-width: 640/960/1200)` hasta el escritorio. Nunca `max-width` como estrategia (los `max-width` de consumidor solo para apagar un patrón móvil, nunca para construirlo).
 6. Táctil 44px en todo lo que se pulsa.
 7. Una clase, un dueño (un pack). El shell del catálogo (`.cat-*`) jamás declara `.nz-*`.
 8. Footer exacto: `Hecho con ❤️ por David Antizar` (emoji U+2764, sin variantes).
@@ -189,7 +189,7 @@ El lint lo comprueba (`acento-ausente`, `acento-testimonial`).
 
 1. **PASO 0**: resuelve `$V` y lee `LLM.md` + `components.json` del repo. Si buscas por necesidad («tabla apilable», «dashboard», «acento»), empieza por `base.html` o `datos/base-diseno.json`: es el índice que ya trae markup, tokens y anti-patrón.
 2. **Copia una receta de `examples/`** y quítale lo que no uses.
-3. **Escribe el HTML** con los objetos del censo, mobile-first, tokens, 44px.
+3. **Escribe el HTML** con los objetos del censo, responsive first, tokens, 44px.
 4. **Verifica el HTML**: `python scripts/auditar-uso.py tu-pagina.html` → clases inventadas, packs que faltan, gradientes, colores a mano, desktop-first, atribución. 0 fallos o no está terminado.
 5. **Mídelo en móvil de verdad**, no de vista: viewport a 320/360/390 y comprobar que `document.scrollingElement.scrollWidth == clientWidth` en todas las pestañas/secciones. Es la prueba objetiva de que nada se sale.
 6. Verificación visual en preview (el lint no ve la estética). Texto por código (`grep`), no por visión: `vision_analyze` alucina erratas.
@@ -266,7 +266,7 @@ CSS del proyecto:
 4. Sube la versión (`VERSION` + README + AGENTS.md + `SKILL.md`) y tag `vX.Y.Z` en el último commit verde.
 5. Actualiza la cabecera de esta skill (una línea) y el tag del proyecto consumidor.
 
-Criterio de admisión: (a) resuelve un problema real y repetido, (b) es mobile-first sin JS,
+Criterio de admisión: (a) resuelve un problema real y repetido, (b) es responsive first sin JS,
 (c) encaja en el léxico cerrado, (d) lleva demo viva, (e) no duplica nada que ya exista.
 
 ## 10. Anti-patrones (errores reales acumulados)
@@ -301,7 +301,7 @@ Criterio de admisión: (a) resuelve un problema real y repetido, (b) es mobile-f
   887 elementos en negrita en una portada (19%; 26% en un panel): cuando todo es negrita
   nada destaca, y el texto de 12px en negrita se lee peor, no mejor. El peso es un token y
   el 800 no existe.
-- ❌ **Dejar el escritorio a la deriva.** Mobile-first no es «solo móvil»: si no hay ningún
+- ❌ **Dejar el escritorio a la deriva.** Responsive first no es «solo móvil»: si no hay ningún
   escalón por encima de 960px, el producto enseña 768px de margen en un monitor de 1920
   (40% de la pantalla, medido). El lienzo crece; la letra no.
 - ❌ **Enlazar Google Fonts o cualquier CDN de fuentes** en un producto Aurora: la letra

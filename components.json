@@ -1,10 +1,10 @@
 {
  "name": "Aurora",
- "version": "9.3.0",
+ "version": "9.3.1",
  "type": "css-only design system",
  "namespace": ".nz-",
  "tokens": "tokens.css",
- "cdn": "https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v9.3.0/",
+ "cdn": "https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v9.3.1/",
  "manifiesto": {
   "gradientes": 0,
   "glass": 0,
@@ -15,7 +15,7 @@
   ],
   "tema": "data-nz-theme=\"light\" | \"dark\" en el elemento <html>",
   "cuerpo": "class=\"nz\"",
-  "mobileFirst": true,
+  "responsiveFirst": true,
   "objetivoTactil": "44px"
  },
  "resumen": {

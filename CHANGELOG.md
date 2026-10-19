@@ -3,6 +3,20 @@
 Formato: [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/).
 Versionado: [SemVer](https://semver.org/lang/es/).
 
+## [9.3.1] — 2026-10-19
+
+Corrección de concepto (David): el sistema no es «mobile first», es **RESPONSIVE first**.
+El objeto responde primero a su contenedor (container queries, v9.2) y después al viewport;
+el móvil es el punto de partida de la escala (320px), no la identidad del sistema. La v8.4
+ya lo demostró: pensar «solo móvil» dejó el escritorio a la deriva.
+
+### Corregido
+
+- Doctrina renombrada en todas las fuentes: regla del sistema, LLM.md (anti-patrón,
+  llms.txt, `responsiveFirst` en components.json), README, SKILL.md, cabecera y
+  breakpoints de `tokens.css`, cabeceras de 9 packs, portada del catálogo y los
+  mensajes de `auditar-responsive.py` y `auditar-uso.py`.
+
 ## [9.3.0] — 2026-10-19
 
 Color de acento legible en cualquier fondo y tokens en OKLch. Aplica el patrón

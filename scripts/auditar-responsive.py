@@ -55,7 +55,7 @@ def main() -> int:
     if len(m1200) < MIN_PACKS_1200:
         fallos.append(f"@1200: {len(m1200)} packs < {MIN_PACKS_1200} ({', '.join(m1200) or 'ninguno'})")
     if len(m640) < 10:
-        fallos.append(f"@640: {len(m640)} packs < 10 — el mobile-first se ha debilitado")
+        fallos.append(f"@640: {len(m640)} packs < 10 — la base responsive se ha debilitado")
 
     # Las clases nuevas deben existir en el censo (con demo).
     comp = json.loads((ROOT / "components.json").read_text(encoding="utf-8"))

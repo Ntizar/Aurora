@@ -20,7 +20,7 @@
  "packs": {
   "p1-layout.css": {
    "lineas": 391,
-   "bytes": 22934,
+   "bytes": 22938,
    "clases": 179,
    "familias": 67,
    "hex": 0,
@@ -30,7 +30,7 @@
   },
   "p10-commerce.css": {
    "lineas": 258,
-   "bytes": 27247,
+   "bytes": 27251,
    "clases": 156,
    "familias": 22,
    "hex": 0,
@@ -40,7 +40,7 @@
   },
   "p11-social.css": {
    "lineas": 189,
-   "bytes": 18678,
+   "bytes": 18682,
    "clases": 107,
    "familias": 15,
    "hex": 0,
@@ -50,7 +50,7 @@
   },
   "p12-system.css": {
    "lineas": 143,
-   "bytes": 14089,
+   "bytes": 14093,
    "clases": 80,
    "familias": 25,
    "hex": 0,
@@ -100,7 +100,7 @@
   },
   "p17-patrones.css": {
    "lineas": 666,
-   "bytes": 35079,
+   "bytes": 35083,
    "clases": 224,
    "familias": 46,
    "hex": 0,
@@ -120,7 +120,7 @@
   },
   "p2-navigation.css": {
    "lineas": 184,
-   "bytes": 18703,
+   "bytes": 18707,
    "clases": 78,
    "familias": 10,
    "hex": 0,
@@ -130,7 +130,7 @@
   },
   "p3-typography.css": {
    "lineas": 210,
-   "bytes": 16676,
+   "bytes": 16684,
    "clases": 135,
    "familias": 41,
    "hex": 0,
@@ -140,7 +140,7 @@
   },
   "p4-actions.css": {
    "lineas": 178,
-   "bytes": 13232,
+   "bytes": 13236,
    "clases": 78,
    "familias": 7,
    "hex": 0,
@@ -170,7 +170,7 @@
   },
   "p7-overlays.css": {
    "lineas": 207,
-   "bytes": 23590,
+   "bytes": 23594,
    "clases": 118,
    "familias": 12,
    "hex": 0,

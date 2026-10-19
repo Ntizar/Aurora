@@ -8,7 +8,7 @@
    - Todo lo público vive bajo `.nz-` y usa tokens; cero literales, cero glass,
      cero gradientes, cero !important.
    - Cada familia nace con su demo en specs/17.json (CSS sin demostrar es deuda).
-   - Mobile-first: base 1 columna y se crece con min-width.
+   - Responsive first: base 1 columna y se crece con min-width.
    - Una familia, un pack: aquí solo se declara lo que es patrón compuesto.
 
    Hecho con ❤️ por David Antizar

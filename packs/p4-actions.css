@@ -162,7 +162,7 @@
 /* ---- Densidad de escritorio (desde 960px) ----
    El minimo tactil de 44px manda en movil en TODOS los tamanos de boton
    (regla 6 del manifiesto). La densidad fina de 28-36px vuelve solo desde
-   960px, donde el puntero sustituye al dedo. Mobile-first: base = tactil. */
+   960px, donde el puntero sustituye al dedo. Responsive first: base = tactil. */
 @media (min-width: 960px) {
   .nz-btn--2xs { min-height: 28px; }
   .nz-btn--xs { min-height: 32px; }

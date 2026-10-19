@@ -447,7 +447,7 @@ def portada(specs, censo_cat, totales, packs):
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Aurora · Design System Ntizar · {t['clases']} objetos de frontend</title>
-<meta name="description" content="Design system CSS de Ntizar: {t['clases']} objetos en {t['categorias']} categorías. Elige dos colores y el sistema entero se rehace. Mobile-first, táctil 44px, light y dark.">
+<meta name="description" content="Design system CSS de Ntizar: {t['clases']} objetos en {t['categorias']} categorías. Elige dos colores y el sistema entero se rehace. Responsive first, táctil 44px, light y dark.">
 <link rel="stylesheet" href="tokens.css">
 <link rel="stylesheet" href="packs/{PACK_SHELL}">
 <!--PACKS-->
@@ -477,7 +477,7 @@ def portada(specs, censo_cat, totales, packs):
   <section class="cat-hero cat-in">
     <p class="cat-eyebrow">Design System Ntizar</p>
     <h1>Aurora</h1>
-    <p class="cat-hero__sub">{t['clases']} objetos de frontend para montar cualquier web. Elige dos colores y el sistema entero se rehace. Sólido y con sombras de verdad: sin gradientes, sin glass, sin IA-slop. Mobile-first de verdad.</p>
+    <p class="cat-hero__sub">{t['clases']} objetos de frontend para montar cualquier web. Elige dos colores y el sistema entero se rehace. Sólido y con sombras de verdad: sin gradientes, sin glass, sin IA-slop. Responsive first de verdad.</p>
     <div class="cat-ctas">
       <a class="nz-btn nz-btn--primary" href="recetas/index.html">Ver las recetas</a>
       <a class="nz-btn nz-btn--accent" href="base.html">Abrir la base de datos</a>
@@ -508,7 +508,7 @@ def portada(specs, censo_cat, totales, packs):
     <section class="cat-in" style="--d:.06s;margin-block:var(--nz-space-12)">
       <h2 style="font-size:var(--nz-text-xl);letter-spacing:var(--nz-tracking-tight);margin-bottom:var(--nz-space-4)">Manifiesto</h2>
       <div class="cat-pillrow">
-        <span class="cat-pill"><i></i> Mobile first</span>
+        <span class="cat-pill"><i></i> Responsive first</span>
         <span class="cat-pill"><i></i> Azul #2563eb</span>
         <span class="cat-pill"><i></i> Naranja #f97316</span>
         <span class="cat-pill"><i></i> Sombras multicapa</span>

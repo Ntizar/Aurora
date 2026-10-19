@@ -4,7 +4,7 @@
    Reglas: cero gradientes, cero glass, cero IA-slop.
    Color por ROL (marca + acento), rampas OKLCH de luz uniforme: se elige la
    marca con <html data-nz-marca="…"> y TODO el sistema se rehace solo.
-   Mobile-first · Light + Dark · Hecho con ❤️ por David Antizar
+   Responsive first · Light + Dark · Hecho con ❤️ por David Antizar
    ============================================================ */
 
 /* ---- 0. FUENTE DEL SISTEMA · Inter variable, servida por el propio repo.
@@ -427,7 +427,7 @@
   }
 }
 
-/* ---- Breakpoints oficiales (mobile-first, usar min-width):
+/* ---- Breakpoints oficiales (responsive first, usar min-width):
    base  ≤ 639px   1 columna
    sm    ≥ 640px   2 columnas
    md    ≥ 960px   3 columnas / sidebar

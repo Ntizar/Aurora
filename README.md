@@ -26,7 +26,7 @@ Aurora no es una colección de snippets: es un **sistema con contrato**. Cada ob
 |---|---|
 | 🎨 | **Azul `#2563eb`** marca (estructura) · **Naranja `#f97316`** acento (**el dato que importa**) — nunca fundidos, y el acento siempre presente |
 | 🚫 | **0 gradientes** · **0 glass** · **0 colores a mano** · **0 `!important`*** |
-| 📱 | **Mobile-first** real: base 1 columna, breakpoints con `min-width` |
+| 📱 | **Responsive first** real: contenedor primero, base 1 columna, breakpoints con `min-width` |
 | 🖥️ | **Escritorio que crece**: lienzo 72 → 84 → 96rem (≥1200 / ≥1440) y `.nz-container--app` para herramientas. La letra no crece con el monitor; crece el lienzo |
 | 🔤 | **Fuente servida por el sistema**: Inter variable viaja en `tokens.css`. La misma letra en Windows, Android, Linux y en una captura headless |
 | ⚖️ | **Pesos por token** (`--nz-peso-*`): 400 cuerpo · 500 apoyo · 600 interfaz · 700 titulares. **El 800 está retirado**; nada por debajo de 16px va en 700 |

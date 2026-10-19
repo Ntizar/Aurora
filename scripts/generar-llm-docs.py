@@ -42,7 +42,7 @@ sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
 bc = import_module("build-catalog")
 
 ROOT = bc.ROOT
-VERSION = "9.3.0"
+VERSION = "9.3.1"
 CDN = f"https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v{VERSION}/"
 
 # ---------------------------------------------------------------------------
@@ -757,7 +757,7 @@ def main():
             "importantPermitidoEn": [".nz-visually-hidden", ".nz-print-hide"],
             "tema": 'data-nz-theme="light" | "dark" en el elemento <html>',
             "cuerpo": 'class="nz"',
-            "mobileFirst": True,
+            "responsiveFirst": True,
             "objetivoTactil": "44px",
         },
         "resumen": {
@@ -1029,7 +1029,8 @@ Los {len(tokens)} tokens están inventariados en `components.json` (sección
   `scripts/auditar-contraste.py` lo caza.
 - ❌ Gradientes, `backdrop-filter` o `!important`: prohibidos por el manifiesto y la CI los detecta.
 - ❌ Clases globales sin `.nz-`: romperías la convivencia con otros frameworks.
-- ❌ Desktop-first: el sistema es mobile-first (base 1 columna, `min-width` para crecer).
+- ❌ Desktop-first: el sistema es responsive first (base móvil en 1 columna, crece con
+  `min-width` hasta el escritorio, y los objetos responden a su contenedor).
 - ❌ Dejar media pantalla vacía en un monitor grande: un panel o una herramienta usan
   `.nz-container--app`; el lienzo ya crece solo hasta 96rem desde 1440px.
 - ❌ `font-weight` a mano (700/800 sueltos) o negritas porque sí: usa `--nz-peso-*`.
@@ -1070,7 +1071,7 @@ Hecho con ❤️ por David Antizar
     llms = f"""# Aurora — design system CSS puro (v{VERSION})
 
 > Sistema de diseño CSS-only, sin build y sin dependencias. Namespace `.nz-`,
-> tokens `--nz-*`, BEM, mobile-first. {total_clases} clases en {total_bases} familias,
+> tokens `--nz-*`, BEM, responsive first. {total_clases} clases en {total_bases} familias,
 > {len(censo_cat)} packs. Sin gradientes, sin glass, sin `!important`.
 
 Documentos para agentes (léelos en este orden):
@@ -1106,7 +1107,8 @@ Reglas mínimas que no se negocian:
    no existe: no la inventes.
 4. Color siempre por token `var(--nz-*)`. Cero colores a mano, cero
    gradientes, cero `backdrop-filter` (excepción: la capa `.nz-cristal`).
-5. Mobile-first: base 1 columna, se crece con `min-width`. Táctil 44px.
+5. Responsive first: base móvil 1 columna, se crece con `min-width`; los objetos
+   responden a su contenedor. Táctil 44px.
 6. Marca con `data-nz-marca="aurora|indigo|esmeralda|violeta|carmesi|ntizar"`;
    la marca es estructura, el acento es el dato que importa.
 
