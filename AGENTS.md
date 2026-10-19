@@ -15,8 +15,10 @@ Si eres un agente (o una persona con prisa), lee esto antes de tocar nada.
 3. **Sin gradientes, sin `backdrop-filter`, sin `!important`**
    (solo se admiten en `.nz-visually-hidden`, `.nz-vh` y `.nz-print-hide`).
 4. **BEM**: `.nz-thing`, `.nz-thing__parte`, `.nz-thing--modificador`, estado `.is-x` o `[aria-*]`.
-5. **Mobile-first de verdad**: base 1 columna y se crece con `@media (min-width: …)`
-   (640 / 960 / 1200 / 1440). Nunca `max-width` como estrategia de página.
+5. **Responsive first de verdad**: el objeto responde primero a su **contenedor**
+   (container queries) y después al viewport (base móvil en 1 columna, crecer con
+   `@media (min-width: 640/960/1200/1440)`). Nunca `max-width` como estrategia de página,
+   nunca «solo móvil»: el escritorio también es objetivo.
 6. **Táctil 44px** en todo lo que se pulsa.
 7. **Una clase, un dueño**: una clase se declara en un solo pack.
 8. **La base de datos no se escribe a mano.** `datos/base-diseno.json` se genera con
