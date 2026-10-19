@@ -183,6 +183,20 @@ def verificar_tokens(datos_aurora: dict) -> bool:
 def bloque_css(nombre: str, marca: str, acento: str) -> tuple[str, dict]:
     rm = rampa(marca, OFF_MARCA, 600)
     ra = rampa(acento, OFF_ACENTO, 500)
+    # Garantia AA del par texto-acento s/ fondo-acento-suave (700 sobre 50):
+    # con tonos muy claros el escalon 700 puede quedarse corto (medido: esmeralda
+    # 3.82, indigo 4.13). Se oscurece lo justo manteniendo matiz y croma; los
+    # presets nunca se retocan a mano.
+    if contraste(ra[700], ra[50]) < 4.5:
+        luz, croma, tono = hex_a_oklch(ra[700])
+        for _ in range(90):
+            luz -= 0.004
+            if luz < 0.25:
+                break
+            cand = oklch_a_hex(luz, croma, tono)
+            ra[700] = cand
+            if contraste(cand, ra[50]) >= 4.5:
+                break
     lineas = [f"[data-nz-marca=\"{nombre}\"] {{"]
     lineas.append("  /* rampa de marca (primario) */")
     lineas += [f"  --nz-marca-{k}: {v};" for k, v in rm.items()]
@@ -234,6 +248,7 @@ def informe_contraste(nombre: str, datos: dict) -> tuple[list[str], bool]:
     check("tinta sobre acento-500", contraste(ra["500"], TINTA))
     check("tinta sobre acento-100", contraste(ra["100"], TINTA))
     check("tinta sobre marca-100", contraste(rm["100"], TINTA))
+    check("acento-700 sobre acento-50", contraste(ra["700"], ra["50"]))
     return filas, ok
 
 
@@ -284,6 +299,13 @@ def main(argv: list[str]) -> int:
     args = [a for a in argv if not a.startswith("-")]
     if len(args) == 3:
         d = generar(args[0], args[1], args[2])
+        # Registrar en registro.json (añade o reemplaza la entrada de este nombre):
+        # una marca que existe en marcas/ pero no en el registro se pierde con --todas.
+        ruta = DIR_MARCAS / "registro.json"
+        lista = json.loads(ruta.read_text(encoding="utf-8")) if ruta.exists() else []
+        lista = [e for e in lista if e.get("nombre") != d["nombre"]]
+        lista.append(d)
+        ruta.write_text(json.dumps(lista, ensure_ascii=False, indent=2), encoding="utf-8")
         return 0 if d["contraste_ok"] else 1
 
     print(__doc__)

@@ -112,14 +112,14 @@
 .nz-kpi__label { font-size: var(--nz-text-xs); font-weight: var(--nz-peso-fuerte); letter-spacing: var(--nz-tracking-caps); text-transform: uppercase; color: var(--nz-text-mute); }
 .nz-kpi__value { font-size: var(--nz-text-2xl); font-weight: var(--nz-peso-titulo); letter-spacing: var(--nz-tracking-tight); font-variant-numeric: tabular-nums; color: var(--nz-text); }
 .nz-kpi__value--brand { color: var(--nz-brand); }
-.nz-kpi__value--accent { color: var(--nz-accent); }
+.nz-kpi__value--accent { color: var(--nz-accent-text); }
 .nz-kpi__delta { font-size: var(--nz-text-xs); font-weight: var(--nz-peso-fuerte); }
 .nz-kpi__delta--up { color: var(--nz-success); }
 .nz-kpi__delta--down { color: var(--nz-danger); }
 .nz-kpi__delta--flat { color: var(--nz-text-mute); }
 .nz-kpi--brand { background: var(--nz-brand); color: var(--nz-text-invert); }
 .nz-kpi--brand .nz-kpi__label, .nz-kpi--brand .nz-kpi__value, .nz-kpi--accent .nz-kpi__label, .nz-kpi--accent .nz-kpi__value { color: var(--nz-text-invert); }
-.nz-kpi--accent { background: var(--nz-accent); color: var(--nz-text-invert); }
+.nz-kpi--accent { background: var(--nz-accent); color: var(--nz-accent-ink); }
 .nz-kpi--accent .nz-kpi__delta, .nz-kpi--brand .nz-kpi__delta { color: var(--nz-text-invert); opacity: .9; }
 .nz-kpi--sm { padding: var(--nz-space-4); }
 .nz-kpi--sm .nz-kpi__value { font-size: var(--nz-text-xl); }

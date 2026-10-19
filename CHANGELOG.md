@@ -3,7 +3,43 @@
 Formato: [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/).
 Versionado: [SemVer](https://semver.org/lang/es/).
 
+## [9.3.0] — 2026-10-19
+
+Color de acento legible en cualquier fondo y tokens en OKLch. Aplica el patrón
+verificado de oneo-me/manta (tokens semánticos light/dark) y la gobernanza de
+capas de oneo-me/onevra.
+
+### Añadido
+
+- **Tokens semánticos de acento**: `--nz-accent-text` (texto con color de acento
+  sobre fondo: acento-700 en claro, acento-400 en oscuro) y `--nz-accent-ink`
+  (tinta sobre relleno de acento: gray-950 en claro, el fondo oscuro en dark).
+  El blanco sobre acento-500 medía 2,80:1 (F en WCAG); ahora todos los pares
+  de acento pasan su mínimo (4,5:1 texto, verificado por tema y por marca).
+- **Doble declaración OKLch**: los 59 tokens de color de `tokens.css` llevan
+  debajo su gemela `oklch(...)` (conversión exacta, round-trip verificado).
+  Navegadores modernos usan OKLch; los antiguos quedan con el hex. Sin JS.
+- **`scripts/auditar-contraste.py`**: auditoría WCAG de los pares semánticos por
+  tema (claro/oscuro) y por preset de marca, con cascada var() y resolución de
+  `color-mix`; además verifica la paridad de la doble declaración OKLch.
+  CI-ready (exit 1 si falla), `--informe` para modo consultivo.
+- **Gobernanza de capas en AGENTS.md** (refina upstream / rellena huecos /
+  defer to upstream) — pendiente de aprobación explícita del fichero protegido.
+
+### Corregido
+
+- 14 rellenos de acento dejaban el texto en blanco (`--nz-gray-0`) o en
+  `--nz-text-invert` (blanco en claro): badges, botón y segmented de acento,
+  banner, callout ribbon, treemap, tooltip, KPI, audio, inputgroup, actbar.
+- 9 usos del acento como color de texto directo pasan a `--nz-accent-text`.
+- `generar-marca.py`: garantiza AA del par texto-acento s/ acento-soft (700
+  sobre 50 ≥ 4,5) oscureciendo el 700 lo justo; el CLI registra la marca en
+  `marcas/registro.json` (antes una marca creada por CLI se perdía con `--todas`).
+- Regenerados presets con la garantía nueva: esmeralda (3,82→4,58) e indigo
+  (4,13→4,60). `ntizar` restaurada vía motor: `ntizar.css` idéntico byte a byte.
+
 ## [9.2.0] — 2026-10-17
+
 
 Release de cierre de la línea 9. Las fases 9.0 y 9.1 se desarrollaron sin tag
 intermedio; se publican juntas aquí para que el CDN tenga una sola foto coherente.

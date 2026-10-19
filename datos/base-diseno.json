@@ -1,13 +1,13 @@
 {
  "name": "Aurora — base de datos de diseño",
- "version": "9.2.0",
+ "version": "9.3.0",
  "descripcion": "Índice consultable del sistema: familias, tokens, recetas, combos y marcas. Cada ficha enlaza a su demo viva y lleva el markup real.",
  "fuente": "components.json + specs/ + recetas/ + examples/ + combos/ + marcas/registro.json + COMPOSICION.md",
  "explorador": "base.html",
  "resumen": {
   "familias": 411,
   "clases": 2186,
-  "tokens": 189,
+  "tokens": 234,
   "categorias": 18,
   "recetas": 6,
   "ejemplos": 5,
@@ -643,6 +643,7 @@
    ],
    "tokens": [
     "--nz-accent",
+    "--nz-accent-ink",
     "--nz-bg-inset",
     "--nz-brand",
     "--nz-peso-titulo",
@@ -654,7 +655,6 @@
     "--nz-surface",
     "--nz-text",
     "--nz-text-2xs",
-    "--nz-text-invert",
     "--nz-text-md",
     "--nz-text-mute"
    ],
@@ -1688,9 +1688,9 @@
    ],
    "tokens": [
     "--nz-accent",
+    "--nz-accent-ink",
     "--nz-bg-inset",
     "--nz-brand",
-    "--nz-gray-0",
     "--nz-radius-full",
     "--nz-radius-lg",
     "--nz-shadow-sm",
@@ -1760,8 +1760,8 @@
     "bar"
    ],
    "tokens": [
-    "--nz-accent",
     "--nz-accent-soft",
+    "--nz-accent-text",
     "--nz-border-w",
     "--nz-brand",
     "--nz-brand-soft",
@@ -2032,6 +2032,7 @@
    "partes": [],
    "tokens": [
     "--nz-accent",
+    "--nz-accent-ink",
     "--nz-accent-soft",
     "--nz-accent-strong",
     "--nz-bg-inset",
@@ -2042,7 +2043,6 @@
     "--nz-brand-soft",
     "--nz-danger",
     "--nz-danger-soft",
-    "--nz-gray-0",
     "--nz-peso-fuerte",
     "--nz-radius-full",
     "--nz-space-1",
@@ -2197,6 +2197,7 @@
    ],
    "tokens": [
     "--nz-accent",
+    "--nz-accent-ink",
     "--nz-accent-strong",
     "--nz-bg-inset",
     "--nz-bg-soft",
@@ -2215,7 +2216,7 @@
     "--nz-text-sm",
     "--nz-text-xs"
    ],
-   "nTokens": 18,
+   "nTokens": 19,
    "markup": "<div class=\"nz-banner\"><div class=\"nz-banner__body\">🎉 Ya está disponible Aurora.1</div></div>",
    "noUsar": "",
    "cuandoUsar": "Cuando el sistema tenga que contar algo: alertas, badges, toasts, callouts, skeletons, empty states y progreso.",
@@ -2637,6 +2638,7 @@
    ],
    "tokens": [
     "--nz-accent",
+    "--nz-accent-text",
     "--nz-brand",
     "--nz-font-mono",
     "--nz-gray-50",
@@ -2653,7 +2655,7 @@
     "--nz-text-sm",
     "--nz-tracking-tight"
    ],
-   "nTokens": 16,
+   "nTokens": 17,
    "markup": "<span class=\"nz-brand\">● Otra</span>",
    "noUsar": "",
    "cuandoUsar": "Cuando haya imagen, vídeo, audio, avatar, galería o figure. Todo con proporción y pie resueltos.",
@@ -2823,6 +2825,7 @@
    ],
    "tokens": [
     "--nz-accent",
+    "--nz-accent-ink",
     "--nz-accent-soft",
     "--nz-accent-strong",
     "--nz-amber-700",
@@ -2840,7 +2843,6 @@
     "--nz-dur-base",
     "--nz-dur-fast",
     "--nz-ease-out",
-    "--nz-gray-0",
     "--nz-green-700",
     "--nz-info",
     "--nz-peso-fuerte",
@@ -6483,6 +6485,7 @@
    ],
    "tokens": [
     "--nz-accent",
+    "--nz-accent-ink",
     "--nz-accent-strong",
     "--nz-blue-100",
     "--nz-blue-200",
@@ -6512,7 +6515,7 @@
     "--nz-tracking-caps",
     "--nz-tracking-tight"
    ],
-   "nTokens": 29,
+   "nTokens": 30,
    "markup": "<div class=\"nz-cta-banner nz-cta-banner--sm\"><h3 class=\"nz-cta-banner__title\">Suscríbete</h3><div class=\"nz-cta-banner__actions\"><a class=\"nz-btn\" href=\"#\">Al boletín</a></div></div>",
    "noUsar": "",
    "cuandoUsar": "Cuando haya comunidad, perfil, testimonios, share o métricas sociales.",
@@ -10228,8 +10231,8 @@
    ],
    "partes": [],
    "tokens": [
-    "--nz-accent",
     "--nz-accent-soft",
+    "--nz-accent-text",
     "--nz-border",
     "--nz-border-w-strong",
     "--nz-brand",
@@ -10672,6 +10675,7 @@
    ],
    "tokens": [
     "--nz-accent",
+    "--nz-accent-ink",
     "--nz-bg-soft",
     "--nz-border",
     "--nz-border-w",
@@ -10680,7 +10684,6 @@
     "--nz-dur-fast",
     "--nz-ease-out",
     "--nz-focus-ring",
-    "--nz-gray-0",
     "--nz-peso-fuerte",
     "--nz-radius-full",
     "--nz-radius-sm",
@@ -11001,6 +11004,8 @@
    ],
    "tokens": [
     "--nz-accent",
+    "--nz-accent-ink",
+    "--nz-accent-text",
     "--nz-bg-inset",
     "--nz-border",
     "--nz-border-w",
@@ -11032,7 +11037,7 @@
     "--nz-tracking-caps",
     "--nz-tracking-tight"
    ],
-   "nTokens": 31,
+   "nTokens": 33,
    "markup": "<div class=\"nz-kpi\"><span class=\"nz-kpi__label\">A</span><span class=\"nz-kpi__value\">1</span></div>",
    "noUsar": [
     "No lo uses como contenedor genérico de texto: es una cifra con contexto."
@@ -13535,8 +13540,8 @@
     "title"
    ],
    "tokens": [
-    "--nz-accent",
     "--nz-accent-soft",
+    "--nz-accent-text",
     "--nz-brand",
     "--nz-brand-soft",
     "--nz-danger",
@@ -15065,7 +15070,7 @@
     "save"
    ],
    "tokens": [
-    "--nz-accent",
+    "--nz-accent-text",
     "--nz-brand",
     "--nz-peso-fuerte",
     "--nz-peso-titulo",
@@ -15234,6 +15239,7 @@
    ],
    "tokens": [
     "--nz-accent",
+    "--nz-accent-ink",
     "--nz-bg-inset",
     "--nz-border",
     "--nz-border-w",
@@ -15264,7 +15270,7 @@
     "--nz-text-xs",
     "--nz-tracking-caps"
    ],
-   "nTokens": 30,
+   "nTokens": 31,
    "markup": "<article class=\"nz-product nz-product--compact\"><div class=\"nz-product__media\"></div><div class=\"nz-product__body\"><h3 class=\"nz-product__name\">Artículo uno</h3></div></article>",
    "noUsar": "",
    "cuandoUsar": "Cuando haya producto, precio, carrito, checkout, plan o reseña. El flujo de compra ya viene pensado.",
@@ -17129,11 +17135,11 @@
    "partes": [],
    "tokens": [
     "--nz-accent",
+    "--nz-accent-ink",
     "--nz-bg-inset",
     "--nz-brand",
     "--nz-dur-fast",
     "--nz-ease-out",
-    "--nz-gray-0",
     "--nz-peso-fuerte",
     "--nz-radius-full",
     "--nz-radius-lg",
@@ -18394,7 +18400,7 @@
    ],
    "partes": [],
    "tokens": [
-    "--nz-accent",
+    "--nz-accent-text",
     "--nz-border-w-strong",
     "--nz-brand"
    ],
@@ -20878,10 +20884,10 @@
    ],
    "tokens": [
     "--nz-accent",
+    "--nz-accent-ink",
     "--nz-brand",
     "--nz-dur-base",
     "--nz-ease-out",
-    "--nz-gray-0",
     "--nz-gray-50",
     "--nz-gray-900",
     "--nz-peso-fuerte",
@@ -21478,9 +21484,9 @@
    ],
    "tokens": [
     "--nz-accent",
+    "--nz-accent-ink",
     "--nz-bg-inset",
     "--nz-brand",
-    "--nz-gray-0",
     "--nz-peso-fuerte",
     "--nz-radius-sm",
     "--nz-space-2",
@@ -22140,8 +22146,22 @@
    "dark": false
   },
   {
+   "nombre": "--nz-marca-50",
+   "valor": "oklch(0.9693 0.0144 264.50)",
+   "seccion": "Marca y base",
+   "esColor": true,
+   "dark": false
+  },
+  {
    "nombre": "--nz-marca-100",
    "valor": "#dfeaff",
+   "seccion": "Marca y base",
+   "esColor": true,
+   "dark": false
+  },
+  {
+   "nombre": "--nz-marca-100",
+   "valor": "oklch(0.9351 0.0309 263.51)",
    "seccion": "Marca y base",
    "esColor": true,
    "dark": false
@@ -22154,8 +22174,22 @@
    "dark": false
   },
   {
+   "nombre": "--nz-marca-200",
+   "valor": "oklch(0.8855 0.0556 262.75)",
+   "seccion": "Marca y base",
+   "esColor": true,
+   "dark": false
+  },
+  {
    "nombre": "--nz-marca-300",
    "valor": "#a0c0ff",
+   "seccion": "Marca y base",
+   "esColor": true,
+   "dark": false
+  },
+  {
+   "nombre": "--nz-marca-300",
+   "valor": "oklch(0.8074 0.0963 263.53)",
    "seccion": "Marca y base",
    "esColor": true,
    "dark": false
@@ -22168,8 +22202,22 @@
    "dark": false
   },
   {
+   "nombre": "--nz-marca-400",
+   "valor": "oklch(0.7048 0.1539 262.65)",
+   "seccion": "Marca y base",
+   "esColor": true,
+   "dark": false
+  },
+  {
    "nombre": "--nz-marca-500",
    "valor": "#417eff",
+   "seccion": "Marca y base",
+   "esColor": true,
+   "dark": false
+  },
+  {
+   "nombre": "--nz-marca-500",
+   "valor": "oklch(0.6233 0.2026 262.88)",
    "seccion": "Marca y base",
    "esColor": true,
    "dark": false
@@ -22189,8 +22237,22 @@
    "dark": false
   },
   {
+   "nombre": "--nz-marca-700",
+   "valor": "oklch(0.4888 0.2153 262.87)",
+   "seccion": "Marca y base",
+   "esColor": true,
+   "dark": false
+  },
+  {
    "nombre": "--nz-marca-800",
    "valor": "#1041b0",
+   "seccion": "Marca y base",
+   "esColor": true,
+   "dark": false
+  },
+  {
+   "nombre": "--nz-marca-800",
+   "valor": "oklch(0.4234 0.1838 263.02)",
    "seccion": "Marca y base",
    "esColor": true,
    "dark": false
@@ -22203,8 +22265,22 @@
    "dark": false
   },
   {
+   "nombre": "--nz-marca-900",
+   "valor": "oklch(0.3797 0.1337 262.99)",
+   "seccion": "Marca y base",
+   "esColor": true,
+   "dark": false
+  },
+  {
    "nombre": "--nz-acento-50",
    "valor": "#ffddcd",
+   "seccion": "Marca y base",
+   "esColor": true,
+   "dark": false
+  },
+  {
+   "nombre": "--nz-acento-50",
+   "valor": "oklch(0.9216 0.0436 46.75)",
    "seccion": "Marca y base",
    "esColor": true,
    "dark": false
@@ -22217,8 +22293,22 @@
    "dark": false
   },
   {
+   "nombre": "--nz-acento-100",
+   "valor": "oklch(0.9010 0.0569 48.63)",
+   "seccion": "Marca y base",
+   "esColor": true,
+   "dark": false
+  },
+  {
    "nombre": "--nz-acento-200",
    "valor": "#ffc5a9",
+   "seccion": "Marca y base",
+   "esColor": true,
+   "dark": false
+  },
+  {
+   "nombre": "--nz-acento-200",
+   "valor": "oklch(0.8684 0.0767 46.99)",
    "seccion": "Marca y base",
    "esColor": true,
    "dark": false
@@ -22231,8 +22321,22 @@
    "dark": false
   },
   {
+   "nombre": "--nz-acento-300",
+   "valor": "oklch(0.8198 0.1101 47.57)",
+   "seccion": "Marca y base",
+   "esColor": true,
+   "dark": false
+  },
+  {
    "nombre": "--nz-acento-400",
    "valor": "#ff8c4e",
+   "seccion": "Marca y base",
+   "esColor": true,
+   "dark": false
+  },
+  {
+   "nombre": "--nz-acento-400",
+   "valor": "oklch(0.7548 0.1588 47.23)",
    "seccion": "Marca y base",
    "esColor": true,
    "dark": false
@@ -22252,8 +22356,22 @@
    "dark": false
   },
   {
+   "nombre": "--nz-acento-600",
+   "valor": "oklch(0.6004 0.1639 47.86)",
+   "seccion": "Marca y base",
+   "esColor": true,
+   "dark": false
+  },
+  {
    "nombre": "--nz-acento-700",
    "valor": "#a84900",
+   "seccion": "Marca y base",
+   "esColor": true,
+   "dark": false
+  },
+  {
+   "nombre": "--nz-acento-700",
+   "valor": "oklch(0.5213 0.1425 47.74)",
    "seccion": "Marca y base",
    "esColor": true,
    "dark": false
@@ -22392,8 +22510,22 @@
    "dark": false
   },
   {
+   "nombre": "--nz-green-50",
+   "valor": "oklch(0.9819 0.0181 155.83)",
+   "seccion": "Color · semánticos",
+   "esColor": true,
+   "dark": false
+  },
+  {
    "nombre": "--nz-green-100",
    "valor": "#dcfce7",
+   "seccion": "Color · semánticos",
+   "esColor": true,
+   "dark": false
+  },
+  {
+   "nombre": "--nz-green-100",
+   "valor": "oklch(0.9624 0.0434 156.74)",
    "seccion": "Color · semánticos",
    "esColor": true,
    "dark": false
@@ -22406,8 +22538,22 @@
    "dark": false
   },
   {
+   "nombre": "--nz-green-500",
+   "valor": "oklch(0.7227 0.1920 149.58)",
+   "seccion": "Color · semánticos",
+   "esColor": true,
+   "dark": false
+  },
+  {
    "nombre": "--nz-green-600",
    "valor": "#16a34a",
+   "seccion": "Color · semánticos",
+   "esColor": true,
+   "dark": false
+  },
+  {
+   "nombre": "--nz-green-600",
+   "valor": "oklch(0.6271 0.1699 149.21)",
    "seccion": "Color · semánticos",
    "esColor": true,
    "dark": false
@@ -22420,8 +22566,22 @@
    "dark": false
   },
   {
+   "nombre": "--nz-green-700",
+   "valor": "oklch(0.5273 0.1371 150.07)",
+   "seccion": "Color · semánticos",
+   "esColor": true,
+   "dark": false
+  },
+  {
    "nombre": "--nz-red-50",
    "valor": "#fef2f2",
+   "seccion": "Color · semánticos",
+   "esColor": true,
+   "dark": false
+  },
+  {
+   "nombre": "--nz-red-50",
+   "valor": "oklch(0.9705 0.0129 17.38)",
    "seccion": "Color · semánticos",
    "esColor": true,
    "dark": false
@@ -22434,8 +22594,22 @@
    "dark": false
   },
   {
+   "nombre": "--nz-red-100",
+   "valor": "oklch(0.9356 0.0309 17.72)",
+   "seccion": "Color · semánticos",
+   "esColor": true,
+   "dark": false
+  },
+  {
    "nombre": "--nz-red-500",
    "valor": "#ef4444",
+   "seccion": "Color · semánticos",
+   "esColor": true,
+   "dark": false
+  },
+  {
+   "nombre": "--nz-red-500",
+   "valor": "oklch(0.6368 0.2078 25.33)",
    "seccion": "Color · semánticos",
    "esColor": true,
    "dark": false
@@ -22448,8 +22622,22 @@
    "dark": false
   },
   {
+   "nombre": "--nz-red-600",
+   "valor": "oklch(0.5771 0.2152 27.33)",
+   "seccion": "Color · semánticos",
+   "esColor": true,
+   "dark": false
+  },
+  {
    "nombre": "--nz-red-700",
    "valor": "#b91c1c",
+   "seccion": "Color · semánticos",
+   "esColor": true,
+   "dark": false
+  },
+  {
+   "nombre": "--nz-red-700",
+   "valor": "oklch(0.5054 0.1905 27.52)",
    "seccion": "Color · semánticos",
    "esColor": true,
    "dark": false
@@ -22462,8 +22650,22 @@
    "dark": false
   },
   {
+   "nombre": "--nz-amber-50",
+   "valor": "oklch(0.9869 0.0214 95.28)",
+   "seccion": "Color · semánticos",
+   "esColor": true,
+   "dark": false
+  },
+  {
    "nombre": "--nz-amber-100",
    "valor": "#fef3c7",
+   "seccion": "Color · semánticos",
+   "esColor": true,
+   "dark": false
+  },
+  {
+   "nombre": "--nz-amber-100",
+   "valor": "oklch(0.9619 0.0580 95.62)",
    "seccion": "Color · semánticos",
    "esColor": true,
    "dark": false
@@ -22476,8 +22678,22 @@
    "dark": false
   },
   {
+   "nombre": "--nz-amber-500",
+   "valor": "oklch(0.7686 0.1647 70.08)",
+   "seccion": "Color · semánticos",
+   "esColor": true,
+   "dark": false
+  },
+  {
    "nombre": "--nz-amber-600",
    "valor": "#d97706",
+   "seccion": "Color · semánticos",
+   "esColor": true,
+   "dark": false
+  },
+  {
+   "nombre": "--nz-amber-600",
+   "valor": "oklch(0.6658 0.1574 58.32)",
    "seccion": "Color · semánticos",
    "esColor": true,
    "dark": false
@@ -22490,8 +22706,22 @@
    "dark": false
   },
   {
+   "nombre": "--nz-amber-700",
+   "valor": "oklch(0.5553 0.1455 49.00)",
+   "seccion": "Color · semánticos",
+   "esColor": true,
+   "dark": false
+  },
+  {
    "nombre": "--nz-gray-0",
    "valor": "#ffffff",
+   "seccion": "Color · neutros",
+   "esColor": true,
+   "dark": false
+  },
+  {
+   "nombre": "--nz-gray-0",
+   "valor": "oklch(1.0000 0.0000 89.88)",
    "seccion": "Color · neutros",
    "esColor": true,
    "dark": false
@@ -22504,8 +22734,22 @@
    "dark": false
   },
   {
+   "nombre": "--nz-gray-50",
+   "valor": "oklch(0.9846 0.0017 247.84)",
+   "seccion": "Color · neutros",
+   "esColor": true,
+   "dark": false
+  },
+  {
    "nombre": "--nz-gray-100",
    "valor": "#f3f4f6",
+   "seccion": "Color · neutros",
+   "esColor": true,
+   "dark": false
+  },
+  {
+   "nombre": "--nz-gray-100",
+   "valor": "oklch(0.9670 0.0029 264.54)",
    "seccion": "Color · neutros",
    "esColor": true,
    "dark": false
@@ -22518,8 +22762,22 @@
    "dark": false
   },
   {
+   "nombre": "--nz-gray-200",
+   "valor": "oklch(0.9276 0.0058 264.53)",
+   "seccion": "Color · neutros",
+   "esColor": true,
+   "dark": false
+  },
+  {
    "nombre": "--nz-gray-300",
    "valor": "#d1d5db",
+   "seccion": "Color · neutros",
+   "esColor": true,
+   "dark": false
+  },
+  {
+   "nombre": "--nz-gray-300",
+   "valor": "oklch(0.8717 0.0093 258.34)",
    "seccion": "Color · neutros",
    "esColor": true,
    "dark": false
@@ -22532,8 +22790,22 @@
    "dark": false
   },
   {
+   "nombre": "--nz-gray-400",
+   "valor": "oklch(0.7137 0.0192 261.32)",
+   "seccion": "Color · neutros",
+   "esColor": true,
+   "dark": false
+  },
+  {
    "nombre": "--nz-gray-500",
    "valor": "#6b7280",
+   "seccion": "Color · neutros",
+   "esColor": true,
+   "dark": false
+  },
+  {
+   "nombre": "--nz-gray-500",
+   "valor": "oklch(0.5510 0.0234 264.36)",
    "seccion": "Color · neutros",
    "esColor": true,
    "dark": false
@@ -22546,8 +22818,22 @@
    "dark": false
   },
   {
+   "nombre": "--nz-gray-600",
+   "valor": "oklch(0.4461 0.0263 256.80)",
+   "seccion": "Color · neutros",
+   "esColor": true,
+   "dark": false
+  },
+  {
    "nombre": "--nz-gray-700",
    "valor": "#374151",
+   "seccion": "Color · neutros",
+   "esColor": true,
+   "dark": false
+  },
+  {
+   "nombre": "--nz-gray-700",
+   "valor": "oklch(0.3729 0.0306 259.73)",
    "seccion": "Color · neutros",
    "esColor": true,
    "dark": false
@@ -22560,6 +22846,13 @@
    "dark": false
   },
   {
+   "nombre": "--nz-gray-800",
+   "valor": "oklch(0.2781 0.0296 256.85)",
+   "seccion": "Color · neutros",
+   "esColor": true,
+   "dark": false
+  },
+  {
    "nombre": "--nz-gray-900",
    "valor": "#111827",
    "seccion": "Color · neutros",
@@ -22567,8 +22860,22 @@
    "dark": false
   },
   {
+   "nombre": "--nz-gray-900",
+   "valor": "oklch(0.2101 0.0318 264.66)",
+   "seccion": "Color · neutros",
+   "esColor": true,
+   "dark": false
+  },
+  {
    "nombre": "--nz-gray-950",
    "valor": "#030712",
+   "seccion": "Color · neutros",
+   "esColor": true,
+   "dark": false
+  },
+  {
+   "nombre": "--nz-gray-950",
+   "valor": "oklch(0.1296 0.0274 261.69)",
    "seccion": "Color · neutros",
    "esColor": true,
    "dark": false
@@ -22702,6 +23009,20 @@
   {
    "nombre": "--nz-accent-strong",
    "valor": "var(--nz-acento-600)",
+   "seccion": "Roles temáticos",
+   "esColor": false,
+   "dark": true
+  },
+  {
+   "nombre": "--nz-accent-text",
+   "valor": "var(--nz-acento-700)",
+   "seccion": "Roles temáticos",
+   "esColor": false,
+   "dark": true
+  },
+  {
+   "nombre": "--nz-accent-ink",
+   "valor": "var(--nz-gray-950)",
    "seccion": "Roles temáticos",
    "esColor": false,
    "dark": true
@@ -23967,8 +24288,8 @@
    "marca": "#0057ff",
    "acento": "#ff6a00",
    "fichero": "marcas/ntizar.css",
-   "contraste": null,
-   "contrasteOk": false,
+   "contraste": 5.52,
+   "contrasteOk": true,
    "ajustadaAA": false
   }
  ],

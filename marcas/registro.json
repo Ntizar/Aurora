@@ -54,7 +54,7 @@
       "400": "#2fc6e4",
       "500": "#06b6d4",
       "600": "#0092ab",
-      "700": "#00798d"
+      "700": "#007184"
     },
     "marca_original": "#4f46e5",
     "marca_ajustada_aa": false,
@@ -85,7 +85,7 @@
       "400": "#ffac39",
       "500": "#f59e0b",
       "600": "#c67e00",
-      "700": "#a36700"
+      "700": "#925c00"
     },
     "marca_original": "#059669",
     "marca_ajustada_aa": true,
@@ -181,6 +181,8 @@
       "700": "#ab4400"
     },
     "marca_original": "#0057ff",
-    "acento_original": "#ff6a00"
+    "marca_ajustada_aa": false,
+    "contraste_marca_600": 5.52,
+    "contraste_ok": true
   }
 ]

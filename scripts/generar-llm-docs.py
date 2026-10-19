@@ -42,7 +42,7 @@ sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
 bc = import_module("build-catalog")
 
 ROOT = bc.ROOT
-VERSION = "9.2.0"
+VERSION = "9.3.0"
 CDN = f"https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v{VERSION}/"
 
 # ---------------------------------------------------------------------------
@@ -993,6 +993,17 @@ La marca **no se toca en CSS**: se elige con un atributo en el `<html>`.
   El generador crea la rampa en OKLCH, la ancla a tu color y avisa si necesita ajuste por contraste.
 - Todo lo demás (`--nz-brand*`, `--nz-accent*`, foco, sombras de color y **el modo oscuro**)
   se **deriva solo** de esas dos rampas.
+- **Color de acento legible en cualquier fondo** (v9.3): el acento NUNCA se pinta de texto
+  directamente. Como texto sobre fondo: `var(--nz-accent-text)` (acento-700 en claro,
+  acento-400 en oscuro). Como tinta sobre un relleno de acento: `var(--nz-accent-ink)`
+  (tinta casi negra en claro; el propio fondo oscuro en dark). El relleno plano
+  `--nz-accent` solo va en fondos, gráficos y bordes — nunca sostiene texto blanco
+  (medido: blanco s/ acento-500 cae a 2,80:1).
+- **Doble declaración OKLch (v9.3)**: cada token de color de `tokens.css` va en hex y
+  debajo su gemela `oklch(...)`. Los navegadores modernos usan la OKLch (mejor gamut y
+  derivas de tema); los antiguos ignoran la segunda y quedan con el hex. Nunca edites
+  solo una de las dos: la convierte `scripts/generar-marca.py` o `scripts/auditar-contraste.py`
+  la marca como descuadrada.
 
 Solo si necesitas afinar algo suelto (radio, ancho): la **fuente ya viene cargada**
 desde `tokens.css`, así que no hay que enlazar Google Fonts ni tocar `--nz-font`.
@@ -1012,6 +1023,10 @@ Los {len(tokens)} tokens están inventariados en `components.json` (sección
 - ❌ Pegar el CSS de los packs en el prompt (250 KB ≈ 60.000 tokens). Enlaza por CDN.
 - ❌ Inventar clases (`nz-gradient-text`, `nz-btn--glass-liquid-brand`, `nz-card--glass`): no existen aquí. Es la doctrina de Aurora v6, **jubilada**: Aurora es sólido, sin glass ni gradientes.
 - ❌ Escribir colores a mano (`#2563eb`, `rgb(...)`): usa tokens `var(--nz-*)`.
+- ❌ Texto blanco sobre relleno de acento o texto acento plano (`color: var(--nz-accent)`):
+  en claro cae a 2,80:1 y falla WCAG. Texto de acento → `var(--nz-accent-text)`;
+  tinta sobre relleno de acento → `var(--nz-accent-ink)`. La auditoría
+  `scripts/auditar-contraste.py` lo caza.
 - ❌ Gradientes, `backdrop-filter` o `!important`: prohibidos por el manifiesto y la CI los detecta.
 - ❌ Clases globales sin `.nz-`: romperías la convivencia con otros frameworks.
 - ❌ Desktop-first: el sistema es mobile-first (base 1 columna, `min-width` para crecer).
@@ -1028,6 +1043,7 @@ Los {len(tokens)} tokens están inventariados en `components.json` (sección
 ```bash
 python scripts/auditar-uso.py tu-pagina.html   # lint del HTML consumidor
 python scripts/validar-css.py                  # manifiesto + cobertura del sistema
+python scripts/auditar-contraste.py            # contraste WCAG de pares + paridad oklch
 ```
 
 `auditar-uso.py` te dice: clases inventadas, packs que te faltan por enlazar,

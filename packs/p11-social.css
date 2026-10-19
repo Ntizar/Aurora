@@ -99,7 +99,7 @@
 .nz-cta-banner__close:hover { background: var(--nz-brand-strong); }
 .nz-cta-banner--brand { background: var(--nz-brand-strong); }
 .nz-cta-banner--brand .nz-cta-banner__close:hover { background: var(--nz-brand); }
-.nz-cta-banner--accent { background: var(--nz-accent); color: var(--nz-text-invert); }
+.nz-cta-banner--accent { background: var(--nz-accent); color: var(--nz-accent-ink); }
 .nz-cta-banner--accent .nz-cta-banner__eyebrow, .nz-cta-banner--accent .nz-cta-banner__body { color: var(--nz-text-invert); opacity: .9; }
 .nz-cta-banner--accent .nz-cta-banner__close:hover { background: var(--nz-accent-strong); }
 .nz-cta-banner--sm { gap: var(--nz-space-2); padding: var(--nz-space-5) var(--nz-space-4); border-radius: var(--nz-radius-lg); }
@@ -170,7 +170,7 @@
 
 /* ---- Notificación (toast social) ---- */
 .nz-notif { display: flex; align-items: center; gap: var(--nz-space-3); padding: var(--nz-space-3) var(--nz-space-4); border-radius: var(--nz-radius-md); background: var(--nz-surface); box-shadow: var(--nz-shadow-md); }
-.nz-notif__icon { width: 40px; height: 40px; flex: none; display: grid; place-items: center; border-radius: 50%; background: var(--nz-accent-soft); color: var(--nz-accent); }
+.nz-notif__icon { width: 40px; height: 40px; flex: none; display: grid; place-items: center; border-radius: 50%; background: var(--nz-accent-soft); color: var(--nz-accent-text); }
 .nz-notif__body { flex: 1; min-width: 0; display: grid; gap: 1px; }
 .nz-notif__title { font-weight: var(--nz-peso-fuerte); font-size: var(--nz-text-sm); color: var(--nz-text); }
 .nz-notif__desc { font-size: var(--nz-text-xs); color: var(--nz-text-mute); }

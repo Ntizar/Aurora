@@ -1,10 +1,10 @@
 {
  "name": "Aurora",
- "version": "9.2.0",
+ "version": "9.3.0",
  "type": "css-only design system",
  "namespace": ".nz-",
  "tokens": "tokens.css",
- "cdn": "https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v9.2.0/",
+ "cdn": "https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v9.3.0/",
  "manifiesto": {
   "gradientes": 0,
   "glass": 0,
@@ -23,12 +23,12 @@
   "familias": 411,
   "categorias": 18,
   "demos": 655,
-  "tokens": 189,
-  "tokensDark": 43,
+  "tokens": 234,
+  "tokensDark": 61,
   "alias": 150,
   "familiasConMarkup": 411,
   "familiasConAntiPatron": 31,
-  "tokensConsumidosPorFamilias": 137
+  "tokensConsumidosPorFamilias": 139
  },
  "packs": {
   "p1-layout.css": {
@@ -568,8 +568,18 @@
    "seccion": "general"
   },
   {
+   "nombre": "--nz-marca-50",
+   "valor": "oklch(0.9693 0.0144 264.50)",
+   "seccion": "general"
+  },
+  {
    "nombre": "--nz-marca-100",
    "valor": "#dfeaff",
+   "seccion": "general"
+  },
+  {
+   "nombre": "--nz-marca-100",
+   "valor": "oklch(0.9351 0.0309 263.51)",
    "seccion": "general"
   },
   {
@@ -578,8 +588,18 @@
    "seccion": "general"
   },
   {
+   "nombre": "--nz-marca-200",
+   "valor": "oklch(0.8855 0.0556 262.75)",
+   "seccion": "general"
+  },
+  {
    "nombre": "--nz-marca-300",
    "valor": "#a0c0ff",
+   "seccion": "general"
+  },
+  {
+   "nombre": "--nz-marca-300",
+   "valor": "oklch(0.8074 0.0963 263.53)",
    "seccion": "general"
   },
   {
@@ -588,8 +608,18 @@
    "seccion": "general"
   },
   {
+   "nombre": "--nz-marca-400",
+   "valor": "oklch(0.7048 0.1539 262.65)",
+   "seccion": "general"
+  },
+  {
    "nombre": "--nz-marca-500",
    "valor": "#417eff",
+   "seccion": "general"
+  },
+  {
+   "nombre": "--nz-marca-500",
+   "valor": "oklch(0.6233 0.2026 262.88)",
    "seccion": "general"
   },
   {
@@ -603,8 +633,18 @@
    "seccion": "general"
   },
   {
+   "nombre": "--nz-marca-700",
+   "valor": "oklch(0.4888 0.2153 262.87)",
+   "seccion": "general"
+  },
+  {
    "nombre": "--nz-marca-800",
    "valor": "#1041b0",
+   "seccion": "general"
+  },
+  {
+   "nombre": "--nz-marca-800",
+   "valor": "oklch(0.4234 0.1838 263.02)",
    "seccion": "general"
   },
   {
@@ -613,8 +653,18 @@
    "seccion": "general"
   },
   {
+   "nombre": "--nz-marca-900",
+   "valor": "oklch(0.3797 0.1337 262.99)",
+   "seccion": "general"
+  },
+  {
    "nombre": "--nz-acento-50",
    "valor": "#ffddcd",
+   "seccion": "general"
+  },
+  {
+   "nombre": "--nz-acento-50",
+   "valor": "oklch(0.9216 0.0436 46.75)",
    "seccion": "general"
   },
   {
@@ -623,8 +673,18 @@
    "seccion": "general"
   },
   {
+   "nombre": "--nz-acento-100",
+   "valor": "oklch(0.9010 0.0569 48.63)",
+   "seccion": "general"
+  },
+  {
    "nombre": "--nz-acento-200",
    "valor": "#ffc5a9",
+   "seccion": "general"
+  },
+  {
+   "nombre": "--nz-acento-200",
+   "valor": "oklch(0.8684 0.0767 46.99)",
    "seccion": "general"
   },
   {
@@ -633,8 +693,18 @@
    "seccion": "general"
   },
   {
+   "nombre": "--nz-acento-300",
+   "valor": "oklch(0.8198 0.1101 47.57)",
+   "seccion": "general"
+  },
+  {
    "nombre": "--nz-acento-400",
    "valor": "#ff8c4e",
+   "seccion": "general"
+  },
+  {
+   "nombre": "--nz-acento-400",
+   "valor": "oklch(0.7548 0.1588 47.23)",
    "seccion": "general"
   },
   {
@@ -648,8 +718,18 @@
    "seccion": "general"
   },
   {
+   "nombre": "--nz-acento-600",
+   "valor": "oklch(0.6004 0.1639 47.86)",
+   "seccion": "general"
+  },
+  {
    "nombre": "--nz-acento-700",
    "valor": "#a84900",
+   "seccion": "general"
+  },
+  {
+   "nombre": "--nz-acento-700",
+   "valor": "oklch(0.5213 0.1425 47.74)",
    "seccion": "general"
   },
   {
@@ -748,8 +828,18 @@
    "seccion": "COLOR · Semánticos "
   },
   {
+   "nombre": "--nz-green-50",
+   "valor": "oklch(0.9819 0.0181 155.83)",
+   "seccion": "COLOR · Semánticos "
+  },
+  {
    "nombre": "--nz-green-100",
    "valor": "#dcfce7",
+   "seccion": "COLOR · Semánticos "
+  },
+  {
+   "nombre": "--nz-green-100",
+   "valor": "oklch(0.9624 0.0434 156.74)",
    "seccion": "COLOR · Semánticos "
   },
   {
@@ -758,8 +848,18 @@
    "seccion": "COLOR · Semánticos "
   },
   {
+   "nombre": "--nz-green-500",
+   "valor": "oklch(0.7227 0.1920 149.58)",
+   "seccion": "COLOR · Semánticos "
+  },
+  {
    "nombre": "--nz-green-600",
    "valor": "#16a34a",
+   "seccion": "COLOR · Semánticos "
+  },
+  {
+   "nombre": "--nz-green-600",
+   "valor": "oklch(0.6271 0.1699 149.21)",
    "seccion": "COLOR · Semánticos "
   },
   {
@@ -768,8 +868,18 @@
    "seccion": "COLOR · Semánticos "
   },
   {
+   "nombre": "--nz-green-700",
+   "valor": "oklch(0.5273 0.1371 150.07)",
+   "seccion": "COLOR · Semánticos "
+  },
+  {
    "nombre": "--nz-red-50",
    "valor": "#fef2f2",
+   "seccion": "COLOR · Semánticos "
+  },
+  {
+   "nombre": "--nz-red-50",
+   "valor": "oklch(0.9705 0.0129 17.38)",
    "seccion": "COLOR · Semánticos "
   },
   {
@@ -778,8 +888,18 @@
    "seccion": "COLOR · Semánticos "
   },
   {
+   "nombre": "--nz-red-100",
+   "valor": "oklch(0.9356 0.0309 17.72)",
+   "seccion": "COLOR · Semánticos "
+  },
+  {
    "nombre": "--nz-red-500",
    "valor": "#ef4444",
+   "seccion": "COLOR · Semánticos "
+  },
+  {
+   "nombre": "--nz-red-500",
+   "valor": "oklch(0.6368 0.2078 25.33)",
    "seccion": "COLOR · Semánticos "
   },
   {
@@ -788,8 +908,18 @@
    "seccion": "COLOR · Semánticos "
   },
   {
+   "nombre": "--nz-red-600",
+   "valor": "oklch(0.5771 0.2152 27.33)",
+   "seccion": "COLOR · Semánticos "
+  },
+  {
    "nombre": "--nz-red-700",
    "valor": "#b91c1c",
+   "seccion": "COLOR · Semánticos "
+  },
+  {
+   "nombre": "--nz-red-700",
+   "valor": "oklch(0.5054 0.1905 27.52)",
    "seccion": "COLOR · Semánticos "
   },
   {
@@ -798,8 +928,18 @@
    "seccion": "COLOR · Semánticos "
   },
   {
+   "nombre": "--nz-amber-50",
+   "valor": "oklch(0.9869 0.0214 95.28)",
+   "seccion": "COLOR · Semánticos "
+  },
+  {
    "nombre": "--nz-amber-100",
    "valor": "#fef3c7",
+   "seccion": "COLOR · Semánticos "
+  },
+  {
+   "nombre": "--nz-amber-100",
+   "valor": "oklch(0.9619 0.0580 95.62)",
    "seccion": "COLOR · Semánticos "
   },
   {
@@ -808,8 +948,18 @@
    "seccion": "COLOR · Semánticos "
   },
   {
+   "nombre": "--nz-amber-500",
+   "valor": "oklch(0.7686 0.1647 70.08)",
+   "seccion": "COLOR · Semánticos "
+  },
+  {
    "nombre": "--nz-amber-600",
    "valor": "#d97706",
+   "seccion": "COLOR · Semánticos "
+  },
+  {
+   "nombre": "--nz-amber-600",
+   "valor": "oklch(0.6658 0.1574 58.32)",
    "seccion": "COLOR · Semánticos "
   },
   {
@@ -818,8 +968,18 @@
    "seccion": "COLOR · Semánticos "
   },
   {
+   "nombre": "--nz-amber-700",
+   "valor": "oklch(0.5553 0.1455 49.00)",
+   "seccion": "COLOR · Semánticos "
+  },
+  {
    "nombre": "--nz-gray-0",
    "valor": "#ffffff",
+   "seccion": "COLOR · Neutros "
+  },
+  {
+   "nombre": "--nz-gray-0",
+   "valor": "oklch(1.0000 0.0000 89.88)",
    "seccion": "COLOR · Neutros "
   },
   {
@@ -828,8 +988,18 @@
    "seccion": "COLOR · Neutros "
   },
   {
+   "nombre": "--nz-gray-50",
+   "valor": "oklch(0.9846 0.0017 247.84)",
+   "seccion": "COLOR · Neutros "
+  },
+  {
    "nombre": "--nz-gray-100",
    "valor": "#f3f4f6",
+   "seccion": "COLOR · Neutros "
+  },
+  {
+   "nombre": "--nz-gray-100",
+   "valor": "oklch(0.9670 0.0029 264.54)",
    "seccion": "COLOR · Neutros "
   },
   {
@@ -838,8 +1008,18 @@
    "seccion": "COLOR · Neutros "
   },
   {
+   "nombre": "--nz-gray-200",
+   "valor": "oklch(0.9276 0.0058 264.53)",
+   "seccion": "COLOR · Neutros "
+  },
+  {
    "nombre": "--nz-gray-300",
    "valor": "#d1d5db",
+   "seccion": "COLOR · Neutros "
+  },
+  {
+   "nombre": "--nz-gray-300",
+   "valor": "oklch(0.8717 0.0093 258.34)",
    "seccion": "COLOR · Neutros "
   },
   {
@@ -848,8 +1028,18 @@
    "seccion": "COLOR · Neutros "
   },
   {
+   "nombre": "--nz-gray-400",
+   "valor": "oklch(0.7137 0.0192 261.32)",
+   "seccion": "COLOR · Neutros "
+  },
+  {
    "nombre": "--nz-gray-500",
    "valor": "#6b7280",
+   "seccion": "COLOR · Neutros "
+  },
+  {
+   "nombre": "--nz-gray-500",
+   "valor": "oklch(0.5510 0.0234 264.36)",
    "seccion": "COLOR · Neutros "
   },
   {
@@ -858,8 +1048,18 @@
    "seccion": "COLOR · Neutros "
   },
   {
+   "nombre": "--nz-gray-600",
+   "valor": "oklch(0.4461 0.0263 256.80)",
+   "seccion": "COLOR · Neutros "
+  },
+  {
    "nombre": "--nz-gray-700",
    "valor": "#374151",
+   "seccion": "COLOR · Neutros "
+  },
+  {
+   "nombre": "--nz-gray-700",
+   "valor": "oklch(0.3729 0.0306 259.73)",
    "seccion": "COLOR · Neutros "
   },
   {
@@ -868,13 +1068,28 @@
    "seccion": "COLOR · Neutros "
   },
   {
+   "nombre": "--nz-gray-800",
+   "valor": "oklch(0.2781 0.0296 256.85)",
+   "seccion": "COLOR · Neutros "
+  },
+  {
    "nombre": "--nz-gray-900",
    "valor": "#111827",
    "seccion": "COLOR · Neutros "
   },
   {
+   "nombre": "--nz-gray-900",
+   "valor": "oklch(0.2101 0.0318 264.66)",
+   "seccion": "COLOR · Neutros "
+  },
+  {
    "nombre": "--nz-gray-950",
    "valor": "#030712",
+   "seccion": "COLOR · Neutros "
+  },
+  {
+   "nombre": "--nz-gray-950",
+   "valor": "oklch(0.1296 0.0274 261.69)",
    "seccion": "COLOR · Neutros "
   },
   {
@@ -970,6 +1185,16 @@
   {
    "nombre": "--nz-accent-strong",
    "valor": "var(--nz-acento-600)",
+   "seccion": "ROLES TEMÁTICOS (light). Todo color de interfaz sale de aquí. "
+  },
+  {
+   "nombre": "--nz-accent-text",
+   "valor": "var(--nz-acento-700)",
+   "seccion": "ROLES TEMÁTICOS (light). Todo color de interfaz sale de aquí. "
+  },
+  {
+   "nombre": "--nz-accent-ink",
+   "valor": "var(--nz-gray-950)",
    "seccion": "ROLES TEMÁTICOS (light). Todo color de interfaz sale de aquí. "
   },
   {
@@ -1510,17 +1735,30 @@
  ],
  "tokens_dark": [
   "--nz-bg",
+  "--nz-bg",
+  "--nz-bg-soft",
   "--nz-bg-soft",
   "--nz-bg-inset",
+  "--nz-bg-inset",
+  "--nz-surface",
   "--nz-surface",
   "--nz-surface-2",
+  "--nz-surface-2",
+  "--nz-border",
   "--nz-border",
   "--nz-border-soft",
+  "--nz-border-soft",
+  "--nz-border-strong",
   "--nz-border-strong",
   "--nz-text",
+  "--nz-text",
+  "--nz-text-soft",
   "--nz-text-soft",
   "--nz-text-mute",
+  "--nz-text-mute",
   "--nz-text-faint",
+  "--nz-text-faint",
+  "--nz-text-invert",
   "--nz-text-invert",
   "--nz-brand",
   "--nz-brand-strong",
@@ -1528,14 +1766,19 @@
   "--nz-brand-tint",
   "--nz-accent",
   "--nz-accent-strong",
+  "--nz-accent-text",
+  "--nz-accent-ink",
   "--nz-accent-soft",
   "--nz-accent-tint",
+  "--nz-success",
   "--nz-success",
   "--nz-success-soft",
   "--nz-success-tint",
   "--nz-danger",
+  "--nz-danger",
   "--nz-danger-soft",
   "--nz-danger-tint",
+  "--nz-warning",
   "--nz-warning",
   "--nz-warning-soft",
   "--nz-warning-tint",
@@ -5244,6 +5487,7 @@
    ],
    "tokens": [
     "--nz-accent",
+    "--nz-accent-ink",
     "--nz-accent-soft",
     "--nz-accent-strong",
     "--nz-amber-700",
@@ -5261,7 +5505,6 @@
     "--nz-dur-base",
     "--nz-dur-fast",
     "--nz-ease-out",
-    "--nz-gray-0",
     "--nz-green-700",
     "--nz-info",
     "--nz-peso-fuerte",
@@ -5481,11 +5724,11 @@
    "partes": [],
    "tokens": [
     "--nz-accent",
+    "--nz-accent-ink",
     "--nz-bg-inset",
     "--nz-brand",
     "--nz-dur-fast",
     "--nz-ease-out",
-    "--nz-gray-0",
     "--nz-peso-fuerte",
     "--nz-radius-full",
     "--nz-radius-lg",
@@ -5536,7 +5779,7 @@
    ],
    "partes": [],
    "tokens": [
-    "--nz-accent",
+    "--nz-accent-text",
     "--nz-border-w-strong",
     "--nz-brand"
    ],
@@ -5995,6 +6238,7 @@
    ],
    "tokens": [
     "--nz-accent",
+    "--nz-accent-ink",
     "--nz-bg-soft",
     "--nz-border",
     "--nz-border-w",
@@ -6003,7 +6247,6 @@
     "--nz-dur-fast",
     "--nz-ease-out",
     "--nz-focus-ring",
-    "--nz-gray-0",
     "--nz-peso-fuerte",
     "--nz-radius-full",
     "--nz-radius-sm",
@@ -6639,6 +6882,7 @@
    "partes": [],
    "tokens": [
     "--nz-accent",
+    "--nz-accent-ink",
     "--nz-accent-soft",
     "--nz-accent-strong",
     "--nz-bg-inset",
@@ -6649,7 +6893,6 @@
     "--nz-brand-soft",
     "--nz-danger",
     "--nz-danger-soft",
-    "--nz-gray-0",
     "--nz-peso-fuerte",
     "--nz-radius-full",
     "--nz-space-1",
@@ -6710,6 +6953,7 @@
    ],
    "tokens": [
     "--nz-accent",
+    "--nz-accent-ink",
     "--nz-accent-strong",
     "--nz-bg-inset",
     "--nz-bg-soft",
@@ -6728,7 +6972,7 @@
     "--nz-text-sm",
     "--nz-text-xs"
    ],
-   "nTokens": 18,
+   "nTokens": 19,
    "markup": {
     "demo": "paginas/06-feedback.html",
     "titulo": "Banner a ancho completo",
@@ -8258,10 +8502,10 @@
    ],
    "tokens": [
     "--nz-accent",
+    "--nz-accent-ink",
     "--nz-brand",
     "--nz-dur-base",
     "--nz-ease-out",
-    "--nz-gray-0",
     "--nz-gray-50",
     "--nz-gray-900",
     "--nz-peso-fuerte",
@@ -8658,6 +8902,8 @@
    ],
    "tokens": [
     "--nz-accent",
+    "--nz-accent-ink",
+    "--nz-accent-text",
     "--nz-bg-inset",
     "--nz-border",
     "--nz-border-w",
@@ -8689,7 +8935,7 @@
     "--nz-tracking-caps",
     "--nz-tracking-tight"
    ],
-   "nTokens": 31,
+   "nTokens": 33,
    "markup": {
     "demo": "paginas/01-layout.html",
     "titulo": "Contenedor de consulta: la rejilla responde a su sitio",
@@ -9239,9 +9485,9 @@
    ],
    "tokens": [
     "--nz-accent",
+    "--nz-accent-ink",
     "--nz-bg-inset",
     "--nz-brand",
-    "--nz-gray-0",
     "--nz-radius-full",
     "--nz-radius-lg",
     "--nz-shadow-sm",
@@ -9303,8 +9549,8 @@
     "bar"
    ],
    "tokens": [
-    "--nz-accent",
     "--nz-accent-soft",
+    "--nz-accent-text",
     "--nz-border-w",
     "--nz-brand",
     "--nz-brand-soft",
@@ -9433,6 +9679,7 @@
    ],
    "tokens": [
     "--nz-accent",
+    "--nz-accent-text",
     "--nz-brand",
     "--nz-font-mono",
     "--nz-gray-50",
@@ -9449,7 +9696,7 @@
     "--nz-text-sm",
     "--nz-tracking-tight"
    ],
-   "nTokens": 16,
+   "nTokens": 17,
    "markup": {
     "demo": "paginas/09-media.html",
     "titulo": "Fila de logos",
@@ -9643,8 +9890,8 @@
    ],
    "partes": [],
    "tokens": [
-    "--nz-accent",
     "--nz-accent-soft",
+    "--nz-accent-text",
     "--nz-border",
     "--nz-border-w-strong",
     "--nz-brand",
@@ -10719,7 +10966,7 @@
     "save"
    ],
    "tokens": [
-    "--nz-accent",
+    "--nz-accent-text",
     "--nz-brand",
     "--nz-peso-fuerte",
     "--nz-peso-titulo",
@@ -10837,6 +11084,7 @@
    ],
    "tokens": [
     "--nz-accent",
+    "--nz-accent-ink",
     "--nz-bg-inset",
     "--nz-border",
     "--nz-border-w",
@@ -10867,7 +11115,7 @@
     "--nz-text-xs",
     "--nz-tracking-caps"
    ],
-   "nTokens": 30,
+   "nTokens": 31,
    "markup": {
     "demo": "paginas/10-commerce.html",
     "titulo": "Rejilla de productos",
@@ -11270,6 +11518,7 @@
    ],
    "tokens": [
     "--nz-accent",
+    "--nz-accent-ink",
     "--nz-accent-strong",
     "--nz-blue-100",
     "--nz-blue-200",
@@ -11299,7 +11548,7 @@
     "--nz-tracking-caps",
     "--nz-tracking-tight"
    ],
-   "nTokens": 29,
+   "nTokens": 30,
    "markup": {
     "demo": "paginas/11-social.html",
     "titulo": "CTA banner compacto",
@@ -11442,8 +11691,8 @@
     "title"
    ],
    "tokens": [
-    "--nz-accent",
     "--nz-accent-soft",
+    "--nz-accent-text",
     "--nz-brand",
     "--nz-brand-soft",
     "--nz-danger",
@@ -13963,9 +14212,9 @@
    ],
    "tokens": [
     "--nz-accent",
+    "--nz-accent-ink",
     "--nz-bg-inset",
     "--nz-brand",
-    "--nz-gray-0",
     "--nz-peso-fuerte",
     "--nz-radius-sm",
     "--nz-space-2",
@@ -15262,6 +15511,7 @@
    ],
    "tokens": [
     "--nz-accent",
+    "--nz-accent-ink",
     "--nz-bg-inset",
     "--nz-brand",
     "--nz-peso-titulo",
@@ -15273,7 +15523,6 @@
     "--nz-surface",
     "--nz-text",
     "--nz-text-2xs",
-    "--nz-text-invert",
     "--nz-text-md",
     "--nz-text-mute"
    ],

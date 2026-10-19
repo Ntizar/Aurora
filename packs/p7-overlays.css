@@ -111,7 +111,7 @@
 .nz-tip--below .nz-tip__body { top: calc(100% + var(--nz-space-2)); bottom: auto; transform: translateX(-50%) translateY(2px); }
 .nz-tip--below:hover .nz-tip__body, .nz-tip--below:focus-within .nz-tip__body { transform: translateX(-50%); }
 .nz-tip--brand .nz-tip__body { background: var(--nz-brand); color: var(--nz-text-invert); }
-.nz-tip--accent .nz-tip__body { background: var(--nz-accent); color: var(--nz-gray-0); }
+.nz-tip--accent .nz-tip__body { background: var(--nz-accent); color: var(--nz-accent-ink); }
 
 /* ---- Menú contextual ---- */
 .nz-menu-pop { position: relative; display: inline-flex; }

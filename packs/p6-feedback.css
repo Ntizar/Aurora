@@ -71,7 +71,7 @@
 .nz-badge--dot i { width: 8px; height: 8px; margin-left: var(--nz-space-1); }
 .nz-badge--sm { min-height: 18px; font-size: var(--nz-text-xs); padding: 0 var(--nz-space-1); }
 .nz-badge--lg { min-height: 28px; padding: 0 var(--nz-space-3); font-size: var(--nz-text-sm); letter-spacing: var(--nz-tracking-tight); }
-.nz-badge--counter { min-width: 22px; justify-content: center; padding: 0 var(--nz-space-1); background: var(--nz-accent); color: var(--nz-gray-0); letter-spacing: 0; }
+.nz-badge--counter { min-width: 22px; justify-content: center; padding: 0 var(--nz-space-1); background: var(--nz-accent); color: var(--nz-accent-ink); letter-spacing: 0; }
 
 /* ---- Chip ---- */
 .nz-chip { min-height: 44px; display: inline-flex; align-items: center; gap: var(--nz-space-1); padding: 0 var(--nz-space-4); border-radius: var(--nz-radius-full); border: var(--nz-border-w) solid var(--nz-border); background: var(--nz-surface); color: var(--nz-text-soft); font: inherit; font-size: var(--nz-text-sm); font-weight: var(--nz-peso-fuerte); cursor: pointer; transition: background var(--nz-dur-fast) var(--nz-ease-out), color var(--nz-dur-fast) var(--nz-ease-out), border-color var(--nz-dur-fast) var(--nz-ease-out); }
@@ -125,7 +125,7 @@
 .nz-banner--brand { background: var(--nz-brand); border-bottom-color: var(--nz-brand-strong); color: var(--nz-text-invert); }
 .nz-banner--brand .nz-banner__action { background: var(--nz-gray-0); color: var(--nz-brand-strong); }
 .nz-banner--brand .nz-banner__close:hover { background: var(--nz-brand-strong); }
-.nz-banner--accent { background: var(--nz-accent); border-bottom-color: var(--nz-accent-strong); color: var(--nz-gray-0); }
+.nz-banner--accent { background: var(--nz-accent); border-bottom-color: var(--nz-accent-strong); color: var(--nz-accent-ink); }
 .nz-banner--accent .nz-banner__action { background: var(--nz-gray-0); color: var(--nz-accent-strong); }
 .nz-banner--accent .nz-banner__close:hover { background: var(--nz-accent-strong); }
 @media (min-width: 640px) {

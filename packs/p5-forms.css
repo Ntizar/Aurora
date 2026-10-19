@@ -160,7 +160,7 @@
 .nz-inputgroup--error { border-color: var(--nz-danger); }
 .nz-inputgroup--error:focus-within { border-color: var(--nz-danger); box-shadow: 0 0 0 3px var(--nz-red-100); }
 .nz-inputgroup__addon--brand { background: var(--nz-brand); color: var(--nz-text-invert); font-weight: var(--nz-peso-fuerte); }
-.nz-inputgroup__addon--accent { background: var(--nz-accent); color: var(--nz-gray-0); font-weight: var(--nz-peso-fuerte); }
+.nz-inputgroup__addon--accent { background: var(--nz-accent); color: var(--nz-accent-ink); font-weight: var(--nz-peso-fuerte); }
 
 /* ---- Búsqueda ---- */
 .nz-search { position: relative; display: block; }

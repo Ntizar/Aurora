@@ -31,7 +31,7 @@
 .cat-pagehead { padding-block: var(--nz-space-6) var(--nz-space-8); }
 .cat-pagehead__over { font-size: var(--nz-text-xs); font-weight: var(--nz-peso-fuerte); letter-spacing: var(--nz-tracking-caps); text-transform: uppercase; color: var(--nz-brand); }
 .cat-pagehead h1 { font-size: var(--nz-text-3xl); line-height: var(--nz-leading-tight); letter-spacing: var(--nz-tracking-tight); margin: var(--nz-space-2) 0 var(--nz-space-3); }
-.cat-pagehead h1 em { font-style: normal; color: var(--nz-accent); }
+.cat-pagehead h1 em { font-style: normal; color: var(--nz-accent-text); }
 .cat-pagehead p { color: var(--nz-text-soft); font-size: var(--nz-text-md); max-width: 44rem; }
 .cat-pagehead__stats { display: flex; gap: var(--nz-space-2); flex-wrap: wrap; margin-top: var(--nz-space-3); }
 
@@ -78,7 +78,7 @@
 /* ---- Cajas de ejemplo dentro de las demos ---- */
 .demo-box { background: var(--nz-surface-2); border-radius: var(--nz-radius-sm); padding: var(--nz-space-2) var(--nz-space-3); font-size: var(--nz-text-xs); color: var(--nz-text-soft); text-align: center; }
 .demo-box--brand { background: var(--nz-brand); color: var(--nz-text-invert); }
-.demo-box--accent { background: var(--nz-accent); color: var(--nz-gray-0); }
+.demo-box--accent { background: var(--nz-accent); color: var(--nz-accent-ink); }
 .demo-box--mute { background: var(--nz-bg-inset); color: var(--nz-text-mute); }
 
 /* ---- Objetos posicionados (fixed/sticky) en DEMO ----
@@ -104,7 +104,7 @@
 .cat-hero { padding: var(--nz-space-16) var(--nz-gutter) var(--nz-space-10); max-width: var(--nz-container-max); margin-inline: auto; }
 .cat-eyebrow { font-size: var(--nz-text-xs); font-weight: var(--nz-peso-fuerte); letter-spacing: var(--nz-tracking-caps); text-transform: uppercase; color: var(--nz-brand); }
 .cat-hero h1 { font-size: var(--nz-text-4xl); line-height: var(--nz-leading-tight); letter-spacing: var(--nz-tracking-tight); margin: var(--nz-space-3) 0; }
-.cat-hero h1 em { font-style: normal; color: var(--nz-accent); }
+.cat-hero h1 em { font-style: normal; color: var(--nz-accent-text); }
 .cat-hero__sub { font-size: var(--nz-text-lg); color: var(--nz-text-soft); max-width: 40rem; }
 .cat-ctas { display: flex; gap: var(--nz-space-3); flex-wrap: wrap; margin-top: var(--nz-space-6); align-items: center; }
 .cat-hint { font-size: var(--nz-text-xs); color: var(--nz-text-faint); }

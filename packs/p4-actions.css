@@ -14,7 +14,7 @@
 /* ---- Tonos ---- */
 .nz-btn--primary { background: var(--nz-brand); color: var(--nz-text-invert); box-shadow: var(--nz-shadow-brand); }
 .nz-btn--primary:hover { background: var(--nz-brand-strong); }
-.nz-btn--accent { background: var(--nz-accent); color: var(--nz-gray-0); box-shadow: var(--nz-shadow-accent); }
+.nz-btn--accent { background: var(--nz-accent); color: var(--nz-accent-ink); box-shadow: var(--nz-shadow-accent); }
 .nz-btn--accent:hover { background: var(--nz-accent-strong); }
 .nz-btn--success { background: var(--nz-success); color: var(--nz-text-invert); }
 .nz-btn--success:hover { background: var(--nz-green-700); }
@@ -68,7 +68,7 @@
 .nz-btn--icon-sm { width: 44px; min-height: 44px; padding: 0; }
 .nz-btn--icon-lg { width: 52px; min-height: 52px; padding: 0; }
 .nz-btn--icon-square { width: 44px; padding: 0; border-radius: var(--nz-radius-md); }
-.nz-btn__badge { position: absolute; top: -4px; right: -4px; min-width: 18px; height: 18px; padding: 0 var(--nz-space-1); display: inline-flex; align-items: center; justify-content: center; border-radius: var(--nz-radius-full); background: var(--nz-accent); color: var(--nz-gray-0); font-size: var(--nz-text-2xs); font-weight: var(--nz-peso-fuerte); }
+.nz-btn__badge { position: absolute; top: -4px; right: -4px; min-width: 18px; height: 18px; padding: 0 var(--nz-space-1); display: inline-flex; align-items: center; justify-content: center; border-radius: var(--nz-radius-full); background: var(--nz-accent); color: var(--nz-accent-ink); font-size: var(--nz-text-2xs); font-weight: var(--nz-peso-fuerte); }
 .nz-btn--badged { position: relative; overflow: visible; }
 
 /* ---- Estados ---- */
@@ -106,7 +106,7 @@
 .nz-segmented--full { display: flex; width: 100%; }
 .nz-segmented--full button, .nz-segmented--full a { flex: 1; }
 .nz-segmented--brand [aria-selected="true"] { background: var(--nz-brand); color: var(--nz-text-invert); }
-.nz-segmented--accent [aria-selected="true"] { background: var(--nz-accent); color: var(--nz-gray-0); }
+.nz-segmented--accent [aria-selected="true"] { background: var(--nz-accent); color: var(--nz-accent-ink); }
 
 /* ---- FAB ---- */
 .nz-fab { position: fixed; right: var(--nz-space-5); bottom: calc(var(--nz-space-5) + env(safe-area-inset-bottom, 0px)); z-index: var(--nz-z-drawer); width: 56px; height: 56px; display: inline-flex; align-items: center; justify-content: center; border-radius: var(--nz-radius-full); border: 0; background: var(--nz-brand); color: var(--nz-text-invert); font-size: 1.5rem; box-shadow: var(--nz-shadow-brand); cursor: pointer; transition: transform var(--nz-dur-fast) var(--nz-ease-out), background var(--nz-dur-fast) var(--nz-ease-out); }
@@ -122,7 +122,7 @@
 .nz-spin--sm { width: .75em; height: .75em; border-width: var(--nz-border-w-strong); }
 .nz-spin--lg { width: 1.5em; height: 1.5em; border-width: 3px; }
 .nz-spin--brand { color: var(--nz-brand); }
-.nz-spin--accent { color: var(--nz-accent); }
+.nz-spin--accent { color: var(--nz-accent-text); }
 @keyframes nzSpin { to { transform: rotate(360deg); } }
 
 /* ---- Enlace-acción ---- */

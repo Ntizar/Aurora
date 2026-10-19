@@ -14,7 +14,7 @@
 .nz-price__old { font-size: var(--nz-text-sm); color: var(--nz-text-faint); text-decoration: line-through; }
 .nz-price__save { display: inline-flex; align-items: center; min-height: 22px; padding: 0 var(--nz-space-2); border-radius: var(--nz-radius-full); background: var(--nz-success-soft); color: var(--nz-success); font-size: var(--nz-text-xs); font-weight: var(--nz-peso-fuerte); white-space: nowrap; }
 .nz-price--brand .nz-price__amount { color: var(--nz-brand); }
-.nz-price--accent .nz-price__amount { color: var(--nz-accent); }
+.nz-price--accent .nz-price__amount { color: var(--nz-accent-text); }
 .nz-price--sm .nz-price__amount { font-size: var(--nz-text-lg); }
 .nz-price--xl .nz-price__amount { font-size: var(--nz-text-4xl); }
 .nz-price--muted .nz-price__amount { color: var(--nz-text-mute); font-weight: var(--nz-peso-fuerte); }
@@ -49,7 +49,7 @@
 .nz-product__media { position: relative; aspect-ratio: 1; border-radius: var(--nz-radius-md); overflow: hidden; background: var(--nz-bg-inset); }
 .nz-product__media img { display: block; width: 100%; height: 100%; object-fit: cover; }
 .nz-product__badge { position: absolute; top: var(--nz-space-2); left: var(--nz-space-2); }
-.nz-product__ribbon { position: absolute; top: var(--nz-space-2); right: var(--nz-space-2); padding: var(--nz-space-1) var(--nz-space-3); border-radius: var(--nz-radius-full); background: var(--nz-accent); color: var(--nz-text-invert); font-size: var(--nz-text-xs); font-weight: var(--nz-peso-fuerte); letter-spacing: var(--nz-tracking-caps); text-transform: uppercase; }
+.nz-product__ribbon { position: absolute; top: var(--nz-space-2); right: var(--nz-space-2); padding: var(--nz-space-1) var(--nz-space-3); border-radius: var(--nz-radius-full); background: var(--nz-accent); color: var(--nz-accent-ink); font-size: var(--nz-text-xs); font-weight: var(--nz-peso-fuerte); letter-spacing: var(--nz-tracking-caps); text-transform: uppercase; }
 .nz-product__quick { position: absolute; left: var(--nz-space-2); right: var(--nz-space-2); bottom: var(--nz-space-2); min-height: 44px; display: inline-flex; align-items: center; justify-content: center; gap: var(--nz-space-2); border: var(--nz-border-w) solid var(--nz-border); border-radius: var(--nz-radius-md); background: var(--nz-surface); color: var(--nz-text); font: inherit; font-size: var(--nz-text-sm); font-weight: var(--nz-peso-fuerte); box-shadow: var(--nz-shadow-md); cursor: pointer; }
 .nz-product__body { display: grid; gap: var(--nz-space-1); min-width: 0; }
 .nz-product__cat { font-size: var(--nz-text-xs); font-weight: var(--nz-peso-fuerte); letter-spacing: var(--nz-tracking-caps); text-transform: uppercase; color: var(--nz-text-faint); }

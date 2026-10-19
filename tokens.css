@@ -37,26 +37,42 @@
      Tu color SIEMPRE cae en el paso 600 (el primario). Las demás marcas las
      escribe scripts/generar-marca.py en marcas/<nombre>.css. ---- */
   --nz-marca-50:  #f0f5ff;
+  --nz-marca-50: oklch(0.9693 0.0144 264.50);
   --nz-marca-100: #dfeaff;
+  --nz-marca-100: oklch(0.9351 0.0309 263.51);
   --nz-marca-200: #c6daff;
+  --nz-marca-200: oklch(0.8855 0.0556 262.75);
   --nz-marca-300: #a0c0ff;
+  --nz-marca-300: oklch(0.8074 0.0963 263.53);
   --nz-marca-400: #6b9dff;
+  --nz-marca-400: oklch(0.7048 0.1539 262.65);
   --nz-marca-500: #417eff;
+  --nz-marca-500: oklch(0.6233 0.2026 262.88);
   --nz-marca-600: #2563eb;   /* primario */
   --nz-marca-700: #1350d7;
+  --nz-marca-700: oklch(0.4888 0.2153 262.87);
   --nz-marca-800: #1041b0;
+  --nz-marca-800: oklch(0.4234 0.1838 263.02);
   --nz-marca-900: #193c88;
+  --nz-marca-900: oklch(0.3797 0.1337 262.99);
 
   /* ---- 2. ACENTO · secundario (nunca fundido con el primario).
      Tu color cae en el paso 500. ---- */
   --nz-acento-50:  #ffddcd;
+  --nz-acento-50: oklch(0.9216 0.0436 46.75);
   --nz-acento-100: #ffd4be;
+  --nz-acento-100: oklch(0.9010 0.0569 48.63);
   --nz-acento-200: #ffc5a9;
+  --nz-acento-200: oklch(0.8684 0.0767 46.99);
   --nz-acento-300: #ffae85;
+  --nz-acento-300: oklch(0.8198 0.1101 47.57);
   --nz-acento-400: #ff8c4e;
+  --nz-acento-400: oklch(0.7548 0.1588 47.23);
   --nz-acento-500: #f97316;  /* acento principal */
   --nz-acento-600: #cb5a00;
+  --nz-acento-600: oklch(0.6004 0.1639 47.86);
   --nz-acento-700: #a84900;
+  --nz-acento-700: oklch(0.5213 0.1425 47.74);
 
   /* ---- 3. COMPATIBILIDAD (v7 nombraba el color por su tono). No usar en
      código nuevo: existen para no romper packs antiguos. ---- */
@@ -81,34 +97,61 @@
 
   /* ---- 4. COLOR · Semánticos ---- */
   --nz-green-50:  #f0fdf4;
+  --nz-green-50: oklch(0.9819 0.0181 155.83);
   --nz-green-100: #dcfce7;
+  --nz-green-100: oklch(0.9624 0.0434 156.74);
   --nz-green-500: #22c55e;
+  --nz-green-500: oklch(0.7227 0.1920 149.58);
   --nz-green-600: #16a34a;
+  --nz-green-600: oklch(0.6271 0.1699 149.21);
   --nz-green-700: #15803d;
+  --nz-green-700: oklch(0.5273 0.1371 150.07);
   --nz-red-50:  #fef2f2;
+  --nz-red-50: oklch(0.9705 0.0129 17.38);
   --nz-red-100: #fee2e2;
+  --nz-red-100: oklch(0.9356 0.0309 17.72);
   --nz-red-500: #ef4444;
+  --nz-red-500: oklch(0.6368 0.2078 25.33);
   --nz-red-600: #dc2626;
+  --nz-red-600: oklch(0.5771 0.2152 27.33);
   --nz-red-700: #b91c1c;
+  --nz-red-700: oklch(0.5054 0.1905 27.52);
   --nz-amber-50:  #fffbeb;
+  --nz-amber-50: oklch(0.9869 0.0214 95.28);
   --nz-amber-100: #fef3c7;
+  --nz-amber-100: oklch(0.9619 0.0580 95.62);
   --nz-amber-500: #f59e0b;
+  --nz-amber-500: oklch(0.7686 0.1647 70.08);
   --nz-amber-600: #d97706;
+  --nz-amber-600: oklch(0.6658 0.1574 58.32);
   --nz-amber-700: #b45309;
+  --nz-amber-700: oklch(0.5553 0.1455 49.00);
 
   /* ---- 5. COLOR · Neutros ---- */
   --nz-gray-0:   #ffffff;
+  --nz-gray-0: oklch(1.0000 0.0000 89.88);
   --nz-gray-50:  #f9fafb;
+  --nz-gray-50: oklch(0.9846 0.0017 247.84);
   --nz-gray-100: #f3f4f6;
+  --nz-gray-100: oklch(0.9670 0.0029 264.54);
   --nz-gray-200: #e5e7eb;
+  --nz-gray-200: oklch(0.9276 0.0058 264.53);
   --nz-gray-300: #d1d5db;
+  --nz-gray-300: oklch(0.8717 0.0093 258.34);
   --nz-gray-400: #9ca3af;
+  --nz-gray-400: oklch(0.7137 0.0192 261.32);
   --nz-gray-500: #6b7280;
+  --nz-gray-500: oklch(0.5510 0.0234 264.36);
   --nz-gray-600: #4b5563;
+  --nz-gray-600: oklch(0.4461 0.0263 256.80);
   --nz-gray-700: #374151;
+  --nz-gray-700: oklch(0.3729 0.0306 259.73);
   --nz-gray-800: #1f2937;
+  --nz-gray-800: oklch(0.2781 0.0296 256.85);
   --nz-gray-900: #111827;
+  --nz-gray-900: oklch(0.2101 0.0318 264.66);
   --nz-gray-950: #030712;
+  --nz-gray-950: oklch(0.1296 0.0274 261.69);
 
   /* ---- 6. ROLES TEMÁTICOS (light). Todo color de interfaz sale de aquí. ---- */
   --nz-bg:          var(--nz-gray-0);
@@ -130,6 +173,8 @@
   --nz-brand-tint:  var(--nz-marca-100);
   --nz-accent:      var(--nz-acento-500);
   --nz-accent-strong: var(--nz-acento-600);
+  --nz-accent-text: var(--nz-acento-700);
+  --nz-accent-ink: var(--nz-gray-950);
   --nz-accent-soft: var(--nz-acento-50);
   --nz-accent-tint: var(--nz-acento-100);
   --nz-success:     var(--nz-green-600);
@@ -290,33 +335,51 @@
    Todo se deriva de las MISMAS rampas: un preset nuevo funciona en oscuro solo. ---- */
 [data-nz-theme="dark"] {
   --nz-bg:          #0b1220;
+  --nz-bg: oklch(0.1831 0.0309 263.38);
   --nz-bg-soft:     #0f172a;
+  --nz-bg-soft: oklch(0.2077 0.0398 265.75);
   --nz-bg-inset:    #1e293b;
+  --nz-bg-inset: oklch(0.2795 0.0368 260.03);
   --nz-surface:     #101a2e;
+  --nz-surface: oklch(0.2196 0.0421 263.19);
   --nz-surface-2:   #16223a;
+  --nz-surface-2: oklch(0.2541 0.0487 263.18);
   --nz-border:      #24334d;
+  --nz-border: oklch(0.3207 0.0509 260.99);
   --nz-border-soft: #1c2940;
+  --nz-border-soft: oklch(0.2810 0.0463 261.33);
   --nz-border-strong: #33456a;
+  --nz-border-strong: oklch(0.3929 0.0672 263.80);
   --nz-text:        #f1f5f9;
+  --nz-text: oklch(0.9683 0.0069 247.90);
   --nz-text-soft:   #a9b8cd;
+  --nz-text-soft: oklch(0.7778 0.0343 256.78);
   --nz-text-mute:   #7d8fa9;
+  --nz-text-mute: oklch(0.6450 0.0443 257.52);
   --nz-text-faint:  #5b6b85;
+  --nz-text-faint: oklch(0.5246 0.0456 260.04);
   --nz-text-invert: #0b1220;
+  --nz-text-invert: oklch(0.1831 0.0309 263.38);
   --nz-brand:       var(--nz-marca-400);
   --nz-brand-strong: var(--nz-marca-300);
   --nz-brand-soft:  color-mix(in oklab, var(--nz-marca-500) 14%, transparent);
   --nz-brand-tint:  color-mix(in oklab, var(--nz-marca-500) 24%, transparent);
   --nz-accent:      var(--nz-acento-400);
   --nz-accent-strong: var(--nz-acento-300);
+  --nz-accent-text: var(--nz-acento-400);
+  --nz-accent-ink: var(--nz-bg);
   --nz-accent-soft: color-mix(in oklab, var(--nz-acento-500) 14%, transparent);
   --nz-accent-tint: color-mix(in oklab, var(--nz-acento-500) 24%, transparent);
   --nz-success:     #4ade80;
+  --nz-success: oklch(0.8003 0.1821 151.71);
   --nz-success-soft: color-mix(in oklab, var(--nz-green-500) 16%, transparent);
   --nz-success-tint: color-mix(in oklab, var(--nz-green-500) 26%, transparent);
   --nz-danger:      #f87171;
+  --nz-danger: oklch(0.7106 0.1661 22.22);
   --nz-danger-soft: color-mix(in oklab, var(--nz-red-500) 16%, transparent);
   --nz-danger-tint: color-mix(in oklab, var(--nz-red-500) 26%, transparent);
   --nz-warning:     #fbbf24;
+  --nz-warning: oklch(0.8369 0.1644 84.43);
   --nz-warning-soft: color-mix(in oklab, var(--nz-amber-500) 16%, transparent);
   --nz-warning-tint: color-mix(in oklab, var(--nz-amber-500) 26%, transparent);
   --nz-info:        var(--nz-marca-400);

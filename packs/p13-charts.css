@@ -158,7 +158,7 @@
 .nz-treemap__cell { display: flex; flex-direction: column; justify-content: flex-end; gap: 2px; padding: var(--nz-space-2); border-radius: var(--nz-radius-sm); background: var(--nz-brand); color: var(--nz-text-invert); overflow: hidden; }
 .nz-treemap__cell--lg { grid-column: span 2; grid-row: span 2; }
 .nz-treemap__cell--brand { background: var(--nz-brand); color: var(--nz-text-invert); }
-.nz-treemap__cell--accent { background: var(--nz-accent); color: var(--nz-gray-0); }
+.nz-treemap__cell--accent { background: var(--nz-accent); color: var(--nz-accent-ink); }
 .nz-treemap__cell--muted { background: var(--nz-bg-inset); color: var(--nz-text-soft); }
 .nz-treemap__label { font-size: var(--nz-text-2xs); font-weight: var(--nz-peso-fuerte); }
 .nz-treemap__value { font-size: var(--nz-text-2xs); opacity: .85; font-variant-numeric: tabular-nums; }

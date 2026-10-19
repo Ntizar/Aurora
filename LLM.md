@@ -8,8 +8,8 @@ Design system CSS puro, sin dependencias ni build. 2186 objetos en 18 categoría
 ```html
 <html lang="es" data-nz-theme="light">
 <head>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v9.2.0/tokens.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v9.2.0/packs/all.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v9.3.0/tokens.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v9.3.0/packs/all.css">
 </head>
 <body class="nz">
 ```
@@ -345,6 +345,17 @@ La marca **no se toca en CSS**: se elige con un atributo en el `<html>`.
   El generador crea la rampa en OKLCH, la ancla a tu color y avisa si necesita ajuste por contraste.
 - Todo lo demás (`--nz-brand*`, `--nz-accent*`, foco, sombras de color y **el modo oscuro**)
   se **deriva solo** de esas dos rampas.
+- **Color de acento legible en cualquier fondo** (v9.3): el acento NUNCA se pinta de texto
+  directamente. Como texto sobre fondo: `var(--nz-accent-text)` (acento-700 en claro,
+  acento-400 en oscuro). Como tinta sobre un relleno de acento: `var(--nz-accent-ink)`
+  (tinta casi negra en claro; el propio fondo oscuro en dark). El relleno plano
+  `--nz-accent` solo va en fondos, gráficos y bordes — nunca sostiene texto blanco
+  (medido: blanco s/ acento-500 cae a 2,80:1).
+- **Doble declaración OKLch (v9.3)**: cada token de color de `tokens.css` va en hex y
+  debajo su gemela `oklch(...)`. Los navegadores modernos usan la OKLch (mejor gamut y
+  derivas de tema); los antiguos ignoran la segunda y quedan con el hex. Nunca edites
+  solo una de las dos: la convierte `scripts/generar-marca.py` o `scripts/auditar-contraste.py`
+  la marca como descuadrada.
 
 Solo si necesitas afinar algo suelto (radio, ancho): la **fuente ya viene cargada**
 desde `tokens.css`, así que no hay que enlazar Google Fonts ni tocar `--nz-font`.
@@ -356,7 +367,7 @@ desde `tokens.css`, así que no hay que enlazar Google Fonts ni tocar `--nz-font
 }
 ```
 
-Los 189 tokens están inventariados en `components.json` (sección
+Los 234 tokens están inventariados en `components.json` (sección
 `tokens_def`, con nombre, valor y sección). Nada fuera de ese catálogo.
 
 ## 8. Anti-patrones (NO lo hagas)
@@ -364,6 +375,10 @@ Los 189 tokens están inventariados en `components.json` (sección
 - ❌ Pegar el CSS de los packs en el prompt (250 KB ≈ 60.000 tokens). Enlaza por CDN.
 - ❌ Inventar clases (`nz-gradient-text`, `nz-btn--glass-liquid-brand`, `nz-card--glass`): no existen aquí. Es la doctrina de Aurora v6, **jubilada**: Aurora es sólido, sin glass ni gradientes.
 - ❌ Escribir colores a mano (`#2563eb`, `rgb(...)`): usa tokens `var(--nz-*)`.
+- ❌ Texto blanco sobre relleno de acento o texto acento plano (`color: var(--nz-accent)`):
+  en claro cae a 2,80:1 y falla WCAG. Texto de acento → `var(--nz-accent-text)`;
+  tinta sobre relleno de acento → `var(--nz-accent-ink)`. La auditoría
+  `scripts/auditar-contraste.py` lo caza.
 - ❌ Gradientes, `backdrop-filter` o `!important`: prohibidos por el manifiesto y la CI los detecta.
 - ❌ Clases globales sin `.nz-`: romperías la convivencia con otros frameworks.
 - ❌ Desktop-first: el sistema es mobile-first (base 1 columna, `min-width` para crecer).
@@ -373,13 +388,14 @@ Los 189 tokens están inventariados en `components.json` (sección
   El 800 no existe en el sistema y nada por debajo de 16px lleva 700.
 - ❌ Texto de interfaz a 12px: los 12px son para datos, no para etiquetas.
 - ❌ Enlazar Google Fonts (o cualquier CDN de fuentes): `tokens.css` ya sirve la fuente.
-- ❌ Enlazar `@master` en producción: pinea la versión (`@v9.2.0`) o jsDelivr te servirá CSS viejo desde su caché.
+- ❌ Enlazar `@master` en producción: pinea la versión (`@v9.3.0`) o jsDelivr te servirá CSS viejo desde su caché.
 
 ## 9. Verificar antes de entregar
 
 ```bash
 python scripts/auditar-uso.py tu-pagina.html   # lint del HTML consumidor
 python scripts/validar-css.py                  # manifiesto + cobertura del sistema
+python scripts/auditar-contraste.py            # contraste WCAG de pares + paridad oklch
 ```
 
 `auditar-uso.py` te dice: clases inventadas, packs que te faltan por enlazar,
@@ -391,7 +407,7 @@ chat-ia, forms): cópialas como punto de partida.
 
 **Base de datos de diseño:** `base.html` es el explorador (búsqueda por lo que
 quieres construir, ficha con markup y preview) y `datos/base-diseno.json` es el
-índice machine-readable: 411 familias con su markup, 189 tokens,
+índice machine-readable: 411 familias con su markup, 234 tokens,
 recetas, combos, marcas y las 12 leyes. Consúltalo antes de leer un pack.
 
 Docs hermanas: `AGENTS.md` (reglas duras del repo), `components.json` (API

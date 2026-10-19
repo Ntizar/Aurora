@@ -44,7 +44,7 @@
 .nz-avatar--lg { width: 64px; height: 64px; font-size: var(--nz-text-xl); }
 .nz-avatar--xl { width: 96px; height: 96px; font-size: var(--nz-text-2xl); }
 .nz-avatar--2xl { width: 128px; height: 128px; font-size: var(--nz-text-3xl); }
-.nz-avatar--accent { background: var(--nz-accent-soft); color: var(--nz-accent); }
+.nz-avatar--accent { background: var(--nz-accent-soft); color: var(--nz-accent-text); }
 .nz-avatar--dark { background: var(--nz-brand); color: var(--nz-text-invert); }
 .nz-avatar--square { border-radius: var(--nz-radius-md); }
 .nz-avatar--ring { border-color: var(--nz-brand); box-shadow: 0 0 0 3px var(--nz-brand-soft); }
@@ -70,14 +70,14 @@
 .nz-brand--mono .nz-brand__mark { font-family: var(--nz-font-mono); font-weight: var(--nz-peso-fuerte); }
 .nz-brand__mark--accent { background: var(--nz-accent); }
 .nz-brand__mark--dark { background: var(--nz-gray-900); color: var(--nz-gray-50); }
-.nz-brand--accent { color: var(--nz-accent); }
+.nz-brand--accent { color: var(--nz-accent-text); }
 .nz-logomark { display: inline-grid; place-items: center; border-radius: var(--nz-radius-md); background: var(--nz-brand); color: var(--nz-text-invert); }
 .nz-logomark--accent { background: var(--nz-accent); }
 .nz-logomark--outline { background: transparent; box-shadow: inset 0 0 0 var(--nz-border-w-strong) var(--nz-border); color: var(--nz-text-soft); }
 
 /* ---- Icono en caja (icon tile) ---- */
 .nz-icon-tile { width: 44px; height: 44px; display: inline-flex; align-items: center; justify-content: center; border-radius: var(--nz-radius-md); background: var(--nz-brand-soft); color: var(--nz-brand); font-size: var(--nz-text-lg); }
-.nz-icon-tile--accent { background: var(--nz-accent-soft); color: var(--nz-accent); }
+.nz-icon-tile--accent { background: var(--nz-accent-soft); color: var(--nz-accent-text); }
 .nz-icon-tile--success { background: var(--nz-success-soft); color: var(--nz-success); }
 .nz-icon-tile--danger { background: var(--nz-danger-soft); color: var(--nz-danger); }
 .nz-icon-tile--brand { background: var(--nz-brand); color: var(--nz-text-invert); }
@@ -120,7 +120,7 @@
 .nz-audio__track { position: relative; flex: 1; min-width: 4rem; height: 6px; border-radius: var(--nz-radius-full); background: var(--nz-bg-inset); overflow: hidden; }
 .nz-audio__track i { display: block; height: 100%; background: var(--nz-brand); }
 .nz-audio__time { font-size: var(--nz-text-xs); color: var(--nz-text-mute); font-variant-numeric: tabular-nums; }
-.nz-audio--accent .nz-audio__play { background: var(--nz-accent); color: var(--nz-gray-0); }
+.nz-audio--accent .nz-audio__play { background: var(--nz-accent); color: var(--nz-accent-ink); }
 .nz-audio--accent .nz-audio__track i { background: var(--nz-accent); }
 
 /* ---- Hueco de mapa (placeholder con chincheta) ---- */
