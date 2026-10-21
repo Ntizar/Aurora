@@ -1,0 +1,82 @@
+[
+ {
+  "nombre": "agente",
+  "descripcion": "Vista de agente: conversación, trazas de herramientas, SLA y siguiente paso con aprobación.",
+  "marca": "aurora",
+  "variables": [
+   {
+    "nombre": "entidad",
+    "defecto": "Soporte Ntizar"
+   }
+  ],
+  "programa": "root = Pagina([barra, panel], \"app\")\nbarra = Navegacion(\"{{entidad}} · Asistente\", [\"Conversación\", \"Trazas\"])\npanel = DosColumnas([chat], [traza, control], \"60-40\")\nchat = Chat([[\"usuario\", \"Necesito el desglose de la factura de octubre.\"], [\"asistente\", \"He localizado el ticket 4821 y abierto una rectificación.\"]], \"Incidencia 4821\")\ntraza = Tarjeta([h1, h2, sla], \"Trazas\", true)\nh1 = Herramienta(\"buscar_ticket\", \"4821 · cliente\", \"hecho\")\nh2 = Herramienta(\"facturacion.desglose\", \"2 lecturas duplicadas\", \"hecho\")\nsla = Progreso(72, \"SLA consumido\")\ncontrol = Tarjeta([pasos, acciones], \"Siguiente paso\", true)\npasos = Lista([\"Validar la rectificación\", \"Enviar al cliente\"], \"num\")\nacciones = Fila([b1, b2], \"compacto\")\nb1 = Boton(\"Aprobar\", \"primario\")\nb2 = Boton(\"Revisar\", \"contorno\")"
+ },
+ {
+  "nombre": "ajustes",
+  "descripcion": "Ajustes por pasos: datos, formulario en rejilla, preferencias y acciones.",
+  "marca": "aurora",
+  "variables": [
+   {
+    "nombre": "entidad",
+    "defecto": "Ntizar"
+   }
+  ],
+  "programa": "root = Pagina([barra, pasos, formulario, preferencias, acciones], \"contenido\")\nbarra = Navegacion(\"{{entidad}}\", [\"Cuenta\", \"Equipo\", \"Facturación\"])\npasos = Pasos([\"Cuenta\", \"Empresa\", \"Pago\"], 1)\nformulario = Seccion([rejilla], \"Datos de la empresa\", true)\nrejilla = Formulario([c1, c2, c3, c4], \"2\")\nc1 = Campo(\"Razón social\", \"texto\", \"Astilleros del Ebro S.A.\", \"\", \"\", true)\nc2 = Campo(\"CIF\", \"texto\", \"B-50012345\", \"\", \"\", true)\nc3 = Campo(\"Email de facturación\", \"email\", \"admin@astilleros.es\", \"Recibirás aquí las facturas\")\nc4 = Campo(\"Teléfono\", \"texto\", \"+34 976 000 000\")\npreferencias = Seccion([pila], \"Preferencias\", true)\npila = Pila([s1, s2, k1], \"sm\")\ns1 = Interruptor(\"Avisos por email\", true)\ns2 = Interruptor(\"Resumen semanal\", false)\nk1 = Casilla(\"Acepto la política de datos\", true)\nacciones = Fila([b1, b2], \"compacto\")\nb1 = Boton(\"Guardar cambios\", \"primario\")\nb2 = Boton(\"Descartar\", \"fantasma\")"
+ },
+ {
+  "nombre": "informe",
+  "descripcion": "Informe ejecutivo: resumen, objetivos real-meta, comparativa de palancas y recomendación.",
+  "marca": "aurora",
+  "variables": [
+   {
+    "nombre": "titulo",
+    "defecto": "Plan de descarbonización 2027"
+   },
+   {
+    "nombre": "entidad",
+    "defecto": "Ntizar"
+   }
+  ],
+  "programa": "root = Pagina([cab, cuerpo, cierre], \"contenido\")\ncab = Seccion([titulo, entrada, etiquetas], \"Resumen ejecutivo\", true)\ntitulo = Titular(\"{{titulo}}\")\nentrada = Entradilla(\"Una frase con la conclusión y la cifra que la sostiene.\")\netiquetas = Fila([e1, e2], \"compacto\")\ne1 = Etiqueta(\"{{entidad}}\", \"marca\", \"contorno\")\ne2 = Etiqueta(\"Verificado\", \"exito\")\ncuerpo = DosColumnas([objetivos], [comparativa], \"2-1\")\nobjetivos = Tarjeta([o1, o2, o3], \"Objetivos\", true)\no1 = Objetivo(\"Electrificación\", 62, 80, \"62 / 80 MWh\", \"marca\")\no2 = Objetivo(\"Autoconsumo\", 41, 60, \"41 / 60 MWh\", \"acento\")\no3 = Objetivo(\"Eficiencia\", 88, 50, \"88 / 50\", \"exito\")\ncomparativa = Tarjeta([tb], \"Emisiones evitadas (tCO2e)\", true)\ntb = TablaBarras([\"Hornos\", \"Calderas\", \"Solar\"], [4100, 980, 640], [\"4.100 t\", \"980 t\", \"640 t\"], \"acento\")\ncierre = Seccion([lista, nota], \"Qué hacer\", true)\nlista = Lista([\"Cerrar la auditoría antes de diciembre\", \"Lanzar el piloto en la planta de Ebro\"], \"check\")\nnota = Nota(\"Sin el PPA el retorno se estira a 7,1 años.\", \"aviso\")"
+ },
+ {
+  "nombre": "landing",
+  "descripcion": "Landing: hero, tres propuestas de valor, precio y cierre. Para producto o servicio.",
+  "marca": "ntizar",
+  "variables": [
+   {
+    "nombre": "marca",
+    "defecto": "Ntizar"
+   },
+   {
+    "nombre": "titular",
+    "defecto": "Diseño que no se sale del sistema"
+   },
+   {
+    "nombre": "claim",
+    "defecto": "Genera, publica y audita páginas con un solo design system."
+   }
+  ],
+  "programa": "root = Pagina([barra, heroe, propuesta, precio, cierre], \"contenido\")\nbarra = Navegacion(\"{{marca}}\", [\"Producto\", \"Precios\", \"Docs\"])\nheroe = Pila([titular, claim, acciones], \"lg\")\ntitular = Titular(\"{{titular}}\", \"1\", \"marca\")\nclaim = Entradilla(\"{{claim}}\", \"lg\")\nacciones = Fila([a1, a2], \"compacto\")\na1 = Boton(\"Empezar\", \"primario\")\na2 = Boton(\"Ver la demo\", \"contorno\")\npropuesta = Seccion([rejilla], \"Qué resuelve\", true)\nrejilla = Rejilla([t1, t2, t3], \"auto\")\nt1 = Tarjeta([t1a, t1b], \"Sin clases inventadas\", true)\nt1a = Texto(\"El modelo elige entre componentes reales: el diseño no se sale del sistema.\")\nt1b = Lista([\"36 componentes del censo\", \"Cero CSS propio\"], \"check\")\nt2 = Tarjeta([t2a, t2b], \"Una marca, seis identidades\", true)\nt2a = Texto(\"Cambia el preset y toda la página cambia de color sin tocar una clase.\")\nt2b = Lista([\"aurora, indigo, ntizar\", \"Contraste auditado\"], \"check\")\nt3 = Tarjeta([t3a, t3b], \"Se mide, no se opina\", true)\nt3a = Texto(\"Cada página generada pasa el mismo lint que una escrita a mano.\")\nt3b = Lista([\"0 fallos o no se entrega\", \"CI en cada push\"], \"check\")\nprecio = Seccion([plan], \"Precio\", true)\nplan = Tarjeta([importe, incluido, contratar], \"Plan único\", true)\nimporte = Cifra(\"49 EUR / mes\", \"acento\", \"lg\")\nincluido = Lista([\"Webs ilimitadas\", \"Todas las marcas\", \"Soporte por email\"], \"check\")\ncontratar = Boton(\"Contratar\", \"acento\", \"lg\", true)\ncierre = Aviso(\"Sin permanencia\", \"Cancela cuando quieras y exporta tu CSS.\", \"info\")"
+ },
+ {
+  "nombre": "panel-operativo",
+  "descripcion": "Panel con cabecera, cuatro KPI, serie, tabla apilable y aviso. El arquetipo de trabajo diario.",
+  "marca": "aurora",
+  "variables": [
+   {
+    "nombre": "entidad",
+    "defecto": "Ntizar"
+   },
+   {
+    "nombre": "titulo",
+    "defecto": "Operaciones del periodo"
+   },
+   {
+    "nombre": "periodo",
+    "defecto": "Octubre 2026"
+   }
+  ],
+  "programa": "root = Pagina([barra, cabecera, kpis, detalle, aviso], \"contenido\")\nbarra = Navegacion(\"{{entidad}}\", [\"Panel\", \"Operaciones\", \"Informes\"])\ncabecera = Seccion([titulo, entrada, rango], \"{{periodo}}\", true)\ntitulo = Titular(\"{{titulo}}\", \"1\")\nentrada = Entradilla(\"Resumen del periodo con los tres datos que importan y su variación.\", \"sm\", \"acento\")\nrango = Segmentado([\"Hoy\", \"Semana\", \"Mes\"], 1)\nkpis = Rejilla([k1, k2, k3, k4], \"4\")\nk1 = Kpi(\"Puntualidad\", \"94,2 %\", \"+2,1 pp\", \"sube\", \"acento\")\nk2 = Kpi(\"Volumen\", \"1.284\", \"+86\", \"sube\")\nk3 = Kpi(\"Coste medio\", \"31,4 EUR\", \"−1,3 %\", \"baja\")\nk4 = Kpi(\"Incidencias\", \"7\", \"−3\", \"baja\")\ndetalle = DosColumnas([grafico], [tabla], \"40-60\")\ngrafico = Tarjeta([barras], \"Evolución\", true)\nbarras = Barras([\"L\", \"M\", \"X\", \"J\", \"V\", \"S\", \"D\"], [186, 204, 198, 212, 226, 152, 106], \"acento\")\ntabla = Tarjeta([filas], \"Detalle por ruta\", true)\nfilas = Tabla([\"Ruta\", \"Salidas\", \"Puntualidad\"], [[\"MAD-BCN\", \"42\", \"96 %\"], [\"MAD-VLC\", \"31\", \"88 %\"], [\"BCN-SVQ\", \"24\", \"92 %\"]], true, \"comoda\", true, \"Salidas\")\naviso = Aviso(\"Seguimiento\", \"Tres elementos superan el umbral esta semana.\", \"aviso\")"
+ }
+]

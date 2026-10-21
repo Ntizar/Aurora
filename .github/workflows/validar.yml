@@ -43,6 +43,12 @@ jobs:
           python scripts/generar-openui.py --check
           python scripts/auditar-openui.py
 
+      - name: Plantillas por arquetipo (todas válidas y con su índice al día)
+        run: |
+          python scripts/plantilla.py --validar-todas
+          python scripts/plantilla.py --index
+          git diff --quiet -- openui/plantillas/index.json || (echo "::error::El índice de plantillas está desfasado: ejecuta plantilla.py --index" && exit 1)
+
       - name: Canales y versiones en orden
         run: python scripts/canal.py --check
 

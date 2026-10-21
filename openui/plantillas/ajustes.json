@@ -1,0 +1,13 @@
+{
+ "nombre": "ajustes",
+ "descripcion": "Ajustes por pasos: datos, formulario en rejilla, preferencias y acciones.",
+ "marca": "aurora",
+ "variables": [
+  {
+   "nombre": "entidad",
+   "defecto": "Ntizar",
+   "ayuda": "marca de la barra"
+  }
+ ],
+ "programa": "root = Pagina([barra, pasos, formulario, preferencias, acciones], \"contenido\")\nbarra = Navegacion(\"{{entidad}}\", [\"Cuenta\", \"Equipo\", \"Facturación\"])\npasos = Pasos([\"Cuenta\", \"Empresa\", \"Pago\"], 1)\nformulario = Seccion([rejilla], \"Datos de la empresa\", true)\nrejilla = Formulario([c1, c2, c3, c4], \"2\")\nc1 = Campo(\"Razón social\", \"texto\", \"Astilleros del Ebro S.A.\", \"\", \"\", true)\nc2 = Campo(\"CIF\", \"texto\", \"B-50012345\", \"\", \"\", true)\nc3 = Campo(\"Email de facturación\", \"email\", \"admin@astilleros.es\", \"Recibirás aquí las facturas\")\nc4 = Campo(\"Teléfono\", \"texto\", \"+34 976 000 000\")\npreferencias = Seccion([pila], \"Preferencias\", true)\npila = Pila([s1, s2, k1], \"sm\")\ns1 = Interruptor(\"Avisos por email\", true)\ns2 = Interruptor(\"Resumen semanal\", false)\nk1 = Casilla(\"Acepto la política de datos\", true)\nacciones = Fila([b1, b2], \"compacto\")\nb1 = Boton(\"Guardar cambios\", \"primario\")\nb2 = Boton(\"Descartar\", \"fantasma\")"
+}

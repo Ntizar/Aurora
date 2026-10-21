@@ -1,0 +1,18 @@
+{
+ "nombre": "informe",
+ "descripcion": "Informe ejecutivo: resumen, objetivos real-meta, comparativa de palancas y recomendación.",
+ "marca": "aurora",
+ "variables": [
+  {
+   "nombre": "titulo",
+   "defecto": "Plan de descarbonización 2027",
+   "ayuda": "titular del informe"
+  },
+  {
+   "nombre": "entidad",
+   "defecto": "Ntizar",
+   "ayuda": "cliente o área"
+  }
+ ],
+ "programa": "root = Pagina([cab, cuerpo, cierre], \"contenido\")\ncab = Seccion([titulo, entrada, etiquetas], \"Resumen ejecutivo\", true)\ntitulo = Titular(\"{{titulo}}\")\nentrada = Entradilla(\"Una frase con la conclusión y la cifra que la sostiene.\")\netiquetas = Fila([e1, e2], \"compacto\")\ne1 = Etiqueta(\"{{entidad}}\", \"marca\", \"contorno\")\ne2 = Etiqueta(\"Verificado\", \"exito\")\ncuerpo = DosColumnas([objetivos], [comparativa], \"2-1\")\nobjetivos = Tarjeta([o1, o2, o3], \"Objetivos\", true)\no1 = Objetivo(\"Electrificación\", 62, 80, \"62 / 80 MWh\", \"marca\")\no2 = Objetivo(\"Autoconsumo\", 41, 60, \"41 / 60 MWh\", \"acento\")\no3 = Objetivo(\"Eficiencia\", 88, 50, \"88 / 50\", \"exito\")\ncomparativa = Tarjeta([tb], \"Emisiones evitadas (tCO2e)\", true)\ntb = TablaBarras([\"Hornos\", \"Calderas\", \"Solar\"], [4100, 980, 640], [\"4.100 t\", \"980 t\", \"640 t\"], \"acento\")\ncierre = Seccion([lista, nota], \"Qué hacer\", true)\nlista = Lista([\"Cerrar la auditoría antes de diciembre\", \"Lanzar el piloto en la planta de Ebro\"], \"check\")\nnota = Nota(\"Sin el PPA el retorno se estira a 7,1 años.\", \"aviso\")"
+}

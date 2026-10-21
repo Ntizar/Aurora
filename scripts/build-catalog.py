@@ -584,6 +584,8 @@ def portada(specs, censo_cat, totales, packs):
         <a class="cat-idea" href="recetas/index.html"><b>Recetas canónicas</b><span>Admin, dashboard, ajustes, acceso e informe. Cópialas y adapta.</span></a>
         <a class="cat-idea" href="audit/index.html"><b>Arnés de verificación</b><span>El lint caza emojis, jerarquía, presupuesto de color y tipografía mínima.</span></a>
         <a class="cat-idea" href="openui/index.html"><b>Interfaces generativas</b><span>OpenUI Lang sobre el censo: el modelo describe, Aurora pinta. Probador en vivo.</span></a>
+        <a class="cat-idea" href="openui/index.html#plantillas"><b>Plantillas por arquetipo</b><span>Panel, informe, landing, ajustes y agente: el esqueleto decidido, el modelo rellena.</span></a>
+        <a class="cat-idea" href="CONTRATO.md"><b>Contrato de versiones</b><span>Canal vivo y congelado, lock por web y migrador: cómo llega un cambio a todas.</span></a>
       </div>
     </section>
 

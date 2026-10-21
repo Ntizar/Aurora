@@ -119,6 +119,14 @@
     </div>
   </section>
 
+  <section class="nz-section" id="plantillas" aria-labelledby="tPlantillas">
+    <h2 class="nz-h2" id="tPlantillas">Plantillas por arquetipo</h2>
+    <p>El esqueleto ya está decidido y auditado: el modelo rellena los datos, no inventa la estructura. Cinco arquetipos cubren lo que se repite; el resto se compone con los mismos componentes.</p>
+    <div class="nz-thirds" id="plantillasGrid" aria-live="polite">
+      <p class="nz-lead nz-lead--sm">Cargando plantillas…</p>
+    </div>
+  </section>
+
   <hr class="nz-divider">
 
   <section class="nz-section" aria-labelledby="t3">
@@ -313,6 +321,41 @@
     $("#programa").value = 'root = Pagina([titulo, k, grafico])\ntitulo = Titular("Prueba de validación")\nk = Kpi("Ventas", 1240, "Dato inválido")\ngrafico = GraficoInventado("no existe", 3)';
     generar();
   });
+
+  function pintarPlantillas(lista) {
+    var rejilla = $("#plantillasGrid");
+    if (!rejilla) return;
+    rejilla.innerHTML = lista.map(function (p, i) {
+      var vars = p.variables.map(function (v) { return v.nombre; }).join(", ");
+      return '<article class="nz-article nz-article--bordered nz-stack nz-stack--sm">' +
+        '<h3 class="nz-h3">' + p.nombre + "</h3>" +
+        "<p>" + p.descripcion + "</p>" +
+        '<p><span class="nz-badge nz-badge--neutral">' + p.programa.split("\n").length + " líneas</span> " +
+        (vars ? '<span class="nz-badge nz-badge--neutral">' + vars + "</span>" : "") + "</p>" +
+        '<p><button type="button" class="nz-btn nz-btn--soft nz-btn--sm" data-plantilla="' + i + '">Probar en el editor</button></p>' +
+        "</article>";
+    }).join("");
+    rejilla.addEventListener("click", function (e) {
+      var b = e.target.closest("button[data-plantilla]");
+      if (!b) return;
+      var p = lista[Number(b.dataset.plantilla)];
+      var programa = p.programa;
+      p.variables.forEach(function (v) {
+        programa = programa.split("{{" + v.nombre + "}}").join(v.defecto);
+      });
+      $("#programa").value = programa;
+      document.getElementById("probador").scrollIntoView({ behavior: "smooth", block: "start" });
+      generar();
+    });
+  }
+
+  fetch("plantillas/index.json")
+    .then(function (r) { return r.json(); })
+    .then(pintarPlantillas)
+    .catch(function () {
+      var rejilla = $("#plantillasGrid");
+      if (rejilla) rejilla.innerHTML = '<p>No he podido leer las plantillas.</p>';
+    });
 
   fetch("ejemplos.json")
     .then(function (r) { return r.json(); })

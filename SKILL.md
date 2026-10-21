@@ -1,14 +1,14 @@
 ---
 name: aurora-design-system
 description: "Usa al construir o tocar cualquier web con Aurora (Ntizar/Aurora). El repo manda: resuelve la versión vigente y pide LLM.md + components.json antes de escribir CSS."
-version: "9.5.0"
+version: "9.6.0"
 tags: [css, design-system, aurora, ntizar, agent-ready, movil, escritorio, tipografia]
 ---
 
 # Aurora — doctrina única (el repo es la orden máxima)
 
 Design system CSS puro, sin build, sin dependencias, namespaced bajo `.nz-`.
-**v9.5.0 · 2186 objetos · 411 familias · 656 demos · 18 categorías · 189 tokens · 59 gemelas OKLch · 36 componentes generativos.**
+**v9.6.0 · 2186 objetos · 411 familias · 656 demos · 18 categorías · 189 tokens · 59 gemelas OKLch · 36 componentes generativos.**
 *(Cabecera de testigo, no de autoridad: resuélvela con el PASO 0.)*
 
 > ⚠️ `Ntizar/Aurora` **manda sobre esta skill**. Esta skill es un puntero; el repo
@@ -397,7 +397,8 @@ LLM → OpenUI Lang (8-20 líneas) → parser → runtime vanilla → markup .nz
 | Biblioteca machine-readable | `openui/aurora.spec.json` (firmas + JSON Schema para el parser) |
 | Pintar el resultado en el navegador | `openui/aurora-openui.js` → `AuroraOpenUI.iniciar()` + `.stream(texto, "#lienzo")` |
 | Añadir un objeto al lenguaje | `openui/componentes.json` (a mano) → `python3 scripts/generar-openui.py` |
-| Verlo funcionando | `openui/index.html` (probador en vivo) |
+| Verlo funcionando | `openui/index.html` (probador en vivo + plantillas) |
+| Empezar por un arquetipo | `openui/plantillas/` + `scripts/plantilla.py` (panel, informe, landing, ajustes, agente) |
 
 ```js
 await AuroraOpenUI.iniciar();                          // spec + parser oficial (ESM, 96 KB)
@@ -428,7 +429,9 @@ AuroraOpenUI.stream(respuestaDelModelo, "#lienzo");    // streaming; cae a parse
    muro en una rejilla de 4. `Anillo` sale a 5 rem. `lg` solo para el gráfico protagonista.
 9. **Etiquetas de botón cortas** y el botón envuelve (`white-space: normal`, v9.4.1): con
    `nowrap`, una etiqueta larga dentro de una rejilla desbordaba el contenedor.
-10. **Qué enlaza cada web lo decide el contrato, no el proyecto** (`CONTRATO.md`): canal vivo
+10. **Parte de la plantilla, no de cero.** Si el encargo encaja con un arquetipo, se rellena
+    su plantilla; la estructura ya está auditada y el modelo solo cambia datos.
+11. **Qué enlaza cada web lo decide el contrato, no el proyecto** (`CONTRATO.md`): canal vivo
     `@v9` (recibe cada 9.x) o tag exacto (entrega congelada). Nunca `@master`. Un cambio
     aditivo llega solo; renombrar o quitar exige major + `migrar-programas.py`.
 

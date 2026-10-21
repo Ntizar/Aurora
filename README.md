@@ -10,7 +10,7 @@ nunca del sistema.
 
 [![CI](https://github.com/Ntizar/Aurora/actions/workflows/validar.yml/badge.svg)](https://github.com/Ntizar/Aurora/actions/workflows/validar.yml)
 [![Pages](https://github.com/Ntizar/Aurora/actions/workflows/pages.yml/badge.svg)](https://github.com/Ntizar/Aurora/actions/workflows/pages.yml)
-![versión](https://img.shields.io/badge/versi%C3%B3n-9.5.0-2563eb)
+![versión](https://img.shields.io/badge/versi%C3%B3n-9.6.0-2563eb)
 
 **[Catálogo](https://ntizar.github.io/Aurora/)** · **[Base de datos](https://ntizar.github.io/Aurora/base.html)** · **[Generative UI](https://ntizar.github.io/Aurora/openui/)** · **[Contrato](CONTRATO.md)**
 
@@ -43,7 +43,7 @@ catálogo lo enseña, funciona; si algo se rompe, el push se pone en rojo antes 
 ```
 
 `@v9` es el **canal vivo**: se mueve con cada release 9.x, así que un cambio en Aurora llega
-solo a todas las webs que lo usan. Para una entrega congelada, el tag exacto (`@v9.5.0`).
+solo a todas las webs que lo usan. Para una entrega congelada, el tag exacto (`@v9.6.0`).
 El detalle completo está en **[CONTRATO.md](CONTRATO.md)**.
 
 ## Las cuatro capas
@@ -81,6 +81,14 @@ kpis = Rejilla([Kpi("Puntualidad", "94,2 %", "+2,1 pp", "sube", "acento")], "4")
 ```
 
 Pruébalo en **[la demo](https://ntizar.github.io/Aurora/openui/)** y mira el HTML que sale.
+Si el encargo encaja con un arquetipo, parte de su **[plantilla](openui/plantillas/)**:
+panel, informe, landing, ajustes o agente.
+
+```bash
+python3 scripts/plantilla.py --lista                                  # los cinco arquetipos
+python3 scripts/plantilla.py panel-operativo --var titulo="Octubre" -o p.openui
+python3 scripts/programa-a-html.py p.openui -o dist/panel.html --marca ntizar
+```
 
 ## Qué hay dentro
 
@@ -92,7 +100,7 @@ Pruébalo en **[la demo](https://ntizar.github.io/Aurora/openui/)** y mira el HT
 | `specs/NN.json` | **Fuente de verdad** de las demos: el catálogo se genera de aquí |
 | `base.html` + `datos/base-diseno.json` | Base de datos consultable: familias, tokens, recetas, combos, marcas y leyes |
 | `recetas/` · `examples/` · `combos/` | Páginas completas y esqueletos por tipo, listos para copiar |
-| `openui/` | Capa generativa: componentes, prompt, spec, runtime vanilla y probador |
+| `openui/` | Capa generativa: componentes, prompt, spec, runtime vanilla, **plantillas por arquetipo** y probador |
 | `AGENTS.md` · `COMPOSICION.md` · `LLM.md` | Reglas duras, contrato de composición y guía de decisión |
 
 Una marca son dos colores y sus rampas: `<html data-nz-marca="ntizar">` y todo el sistema

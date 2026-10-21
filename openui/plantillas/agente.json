@@ -1,0 +1,13 @@
+{
+ "nombre": "agente",
+ "descripcion": "Vista de agente: conversación, trazas de herramientas, SLA y siguiente paso con aprobación.",
+ "marca": "aurora",
+ "variables": [
+  {
+   "nombre": "entidad",
+   "defecto": "Soporte Ntizar",
+   "ayuda": "marca de la barra"
+  }
+ ],
+ "programa": "root = Pagina([barra, panel], \"app\")\nbarra = Navegacion(\"{{entidad}} · Asistente\", [\"Conversación\", \"Trazas\"])\npanel = DosColumnas([chat], [traza, control], \"60-40\")\nchat = Chat([[\"usuario\", \"Necesito el desglose de la factura de octubre.\"], [\"asistente\", \"He localizado el ticket 4821 y abierto una rectificación.\"]], \"Incidencia 4821\")\ntraza = Tarjeta([h1, h2, sla], \"Trazas\", true)\nh1 = Herramienta(\"buscar_ticket\", \"4821 · cliente\", \"hecho\")\nh2 = Herramienta(\"facturacion.desglose\", \"2 lecturas duplicadas\", \"hecho\")\nsla = Progreso(72, \"SLA consumido\")\ncontrol = Tarjeta([pasos, acciones], \"Siguiente paso\", true)\npasos = Lista([\"Validar la rectificación\", \"Enviar al cliente\"], \"num\")\nacciones = Fila([b1, b2], \"compacto\")\nb1 = Boton(\"Aprobar\", \"primario\")\nb2 = Boton(\"Revisar\", \"contorno\")"
+}

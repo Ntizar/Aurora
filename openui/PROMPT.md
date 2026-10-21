@@ -69,6 +69,17 @@ Casilla(etiqueta: string, marcada?: boolean) — Selección múltiple o confirma
 Chat(mensajes: string[][], titulo?: string) — Conversación. mensajes = [rol, texto] con rol usuario o asistente.
 Herramienta(nombre: string, detalle?: string, estado?: "ejecutando" | "hecho" | "error") — Llamada a herramienta de un agente, con estado y resultado.
 
+## Plantillas por arquetipo (empieza por aquí)
+
+Si la petición encaja con uno de estos arquetipos, **parte de su plantilla y cambia
+solo los datos**: la estructura ya está decidida y auditada. No reordenes los bloques.
+
+- **agente** — Vista de agente: conversación, trazas de herramientas, SLA y siguiente paso con aprobación. · variables: entidad
+- **ajustes** — Ajustes por pasos: datos, formulario en rejilla, preferencias y acciones. · variables: entidad
+- **informe** — Informe ejecutivo: resumen, objetivos real-meta, comparativa de palancas y recomendación. · variables: titulo, entidad
+- **landing** — Landing: hero, tres propuestas de valor, precio y cierre. Para producto o servicio. · variables: marca, titular, claim
+- **panel-operativo** — Panel con cabecera, cuatro KPI, serie, tabla apilable y aviso. El arquetipo de trabajo diario. · variables: entidad, titulo, periodo
+
 ## Reglas de diseño de Aurora (obligatorias)
 
 - El acento marca **el dato que importa** y la acción secundaria; la marca hace la estructura.

@@ -14,7 +14,7 @@ si el cambio es compatible o hay migración.
 | Canal | Referencia CDN | Quién lo usa | Qué implica |
 |---|---|---|---|
 | **vivo** | `@v9` (rango de major) | webs y paneles propios, catálogo, demos | se mueve con cada release 9.x: un cambio llega solo |
-| **congelado** | `@v9.5.0` (tag exacto) | entregas a cliente, auditorías, informes congelados | no cambia hasta que se sube a propósito |
+| **congelado** | `@v9.6.0` (tag exacto) | entregas a cliente, auditorías, informes congelados | no cambia hasta que se sube a propósito |
 
 ```html
 <!-- web propia: sigue el canal vivo -->
@@ -22,7 +22,7 @@ si el cambio es compatible o hay migración.
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v9/packs/p1-layout.css">
 
 <!-- entrega a cliente: congelada -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v9.5.0/tokens.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v9.6.0/tokens.css">
 ```
 
 El rango cubre **solo el major**: `@v9` nunca saltará a una v10 que rompa contrato.
@@ -69,7 +69,7 @@ Cada producto guarda `aurora.lock` en su raíz:
 {
   "canal": "vivo",
   "rango": "v9",
-  "resuelto": "v9.5.0",
+  "resuelto": "v9.6.0",
   "spec": "1.0.0",
   "generado": "2026-10-21"
 }
@@ -84,7 +84,7 @@ Cada producto guarda `aurora.lock` en su raíz:
 
 Si una release sale mal con el canal vivo:
 
-1. Cambia el rango del lock a tag exacto (`"canal": "congelado", "resuelto": "v9.5.0"`), o
+1. Cambia el rango del lock a tag exacto (`"canal": "congelado", "resuelto": "v9.6.0"`), o
 2. publica un patch (`9.5.1`) con la corrección — preferible, porque el rango sigue vivo.
 
 Un cambio malo en el canal vivo llega a todas las webs **a la vez**: por eso el orden es

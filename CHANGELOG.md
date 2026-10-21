@@ -3,6 +3,33 @@
 Formato: [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/).
 Versionado: [SemVer](https://semver.org/lang/es/).
 
+## [9.6.0] — 2026-10-21
+
+**Plantillas por arquetipo: el esqueleto decidido, el modelo rellena.** Es la pieza que
+convierte «generar webs con un modelo» en algo que siempre sale con el mismo sistema.
+
+### Añadido
+
+- `openui/plantillas/` — cinco arquetipos completos y válidos: **panel-operativo**, **informe**,
+  **landing**, **ajustes** y **agente**, con variables de texto (`{{titulo}}`, `{{entidad}}`…).
+  No llevan lógica: la estructura la decide Aurora, los datos los pone el modelo.
+- **`scripts/plantilla.py`** — `--lista`, `--var clave=valor`, `--salida`, `--validar-todas`
+  (CI) y `--index` (genera el índice que consume la demo). Una plantilla solo se emite si el
+  programa resultante **valida**: si no, se niega.
+- `openui/plantillas/index.json` — índice generado, con el programa y sus variables.
+- **Demo**: sección «Plantillas por arquetipo» con un botón por arquetipo que lo carga en el
+  probador (las variables se sustituyen por sus valores por defecto).
+- `PROMPT.md` §Plantillas: el modelo recibe nombre, descripción y variables de cada arquetipo,
+  y la regla de **partir de la plantilla en vez de inventar estructura**.
+- Portada: tarjetas de «Plantillas por arquetipo» y «Contrato de versiones».
+
+### Verificado
+
+- 5/5 plantillas válidas con el parser oficial y con el analizador del repo.
+- Cadena completa probada en dos arquetipos: plantilla → programa → página con
+  `programa-a-html.py` → `auditar-uso.py`: **0 fallos y 0 avisos**.
+- `PROMPT.md` sigue por debajo del presupuesto (14,4 KB de 16).
+
 ## [9.5.0] — 2026-10-21
 
 **Canales, lock y migrador: cómo cambia Aurora a todas las webs a la vez** — y cómo se

@@ -106,6 +106,20 @@ def construir_spec(fuente):
     }
 
 
+def leer_plantillas():
+    carpeta = OPENUI / "plantillas"
+    if not carpeta.exists():
+        return []
+    fuera = []
+    for ruta in sorted(carpeta.glob("*.json")):
+        if ruta.name == "index.json":
+            continue
+        datos = json.loads(ruta.read_text(encoding="utf-8"))
+        if isinstance(datos, dict) and "programa" in datos:
+            fuera.append(datos)
+    return fuera
+
+
 def construir_prompt(fuente, ejemplos):
     total = len(fuente["componentes"])
     L = []
@@ -138,6 +152,18 @@ def construir_prompt(fuente, ejemplos):
         for nombre in g["componentes"]:
             c = por_nombre[nombre]
             L.append("%s — %s" % (firma(c), c["descripcion"]))
+        L.append("")
+    plantillas = leer_plantillas()
+    if plantillas:
+        L.append("## Plantillas por arquetipo (empieza por aquí)")
+        L.append("")
+        L.append("Si la petición encaja con uno de estos arquetipos, **parte de su plantilla y cambia")
+        L.append("solo los datos**: la estructura ya está decidida y auditada. No reordenes los bloques.")
+        L.append("")
+        for p in plantillas:
+            variables = ", ".join(v["nombre"] for v in p.get("variables", []))
+            L.append("- **%s** — %s%s" % (p["nombre"], p["descripcion"],
+                                          (" · variables: " + variables) if variables else ""))
         L.append("")
     L.append("## Reglas de diseño de Aurora (obligatorias)")
     L.append("")

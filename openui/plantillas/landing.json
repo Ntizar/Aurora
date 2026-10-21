@@ -1,0 +1,23 @@
+{
+ "nombre": "landing",
+ "descripcion": "Landing: hero, tres propuestas de valor, precio y cierre. Para producto o servicio.",
+ "marca": "ntizar",
+ "variables": [
+  {
+   "nombre": "marca",
+   "defecto": "Ntizar",
+   "ayuda": "marca de la barra"
+  },
+  {
+   "nombre": "titular",
+   "defecto": "Diseño que no se sale del sistema",
+   "ayuda": "titular principal"
+  },
+  {
+   "nombre": "claim",
+   "defecto": "Genera, publica y audita páginas con un solo design system.",
+   "ayuda": "frase de apoyo"
+  }
+ ],
+ "programa": "root = Pagina([barra, heroe, propuesta, precio, cierre], \"contenido\")\nbarra = Navegacion(\"{{marca}}\", [\"Producto\", \"Precios\", \"Docs\"])\nheroe = Pila([titular, claim, acciones], \"lg\")\ntitular = Titular(\"{{titular}}\", \"1\", \"marca\")\nclaim = Entradilla(\"{{claim}}\", \"lg\")\nacciones = Fila([a1, a2], \"compacto\")\na1 = Boton(\"Empezar\", \"primario\")\na2 = Boton(\"Ver la demo\", \"contorno\")\npropuesta = Seccion([rejilla], \"Qué resuelve\", true)\nrejilla = Rejilla([t1, t2, t3], \"auto\")\nt1 = Tarjeta([t1a, t1b], \"Sin clases inventadas\", true)\nt1a = Texto(\"El modelo elige entre componentes reales: el diseño no se sale del sistema.\")\nt1b = Lista([\"36 componentes del censo\", \"Cero CSS propio\"], \"check\")\nt2 = Tarjeta([t2a, t2b], \"Una marca, seis identidades\", true)\nt2a = Texto(\"Cambia el preset y toda la página cambia de color sin tocar una clase.\")\nt2b = Lista([\"aurora, indigo, ntizar\", \"Contraste auditado\"], \"check\")\nt3 = Tarjeta([t3a, t3b], \"Se mide, no se opina\", true)\nt3a = Texto(\"Cada página generada pasa el mismo lint que una escrita a mano.\")\nt3b = Lista([\"0 fallos o no se entrega\", \"CI en cada push\"], \"check\")\nprecio = Seccion([plan], \"Precio\", true)\nplan = Tarjeta([importe, incluido, contratar], \"Plan único\", true)\nimporte = Cifra(\"49 EUR / mes\", \"acento\", \"lg\")\nincluido = Lista([\"Webs ilimitadas\", \"Todas las marcas\", \"Soporte por email\"], \"check\")\ncontratar = Boton(\"Contratar\", \"acento\", \"lg\", true)\ncierre = Aviso(\"Sin permanencia\", \"Cancela cuando quieras y exporta tu CSS.\", \"info\")"
+}
