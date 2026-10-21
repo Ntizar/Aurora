@@ -3,6 +3,15 @@
 Formato: [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/).
 Versionado: [SemVer](https://semver.org/lang/es/).
 
+## [9.7.1] — 2026-10-21
+
+### Corregido
+
+- **`generar-web.py` no arrancaba en CI**: leía `~/.hermes/config.yaml` sin comprobar que
+  existe, así que el humo `--sin-modelo` (que no necesita modelo) reventaba en un runner
+  limpio. Ahora la configuración es opcional: sin clave avisa y ofrece `--sin-modelo`.
+  Lo pilló la CI, no el portátil — que es exactamente para lo que está.
+
 ## [9.7.0] — 2026-10-21
 
 **El conector: de un encargo a una página, con el modelo y con el lint delante.** Y la portada

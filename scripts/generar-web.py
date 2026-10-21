@@ -47,17 +47,16 @@ def cargar(nombre, ruta):
 
 
 def leer_config():
-    """modelo y endpoint, de config.yaml (sin valores hardcodeados)."""
-    texto = CONFIG.read_text(encoding="utf-8")
-    modelo = "deepseek-v4-flash"
-    m = re.search(r"^model:\s*\n(?:\s+.*\n)*?\s+default:\s*([\w.\-]+)", texto, re.M)
-    if m:
-        modelo = m.group(1)
-    api = "https://api.nan.builders/v1"
-    m = re.search(r"^\s{4}api:\s*(\S+)", texto, re.M)
-    if m:
-        api = m.group(1)
-    clave = ""
+    """Modelo, endpoint y clave, sin romper cuando no hay entorno de Hermes (CI)."""
+    modelo, api, clave = "deepseek-v4-flash", "https://api.nan.builders/v1", ""
+    if CONFIG.exists():
+        texto = CONFIG.read_text(encoding="utf-8")
+        m = re.search(r"^model:\s*\n(?:\s+.*\n)*?\s+default:\s*([\w.\-]+)", texto, re.M)
+        if m:
+            modelo = m.group(1)
+        m = re.search(r"^\s{4}api:\s*(\S+)", texto, re.M)
+        if m:
+            api = m.group(1)
     if ENV.exists():
         for linea in ENV.read_text(encoding="utf-8").splitlines():
             if linea.startswith("OPENAI_API_KEY="):
