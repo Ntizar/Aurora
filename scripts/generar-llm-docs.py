@@ -42,7 +42,10 @@ sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
 bc = import_module("build-catalog")
 
 ROOT = bc.ROOT
-VERSION = "9.4.1"
+VERSION = "9.5.0"
+# El canal vivo no se copia a mano: sale de data/canales.json (único dueño)
+_canales = json.loads((ROOT / "data" / "canales.json").read_text(encoding="utf-8"))
+CANAL_VIVO = _canales["canales"]["vivo"]["rango"]
 CDN = f"https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v{VERSION}/"
 
 # ---------------------------------------------------------------------------
@@ -1038,6 +1041,19 @@ Los {len(tokens)} tokens están inventariados en `components.json` (sección
 - ❌ Texto de interfaz a 12px: los 12px son para datos, no para etiquetas.
 - ❌ Enlazar Google Fonts (o cualquier CDN de fuentes): `tokens.css` ya sirve la fuente.
 - ❌ Enlazar `@master` en producción: pinea la versión (`@v{VERSION}`) o jsDelivr te servirá CSS viejo desde su caché.
+
+## 8b. Canales: qué versión enlazar
+
+Dos canales, un sistema. La regla de oro: **nunca `@master`**.
+
+| Canal | URL | Cuándo |
+|---|---|---|
+| vivo | `@{CANAL_VIVO}` | webs propias: recibe cada release 9.x sin tocarlas |
+| congelado | `@{VERSION}` | entregas a cliente: reproducible dentro de dos años |
+
+Si el proyecto trae `aurora.lock`, respétalo: dice qué canal y qué tag está comiendo.
+Un cambio aditivo llega solo; renombrar o quitar algo exige major y migración
+(`CONTRATO.md`, `scripts/migrar-programas.py`).
 
 ## 9. Verificar antes de entregar
 

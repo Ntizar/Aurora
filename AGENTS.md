@@ -51,6 +51,8 @@ Si eres un agente (o una persona con prisa), lee esto antes de tocar nada.
 | `openui/componentes.json` · `openui/ejemplos.json` | **Fuente** de la capa generativa (qué componente expone qué objeto) | Sí |
 | `openui/aurora.spec.json` · `aurora.schema.json` · `PROMPT.md` | Salidas de `generar-openui.py` | **No** — se regeneran |
 | `openui/aurora-openui.js` · `openui/index.html` | Runtime vanilla y probador en vivo | Sí |
+| `data/canales.json` | A qué versión apunta cada canal (vivo / congelado) | Sí |
+| `openui/migraciones/*.json` | Recetas de migración para un major | Sí |
 | `docs/planes/` | Planes archivados | Sí, pero no es documentación viva |
 | `audit/` | Informe de auditoría | **No** — se regenera |
 | `js/catalog.js` · `js/base-datos.js` | Comportamiento del catálogo y del explorador | Sí |
@@ -79,6 +81,7 @@ python scripts/auditar-base.py --check # la base de datos, sin referencias rotas
 python scripts/auditar-responsive.py   # container queries y escalones no se debilitan
 python scripts/generar-openui.py       # capa OpenUI: spec, schema y prompt
 python scripts/auditar-openui.py       # censo, deriva, runtime, enums y ejemplos
+python scripts/canal.py --check        # canales y versiones en orden
 ```
 
 4. Si `validar-css.py` no dice `RESULTADO: VÁLIDO`, no está terminado.
@@ -109,12 +112,18 @@ Los 18 packs hablan el mismo idioma. Usa estos modificadores, y solo estos:
 - `examples/` y `recetas/` — páginas completas que puedes copiar y adaptar.
 - `paginas/` — catálogo con una demo viva por objeto.
 
-**No pegues los packs CSS en el prompt** (≈340 KB). Enlaza por CDN (siempre pineado, nunca @master):
+**No pegues los packs CSS en el prompt** (≈340 KB). Enlaza por CDN con el canal, nunca `@master`:
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v9.2.0/tokens.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v9.2.0/packs/all.css">
+<!-- web propia: canal vivo (se mueve con cada 9.x) -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v9/tokens.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v9/packs/all.css">
+
+<!-- entrega a cliente: tag exacto, congelado -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v9.5.0/tokens.css">
 ```
+
+Canales, compatibilidad, lock y migración: **[CONTRATO.md](CONTRATO.md)**. No se decide aquí.
 
 ## 6. Atribución
 

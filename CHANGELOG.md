@@ -3,6 +3,41 @@
 Formato: [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/).
 Versionado: [SemVer](https://semver.org/lang/es/).
 
+## [9.5.0] — 2026-10-21
+
+**Canales, lock y migrador: cómo cambia Aurora a todas las webs a la vez** — y cómo se
+deshace. Más la limpieza del proyecto: README reescrito y contrato en un solo documento.
+
+### Añadido
+
+- **`CONTRATO.md`** — qué propaga solo (tokens, CSS, aditivo) y qué no (renombrar, quitar,
+  estructura), semántica de versiones, lock por web, rollback y regeneración.
+- **`data/canales.json`** — canal **vivo** (`@v9`, webs propias) y **congelado** (tag exacto,
+  entregas). El rango cubre solo el major.
+- **`scripts/canal.py`** — resuelve el canal a tag exacto desde los tags de git, `--check`
+  para CI (`--online` comprueba además el CDN), `--lock` y `--verificar` para cada web.
+- **`scripts/programa-a-html.py`** — de un `.openui` a una página completa: resuelve la
+  marca, el tema, el canal, **solo los packs que el programa usa** y deja el runtime puesto.
+- **`scripts/migrar-programas.py`** + `openui/migraciones/` — migra programas en un major:
+  renombra componentes y **se niega** si el resultado no valida; los cambios de props
+  posicionales los marca como manuales con la línea exacta.
+- `auditar-uso.py` entiende páginas generadas: lee el programa embebido y justifica los
+  packs que el runtime usará al pintar. Una página generada pasa el lint con 0 avisos.
+
+### Cambiado
+
+- **README reescrito** de cero: qué es, empezar en diez segundos, las cuatro capas, tres
+  formas de consumirlo, garantías y estructura. De 295 líneas de acumulación a una portada
+  que se lee en tres minutos.
+- `AGENTS.md`: el snippet de consumo ya no pinea `v9.2.0` (estaba viejo): explica los canales
+  y remite al contrato. Nuevos scripts en la cadena.
+- `LLM.md` §8b (generado): canales y lock, con el rango leído de `data/canales.json`.
+
+### Notas
+
+- Un tag publicado es inmutable: lo que se mueve es el rango del canal, no el tag.
+- El canal vivo llega a todas las webs a la vez: CI verde → canario → 48 h → resto.
+
 ## [9.4.1] — 2026-10-21
 
 Correcciones salidas de la auditoría externa de la demo y del ojo de David: **botones que no

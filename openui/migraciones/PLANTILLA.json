@@ -1,0 +1,21 @@
+{
+  "de": "1.0.0",
+  "a": "2.0.0",
+  "componentes": [
+    {
+      "de": "Tarjeta",
+      "a": "Panel"
+    }
+  ],
+  "eliminados": [
+    "Gauge"
+  ],
+  "props_manual": [
+    {
+      "componente": "Kpi",
+      "de": "etiqueta",
+      "a": "titulo"
+    }
+  ],
+  "notas": "PLANTILLA — copia este fichero a <major>.json y ajústalo. No se aplica sola."
+}

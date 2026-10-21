@@ -1,14 +1,14 @@
 ---
 name: aurora-design-system
 description: "Usa al construir o tocar cualquier web con Aurora (Ntizar/Aurora). El repo manda: resuelve la versión vigente y pide LLM.md + components.json antes de escribir CSS."
-version: "9.4.1"
+version: "9.5.0"
 tags: [css, design-system, aurora, ntizar, agent-ready, movil, escritorio, tipografia]
 ---
 
 # Aurora — doctrina única (el repo es la orden máxima)
 
 Design system CSS puro, sin build, sin dependencias, namespaced bajo `.nz-`.
-**v9.4.1 · 2186 objetos · 411 familias · 656 demos · 18 categorías · 189 tokens · 59 gemelas OKLch · 36 componentes generativos.**
+**v9.5.0 · 2186 objetos · 411 familias · 656 demos · 18 categorías · 189 tokens · 59 gemelas OKLch · 36 componentes generativos.**
 *(Cabecera de testigo, no de autoridad: resuélvela con el PASO 0.)*
 
 > ⚠️ `Ntizar/Aurora` **manda sobre esta skill**. Esta skill es un puntero; el repo
@@ -428,6 +428,9 @@ AuroraOpenUI.stream(respuestaDelModelo, "#lienzo");    // streaming; cae a parse
    muro en una rejilla de 4. `Anillo` sale a 5 rem. `lg` solo para el gráfico protagonista.
 9. **Etiquetas de botón cortas** y el botón envuelve (`white-space: normal`, v9.4.1): con
    `nowrap`, una etiqueta larga dentro de una rejilla desbordaba el contenedor.
+10. **Qué enlaza cada web lo decide el contrato, no el proyecto** (`CONTRATO.md`): canal vivo
+    `@v9` (recibe cada 9.x) o tag exacto (entrega congelada). Nunca `@master`. Un cambio
+    aditivo llega solo; renombrar o quitar exige major + `migrar-programas.py`.
 
 ## 15. Referencias
 

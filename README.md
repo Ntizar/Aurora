@@ -2,294 +2,144 @@
 
 # Aurora
 
-**Design system CSS de Ntizar — un solo sistema para montar cualquier web.**
+**El design system de Ntizar.** Un solo CSS para montar cualquier web: catálogo verificado,
+marcas por preset y una capa generativa para que el diseño lo escriba el modelo — sin salirse
+nunca del sistema.
 
-2.186 objetos · 411 familias · 656 demos en vivo · 18 categorías · 0 gradientes · 0 glass
+2.186 objetos · 411 familias · 656 demos en vivo · 18 categorías · 36 componentes generativos
 
-[![CI — validación del manifiesto](https://github.com/Ntizar/Aurora/actions/workflows/validar.yml/badge.svg)](https://github.com/Ntizar/Aurora/actions/workflows/validar.yml)
-[![GitHub Pages](https://github.com/Ntizar/Aurora/actions/workflows/pages.yml/badge.svg)](https://github.com/Ntizar/Aurora/actions/workflows/pages.yml)
-![versión](https://img.shields.io/badge/versi%C3%B3n-9.4.1-2563eb)
-![objetos](https://img.shields.io/badge/objetos-2.186-2563eb)
-![demos](https://img.shields.io/badge/demos-656-f97316)
+[![CI](https://github.com/Ntizar/Aurora/actions/workflows/validar.yml/badge.svg)](https://github.com/Ntizar/Aurora/actions/workflows/validar.yml)
+[![Pages](https://github.com/Ntizar/Aurora/actions/workflows/pages.yml/badge.svg)](https://github.com/Ntizar/Aurora/actions/workflows/pages.yml)
+![versión](https://img.shields.io/badge/versi%C3%B3n-9.5.0-2563eb)
 
-**[Explorar el catálogo →](https://ntizar.github.io/Aurora/)**
+**[Catálogo](https://ntizar.github.io/Aurora/)** · **[Base de datos](https://ntizar.github.io/Aurora/base.html)** · **[Generative UI](https://ntizar.github.io/Aurora/openui/)** · **[Contrato](CONTRATO.md)**
 
 </div>
 
 ---
 
-Aurora no es una colección de snippets: es un **sistema con contrato**. Cada objeto existe si y solo si está demostrado en vivo, cada clase tiene un único dueño, y una CI lo verifica en cada push. Si el catálogo lo muestra, funciona; si algo se rompe, el push se pone en rojo antes de publicarse.
+Aurora no es una colección de snippets. Es un sistema con contrato: un objeto existe si está
+demostrado en vivo, cada clase tiene un solo dueño y una CI lo verifica en cada push. Si el
+catálogo lo enseña, funciona; si algo se rompe, el push se pone en rojo antes de publicarse.
 
-## El manifiesto
-
-| | |
-|---|---|
-| 🎨 | **Azul `#2563eb`** marca (estructura) · **Naranja `#f97316`** acento (**el dato que importa**) — nunca fundidos, y el acento siempre presente |
-| 🚫 | **0 gradientes** · **0 glass** · **0 colores a mano** · **0 `!important`*** |
-| 📱 | **Responsive first** real: contenedor primero, base 1 columna, breakpoints con `min-width` |
-| 🖥️ | **Escritorio que crece**: lienzo 72 → 84 → 96rem (≥1200 / ≥1440) y `.nz-container--app` para herramientas. La letra no crece con el monitor; crece el lienzo |
-| 🔤 | **Fuente servida por el sistema**: Inter variable viaja en `tokens.css`. La misma letra en Windows, Android, Linux y en una captura headless |
-| ⚖️ | **Pesos por token** (`--nz-peso-*`): 400 cuerpo · 500 apoyo · 600 interfaz · 700 titulares. **El 800 está retirado**; nada por debajo de 16px va en 700 |
-| 👆 | **Táctil 44px** · safe-area iOS |
-| 🌗 | **Light + dark** solo con tokens temáticos |
-| 🔍 | **Si no aparece en el catálogo, no existe** — cada clase declarada tiene demo |
-
-> \* La única excepción, declarada y justificada: `.nz-visually-hidden`, que necesita ganar a cualquier otra regla por diseño.
-
-## Las 18 categorías
-
-| # | Categoría | Pack | Objetos | Demos |
-|---|---|---|---:|---:|
-| 01 | Layout y estructura | `p1-layout.css` | 179 | 53 |
-| 02 | Navegación | `p2-navigation.css` | 78 | 36 |
-| 03 | Tipografía | `p3-typography.css` | 135 | 44 |
-| 04 | Acciones y botones | `p4-actions.css` | 78 | 16 |
-| 05 | Formularios e inputs | `p5-forms.css` | 102 | 44 |
-| 06 | Feedback y estados | `p6-feedback.css` | 153 | 52 |
-| 07 | Overlays y diálogo | `p7-overlays.css` | 118 | 34 |
-| 08 | Datos, tablas y listas | `p8-data.css` | 145 | 40 |
-| 09 | Media e iconografía | `p9-media.css` | 119 | 42 |
-| 10 | Comercio y producto | `p10-commerce.css` | 156 | 48 |
-| 11 | Social y marketing | `p11-social.css` | 107 | 39 |
-| 12 | Accesibilidad y sistema | `p12-system.css` | 80 | 29 |
-| 13 | Gráficos y visualización | `p13-charts.css` | 216 | 38 |
-| 14 | IA y agentes | `p14-ai.css` | 180 | 32 |
-| 15 | Apps y escritorio | `p15-apps.css` | 75 | 38 |
-| 16 | Cristal (capa de estilo) | `p16-cristal.css` | 8 | 5 |
-| 17 | Patrones compuestos | `p17-patrones.css` | 224 | 47 |
-| 18 | Escenario (charlas en beats) | `p18-escenario.css` | 33 | 18 |
-| | **Total** | | **2.186** | **656** |
-
-## Uso
-
-**En una página real** — enlaza los tokens y solo los packs que necesites:
+## Empezar en diez segundos
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v9.2.0/tokens.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v9.2.0/packs/p4-actions.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v9.2.0/packs/p5-forms.css">
+<html lang="es" data-nz-theme="light" data-nz-marca="aurora">
+<head>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v9/tokens.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v9/packs/p1-layout.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v9/packs/p3-typography.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v9/packs/p4-actions.css">
+</head>
+<body class="nz">
+  <main class="nz-container">
+    <h1 class="nz-h1">Hola, Aurora</h1>
+    <p class="nz-lead">Un sistema, todas las webs.</p>
+    <button class="nz-btn nz-btn--primary">Empezar</button>
+  </main>
+</body>
+</html>
 ```
 
-**Todo de golpe** — para prototipar:
+`@v9` es el **canal vivo**: se mueve con cada release 9.x, así que un cambio en Aurora llega
+solo a todas las webs que lo usan. Para una entrega congelada, el tag exacto (`@v9.5.0`).
+El detalle completo está en **[CONTRATO.md](CONTRATO.md)**.
 
-```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v9.2.0/tokens.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v9.2.0/packs/all.css">
+## Las cuatro capas
+
+```
+L0  marcas/      presets de tokens: identidad (datos, no código)
+L1  packs/       2.186 objetos CSS: la implementación
+L2  openui/      36 componentes: el vocabulario que usa el modelo
+L3  (plantillas) arquetipos: panel, informe, landing, ajustes, agente
 ```
 
-El `body` lleva `class="nz"` y el tema se fija en el `<html>`:
+El modelo trabaja en **L2** y elige **L0** por nombre. Nunca escribe en L1.
 
-```html
-<html lang="es" data-nz-theme="light">   <!-- o "dark" -->
-```
+## Tres formas de consumirlo
 
-**No hay que enlazar fuentes**: `tokens.css` sirve Inter variable desde el propio repo (los `.woff2` viven en `fuentes/`). Y el lienzo ya crece solo en escritorio: si es una herramienta, añade `.nz-container--app`.
+**Persona** — abre el [catálogo](https://ntizar.github.io/Aurora/): una demo viva por objeto,
+con su markup copiable. Si dudas, la [base de datos de diseño](https://ntizar.github.io/Aurora/base.html)
+busca por lo que quieres construir («tabla apilable», «dashboard», «acento»).
 
-Todos los componentes comparten el prefijo `.nz-` y los tokens `--nz-*`: nada colisiona con otros frameworks ni con tu propio CSS.
-
-## Consumo por agentes (IA)
-
-Aurora está diseñado para que un agente genere HTML correcto a la primera, sin leer los packs:
-
-1. **`base.html` + `datos/base-diseno.json`** — la **base de datos de diseño**: índice consultable de las 411 familias con su markup real, los 189 tokens, las recetas, los combos y las marcas. Busca por lo que quieres construir («tabla apilable», «dashboard», «acento») y copia. El JSON es machine-readable; el HTML es la interfaz.
-2. **`LLM.md`** (~12 KB) — guía de decisión: qué packs enlazar según el tipo de página (combos), qué clases existen, alias inglés→clase (`tree` → `nz-arbol`), reglas de tipografía y acento, y anti-patrones.
-3. **`components.json`** — API machine-readable completa: **411 familias** con sus clases, modificadores y partes, los **189 tokens** inventariados, alias y combos.
-4. **`COMPOSICION.md`** — el contrato de cómo se monta una página (12 leyes). Las clases correctas no bastan.
-5. **`recetas/` y `examples/`** — páginas completas y funcionando (login, dashboard, admin, ajustes, informe, landing, chat-ia, forms): se copian como punto de partida.
-6. **`scripts/auditar-uso.py`** — el lint del consumidor: le pasas el HTML generado y te dice clases inventadas, packs que faltan por enlazar, gradientes, colores a mano, negritas a mano, ausencia de acento, desktop-first y atribución. Ejecútalo **antes de dar por bueno cualquier HTML**:
+**Agente** — `LLM.md` (22 KB) decide qué packs enlazar y qué clases usar; `components.json`
+es la API completa machine-readable; `scripts/auditar-uso.py` audita el HTML generado:
 
 ```bash
-python scripts/auditar-uso.py tu-pagina.html      # informe con fallos y avisos
-python scripts/auditar-uso.py --selftest          # prueba de la propia herramienta
+python3 scripts/auditar-uso.py mi-pagina.html   # clases inventadas, packs, composición
 ```
 
-Nada de esto se desincroniza: la CI regenera `LLM.md`/`components.json`, comprueba que `datos/base-diseno.json` coincide con su generador, que no hay referencias rotas, que el responsive no se ha debilitado y que el lint funciona.
-
-## Interfaces generativas (v9.4)
-
-Cuando la interfaz la escribe un **modelo en tiempo de ejecución**, no le des HTML: dale el
-lenguaje y la biblioteca. OpenUI Lang describe la pantalla en una docena de líneas y Aurora
-la pinta con sus objetos.
-
-| Pieza | Qué hace |
-|---|---|
-| [`openui/index.html`](https://ntizar.github.io/Aurora/openui/) | **Probador en vivo**: editas el programa y ves el render, con el HTML generado debajo |
-| `openui/PROMPT.md` | System prompt listo (sintaxis + 36 firmas + reglas de diseño) |
-| `openui/aurora.spec.json` | Biblioteca machine-readable: firmas y JSON Schema que valida el parser |
-| `openui/aurora-openui.js` | Runtime vanilla: OpenUI Lang → markup `.nz-*`. Sin React, sin build |
-| `openui/componentes.json` | La fuente a mano: qué objeto del censo expone cada componente |
-| `scripts/generar-openui.py` | Genera spec, esquema y prompt (`--check` en CI) |
-| `scripts/auditar-openui.py` | Puerta: censo, deriva, renderizadores, enums y ejemplos |
+**Modelo, en caliente** — `openui/PROMPT.md` + `openui/aurora.spec.json`, y el modelo emite
+openui-lang; `openui/aurora-openui.js` lo pinta con clases del censo. Cero clases inventadas
+posibles, y ~52 % menos tokens que JSON:
 
 ```
-root = Pagina([cabecera, kpis], "contenido")
-cabecera = Titular("Operaciones de la flota", "1")
+root = Pagina([titulo, kpis], "contenido")
+titulo = Titular("Operaciones de la flota", "1")
 kpis = Rejilla([Kpi("Puntualidad", "94,2 %", "+2,1 pp", "sube", "acento")], "4")
 ```
 
-Tres garantías que el repo comprueba: **0 clases fuera del censo**, los **3 ejemplos parsean
-con el parser oficial** (lang-core 1.0.1, 0 errores) y el **streaming pinta lo mismo** que el
-render de una vez. El parser oficial se carga por ESM desde CDN; si no hay red, entra un
-parser local del mismo subconjunto y el dato se pinta igual.
+Pruébalo en **[la demo](https://ntizar.github.io/Aurora/openui/)** y mira el HTML que sale.
 
-## La base de datos de diseño
+## Qué hay dentro
 
-No es una carpeta de snippets ni un catálogo de capturas: es un **índice vivo** de todo el sistema, generado desde la única fuente de verdad y verificado en CI.
-
-| Pieza | Qué resuelve |
+| Pieza | Qué es |
 |---|---|
-| `base.html` | Explorador: búsqueda con alias (`tree`, `drawer`), filtros por tipo, ficha con **preview real** del componente, markup copiable, tokens, anti-patrón y enlace a la demo |
-| `datos/base-diseno.json` | Índice machine-readable: familias, tokens con valor y sección, recetas, ejemplos, combos, marcas, las 12 leyes y el léxico |
-| `scripts/generar-base-datos.py` | Lo genera. Determinista: sin fecha, ordenado, `--check` falla si el disco no coincide |
-| `scripts/auditar-base.py` | Lo audita: referencias rotas, familias sin markup, tokens sin valor, rutas que se escapan del repo |
+| `tokens.css` | 234 tokens (más 61 en oscuro) con gemela OKLch y contraste auditado |
+| `packs/p1…p18.css` | Los 18 packs, uno por categoría: 2.186 objetos, 411 familias, 656 demos |
+| `marcas/` | 6 presets (aurora, indigo, esmeralda, violeta, carmesí, ntizar) + generador OKLCH |
+| `specs/NN.json` | **Fuente de verdad** de las demos: el catálogo se genera de aquí |
+| `base.html` + `datos/base-diseno.json` | Base de datos consultable: familias, tokens, recetas, combos, marcas y leyes |
+| `recetas/` · `examples/` · `combos/` | Páginas completas y esqueletos por tipo, listos para copiar |
+| `openui/` | Capa generativa: componentes, prompt, spec, runtime vanilla y probador |
+| `AGENTS.md` · `COMPOSICION.md` · `LLM.md` | Reglas duras, contrato de composición y guía de decisión |
 
-La regla es la de siempre: **una fuente por tema**. La base de datos no copia contenido a mano; lo deriva de `components.json`, `specs/`, `recetas/`, `combos/` y `marcas/`. Si un pack crece, la base crece sola.
+Una marca son dos colores y sus rampas: `<html data-nz-marca="ntizar">` y todo el sistema
+cambia de identidad sin tocar una clase.
 
-## Responsive multifunción (v9.2)
+## Garantías (lo que la CI no deja pasar)
 
-El sistema ya no decide solo por el ancho de la ventana. Los objetos compuestos consultan **el ancho del sitio donde viven**:
-
-```html
-<div class="nz-cq" style="--ancho:20rem">   <!-- un drawer, un sidebar, un marco -->
-  <div class="nz-dash-grid nz-dash-grid--4">…</div>
-</div>
+```bash
+python3 scripts/validar-css.py           # manifiesto, cobertura, literales, versión y tag
+python3 scripts/audit-catalog.py         # campo a campo contra las specs
+python3 scripts/audit-a11y.py            # etiquetas, teclado y foco
+python3 scripts/audit-tema.py            # todo sobrevive al modo oscuro
+python3 scripts/auditar-base.py --check  # la base de datos no se edita a mano
+python3 scripts/auditar-responsive.py    # container queries y escalones no se debilitan
+python3 scripts/auditar-contraste.py     # pares WCAG por tema y marca + paridad oklch
+python3 scripts/auditar-openui.py        # censo, deriva, runtime, enums y ejemplos
+python3 scripts/canal.py --check         # canales y versiones en orden
+python3 scripts/auditar-uso.py --selftest
 ```
 
-- `.nz-dash-grid`, `.nz-split`, `.nz-thirds`, `.nz-bento` son contenedores de consulta: sus rejillas se adaptan al marco.
-- `.nz-chart`, `.nz-chat` y `.nz-kanban-wrap` también: un gráfico en 320 px reduce altura y padding; el kanban se queda en filas aunque el monitor sea 4K.
-- La prueba viva es **[`stress-test.html`](stress-test.html)**: el mismo panel en 320, 480, 768 y ancho completo, con el mismo HTML y las mismas clases.
-- Los escalones de escritorio ancho (`@1200`, `@1440`) viven en `p1`, `p13`, `p15` y `p17`. La letra no crece con el monitor; crece el lienzo.
+Cero gradientes, cero `backdrop-filter`, cero `!important`, cero colores a mano: todo valor
+es un token. El pie de toda página: **Hecho con ❤️ por David Antizar**.
 
 ## Estructura
 
 ```
 Aurora/
-├── index.html          # portada: manifiesto, buscador de objetos, 18 categorías
-├── base.html           # base de datos de diseño: buscador, fichas y markup copiable
-├── stress-test.html    # el mismo panel en 320 / 480 / 768 / ancho completo
-├── tokens.css          # fuente única de verdad de los tokens (+ @font-face de Inter)
-├── fuentes/            # Inter variable self-hosted (woff2 · latin y latin-ext)
-├── packs/
-│   ├── p0-catalog.css  # shell del catálogo (.cat-*) — NO define componentes .nz-*
-│   ├── p1 … p18.css    # un pack por categoría (ver tabla)
-│   └── all.css         # todos los packs en un enlace (@import)
-├── marcas/             # presets de color (aurora, indigo, esmeralda, violeta, carmesí, ntizar)
-├── specs/              # FUENTE DE VERDAD de las demos (01.json … 18.json)
-├── paginas/            # catálogo generado (01-…-18-*.html)
-├── combos/             # esqueletos de página por tipo, generados y versionados
-├── js/
-│   ├── catalog.js      # buscador (tecla /), filtro, tema, «ver código» y copiar
-│   └── base-datos.js   # motor del explorador de la base de datos
-├── datos/
-│   ├── objetos.json    # índice de los objetos para el buscador
-│   └── base-diseno.json # la base de datos: familias, tokens, recetas, combos, marcas
-├── audit/              # informe de auditoría generado (AUDITORIA.md + index.html)
-├── recetas/ · examples/ # páginas completas para copiar (canónicas y mínimas)
-├── openui/             # capa generativa: spec, prompt, runtime vanilla y probador
-├── docs/planes/        # planes archivados (v7 y v9), fuera de la raíz
-├── scripts/
-│   ├── build-catalog.py      # genera páginas + portada + índice desde specs/
-│   ├── audit-catalog.py      # auditoría campo a campo
-│   ├── validar-css.py        # manifiesto, cobertura, literales, versión y sincronía (CI)
-│   ├── audit-tema.py         # ¿todo sobrevive al modo oscuro? (CI)
-│   ├── audit-a11y.py         # etiquetas, teclado y foco de las demos (CI)
-│   ├── audit-html.py         # genera el informe navegable de auditoría
-│   ├── auditar-movil.py      # mide desbordes y objetivos táctiles en móvil (PC)
-│   ├── generar-llm-docs.py   # genera LLM.md + components.json + llms.txt
-│   ├── generar-base-datos.py # genera datos/base-diseno.json (--check en CI)
-│   ├── auditar-base.py       # valida la base de datos y sus referencias (CI)
-│   ├── auditar-responsive.py # vigila container queries y escalones (CI)
-│   ├── auditar-uso.py        # lint del HTML consumidor (manifiesto + composición)
-│   ├── generar-openui.py     # genera openui/aurora.spec.json + PROMPT.md (--check en CI)
-│   ├── auditar-openui.py     # valida censo, deriva, runtime, enums y ejemplos (CI)
-│   ├── traer-fuente.py       # descarga/actualiza los woff2 de Inter
-│   └── extraer-specs.py      # utilidad: reconstruye specs/ desde las páginas
-├── LLM.md              # guía de decisión para agentes (~12 KB, en vez de 250 KB de CSS)
-├── COMPOSICION.md      # contrato de composición (12 leyes que el lint comprueba)
-├── AGENTS.md           # reglas duras del repo (qué se toca y qué no)
-└── components.json     # API machine-readable: familias, clases, tokens, alias y combos
+├── tokens.css · packs/ · fuentes/     # el sistema: tokens y 18 packs (Inter self-hosted)
+├── marcas/                            # presets de color con generador OKLCH
+├── specs/ → paginas/ · index.html     # las demos son la fuente; el catálogo se genera
+├── base.html · datos/                 # base de datos de diseño (vista + JSON)
+├── recetas/ · examples/ · combos/     # páginas completas y esqueletos por tipo
+├── openui/                            # capa generativa: componentes, prompt, spec, runtime
+├── scripts/                           # generadores y auditores (lo que corre la CI)
+├── docs/                              # RUTA-COHERENCIA y planes archivados
+├── LLM.md · COMPOSICION.md · CONTRATO.md · AGENTS.md · SKILL.md
+└── CHANGELOG.md · llms.txt · components.json
 ```
-
-## Léxico de modificadores
-
-Los 18 packs hablan el mismo idioma — si sabes usar un objeto, sabes usarlos todos:
-
-| Eje | Modificadores |
-|---|---|
-| Tamaño | `--2xs` `--xs` `--sm` `--lg` `--xl` |
-| Tono | `--brand` `--accent` `--success` `--warning` `--danger` `--info` `--neutral` |
-| Énfasis | `--solid` `--soft` `--outline` `--ghost` |
-| Disposición | `--vertical` `--horizontal` `--inline` `--compact` `--spacious` `--center` `--between` `--end` |
-| Forma | `--square` `--rounded` `--pill` |
-| Elevación | `--flat` `--raised` |
-| Estado | `.is-active` `.is-disabled` `.is-loading` `.is-done` `.is-error` `.is-empty` `.is-selected` o `[aria-current]` `[aria-selected]` `[aria-expanded]` |
-
-## Reglas del sistema
-
-1. **Todo lo público vive bajo `.nz-`**
-2. **Todos los valores son tokens `--nz-*`** — nunca un hex suelto, un `16px` a mano ni un `font-weight: 700` suelto
-3. **Sin `!important`** (salvo el hueso duro de `.nz-visually-hidden`)
-4. **BEM** para componentes: `.nz-card__body--featured`
-5. **Una clase, un dueño**: cada objeto se declara en un único pack
-6. **Si no aparece en el catálogo, no existe**: cada clase declarada tiene demo
-7. **Accesible de serie**: todo control lleva etiqueta y el patrón sin JS usa
-   `.nz-vh` (oculto pero focusable), nunca el atributo `hidden`
-8. **Tipografía con juicio**: 13px es el mínimo de interfaz (12px solo para datos),
-   el peso es un token y el 800 no existe
-9. **Escritorio de verdad**: el lienzo crece hasta 96rem y una herramienta usa
-   `.nz-container--app`; medido a 1920px: una herramienta ocupa ≥95% del ancho (y hasta el
-   100% con `--app`), y una página de contenido ya no baja del 80% (en v8.3 era el 60%)
-
-## Garantías automáticas
-
-Seis puertas comprueban que el sistema no se degrada. Si alguna falla, el push se
-pone en rojo **antes** de publicarse:
-
-| Puerta | Qué vigila |
-|---|---|
-| `validar-css.py` | 0 gradientes/glass/colores a mano, 0 `!important` sin justificar, tokens existentes, dueño único por clase, cobertura clase↔demo, HTML bien formado, cada página carga los packs que usa, ningún literal que ya tenga token y **nada por debajo de 16px en negrita** (`peso-por-tamano`) |
-| `audit-tema.py` | que ninguna regla pinte texto o bordes de paleta sin declarar su propio fondo: eso es lo que rompe el modo oscuro |
-| `audit-a11y.py` | `alt`, etiquetas asociadas, texto accesible, `aria-*` que apunten a ids reales, `label[for]` correctos, `tabindex` y orden de tabulación |
-| `audit-catalog.py` | auditoría campo a campo: lo declarado contra lo demostrado |
-| `auditar-base.py --check` | que `datos/base-diseno.json` esté sincronizado con su generador, sin referencias rotas, sin familias sin markup y sin tokens sin valor |
-| `auditar-responsive.py` | que al menos 4 packs mantengan container queries, 3 el escalón `@1440`, 2 el `@1200` y que `stress-test.html` siga pasando el lint |
-| `auditar-coherencia.py` | que no vuelvan los iconos de texto, las recetas forzadas a dark, los CDN viejos ni los footers sin atribución |
-| `auditar-uso.py --selftest` | que el lint del consumidor siga cazando los 13 defectos que debe cazar (clases inventadas, gradientes, negritas a mano, emojis…) |
-| `node --check` + regeneración | que el catálogo commiteado coincida con `specs/` |
-
-## Ruta de coherencia
-
-La coherencia no se improvisa: tiene una ruta con puertas. La primera fase ya está cerrada.
-
-- **Fase 1 · Superficie (cerrada):** iconos SVG en todo el catálogo (60 bloques de demos
-  migrados), un solo tema por receta, CDN al día y footers exactos. `211 → 0` incoherencias
-  detectadas por `auditar-coherencia.py`.
-- **Fase 2 · Responsive real (en curso):** matriz de 8 anchos × 12 patrones, cero desbordes,
-  táctil 44px y stress-test por patrón. La medición con navegador se hace en el PC.
-- **Fase 3 · Buen gusto:** densidad, ritmo, alineación óptica, estados y microinteracciones.
-- **Fase 4 · Cierre:** CI con todas las puertas, tag v10.0.0 y Pages.
-
-Detalle, criterios y deuda conocida: **[docs/RUTA-COHERENCIA.md](docs/RUTA-COHERENCIA.md)**.
 
 ## Trabajar en el sistema
 
-```bash
-python scripts/generar-base-datos.py   # índice de la base de datos
-python scripts/build-catalog.py        # regenera páginas, portada e índice de objetos
-python scripts/generar-llm-docs.py     # LLM.md + components.json + llms.txt
-python scripts/audit-catalog.py        # auditoría campo a campo → audit/
-python scripts/audit-html.py           # informe navegable → audit/index.html
-python scripts/validar-css.py          # manifiesto + cobertura (esto es lo que corre CI)
-```
+1. Declara las clases en el pack que les toque (una familia, un pack).
+2. Añade la demo en `specs/NN.json` (una línea, contenido real, sin JS).
+3. Regenera y valida con la cadena de arriba: si `validar-css.py` no dice **VÁLIDO**, no está.
+4. Si a un proyecto le falta un patrón, **se sube al repo**: el siguiente lo hereda.
+5. Si cambias algo que otros usan, mira **[CONTRATO.md](CONTRATO.md)** antes de mover el tag.
 
-Las demos viven en `specs/NN.json`, no en el HTML. Para añadir un objeto nuevo:
-
-1. Declara sus clases en el pack que le toque (`packs/pN-*.css`).
-2. Añade su demo en `specs/NN.json` (titulo, tag, markup).
-3. `python scripts/build-catalog.py` y listo.
-
-**Para agentes IA**: lee `LLM.md` primero (~12 KB con todo lo necesario para decidir), consulta `components.json` cuando necesites la API exacta de una familia, y respeta `AGENTS.md` y `COMPOSICION.md`. La CI (`.github/workflows/validar.yml`) comprueba en cada push que el manifiesto se cumple, que ninguna clase se declara dos veces, que todo lo declarado tiene demo y que el catálogo commiteado coincide con `specs/`. Si algo falla, el push se pone en rojo antes de publicarse.
-
----
+## Atribución
 
 Hecho con ❤️ por David Antizar

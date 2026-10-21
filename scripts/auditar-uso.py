@@ -45,6 +45,24 @@ CLASE_RE = re.compile(r'class="([^"]*)"')
 LOCAL_RE = re.compile(r'href="(?:\.\./)?(tokens\.css|packs/[a-z0-9-]+\.css)"')
 STYLE_RE = re.compile(r'style="([^"]*)"')
 STYLE_BLOCK_RE = re.compile(r"<style[^>]*>(.*?)</style>", re.S)
+# Página generada en caliente: el programa OpenUI va embebido y sus componentes
+# justifican packs que el HTML estático todavía no muestra.
+PROGRAMA_RE = re.compile(r'<script[^>]*id="programa"[^>]*>(.*?)</script>', re.S)
+LLAMADA_RE = re.compile(r"\b([A-ZÁÉÍÓÚÑ][\w]*)\s*\(")
+
+
+def packs_del_programa(html):
+    """Packs que necesitará la página cuando el runtime pinte el programa."""
+    m = PROGRAMA_RE.search(html)
+    if not m:
+        return set(), set()
+    ruta = ROOT / "openui" / "componentes.json"
+    if not ruta.exists():
+        return set(), set()
+    fuente = json.loads(ruta.read_text(encoding="utf-8"))
+    por_nombre = {c["nombre"]: c for c in fuente["componentes"]}
+    nombres = set(LLAMADA_RE.findall(m.group(1)))
+    return {n for n in nombres if n in por_nombre}, nombres - set(por_nombre)
 HEX_RE = re.compile(r"#[0-9a-fA-F]{3,8}\b")
 RGB_RE = re.compile(r"\b(?:rgb|rgba|hsl|hsla)\(")
 
@@ -196,6 +214,18 @@ def auditar(html, clase_a_familia, packs_conocidos):
         familias = {clase_a_familia[c] for c in nz if c in clase_a_familia}
         necesarios = {FAMILIA_PACK.get(f, "") for f in familias}
         necesarios.discard("")
+        comps_programa, comps_raros = packs_del_programa(html)
+        if comps_programa:
+            fuente_openui = json.loads((ROOT / "openui" / "componentes.json").read_text(encoding="utf-8"))
+            clases_por_comp = {c["nombre"]: c["clases"] for c in fuente_openui["componentes"]}
+            for comp in comps_programa:
+                for clase in clases_por_comp.get(comp, []):
+                    fam = clase_a_familia.get(clase)
+                    if fam and FAMILIA_PACK.get(fam):
+                        necesarios.add(FAMILIA_PACK[fam])
+            necesarios.add("p12-system.css")
+        for comp in sorted(comps_raros):
+            avisos.append("el programa embebido usa «%s», que no existe en la biblioteca OpenUI" % comp)
         enlazados = {f[len("packs/"):] for f in ficheros if f.startswith("packs/")}
         if "all.css" in enlazados:
             necesarios = set()  # all.css lo cubre todo
