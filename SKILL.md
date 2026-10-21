@@ -28,7 +28,7 @@ procedimiento. Resuélvela en cada tarea:
 # a) con el repo clonado (lo normal en esta máquina) — la vía rápida
 #    (ajusta la carpeta al nombre de tu clon: Aurora-8, Aurora-7, Aurora…)
 git -C C:/Users/d_ant/Projects/Aurora-8 fetch --tags -q
-V=$(git -C C:/Users/d_ant/Projects/Aurora-8 describe --tags --abbrev=0)   # p.ej. v9.2.0
+V=$(git -C C:/Users/d_ant/Projects/Aurora-8 describe --tags --abbrev=0)   # p.ej. v9.5.0
 
 # b) sin repo — pregunta a GitHub
 curl -s https://api.github.com/repos/Ntizar/Aurora/tags | grep -m1 '"name"'
@@ -90,14 +90,14 @@ nueva del sistema no te deja ciego: solo obliga a refrescar la cabecera.
 ```html
 <html lang="es" data-nz-theme="light">   <!-- o "dark" -->
 <head>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v9.2.0/tokens.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v9.2.0/packs/all.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v9/tokens.css">   <!-- canal vivo -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v9/packs/all.css">
 </head>
 <body class="nz">
 ```
 
-Sustituye `v9.2.0` por **`$V`** (el tag que resolviste en el PASO 0): el ejemplo es de la
-última vez que se tocó esta cabecera. `all.css` solo para prototipos; en producción enlaza
+`@v9` es el **canal vivo** (se mueve con cada 9.x). Para una entrega congelada, el tag exacto
+que resolviste en el PASO 0. Nunca `@master`. El detalle está en `CONTRATO.md` del repo. `all.css` solo para prototipos; en producción enlaza
 los packs que uses (12-40 KB cada uno). Purga: `curl https://purge.jsdelivr.net/gh/Ntizar/Aurora@$V/<fichero>`.
 
 ## 4. Móvil: ya viene resuelto — no lo reinventes por proyecto
