@@ -92,6 +92,9 @@ python3 scripts/generar-web.py --brief briefs/panel-ferroviaria.json
 # o sin modelo, partiendo de la plantilla
 python3 scripts/plantilla.py panel-operativo --var titulo="Octubre" -o p.openui
 python3 scripts/programa-a-html.py p.openui -o dist/panel.html --marca ntizar
+
+# publicar una versión (canal vivo)
+python3 scripts/canal.py --check && python3 scripts/canal.py --purgar
 ```
 
 ## Qué hay dentro

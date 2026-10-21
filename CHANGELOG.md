@@ -3,6 +3,19 @@
 Formato: [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/).
 Versionado: [SemVer](https://semver.org/lang/es/).
 
+## [9.8.0] — 2026-10-21
+
+### Añadido
+
+- **`canal.py --purgar`**: purga los 34 ficheros del canal vivo en jsDelivr y **verifica** que
+  `@v9` sirve ya la versión vigente. Sin esto, el rango puede seguir sirviendo la versión
+  anterior durante horas y el canal vivo miente. Forma parte del release (CONTRATO.md §2b).
+
+### Corregido
+
+- El canal vivo servía **9.5.0** con el tag ya en 9.7.1: lo arregló la purga. La promesa «un
+  cambio llega solo» tiene una condición que ahora está escrita y automatizada.
+
 ## [9.7.1] — 2026-10-21
 
 ### Corregido

@@ -35,6 +35,19 @@ python3 scripts/canal.py --tag      # el tag exacto, para scripts
 python3 scripts/canal.py --check    # puerta de CI (offline); --online añade el CDN
 ```
 
+## 2b. Tras publicar: purga el canal
+
+Un tag es inmutable, pero **un rango se cachea en el edge**. Hasta que no se purga, `@v9`
+puede seguir sirviendo la versión anterior durante horas — y la promesa del canal vivo se
+rompe en silencio. Forma parte del release, no es opcional:
+
+```bash
+python3 scripts/canal.py --purgar     # purga los 34 ficheros del canal y verifica
+```
+
+La verificación es la que manda: compara lo que sirve `@v9` con el último tag y dice
+**OK** o **DESFASADO**. Si dice DESFASADO, el release no ha terminado.
+
 ## 3. Un tag publicado es inmutable
 
 Nunca se reescribe, nunca se mueve, nunca se borra. Si algo estaba mal, se publica otra

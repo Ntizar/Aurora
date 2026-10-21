@@ -96,6 +96,63 @@ def cdn_ok(ref, fichero="tokens.css"):
         return False, "%s (%s)" % (url, exc)
 
 
+ARCHIVOS_PUBLICOS = [
+    "tokens.css", "llms.txt", "LLM.md", "components.json", "packs/all.css",
+    "openui/aurora-openui.js", "openui/aurora.spec.json", "openui/PROMPT.md",
+    "openui/plantillas/index.json",
+]
+
+
+def purgar(ref=None, verificar=True):
+    """Purga el canal vivo en jsDelivr.
+
+    Un tag es inmutable, pero un RANGO (@v9) se cachea en el edge: hasta que no se purga,
+    el rango puede seguir sirviendo la versión anterior durante horas. Publicar sin purgar
+    rompe la promesa del canal vivo.
+    """
+    e = estado()
+    ref = ref or e["vivo_rango"]
+    archivos = list(ARCHIVOS_PUBLICOS)
+    packs = sorted(p.name for p in (ROOT / "packs").glob("p*.css"))
+    archivos += ["packs/" + p for p in packs]
+    archivos += ["marcas/" + p.name for p in sorted((ROOT / "marcas").glob("*.css"))]
+    fallos = 0
+    for f in archivos:
+        url = "https://purge.jsdelivr.net/gh/Ntizar/Aurora@%s/%s" % (ref, f)
+        try:
+            with urllib.request.urlopen(url, timeout=25) as r:
+                datos = json.loads(r.read().decode("utf-8"))
+            estado_purga = datos.get("status") or datos.get("message")
+            if estado_purga != "finished":
+                fallos += 1
+                print("  ✗ %-34s %s" % (f, estado_purga))
+        except Exception as exc:  # noqa: BLE001 — red
+            fallos += 1
+            print("  ✗ %-34s %s" % (f, exc))
+    print("purgados %d ficheros de @%s%s" % (len(archivos) - fallos, ref, " con fallos" if fallos else ""))
+    if verificar:
+        return verificar_canal(ref)
+    return 1 if fallos else 0
+
+
+def verificar_canal(ref):
+    """¿El rango sirve ya la versión vigente? Se mira llms.txt, que la lleva en la cabecera."""
+    e = estado()
+    esperado = e["ultimo_tag"].lstrip("v")
+    url = "https://cdn.jsdelivr.net/gh/Ntizar/Aurora@%s/llms.txt" % ref
+    try:
+        with urllib.request.urlopen(url, timeout=25) as r:
+            texto = r.read().decode("utf-8", "replace")
+    except Exception as exc:  # noqa: BLE001
+        print("  ✗ no se pudo leer %s: %s" % (url, exc))
+        return 1
+    servido = re.search(r"v(\d+\.\d+\.\d+)", texto)
+    servido = servido.group(1) if servido else "?"
+    ok = servido == esperado
+    print("  @%s sirve v%s · vigente v%s → %s" % (ref, servido, esperado, "OK" if ok else "DESFASADO"))
+    return 0 if ok else 1
+
+
 def estado():
     canales = leer_canales()
     ultimo, tags, nota = ultimo_efectivo()
@@ -184,12 +241,15 @@ def main():
     ap.add_argument("--online", action="store_true", help="comprueba también el CDN")
     ap.add_argument("--lock", metavar="RUTA", help="escribe un lock con la versión resuelta")
     ap.add_argument("--verificar", metavar="RUTA", help="verifica un lock existente")
+    ap.add_argument("--purgar", action="store_true", help="purga el canal vivo en jsDelivr y verifica")
     args = ap.parse_args()
 
     if args.tag:
         e = estado()
         print(e["vivo_resuelto"] or "")
         return 0 if e["vivo_resuelto"] else 1
+    if args.purgar:
+        return purgar()
     if args.lock:
         return lock(args.lock)
     if args.verificar:
