@@ -1,4 +1,4 @@
-# Aurora — design system CSS puro (v9.4.0)
+# Aurora — design system CSS puro (v9.4.1)
 
 > Sistema de diseño CSS-only, sin build y sin dependencias. Namespace `.nz-`,
 > tokens `--nz-*`, BEM, responsive first. 2186 clases en 411 familias,
@@ -6,32 +6,32 @@
 
 Documentos para agentes (léelos en este orden):
 
-- [LLM.md](https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v9.4.0/LLM.md): guía de decisión (~7 KB). Qué packs enlazar por CDN,
+- [LLM.md](https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v9.4.1/LLM.md): guía de decisión (~7 KB). Qué packs enlazar por CDN,
   qué clases usar por necesidad, léxico de modificadores, marca/acento y
   anti-patrones globales. Empieza aquí.
-- [components.json](https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v9.4.0/components.json): API machine-readable completa. Por
+- [components.json](https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v9.4.1/components.json): API machine-readable completa. Por
   familia: clases, partes `__`, modificadores (los del léxico en
   `modificadoresLexico`), tokens `--nz-*` que consume, markup mínimo de
   ejemplo extraído de las demos reales y `noUsar` (anti-patrones). Alias
   EN→ES en `alias`.
-- [examples/](https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v9.4.0/): 5 páginas completas listas para copiar (login,
+- [examples/](https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v9.4.1/): 5 páginas completas listas para copiar (login,
   dashboard, landing, chat-ia, forms).
-- [base.html](https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v9.4.0/base.html) y [datos/base-diseno.json](https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v9.4.0/datos/base-diseno.json):
+- [base.html](https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v9.4.1/base.html) y [datos/base-diseno.json](https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v9.4.1/datos/base-diseno.json):
   base de datos de diseño consultable. 411 familias con markup, tokens,
   recetas, combos y marcas en un índice; búscalo antes de leer un pack.
-- [combos/](https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v9.4.0/): esqueleto markup de cada tipo de página (landing,
+- [combos/](https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v9.4.1/): esqueleto markup de cada tipo de página (landing,
   dashboard, chat-ia, login-form, e-commerce, escritorio-app, charla-beats,
   prototipo) con clases reales validadas; mapa en `components.json`
   (`combos` y `combosEsqueleto`).
-- [paginas/](https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v9.4.0/): catálogo vivo con una demo real por objeto.
-- [COMPOSICION.md](https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v9.4.0/COMPOSICION.md): contrato de composición que el lint
+- [paginas/](https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v9.4.1/): catálogo vivo con una demo real por objeto.
+- [COMPOSICION.md](https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v9.4.1/COMPOSICION.md): contrato de composición que el lint
   comprueba (protagonista, acento, jerarquía, densidad, estados).
-- [AGENTS.md](https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v9.4.0/AGENTS.md): reglas duras del repo.
+- [AGENTS.md](https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v9.4.1/AGENTS.md): reglas duras del repo.
 
 Reglas mínimas que no se negocian:
 
 1. No pegues los packs en el prompt (~340 KB). Enlaza por CDN pineado:
-   `https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v9.4.0/tokens.css` + `https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v9.4.0/packs/all.css` (o los packs que uses).
+   `https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v9.4.1/tokens.css` + `https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v9.4.1/packs/all.css` (o los packs que uses).
 2. `<html lang="es" data-nz-theme="light">` + `<body class="nz">`.
 3. Toda clase pública empieza por `.nz-`. Si no está en `components.json`,
    no existe: no la inventes.

@@ -1,6 +1,6 @@
 {
  "name": "Aurora — base de datos de diseño",
- "version": "9.4.0",
+ "version": "9.4.1",
  "descripcion": "Índice consultable del sistema: familias, tokens, recetas, combos y marcas. Cada ficha enlaza a su demo viva y lleva el markup real.",
  "fuente": "components.json + specs/ + recetas/ + examples/ + combos/ + marcas/registro.json + COMPOSICION.md",
  "explorador": "base.html",
@@ -147,7 +147,7 @@
    "pagina": "paginas/04-actions.html",
    "objetos": 78,
    "familias": 7,
-   "demos": 16,
+   "demos": 17,
    "cuandoUsar": "Cuando el usuario deba hacer algo: botones, grupos de acción, enlaces de acción y estados de carga.",
    "tags": [
     "accion",

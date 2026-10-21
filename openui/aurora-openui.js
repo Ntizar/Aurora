@@ -63,9 +63,11 @@
     return '<div class="' + cl("nz-stack", p.hueco && "nz-stack--" + p.hueco) + '">' + ctx.nodos(p.children) + "</div>";
   };
 
+  /* Fila = cluster, no row: un grupo de botones/chips debe medir lo que mide,
+     no estirarse al 100 % en móvil (el row es para campos y bloques). */
   R.Fila = function (p, ctx) {
     var hueco = p.hueco === "compacto" ? "compact" : p.hueco === "amplio" ? "spacious" : "";
-    return '<div class="' + cl("nz-row", hueco && "nz-row--" + hueco) + '">' + ctx.nodos(p.children) + "</div>";
+    return '<div class="' + cl("nz-cluster", hueco && "nz-cluster--" + hueco) + '">' + ctx.nodos(p.children) + "</div>";
   };
 
   R.Rejilla = function (p, ctx) {
@@ -172,9 +174,12 @@
         (horizontal ? "" : '<span class="nz-chart-bar__value">' + esc(v.toLocaleString("es-ES")) + "</span>") +
         barra + '<span class="nz-chart-bar__label">' + esc(etiqueta) + "</span></div>";
     }).join("");
-    return '<figure class="nz-chart"><div class="nz-chart__body"><div class="' +
-      cl("nz-chart-bar", horizontal && "nz-chart-bar--horizontal", p.tamano && "nz-chart-bar--" + p.tamano) +
-      '">' + cols + "</div></div></figure>";
+    /* Sin <figure class="nz-chart">: el componente casi siempre vive dentro de una
+       Tarjeta y dos superficies anidadas hacen un muro. 5rem por defecto; `lg` solo
+       para el gráfico protagonista. */
+    return '<div class="' +
+      cl("nz-chart-bar", p.tamano === "lg" ? "nz-chart-bar--lg" : "nz-chart-bar--sm", horizontal && "nz-chart-bar--horizontal") +
+      '">' + cols + "</div>";
   };
 
   R.TablaBarras = function (p) {
@@ -218,7 +223,7 @@
   R.Anillo = function (p) {
     var v = Math.max(0, Math.min(100, num(p.valor)));
     var tono = p.tono === "acento" ? "nz-chart-donut__seg--accent" : "nz-chart-donut__seg--brand";
-    return '<div class="nz-chart-donut">' +
+    return '<div class="' + cl("nz-chart-donut", p.tamano === "lg" ? "nz-chart-donut--lg" : "nz-chart-donut--sm") + '">' +
       '<svg class="nz-chart-donut__svg" viewBox="0 0 42 42" role="img" aria-label="' +
       esc((p.etiqueta || "Progreso") + ": " + v + " por ciento") + '">' +
       '<circle class="nz-chart-donut__track" cx="21" cy="21" r="15.9"></circle>' +

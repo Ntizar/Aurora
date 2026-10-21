@@ -25,7 +25,7 @@ Los argumentos con `?` son opcionales. Los sub-componentes pueden ir en línea o
 Pagina(children: any[], ancho?: "contenido" | "app") — Marco de la página. Siempre la raíz. ancho=app llena la pantalla (herramientas y paneles); contenido va topado.
 Seccion(children: any[], titulo?: string, borde?: boolean) — Bloque con aire propio y titular opcional. La unidad de una landing o un informe.
 Pila(children: any[], hueco?: "2xs" | "sm" | "lg" | "xl") — Columna vertical con hueco entre bloques.
-Fila(children: any[], hueco?: "compacto" | "amplio") — Fila horizontal que envuelve en móvil. Para grupos cortos (chips, botones, campos).
+Fila(children: any[], hueco?: "compacto" | "amplio") — Grupo horizontal de elementos cortos (botones, chips, etiquetas) que mide lo que mide y envuelve en móvil. No estira a sus hijos.
 Rejilla(children: any[], columnas?: "auto" | "2" | "4") — Rejilla de panel que responde a su contenedor, no al monitor. columnas=auto decide sola.
 DosColumnas(izquierda: any[], derecha: any[], reparto?: "50-50" | "2-1" | "40-60" | "60-40") — Dos bloques con reparto elegido. En móvil se apilan.
 Tarjeta(children: any[], titulo?: string, borde?: boolean) — Superficie de contenido con titular opcional. Es la tarjeta de Aurora (no existe Card).
@@ -41,11 +41,11 @@ Separador(etiqueta?: string, trazo?: "fino" | "discontinuo") — Línea de separ
 ### Datos
 Kpi(etiqueta: string, valor: string, delta?: string, tendencia?: "sube" | "baja" | "plano", tono?: "neutro" | "marca" | "acento", tamano?: "sm" | "lg") — Cifra que importa, con etiqueta y variación. El acento va aquí, no en todo el panel.
 Tabla(columnas: string[], filas: string[][], apilable?: boolean, densidad?: "compacta" | "comoda", rayada?: boolean, numericas?: string) — Datos tabulares. apilable=true convierte cada fila en tarjeta en móvil (usa etiqueta de columna). numericas = nombres de columna separados por coma que se alinean a la derecha.
-Barras(etiquetas: string[], valores: number[], tono?: "marca" | "acento", tamano?: "sm" | "lg", horizontal?: boolean) — Serie de barras de una sola escala. Si las magnitudes difieren mucho, usa TablaBarras.
+Barras(etiquetas: string[], valores: number[], tono?: "marca" | "acento", tamano?: "sm" | "lg", horizontal?: boolean) — Serie de barras de una sola escala, compacta por defecto (5 rem). Sin tarjeta propia: va dentro de una Tarjeta o Sección. `lg` solo para el gráfico protagonista. Si las magnitudes difieren mucho, usa TablaBarras.
 TablaBarras(nombres: string[], valores: number[], textos?: string[], tono?: "marca" | "acento") — Comparativa de magnitudes dispares: cada fila lleva su barra y su cifra. nombres/valores/textos van en paralelo; textos es la cifra ya formateada.
 Objetivo(etiqueta: string, real: number, meta: number, texto?: string, tono?: "marca" | "acento" | "exito") — Real frente a meta. La barra es el real y la línea es el objetivo; la pista va escalonada ×1,5.
 MiniTendencia(etiqueta: string, valor: string, delta?: string, tendencia?: "sube" | "baja" | "plano") — Métrica compacta con variación. Para tiras de indicadores.
-Anillo(valor: number, etiqueta?: string, tono?: "marca" | "acento") — Progreso circular de 0 a 100 con etiqueta central.
+Anillo(valor: number, etiqueta?: string, tono?: "marca" | "acento", tamano?: "sm" | "lg") — Progreso circular de 0 a 100 con etiqueta central. Pequeño por defecto; `lg` para un dato único a página completa.
 Progreso(valor: number, etiqueta?: string) — Barra de avance lineal de 0 a 100.
 
 ### Interfaz
@@ -77,6 +77,14 @@ Herramienta(nombre: string, detalle?: string, estado?: "ejecutando" | "hecho" | 
 - `Tabla` con `apilable = true` cuando la tabla tiene más de 3 columnas (móvil la convierte
   en tarjetas). `numericas` recibe los nombres de columna separados por coma.
 - Magnitudes muy dispares → `TablaBarras`, nunca `Barras` de una sola escala.
+- **Las figuras no van a sangre.** `Barras` mide 5 rem por defecto y `Anillo` 5 rem:
+  `lg` solo para el gráfico protagonista de la página. Un gráfico dentro de una rejilla de
+  4 columnas se ve enorme y no aporta más dato.
+- **No anides superficies.** Dentro de `Tarjeta` o `Seccion` no repitas contenedor:
+  `Barras`, `Tabla`, `Lista` y `Objetivo` ya son contenido, no tarjetas.
+- **Botones y chips van en `Fila`** (mide lo que mide y envuelve en móvil). `Rejilla` y
+  `Formulario` son para bloques y campos; nunca para un grupo de botones.
+- Etiqueta de botón corta: verbo + objeto, dos o tres palabras («Asignar», «Ver histórico»).
 - Real frente a meta → `Objetivo` (la barra es el real, la línea el objetivo).
 - Importes, fechas y porcentajes en castellano: `1.240,50 €`, `oct 2026`, `+12,4 %`.
 - Texto real del dominio, nunca «Lorem ipsum» ni «ejemplo».
@@ -106,7 +114,7 @@ k2 = Kpi("Viajes", "1.284", "+86", "sube")
 k3 = Kpi("Consumo medio", "31,4 l/100", "−1,3 %", "baja")
 k4 = Kpi("Incidencias", "7", "−3", "baja")
 grafico = Tarjeta([barras], "Viajes por día", true)
-barras = Barras(["L", "M", "X", "J", "V", "S", "D"], [186, 204, 198, 212, 226, 152, 106], "acento", "lg")
+barras = Barras(["L", "M", "X", "J", "V", "S", "D"], [186, 204, 198, 212, 226, 152, 106], "acento")
 tabla = Tarjeta([rutas], "Rutas con desviación", true)
 rutas = Tabla(["Ruta", "Salidas", "Puntualidad", "Desvío medio"], [["MAD-BCN", "42", "96 %", "3 min"], ["MAD-VLC", "31", "88 %", "11 min"], ["BCN-SVQ", "24", "92 %", "6 min"], ["BIO-MAD", "18", "81 %", "17 min"]], true, "comoda", true, "Salidas, Desvío medio")
 aviso = Aviso("Revisión de flota", "Tres vehículos superan el umbral de mantenimiento esta semana.", "aviso")
@@ -165,4 +173,4 @@ a2 = Boton("Ver histórico", "contorno")
 - ¿Hay un solo titular nivel 1 y el acento está donde importa?
 - ¿Los números están formateados en castellano?
 
-<!-- aurora-openui · spec 543b6326c4315005 · 36 componentes · generado por scripts/generar-openui.py -->
+<!-- aurora-openui · spec 360b8ba4ef8df8f4 · 36 componentes · generado por scripts/generar-openui.py -->

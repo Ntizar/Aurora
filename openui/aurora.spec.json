@@ -86,7 +86,7 @@
   },
   "Fila": {
    "signature": "Fila(children: any[], hueco?: \"compacto\" | \"amplio\")",
-   "description": "Fila horizontal que envuelve en móvil. Para grupos cortos (chips, botones, campos)."
+   "description": "Grupo horizontal de elementos cortos (botones, chips, etiquetas) que mide lo que mide y envuelve en móvil. No estira a sus hijos."
   },
   "Rejilla": {
    "signature": "Rejilla(children: any[], columnas?: \"auto\" | \"2\" | \"4\")",
@@ -134,7 +134,7 @@
   },
   "Barras": {
    "signature": "Barras(etiquetas: string[], valores: number[], tono?: \"marca\" | \"acento\", tamano?: \"sm\" | \"lg\", horizontal?: boolean)",
-   "description": "Serie de barras de una sola escala. Si las magnitudes difieren mucho, usa TablaBarras."
+   "description": "Serie de barras de una sola escala, compacta por defecto (5 rem). Sin tarjeta propia: va dentro de una Tarjeta o Sección. `lg` solo para el gráfico protagonista. Si las magnitudes difieren mucho, usa TablaBarras."
   },
   "TablaBarras": {
    "signature": "TablaBarras(nombres: string[], valores: number[], textos?: string[], tono?: \"marca\" | \"acento\")",
@@ -149,8 +149,8 @@
    "description": "Métrica compacta con variación. Para tiras de indicadores."
   },
   "Anillo": {
-   "signature": "Anillo(valor: number, etiqueta?: string, tono?: \"marca\" | \"acento\")",
-   "description": "Progreso circular de 0 a 100 con etiqueta central."
+   "signature": "Anillo(valor: number, etiqueta?: string, tono?: \"marca\" | \"acento\", tamano?: \"sm\" | \"lg\")",
+   "description": "Progreso circular de 0 a 100 con etiqueta central. Pequeño por defecto; `lg` para un dato único a página completa."
   },
   "Progreso": {
    "signature": "Progreso(valor: number, etiqueta?: string)",
@@ -453,7 +453,7 @@
      "children"
     ],
     "additionalProperties": false,
-    "description": "Fila horizontal que envuelve en móvil. Para grupos cortos (chips, botones, campos)."
+    "description": "Grupo horizontal de elementos cortos (botones, chips, etiquetas) que mide lo que mide y envuelve en móvil. No estira a sus hijos."
    },
    "Rejilla": {
     "type": "object",
@@ -788,7 +788,7 @@
      "valores"
     ],
     "additionalProperties": false,
-    "description": "Serie de barras de una sola escala. Si las magnitudes difieren mucho, usa TablaBarras."
+    "description": "Serie de barras de una sola escala, compacta por defecto (5 rem). Sin tarjeta propia: va dentro de una Tarjeta o Sección. `lg` solo para el gráfico protagonista. Si las magnitudes difieren mucho, usa TablaBarras."
    },
    "TablaBarras": {
     "type": "object",
@@ -901,13 +901,20 @@
        "marca",
        "acento"
       ]
+     },
+     "tamano": {
+      "type": "string",
+      "enum": [
+       "sm",
+       "lg"
+      ]
      }
     },
     "required": [
      "valor"
     ],
     "additionalProperties": false,
-    "description": "Progreso circular de 0 a 100 con etiqueta central."
+    "description": "Progreso circular de 0 a 100 con etiqueta central. Pequeño por defecto; `lg` para un dato único a página completa."
    },
    "Progreso": {
     "type": "object",

@@ -6,7 +6,7 @@
    ============================================================ */
 
 /* ---- Botón base ---- */
-.nz-btn { min-height: 44px; min-width: 44px; display: inline-flex; align-items: center; justify-content: center; gap: var(--nz-space-2); padding: 0 var(--nz-space-5); border: var(--nz-border-w) solid transparent; border-radius: var(--nz-radius-full); font: inherit; font-weight: var(--nz-peso-fuerte); font-size: var(--nz-text-base); cursor: pointer; text-decoration: none; white-space: nowrap; transition: transform var(--nz-dur-fast) var(--nz-ease-out), box-shadow var(--nz-dur-fast) var(--nz-ease-out), background var(--nz-dur-fast) var(--nz-ease-out), color var(--nz-dur-fast) var(--nz-ease-out), border-color var(--nz-dur-fast) var(--nz-ease-out); }
+.nz-btn { min-height: 44px; min-width: 44px; display: inline-flex; align-items: center; justify-content: center; gap: var(--nz-space-2); padding: 0 var(--nz-space-5); border: var(--nz-border-w) solid transparent; border-radius: var(--nz-radius-full); font: inherit; font-weight: var(--nz-peso-fuerte); font-size: var(--nz-text-base); cursor: pointer; text-decoration: none; white-space: normal; text-wrap: balance; max-width: 100%; transition: transform var(--nz-dur-fast) var(--nz-ease-out), box-shadow var(--nz-dur-fast) var(--nz-ease-out), background var(--nz-dur-fast) var(--nz-ease-out), color var(--nz-dur-fast) var(--nz-ease-out), border-color var(--nz-dur-fast) var(--nz-ease-out); }
 .nz-btn:hover { transform: translateY(-2px); }
 .nz-btn:active { transform: translateY(0); }
 .nz-btn:disabled, .nz-btn.is-disabled, .nz-btn[aria-disabled="true"] { opacity: .5; pointer-events: none; }

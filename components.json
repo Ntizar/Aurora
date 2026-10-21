@@ -1,10 +1,10 @@
 {
  "name": "Aurora",
- "version": "9.4.0",
+ "version": "9.4.1",
  "type": "css-only design system",
  "namespace": ".nz-",
  "tokens": "tokens.css",
- "cdn": "https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v9.4.0/",
+ "cdn": "https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v9.4.1/",
  "manifiesto": {
   "gradientes": 0,
   "glass": 0,
@@ -22,7 +22,7 @@
   "objetos": 2186,
   "familias": 411,
   "categorias": 18,
-  "demos": 655,
+  "demos": 656,
   "tokens": 234,
   "tokensDark": 61,
   "alias": 150,
@@ -64,7 +64,7 @@
    "descripcion": "Botones con sus tonos, énfasis, tamaños y formas; grupos, selector segmentado, botones flotantes, cargadores, enlaces de acción y barras de herramientas. Todo con el objetivo táctil de 44px.",
    "objetos": 78,
    "familias": 7,
-   "demos": 16,
+   "demos": 17,
    "pagina": "paginas/04-actions.html"
   },
   "p5-forms.css": {

@@ -84,6 +84,11 @@
       "titulo": "Barra de herramientas",
       "tag": ".nz-toolbar · __spacer · __group · __divider · --compact · --sticky · --brand",
       "markup": "<div class=\"nz-stack nz-stack--sm\"><div class=\"nz-toolbar\"><button class=\"nz-btn nz-btn--ghost nz-btn--sm\">Abrir</button><button class=\"nz-btn nz-btn--ghost nz-btn--sm\">Editar</button><span class=\"nz-toolbar__divider\"></span><div class=\"nz-toolbar__group\"><button class=\"nz-btn nz-btn--ghost nz-btn--sm\" aria-label=\"Negrita\">B</button><button class=\"nz-btn nz-btn--ghost nz-btn--sm\" aria-label=\"Cursiva\">I</button></div><span class=\"nz-toolbar__spacer\"></span><button class=\"nz-btn nz-btn--primary nz-btn--sm\">Exportar</button></div><div class=\"nz-toolbar nz-toolbar--compact\"><button class=\"nz-btn nz-btn--ghost nz-btn--xs\">Corto</button><button class=\"nz-btn nz-btn--ghost nz-btn--xs\">Compacto</button></div><div class=\"nz-toolbar nz-toolbar--brand\"><button class=\"nz-btn nz-btn--ghost nz-btn--sm\">Marca</button><span class=\"nz-toolbar__spacer\"></span><button class=\"nz-btn nz-btn--accent nz-btn--sm\">Destacar</button></div><div class=\"nz-toolbar nz-toolbar--sticky\"><button class=\"nz-btn nz-btn--ghost nz-btn--sm\">Pegajosa</button></div></div>"
+    },
+    {
+      "titulo": "Etiqueta larga que envuelve",
+      "tag": ".nz-btn · white-space normal (v9.4.1)",
+      "markup": "<div class=\"nz-cluster\"><button class=\"nz-btn nz-btn--primary\">Enviar la rectificación al cliente hoy</button><button class=\"nz-btn nz-btn--outline\">Ver histórico</button></div>"
     }
   ]
 }

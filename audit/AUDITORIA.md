@@ -8,7 +8,7 @@ Generada por `scripts/audit-catalog.py` a partir de los packs CSS y de `specs/*.
 |---|---|---|
 | Objetos declarados | 2186 |  |
 | Familias de objeto | 411 |  |
-| Demos en vivo | 655 |  |
+| Demos en vivo | 656 |  |
 | Clases usadas en demos | 2186 |  |
 | Objetos fantasma (usados y no declarados) | 0 | 🟢 |
 | Clases declaradas sin demo | 0 | 🟢 |
@@ -52,7 +52,7 @@ Familias sin ninguna variante (`--mod`): **166** de 411 — ahí está el margen
 | 01 | Layout y estructura | p1-layout.css | 179 | 67 | 53 | 0 | 0 |
 | 02 | Navegación | p2-navigation.css | 78 | 10 | 36 | 0 | 0 |
 | 03 | Tipografía | p3-typography.css | 135 | 41 | 44 | 0 | 0 |
-| 04 | Acciones y botones | p4-actions.css | 78 | 7 | 16 | 0 | 0 |
+| 04 | Acciones y botones | p4-actions.css | 78 | 7 | 17 | 0 | 0 |
 | 05 | Formularios e inputs | p5-forms.css | 102 | 20 | 44 | 0 | 0 |
 | 06 | Feedback y estados | p6-feedback.css | 153 | 19 | 52 | 0 | 0 |
 | 07 | Overlays y diálogo | p7-overlays.css | 118 | 12 | 34 | 0 | 0 |

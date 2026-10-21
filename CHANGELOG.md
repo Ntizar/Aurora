@@ -3,6 +3,35 @@
 Formato: [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/).
 Versionado: [SemVer](https://semver.org/lang/es/).
 
+## [9.4.1] — 2026-10-21
+
+Correcciones salidas de la auditoría externa de la demo y del ojo de David: **botones que no
+respondían** y **figuras demasiado grandes**. Una en el sistema, dos en la capa generativa, y
+la demo deja de esconder sus propios errores.
+
+### Corregido
+
+- **`.nz-btn` desbordaba con etiquetas largas** (`p4-actions.css`): `white-space: nowrap`
+  impedía encoger y, dentro de `nz-row`, el botón se salía del contenedor. Ahora
+  `white-space: normal` + `text-wrap: balance` + `max-width: 100%`: la etiqueta envuelve y el
+  botón nunca es más ancho que su caja. Es un fallo del sistema, no del proyecto que lo sufre.
+- **`Fila` estiraba a los hijos**: emitía `nz-row` (100 % en móvil, 50 % desde 640) y convertía
+  un grupo de botones en bloques enormes. Ahora emite `nz-cluster`: mide lo que mide y envuelve.
+- **`Barras` dibujaba un muro**: metía un `<figure class="nz-chart">` (superficie + 8 rem) aunque
+  ya fuera dentro de una `Tarjeta` → doble superficie. Ahora emite solo las barras, a 5 rem.
+  `Anillo` baja a 5 rem y admite `lg` para el dato protagonista.
+- **La demo escondía los errores**: un programa inválido dejaba el lienzo vacío y un contador.
+  Ahora muestra una alerta con código traducido, componente, path y mensaje (recortado), y hay
+  un botón «Probar un error» para verlo.
+- **«179 clases emitidas» no tenía criterio reproducible** (auditoría). La cifra ahora se mide
+  en el navegador sobre los 3 ejemplos: 121 clases distintas. El benchmark se etiqueta como del
+  vendedor (OpenUI) y se añade el dato frente a YAML.
+
+### Notas
+
+- `auditar-openui.py` mantiene las cifras honestas: informa de las clases del censo
+  **referenciadas por el runtime** (182), que es otra cuenta distinta de las emitidas.
+
 ## [9.4.0] — 2026-10-21
 
 **Generative UI: OpenUI Lang sobre el censo.** Aurora deja de ser solo el CSS que un agente

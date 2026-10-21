@@ -1,14 +1,14 @@
 ---
 name: aurora-design-system
 description: "Usa al construir o tocar cualquier web con Aurora (Ntizar/Aurora). El repo manda: resuelve la versión vigente y pide LLM.md + components.json antes de escribir CSS."
-version: "9.4.0"
+version: "9.4.1"
 tags: [css, design-system, aurora, ntizar, agent-ready, movil, escritorio, tipografia]
 ---
 
 # Aurora — doctrina única (el repo es la orden máxima)
 
 Design system CSS puro, sin build, sin dependencias, namespaced bajo `.nz-`.
-**v9.4.0 · 2186 objetos · 411 familias · 655 demos · 18 categorías · 189 tokens · 59 gemelas OKLch · 36 componentes generativos.**
+**v9.4.1 · 2186 objetos · 411 familias · 656 demos · 18 categorías · 189 tokens · 59 gemelas OKLch · 36 componentes generativos.**
 *(Cabecera de testigo, no de autoridad: resuélvela con el PASO 0.)*
 
 > ⚠️ `Ntizar/Aurora` **manda sobre esta skill**. Esta skill es un puntero; el repo
@@ -420,6 +420,14 @@ AuroraOpenUI.stream(respuestaDelModelo, "#lienzo");    // streaming; cae a parse
    (§9). No se resuelve con CSS en el proyecto.
 6. **El parser oficial valida** tipos, aridad y enums antes de pintar: un programa mal formado
    no llega al DOM. Los 3 ejemplos del repo tienen 0 errores con `lang-core` 1.0.1.
+7. **`Fila` es `nz-cluster`, no `nz-row`.** Un grupo de botones o chips mide lo que mide; el
+   `nz-row` estira a cada hijo al 100 % en móvil y 50 % desde 640 → un botón se vuelve un bloque.
+   `nz-row` es para campos y bloques, no para acciones.
+8. **Figuras compactas por defecto.** `Barras` emite solo las barras (5 rem) y **no** un
+   `<figure class="nz-chart">`: dentro de una `Tarjeta` eso son dos superficies anidadas y un
+   muro en una rejilla de 4. `Anillo` sale a 5 rem. `lg` solo para el gráfico protagonista.
+9. **Etiquetas de botón cortas** y el botón envuelve (`white-space: normal`, v9.4.1): con
+   `nowrap`, una etiqueta larga dentro de una rejilla desbordaba el contenedor.
 
 ## 15. Referencias
 

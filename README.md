@@ -4,13 +4,13 @@
 
 **Design system CSS de Ntizar — un solo sistema para montar cualquier web.**
 
-2.186 objetos · 411 familias · 655 demos en vivo · 18 categorías · 0 gradientes · 0 glass
+2.186 objetos · 411 familias · 656 demos en vivo · 18 categorías · 0 gradientes · 0 glass
 
 [![CI — validación del manifiesto](https://github.com/Ntizar/Aurora/actions/workflows/validar.yml/badge.svg)](https://github.com/Ntizar/Aurora/actions/workflows/validar.yml)
 [![GitHub Pages](https://github.com/Ntizar/Aurora/actions/workflows/pages.yml/badge.svg)](https://github.com/Ntizar/Aurora/actions/workflows/pages.yml)
-![versión](https://img.shields.io/badge/versi%C3%B3n-9.4.0-2563eb)
+![versión](https://img.shields.io/badge/versi%C3%B3n-9.4.1-2563eb)
 ![objetos](https://img.shields.io/badge/objetos-2.186-2563eb)
-![demos](https://img.shields.io/badge/demos-655-f97316)
+![demos](https://img.shields.io/badge/demos-656-f97316)
 
 **[Explorar el catálogo →](https://ntizar.github.io/Aurora/)**
 
@@ -58,7 +58,7 @@ Aurora no es una colección de snippets: es un **sistema con contrato**. Cada ob
 | 16 | Cristal (capa de estilo) | `p16-cristal.css` | 8 | 5 |
 | 17 | Patrones compuestos | `p17-patrones.css` | 224 | 47 |
 | 18 | Escenario (charlas en beats) | `p18-escenario.css` | 33 | 18 |
-| | **Total** | | **2.186** | **655** |
+| | **Total** | | **2.186** | **656** |
 
 ## Uso
 

@@ -47,7 +47,7 @@
         <div class="nz-kpi nz-kpi--accent">
           <span class="nz-kpi__label">Tokens frente a JSON</span>
           <span class="nz-kpi__value nz-kpi__value--accent">−52 %</span>
-          <span class="nz-kpi__delta nz-kpi__delta--down">10.180 → 4.800 en el benchmark de OpenUI</span>
+          <span class="nz-kpi__delta nz-kpi__delta--down">10.180 → 4.800 · benchmark del propio OpenUI frente a JSON-Render</span>
         </div>
         <div class="nz-kpi">
           <span class="nz-kpi__label">Componentes expuestos del censo</span>
@@ -92,6 +92,7 @@
         <div class="nz-cluster nz-cluster--between">
           <span class="nz-badge nz-badge--neutral" id="modo">parser: —</span>
           <span class="nz-cluster nz-cluster--compact">
+            <button type="button" class="nz-btn nz-btn--ghost nz-btn--sm" id="btnError">Probar un error</button>
             <button type="button" class="nz-btn nz-btn--ghost nz-btn--sm" id="btnReiniciar">Reiniciar</button>
             <button type="button" class="nz-btn nz-btn--accent" id="btnGenerar">Generar</button>
           </span>
@@ -106,6 +107,7 @@
           <span class="nz-badge nz-badge--neutral">0 caracteres</span>
           <span class="nz-badge nz-badge--neutral">0 clases</span>
         </div>
+        <div id="errores" hidden></div>
         <div class="nz-stack nz-stack--sm" id="lienzo" role="region" aria-label="Interfaz generada"></div>
         <div class="nz-cluster nz-cluster--compact" id="componentes" aria-live="polite"></div>
       </article>
@@ -130,7 +132,7 @@
       <article class="nz-article nz-article--bordered nz-stack nz-stack--sm">
         <h3 class="nz-h3">2 · El render es del censo</h3>
         <p>Cada componente emite el markup real de su familia: tabla apilable con <code class="nz-code">data-etiqueta</code>, barras con su valor, bullet con la meta al 66,7 %. Nada de CSS propio.</p>
-        <p><span class="nz-badge nz-badge--neutral">36 componentes · 179 clases emitidas</span></p>
+        <p><span class="nz-badge nz-badge--neutral">36 componentes · <span id="clasesTotales">—</span> clases distintas en los 3 ejemplos</span></p>
       </article>
       <article class="nz-article nz-article--bordered nz-stack nz-stack--sm">
         <h3 class="nz-h3">3 · Sin build y sin React</h3>
@@ -142,7 +144,7 @@
 
   <section class="nz-section" aria-labelledby="t4">
     <h2 class="nz-h2" id="t4">Por qué el lenguaje importa más que el JSON</h2>
-    <p class="nz-lead nz-lead--sm">Números del benchmark público de OpenUI: los mismos siete escenarios, contados en tokens.</p>
+    <p class="nz-lead nz-lead--sm">Números del benchmark publicado por OpenUI (el vendedor del lenguaje), sobre los mismos siete escenarios y contados en tokens. Frente a YAML el ahorro es del 47 %.</p>
     <div class="nz-split nz-split--60-40">
       <article class="nz-article nz-article--bordered">
         <h3 class="nz-h3">Tokens por escenario</h3>
@@ -201,6 +203,42 @@
   var actual = 0;
   var ultimoGenerado = "";
 
+  /* El parser oficial habla inglés; la interfaz, no. Traducimos el código de error
+     (el mensaje crudo se conserva al lado: es el que sirve para depurar). */
+  var CODIGOS = {
+    "type-mismatch": "tipo incorrecto",
+    "missing-required": "falta un argumento obligatorio",
+    "unknown-component": "componente desconocido",
+    "unknown-function": "función desconocida",
+    "excess-args": "demasiados argumentos",
+    "inline-reserved": "componente reservado para uso en línea",
+    "no-root": "el programa no define root",
+    "null-required": "argumento obligatorio vacío"
+  };
+
+  function panelErrores(errores) {
+    var caja = $("#errores");
+    if (!errores || !errores.length) {
+      caja.hidden = true;
+      caja.innerHTML = "";
+      return;
+    }
+    var items = errores.map(function (e) {
+      var donde = [e.component, e.path && e.path !== "/" ? e.path : "", e.statementId]
+        .filter(Boolean).join(" · ");
+      var msg = String(e.message || "");
+      if (msg.length > 150) msg = msg.slice(0, 150).replace(/\s+\S*$/, "") + "…";
+      return "<br>· <b>" + (CODIGOS[e.code] || e.code || "error") + "</b> " +
+        (donde ? "en <code>" + donde + "</code>" : "") + " — " + msg;
+    }).join("");
+    caja.hidden = false;
+    caja.innerHTML = '<div class="nz-alert nz-alert--danger" role="alert">' +
+      '<span class="nz-alert__icon" aria-hidden="true">!</span>' +
+      '<div class="nz-alert__body"><span class="nz-alert__title">' + errores.length +
+      (errores.length === 1 ? " error en el programa" : " errores en el programa") + "</span>" +
+      '<span class="nz-alert__msg">' + items + "</span></div></div>";
+  }
+
   function pintarTelemetria(r) {
     var clases = (ultimoGenerado.match(/class="([^"]*)"/g) || []).join(" ")
       .replace(/class="/g, "").replace(/"/g, " ").split(/\s+/)
@@ -217,6 +255,7 @@
       (r.errores.length ? '<span class="nz-badge nz-badge--danger"><i></i>' + r.errores.length + " errores</span>" : "");
     $("#componentes").innerHTML = chips;
     $("#modo").textContent = "parser: " + r.modo;
+    panelErrores(r.errores);
   }
 
   function generar() {
@@ -245,12 +284,35 @@
     generar();
   }
 
+  /* La cifra de «clases distintas» se mide aquí, no se escribe a mano: se pintan
+     los 3 ejemplos en un contenedor suelto y se cuentan las clases únicas. */
+  function contarClases() {
+    var visto = {};
+    ejemplos.forEach(function (ej) {
+      var caja = document.createElement("div");
+      AuroraOpenUI.pintar(ej.programa, caja, { streaming: false });
+      Array.prototype.forEach.call(caja.querySelectorAll("[class]"), function (el) {
+        Array.prototype.forEach.call(el.classList, function (c) {
+          if (c.indexOf("nz-") === 0) visto[c] = 1;
+        });
+      });
+    });
+    var n = Object.keys(visto).length;
+    var destino = $("#clasesTotales");
+    if (destino && n) destino.textContent = String(n);
+    return n;
+  }
+
   $("#selector").addEventListener("click", function (e) {
     var b = e.target.closest("button[data-ejemplo]");
     if (b) cargar(Number(b.dataset.ejemplo));
   });
   $("#btnGenerar").addEventListener("click", generar);
   $("#btnReiniciar").addEventListener("click", function () { cargar(actual); });
+  $("#btnError").addEventListener("click", function () {
+    $("#programa").value = 'root = Pagina([titulo, k, grafico])\ntitulo = Titular("Prueba de validación")\nk = Kpi("Ventas", 1240, "Dato inválido")\ngrafico = GraficoInventado("no existe", 3)';
+    generar();
+  });
 
   fetch("ejemplos.json")
     .then(function (r) { return r.json(); })
@@ -258,7 +320,7 @@
       ejemplos = datos;
       return AuroraOpenUI.iniciar({ spec: "aurora.spec.json" });
     })
-    .then(function () { cargar(0); })
+    .then(function () { cargar(0); contarClases(); })
     .catch(function (err) {
       $("#lienzo").innerHTML = '<div class="nz-alert nz-alert--warning"><span class="nz-alert__icon">!</span><div class="nz-alert__body"><span class="nz-alert__title">No he podido cargar la capa OpenUI</span><span class="nz-alert__msg">' + err.message + ". Sirve esta carpeta por HTTP (python3 -m http.server).</span></div></div>";
     });
