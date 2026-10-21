@@ -85,7 +85,11 @@ Si el encargo encaja con un arquetipo, parte de su **[plantilla](openui/plantill
 panel, informe, landing, ajustes o agente.
 
 ```bash
-python3 scripts/plantilla.py --lista                                  # los cinco arquetipos
+# de un encargo a una página, con el modelo y con el lint delante
+python3 scripts/generar-web.py --brief briefs/panel-ferroviaria.json
+# → dist/ferroviaria-panel.openui + .html, validado y auditado (0 fallos o no se entrega)
+
+# o sin modelo, partiendo de la plantilla
 python3 scripts/plantilla.py panel-operativo --var titulo="Octubre" -o p.openui
 python3 scripts/programa-a-html.py p.openui -o dist/panel.html --marca ntizar
 ```

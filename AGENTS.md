@@ -51,6 +51,9 @@ Si eres un agente (o una persona con prisa), lee esto antes de tocar nada.
 | `openui/componentes.json` · `openui/ejemplos.json` | **Fuente** de la capa generativa (qué componente expone qué objeto) | Sí |
 | `openui/aurora.spec.json` · `aurora.schema.json` · `PROMPT.md` | Salidas de `generar-openui.py` | **No** — se regeneran |
 | `openui/aurora-openui.js` · `openui/index.html` | Runtime vanilla y probador en vivo | Sí |
+| `openui/plantillas/*.json` | Plantillas por arquetipo (fuente) | Sí |
+| `openui/plantillas/index.json` | Índice generado de plantillas | **No** — `plantilla.py --index` |
+| `briefs/*.json` | Encargos de ejemplo para `generar-web.py` | Sí |
 | `data/canales.json` | A qué versión apunta cada canal (vivo / congelado) | Sí |
 | `openui/migraciones/*.json` | Recetas de migración para un major | Sí |
 | `docs/planes/` | Planes archivados | Sí, pero no es documentación viva |
@@ -82,6 +85,8 @@ python scripts/auditar-responsive.py   # container queries y escalones no se deb
 python scripts/generar-openui.py       # capa OpenUI: spec, schema y prompt
 python scripts/auditar-openui.py       # censo, deriva, runtime, enums y ejemplos
 python scripts/canal.py --check        # canales y versiones en orden
+python scripts/plantilla.py --validar-todas
+python scripts/generar-web.py --brief briefs/panel-ferroviaria.json --dry-run
 ```
 
 4. Si `validar-css.py` no dice `RESULTADO: VÁLIDO`, no está terminado.

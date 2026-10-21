@@ -1,0 +1,11 @@
+{
+ "encargo": "Panel mensual para la flota de autobuses de Ferroviaria Sur",
+ "titulo": "Operaciones · Ferroviaria Sur",
+ "entidad": "Ferroviaria Sur",
+ "periodo": "Octubre 2026",
+ "arquetipo": "panel-operativo",
+ "marca": "aurora",
+ "tema": "light",
+ "datos": "37 vehículos activos; puntualidad 94,2 % (+2,1 pp); 1.284 viajes (+86); coste medio 31,4 EUR (-1,3 %); 7 incidencias (-3). Rutas con desviación: MAD-BCN 96 %, MAD-VLC 88 %, BCN-SVQ 92 %. Tres vehículos superan el umbral de mantenimiento.",
+ "salida": "ferroviaria-panel"
+}

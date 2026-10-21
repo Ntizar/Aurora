@@ -1,0 +1,10 @@
+{
+ "encargo": "Resumen ejecutivo del plan de descarbonización de una planta cerámica",
+ "titulo": "Plan de descarbonización 2027 · Cerámicas del Ebro",
+ "entidad": "Cerámicas del Ebro",
+ "arquetipo": "informe",
+ "marca": "ntizar",
+ "tema": "light",
+ "datos": "Electrificación de hornos 62/80 MWh; autoconsumo 41/60 MWh; eficiencia 88/50. Emisiones evitadas: hornos 4.100 t, calderas 980 t, solar 640 t. Retorno 5,4 años con PPA; 7,1 sin PPA.",
+ "salida": "informe-ceramicas"
+}

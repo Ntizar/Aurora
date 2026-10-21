@@ -3,6 +3,40 @@
 Formato: [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/).
 Versionado: [SemVer](https://semver.org/lang/es/).
 
+## [9.7.0] — 2026-10-21
+
+**El conector: de un encargo a una página, con el modelo y con el lint delante.** Y la portada
+cuenta por fin lo nuevo: el sistema entero, con la capa generativa como protagonista.
+
+### Añadido
+
+- **`scripts/generar-web.py`** — cadena completa: brief → plantilla del arquetipo → modelo
+  (`PROMPT.md` como system prompt) → validación → página → `auditar-uso`. Si el modelo falla,
+  **una segunda oportunidad con los errores delante**; si vuelve a fallar, usa la plantilla con
+  los datos del brief y lo dice. Modelo y clave salen de `~/.hermes/config.yaml` / `.env`.
+- `briefs/` — dos encargos de ejemplo (panel de flota e informe de energía) y su README.
+- CI: humo del conector sin red (`--sin-modelo`) y validación de plantillas.
+
+### Cambiado
+
+- **Portada reescrita de arriba abajo** (generada desde `build-catalog.py`):
+  - Hero nuevo: un sistema, tres formas de construir (a mano, agente, modelo).
+  - Sección **Generative UI** con las cuatro capas, el par «lo que escribe el modelo / lo que
+    pinta Aurora» (código real y su render), los cuatro pasos (valida, pinta, sella, versiona)
+    y las cinco plantillas.
+  - Sección **dos canales** con los snippets vivo y congelado, el rango leído de
+    `data/canales.json`.
+  - Las tarjetas de OpenUI salen de «el sistema en cinco ideas» para no duplicar: esa sección
+    vuelve a ser de cinco.
+- Stat del hero pasa a contar lo que el sistema hace: 36 componentes generativos, 5 arquetipos,
+  6 marcas, 0 clases inventadas.
+
+### Verificado
+
+- Conector probado contra la API real: 1 intento, 5.527 tokens de entrada y 987 de salida,
+  19 líneas de programa, **0 fallos de lint**.
+- Portada: `auditar-uso` 0 fallos · coherencia VÁLIDA · `validar-css` VÁLIDO · a11y VÁLIDO.
+
 ## [9.6.0] — 2026-10-21
 
 **Plantillas por arquetipo: el esqueleto decidido, el modelo rellena.** Es la pieza que

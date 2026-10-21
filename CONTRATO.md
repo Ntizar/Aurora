@@ -109,7 +109,14 @@ biblioteca, y el runtime emite markup del censo.
 
 ```
 briefs/*.json ──modelo──► pagina.openui ──programa-a-html──► pagina.html ──auditar-uso──► PR
+                 ↑
+     generar-web.py: elige arquetipo, llama al modelo, valida y reintenta con los errores
 ```
+
+`python3 scripts/generar-web.py --brief encargo.json` hace el tramo entero: coge la plantilla
+del arquetipo, se la pasa al modelo con `PROMPT.md`, valida el programa (una segunda
+oportunidad con los errores delante) y, si no lo consigue, usa la plantilla con los datos del
+brief **diciéndolo**. Nunca entrega un programa roto en silencio.
 
 El modelo no reescribe CSS: re-emite entre 8 y 40 líneas por página. Por eso 30 webs son
 30 llamadas cortas y el resultado es coherente por construcción. Lo que se versiona en el

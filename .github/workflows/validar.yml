@@ -49,6 +49,11 @@ jobs:
           python scripts/plantilla.py --index
           git diff --quiet -- openui/plantillas/index.json || (echo "::error::El índice de plantillas está desfasado: ejecuta plantilla.py --index" && exit 1)
 
+      - name: Conector brief → página (sin red)
+        run: |
+          python scripts/generar-web.py --brief briefs/panel-ferroviaria.json --sin-modelo -o /tmp/gw
+          python scripts/auditar-uso.py /tmp/gw/ferroviaria-panel.html
+
       - name: Canales y versiones en orden
         run: python scripts/canal.py --check
 

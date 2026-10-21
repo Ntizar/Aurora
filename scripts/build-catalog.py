@@ -402,11 +402,12 @@ CSS_PORTADA = """
   .cat-ideas { display: grid; gap: var(--nz-space-3); grid-template-columns: 1fr; }
   @media (min-width: 640px) { .cat-ideas { grid-template-columns: repeat(2, 1fr); } }
   @media (min-width: 960px) { .cat-ideas { grid-template-columns: repeat(4, 1fr); } }
-  .cat-idea { display: grid; gap: var(--nz-space-1); padding: var(--nz-space-4); border: var(--nz-border-w) solid var(--nz-border);
+  .cat-idea { display: grid; gap: var(--nz-space-1); min-width: 0; padding: var(--nz-space-4); border: var(--nz-border-w) solid var(--nz-border);
     border-radius: var(--nz-radius-lg); background: var(--nz-surface); box-shadow: var(--nz-shadow-xs); text-decoration: none; color: var(--nz-text); }
   .cat-idea:hover { border-color: var(--nz-brand); }
   .cat-idea b { font-size: var(--nz-text-base); }
   .cat-idea span { font-size: var(--nz-text-sm); color: var(--nz-text-soft); }
+  .cat-idea pre { min-width: 0; max-width: 100%; margin-top: var(--nz-space-2); }
   .cat-muestra { display: grid; gap: var(--nz-space-4); grid-template-columns: 1fr; }
   @media (min-width: 960px) { .cat-muestra { grid-template-columns: repeat(3, 1fr); align-items: start; } }
   .cat-muestra__col { display: grid; gap: var(--nz-space-2); align-content: start; }
@@ -428,6 +429,9 @@ CSS_PORTADA = """
 
 def portada(specs, censo_cat, totales, packs):
     base = cifras_base()
+    # El canal vivo no se escribe a mano: sale de data/canales.json (único dueño)
+    canales = json.loads((ROOT / "data" / "canales.json").read_text(encoding="utf-8"))
+    VIVO = canales["canales"]["vivo"]["rango"]
     filas = []
     for s in specs:
         n = s["cat"]
@@ -466,7 +470,7 @@ def portada(specs, censo_cat, totales, packs):
 
   <header class="cat-topbar">
     <span class="cat-brandmark"><i></i><i></i> Aurora</span>
-    <span class="cat-count">v{VERSION} · motor de temas</span>
+    <span class="cat-count">v{VERSION} · design system + generative UI</span>
     <span class="cat-topbar__tools">
       <a class="cat-icobtn" href="base.html" title="Base de datos de diseño" aria-label="Base de datos de diseño"><svg class="nz-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg></a>
       <a class="cat-icobtn" href="audit/index.html" title="Auditoría del sistema" aria-label="Auditoría del sistema"><svg class="nz-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></a>
@@ -475,15 +479,15 @@ def portada(specs, censo_cat, totales, packs):
   </header>
 
   <section class="cat-hero cat-in">
-    <p class="cat-eyebrow">Design System Ntizar</p>
+    <p class="cat-eyebrow">Design System Ntizar · v{VERSION}</p>
     <h1>Aurora</h1>
-    <p class="cat-hero__sub">{t['clases']} objetos de frontend para montar cualquier web. Elige dos colores y el sistema entero se rehace. Sólido y con sombras de verdad: sin gradientes, sin glass, sin IA-slop. Responsive first de verdad.</p>
+    <p class="cat-hero__sub">Un sistema, tres formas de construir: <b>a mano</b>, con un <b>agente</b> o con un <b>modelo en caliente</b>. {t['clases']} objetos verificados, marcas por preset y un lenguaje para que el diseño lo escriba la IA sin salirse nunca del censo.</p>
     <div class="cat-ctas">
-      <a class="nz-btn nz-btn--primary" href="recetas/index.html">Ver las recetas</a>
-      <a class="nz-btn nz-btn--accent" href="base.html">Abrir la base de datos</a>
+      <a class="nz-btn nz-btn--primary" href="openui/index.html">Interfaces generativas</a>
+      <a class="nz-btn nz-btn--accent" href="openui/index.html#plantillas">Plantillas por arquetipo</a>
       <a class="nz-btn nz-btn--soft" href="paginas/01-layout.html">Explorar el catálogo</a>
-      <a class="nz-btn nz-btn--ghost" href="COMPOSICION.md">Contrato de composición</a>
-      <span class="cat-hint">Y abajo puedes cambiar los colores, la tipografía y el acabado en vivo</span>
+      <a class="nz-btn nz-btn--ghost" href="base.html">Base de datos de diseño</a>
+      <span class="cat-hint">Si vienes de un modelo: <code>PROMPT.md</code> + <code>aurora.spec.json</code> y el runtime lo pinta. Si vienes a copiar: el catálogo tiene una demo por objeto.</span>
     </div>
     <div class="objBuscar">
       <div class="cat-search">
@@ -494,16 +498,86 @@ def portada(specs, censo_cat, totales, packs):
     </div>
     <div class="cat-stats">
       <div class="cat-stat"><b><span data-cuenta="{t['clases']}">0</span></b><span>objetos</span></div>
-      <div class="cat-stat"><b>{t['categorias']}</b><span>categorías</span></div>
       <div class="cat-stat"><b>{t['demos']}</b><span>demos en vivo</span></div>
-      <div class="cat-stat"><b><span data-cuenta="{t['bases']}">0</span></b><span>familias</span></div>
-      <div class="cat-stat"><b>2</b><span>temas</span></div>
-      <div class="cat-stat"><b>0</b><span>gradientes</span></div>
-      <div class="cat-stat"><b>0</b><span>glass</span></div>
+      <div class="cat-stat"><b>36</b><span>componentes generativos</span></div>
+      <div class="cat-stat"><b>5</b><span>arquetipos</span></div>
+      <div class="cat-stat"><b>6</b><span>marcas</span></div>
+      <div class="cat-stat"><b>0</b><span>clases inventadas</span></div>
     </div>
   </section>
 
   <main id="contenido" style="max-width:var(--nz-container-max);margin-inline:auto;padding:0 var(--nz-gutter)">
+
+    <section class="cat-in" style="--d:.04s;margin-block:var(--nz-space-12)" id="generativa">
+      <p class="cat-eyebrow" style="margin-bottom:var(--nz-space-2)">Lo nuevo · Generative UI</p>
+      <h2 class="cat-h2">Que el diseño lo escriba un modelo, sin salirse del sistema</h2>
+      <p class="cat-p">El modelo no escribe HTML ni CSS: escribe <b>openui-lang</b>, un lenguaje de 8 a 40 líneas. El parser comprueba tipos, enums y aridad antes de pintar, y el runtime emite <b>solo clases del censo</b>. Un programa ocupa la mitad de tokens que el JSON equivalente, y una clase inventada es imposible por construcción.</p>
+
+      <div class="cat-pillrow" style="margin-bottom:var(--nz-space-5)">
+        <span class="cat-pill"><i></i> L0 · marcas (identidad)</span>
+        <span class="cat-pill"><i></i> L1 · 18 packs (implementación)</span>
+        <span class="cat-pill"><i></i> L2 · 36 componentes (vocabulario)</span>
+        <span class="cat-pill"><i></i> L3 · 5 arquetipos (estructura)</span>
+      </div>
+
+      <div class="nz-split nz-split--2-1" style="margin-bottom:var(--nz-space-5)">
+        <article class="nz-article nz-article--bordered">
+          <p class="cat-eyebrow" style="margin-bottom:var(--nz-space-2)">Lo que escribe el modelo</p>
+          <b style="display:block;margin-bottom:var(--nz-space-2)">Un panel, en cuatro líneas</b>
+<pre class="nz-code nz-code--block">root = Pagina([barra, kpis, tabla], "contenido")
+barra = Navegacion("Ferroviaria Sur", ["Panel", "Rutas"])
+kpis = Rejilla([Kpi("Puntualidad", "94,2 %", "+2,1 pp", "sube", "acento")], "4")
+tabla = Tabla(["Ruta", "Salidas", "Puntualidad"], [["MAD-BCN", "42", "96 %"]], true, "comoda", true, "Salidas")</pre>
+          <p class="cat-hint">Nada de HTML ni CSS. Ni una clase: el modelo elige componentes, el runtime los viste.</p>
+        </article>
+        <article class="nz-article nz-article--bordered">
+          <p class="cat-eyebrow" style="margin-bottom:var(--nz-space-2)">Lo que pinta Aurora</p>
+          <div class="nz-cluster nz-cluster--between" style="margin-bottom:var(--nz-space-3)">
+            <b>Ferroviaria Sur</b>
+            <span class="nz-cluster nz-cluster--compact"><span class="nz-chip">Panel</span><span class="nz-chip">Rutas</span></span>
+          </div>
+          <div class="nz-kpi nz-kpi--accent" style="margin-bottom:var(--nz-space-3)">
+            <span class="nz-kpi__label">Puntualidad</span>
+            <span class="nz-kpi__value nz-kpi__value--accent">94,2 %</span>
+            <span class="nz-kpi__delta nz-kpi__delta--up">+2,1 pp</span>
+          </div>
+          <div class="nz-table-wrap nz-table-wrap--apilable">
+            <table class="nz-table nz-table--apilable nz-table--compact">
+              <thead><tr><th>Ruta</th><th style="text-align:right">Salidas</th><th style="text-align:right">Puntualidad</th></tr></thead>
+              <tbody>
+                <tr><td data-etiqueta="Ruta">MAD-BCN</td><td class="nz-table__num nz-table__right" data-etiqueta="Salidas">42</td><td class="nz-table__num nz-table__right" data-etiqueta="Puntualidad">96 %</td></tr>
+                <tr><td data-etiqueta="Ruta">MAD-VLC</td><td class="nz-table__num nz-table__right" data-etiqueta="Salidas">31</td><td class="nz-table__num nz-table__right" data-etiqueta="Puntualidad">88 %</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="cat-hint">Responsive, táctil y con contraste: lo trae el sistema, no la generación.</p>
+        </article>
+      </div>
+
+      <div class="cat-ideas" style="margin-bottom:var(--nz-space-4)">
+        <div class="cat-idea" style="cursor:default"><b>1 · Valida</b><span>El parser oficial comprueba tipos, enums y número de argumentos. Un programa mal formado no llega al DOM.</span></div>
+        <div class="cat-idea" style="cursor:default"><b>2 · Pinta</b><span>El runtime convierte el árbol en markup del censo, con su responsive y su contraste. Sin React y sin build.</span></div>
+        <div class="cat-idea" style="cursor:default"><b>3 · Sella</b><span>El mismo lint de las páginas escritas a mano: 0 clases fuera del censo o no se entrega.</span></div>
+        <div class="cat-idea" style="cursor:default"><b>4 · Versiona</b><span>Canal vivo para tus webs, tag exacto para clientes. Un cambio en Aurora llega solo o no llega.</span></div>
+      </div>
+
+      <div class="cat-ideas">
+        <a class="cat-idea" href="openui/index.html#plantillas"><b>Panel operativo</b><span>KPIs, serie y tabla. El arquetipo de trabajo diario.</span></a>
+        <a class="cat-idea" href="openui/index.html#plantillas"><b>Informe</b><span>Resumen ejecutivo, objetivos real-meta y recomendación.</span></a>
+        <a class="cat-idea" href="openui/index.html#plantillas"><b>Landing</b><span>Hero, propuestas de valor, precio y cierre.</span></a>
+        <a class="cat-idea" href="openui/index.html#plantillas"><b>Ajustes</b><span>Formulario por pasos, preferencias y acciones.</span></a>
+        <a class="cat-idea" href="openui/index.html#plantillas"><b>Agente</b><span>Conversación, trazas de herramientas y aprobación.</span></a>
+        <a class="cat-idea" href="openui/PROMPT.md"><b>El prompt</b><span>El system prompt que convierte un modelo en diseñador de Aurora. 14 KB.</span></a>
+        <a class="cat-idea" href="CONTRATO.md"><b>El contrato</b><span>Qué propaga solo, qué exige migración y cómo se deshace un cambio.</span></a>
+        <a class="cat-idea" href="openui/aurora.spec.json"><b>La biblioteca</b><span>36 componentes con firmas y JSON Schema. Lo que el parser entiende.</span></a>
+      </div>
+
+      <p style="margin-top:var(--nz-space-5)">
+        <a class="nz-btn nz-btn--primary" href="openui/index.html">Abrir el probador</a>
+        <a class="nz-btn nz-btn--soft" href="openui/index.html#plantillas">Probar una plantilla</a>
+      </p>
+      <p class="cat-hint">En un producto: <code>python scripts/generar-web.py --brief encargo.json</code> genera el programa, la página y pasa el lint. El modelo y la clave salen de la configuración, nunca del código.</p>
+    </section>
 
     <section class="cat-in" style="--d:.06s;margin-block:var(--nz-space-12)">
       <h2 style="font-size:var(--nz-text-xl);letter-spacing:var(--nz-tracking-tight);margin-bottom:var(--nz-space-4)">Manifiesto</h2>
@@ -521,6 +595,26 @@ def portada(specs, censo_cat, totales, packs):
         <span class="cat-pill cat-pill--no"><i></i> Sin glass</span>
         <span class="cat-pill cat-pill--no"><i></i> Sin IA-slop</span>
       </div>
+    </section>
+
+    <section class="cat-in" style="--d:.055s;margin-block:var(--nz-space-12)">
+      <h2 class="cat-h2">Dos canales: se actualiza cuando tú quieras</h2>
+      <p class="cat-p">Un cambio de tokens o de CSS llega a todas las webs que apuntan al canal vivo, sin tocarlas. Una entrega a cliente se queda en el tag exacto. Lo que nunca se usa es <code>@master</code>.</p>
+      <div class="cat-ideas" style="grid-template-columns:repeat(2,1fr)">
+        <div class="cat-idea" style="cursor:default">
+          <b>Canal vivo · <code>@{VIVO}</code></b>
+          <span>Webs y paneles propios. Recibe cada release 9.x: un cambio en Aurora llega solo.</span>
+<pre class="nz-code nz-code--block">&lt;link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/Ntizar/Aurora@{VIVO}/tokens.css"&gt;</pre>
+        </div>
+        <div class="cat-idea" style="cursor:default">
+          <b>Canal congelado · <code>@v{VERSION}</code></b>
+          <span>Entregas a cliente. Reproducible dentro de dos años; no cambia hasta que se sube.</span>
+<pre class="nz-code nz-code--block">&lt;link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v{VERSION}/tokens.css"&gt;</pre>
+        </div>
+      </div>
+      <p class="cat-hint">Renombrar o quitar algo exige versión major y migrador; lo aditivo viaja solo. Detalle en <a href="CONTRATO.md">CONTRATO.md</a> y <code>python scripts/canal.py</code>.</p>
     </section>
 
     <section class="cat-in" style="--d:.05s;margin-block:var(--nz-space-12)">
@@ -583,9 +677,6 @@ def portada(specs, censo_cat, totales, packs):
         <a class="cat-idea" href="COMPOSICION.md"><b>Contrato de composición</b><span>Doce leyes: cero emojis, presupuesto de color, ancho por tipo de página.</span></a>
         <a class="cat-idea" href="recetas/index.html"><b>Recetas canónicas</b><span>Admin, dashboard, ajustes, acceso e informe. Cópialas y adapta.</span></a>
         <a class="cat-idea" href="audit/index.html"><b>Arnés de verificación</b><span>El lint caza emojis, jerarquía, presupuesto de color y tipografía mínima.</span></a>
-        <a class="cat-idea" href="openui/index.html"><b>Interfaces generativas</b><span>OpenUI Lang sobre el censo: el modelo describe, Aurora pinta. Probador en vivo.</span></a>
-        <a class="cat-idea" href="openui/index.html#plantillas"><b>Plantillas por arquetipo</b><span>Panel, informe, landing, ajustes y agente: el esqueleto decidido, el modelo rellena.</span></a>
-        <a class="cat-idea" href="CONTRATO.md"><b>Contrato de versiones</b><span>Canal vivo y congelado, lock por web y migrador: cómo llega un cambio a todas.</span></a>
       </div>
     </section>
 
