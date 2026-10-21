@@ -1,14 +1,14 @@
 ---
 name: aurora-design-system
 description: "Usa al construir o tocar cualquier web con Aurora (Ntizar/Aurora). El repo manda: resuelve la versión vigente y pide LLM.md + components.json antes de escribir CSS."
-version: "9.3.1"
+version: "9.4.0"
 tags: [css, design-system, aurora, ntizar, agent-ready, movil, escritorio, tipografia]
 ---
 
 # Aurora — doctrina única (el repo es la orden máxima)
 
 Design system CSS puro, sin build, sin dependencias, namespaced bajo `.nz-`.
-**v9.3.1 · 2186 objetos · 411 familias · 655 demos · 18 categorías · 189 tokens · 59 gemelas OKLch.**
+**v9.4.0 · 2186 objetos · 411 familias · 655 demos · 18 categorías · 189 tokens · 59 gemelas OKLch · 36 componentes generativos.**
 *(Cabecera de testigo, no de autoridad: resuélvela con el PASO 0.)*
 
 > ⚠️ `Ntizar/Aurora` **manda sobre esta skill**. Esta skill es un puntero; el repo
@@ -189,7 +189,9 @@ El lint lo comprueba (`acento-ausente`, `acento-testimonial`).
 
 1. **PASO 0**: resuelve `$V` y lee `LLM.md` + `components.json` del repo. Si buscas por necesidad («tabla apilable», «dashboard», «acento»), empieza por `base.html` o `datos/base-diseno.json`: es el índice que ya trae markup, tokens y anti-patrón.
 2. **Copia una receta de `examples/`** y quítale lo que no uses.
-3. **Escribe el HTML** con los objetos del censo, responsive first, tokens, 44px.
+3. **Escribe el HTML** con los objetos del censo, responsive first, tokens, 44px. Si la
+   interfaz la genera un modelo en caliente (chat, panel dinámico), ve a §14: lenguaje +
+   `PROMPT.md` + `aurora-openui.js`, no HTML suelto.
 4. **Verifica el HTML**: `python scripts/auditar-uso.py tu-pagina.html` → clases inventadas, packs que faltan, gradientes, colores a mano, desktop-first, atribución. 0 fallos o no está terminado.
 5. **Mídelo en móvil de verdad**, no de vista: viewport a 320/360/390 y comprobar que `document.scrollingElement.scrollWidth == clientWidth` en todas las pestañas/secciones. Es la prueba objetiva de que nada se sale.
 6. Verificación visual en preview (el lint no ve la estética). Texto por código (`grep`), no por visión: `vision_analyze` alucina erratas.
@@ -380,10 +382,50 @@ mesh/orbs/3D desaparecen). Receta y script de medición en `references/migracion
    Pickers creados una vez, estado «a mano» cuando el usuario toca un picker, y cada
    paleta con tonos light y dark propios.
 
-## 14. Referencias
+## 14. Interfaces generativas (OpenUI Lang, v9.4)
+
+Cuando el HTML lo escribe **un modelo en tiempo de ejecución**, no le pases esta skill ni le
+pidas HTML: dale el lenguaje y la biblioteca. El repositorio ya trae las dos cosas.
+
+```
+LLM → OpenUI Lang (8-20 líneas) → parser → runtime vanilla → markup .nz-* del censo
+```
+
+| Necesito | De dónde |
+|---|---|
+| System prompt para el modelo | `openui/PROMPT.md` (36 firmas + reglas de diseño + 3 ejemplos) |
+| Biblioteca machine-readable | `openui/aurora.spec.json` (firmas + JSON Schema para el parser) |
+| Pintar el resultado en el navegador | `openui/aurora-openui.js` → `AuroraOpenUI.iniciar()` + `.stream(texto, "#lienzo")` |
+| Añadir un objeto al lenguaje | `openui/componentes.json` (a mano) → `python3 scripts/generar-openui.py` |
+| Verlo funcionando | `openui/index.html` (probador en vivo) |
+
+```js
+await AuroraOpenUI.iniciar();                          // spec + parser oficial (ESM, 96 KB)
+AuroraOpenUI.stream(respuestaDelModelo, "#lienzo");    // streaming; cae a parser local sin red
+```
+
+**Reglas de la capa generativa:**
+
+1. **OpenUI pone el lenguaje; Aurora pone la verdad visual.** No se enlaza la librería React
+   de OpenUI ni su CSS: el bundle oficial pesa 3,2 MB + 320 KB de estilos que competirían con
+   el sistema. Solo se usa `@openuidev/lang-core` (parser + prompt).
+2. **Cada componente emite markup del censo.** `scripts/auditar-openui.py` falla si el runtime
+   emite una clase que no existe, si un renderizador falta, si la spec/PROMPT se ha
+   desincronizado del generador o si un enum no está tratado.
+3. **El enum castellano no es el modificador.** `tendencia: "sube"` → `nz-kpi__delta--up`.
+   Tabla explícita en el runtime; concatenar a ciegas produce clases fantasma.
+4. **Un valor de enum por defecto** (`"porDefecto"` en `componentes.json`) se pinta sin
+   modificador: no es un fallo, es diseño.
+5. **Si el modelo necesita algo que no está**, se añade al censo y a `openui/componentes.json`
+   (§9). No se resuelve con CSS en el proyecto.
+6. **El parser oficial valida** tipos, aridad y enums antes de pintar: un programa mal formado
+   no llega al DOM. Los 3 ejemplos del repo tienen 0 errores con `lang-core` 1.0.1.
+
+## 15. Referencias
 
 
 - **`Ntizar/Aurora`** — la orden máxima. `LLM.md`, `components.json`, `AGENTS.md`, `COMPOSICION.md`, `examples/`, `recetas/`, `specs/`, `paginas/`, `audit/`, `scripts/auditar-uso.py`.
+- **`openui/`** — capa generativa: `componentes.json` (fuente), `PROMPT.md`, `aurora.spec.json`, `aurora-openui.js`, `index.html` (probador), `ejemplos.json`.
 - Este mismo `SKILL.md` **dentro del repo** (la CI valida que no se separe).
 - `references/migracion-v6-a-v7.md` y el caso Aurora en la skill `design-system-coherence-audit`.
 - `references/metodo-diseno.md` — checklists del método de diseño (brief → critique → harden → polish).

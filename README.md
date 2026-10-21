@@ -8,7 +8,7 @@
 
 [![CI — validación del manifiesto](https://github.com/Ntizar/Aurora/actions/workflows/validar.yml/badge.svg)](https://github.com/Ntizar/Aurora/actions/workflows/validar.yml)
 [![GitHub Pages](https://github.com/Ntizar/Aurora/actions/workflows/pages.yml/badge.svg)](https://github.com/Ntizar/Aurora/actions/workflows/pages.yml)
-![versión](https://img.shields.io/badge/versi%C3%B3n-9.2.0-2563eb)
+![versión](https://img.shields.io/badge/versi%C3%B3n-9.4.0-2563eb)
 ![objetos](https://img.shields.io/badge/objetos-2.186-2563eb)
 ![demos](https://img.shields.io/badge/demos-655-f97316)
 
@@ -105,6 +105,33 @@ python scripts/auditar-uso.py --selftest          # prueba de la propia herramie
 
 Nada de esto se desincroniza: la CI regenera `LLM.md`/`components.json`, comprueba que `datos/base-diseno.json` coincide con su generador, que no hay referencias rotas, que el responsive no se ha debilitado y que el lint funciona.
 
+## Interfaces generativas (v9.4)
+
+Cuando la interfaz la escribe un **modelo en tiempo de ejecución**, no le des HTML: dale el
+lenguaje y la biblioteca. OpenUI Lang describe la pantalla en una docena de líneas y Aurora
+la pinta con sus objetos.
+
+| Pieza | Qué hace |
+|---|---|
+| [`openui/index.html`](https://ntizar.github.io/Aurora/openui/) | **Probador en vivo**: editas el programa y ves el render, con el HTML generado debajo |
+| `openui/PROMPT.md` | System prompt listo (sintaxis + 36 firmas + reglas de diseño) |
+| `openui/aurora.spec.json` | Biblioteca machine-readable: firmas y JSON Schema que valida el parser |
+| `openui/aurora-openui.js` | Runtime vanilla: OpenUI Lang → markup `.nz-*`. Sin React, sin build |
+| `openui/componentes.json` | La fuente a mano: qué objeto del censo expone cada componente |
+| `scripts/generar-openui.py` | Genera spec, esquema y prompt (`--check` en CI) |
+| `scripts/auditar-openui.py` | Puerta: censo, deriva, renderizadores, enums y ejemplos |
+
+```
+root = Pagina([cabecera, kpis], "contenido")
+cabecera = Titular("Operaciones de la flota", "1")
+kpis = Rejilla([Kpi("Puntualidad", "94,2 %", "+2,1 pp", "sube", "acento")], "4")
+```
+
+Tres garantías que el repo comprueba: **0 clases fuera del censo**, los **3 ejemplos parsean
+con el parser oficial** (lang-core 1.0.1, 0 errores) y el **streaming pinta lo mismo** que el
+render de una vez. El parser oficial se carga por ESM desde CDN; si no hay red, entra un
+parser local del mismo subconjunto y el dato se pinta igual.
+
 ## La base de datos de diseño
 
 No es una carpeta de snippets ni un catálogo de capturas: es un **índice vivo** de todo el sistema, generado desde la única fuente de verdad y verificado en CI.
@@ -158,6 +185,7 @@ Aurora/
 │   └── base-diseno.json # la base de datos: familias, tokens, recetas, combos, marcas
 ├── audit/              # informe de auditoría generado (AUDITORIA.md + index.html)
 ├── recetas/ · examples/ # páginas completas para copiar (canónicas y mínimas)
+├── openui/             # capa generativa: spec, prompt, runtime vanilla y probador
 ├── docs/planes/        # planes archivados (v7 y v9), fuera de la raíz
 ├── scripts/
 │   ├── build-catalog.py      # genera páginas + portada + índice desde specs/
@@ -172,6 +200,8 @@ Aurora/
 │   ├── auditar-base.py       # valida la base de datos y sus referencias (CI)
 │   ├── auditar-responsive.py # vigila container queries y escalones (CI)
 │   ├── auditar-uso.py        # lint del HTML consumidor (manifiesto + composición)
+│   ├── generar-openui.py     # genera openui/aurora.spec.json + PROMPT.md (--check en CI)
+│   ├── auditar-openui.py     # valida censo, deriva, runtime, enums y ejemplos (CI)
 │   ├── traer-fuente.py       # descarga/actualiza los woff2 de Inter
 │   └── extraer-specs.py      # utilidad: reconstruye specs/ desde las páginas
 ├── LLM.md              # guía de decisión para agentes (~12 KB, en vez de 250 KB de CSS)

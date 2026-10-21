@@ -3,6 +3,45 @@
 Formato: [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/).
 Versionado: [SemVer](https://semver.org/lang/es/).
 
+## [9.4.0] — 2026-10-21
+
+**Generative UI: OpenUI Lang sobre el censo.** Aurora deja de ser solo el CSS que un agente
+lee; ahora es también la biblioteca que un modelo *usa* en tiempo de ejecución.
+
+El modelo emite 8-20 líneas de openui-lang (`root = Pagina([...])`) en vez de HTML+CSS: un
+52 % menos de tokens que JSON según el benchmark público de OpenUI. Aurora conserva el
+control visual porque el lenguaje no puede inventar clases: elige entre 36 componentes del
+censo y el runtime emite su markup real.
+
+### Añadido
+
+- `openui/componentes.json` — 36 componentes Aurora expuestos, derivados del censo.
+- `openui/aurora-openui.js` — runtime vanilla (sin React, sin build): OpenUI Lang → DOM
+  con clases `.nz-*`; streaming, y parser local de reserva si el CDN no responde.
+- `openui/PROMPT.md` + `aurora.spec.json` + `aurora.schema.json` — generados desde la fuente.
+- `openui/ejemplos.json` — 3 programas reales (flota, informe, agente) validados con el
+  parser oficial `@openuidev/lang-core` 1.0.1: 0 errores.
+- `openui/index.html` — probador en vivo con streaming simulado, telemetría y el HTML
+  generado a la vista.
+- `scripts/generar-openui.py` y `scripts/auditar-openui.py` — generador con `--check` y
+  puerta de CI (censo, deriva, renderizadores, enums, ejemplos).
+- Portada: tarjeta hacia el probador. `LLM.md` §10, `README`, `AGENTS.md`.
+
+### Corregido
+
+- `auditar-uso.py` escaneaba el **interior** de `<pre>/<code>/<textarea>`: un snippet con
+  `href=".../packs/all.css"` contaba como CSS enlazado y daba todos los packs por muertos.
+  Ahora se vacía el contenido y se conserva la etiqueta.
+- `nz-kpi__delta--sube` y equivalentes: el enum castellano de `tendencia` se concatenaba
+  tal cual al modificador inglés (`--up/--down/--flat`). Cazado por el test de render; el
+  auditor ahora exige que cada valor de enum esté tratado o sea modificador real.
+
+### Garantías medidas
+
+- 3/3 ejemplos: 0 errores del parser oficial · 123 clases distintas emitidas, 0 fuera del censo.
+- Streaming = render de una vez (mismo DOM).
+- `auditar-uso.py openui/index.html` → 0 fallos.
+
 ## [9.3.1] — 2026-10-19
 
 Corrección de concepto (David): el sistema no es «mobile first», es **RESPONSIVE first**.

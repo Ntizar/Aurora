@@ -48,6 +48,9 @@ Si eres un agente (o una persona con prisa), lee esto antes de tocar nada.
 | `stress-test.html` | Prueba viva del responsive por contenedor | Sí |
 | `combos/*.html` | Esqueletos de página por tipo | **No** — los genera `generar-llm-docs.py` |
 | `examples/` · `recetas/` | Páginas completas para copiar | Sí |
+| `openui/componentes.json` · `openui/ejemplos.json` | **Fuente** de la capa generativa (qué componente expone qué objeto) | Sí |
+| `openui/aurora.spec.json` · `aurora.schema.json` · `PROMPT.md` | Salidas de `generar-openui.py` | **No** — se regeneran |
+| `openui/aurora-openui.js` · `openui/index.html` | Runtime vanilla y probador en vivo | Sí |
 | `docs/planes/` | Planes archivados | Sí, pero no es documentación viva |
 | `audit/` | Informe de auditoría | **No** — se regenera |
 | `js/catalog.js` · `js/base-datos.js` | Comportamiento del catálogo y del explorador | Sí |
@@ -74,6 +77,8 @@ python scripts/audit-html.py           # informe navegable → audit/index.html
 python scripts/validar-css.py          # manifiesto + cobertura (esto es lo que corre CI)
 python scripts/auditar-base.py --check # la base de datos, sin referencias rotas
 python scripts/auditar-responsive.py   # container queries y escalones no se debilitan
+python scripts/generar-openui.py       # capa OpenUI: spec, schema y prompt
+python scripts/auditar-openui.py       # censo, deriva, runtime, enums y ejemplos
 ```
 
 4. Si `validar-css.py` no dice `RESULTADO: VÁLIDO`, no está terminado.

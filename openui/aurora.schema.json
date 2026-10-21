@@ -1,0 +1,1071 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "type": "object",
+ "properties": {
+  "Pagina": {
+   "$ref": "#/$defs/Pagina"
+  },
+  "Seccion": {
+   "$ref": "#/$defs/Seccion"
+  },
+  "Pila": {
+   "$ref": "#/$defs/Pila"
+  },
+  "Fila": {
+   "$ref": "#/$defs/Fila"
+  },
+  "Rejilla": {
+   "$ref": "#/$defs/Rejilla"
+  },
+  "DosColumnas": {
+   "$ref": "#/$defs/DosColumnas"
+  },
+  "Tarjeta": {
+   "$ref": "#/$defs/Tarjeta"
+  },
+  "Titular": {
+   "$ref": "#/$defs/Titular"
+  },
+  "Entradilla": {
+   "$ref": "#/$defs/Entradilla"
+  },
+  "Texto": {
+   "$ref": "#/$defs/Texto"
+  },
+  "Lista": {
+   "$ref": "#/$defs/Lista"
+  },
+  "Cifra": {
+   "$ref": "#/$defs/Cifra"
+  },
+  "Separador": {
+   "$ref": "#/$defs/Separador"
+  },
+  "Kpi": {
+   "$ref": "#/$defs/Kpi"
+  },
+  "Tabla": {
+   "$ref": "#/$defs/Tabla"
+  },
+  "Barras": {
+   "$ref": "#/$defs/Barras"
+  },
+  "TablaBarras": {
+   "$ref": "#/$defs/TablaBarras"
+  },
+  "Objetivo": {
+   "$ref": "#/$defs/Objetivo"
+  },
+  "MiniTendencia": {
+   "$ref": "#/$defs/MiniTendencia"
+  },
+  "Anillo": {
+   "$ref": "#/$defs/Anillo"
+  },
+  "Progreso": {
+   "$ref": "#/$defs/Progreso"
+  },
+  "Boton": {
+   "$ref": "#/$defs/Boton"
+  },
+  "Etiqueta": {
+   "$ref": "#/$defs/Etiqueta"
+  },
+  "Chip": {
+   "$ref": "#/$defs/Chip"
+  },
+  "Aviso": {
+   "$ref": "#/$defs/Aviso"
+  },
+  "Nota": {
+   "$ref": "#/$defs/Nota"
+  },
+  "Pestanas": {
+   "$ref": "#/$defs/Pestanas"
+  },
+  "Segmentado": {
+   "$ref": "#/$defs/Segmentado"
+  },
+  "Pasos": {
+   "$ref": "#/$defs/Pasos"
+  },
+  "Navegacion": {
+   "$ref": "#/$defs/Navegacion"
+  },
+  "Campo": {
+   "$ref": "#/$defs/Campo"
+  },
+  "Formulario": {
+   "$ref": "#/$defs/Formulario"
+  },
+  "Interruptor": {
+   "$ref": "#/$defs/Interruptor"
+  },
+  "Casilla": {
+   "$ref": "#/$defs/Casilla"
+  },
+  "Chat": {
+   "$ref": "#/$defs/Chat"
+  },
+  "Herramienta": {
+   "$ref": "#/$defs/Herramienta"
+  }
+ },
+ "required": [
+  "Pagina",
+  "Seccion",
+  "Pila",
+  "Fila",
+  "Rejilla",
+  "DosColumnas",
+  "Tarjeta",
+  "Titular",
+  "Entradilla",
+  "Texto",
+  "Lista",
+  "Cifra",
+  "Separador",
+  "Kpi",
+  "Tabla",
+  "Barras",
+  "TablaBarras",
+  "Objetivo",
+  "MiniTendencia",
+  "Anillo",
+  "Progreso",
+  "Boton",
+  "Etiqueta",
+  "Chip",
+  "Aviso",
+  "Nota",
+  "Pestanas",
+  "Segmentado",
+  "Pasos",
+  "Navegacion",
+  "Campo",
+  "Formulario",
+  "Interruptor",
+  "Casilla",
+  "Chat",
+  "Herramienta"
+ ],
+ "additionalProperties": false,
+ "$defs": {
+  "Pagina": {
+   "type": "object",
+   "properties": {
+    "children": {
+     "type": "array",
+     "items": {}
+    },
+    "ancho": {
+     "type": "string",
+     "enum": [
+      "contenido",
+      "app"
+     ]
+    }
+   },
+   "required": [
+    "children"
+   ],
+   "additionalProperties": false,
+   "description": "Marco de la página. Siempre la raíz. ancho=app llena la pantalla (herramientas y paneles); contenido va topado."
+  },
+  "Seccion": {
+   "type": "object",
+   "properties": {
+    "children": {
+     "type": "array",
+     "items": {}
+    },
+    "titulo": {
+     "type": "string"
+    },
+    "borde": {
+     "type": "boolean"
+    }
+   },
+   "required": [
+    "children"
+   ],
+   "additionalProperties": false,
+   "description": "Bloque con aire propio y titular opcional. La unidad de una landing o un informe."
+  },
+  "Pila": {
+   "type": "object",
+   "properties": {
+    "children": {
+     "type": "array",
+     "items": {}
+    },
+    "hueco": {
+     "type": "string",
+     "enum": [
+      "2xs",
+      "sm",
+      "lg",
+      "xl"
+     ]
+    }
+   },
+   "required": [
+    "children"
+   ],
+   "additionalProperties": false,
+   "description": "Columna vertical con hueco entre bloques."
+  },
+  "Fila": {
+   "type": "object",
+   "properties": {
+    "children": {
+     "type": "array",
+     "items": {}
+    },
+    "hueco": {
+     "type": "string",
+     "enum": [
+      "compacto",
+      "amplio"
+     ]
+    }
+   },
+   "required": [
+    "children"
+   ],
+   "additionalProperties": false,
+   "description": "Fila horizontal que envuelve en móvil. Para grupos cortos (chips, botones, campos)."
+  },
+  "Rejilla": {
+   "type": "object",
+   "properties": {
+    "children": {
+     "type": "array",
+     "items": {}
+    },
+    "columnas": {
+     "type": "string",
+     "enum": [
+      "auto",
+      "2",
+      "4"
+     ]
+    }
+   },
+   "required": [
+    "children"
+   ],
+   "additionalProperties": false,
+   "description": "Rejilla de panel que responde a su contenedor, no al monitor. columnas=auto decide sola."
+  },
+  "DosColumnas": {
+   "type": "object",
+   "properties": {
+    "izquierda": {
+     "type": "array",
+     "items": {}
+    },
+    "derecha": {
+     "type": "array",
+     "items": {}
+    },
+    "reparto": {
+     "type": "string",
+     "enum": [
+      "50-50",
+      "2-1",
+      "40-60",
+      "60-40"
+     ]
+    }
+   },
+   "required": [
+    "izquierda",
+    "derecha"
+   ],
+   "additionalProperties": false,
+   "description": "Dos bloques con reparto elegido. En móvil se apilan."
+  },
+  "Tarjeta": {
+   "type": "object",
+   "properties": {
+    "children": {
+     "type": "array",
+     "items": {}
+    },
+    "titulo": {
+     "type": "string"
+    },
+    "borde": {
+     "type": "boolean"
+    }
+   },
+   "required": [
+    "children"
+   ],
+   "additionalProperties": false,
+   "description": "Superficie de contenido con titular opcional. Es la tarjeta de Aurora (no existe Card)."
+  },
+  "Titular": {
+   "type": "object",
+   "properties": {
+    "texto": {
+     "type": "string"
+    },
+    "nivel": {
+     "type": "string",
+     "enum": [
+      "1",
+      "2",
+      "3"
+     ]
+    },
+    "tono": {
+     "type": "string",
+     "enum": [
+      "marca",
+      "acento"
+     ]
+    }
+   },
+   "required": [
+    "texto"
+   ],
+   "additionalProperties": false,
+   "description": "Titular jerárquico. nivel=1 solo una vez por página."
+  },
+  "Entradilla": {
+   "type": "object",
+   "properties": {
+    "texto": {
+     "type": "string"
+    },
+    "tamano": {
+     "type": "string",
+     "enum": [
+      "sm",
+      "lg"
+     ]
+    },
+    "tono": {
+     "type": "string",
+     "enum": [
+      "marca",
+      "acento"
+     ]
+    }
+   },
+   "required": [
+    "texto"
+   ],
+   "additionalProperties": false,
+   "description": "Párrafo de entrada, más grande que el cuerpo. Máximo dos frases."
+  },
+  "Texto": {
+   "type": "object",
+   "properties": {
+    "texto": {
+     "type": "string"
+    }
+   },
+   "required": [
+    "texto"
+   ],
+   "additionalProperties": false,
+   "description": "Párrafo de cuerpo corriente."
+  },
+  "Lista": {
+   "type": "object",
+   "properties": {
+    "items": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     }
+    },
+    "estilo": {
+     "type": "string",
+     "enum": [
+      "check",
+      "num",
+      "dividida"
+     ]
+    }
+   },
+   "required": [
+    "items"
+   ],
+   "additionalProperties": false,
+   "description": "Lista de puntos. estilo=check para entregables validados."
+  },
+  "Cifra": {
+   "type": "object",
+   "properties": {
+    "valor": {
+     "type": "string"
+    },
+    "tono": {
+     "type": "string",
+     "enum": [
+      "marca",
+      "acento",
+      "exito",
+      "peligro"
+     ]
+    },
+    "tamano": {
+     "type": "string",
+     "enum": [
+      "sm",
+      "lg",
+      "stat"
+     ]
+    }
+   },
+   "required": [
+    "valor"
+   ],
+   "additionalProperties": false,
+   "description": "Cifra suelta con alineación de dígitos. Para metadatos y contadores."
+  },
+  "Separador": {
+   "type": "object",
+   "properties": {
+    "etiqueta": {
+     "type": "string"
+    },
+    "trazo": {
+     "type": "string",
+     "enum": [
+      "fino",
+      "discontinuo"
+     ]
+    }
+   },
+   "required": [],
+   "additionalProperties": false,
+   "description": "Línea de separación, con etiqueta opcional."
+  },
+  "Kpi": {
+   "type": "object",
+   "properties": {
+    "etiqueta": {
+     "type": "string"
+    },
+    "valor": {
+     "type": "string"
+    },
+    "delta": {
+     "type": "string"
+    },
+    "tendencia": {
+     "type": "string",
+     "enum": [
+      "sube",
+      "baja",
+      "plano"
+     ]
+    },
+    "tono": {
+     "type": "string",
+     "enum": [
+      "neutro",
+      "marca",
+      "acento"
+     ]
+    },
+    "tamano": {
+     "type": "string",
+     "enum": [
+      "sm",
+      "lg"
+     ]
+    }
+   },
+   "required": [
+    "etiqueta",
+    "valor"
+   ],
+   "additionalProperties": false,
+   "description": "Cifra que importa, con etiqueta y variación. El acento va aquí, no en todo el panel."
+  },
+  "Tabla": {
+   "type": "object",
+   "properties": {
+    "columnas": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     }
+    },
+    "filas": {
+     "type": "array",
+     "items": {
+      "type": "array",
+      "items": {
+       "type": "string"
+      }
+     }
+    },
+    "apilable": {
+     "type": "boolean"
+    },
+    "densidad": {
+     "type": "string",
+     "enum": [
+      "compacta",
+      "comoda"
+     ]
+    },
+    "rayada": {
+     "type": "boolean"
+    },
+    "numericas": {
+     "type": "string"
+    }
+   },
+   "required": [
+    "columnas",
+    "filas"
+   ],
+   "additionalProperties": false,
+   "description": "Datos tabulares. apilable=true convierte cada fila en tarjeta en móvil (usa etiqueta de columna). numericas = nombres de columna separados por coma que se alinean a la derecha."
+  },
+  "Barras": {
+   "type": "object",
+   "properties": {
+    "etiquetas": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     }
+    },
+    "valores": {
+     "type": "array",
+     "items": {
+      "type": "number"
+     }
+    },
+    "tono": {
+     "type": "string",
+     "enum": [
+      "marca",
+      "acento"
+     ]
+    },
+    "tamano": {
+     "type": "string",
+     "enum": [
+      "sm",
+      "lg"
+     ]
+    },
+    "horizontal": {
+     "type": "boolean"
+    }
+   },
+   "required": [
+    "etiquetas",
+    "valores"
+   ],
+   "additionalProperties": false,
+   "description": "Serie de barras de una sola escala. Si las magnitudes difieren mucho, usa TablaBarras."
+  },
+  "TablaBarras": {
+   "type": "object",
+   "properties": {
+    "nombres": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     }
+    },
+    "valores": {
+     "type": "array",
+     "items": {
+      "type": "number"
+     }
+    },
+    "textos": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     }
+    },
+    "tono": {
+     "type": "string",
+     "enum": [
+      "marca",
+      "acento"
+     ]
+    }
+   },
+   "required": [
+    "nombres",
+    "valores"
+   ],
+   "additionalProperties": false,
+   "description": "Comparativa de magnitudes dispares: cada fila lleva su barra y su cifra. nombres/valores/textos van en paralelo; textos es la cifra ya formateada."
+  },
+  "Objetivo": {
+   "type": "object",
+   "properties": {
+    "etiqueta": {
+     "type": "string"
+    },
+    "real": {
+     "type": "number"
+    },
+    "meta": {
+     "type": "number"
+    },
+    "texto": {
+     "type": "string"
+    },
+    "tono": {
+     "type": "string",
+     "enum": [
+      "marca",
+      "acento",
+      "exito"
+     ]
+    }
+   },
+   "required": [
+    "etiqueta",
+    "real",
+    "meta"
+   ],
+   "additionalProperties": false,
+   "description": "Real frente a meta. La barra es el real y la línea es el objetivo; la pista va escalonada ×1,5."
+  },
+  "MiniTendencia": {
+   "type": "object",
+   "properties": {
+    "etiqueta": {
+     "type": "string"
+    },
+    "valor": {
+     "type": "string"
+    },
+    "delta": {
+     "type": "string"
+    },
+    "tendencia": {
+     "type": "string",
+     "enum": [
+      "sube",
+      "baja",
+      "plano"
+     ]
+    }
+   },
+   "required": [
+    "etiqueta",
+    "valor"
+   ],
+   "additionalProperties": false,
+   "description": "Métrica compacta con variación. Para tiras de indicadores."
+  },
+  "Anillo": {
+   "type": "object",
+   "properties": {
+    "valor": {
+     "type": "number"
+    },
+    "etiqueta": {
+     "type": "string"
+    },
+    "tono": {
+     "type": "string",
+     "enum": [
+      "marca",
+      "acento"
+     ]
+    }
+   },
+   "required": [
+    "valor"
+   ],
+   "additionalProperties": false,
+   "description": "Progreso circular de 0 a 100 con etiqueta central."
+  },
+  "Progreso": {
+   "type": "object",
+   "properties": {
+    "valor": {
+     "type": "number"
+    },
+    "etiqueta": {
+     "type": "string"
+    }
+   },
+   "required": [
+    "valor"
+   ],
+   "additionalProperties": false,
+   "description": "Barra de avance lineal de 0 a 100."
+  },
+  "Boton": {
+   "type": "object",
+   "properties": {
+    "texto": {
+     "type": "string"
+    },
+    "tono": {
+     "type": "string",
+     "enum": [
+      "primario",
+      "acento",
+      "suave",
+      "contorno",
+      "fantasma"
+     ]
+    },
+    "tamano": {
+     "type": "string",
+     "enum": [
+      "sm",
+      "lg"
+     ]
+    },
+    "bloque": {
+     "type": "boolean"
+    }
+   },
+   "required": [
+    "texto"
+   ],
+   "additionalProperties": false,
+   "description": "Acción. tono=primario para la acción principal, acento para la secundaria que importa."
+  },
+  "Etiqueta": {
+   "type": "object",
+   "properties": {
+    "texto": {
+     "type": "string"
+    },
+    "tono": {
+     "type": "string",
+     "enum": [
+      "marca",
+      "acento",
+      "exito",
+      "aviso",
+      "peligro",
+      "neutro"
+     ]
+    },
+    "forma": {
+     "type": "string",
+     "enum": [
+      "relleno",
+      "contorno",
+      "punto"
+     ]
+    }
+   },
+   "required": [
+    "texto"
+   ],
+   "additionalProperties": false,
+   "description": "Estado o categoría corta, en línea con el texto."
+  },
+  "Chip": {
+   "type": "object",
+   "properties": {
+    "texto": {
+     "type": "string"
+    },
+    "tono": {
+     "type": "string",
+     "enum": [
+      "neutro",
+      "marca",
+      "acento",
+      "exito",
+      "peligro"
+     ]
+    }
+   },
+   "required": [
+    "texto"
+   ],
+   "additionalProperties": false,
+   "description": "Filtro aplicado o etiqueta removible."
+  },
+  "Aviso": {
+   "type": "object",
+   "properties": {
+    "titulo": {
+     "type": "string"
+    },
+    "mensaje": {
+     "type": "string"
+    },
+    "tono": {
+     "type": "string",
+     "enum": [
+      "info",
+      "exito",
+      "aviso",
+      "peligro",
+      "neutro"
+     ]
+    },
+    "contorno": {
+     "type": "boolean"
+    }
+   },
+   "required": [
+    "titulo",
+    "mensaje"
+   ],
+   "additionalProperties": false,
+   "description": "Mensaje del sistema con título y cuerpo. Usa tono peligro solo para lo que rompe."
+  },
+  "Nota": {
+   "type": "object",
+   "properties": {
+    "texto": {
+     "type": "string"
+    },
+    "tono": {
+     "type": "string",
+     "enum": [
+      "nota",
+      "consejo",
+      "aviso",
+      "peligro",
+      "marca",
+      "acento",
+      "exito"
+     ]
+    }
+   },
+   "required": [
+    "texto"
+   ],
+   "additionalProperties": false,
+   "description": "Comentario al margen del contenido: nota, consejo, advertencia."
+  },
+  "Pestanas": {
+   "type": "object",
+   "properties": {
+    "pestanas": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     }
+    },
+    "activa": {
+     "type": "number"
+    },
+    "forma": {
+     "type": "string",
+     "enum": [
+      "linea",
+      "pastilla"
+     ]
+    }
+   },
+   "required": [
+    "pestanas"
+   ],
+   "additionalProperties": false,
+   "description": "Pestañas de sección. Envuelven en varias líneas; nunca se cortan."
+  },
+  "Segmentado": {
+   "type": "object",
+   "properties": {
+    "opciones": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     }
+    },
+    "activa": {
+     "type": "number"
+    }
+   },
+   "required": [
+    "opciones"
+   ],
+   "additionalProperties": false,
+   "description": "Selector de 2 a 4 opciones excluyentes, tipo Hoy/Semana/Mes."
+  },
+  "Pasos": {
+   "type": "object",
+   "properties": {
+    "pasos": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     }
+    },
+    "actual": {
+     "type": "number"
+    }
+   },
+   "required": [
+    "pasos"
+   ],
+   "additionalProperties": false,
+   "description": "Proceso por etapas con la etapa actual marcada."
+  },
+  "Navegacion": {
+   "type": "object",
+   "properties": {
+    "marca": {
+     "type": "string"
+    },
+    "enlaces": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     }
+    }
+   },
+   "required": [
+    "marca",
+    "enlaces"
+   ],
+   "additionalProperties": false,
+   "description": "Barra de navegación con marca y enlaces. Envuelve: ninguna acción se corta."
+  },
+  "Campo": {
+   "type": "object",
+   "properties": {
+    "etiqueta": {
+     "type": "string"
+    },
+    "tipo": {
+     "type": "string",
+     "enum": [
+      "texto",
+      "numero",
+      "email",
+      "fecha",
+      "busqueda"
+     ]
+    },
+    "valor": {
+     "type": "string"
+    },
+    "ayuda": {
+     "type": "string"
+    },
+    "error": {
+     "type": "string"
+    },
+    "requerido": {
+     "type": "boolean"
+    }
+   },
+   "required": [
+    "etiqueta"
+   ],
+   "additionalProperties": false,
+   "description": "Campo de formulario con etiqueta, ayuda y error. Nunca un input sin etiqueta."
+  },
+  "Formulario": {
+   "type": "object",
+   "properties": {
+    "children": {
+     "type": "array",
+     "items": {}
+    },
+    "columnas": {
+     "type": "string",
+     "enum": [
+      "2",
+      "3"
+     ]
+    }
+   },
+   "required": [
+    "children"
+   ],
+   "additionalProperties": false,
+   "description": "Rejilla de campos que colapsa a una columna en móvil."
+  },
+  "Interruptor": {
+   "type": "object",
+   "properties": {
+    "etiqueta": {
+     "type": "string"
+    },
+    "activo": {
+     "type": "boolean"
+    }
+   },
+   "required": [
+    "etiqueta"
+   ],
+   "additionalProperties": false,
+   "description": "Ajuste binario con efecto inmediato."
+  },
+  "Casilla": {
+   "type": "object",
+   "properties": {
+    "etiqueta": {
+     "type": "string"
+    },
+    "marcada": {
+     "type": "boolean"
+    }
+   },
+   "required": [
+    "etiqueta"
+   ],
+   "additionalProperties": false,
+   "description": "Selección múltiple o confirmación."
+  },
+  "Chat": {
+   "type": "object",
+   "properties": {
+    "mensajes": {
+     "type": "array",
+     "items": {
+      "type": "array",
+      "items": {
+       "type": "string"
+      }
+     }
+    },
+    "titulo": {
+     "type": "string"
+    }
+   },
+   "required": [
+    "mensajes"
+   ],
+   "additionalProperties": false,
+   "description": "Conversación. mensajes = [rol, texto] con rol usuario o asistente."
+  },
+  "Herramienta": {
+   "type": "object",
+   "properties": {
+    "nombre": {
+     "type": "string"
+    },
+    "detalle": {
+     "type": "string"
+    },
+    "estado": {
+     "type": "string",
+     "enum": [
+      "ejecutando",
+      "hecho",
+      "error"
+     ]
+    }
+   },
+   "required": [
+    "nombre"
+   ],
+   "additionalProperties": false,
+   "description": "Llamada a herramienta de un agente, con estado y resultado."
+  }
+ }
+}

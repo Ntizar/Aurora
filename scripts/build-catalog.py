@@ -583,6 +583,7 @@ def portada(specs, censo_cat, totales, packs):
         <a class="cat-idea" href="COMPOSICION.md"><b>Contrato de composición</b><span>Doce leyes: cero emojis, presupuesto de color, ancho por tipo de página.</span></a>
         <a class="cat-idea" href="recetas/index.html"><b>Recetas canónicas</b><span>Admin, dashboard, ajustes, acceso e informe. Cópialas y adapta.</span></a>
         <a class="cat-idea" href="audit/index.html"><b>Arnés de verificación</b><span>El lint caza emojis, jerarquía, presupuesto de color y tipografía mínima.</span></a>
+        <a class="cat-idea" href="openui/index.html"><b>Interfaces generativas</b><span>OpenUI Lang sobre el censo: el modelo describe, Aurora pinta. Probador en vivo.</span></a>
       </div>
     </section>
 

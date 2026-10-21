@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="es" data-nz-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Aurora · Generative UI · OpenUI Lang sobre el censo</title>
+<meta name="description" content="El modelo describe la interfaz en OpenUI Lang y Aurora la pinta con sus 2.186 objetos: 52 % menos tokens que JSON, cero React y cero clases inventadas.">
+<link rel="stylesheet" href="../tokens.css">
+<link rel="stylesheet" href="../packs/p1-layout.css">
+<link rel="stylesheet" href="../packs/p2-navigation.css">
+<link rel="stylesheet" href="../packs/p3-typography.css">
+<link rel="stylesheet" href="../packs/p4-actions.css">
+<link rel="stylesheet" href="../packs/p5-forms.css">
+<link rel="stylesheet" href="../packs/p6-feedback.css">
+<link rel="stylesheet" href="../packs/p8-data.css">
+<link rel="stylesheet" href="../packs/p12-system.css">
+<link rel="stylesheet" href="../packs/p13-charts.css">
+<link rel="stylesheet" href="../packs/p14-ai.css">
+</head>
+<body class="nz">
+<a class="nz-skip-link" href="#contenido">Saltar al contenido</a>
+
+<nav class="nz-navbar nz-navbar--bordered" aria-label="Navegación principal">
+  <span class="nz-navbar__brand"><i></i> Aurora</span>
+  <span class="nz-navbar__links">
+    <a class="nz-navbar__link" href="../index.html">Catálogo</a>
+    <a class="nz-navbar__link" href="PROMPT.md">Prompt del modelo</a>
+    <a class="nz-navbar__link" href="../LLM.md">Guía LLM</a>
+    <a class="nz-navbar__link" href="#probador">Probar</a>
+  </span>
+</nav>
+
+<main class="nz-container nz-container--app" id="contenido">
+
+  <section class="nz-section" aria-labelledby="t1">
+    <div class="nz-split nz-split--60-40">
+      <div class="nz-stack nz-stack--sm">
+        <p><span class="nz-badge nz-badge--accent"><i></i>Nuevo en v9.4 · Generative UI</span></p>
+        <h1 class="nz-h1" id="t1">El modelo deja de escribir CSS. Ahora escribe Aurora.</h1>
+        <p class="nz-lead nz-lead--sm">OpenUI Lang describe la interfaz en una docena de líneas. Aurora pone las 2.186 piezas, los tokens y el responsive. Ni React, ni build, ni una clase que no exista.</p>
+        <div class="nz-cluster nz-cluster--center">
+          <a class="nz-btn nz-btn--primary" href="#probador">Verlo funcionando</a>
+          <a class="nz-btn nz-btn--ghost" href="PROMPT.md">Abrir el prompt</a>
+        </div>
+      </div>
+      <div class="nz-stack nz-stack--sm">
+        <div class="nz-kpi nz-kpi--accent">
+          <span class="nz-kpi__label">Tokens frente a JSON</span>
+          <span class="nz-kpi__value nz-kpi__value--accent">−52 %</span>
+          <span class="nz-kpi__delta nz-kpi__delta--down">10.180 → 4.800 en el benchmark de OpenUI</span>
+        </div>
+        <div class="nz-kpi">
+          <span class="nz-kpi__label">Componentes expuestos del censo</span>
+          <span class="nz-kpi__value">36</span>
+          <span class="nz-kpi__delta nz-kpi__delta--flat">cada uno con su markup real</span>
+        </div>
+        <div class="nz-kpi">
+          <span class="nz-kpi__label">Clases fuera del censo</span>
+          <span class="nz-kpi__value">0</span>
+          <span class="nz-kpi__delta nz-kpi__delta--flat">lo comprueba auditar-openui.py</span>
+        </div>
+        <div class="nz-kpi">
+          <span class="nz-kpi__label">Parser oficial (ESM)</span>
+          <span class="nz-kpi__value">96 KB</span>
+          <span class="nz-kpi__delta nz-kpi__delta--flat">sin React, sin build</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="nz-divider">
+
+  <section class="nz-section" id="probador" aria-labelledby="t2">
+    <div class="nz-stack nz-stack--sm">
+      <h2 class="nz-h2" id="t2">Probador · del texto al markup</h2>
+      <p>A la izquierda va el programa OpenUI Lang (lo que emitiría el modelo). A la derecha, lo que Aurora pinta con él. Debajo, el HTML exacto que ha salido: todo <code class="nz-code">.nz-*</code>, listo para copiar.</p>
+    </div>
+
+    <div class="nz-split nz-split--40-60">
+      <article class="nz-article nz-article--bordered nz-stack nz-stack--sm">
+        <h3 class="nz-h3">Programa</h3>
+        <div class="nz-segmented" id="selector" role="tablist" aria-label="Ejemplos">
+          <button type="button" role="tab" aria-selected="true" data-ejemplo="0">Flota</button>
+          <button type="button" role="tab" aria-selected="false" data-ejemplo="1">Informe</button>
+          <button type="button" role="tab" aria-selected="false" data-ejemplo="2">Agente</button>
+        </div>
+        <label class="nz-field" for="programa">
+          <span class="nz-field__label">Programa OpenUI Lang</span>
+          <textarea class="nz-textarea" id="programa" rows="16" spellcheck="false"></textarea>
+          <span class="nz-field__help">El parser oficial valida tipos, enums y aridad. Si no hay red, entra el parser local: misma sintaxis, sin validación de tipos.</span>
+        </label>
+        <div class="nz-cluster nz-cluster--between">
+          <span class="nz-badge nz-badge--neutral" id="modo">parser: —</span>
+          <span class="nz-cluster nz-cluster--compact">
+            <button type="button" class="nz-btn nz-btn--ghost nz-btn--sm" id="btnReiniciar">Reiniciar</button>
+            <button type="button" class="nz-btn nz-btn--accent" id="btnGenerar">Generar</button>
+          </span>
+        </div>
+      </article>
+
+      <article class="nz-article nz-article--bordered nz-stack nz-stack--sm">
+        <h3 class="nz-h3">Render Aurora</h3>
+        <div class="nz-cluster nz-cluster--compact" id="telemetria" aria-live="polite">
+          <span class="nz-badge nz-badge--neutral"><i></i>0 sentencias</span>
+          <span class="nz-badge nz-badge--neutral">0 nodos</span>
+          <span class="nz-badge nz-badge--neutral">0 caracteres</span>
+          <span class="nz-badge nz-badge--neutral">0 clases</span>
+        </div>
+        <div class="nz-stack nz-stack--sm" id="lienzo" role="region" aria-label="Interfaz generada"></div>
+        <div class="nz-cluster nz-cluster--compact" id="componentes" aria-live="polite"></div>
+      </article>
+    </div>
+
+    <div class="nz-stack nz-stack--sm" style="margin-top:var(--nz-space-6)">
+      <h3 class="nz-h3">El HTML que ha salido</h3>
+      <pre class="nz-code nz-code--block" id="salidaHtml" tabindex="0" aria-label="HTML generado"></pre>
+    </div>
+  </section>
+
+  <hr class="nz-divider">
+
+  <section class="nz-section" aria-labelledby="t3">
+    <h2 class="nz-h2" id="t3">Qué acaba de pasar</h2>
+    <div class="nz-thirds">
+      <article class="nz-article nz-article--bordered nz-stack nz-stack--sm">
+        <h3 class="nz-h3">1 · El lenguaje valida</h3>
+        <p>El parser de OpenUI comprueba tipos, enums y aridad contra el esquema de la biblioteca antes de pintar. Un <code class="nz-code">TablaBarras</code> con números donde van textos no llega al DOM: se cae con <code class="nz-code">type-mismatch</code>.</p>
+        <p><span class="nz-badge nz-badge--success"><i></i>3 de 3 ejemplos: 0 errores</span></p>
+      </article>
+      <article class="nz-article nz-article--bordered nz-stack nz-stack--sm">
+        <h3 class="nz-h3">2 · El render es del censo</h3>
+        <p>Cada componente emite el markup real de su familia: tabla apilable con <code class="nz-code">data-etiqueta</code>, barras con su valor, bullet con la meta al 66,7 %. Nada de CSS propio.</p>
+        <p><span class="nz-badge nz-badge--neutral">36 componentes · 179 clases emitidas</span></p>
+      </article>
+      <article class="nz-article nz-article--bordered nz-stack nz-stack--sm">
+        <h3 class="nz-h3">3 · Sin build y sin React</h3>
+        <p>Un <code class="nz-code">&lt;script&gt;</code> y un import ESM. Aurora sigue siendo CSS puro: la capa generativa es opcional y solo la carga la página que la usa.</p>
+        <p><span class="nz-badge nz-badge--neutral">si el CDN falla, parser local</span></p>
+      </article>
+    </div>
+  </section>
+
+  <section class="nz-section" aria-labelledby="t4">
+    <h2 class="nz-h2" id="t4">Por qué el lenguaje importa más que el JSON</h2>
+    <p class="nz-lead nz-lead--sm">Números del benchmark público de OpenUI: los mismos siete escenarios, contados en tokens.</p>
+    <div class="nz-split nz-split--60-40">
+      <article class="nz-article nz-article--bordered">
+        <h3 class="nz-h3">Tokens por escenario</h3>
+        <div class="nz-chart-tablebar" role="img" aria-label="Comparativa de tokens: JSON frente a OpenUI Lang">
+          <div class="nz-chart-tablebar__row"><span class="nz-chart-tablebar__name">Dashboard</span><span class="nz-chart-tablebar__track"><span class="nz-chart-tablebar__bar" style="width:100%"></span></span><span class="nz-chart-tablebar__num">2.247 → 1.226</span></div>
+          <div class="nz-chart-tablebar__row"><span class="nz-chart-tablebar__name">Formulario</span><span class="nz-chart-tablebar__track"><span class="nz-chart-tablebar__bar" style="width:40%"></span></span><span class="nz-chart-tablebar__num">893 → 294</span></div>
+          <div class="nz-chart-tablebar__row"><span class="nz-chart-tablebar__name">Gráfico con datos</span><span class="nz-chart-tablebar__track"><span class="nz-chart-tablebar__bar" style="width:23%"></span></span><span class="nz-chart-tablebar__num">520 → 231</span></div>
+          <div class="nz-chart-tablebar__row"><span class="nz-chart-tablebar__name">Tabla simple</span><span class="nz-chart-tablebar__track"><span class="nz-chart-tablebar__bar" style="width:15%"></span></span><span class="nz-chart-tablebar__num">340 → 148</span></div>
+        </div>
+      </article>
+      <article class="nz-article nz-article--bordered nz-stack nz-stack--sm">
+        <h3 class="nz-h3">Lo que gana Aurora</h3>
+        <ul class="nz-list nz-list--check">
+          <li class="nz-list__item">Menos tokens de salida: más pantallas por euro.</li>
+          <li class="nz-list__item">El modelo no inventa clases: elige entre 36 objetos reales.</li>
+          <li class="nz-list__item">El responsive, el contraste y el táctil ya vienen puestos.</li>
+          <li class="nz-list__item">Un patrón nuevo se añade al repo y lo hereda el siguiente proyecto.</li>
+        </ul>
+        <div class="nz-callout nz-callout--note"><p>El diseño no se delega: se acota. El modelo decide jerarquía y datos; Aurora decide cómo se ve en un móvil de 360 px.</p></div>
+      </article>
+    </div>
+  </section>
+
+  <section class="nz-section" aria-labelledby="t5">
+    <h2 class="nz-h2" id="t5">Cómo se conecta</h2>
+    <ol class="nz-stepper">
+      <li class="nz-stepper__step is-done"><span class="nz-stepper__num">1</span>Pega <code class="nz-code">PROMPT.md</code> como system prompt</li>
+      <li class="nz-stepper__step is-done"><span class="nz-stepper__num">2</span>El modelo emite openui-lang</li>
+      <li class="nz-stepper__step is-active"><span class="nz-stepper__num">3</span>El parser lo convierte en árbol</li>
+      <li class="nz-stepper__step"><span class="nz-stepper__num">4</span>Aurora pinta y valida</li>
+    </ol>
+<pre class="nz-code nz-code--block">&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v9.4.0/packs/all.css"&gt;
+&lt;script src="https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v9.4.0/openui/aurora-openui.js"&gt;&lt;/script&gt;
+
+&lt;div id="lienzo"&gt;&lt;/div&gt;
+&lt;script type="module"&gt;
+  await AuroraOpenUI.iniciar();                 // spec + parser oficial
+  AuroraOpenUI.stream(respuestaDelModelo, "#lienzo");   // streaming incluido
+&lt;/script&gt;</pre>
+    <div class="nz-callout nz-callout--warn"><p>Las páginas de este repo enlazan los packs en local para funcionar sin red. En un producto, el <code class="nz-code">&lt;link&gt;</code> va pineado al tag publicado y con los packs que uses de verdad.</p></div>
+  </section>
+</main>
+
+<footer class="nz-section nz-section--compact" style="border-top:var(--nz-border-w) solid var(--nz-border-soft)">
+  <div class="nz-container">
+    <p>Aurora · Generative UI con OpenUI Lang · 36 componentes del censo · Hecho con ❤️ por David Antizar</p>
+  </div>
+</footer>
+
+<script src="aurora-openui.js"></script>
+<script>
+(function () {
+  "use strict";
+  var $ = function (s) { return document.querySelector(s); };
+  var ejemplos = [];
+  var actual = 0;
+  var ultimoGenerado = "";
+
+  function pintarTelemetria(r) {
+    var clases = (ultimoGenerado.match(/class="([^"]*)"/g) || []).join(" ")
+      .replace(/class="/g, "").replace(/"/g, " ").split(/\s+/)
+      .filter(function (c) { return c.indexOf("nz-") === 0; });
+    var unicas = clases.filter(function (c, i) { return clases.indexOf(c) === i; });
+    var chips = Object.keys(r.componentes).sort().map(function (n) {
+      return '<span class="nz-chip">' + n + " · " + r.componentes[n] + "</span>";
+    }).join("");
+    $("#telemetria").innerHTML =
+      '<span class="nz-badge nz-badge--neutral"><i></i>' + r.sentencias + " sentencias</span>" +
+      '<span class="nz-badge nz-badge--neutral">' + r.nodos + " nodos</span>" +
+      '<span class="nz-badge nz-badge--neutral">' + $("#programa").value.length + " caracteres</span>" +
+      '<span class="nz-badge nz-badge--neutral">' + unicas.length + " clases del censo</span>" +
+      (r.errores.length ? '<span class="nz-badge nz-badge--danger"><i></i>' + r.errores.length + " errores</span>" : "");
+    $("#componentes").innerHTML = chips;
+    $("#modo").textContent = "parser: " + r.modo;
+  }
+
+  function generar() {
+    var programa = $("#programa").value;
+    AuroraOpenUI.stream(programa, "#lienzo", {
+      paso: 26,
+      ms: 18,
+      onTick: function (r) {
+        ultimoGenerado = r.html;
+        pintarTelemetria(r);
+        $("#salidaHtml").textContent = r.html.replace(/></g, ">\n<");
+        $("#btnGenerar").classList.toggle("is-loading", r.nodos === 0);
+      }
+    }).then(function () {
+      $("#btnGenerar").classList.remove("is-loading");
+    });
+  }
+
+  function cargar(i) {
+    actual = i;
+    $("#programa").value = ejemplos[i].programa;
+    var tabs = document.querySelectorAll("#selector button");
+    for (var k = 0; k < tabs.length; k++) {
+      tabs[k].setAttribute("aria-selected", k === i ? "true" : "false");
+    }
+    generar();
+  }
+
+  $("#selector").addEventListener("click", function (e) {
+    var b = e.target.closest("button[data-ejemplo]");
+    if (b) cargar(Number(b.dataset.ejemplo));
+  });
+  $("#btnGenerar").addEventListener("click", generar);
+  $("#btnReiniciar").addEventListener("click", function () { cargar(actual); });
+
+  fetch("ejemplos.json")
+    .then(function (r) { return r.json(); })
+    .then(function (datos) {
+      ejemplos = datos;
+      return AuroraOpenUI.iniciar({ spec: "aurora.spec.json" });
+    })
+    .then(function () { cargar(0); })
+    .catch(function (err) {
+      $("#lienzo").innerHTML = '<div class="nz-alert nz-alert--warning"><span class="nz-alert__icon">!</span><div class="nz-alert__body"><span class="nz-alert__title">No he podido cargar la capa OpenUI</span><span class="nz-alert__msg">' + err.message + ". Sirve esta carpeta por HTTP (python3 -m http.server).</span></div></div>";
+    });
+})();
+</script>
+</body>
+</html>

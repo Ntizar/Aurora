@@ -152,9 +152,15 @@ def auditar(html, clase_a_familia, packs_conocidos):
     # p0-catalog.css: son suyos, no clases del sistema que un consumidor copie.
     es_shell = "p0-catalog.css" in html
 
+    # El INTERIOR de <pre>/<code>/<textarea> es muestra de código, no marcado real:
+    # un snippet con href=".../packs/all.css" no enlaza nada, y sus clases son texto.
+    # Se vacía el contenido dejando la etiqueta de apertura (su class sí cuenta).
+    muestra = re.sub(r"(<(pre|code|textarea)\b[^>]*>)(.*?)(</\2>)",
+                     lambda m: m.group(1) + m.group(4), html, flags=re.S)
+
     # --- 1. CSS enlazado (CDN o local, para las páginas del repo) ------------
-    enlaces = CDN_RE.findall(html)
-    locales = LOCAL_RE.findall(html)
+    enlaces = CDN_RE.findall(muestra)
+    locales = LOCAL_RE.findall(muestra)
     ficheros = {e[2] for e in enlaces} | set(locales)
     versiones = {e[1] for e in enlaces}
     if not enlaces and not locales:
@@ -173,7 +179,7 @@ def auditar(html, clase_a_familia, packs_conocidos):
 
     # --- 2. Clases -----------------------------------------------------------
     vistas = []
-    for valor in CLASE_RE.findall(html):
+    for valor in CLASE_RE.findall(muestra):
         vistas.extend(valor.split())
     nz = {c for c in vistas if c.startswith("nz-")}
     invented = sorted(c for c in nz if c not in clase_a_familia and c not in EXENTAS)
@@ -201,8 +207,8 @@ def auditar(html, clase_a_familia, packs_conocidos):
             avisos.append(f"Pack enlazado sin uso aparente: {p} (peso muerto, valora quitarlo)")
 
     # --- 4. Manifiesto en <style> y style="" ---------------------------------
-    bloques = " ".join(STYLE_BLOCK_RE.findall(html))
-    inline = " ".join(STYLE_RE.findall(html))
+    bloques = " ".join(STYLE_BLOCK_RE.findall(muestra))
+    inline = " ".join(STYLE_RE.findall(muestra))
     for nombre, texto in (("<style>", bloques), ('style=""', inline)):
         if "gradient" in texto.lower():
             fallos.append(f"Gradiente en {nombre}: prohibido por el manifiesto")
@@ -229,7 +235,7 @@ def auditar(html, clase_a_familia, packs_conocidos):
         avisos.append('Falta la atribución exacta: "Hecho con ❤️ por David Antizar"')
 
     # --- 6. Composición (COMPOSICION.md) -------------------------------------
-    f2, a2 = auditar_composicion(html)
+    f2, a2 = auditar_composicion(muestra)
     fallos.extend(f2)
     avisos.extend(a2)
 

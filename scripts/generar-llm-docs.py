@@ -42,7 +42,7 @@ sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
 bc = import_module("build-catalog")
 
 ROOT = bc.ROOT
-VERSION = "9.3.1"
+VERSION = "9.4.0"
 CDN = f"https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v{VERSION}/"
 
 # ---------------------------------------------------------------------------
@@ -1058,6 +1058,30 @@ chat-ia, forms): cópialas como punto de partida.
 quieres construir, ficha con markup y preview) y `datos/base-diseno.json` es el
 índice machine-readable: {total_bases} familias con su markup, {len(tokens)} tokens,
 recetas, combos, marcas y las 12 leyes. Consúltalo antes de leer un pack.
+
+## 10. Interfaces generativas (OpenUI Lang)
+
+Si el HTML lo va a escribir un **modelo en tiempo de ejecución**, no le pases este
+documento ni le pidas HTML: dale el lenguaje y la biblioteca.
+
+| Pieza | Qué es |
+|---|---|
+| `openui/PROMPT.md` | System prompt listo: sintaxis, las 36 firmas y las reglas de diseño |
+| `openui/aurora.spec.json` | Biblioteca machine-readable (firmas + JSON Schema) |
+| `openui/aurora-openui.js` | Runtime vanilla: OpenUI Lang → markup `.nz-*` (sin React, sin build) |
+| `openui/index.html` | Probador en vivo: editas el programa y ves el render |
+| `scripts/auditar-openui.py` | Puerta: censo, deriva, runtime y ejemplos |
+
+El modelo emite ~52 % menos tokens que con JSON. Un programa son 3 líneas:
+
+```
+root = Pagina([titulo, k])
+titulo = Titular("Operaciones de la flota")
+k = Kpi("Puntualidad", "94,2 %", "+2,1 pp", "sube", "acento")
+```
+
+Regla: si un patrón se repite en dos proyectos, **se sube al repo y se añade a
+`openui/componentes.json`** — el siguiente proyecto lo hereda sin escribir CSS.
 
 Docs hermanas: `AGENTS.md` (reglas duras del repo), `components.json` (API
 completa machine-readable), `paginas/` (catálogo con una demo viva por objeto),

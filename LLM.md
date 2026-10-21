@@ -8,8 +8,8 @@ Design system CSS puro, sin dependencias ni build. 2186 objetos en 18 categoría
 ```html
 <html lang="es" data-nz-theme="light">
 <head>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v9.3.1/tokens.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v9.3.1/packs/all.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v9.4.0/tokens.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v9.4.0/packs/all.css">
 </head>
 <body class="nz">
 ```
@@ -389,7 +389,7 @@ Los 234 tokens están inventariados en `components.json` (sección
   El 800 no existe en el sistema y nada por debajo de 16px lleva 700.
 - ❌ Texto de interfaz a 12px: los 12px son para datos, no para etiquetas.
 - ❌ Enlazar Google Fonts (o cualquier CDN de fuentes): `tokens.css` ya sirve la fuente.
-- ❌ Enlazar `@master` en producción: pinea la versión (`@v9.3.1`) o jsDelivr te servirá CSS viejo desde su caché.
+- ❌ Enlazar `@master` en producción: pinea la versión (`@v9.4.0`) o jsDelivr te servirá CSS viejo desde su caché.
 
 ## 9. Verificar antes de entregar
 
@@ -410,6 +410,30 @@ chat-ia, forms): cópialas como punto de partida.
 quieres construir, ficha con markup y preview) y `datos/base-diseno.json` es el
 índice machine-readable: 411 familias con su markup, 234 tokens,
 recetas, combos, marcas y las 12 leyes. Consúltalo antes de leer un pack.
+
+## 10. Interfaces generativas (OpenUI Lang)
+
+Si el HTML lo va a escribir un **modelo en tiempo de ejecución**, no le pases este
+documento ni le pidas HTML: dale el lenguaje y la biblioteca.
+
+| Pieza | Qué es |
+|---|---|
+| `openui/PROMPT.md` | System prompt listo: sintaxis, las 36 firmas y las reglas de diseño |
+| `openui/aurora.spec.json` | Biblioteca machine-readable (firmas + JSON Schema) |
+| `openui/aurora-openui.js` | Runtime vanilla: OpenUI Lang → markup `.nz-*` (sin React, sin build) |
+| `openui/index.html` | Probador en vivo: editas el programa y ves el render |
+| `scripts/auditar-openui.py` | Puerta: censo, deriva, runtime y ejemplos |
+
+El modelo emite ~52 % menos tokens que con JSON. Un programa son 3 líneas:
+
+```
+root = Pagina([titulo, k])
+titulo = Titular("Operaciones de la flota")
+k = Kpi("Puntualidad", "94,2 %", "+2,1 pp", "sube", "acento")
+```
+
+Regla: si un patrón se repite en dos proyectos, **se sube al repo y se añade a
+`openui/componentes.json`** — el siguiente proyecto lo hereda sin escribir CSS.
 
 Docs hermanas: `AGENTS.md` (reglas duras del repo), `components.json` (API
 completa machine-readable), `paginas/` (catálogo con una demo viva por objeto),
