@@ -399,6 +399,7 @@ LLM → OpenUI Lang (8-20 líneas) → parser → runtime vanilla → markup .nz
 | Añadir un objeto al lenguaje | `openui/componentes.json` (a mano) → `python3 scripts/generar-openui.py` |
 | Verlo funcionando | `openui/index.html` (probador en vivo + plantillas) |
 | Empezar por un arquetipo | `openui/plantillas/` + `scripts/plantilla.py` (panel, informe, landing, ajustes, agente) |
+| De un encargo a una página | `scripts/generar-web.py --brief encargo.json` (modelo + validación + lint) |
 
 ```js
 await AuroraOpenUI.iniciar();                          // spec + parser oficial (ESM, 96 KB)
