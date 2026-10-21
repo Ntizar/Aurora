@@ -43,6 +43,8 @@ RX_SIDEBAR_ICONO = re.compile(
     r'<a[^>]*class="[^"]*nz-sidebar__link--icon[^"]*"[^>]*>(.*?)</a>', re.S
 )
 RX_VERSION = re.compile(r"@v(\d+\.\d+\.\d+)")
+# Canal vivo (@v9): acepta el major vigente. Un tag exacto debe ser la versión actual.
+RX_CANAL = re.compile(r"@v(\d+)(?![\d.])")
 RX_TEMA = re.compile(r'<html[^>]*data-nz-theme="([^"]+)"')
 RX_INLINE = re.compile(r'style="([^"]*)"')
 
@@ -72,6 +74,10 @@ def auditar_html(p: Path, fallos: list[str], avisos: list[str]) -> None:
     for v in set(RX_VERSION.findall(t)):
         if v != VERSION:
             fallos.append(f"{rel}: CDN @v{v} ≠ versión vigente {VERSION}")
+    major = VERSION.split(".")[0]
+    for m in set(RX_CANAL.findall(t)):
+        if m != major:
+            fallos.append(f"{rel}: CDN @v{m} (canal) ≠ major vigente v{major}")
 
     if rel.startswith(("recetas/", "examples/")) and ATRIBUCION not in t:
         fallos.append(f"{rel}: falta la atribución exacta «{ATRIBUCION}»")
