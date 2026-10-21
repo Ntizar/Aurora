@@ -35,6 +35,16 @@ def leer_canales():
     return json.loads(CANALES.read_text(encoding="utf-8"))
 
 
+def version_del_censo():
+    """Fallback cuando el clon no trae tags (checkout shallow): la versión publicada."""
+    try:
+        datos = json.loads((ROOT / "components.json").read_text(encoding="utf-8"))
+        v = datos.get("version", "")
+        return "v" + v if v else ""
+    except Exception:  # noqa: BLE001 — sin censo no hay nada que resolver
+        return ""
+
+
 def tags_locales():
     r = subprocess.run(["git", "describe", "--tags", "--abbrev=0"], cwd=ROOT,
                        capture_output=True, text=True)
@@ -43,6 +53,15 @@ def tags_locales():
                        capture_output=True, text=True)
     todos = [t.strip() for t in r.stdout.splitlines() if t.strip()]
     return ultimo, todos
+
+
+def ultimo_efectivo():
+    """Último tag real; si el clon no trae tags, la versión de components.json."""
+    ultimo, tags = tags_locales()
+    if tags:
+        return ultimo, tags, None
+    respaldo = version_del_censo()
+    return respaldo, ([respaldo] if respaldo else []), "el clon no trae tags: se usa la versión de components.json"
 
 
 def version_de(tag):
@@ -79,7 +98,7 @@ def cdn_ok(ref, fichero="tokens.css"):
 
 def estado():
     canales = leer_canales()
-    ultimo, tags = tags_locales()
+    ultimo, tags, nota = ultimo_efectivo()
     vivo = canales["canales"]["vivo"]
     cong = canales["canales"]["congelado"]
     resuelto = resolver_vivo(canales, tags, ultimo)
@@ -91,6 +110,7 @@ def estado():
         "congelado": cong["tag"],
         "version_spec": json.loads((ROOT / "openui" / "aurora.spec.json").read_text(encoding="utf-8"))["version"]
         if (ROOT / "openui" / "aurora.spec.json").exists() else None,
+        "nota": nota,
     }
 
 
@@ -110,6 +130,8 @@ def check(online=False):
     if major(e["ultimo_tag"]) != e["vivo_rango"].lstrip("v"):
         fallos.append("el rango vivo (v%s) no cubre el major del último tag (%s)"
                       % (e["vivo_rango"], e["ultimo_tag"]))
+    if e.get("nota"):
+        avisos.append(e["nota"])
     if online:
         for ref in (e["vivo_rango"], e["congelado"]):
             ok, url = cdn_ok(ref)
