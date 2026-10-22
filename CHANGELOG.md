@@ -3,6 +3,27 @@
 Formato: [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/).
 Versionado: [SemVer](https://semver.org/lang/es/).
 
+## [9.10.0] — 2026-10-22
+
+### Añadido
+
+- **Tono del icono**: `.nz-icon--accent`, `--success`, `--warning`, `--danger`, `--info`,
+  `--invert`. El trazo es `currentColor`, así que el color es un modificador y no un segundo
+  fichero: el naranja (acento) entra en la iconografía sin duplicar los 288 SVG.
+- **Grosor**: `.nz-icon--fino` (1,5) y `.nz-icon--grueso` (2,25), con tokens
+  `--nz-icon-stroke-fino` y `--nz-icon-stroke-grueso`.
+- **Catálogo de iconos con selector de tono** en vivo (Neutro · Acento · Marca · Éxito ·
+  Peligro · Contorno) y `?tono=acento` para abrirlo directamente en naranja. El código que
+  copia el botón se lleva el tono puesto.
+- Demo nueva en `specs/09.json` con los siete modificadores.
+
+### Corregido
+
+- `specs/06`, `specs/07` y `specs/09` usaban **✳, ✦ y `!` de texto como iconos** — regla 10
+  del sistema, incumplida desde siempre porque el migrador no conocía esos símbolos y
+  `paginas/` no pasa por el lint del consumidor. Ahora son SVG y `migrar-iconos.py` los
+  conoce para que no vuelvan.
+
 ## [9.9.1] — 2026-10-22
 
 ### Corregido

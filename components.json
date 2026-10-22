@@ -1,10 +1,10 @@
 {
  "name": "Aurora",
- "version": "9.9.1",
+ "version": "9.10.0",
  "type": "css-only design system",
  "namespace": ".nz-",
  "tokens": "tokens.css",
- "cdn": "https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v9.9.1/",
+ "cdn": "https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v9.10.0/",
  "manifiesto": {
   "gradientes": 0,
   "glass": 0,
@@ -19,16 +19,16 @@
   "objetivoTactil": "44px"
  },
  "resumen": {
-  "objetos": 2186,
+  "objetos": 2194,
   "familias": 411,
   "categorias": 18,
-  "demos": 656,
-  "tokens": 234,
+  "demos": 657,
+  "tokens": 236,
   "tokensDark": 61,
   "alias": 150,
   "familiasConMarkup": 411,
   "familiasConAntiPatron": 31,
-  "tokensConsumidosPorFamilias": 139
+  "tokensConsumidosPorFamilias": 141
  },
  "packs": {
   "p1-layout.css": {
@@ -107,9 +107,9 @@
    "categoria": 9,
    "nombre": "Media e iconografía",
    "descripcion": "Imágenes responsive (formas, filtros, ratios), figure, avatares (tamaños, forma, presencia, grupos), logotipos y nube de logos, iconos en caja, media object, vídeo, audio, hueco de mapa y galería.",
-   "objetos": 119,
+   "objetos": 127,
    "familias": 18,
-   "demos": 42,
+   "demos": 43,
    "pagina": "paginas/09-media.html"
   },
   "p10-commerce.css": {
@@ -1606,6 +1606,16 @@
   {
    "nombre": "--nz-icon-stroke",
    "valor": "1.75",
+   "seccion": "GEOMETRÍA · radios, objetivo táctil y alturas de control "
+  },
+  {
+   "nombre": "--nz-icon-stroke-fino",
+   "valor": "1.5",
+   "seccion": "GEOMETRÍA · radios, objetivo táctil y alturas de control "
+  },
+  {
+   "nombre": "--nz-icon-stroke-grueso",
+   "valor": "2.25",
    "seccion": "GEOMETRÍA · radios, objetivo táctil y alturas de control "
   },
   {
@@ -9853,37 +9863,66 @@
    "demo": "paginas/09-media.html",
    "clases": [
     "nz-icon",
+    "nz-icon--accent",
     "nz-icon--brand",
+    "nz-icon--danger",
     "nz-icon--filled",
+    "nz-icon--fino",
+    "nz-icon--grueso",
+    "nz-icon--info",
+    "nz-icon--invert",
     "nz-icon--lg",
     "nz-icon--muted",
     "nz-icon--sm",
+    "nz-icon--success",
+    "nz-icon--warning",
     "nz-icon--xl"
    ],
    "modificadores": [
+    "accent",
     "brand",
+    "danger",
     "filled",
+    "fino",
+    "grueso",
+    "info",
+    "invert",
     "lg",
     "muted",
     "sm",
+    "success",
+    "warning",
     "xl"
    ],
    "partes": [],
    "tokens": [
+    "--nz-accent-text",
     "--nz-brand",
+    "--nz-danger",
     "--nz-icon-stroke",
-    "--nz-text-mute"
+    "--nz-icon-stroke-fino",
+    "--nz-icon-stroke-grueso",
+    "--nz-info",
+    "--nz-success",
+    "--nz-text-invert",
+    "--nz-text-mute",
+    "--nz-warning"
    ],
-   "nTokens": 3,
+   "nTokens": 11,
    "markup": {
     "demo": "paginas/04-actions.html",
     "titulo": "Botones de solo icono",
     "markup": "<svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"m8 5 11 7-11 7z\"/></svg>"
    },
    "modificadoresLexico": [
+    "accent",
     "brand",
+    "danger",
+    "info",
     "lg",
     "sm",
+    "success",
+    "warning",
     "xl"
    ]
   },
@@ -9937,8 +9976,8 @@
    "nTokens": 17,
    "markup": {
     "demo": "paginas/09-media.html",
-    "titulo": "Media de marca, con borde y con enlace",
-    "markup": "<span class=\"nz-icon-tile nz-media__fig\">✦</span>"
+    "titulo": "Icono en caja pequeño, grande y extra grande",
+    "markup": "<span class=\"nz-icon-tile nz-icon-tile--sm\">◦</span>"
    },
    "modificadoresLexico": [
     "accent",

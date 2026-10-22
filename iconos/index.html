@@ -17,7 +17,7 @@
 <body class="nz">
 <main class="nz-container" id="contenido">
   <header class="nz-stack">
-    <p class="nz-text--small nz-text--muted">Aurora v9.9.1 · colección Lucide · licencia ISC</p>
+    <p class="nz-text--small nz-text--muted">Aurora v9.10.0 · colección Lucide · licencia ISC</p>
     <h1 class="nz-h1">Iconos numerados</h1>
     <p class="nz-lead">Cada icono tiene un número estable —<span class="nz-text--accent-soft">nz-i-001</span>, nz-i-042— que no se reutiliza nunca. El número es la referencia; el nombre es la comodidad. Todos son SVG de 24×24 con el color y el grosor del sistema.</p>
     <div class="nz-cluster"><span class="nz-badge nz-badge--outline nz-badge--sm">Navegación · 33</span><span class="nz-badge nz-badge--outline nz-badge--sm">Acciones · 35</span><span class="nz-badge nz-badge--outline nz-badge--sm">Estados · 20</span><span class="nz-badge nz-badge--outline nz-badge--sm">Datos y gráficas · 21</span><span class="nz-badge nz-badge--outline nz-badge--sm">Archivos · 21</span><span class="nz-badge nz-badge--outline nz-badge--sm">Personas y organización · 12</span><span class="nz-badge nz-badge--outline nz-badge--sm">Comunicación · 16</span><span class="nz-badge nz-badge--outline nz-badge--sm">Media y dispositivos · 24</span><span class="nz-badge nz-badge--outline nz-badge--sm">Mapas y transporte · 17</span><span class="nz-badge nz-badge--outline nz-badge--sm">Comercio · 11</span><span class="nz-badge nz-badge--outline nz-badge--sm">Sistema y desarrollo · 36</span><span class="nz-badge nz-badge--outline nz-badge--sm">Marcas · 15</span><span class="nz-badge nz-badge--outline nz-badge--sm">Formato y objetos · 27</span></div>
@@ -25,6 +25,14 @@
       <label class="nz-field__label" for="buscarIcono">Buscar por número, nombre o id de Lucide</label>
       <input class="nz-input nz-input--search" id="buscarIcono" type="search" placeholder="042, hogar, lucide:house…" autocomplete="off">
       <p class="nz-field__help" id="cuentaIconos">288 iconos · todos visibles</p>
+    </div>
+    <div class="nz-cluster" role="group" aria-label="Tono de los iconos">
+      <button class="nz-btn nz-btn--ghost nz-btn--sm is-active" type="button" data-tono="" aria-pressed="true">Neutro</button>
+      <button class="nz-btn nz-btn--ghost nz-btn--sm" type="button" data-tono="accent" aria-pressed="false">Acento</button>
+      <button class="nz-btn nz-btn--ghost nz-btn--sm" type="button" data-tono="brand" aria-pressed="false">Marca</button>
+      <button class="nz-btn nz-btn--ghost nz-btn--sm" type="button" data-tono="success" aria-pressed="false">Éxito</button>
+      <button class="nz-btn nz-btn--ghost nz-btn--sm" type="button" data-tono="danger" aria-pressed="false">Peligro</button>
+      <button class="nz-btn nz-btn--ghost nz-btn--sm" type="button" data-tono="outline" aria-pressed="false">Contorno</button>
     </div>
   </header>
 
@@ -1763,6 +1771,11 @@
     <h2 class="nz-h2">Cómo se usa</h2>
     <p>En línea, copiando el SVG del fichero (lo que hace esta página):</p>
     <pre class="nz-code nz-code--block">&lt;svg class="nz-icon" viewBox="0 0 24 24" aria-hidden="true"&gt;…cuerpo del icono…&lt;/svg&gt;</pre>
+    <p>El color no se escribe: el icono hereda el del texto (<span class="nz-text--mono">currentColor</span>). Cambiarlo es un modificador, no un segundo fichero:</p>
+    <pre class="nz-code nz-code--block">&lt;svg class="nz-icon nz-icon--accent" viewBox="0 0 24 24" aria-hidden="true"&gt;…&lt;/svg&gt;
+
+--brand · --accent · --success · --warning · --danger · --info · --invert
+--fino (1,5) · --grueso (2,25) · --sm · --lg · --xl</pre>
     <p>Por sprite, una sola petición para todos:</p>
     <pre class="nz-code nz-code--block">&lt;svg class="nz-icon" aria-hidden="true"&gt;&lt;use href="iconos/sprite.svg#nz-i-042"/&gt;&lt;/svg&gt;</pre>
     <p>Y por número, desde el manifiesto:</p>

@@ -48,6 +48,15 @@ Consultando el manifiesto (agentes, generadores, scripts):
 python3 -c "import json;m=json.load(open('iconos/iconos.json'));print([i for i in m['iconos'] if i['numero']==42][0])"
 ```
 
+### El color lo pone el texto; se cambia con un modificador
+
+El trazo es `currentColor`: no hay una versión «en naranja» de cada icono — hay una sola
+versión y obedece. Tono: `.nz-icon--accent`, `--brand`, `--success`, `--warning`, `--danger`,
+`--info`, `--invert` (y en las cajas, `.nz-icon-tile--accent`). Grosor: `--fino` (1,5) y
+`--grueso` (2,25), para cuando el 1,75 de serie no basta a ese tamaño.
+
+El catálogo trae selector de tono; con `?tono=acento` se abre ya en naranja.
+
 ## Cómo se amplía
 
 ```bash

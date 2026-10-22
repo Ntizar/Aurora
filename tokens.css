@@ -282,6 +282,8 @@
   --nz-control-md: 2.5rem;   /* 40px */
   --nz-control-lg: 2.75rem;  /* 44px */
   --nz-icon-stroke: 1.75;    /* grosor de trazo de .nz-icon (SVG en línea) */
+  --nz-icon-stroke-fino: 1.5;   /* trazo fino: 24 px servidos grandes */
+  --nz-icon-stroke-grueso: 2.25; /* trazo grueso: iconos diminutos que deben leerse */
 
   /* ---- 10. SOMBRAS. Las de marca/acento se derivan del color elegido:
      cambian solas con la marca. ---- */

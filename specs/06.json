@@ -173,7 +173,7 @@
     {
       "titulo": "Empty pequeño, de marca y con borde",
       "tag": ".nz-empty--sm/--brand/--bordered · __kbd",
-      "markup": "<div class=\"nz-stack nz-stack--sm\"><div class=\"nz-empty nz-empty--sm\"><span class=\"nz-empty__icon\">🔍</span><p class=\"nz-empty__title\">Sin coincidencias</p><p class=\"nz-empty__body\">Prueba con otra palabra.</p></div><div class=\"nz-empty nz-empty--brand\"><span class=\"nz-empty__icon\">✦</span><p class=\"nz-empty__title\">Empieza tu colección</p><p class=\"nz-empty__body\">Guarda objetos para tenerlos siempre a mano.</p><span class=\"nz-empty__kbd\">Pulsa <span class=\"nz-kbd\">S</span> para guardar</span></div><div class=\"nz-empty nz-empty--bordered\"><span class=\"nz-empty__icon\">📂</span><p class=\"nz-empty__title\">Carpeta vacía</p></div></div>"
+      "markup": "<div class=\"nz-stack nz-stack--sm\"><div class=\"nz-empty nz-empty--sm\"><span class=\"nz-empty__icon\">🔍</span><p class=\"nz-empty__title\">Sin coincidencias</p><p class=\"nz-empty__body\">Prueba con otra palabra.</p></div><div class=\"nz-empty nz-empty--brand\"><span class=\"nz-empty__icon\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 3l2.2 6.8L21 12l-6.8 2.2L12 21l-2.2-6.8L3 12l6.8-2.2z\"/></svg></span><p class=\"nz-empty__title\">Empieza tu colección</p><p class=\"nz-empty__body\">Guarda objetos para tenerlos siempre a mano.</p><span class=\"nz-empty__kbd\">Pulsa <span class=\"nz-kbd\">S</span> para guardar</span></div><div class=\"nz-empty nz-empty--bordered\"><span class=\"nz-empty__icon\">📂</span><p class=\"nz-empty__title\">Carpeta vacía</p></div></div>"
     },
     {
       "titulo": "Error inline",

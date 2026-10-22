@@ -788,6 +788,15 @@ def catalogo(argv) -> str:
         if n:
             grupos.append(f'<span class="nz-badge nz-badge--outline nz-badge--sm">{nombre} · {n}</span>')
 
+    tonos = [("", "Neutro"), ("accent", "Acento"), ("brand", "Marca"),
+             ("success", "Éxito"), ("danger", "Peligro"), ("outline", "Contorno")]
+    botones_tono = "\n".join(
+        '      <button class="nz-btn nz-btn--ghost nz-btn--sm'
+        + (' is-active' if not valor else '')
+        + f'" type="button" data-tono="{valor}" aria-pressed="{"true" if not valor else "false"}">'
+        + f'{texto}</button>'
+        for valor, texto in tonos)
+
     html = f"""<!DOCTYPE html>
 <html lang="es" data-nz-theme="light">
 <head>
@@ -816,6 +825,9 @@ def catalogo(argv) -> str:
       <input class="nz-input nz-input--search" id="buscarIcono" type="search" placeholder="042, hogar, lucide:house…" autocomplete="off">
       <p class="nz-field__help" id="cuentaIconos">{m['total']} iconos · todos visibles</p>
     </div>
+    <div class="nz-cluster" role="group" aria-label="Tono de los iconos">
+{botones_tono}
+    </div>
   </header>
 
   <ul class="nz-dash-grid nz-dash-grid--4" id="rejillaIconos" role="list">
@@ -826,6 +838,11 @@ def catalogo(argv) -> str:
     <h2 class="nz-h2">Cómo se usa</h2>
     <p>En línea, copiando el SVG del fichero (lo que hace esta página):</p>
     <pre class="nz-code nz-code--block">&lt;svg class="nz-icon" viewBox="0 0 24 24" aria-hidden="true"&gt;…cuerpo del icono…&lt;/svg&gt;</pre>
+    <p>El color no se escribe: el icono hereda el del texto (<span class="nz-text--mono">currentColor</span>). Cambiarlo es un modificador, no un segundo fichero:</p>
+    <pre class="nz-code nz-code--block">&lt;svg class="nz-icon nz-icon--accent" viewBox="0 0 24 24" aria-hidden="true"&gt;…&lt;/svg&gt;
+
+--brand · --accent · --success · --warning · --danger · --info · --invert
+--fino (1,5) · --grueso (2,25) · --sm · --lg · --xl</pre>
     <p>Por sprite, una sola petición para todos:</p>
     <pre class="nz-code nz-code--block">&lt;svg class="nz-icon" aria-hidden="true"&gt;&lt;use href="iconos/sprite.svg#{PREFIJO}042"/&gt;&lt;/svg&gt;</pre>
     <p>Y por número, desde el manifiesto:</p>

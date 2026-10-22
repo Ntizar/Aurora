@@ -1,6 +1,6 @@
 # Aurora — guía de decisión para agentes
 
-Design system CSS puro, sin dependencias ni build. 2186 objetos en 18 categorías.
+Design system CSS puro, sin dependencias ni build. 2194 objetos en 18 categorías.
 **No pegues el CSS en el prompt**: enlaza por CDN y usa las clases de esta guía.
 
 ## 1. Mínimo obligatorio
@@ -8,8 +8,8 @@ Design system CSS puro, sin dependencias ni build. 2186 objetos en 18 categoría
 ```html
 <html lang="es" data-nz-theme="light">
 <head>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v9.9.1/tokens.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v9.9.1/packs/all.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v9.10.0/tokens.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v9.10.0/packs/all.css">
 </head>
 <body class="nz">
 ```
@@ -380,7 +380,7 @@ desde `tokens.css`, así que no hay que enlazar Google Fonts ni tocar `--nz-font
 }
 ```
 
-Los 234 tokens están inventariados en `components.json` (sección
+Los 236 tokens están inventariados en `components.json` (sección
 `tokens_def`, con nombre, valor y sección). Nada fuera de ese catálogo.
 
 ## 8. Anti-patrones (NO lo hagas)
@@ -402,7 +402,7 @@ Los 234 tokens están inventariados en `components.json` (sección
   El 800 no existe en el sistema y nada por debajo de 16px lleva 700.
 - ❌ Texto de interfaz a 12px: los 12px son para datos, no para etiquetas.
 - ❌ Enlazar Google Fonts (o cualquier CDN de fuentes): `tokens.css` ya sirve la fuente.
-- ❌ Enlazar `@master` en producción: pinea la versión (`@v9.9.1`) o jsDelivr te servirá CSS viejo desde su caché.
+- ❌ Enlazar `@master` en producción: pinea la versión (`@v9.10.0`) o jsDelivr te servirá CSS viejo desde su caché.
 
 ## 8b. Canales: qué versión enlazar
 
@@ -411,7 +411,7 @@ Dos canales, un sistema. La regla de oro: **nunca `@master`**.
 | Canal | URL | Cuándo |
 |---|---|---|
 | vivo | `@v9` | webs propias: recibe cada release 9.x sin tocarlas |
-| congelado | `@9.9.1` | entregas a cliente: reproducible dentro de dos años |
+| congelado | `@9.10.0` | entregas a cliente: reproducible dentro de dos años |
 
 Si el proyecto trae `aurora.lock`, respétalo: dice qué canal y qué tag está comiendo.
 Un cambio aditivo llega solo; renombrar o quitar algo exige major y migración
@@ -434,7 +434,7 @@ chat-ia, forms): cópialas como punto de partida.
 
 **Base de datos de diseño:** `base.html` es el explorador (búsqueda por lo que
 quieres construir, ficha con markup y preview) y `datos/base-diseno.json` es el
-índice machine-readable: 411 familias con su markup, 234 tokens,
+índice machine-readable: 411 familias con su markup, 236 tokens,
 recetas, combos, marcas y las 12 leyes. Consúltalo antes de leer un pack.
 
 ## 10. Interfaces generativas (OpenUI Lang)

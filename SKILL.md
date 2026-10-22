@@ -1,14 +1,14 @@
 ---
 name: aurora-design-system
 description: "Usa al construir o tocar cualquier web con Aurora (Ntizar/Aurora). El repo manda: resuelve la versión vigente y pide LLM.md + components.json antes de escribir CSS."
-version: "9.9.1"
+version: "9.10.0"
 tags: [css, design-system, aurora, ntizar, agent-ready, movil, escritorio, tipografia]
 ---
 
 # Aurora — doctrina única (el repo es la orden máxima)
 
 Design system CSS puro, sin build, sin dependencias, namespaced bajo `.nz-`.
-**v9.9.1 · 2186 objetos · 411 familias · 656 demos · 18 categorías · 189 tokens · 59 gemelas OKLch · 36 componentes generativos · 288 iconos numerados.**
+**v9.10.0 · 2194 objetos · 411 familias · 657 demos · 18 categorías · 189 tokens · 59 gemelas OKLch · 36 componentes generativos · 288 iconos numerados.**
 *(Cabecera de testigo, no de autoridad: resuélvela con el PASO 0.)*
 
 > ⚠️ `Ntizar/Aurora` **manda sobre esta skill**. Esta skill es un puntero; el repo
@@ -241,7 +241,7 @@ paquete ni generar `DESIGN.md`/`.impeccable/` — duplicarían `LLM.md` + `compo
 | Kanban en un sidebar estrecho | `.nz-kanban-wrap` > `.nz-kanban`: en <48rem se queda en filas |
 | El dato que importa en acento (p3/p8) | `.nz-num--accent`, `.nz-kpi--accent`, `.nz-lbl--accent`, `.nz-lead--accent`, `.nz-text--accent-soft`, `.nz-highlight--accent` |
 | Énfasis sin negrita | `.nz-text--peso-medio`, `.nz-text--peso-fuerte` |
-| Un icono (p9) | `.nz-icon` + SVG **del repositorio** `iconos/` (`nz-i-042`): `<svg class="nz-icon"><use href="iconos/sprite.svg#nz-i-042"/></svg>`. Nunca un emoji ni un símbolo de texto |
+| Un icono (p9) | `.nz-icon` + SVG **del repositorio** `iconos/` (`nz-i-042`): `<svg class="nz-icon nz-icon--accent"><use href="iconos/sprite.svg#nz-i-042"/></svg>`. Tono con `--accent/--brand/--success/--warning/--danger/--info`; grosor con `--fino/--grueso`. Nunca un emoji ni un símbolo de texto |
 
 Léxico cerrado de modificadores (igual en los 18 packs): tamaño `--2xs/--xs/--sm/--lg/--xl`,
 tono `--brand/--accent/--success/--warning/--danger/--info/--neutral`, énfasis `--solid/--soft/--outline/--ghost`,

@@ -202,3 +202,17 @@
 .nz-icon--filled { fill: currentColor; stroke: none; }
 .nz-icon--brand { color: var(--nz-brand); }
 .nz-icon--muted { color: var(--nz-text-mute); }
+/* Tono: el trazo es currentColor, así que el modificador solo cambia el color de
+   texto y el icono entero le obedece (claro y oscuro, sin un segundo fichero).
+   El acento tiene papel: marca el dato que importa y la acción secundaria; un
+   catálogo entero en naranja no es acento, es decoración. */
+.nz-icon--accent { color: var(--nz-accent-text); }
+.nz-icon--success { color: var(--nz-success); }
+.nz-icon--warning { color: var(--nz-warning); }
+.nz-icon--danger { color: var(--nz-danger); }
+.nz-icon--info { color: var(--nz-info); }
+.nz-icon--invert { color: var(--nz-text-invert); }
+/* Grosor: 1,75 por defecto. Fino para iconos de 24 px servidos grandes y grueso
+   para los diminutos, que a 16 px se quedan en un pelo. */
+.nz-icon--fino { stroke-width: var(--nz-icon-stroke-fino); }
+.nz-icon--grueso { stroke-width: var(--nz-icon-stroke-grueso); }

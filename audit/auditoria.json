@@ -1,11 +1,11 @@
 {
  "resumen": {
-  "objetos_declarados": 2186,
+  "objetos_declarados": 2194,
   "familias": 411,
-  "demos": 656,
+  "demos": 657,
   "categorias": 18,
-  "clases_usadas_en_demos": 2186,
-  "clases_sin_demo": 0,
+  "clases_usadas_en_demos": 2193,
+  "clases_sin_demo": 1,
   "familias_sin_demo": 0,
   "fantasmas": 0,
   "duplicados": 0,
@@ -189,9 +189,9 @@
    "important": 0
   },
   "p9-media.css": {
-   "lineas": 205,
-   "bytes": 15373,
-   "clases": 119,
+   "lineas": 219,
+   "bytes": 16233,
+   "clases": 127,
    "familias": 18,
    "hex": 0,
    "gradientes": 0,
@@ -275,10 +275,12 @@
   "9": {
    "nombre": "Media e iconografía",
    "pack": "p9-media.css",
-   "demos": 42,
-   "objetos": 119,
+   "demos": 43,
+   "objetos": 127,
    "familias": 18,
-   "sin_demo": [],
+   "sin_demo": [
+    "nz-icon--invert"
+   ],
    "familias_sin_demo": []
   },
   "10": {
@@ -2999,13 +3001,21 @@
   "nz-icon": {
    "cat": 9,
    "pack": "p9-media.css",
-   "n_clases": 7,
+   "n_clases": 15,
    "mods": [
+    "accent",
     "brand",
+    "danger",
     "filled",
+    "fino",
+    "grueso",
+    "info",
+    "invert",
     "lg",
     "muted",
     "sm",
+    "success",
+    "warning",
     "xl"
    ],
    "partes": [],

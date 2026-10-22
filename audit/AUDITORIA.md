@@ -6,12 +6,12 @@ Generada por `scripts/audit-catalog.py` a partir de los packs CSS y de `specs/*.
 
 | Comprobación | Valor | |
 |---|---|---|
-| Objetos declarados | 2186 |  |
+| Objetos declarados | 2194 |  |
 | Familias de objeto | 411 |  |
-| Demos en vivo | 656 |  |
-| Clases usadas en demos | 2186 |  |
+| Demos en vivo | 657 |  |
+| Clases usadas en demos | 2193 |  |
 | Objetos fantasma (usados y no declarados) | 0 | 🟢 |
-| Clases declaradas sin demo | 0 | 🟢 |
+| Clases declaradas sin demo | 1 | 🟡 |
 | Familias sin demo | 0 | 🟢 |
 | Duplicados entre packs | 0 | 🟢 |
 | Tokens inexistentes en uso | 0 | 🟢 |
@@ -43,7 +43,7 @@ Familias sin ninguna variante (`--mod`): **166** de 411 — ahí está el margen
 | p6-feedback.css | 267 | 153 | 19 | 0 | 0 | 0 | 0 |
 | p7-overlays.css | 207 | 118 | 12 | 0 | 0 | 0 | 0 |
 | p8-data.css | 296 | 145 | 16 | 0 | 0 | 0 | 0 |
-| p9-media.css | 205 | 119 | 18 | 0 | 0 | 0 | 0 |
+| p9-media.css | 219 | 127 | 18 | 0 | 0 | 0 | 0 |
 
 ## 2. Por categoría
 
@@ -57,7 +57,7 @@ Familias sin ninguna variante (`--mod`): **166** de 411 — ahí está el margen
 | 06 | Feedback y estados | p6-feedback.css | 153 | 19 | 52 | 0 | 0 |
 | 07 | Overlays y diálogo | p7-overlays.css | 118 | 12 | 34 | 0 | 0 |
 | 08 | Datos, tablas y listas | p8-data.css | 145 | 16 | 40 | 0 | 0 |
-| 09 | Media e iconografía | p9-media.css | 119 | 18 | 42 | 0 | 0 |
+| 09 | Media e iconografía | p9-media.css | 127 | 18 | 43 | 1 | 0 |
 | 10 | Comercio y producto | p10-commerce.css | 156 | 22 | 48 | 0 | 0 |
 | 11 | Social y marketing | p11-social.css | 107 | 15 | 39 | 0 | 0 |
 | 12 | Accesibilidad y sistema | p12-system.css | 80 | 25 | 29 | 0 | 0 |
@@ -87,7 +87,7 @@ Ninguno: cada objeto tiene un único dueño. ✅
 
 ## 6. Objetos declarados sin demo (por categoría)
 
-Ninguno. ✅
+- **Media e iconografía** (1): `nz-icon--invert`
 
 ## 7. Familias sin variantes (margen de ampliación)
 

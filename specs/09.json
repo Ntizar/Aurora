@@ -103,7 +103,7 @@
     {
       "titulo": "Icono en caja",
       "tag": ".nz-icon-tile · --accent · --success · --danger",
-      "markup": "<div class=\"nz-cluster\"><span class=\"nz-icon-tile\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 2l2.4 7.6L22 12l-7.6 2.4L12 22l-2.4-7.6L2 12l7.6-2.4z\"/></svg></span><span class=\"nz-icon-tile nz-icon-tile--accent\">✳</span><span class=\"nz-icon-tile nz-icon-tile--success\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M20 6 9 17l-5-5\"/></svg></span><span class=\"nz-icon-tile nz-icon-tile--danger\">!</span></div>"
+      "markup": "<div class=\"nz-cluster\"><span class=\"nz-icon-tile\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 2l2.4 7.6L22 12l-7.6 2.4L12 22l-2.4-7.6L2 12l7.6-2.4z\"/></svg></span><span class=\"nz-icon-tile nz-icon-tile--accent\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 2v20M2 12h20M4.9 4.9l14.2 14.2M19.1 4.9 4.9 19.1\"/></svg></span><span class=\"nz-icon-tile nz-icon-tile--success\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M20 6 9 17l-5-5\"/></svg></span><span class=\"nz-icon-tile nz-icon-tile--danger\">!</span></div>"
     },
     {
       "titulo": "Icono en caja pequeño, grande y extra grande",
@@ -113,7 +113,7 @@
     {
       "titulo": "Icono en caja de marca, de contorno y circular",
       "tag": ".nz-icon-tile--brand · --outline · --circle",
-      "markup": "<div class=\"nz-cluster\"><span class=\"nz-icon-tile nz-icon-tile--brand\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 2l2.4 7.6L22 12l-7.6 2.4L12 22l-2.4-7.6L2 12l7.6-2.4z\"/></svg></span><span class=\"nz-icon-tile nz-icon-tile--outline\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 2l2.4 7.6L22 12l-7.6 2.4L12 22l-2.4-7.6L2 12l7.6-2.4z\"/></svg></span><span class=\"nz-icon-tile nz-icon-tile--circle nz-icon-tile--accent\">✳</span></div>"
+      "markup": "<div class=\"nz-cluster\"><span class=\"nz-icon-tile nz-icon-tile--brand\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 2l2.4 7.6L22 12l-7.6 2.4L12 22l-2.4-7.6L2 12l7.6-2.4z\"/></svg></span><span class=\"nz-icon-tile nz-icon-tile--outline\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 2l2.4 7.6L22 12l-7.6 2.4L12 22l-2.4-7.6L2 12l7.6-2.4z\"/></svg></span><span class=\"nz-icon-tile nz-icon-tile--circle nz-icon-tile--accent\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 2v20M2 12h20M4.9 4.9l14.2 14.2M19.1 4.9 4.9 19.1\"/></svg></span></div>"
     },
     {
       "titulo": "Media object",
@@ -128,7 +128,7 @@
     {
       "titulo": "Media de marca, con borde y con enlace",
       "tag": ".nz-media--brand · --bordered · __link",
-      "markup": "<div class=\"nz-media nz-media--brand nz-media--bordered\" style=\"max-width:24rem\"><span class=\"nz-icon-tile nz-media__fig\">✦</span><div class=\"nz-media__body\"><span class=\"nz-media__title\">Novedades de la versión 7</span><span class=\"nz-media__desc\">Doce categorías y más de mil objetos.</span><a href=\"#contenido\" class=\"nz-media__link\">Ver el registro →</a></div></div>"
+      "markup": "<div class=\"nz-media nz-media--brand nz-media--bordered\" style=\"max-width:24rem\"><span class=\"nz-icon-tile nz-media__fig\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 3l2.2 6.8L21 12l-6.8 2.2L12 21l-2.2-6.8L3 12l6.8-2.2z\"/></svg></span><div class=\"nz-media__body\"><span class=\"nz-media__title\">Novedades de la versión 7</span><span class=\"nz-media__desc\">Doce categorías y más de mil objetos.</span><a href=\"#contenido\" class=\"nz-media__link\">Ver el registro →</a></div></div>"
     },
     {
       "titulo": "Vídeo",
@@ -214,6 +214,11 @@
       "titulo": "Icono",
       "tag": ".nz-icon · --sm · --lg · --xl · --brand · --muted · --filled",
       "markup": "<div class=\"nz-cluster\"><span class=\"nz-lbl\">Trazo que hereda el texto</span><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M20 6 9 17l-5-5\"/></svg><svg class=\"nz-icon nz-icon--sm\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"8\" r=\"4\"/><path d=\"M4 21a8 8 0 0 1 16 0\"/></svg><svg class=\"nz-icon nz-icon--lg\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><circle cx=\"11\" cy=\"11\" r=\"7\"/><path d=\"m20 20-3.5-3.5\"/></svg><svg class=\"nz-icon nz-icon--xl nz-icon--muted\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M18 8a6 6 0 1 0-12 0c0 7-3 9-3 9h18s-3-2-3-9\"/><path d=\"M13.7 21a2 2 0 0 1-3.4 0\"/></svg><svg class=\"nz-icon nz-icon--brand\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M20 6 9 17l-5-5\"/></svg><svg class=\"nz-icon nz-icon--filled\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"6\"/></svg><svg class=\"nz-icon nz-icon--filled nz-icon--brand\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"6\"/></svg></div>"
+    },
+    {
+      "titulo": "Icono con tono y grosor de trazo",
+      "tag": ".nz-icon--accent · --success · --warning · --danger · --info · --fino · --grueso",
+      "markup": "<p class=\"nz-cluster nz-cluster--spacious\"><span class=\"nz-cluster nz-cluster--compact\"><svg class=\"nz-icon nz-icon--xl nz-icon--accent\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"9\"/><path d=\"M12 8v8M8 12h8\"/></svg><span class=\"nz-text--small\">Acento</span></span><span class=\"nz-cluster nz-cluster--compact\"><svg class=\"nz-icon nz-icon--xl nz-icon--success\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"9\"/><path d=\"m8 12 3 3 5-6\"/></svg><span class=\"nz-text--small\">Éxito</span></span><span class=\"nz-cluster nz-cluster--compact\"><svg class=\"nz-icon nz-icon--xl nz-icon--warning\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 3 2 20h20L12 3Z\"/><path d=\"M12 9v5M12 17h.01\"/></svg><span class=\"nz-text--small\">Aviso</span></span><span class=\"nz-cluster nz-cluster--compact\"><svg class=\"nz-icon nz-icon--xl nz-icon--danger\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"9\"/><path d=\"m15 9-6 6M9 9l6 6\"/></svg><span class=\"nz-text--small\">Peligro</span></span><span class=\"nz-cluster nz-cluster--compact\"><svg class=\"nz-icon nz-icon--xl nz-icon--info\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"9\"/><path d=\"M12 11v6M12 8h.01\"/></svg><span class=\"nz-text--small\">Información</span></span><span class=\"nz-cluster nz-cluster--compact\"><svg class=\"nz-icon nz-icon--xl nz-icon--fino nz-icon--lg\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M3 12h18M12 3v18\"/></svg><span class=\"nz-text--small\">Trazo fino</span></span><span class=\"nz-cluster nz-cluster--compact\"><svg class=\"nz-icon nz-icon--xl nz-icon--grueso nz-icon--sm\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M3 12h18M12 3v18\"/></svg><span class=\"nz-text--small\">Trazo grueso</span></span></p>"
     }
   ]
 }
