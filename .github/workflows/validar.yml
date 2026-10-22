@@ -23,8 +23,11 @@ jobs:
       - name: Validar el sistema (manifiesto + cobertura + HTML)
         run: python scripts/validar-css.py
 
-      - name: Lint de las recetas de bloques/ejemplos/ y de las páginas del explorador
-        run: python scripts/auditar-uso.py base.html stress-test.html bloques/ejemplos/*.html iconos/index.html
+      - name: Lint de las recetas, ejemplos, combos y páginas del explorador
+        run: python scripts/auditar-uso.py index.html base.html stress-test.html bloques/ejemplos/*.html bloques/recetas/*.html bloques/combos/*.html iconos/index.html marcas/index.html
+
+      - name: Enlaces locales y camino de vuelta a la portada
+        run: python scripts/auditar-enlaces.py
 
       - name: Coherencia entre páginas, demos y versiones
         run: python scripts/auditar-coherencia.py --check

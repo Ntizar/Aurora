@@ -126,6 +126,21 @@ def validar(programa, fuente, auditor):
     return problemas
 
 
+def sin_ejemplos(prompt):
+    """El prompt sin la sección de ejemplos.
+
+    Cuando la generación parte de una plantilla de arquetipo, el modelo ya tiene
+    delante un programa completo y válido: los tres ejemplos largos de PROMPT.md
+    sobran y cuestan ~1.300 tokens de entrada por generación. La estructura no se
+    pierde —la lleva la plantilla— y las firmas siguen ahí. `--prompt completo`
+    devuelve el prompt íntegro (útil al escribir un programa a mano)."""
+    i = prompt.find("## Ejemplos")
+    j = prompt.find("## Verificación antes de terminar")
+    if i != -1 and j > i:
+        return prompt[:i] + prompt[j:]
+    return prompt
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--brief", required=True)
@@ -137,6 +152,8 @@ def main():
     ap.add_argument("--salida", "-o", default="dist")
     ap.add_argument("--dry-run", action="store_true")
     ap.add_argument("--sin-modelo", action="store_true")
+    ap.add_argument("--prompt", choices=["breve", "completo"], default="breve",
+                    help="breve (por defecto) omite los ejemplos largos: la plantilla del arquetipo ya los es")
     args = ap.parse_args()
 
     brief = json.loads(pathlib.Path(args.brief).read_text(encoding="utf-8"))
@@ -158,6 +175,8 @@ def main():
     slug = re.sub(r"[^a-z0-9\-]+", "-", slug.lower()).strip("-")
 
     prompt_sistema = (OPENUI / "PROMPT.md").read_text(encoding="utf-8")
+    if args.prompt == "breve":
+        prompt_sistema = sin_ejemplos(prompt_sistema)
     prompt_sistema += (
         "\n\n## Tu tarea ahora\n\n"
         "Parte de esta plantilla del arquetipo «%s» y ajústala a los datos del encargo. "

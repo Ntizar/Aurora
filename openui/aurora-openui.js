@@ -56,7 +56,9 @@
 
   R.Seccion = function (p, ctx) {
     return '<section class="' + cl("nz-section", p.borde !== false && "nz-section--bordered") + '">' +
-      (p.titulo ? '<h2 class="nz-h2">' + esc(p.titulo) + "</h2>" : "") + ctx.nodos(p.children) + "</section>";
+      // El rótulo es una pastilla pequeña, no un titular: dos h2 del mismo tamaño
+      // (rótulo + titular) competían en la misma sección y eso es ruido, no jerarquía.
+      (p.titulo ? '<span class="nz-lbl">' + esc(p.titulo) + "</span>" : "") + ctx.nodos(p.children) + "</section>";
   };
 
   R.Pila = function (p, ctx) {
@@ -244,7 +246,11 @@
 
   R.Boton = function (p) {
     var tono = { "primario": "nz-btn--primary", "acento": "nz-btn--accent", "suave": "nz-btn--soft", "contorno": "nz-btn--outline", "fantasma": "nz-btn--ghost" }[p.tono] || "";
-    return '<button type="button" class="' + cl("nz-btn", tono, p.tamano && "nz-btn--" + p.tamano, p.bloque && "nz-btn--block") + '">' + esc(p.texto) + "</button>";
+    var clase = cl("nz-btn", tono, p.tamano && "nz-btn--" + p.tamano, p.bloque && "nz-btn--block");
+    if (p.href) {
+      return '<a class="' + clase + '" href="' + esc(p.href) + '">' + esc(p.texto) + "</a>";
+    }
+    return '<button type="button" class="' + clase + '">' + esc(p.texto) + "</button>";
   };
 
   R.Etiqueta = function (p) {
@@ -298,8 +304,10 @@
   };
 
   R.Navegacion = function (p) {
-    var enlaces = list(p.enlaces).map(function (e) {
-      return '<a class="nz-navbar__link" href="#">' + esc(e) + "</a>";
+    var urls = list(p.urls);
+    var enlaces = list(p.enlaces).map(function (e, i) {
+      var destino = urls[i] ? urls[i] : "#";
+      return '<a class="nz-navbar__link" href="' + esc(destino) + '">' + esc(e) + "</a>";
     }).join("");
     return '<div class="nz-navbar nz-navbar--bordered"><span class="nz-navbar__brand"><i></i>' + esc(p.marca) + "</span>" +
       '<span class="nz-navbar__links">' + enlaces + "</span></div>";

@@ -100,9 +100,10 @@
    "nombre": "Seccion",
    "clases": [
     "nz-section",
-    "nz-section--bordered"
+    "nz-section--bordered",
+    "nz-lbl"
    ],
-   "descripcion": "Bloque con aire propio y titular opcional. La unidad de una landing o un informe.",
+   "descripcion": "Bloque con aire propio. El titulo es el RÓTULO del bloque (pastilla pequeña, no titular): los titulares se ponen con Titular dentro. La unidad de una landing o un informe.",
    "props": [
     {
      "nombre": "children",
@@ -801,7 +802,7 @@
     "nz-btn--lg",
     "nz-btn--block"
    ],
-   "descripcion": "Acción. tono=primario para la acción principal, acento para la secundaria que importa.",
+   "descripcion": "Acción. tono=primario para la acción principal, acento para la secundaria que importa. Con href se pinta como enlace (misma pinta, navega).",
    "props": [
     {
      "nombre": "texto",
@@ -831,6 +832,11 @@
     {
      "nombre": "bloque",
      "tipo": "booleano",
+     "opcional": true
+    },
+    {
+     "nombre": "href",
+     "tipo": "texto",
      "opcional": true
     }
    ]
@@ -1066,7 +1072,7 @@
     "nz-navbar__links",
     "nz-navbar__link"
    ],
-   "descripcion": "Barra de navegación con marca y enlaces. Envuelve: ninguna acción se corta.",
+   "descripcion": "Barra de navegación con marca y enlaces. urls va en paralelo a enlaces: la primera lleva a la primera. Sin urls, los enlaces son anclas.",
    "props": [
     {
      "nombre": "marca",
@@ -1075,6 +1081,11 @@
     {
      "nombre": "enlaces",
      "tipo": "lista"
+    },
+    {
+     "nombre": "urls",
+     "tipo": "lista",
+     "opcional": true
     }
    ]
   },

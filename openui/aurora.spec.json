@@ -78,7 +78,7 @@
   },
   "Seccion": {
    "signature": "Seccion(children: any[], titulo?: string, borde?: boolean)",
-   "description": "Bloque con aire propio y titular opcional. La unidad de una landing o un informe."
+   "description": "Bloque con aire propio. El titulo es el RÓTULO del bloque (pastilla pequeña, no titular): los titulares se ponen con Titular dentro. La unidad de una landing o un informe."
   },
   "Pila": {
    "signature": "Pila(children: any[], hueco?: \"2xs\" | \"sm\" | \"lg\" | \"xl\")",
@@ -157,8 +157,8 @@
    "description": "Barra de avance lineal de 0 a 100."
   },
   "Boton": {
-   "signature": "Boton(texto: string, tono?: \"primario\" | \"acento\" | \"suave\" | \"contorno\" | \"fantasma\", tamano?: \"sm\" | \"lg\", bloque?: boolean)",
-   "description": "Acción. tono=primario para la acción principal, acento para la secundaria que importa."
+   "signature": "Boton(texto: string, tono?: \"primario\" | \"acento\" | \"suave\" | \"contorno\" | \"fantasma\", tamano?: \"sm\" | \"lg\", bloque?: boolean, href?: string)",
+   "description": "Acción. tono=primario para la acción principal, acento para la secundaria que importa. Con href se pinta como enlace (misma pinta, navega)."
   },
   "Etiqueta": {
    "signature": "Etiqueta(texto: string, tono?: \"marca\" | \"acento\" | \"exito\" | \"aviso\" | \"peligro\" | \"neutro\", forma?: \"relleno\" | \"contorno\" | \"punto\")",
@@ -189,8 +189,8 @@
    "description": "Proceso por etapas con la etapa actual marcada."
   },
   "Navegacion": {
-   "signature": "Navegacion(marca: string, enlaces: string[])",
-   "description": "Barra de navegación con marca y enlaces. Envuelve: ninguna acción se corta."
+   "signature": "Navegacion(marca: string, enlaces: string[], urls?: string[])",
+   "description": "Barra de navegación con marca y enlaces. urls va en paralelo a enlaces: la primera lleva a la primera. Sin urls, los enlaces son anclas."
   },
   "Campo": {
    "signature": "Campo(etiqueta: string, tipo?: \"texto\" | \"numero\" | \"email\" | \"fecha\" | \"busqueda\", valor?: string, ayuda?: string, error?: string, requerido?: boolean)",
@@ -409,7 +409,7 @@
      "children"
     ],
     "additionalProperties": false,
-    "description": "Bloque con aire propio y titular opcional. La unidad de una landing o un informe."
+    "description": "Bloque con aire propio. El titulo es el RÓTULO del bloque (pastilla pequeña, no titular): los titulares se ponen con Titular dentro. La unidad de una landing o un informe."
    },
    "Pila": {
     "type": "object",
@@ -957,13 +957,16 @@
      },
      "bloque": {
       "type": "boolean"
+     },
+     "href": {
+      "type": "string"
      }
     },
     "required": [
      "texto"
     ],
     "additionalProperties": false,
-    "description": "Acción. tono=primario para la acción principal, acento para la secundaria que importa."
+    "description": "Acción. tono=primario para la acción principal, acento para la secundaria que importa. Con href se pinta como enlace (misma pinta, navega)."
    },
    "Etiqueta": {
     "type": "object",
@@ -1150,6 +1153,12 @@
       "items": {
        "type": "string"
       }
+     },
+     "urls": {
+      "type": "array",
+      "items": {
+       "type": "string"
+      }
      }
     },
     "required": [
@@ -1157,7 +1166,7 @@
      "enlaces"
     ],
     "additionalProperties": false,
-    "description": "Barra de navegación con marca y enlaces. Envuelve: ninguna acción se corta."
+    "description": "Barra de navegación con marca y enlaces. urls va en paralelo a enlaces: la primera lleva a la primera. Sin urls, los enlaces son anclas."
    },
    "Campo": {
     "type": "object",

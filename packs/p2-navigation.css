@@ -167,9 +167,18 @@
 @media (min-width: 960px) { .nz-navfooter--3col { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
 
 /* ---- 12 Stepper de navegación (proceso) ---- */
-.nz-stepper { display: flex; align-items: center; gap: var(--nz-space-2); overflow-x: auto; scrollbar-width: none; }
-.nz-stepper::-webkit-scrollbar { display: none; }
-.nz-stepper__step { display: flex; align-items: center; gap: var(--nz-space-2); white-space: nowrap; color: var(--nz-text-faint); font-size: var(--nz-text-sm); font-weight: var(--nz-peso-fuerte); }
+/* Base móvil: los pasos ENVUELVEN. Un carrusel horizontal esconde etapas y el
+   usuario no sabe que hay más (medido a 320px: el paso 2 y el 3 quedaban fuera y
+   solo se alcanzaban arrastrando). Desde 640 vuelve a la fila de siempre. */
+.nz-stepper { display: flex; align-items: center; gap: var(--nz-space-2); flex-wrap: wrap; }
+@media (min-width: 640px) {
+  .nz-stepper { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; }
+  .nz-stepper::-webkit-scrollbar { display: none; }
+}
+.nz-stepper__step { display: flex; align-items: center; gap: var(--nz-space-2); min-width: 0; color: var(--nz-text-faint); font-size: var(--nz-text-sm); font-weight: var(--nz-peso-fuerte); }
+@media (min-width: 640px) {
+  .nz-stepper__step { white-space: nowrap; }
+}
 .nz-stepper__num { min-width: 28px; height: 28px; display: inline-flex; align-items: center; justify-content: center; border-radius: var(--nz-radius-full); background: var(--nz-bg-inset); color: var(--nz-text-mute); font-size: var(--nz-text-xs); font-variant-numeric: tabular-nums; }
 .nz-stepper__step.is-active { color: var(--nz-text); }
 .nz-stepper__step.is-active .nz-stepper__num { background: var(--nz-brand); color: var(--nz-text-invert); }

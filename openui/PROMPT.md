@@ -23,7 +23,7 @@ Los argumentos con `?` son opcionales. Los sub-componentes pueden ir en línea o
 
 ### Estructura
 Pagina(children: any[], ancho?: "contenido" | "app") — Marco de la página. Siempre la raíz. ancho=app llena la pantalla (herramientas y paneles); contenido va topado.
-Seccion(children: any[], titulo?: string, borde?: boolean) — Bloque con aire propio y titular opcional. La unidad de una landing o un informe.
+Seccion(children: any[], titulo?: string, borde?: boolean) — Bloque con aire propio. El titulo es el RÓTULO del bloque (pastilla pequeña, no titular): los titulares se ponen con Titular dentro. La unidad de una landing o un informe.
 Pila(children: any[], hueco?: "2xs" | "sm" | "lg" | "xl") — Columna vertical con hueco entre bloques.
 Fila(children: any[], hueco?: "compacto" | "amplio") — Grupo horizontal de elementos cortos (botones, chips, etiquetas) que mide lo que mide y envuelve en móvil. No estira a sus hijos.
 Rejilla(children: any[], columnas?: "auto" | "2" | "4") — Rejilla de panel que responde a su contenedor, no al monitor. columnas=auto decide sola. El modo auto (por defecto) encaja las piezas al ancho real con auto-fit: las cajas nunca quedan enormes ni se pisan.
@@ -49,7 +49,7 @@ Anillo(valor: number, etiqueta?: string, tono?: "marca" | "acento", tamano?: "sm
 Progreso(valor: number, etiqueta?: string) — Barra de avance lineal de 0 a 100.
 
 ### Interfaz
-Boton(texto: string, tono?: "primario" | "acento" | "suave" | "contorno" | "fantasma", tamano?: "sm" | "lg", bloque?: boolean) — Acción. tono=primario para la acción principal, acento para la secundaria que importa.
+Boton(texto: string, tono?: "primario" | "acento" | "suave" | "contorno" | "fantasma", tamano?: "sm" | "lg", bloque?: boolean, href?: string) — Acción. tono=primario para la acción principal, acento para la secundaria que importa. Con href se pinta como enlace (misma pinta, navega).
 Etiqueta(texto: string, tono?: "marca" | "acento" | "exito" | "aviso" | "peligro" | "neutro", forma?: "relleno" | "contorno" | "punto") — Estado o categoría corta, en línea con el texto.
 Chip(texto: string, tono?: "neutro" | "marca" | "acento" | "exito" | "peligro") — Filtro aplicado o etiqueta removible.
 Aviso(titulo: string, mensaje: string, tono?: "info" | "exito" | "aviso" | "peligro" | "neutro", contorno?: boolean) — Mensaje del sistema con título y cuerpo. Usa tono peligro solo para lo que rompe.
@@ -57,7 +57,7 @@ Nota(texto: string, tono?: "nota" | "consejo" | "aviso" | "peligro" | "marca" | 
 Pestanas(pestanas: string[], activa?: number, forma?: "linea" | "pastilla") — Pestañas de sección. Envuelven en varias líneas; nunca se cortan.
 Segmentado(opciones: string[], activa?: number) — Selector de 2 a 4 opciones excluyentes, tipo Hoy/Semana/Mes.
 Pasos(pasos: string[], actual?: number) — Proceso por etapas con la etapa actual marcada.
-Navegacion(marca: string, enlaces: string[]) — Barra de navegación con marca y enlaces. Envuelve: ninguna acción se corta.
+Navegacion(marca: string, enlaces: string[], urls?: string[]) — Barra de navegación con marca y enlaces. urls va en paralelo a enlaces: la primera lleva a la primera. Sin urls, los enlaces son anclas.
 
 ### Formularios
 Campo(etiqueta: string, tipo?: "texto" | "numero" | "email" | "fecha" | "busqueda", valor?: string, ayuda?: string, error?: string, requerido?: boolean) — Campo de formulario con etiqueta, ayuda y error. Nunca un input sin etiqueta.
@@ -184,4 +184,4 @@ a2 = Boton("Ver histórico", "contorno")
 - ¿Hay un solo titular nivel 1 y el acento está donde importa?
 - ¿Los números están formateados en castellano?
 
-<!-- aurora-openui · spec 58252a3b70b20833 · 36 componentes · generado por scripts/generar-openui.py -->
+<!-- aurora-openui · spec 5744f2400b821bf8 · 36 componentes · generado por scripts/generar-openui.py -->

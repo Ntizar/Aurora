@@ -606,15 +606,27 @@ def esqueleto_de_combo(nombre, combo, censo_cat, clases_totales):
     return bloques, familias_usadas
 
 
-def pagina_combo(nombre, combo, bloques, familias_usadas):
+def pagina_combo(nombre, combo, bloques, familias_usadas, objetos):
     """Receta de arranque completa: <head> con los packs del combo en CDN +
     el esqueleto de cada familia con comentario «Necesito X → uso Y»."""
     L = []
     A = L.append
+    # Los packs se DERIVAN de las clases reales del esqueleto. La lista fija del
+    # combo se quedó corta al crecer los bloques: `chat-ia` se servía sin
+    # `p9-media.css` y `dashboard` sin `p5-forms.css`, así que el esqueleto se veía
+    # a medias. `auditar-uso.py` lo cazaba, pero nadie lo pasaba por los combos.
+    usados = set(combo["packs"])
+    for _, frag in bloques:
+        for atributo in re.findall(r'class="([^"]+)"', frag):
+            for clase in atributo.split():
+                o = objetos.get(bc.base_de(clase))
+                if o:
+                    usados.add(o["pack"])
+    orden = {p: i for i, p in enumerate(bc.PACKS_COMPONENTES)}
+    packs = sorted(usados, key=lambda p: orden.get(p, 99))
     cdn_links = "\n".join(
-        f'  <link rel="stylesheet" href="{CDN}packs/{p}">' if p != "all.css"
-        else f'  <link rel="stylesheet" href="{CDN}packs/all.css">'
-        for p in combo["packs"])
+        f'  <link rel="stylesheet" href="{CDN}packs/{p}">'
+        for p in packs)
     A(f'<!-- Esqueleto del combo «{nombre}» — GENERADO por '
       f'scripts/generar-llm-docs.py, no se edita a mano.')
     A(f'     Bloques extraídos de las demos reales de specs/ y validados')
@@ -636,7 +648,7 @@ def pagina_combo(nombre, combo, bloques, familias_usadas):
         A("  " + frag)
         A('')
     A('<footer class="nz-footer nz-footer--compact">')
-    A(f'  Esqueleto del combo «{nombre}» de Aurora · Hecho con ❤️ por David Antizar')
+    A(f'  <a href="../../index.html">Aurora</a> · Esqueleto del combo «{nombre}» · Hecho con ❤️ por David Antizar')
     A('</footer>')
     A('')
     A("</body>")
@@ -776,7 +788,7 @@ def main():
         bloques, familias_usadas = esqueleto_de_combo(
             nombre_combo, combo, censo_cat, clases_totales)
         (combos_dir / f"{nombre_combo}.html").write_text(
-            pagina_combo(nombre_combo, combo, bloques, familias_usadas),
+            pagina_combo(nombre_combo, combo, bloques, familias_usadas, objetos),
             encoding="utf-8")
         combos_esqueleto[nombre_combo] = {
             "fichero": f"bloques/combos/{nombre_combo}.html",

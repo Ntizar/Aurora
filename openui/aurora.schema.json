@@ -190,7 +190,7 @@
     "children"
    ],
    "additionalProperties": false,
-   "description": "Bloque con aire propio y titular opcional. La unidad de una landing o un informe."
+   "description": "Bloque con aire propio. El titulo es el RÓTULO del bloque (pastilla pequeña, no titular): los titulares se ponen con Titular dentro. La unidad de una landing o un informe."
   },
   "Pila": {
    "type": "object",
@@ -738,13 +738,16 @@
     },
     "bloque": {
      "type": "boolean"
+    },
+    "href": {
+     "type": "string"
     }
    },
    "required": [
     "texto"
    ],
    "additionalProperties": false,
-   "description": "Acción. tono=primario para la acción principal, acento para la secundaria que importa."
+   "description": "Acción. tono=primario para la acción principal, acento para la secundaria que importa. Con href se pinta como enlace (misma pinta, navega)."
   },
   "Etiqueta": {
    "type": "object",
@@ -931,6 +934,12 @@
      "items": {
       "type": "string"
      }
+    },
+    "urls": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     }
     }
    },
    "required": [
@@ -938,7 +947,7 @@
     "enlaces"
    ],
    "additionalProperties": false,
-   "description": "Barra de navegación con marca y enlaces. Envuelve: ninguna acción se corta."
+   "description": "Barra de navegación con marca y enlaces. urls va en paralelo a enlaces: la primera lleva a la primera. Sin urls, los enlaces son anclas."
   },
   "Campo": {
    "type": "object",

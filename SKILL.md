@@ -402,6 +402,7 @@ LLM → OpenUI Lang (8-20 líneas) → parser → runtime vanilla → markup .nz
 | Verlo funcionando | `openui/index.html` (probador en vivo + plantillas) |
 | Empezar por un arquetipo | `openui/plantillas/` + `scripts/plantilla.py` (panel, informe, landing, ajustes, agente) |
 | De un encargo a una página | `scripts/generar-web.py --brief encargo.json` (modelo + validación + lint) |
+| De un programa a una página estática (0 JS) | `scripts/hornear.py prog.openui --salida x.html`: compila, pinta en Chrome headless y extrae el `<main>` ya horneado |
 
 ```js
 await AuroraOpenUI.iniciar();                          // spec + parser oficial (ESM, 96 KB)

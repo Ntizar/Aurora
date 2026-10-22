@@ -3,6 +3,47 @@
 Formato: [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/).
 Versionado: [SemVer](https://semver.org/lang/es/).
 
+## [Sin publicar]
+
+### La portada se hornea: una sola fuente, la mitad de tokens
+
+- **`scripts/hornear.py`** cierra el círculo: `.openui` → compila → pinta en Chrome
+  headless (con la red servida por HTTP local, que el runtime hace `fetch`) → extrae
+  el `<main>` y escribe el HTML estático, sin JS. La portada ya no se escribe a mano:
+  10 secciones y 14,5 KB de marcado se mantenían en paralelo al programa y
+  divergían (la página prometía «el programa se muestra abajo» y no había nada
+  abajo).
+- **La portada pasa de 10 bloques a 6** y deja de contar capas internas: cuenta
+  qué es OpenUI, qué ahorra y cómo se usa, con tres pasos. El programa completo va
+  inyectado por el build dentro de la sección «Transparencia», así que la promesa
+  es verificable.
+- **Cifras sin deriva**: `build-catalog.py` clava `{{OBJETOS}}`, `{{FAMILIAS}}`,
+  `{{PACKS}}` y `{{MARCAS}}` desde el censo. Antes la entradilla decía «411 objetos»
+  (son familias) y el KPI «2.195 objetos»: dos cifras incompatibles en la misma
+  pantalla.
+- **7 packs en vez de 8**: fuera `p13-charts.css` (−29,7 KB) al sustituir las barras
+  por un `Progreso`. CSS enlazado: 204 KB → 158 KB (−22 %).
+- **Menos tokens por generación**: `generar-web.py --prompt breve` (por defecto)
+  omite los tres ejemplos largos de `PROMPT.md` cuando ya se parte de una plantilla
+  de arquetipo: 4.164 caracteres menos (≈1.040 tokens) en cada generación.
+  `--prompt completo` mantiene el comportamiento anterior.
+
+### OpenUI: el vocabulario puede navegar (y deja de duplicar titulares)
+
+- **`Boton(..., href?)`**: con `href` se pinta como enlace con la misma pinta. Sin
+  él, `<button>`. Antes todos los CTA de una página generada eran botones muertos.
+- **`Navegacion(marca, enlaces, urls?)`**: `urls` va en paralelo a `enlaces`. Antes
+  todos los enlaces salían `href="#"`.
+- **`Seccion(titulo)` pinta un rótulo (`nz-lbl`), no un `h2`**: el rótulo y el
+  titular competían como dos títulos del mismo tamaño en la misma sección. Cada
+  sección tiene ahora un solo `h2`.
+
+### Sistema
+
+- **`.nz-stepper` envuelve en móvil** (`flex-wrap: wrap` hasta 640 px): medido a
+  320 px, los pasos 2 y 3 quedaban fuera del viewport y solo se alcanzaban
+  arrastrando en horizontal. Desde 640 px sigue siendo la fila de siempre.
+
 ## [10.1.0] — 2026-10-22
 
 ### La portada explica el proyecto

@@ -984,7 +984,7 @@ def catalogo(argv) -> str:
   </section>
 </main>
 <footer class="nz-container">
-  <p class="nz-text--small nz-text--muted">Hecho con ❤️ por David Antizar</p>
+  <p class="nz-text--small nz-text--muted"><a href="../index.html">Aurora</a> · Hecho con ❤️ por David Antizar</p>
 </footer>
 </body>
 </html>

@@ -428,17 +428,35 @@ CSS_PORTADA = """
 
 
 def portada(specs, censo_cat, totales, packs):
-    """La portada es un programa openui-lang pre-renderizado: la fuente única es
-    briefs/portada.openui -> briefs/portada.tmpl.html (hornada del runtime OpenUI).
-    Aquí solo se clavan las cifras reales del censo y el rango del canal vivo:
-    la portada nunca inventa un número."""
+    """La portada es un programa openui-lang horneado: la fuente única es
+    briefs/portada.openui -> scripts/hornear.py -> briefs/portada.tmpl.html.
+    Aquí solo se clavan las cifras reales del censo, el programa (tal cual, para
+    que la página no pueda prometer algo que no enseña) y el rango del canal vivo:
+    la portada nunca inventa un número ni escribe markup a mano."""
     censo = json.loads((ROOT / "components.json").read_text(encoding="utf-8"))
-    objetos = len(censo["objetos"])
+    resumen = censo.get("resumen") or {}
+    marcas = json.loads((ROOT / "marcas" / "registro.json").read_text(encoding="utf-8"))
     canales = json.loads((ROOT / "datos" / "canales.json").read_text(encoding="utf-8"))
     vivo = canales["canales"]["vivo"]["rango"]
+    miles = lambda n: f"{n:,}".replace(",", ".")
+
+    programa = (ROOT / "briefs" / "portada.openui").read_text(encoding="utf-8")
+    claves = {
+        "{{OBJETOS}}": miles(resumen.get("objetos", 0)),
+        "{{FAMILIAS}}": miles(resumen.get("familias", 0)),
+        "{{PACKS}}": str(len([p for p in PACKS_COMPONENTES if (PACKS / p).exists()])),
+        "{{MARCAS}}": str(len(marcas)),
+    }
+    # Las cifras se clavan en el programa ANTES de inyectarlo: el bloque de código
+    # que ve el lector es el programa que se compiló de verdad, no una plantilla.
+    for clave, valor in claves.items():
+        programa = programa.replace(clave, valor)
+
     plantilla = (ROOT / "briefs" / "portada.tmpl.html").read_text(encoding="utf-8")
+    for clave, valor in claves.items():
+        plantilla = plantilla.replace(clave, valor)
     return (plantilla
-            .replace("{{OBJETOS}}", f"{objetos:,}".replace(",", "."))
+            .replace("{{PROGRAMA}}", html.escape(programa))
             .replace("@v10/", f"@{vivo}/"))
 
 
