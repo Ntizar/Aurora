@@ -939,6 +939,7 @@ def catalogo(argv) -> str:
 <meta name="description" content="Repositorio de iconos numerados de Aurora: {m['total']} iconos ({resumen_licencias(m)}) con número estable nz-i-NNN, sprite y manifiesto.">
 <link rel="stylesheet" href="../tokens.css">
 <link rel="stylesheet" href="../packs/p1-layout.css">
+<link rel="stylesheet" href="../packs/p2-navigation.css">
 <link rel="stylesheet" href="../packs/p3-typography.css">
 <link rel="stylesheet" href="../packs/p4-actions.css">
 <link rel="stylesheet" href="../packs/p5-forms.css">
@@ -947,6 +948,15 @@ def catalogo(argv) -> str:
 <script src="../js/iconos.js" defer></script>
 </head>
 <body class="nz">
+<nav class="nz-navbar nz-navbar--bordered" aria-label="Sitio">
+  <a class="nz-navbar__brand" href="../index.html"><i></i>Aurora</a>
+  <span class="nz-navbar__links">
+    <a class="nz-navbar__link" href="../base.html">Catálogo</a>
+    <a class="nz-navbar__link" href="../bloques/recetas/index.html">Bloques</a>
+    <a class="nz-navbar__link" href="../marcas/index.html">Marcas</a>
+    <a class="nz-navbar__link" href="../openui/index.html">OpenUI</a>
+  </span>
+</nav>
 <main class="nz-container" id="contenido">
   <header class="nz-stack">
     <p class="nz-text--small nz-text--muted">Aurora v{version} · {resumen_colecciones(m)} · {resumen_licencias(m)}</p>

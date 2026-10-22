@@ -54,13 +54,34 @@ def locales(texto):
             yield u, base
 
 
+def marca_arriba(texto, f, portada):
+    """¿Hay un enlace llamado «Aurora» que lleve a la portada antes del primer titular?
+
+    Es la regla del sitio: la marca vive arriba a la izquierda y siempre vuelve a
+    casa. Se comprueba en el marcado (antes del primer `<h1`), no a ojo.
+    """
+    cabecera = re.sub(r"<!--.*?-->", "", texto, flags=re.S).split("<h1", 1)[0]
+    for m in re.finditer(r'<a\b[^>]*href="([^"]+)"[^>]*>(.*?)</a>', cabecera, re.S):
+        href = m.group(1).strip()
+        if not href or href.startswith(EXTERNOS):
+            continue
+        base = href.split("#")[0].split("?")[0]
+        if not base:
+            continue
+        if (f.parent / base).resolve() == portada:
+            etiqueta = re.sub(r"<[^>]+>", "", m.group(2))
+            if "Aurora" in etiqueta:
+                return True
+    return False
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--lista", action="store_true", help="imprime el detalle fichero a fichero")
     args = ap.parse_args()
 
     portada = (ROOT / "index.html").resolve()
-    rotos, sin_vuelta = [], []
+    rotos, sin_vuelta, sin_marca = [], [], []
     comprobados = 0
 
     for f in paginas():
@@ -76,24 +97,31 @@ def main():
         # Camino de vuelta: la página cuelga de una carpeta y no ofrece la portada.
         if f.resolve() != portada and portada not in destinos:
             sin_vuelta.append(rel)
+        # Botón de marca: en toda página de subcarpeta, un enlace llamado «Aurora»
+        # que lleve a la portada y que esté ARRIBA (antes del primer titular).
+        if f.resolve() != portada and not marca_arriba(texto, f, portada):
+            sin_marca.append(rel)
 
     print("Aurora · enlaces y navegación")
     print("  páginas revisadas   %d" % len(list(paginas())))
     print("  enlaces locales     %d" % comprobados)
     print("  enlaces rotos       %d" % len(rotos))
     print("  sin vuelta a inicio %d" % len(sin_vuelta))
+    print("  sin botón «Aurora»  %d" % len(sin_marca))
 
-    if args.lista or rotos or sin_vuelta:
+    if args.lista or rotos or sin_vuelta or sin_marca:
         for rel, u in rotos[:40]:
             print("  ✗ %-42s → %s" % (rel, u))
         for rel in sin_vuelta[:40]:
             print("  ! %-42s sin enlace a la portada" % rel)
+        for rel in sin_marca[:40]:
+            print("  ! %-42s sin botón «Aurora» arriba a la izquierda" % rel)
 
-    if rotos or sin_vuelta:
-        print("\nRESULTADO: CON FALLOS — %d enlaces rotos, %d páginas sin vuelta"
-              % (len(rotos), len(sin_vuelta)))
+    if rotos or sin_vuelta or sin_marca:
+        print("\nRESULTADO: CON FALLOS — %d enlaces rotos, %d sin vuelta, %d sin botón «Aurora»"
+              % (len(rotos), len(sin_vuelta), len(sin_marca)))
         return 1
-    print("\nRESULTADO: VÁLIDO — todos los enlaces resuelven y todas las páginas vuelven ✅")
+    print("\nRESULTADO: VÁLIDO — enlaces, vuelta y botón «Aurora» en todas las páginas ✅")
     return 0
 
 

@@ -8,7 +8,7 @@
 
 /* ---- 01 Navbar superior ---- */
 .nz-navbar { display: flex; flex-wrap: wrap; align-items: center; gap: var(--nz-space-2) var(--nz-space-3); min-height: 56px; padding: var(--nz-space-2) var(--nz-gutter); background: var(--nz-surface); border-bottom: var(--nz-border-w) solid var(--nz-border-soft); }
-.nz-navbar__brand { display: flex; align-items: center; gap: var(--nz-space-2); font-weight: var(--nz-peso-titulo); letter-spacing: var(--nz-tracking-tight); color: var(--nz-text); }
+.nz-navbar__brand { display: flex; align-items: center; gap: var(--nz-space-2); font-weight: var(--nz-peso-titulo); letter-spacing: var(--nz-tracking-tight); color: var(--nz-text); text-decoration: none; }
 .nz-navbar__brand i { width: 10px; height: 10px; border-radius: var(--nz-radius-full); background: var(--nz-brand); }
 .nz-navbar__brand--lg { font-size: var(--nz-text-lg); }
 .nz-navbar__links { display: flex; flex-wrap: wrap; align-items: center; gap: var(--nz-space-1); margin-left: auto; min-width: 0; }

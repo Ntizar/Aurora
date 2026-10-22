@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>Aurora · Generative UI · OpenUI Lang sobre el censo</title>
-<meta name="description" content="El modelo describe la interfaz en OpenUI Lang y Aurora la pinta con sus 2.186 objetos: 52 % menos tokens que JSON, cero React y cero clases inventadas.">
+<title>Aurora · OpenUI — el modelo escribe el programa, no el CSS</title>
+<meta name="description" content="OpenUI Lang describe la interfaz en una docena de líneas y Aurora la pinta con clases del censo: cero clases inventadas, cero React, cero build. Probador en vivo y plantillas por arquetipo.">
 <link rel="stylesheet" href="../tokens.css">
 <link rel="stylesheet" href="../packs/p1-layout.css">
 <link rel="stylesheet" href="../packs/p2-navigation.css">
@@ -20,13 +20,13 @@
 <body class="nz">
 <a class="nz-skip-link" href="#contenido">Saltar al contenido</a>
 
-<nav class="nz-navbar nz-navbar--bordered" aria-label="Navegación principal">
-  <span class="nz-navbar__brand"><i></i> Aurora</span>
+<nav class="nz-navbar nz-navbar--bordered" aria-label="Sitio">
+  <a class="nz-navbar__brand" href="../index.html"><i></i>Aurora</a>
   <span class="nz-navbar__links">
-    <a class="nz-navbar__link" href="../index.html">Catálogo</a>
-    <a class="nz-navbar__link" href="PROMPT.md">Prompt del modelo</a>
-    <a class="nz-navbar__link" href="../LLM.md">Guía LLM</a>
-    <a class="nz-navbar__link" href="#probador">Probar</a>
+    <a class="nz-navbar__link" href="../base.html">Catálogo</a>
+    <a class="nz-navbar__link" href="../bloques/recetas/index.html">Bloques</a>
+    <a class="nz-navbar__link" href="../marcas/index.html">Marcas</a>
+    <a class="nz-navbar__link" href="../iconos/index.html">Iconos</a>
   </span>
 </nav>
 
@@ -35,34 +35,35 @@
   <section class="nz-section" aria-labelledby="t1">
     <div class="nz-split nz-split--60-40">
       <div class="nz-stack nz-stack--sm">
-        <p><span class="nz-badge nz-badge--accent"><i></i>Nuevo en v9.4 · Generative UI</span></p>
-        <h1 class="nz-h1" id="t1">El modelo deja de escribir CSS. Ahora escribe Aurora.</h1>
-        <p class="nz-lead nz-lead--sm">OpenUI Lang describe la interfaz en una docena de líneas. Aurora pone las 2.186 piezas, los tokens y el responsive. Ni React, ni build, ni una clase que no exista.</p>
-        <div class="nz-cluster nz-cluster--center">
-          <a class="nz-btn nz-btn--primary" href="#probador">Verlo funcionando</a>
-          <a class="nz-btn nz-btn--ghost" href="PROMPT.md">Abrir el prompt</a>
+        <p><span class="nz-badge nz-badge--accent"><i></i>Generative UI · openui-lang</span></p>
+        <h1 class="nz-h1" id="t1">El modelo escribe el programa. Aurora pone las clases.</h1>
+        <p class="nz-lead nz-lead--sm">Una docena de líneas describen la pantalla; el compilador comprueba tipos, enums y aridad contra el censo, y el runtime emite markup real. Ni React, ni build, ni una clase que no exista: lo que no está en el vocabulario no compila.</p>
+        <div class="nz-cluster nz-cluster--compact">
+          <a class="nz-btn nz-btn--primary" href="#probador">Probar el lenguaje</a>
+          <a class="nz-btn nz-btn--outline" href="PROMPT.md">Abrir el prompt</a>
+          <a class="nz-btn nz-btn--ghost" href="#plantillas">Ver plantillas</a>
         </div>
       </div>
       <div class="nz-stack nz-stack--sm">
         <div class="nz-kpi nz-kpi--accent">
-          <span class="nz-kpi__label">Tokens frente a JSON</span>
-          <span class="nz-kpi__value nz-kpi__value--accent">−52 %</span>
-          <span class="nz-kpi__delta nz-kpi__delta--down">10.180 → 4.800 · benchmark del propio OpenUI frente a JSON-Render</span>
+          <span class="nz-kpi__label">Componentes del vocabulario</span>
+          <span class="nz-kpi__value nz-kpi__value--accent">36</span>
+          <span class="nz-kpi__delta nz-kpi__delta--flat">cada uno con su markup del censo</span>
         </div>
         <div class="nz-kpi">
-          <span class="nz-kpi__label">Componentes expuestos del censo</span>
-          <span class="nz-kpi__value">36</span>
-          <span class="nz-kpi__delta nz-kpi__delta--flat">cada uno con su markup real</span>
+          <span class="nz-kpi__label">Clases emitidas</span>
+          <span class="nz-kpi__value">183</span>
+          <span class="nz-kpi__delta nz-kpi__delta--flat">todas declaradas en los packs</span>
         </div>
         <div class="nz-kpi">
           <span class="nz-kpi__label">Clases fuera del censo</span>
           <span class="nz-kpi__value">0</span>
-          <span class="nz-kpi__delta nz-kpi__delta--flat">lo comprueba auditar-openui.py</span>
+          <span class="nz-kpi__delta nz-kpi__delta--flat">lo comprueba auditar-openui.py en la CI</span>
         </div>
         <div class="nz-kpi">
-          <span class="nz-kpi__label">Parser oficial (ESM)</span>
-          <span class="nz-kpi__value">96 KB</span>
-          <span class="nz-kpi__delta nz-kpi__delta--flat">sin React, sin build</span>
+          <span class="nz-kpi__label">Dependencias</span>
+          <span class="nz-kpi__value">0</span>
+          <span class="nz-kpi__delta nz-kpi__delta--flat">sin React, sin bundler; un script y un import ESM</span>
         </div>
       </div>
     </div>
@@ -73,7 +74,7 @@
   <section class="nz-section" id="probador" aria-labelledby="t2">
     <div class="nz-stack nz-stack--sm">
       <h2 class="nz-h2" id="t2">Probador · del texto al markup</h2>
-      <p>A la izquierda va el programa OpenUI Lang (lo que emitiría el modelo). A la derecha, lo que Aurora pinta con él. Debajo, el HTML exacto que ha salido: todo <code class="nz-code">.nz-*</code>, listo para copiar.</p>
+      <p>A la izquierda va el programa openui-lang (lo que emitiría el modelo). A la derecha, lo que Aurora pinta con él. Debajo, el HTML exacto que ha salido: todo <code class="nz-code">.nz-*</code>, listo para copiar. Edita el programa y pulsa Generar.</p>
     </div>
 
     <div class="nz-split nz-split--40-60">
@@ -85,9 +86,9 @@
           <button type="button" role="tab" aria-selected="false" data-ejemplo="2">Agente</button>
         </div>
         <label class="nz-field" for="programa">
-          <span class="nz-field__label">Programa OpenUI Lang</span>
+          <span class="nz-field__label">Programa openui-lang</span>
           <textarea class="nz-textarea" id="programa" rows="16" spellcheck="false"></textarea>
-          <span class="nz-field__help">El parser oficial valida tipos, enums y aridad. Si no hay red, entra el parser local: misma sintaxis, sin validación de tipos.</span>
+          <span class="nz-field__help">El parser oficial valida tipos, enums y aridad. Si el CDN no responde, entra el parser local: misma sintaxis, sin validación de tipos.</span>
         </label>
         <div class="nz-cluster nz-cluster--between">
           <span class="nz-badge nz-badge--neutral" id="modo">parser: —</span>
@@ -113,15 +114,15 @@
       </article>
     </div>
 
-    <div class="nz-stack nz-stack--sm" style="margin-top:var(--nz-space-6)">
+    <div class="nz-stack nz-stack--sm nz-stack--lg">
       <h3 class="nz-h3">El HTML que ha salido</h3>
-      <pre class="nz-code nz-code--block" id="salidaHtml" tabindex="0" aria-label="HTML generado"></pre>
+      <pre class="nz-code nz-code--block" id="salidaHtml" tabindex="0" role="region" aria-label="HTML generado"></pre>
     </div>
   </section>
 
   <section class="nz-section" id="plantillas" aria-labelledby="tPlantillas">
     <h2 class="nz-h2" id="tPlantillas">Plantillas por arquetipo</h2>
-    <p>El esqueleto ya está decidido y auditado: el modelo rellena los datos, no inventa la estructura. Cinco arquetipos cubren lo que se repite; el resto se compone con los mismos componentes.</p>
+    <p>El esqueleto ya está decidido y auditado: el modelo rellena los datos, no inventa la estructura. Cinco arquetipos cubren lo que se repite; el resto se compone con los mismos componentes. Con plantilla, el prompt no necesita los ejemplos largos (<code class="nz-code">generar-web.py --prompt breve</code>) y cada página cuesta unos 1.040 tokens menos.</p>
     <div class="nz-thirds" id="plantillasGrid" aria-live="polite">
       <p class="nz-lead nz-lead--sm">Cargando plantillas…</p>
     </div>
@@ -130,48 +131,22 @@
   <hr class="nz-divider">
 
   <section class="nz-section" aria-labelledby="t3">
-    <h2 class="nz-h2" id="t3">Qué acaba de pasar</h2>
+    <h2 class="nz-h2" id="t3">Qué garantiza</h2>
     <div class="nz-thirds">
       <article class="nz-article nz-article--bordered nz-stack nz-stack--sm">
-        <h3 class="nz-h3">1 · El lenguaje valida</h3>
-        <p>El parser de OpenUI comprueba tipos, enums y aridad contra el esquema de la biblioteca antes de pintar. Un <code class="nz-code">TablaBarras</code> con números donde van textos no llega al DOM: se cae con <code class="nz-code">type-mismatch</code>.</p>
+        <h3 class="nz-h3">1 · El lenguaje valida antes de pintar</h3>
+        <p>El parser comprueba tipos, enums y aridad contra el esquema de la biblioteca. Un <code class="nz-code">TablaBarras</code> con números donde van textos no llega al DOM: se cae con <code class="nz-code">type-mismatch</code>. Los tres ejemplos de esta página se validan en la CI.</p>
         <p><span class="nz-badge nz-badge--success"><i></i>3 de 3 ejemplos: 0 errores</span></p>
       </article>
       <article class="nz-article nz-article--bordered nz-stack nz-stack--sm">
         <h3 class="nz-h3">2 · El render es del censo</h3>
-        <p>Cada componente emite el markup real de su familia: tabla apilable con <code class="nz-code">data-etiqueta</code>, barras con su valor, bullet con la meta al 66,7 %. Nada de CSS propio.</p>
+        <p>Cada componente emite el markup real de su familia: tabla apilable con <code class="nz-code">data-etiqueta</code>, barras con su valor, bullet con la meta al 66,7 %. Nada de CSS propio ni de estilos a mano.</p>
         <p><span class="nz-badge nz-badge--neutral">36 componentes · <span id="clasesTotales">—</span> clases distintas en los 3 ejemplos</span></p>
       </article>
       <article class="nz-article nz-article--bordered nz-stack nz-stack--sm">
-        <h3 class="nz-h3">3 · Sin build y sin React</h3>
-        <p>Un <code class="nz-code">&lt;script&gt;</code> y un import ESM. Aurora sigue siendo CSS puro: la capa generativa es opcional y solo la carga la página que la usa.</p>
-        <p><span class="nz-badge nz-badge--neutral">si el CDN falla, parser local</span></p>
-      </article>
-    </div>
-  </section>
-
-  <section class="nz-section" aria-labelledby="t4">
-    <h2 class="nz-h2" id="t4">Por qué el lenguaje importa más que el JSON</h2>
-    <p class="nz-lead nz-lead--sm">Números del benchmark publicado por OpenUI (el vendedor del lenguaje), sobre los mismos siete escenarios y contados en tokens. Frente a YAML el ahorro es del 47 %.</p>
-    <div class="nz-split nz-split--60-40">
-      <article class="nz-article nz-article--bordered">
-        <h3 class="nz-h3">Tokens por escenario</h3>
-        <div class="nz-chart-tablebar" role="img" aria-label="Comparativa de tokens: JSON frente a OpenUI Lang">
-          <div class="nz-chart-tablebar__row"><span class="nz-chart-tablebar__name">Dashboard</span><span class="nz-chart-tablebar__track"><span class="nz-chart-tablebar__bar" style="width:100%"></span></span><span class="nz-chart-tablebar__num">2.247 → 1.226</span></div>
-          <div class="nz-chart-tablebar__row"><span class="nz-chart-tablebar__name">Formulario</span><span class="nz-chart-tablebar__track"><span class="nz-chart-tablebar__bar" style="width:40%"></span></span><span class="nz-chart-tablebar__num">893 → 294</span></div>
-          <div class="nz-chart-tablebar__row"><span class="nz-chart-tablebar__name">Gráfico con datos</span><span class="nz-chart-tablebar__track"><span class="nz-chart-tablebar__bar" style="width:23%"></span></span><span class="nz-chart-tablebar__num">520 → 231</span></div>
-          <div class="nz-chart-tablebar__row"><span class="nz-chart-tablebar__name">Tabla simple</span><span class="nz-chart-tablebar__track"><span class="nz-chart-tablebar__bar" style="width:15%"></span></span><span class="nz-chart-tablebar__num">340 → 148</span></div>
-        </div>
-      </article>
-      <article class="nz-article nz-article--bordered nz-stack nz-stack--sm">
-        <h3 class="nz-h3">Lo que gana Aurora</h3>
-        <ul class="nz-list nz-list--check">
-          <li class="nz-list__item">Menos tokens de salida: más pantallas por euro.</li>
-          <li class="nz-list__item">El modelo no inventa clases: elige entre 36 objetos reales.</li>
-          <li class="nz-list__item">El responsive, el contraste y el táctil ya vienen puestos.</li>
-          <li class="nz-list__item">Un patrón nuevo se añade al repo y lo hereda el siguiente proyecto.</li>
-        </ul>
-        <div class="nz-callout nz-callout--note"><p>El diseño no se delega: se acota. El modelo decide jerarquía y datos; Aurora decide cómo se ve en un móvil de 360 px.</p></div>
+        <h3 class="nz-h3">3 · Se puede hornear</h3>
+        <p><code class="nz-code">scripts/hornear.py</code> compila el programa, lo pinta en Chrome headless y extrae el <code class="nz-code">&lt;main&gt;</code>: la página sale estática y sin JavaScript. Así se genera la portada de este repositorio.</p>
+        <p><span class="nz-badge nz-badge--neutral">portada: .openui → HTML, 0 KB de JS</span></p>
       </article>
     </div>
   </section>
@@ -180,25 +155,26 @@
     <h2 class="nz-h2" id="t5">Cómo se conecta</h2>
     <ol class="nz-stepper">
       <li class="nz-stepper__step is-done"><span class="nz-stepper__num">1</span>Pega <code class="nz-code">PROMPT.md</code> como system prompt</li>
-      <li class="nz-stepper__step is-done"><span class="nz-stepper__num">2</span>El modelo emite openui-lang</li>
-      <li class="nz-stepper__step is-active"><span class="nz-stepper__num">3</span>El parser lo convierte en árbol</li>
-      <li class="nz-stepper__step"><span class="nz-stepper__num">4</span>Aurora pinta y valida</li>
+      <li class="nz-stepper__step is-done"><span class="nz-stepper__num">2</span>El modelo devuelve el programa</li>
+      <li class="nz-stepper__step is-active"><span class="nz-stepper__num">3</span>Aurora valida y pinta —o se hornea</li>
     </ol>
-<pre class="nz-code nz-code--block">&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v9.4.0/packs/all.css"&gt;
-&lt;script src="https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v9.4.0/openui/aurora-openui.js"&gt;&lt;/script&gt;
+<pre class="nz-code nz-code--block" tabindex="0" role="region" aria-label="Código de integración">&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v10/tokens.css"&gt;
+&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v10/packs/all.css"&gt;
+&lt;script src="https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v10/openui/aurora-openui.js"&gt;&lt;/script&gt;
 
-&lt;div id="lienzo"&gt;&lt;/div&gt;
+&lt;main id="lienzo"&gt;&lt;/main&gt;
 &lt;script type="module"&gt;
-  await AuroraOpenUI.iniciar();                 // spec + parser oficial
-  AuroraOpenUI.stream(respuestaDelModelo, "#lienzo");   // streaming incluido
+  await AuroraOpenUI.iniciar();                        // spec + parser oficial
+  AuroraOpenUI.stream(respuestaDelModelo, "#lienzo");  // streaming incluido
 &lt;/script&gt;</pre>
-    <div class="nz-callout nz-callout--warn"><p>Las páginas de este repo enlazan los packs en local para funcionar sin red. En un producto, el <code class="nz-code">&lt;link&gt;</code> va pineado al tag publicado y con los packs que uses de verdad.</p></div>
+    <div class="nz-callout nz-callout--note"><p><strong>Del repo a producción:</strong> aquí los packs se enlazan en local para funcionar sin red. En un producto el <code class="nz-code">&lt;link&gt;</code> va pineado al tag publicado —el canal vivo es <code class="nz-code">@v10</code>, el congelado un <code class="nz-code">@vX.Y.Z</code> exacto— y con los packs que uses de verdad, no <code class="nz-code">all.css</code>.</p></div>
+    <p class="nz-text--small nz-text--muted">Para generar una página entera sin escribir HTML: <code class="nz-code">generar-web.py --brief encargo.json</code> (modelo + plantilla + lint) o <code class="nz-code">hornear.py</code> si el programa ya está escrito. El fichero de la portada es <a href="../briefs/portada.openui">briefs/portada.openui</a>.</p>
   </section>
 </main>
 
-<footer class="nz-section nz-section--compact" style="border-top:var(--nz-border-w) solid var(--nz-border-soft)">
+<footer class="nz-footer">
   <div class="nz-container">
-    <p>Aurora · Generative UI con OpenUI Lang · 36 componentes del censo · Hecho con ❤️ por David Antizar</p>
+    <p><a href="../index.html">Aurora</a> · <a href="../base.html">Catálogo</a> · <a href="../bloques/recetas/index.html">Bloques</a> · <a href="../marcas/index.html">Marcas</a> · <a href="../iconos/index.html">Iconos</a> · <a href="PROMPT.md">Prompt</a> · <a href="../LLM.md">Guía LLM</a> · Hecho con ❤️ por David Antizar</p>
   </div>
 </footer>
 

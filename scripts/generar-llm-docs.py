@@ -615,7 +615,8 @@ def pagina_combo(nombre, combo, bloques, familias_usadas, objetos):
     # combo se quedó corta al crecer los bloques: `chat-ia` se servía sin
     # `p9-media.css` y `dashboard` sin `p5-forms.css`, así que el esqueleto se veía
     # a medias. `auditar-uso.py` lo cazaba, pero nadie lo pasaba por los combos.
-    usados = set(combo["packs"])
+    # La barra de sitio siempre va: su pack se enlaza aunque el esqueleto no lo use.
+    usados = set(combo["packs"]) | {"p2-navigation.css"}
     for _, frag in bloques:
         for atributo in re.findall(r'class="([^"]+)"', frag):
             for clase in atributo.split():
@@ -643,12 +644,24 @@ def pagina_combo(nombre, combo, bloques, familias_usadas, objetos):
     A("</head>")
     A('<body class="nz">')
     A('')
+    # Barra de sitio: la marca «Aurora» vuelve a la portada y las cinco secciones
+    # están a un clic desde cualquier página (antes había que editar la URL).
+    A('<nav class="nz-navbar nz-navbar--bordered" aria-label="Sitio">')
+    A('  <a class="nz-navbar__brand" href="../../index.html"><i></i>Aurora</a>')
+    A('  <span class="nz-navbar__links">')
+    for url, texto in (("base.html", "Catálogo"), ("bloques/recetas/index.html", "Bloques"),
+                       ("marcas/index.html", "Marcas"), ("openui/index.html", "OpenUI"),
+                       ("iconos/index.html", "Iconos")):
+        A('    <a class="nz-navbar__link" href="../../%s">%s</a>' % (url, texto))
+    A('  </span>')
+    A('</nav>')
+    A('')
     for base, frag in bloques:
         A(f'  <!-- {base} (bloque de demo real) -->')
         A("  " + frag)
         A('')
     A('<footer class="nz-footer nz-footer--compact">')
-    A(f'  <a href="../../index.html">Aurora</a> · Esqueleto del combo «{nombre}» · Hecho con ❤️ por David Antizar')
+    A(f'  Esqueleto del combo «{nombre}» · Hecho con ❤️ por David Antizar')
     A('</footer>')
     A('')
     A("</body>")

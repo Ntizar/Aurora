@@ -248,6 +248,12 @@ def pagina(spec, censo_cat, totales, nav, packs):
     for s in nav:
         cur = ' aria-current="page"' if s["cat"] == n else ""
         A(f'  <a href="{s["fichero"]}"{cur}>{s["cat"]:02d} {html.escape(s["nombre"])}</a>')
+    # Las secciones del sitio, al final de la misma tira: desde cualquier categoría
+    # se salta a bloques, marcas, OpenUI o iconos sin volver a la portada.
+    A('  <span class="cat-nav-pages__sep" aria-hidden="true"></span>')
+    for url, texto in (("../bloques/recetas/index.html", "Bloques"), ("../marcas/index.html", "Marcas"),
+                       ("../openui/index.html", "OpenUI"), ("../iconos/index.html", "Iconos")):
+        A(f'  <a class="cat-nav-pages__sitio" href="{url}">{texto}</a>')
     A("</nav>")
     A('<main class="nz-container cat-main" id="contenido">')
     A('  <div class="cat-pagehead">')

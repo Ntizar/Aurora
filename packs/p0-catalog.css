@@ -24,6 +24,9 @@
 .cat-nav-pages::-webkit-scrollbar { display: none; }
 .cat-nav-pages a { flex: none; min-height: 44px; display: inline-flex; align-items: center; padding: 0 var(--nz-space-3); border-radius: var(--nz-radius-full); color: var(--nz-text-soft); font-size: var(--nz-text-sm); text-decoration: none; transition: background var(--nz-dur-fast) var(--nz-ease-out), color var(--nz-dur-fast) var(--nz-ease-out); }
 .cat-nav-pages a:hover { background: var(--nz-bg-inset); color: var(--nz-text); }
+.cat-nav-pages__sep { flex: none; width: var(--nz-border-w-strong); align-self: stretch; margin: var(--nz-space-2) var(--nz-space-1); background: var(--nz-border-soft); }
+.cat-nav-pages .cat-nav-pages__sitio { color: var(--nz-brand); font-weight: var(--nz-peso-fuerte); }
+.cat-nav-pages .cat-nav-pages__sitio:hover { background: var(--nz-brand-soft); color: var(--nz-brand-strong); }
 .cat-nav-pages a[aria-current="page"] { background: var(--nz-brand); color: var(--nz-text-invert); font-weight: var(--nz-peso-fuerte); }
 
 /* ---- Cabecera de página ---- */
