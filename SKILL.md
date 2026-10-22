@@ -446,7 +446,8 @@ AuroraOpenUI.stream(respuestaDelModelo, "#lienzo");    // streaming; cae a parse
 - Este mismo `SKILL.md` **dentro del repo** (la CI valida que no se separe).
 - `references/migracion-v6-a-v7.md` y el caso Aurora en la skill `design-system-coherence-audit`.
 - `references/metodo-diseno.md` — checklists del método de diseño (brief → critique → harden → polish).
-- **`iconos/`** — repositorio de iconos numerados (Lucide, ISC): `README.md` (doctrina y
+- **`iconos/`** — repositorio de iconos numerados (Lucide ISC + Solar CC BY 4.0; el número
+  es único entre colecciones): `README.md` (doctrina y
   licencia), `iconos.json` (manifiesto), `sprite.svg`, `index.html` (catálogo). Se amplía con
   `python3 scripts/iconos.py anadir lucide:nombre`; el número no se reutiliza nunca.
 - `references/paginas-herramienta.md` — patrón inspector para páginas-herramienta y playgrounds: layout una vista, fit puro del lienzo, pickers y paletas en vivo, guía generada del mismo módulo.
