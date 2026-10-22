@@ -28,9 +28,11 @@ Si eres un agente (o una persona con prisa), lee esto antes de tocar nada.
    `.nz-split`, `.nz-bento`, `.nz-chart`, `.nz-chat`, `.nz-kanban-wrap`) consultan su
    contenedor. La base sigue siendo móvil; los escalones de contenedor solo suman.
    Cuando el objeto no es contenedor, se declara el contexto con `.nz-cq`.
-10. **Un icono es SVG `.nz-icon`.** Nunca un símbolo de texto (`▦`, `⚙`, `⌕`, `✎`, `▶`)
-    haciendo de icono: cambia de forma según la fuente del sistema y rompe la paridad
-    entre móvil, PC y capturas. `scripts/auditar-coherencia.py` lo caza.
+10. **Un icono es SVG `.nz-icon` y sale del repositorio `iconos/`.** Nunca un símbolo de
+    texto (`▦`, `⚙`, `⌕`, `✎`, `▶`) haciendo de icono: cambia de forma según la fuente del
+    sistema y rompe la paridad entre móvil, PC y capturas. El dibujo se toma del
+    repositorio numerado (`nz-i-NNN`, licencia en `iconos/iconos.json`), no se copia de
+    internet ni se dibuja a mano. `scripts/auditar-coherencia.py` lo caza.
 
 ## 2. Dónde va cada cosa
 
@@ -58,7 +60,9 @@ Si eres un agente (o una persona con prisa), lee esto antes de tocar nada.
 | `openui/migraciones/*.json` | Recetas de migración para un major | Sí |
 | `docs/planes/` | Planes archivados | Sí, pero no es documentación viva |
 | `audit/` | Informe de auditoría | **No** — se regenera |
-| `js/catalog.js` · `js/base-datos.js` | Comportamiento del catálogo y del explorador | Sí |
+| `iconos/iconos.json` · `iconos/NNN-*.svg` · `iconos/sprite.svg` · `iconos/index.html` | Repositorio de iconos numerados: manifiesto, fichas, sprite y catálogo | **No** — `scripts/iconos.py` |
+| `iconos/README.md` | Doctrina del repositorio de iconos (numeración, licencia, consumo) | Sí |
+| `js/catalog.js` · `js/base-datos.js` · `js/iconos.js` | Comportamiento del catálogo, del explorador y del catálogo de iconos | Sí |
 
 ### ⚠️ El error que costó más caro
 
@@ -87,6 +91,8 @@ python scripts/auditar-openui.py       # censo, deriva, runtime, enums y ejemplo
 python scripts/canal.py --check        # canales y versiones en orden
 python scripts/plantilla.py --validar-todas
 python scripts/generar-web.py --brief briefs/panel-ferroviaria.json --dry-run
+python scripts/iconos.py --check              # sprite y catálogo de iconos, byte a byte
+python scripts/auditar-iconos.py --check      # numeración, fichas, licencia e higiene del SVG
 ```
 
 4. Si `validar-css.py` no dice `RESULTADO: VÁLIDO`, no está terminado.
@@ -116,6 +122,9 @@ Los 18 packs hablan el mismo idioma. Usa estos modificadores, y solo estos:
   partes, tokens y página de demo.
 - `examples/` y `recetas/` — páginas completas que puedes copiar y adaptar.
 - `paginas/` — catálogo con una demo viva por objeto.
+- `iconos/` — repositorio de iconos numerados: `iconos/README.md` (doctrina),
+  `iconos/index.html` (catálogo navegable), `iconos/iconos.json` (manifiesto con licencia)
+  y `iconos/sprite.svg` (uso con `<use href="iconos/sprite.svg#nz-i-042">`).
 
 **No pegues los packs CSS en el prompt** (≈340 KB). Enlaza por CDN con el canal, nunca `@master`:
 

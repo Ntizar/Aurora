@@ -24,7 +24,7 @@ jobs:
         run: python scripts/validar-css.py
 
       - name: Lint de las recetas de examples/ y de las páginas del explorador
-        run: python scripts/auditar-uso.py base.html stress-test.html examples/*.html
+        run: python scripts/auditar-uso.py base.html stress-test.html examples/*.html iconos/index.html
 
       - name: Coherencia entre páginas, demos y versiones
         run: python scripts/auditar-coherencia.py --check
@@ -54,6 +54,11 @@ jobs:
           python scripts/generar-web.py --brief briefs/panel-ferroviaria.json --sin-modelo -o /tmp/gw
           python scripts/auditar-uso.py /tmp/gw/ferroviaria-panel.html
 
+      - name: Iconos numerados (numeración, fichas, licencia, sprite y catálogo)
+        run: |
+          python scripts/iconos.py --check
+          python scripts/auditar-iconos.py --check
+
       - name: Canales y versiones en orden
         run: python scripts/canal.py --check
 
@@ -61,6 +66,7 @@ jobs:
         run: |
           node --check js/catalog.js
           node --check js/base-datos.js
+          node --check js/iconos.js
           node --check openui/aurora-openui.js
 
       - name: Base de datos de diseño (integridad y sincronía)
@@ -79,9 +85,9 @@ jobs:
           python scripts/build-catalog.py
           python scripts/audit-catalog.py
           python scripts/audit-html.py
-          if ! git diff --quiet -- index.html paginas datos packs/all.css audit components.json LLM.md llms.txt combos openui; then
+          if ! git diff --quiet -- index.html paginas datos packs/all.css audit components.json LLM.md llms.txt combos openui iconos; then
             echo "::error::Lo generado no coincide con lo commiteado. Ejecuta generar-base-datos.py, generar-llm-docs.py, generar-openui.py, build-catalog.py, audit-catalog.py y audit-html.py, y commitea el resultado."
-            git --no-pager diff --stat -- index.html paginas datos packs/all.css audit components.json LLM.md llms.txt combos
+            git --no-pager diff --stat -- index.html paginas datos packs/all.css audit components.json LLM.md llms.txt combos iconos
             exit 1
           fi
           echo "Catálogo, base de datos, API LLM e informe de auditoría sincronizados con specs/ y los packs."

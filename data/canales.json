@@ -9,7 +9,7 @@
       "riesgo": "un cambio malo llega a todas a la vez: CI verde + canario antes de subir"
     },
     "congelado": {
-      "tag": "v9.8.0",
+      "tag": "v9.9.0",
       "uso": "entregas a cliente, auditorías y cualquier cosa que deba verse igual dentro de dos años",
       "riesgo": "no recibe correcciones hasta que se sube a propósito"
     }

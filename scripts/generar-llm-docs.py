@@ -42,7 +42,7 @@ sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
 bc = import_module("build-catalog")
 
 ROOT = bc.ROOT
-VERSION = "9.8.0"
+VERSION = "9.9.0"
 # El canal vivo no se copia a mano: sale de data/canales.json (único dueño)
 _canales = json.loads((ROOT / "data" / "canales.json").read_text(encoding="utf-8"))
 CANAL_VIVO = _canales["canales"]["vivo"]["rango"]
@@ -669,6 +669,38 @@ def inventario_tokens():
     return tokens, dark
 
 
+
+def resumen_iconos():
+    """Resumen del repositorio de iconos numerados, para components.json y LLM.md.
+
+    La fuente es iconos/iconos.json: aquí solo se cuenta y se ordena. Si el
+    repositorio no existiera, el bloque sale en cero en vez de romper la generación.
+    """
+    ruta = ROOT / "iconos" / "iconos.json"
+    vacio = {"total": 0, "grupos": {}, "siguiente": None, "manifiesto": "iconos/iconos.json",
+             "sprite": "iconos/sprite.svg", "catalogo": "iconos/index.html",
+             "coleccion": "", "licencia": "", "convencion": ""}
+    if not ruta.exists():
+        return vacio
+    m = json.loads(ruta.read_text(encoding="utf-8"))
+    vivos = [i for i in m.get("iconos", []) if i.get("estado", "activo") == "activo"]
+    grupos = {}
+    for i in vivos:
+        grupos[i["grupoNombre"]] = grupos.get(i["grupoNombre"], 0) + 1
+    return {
+        "total": len(vivos),
+        "siguiente": m.get("siguiente"),
+        "grupos": dict(sorted(grupos.items())),
+        "coleccion": m.get("coleccion", ""),
+        "licencia": m.get("licencia", {}).get("spdx", ""),
+        "manifiesto": "iconos/iconos.json",
+        "sprite": "iconos/sprite.svg",
+        "catalogo": "iconos/index.html",
+        "convencion": (m.get("convencion", {}) or {}).get("archivo", ""),
+        "uso": '<svg class="nz-icon" aria-hidden="true"><use href="iconos/sprite.svg#nz-i-NNN"/></svg>',
+    }
+
+
 def main():
     global specs_por_cat
     packs, censo_cat, total_clases, total_bases = bc.censo()
@@ -787,6 +819,7 @@ def main():
             }
             for cat, datos_pack in sorted(censo_cat.items())
         },
+        "iconos": resumen_iconos(),
         "lexico": {
             "tamano": ["--2xs", "--xs", "--sm", "--lg", "--xl"],
             "tono": ["--brand", "--accent", "--success", "--warning", "--danger", "--info", "--neutral"],
@@ -829,6 +862,7 @@ def main():
         for ingles, clase in sorted(alias_validos.items())
         if ingles != clase)
 
+    n_iconos = resumen_iconos()["total"]
     llm = f"""# Aurora — guía de decisión para agentes
 
 Design system CSS puro, sin dependencias ni build. {total_clases} objetos en {len(censo_cat)} categorías.
@@ -891,6 +925,19 @@ La lista completa de familias y su fichero está en `components.json`
 | Navegación (p2) | `.nz-navbar`, `.nz-tabs`, `.nz-breadcrumb`, `.nz-stepper`, `.nz-pagination` |
 | Chat / IA (p14) | `.nz-chat`, `.nz-msg`, `.nz-prompt`, `.nz-toolcall`, `.nz-taskplan`, `.nz-approval` |
 | Escritorio / app (p15) | `.nz-window`, `.nz-appnav`, `.nz-kanban`, `.nz-actbar`, `.nz-statusbar` |
+| Icono (p9) | `.nz-icon` con un SVG **del repositorio**: `iconos/sprite.svg#nz-i-NNN` o el fichero `iconos/NNN-nombre.svg` |
+
+**Iconos: nunca un emoji ni un símbolo de texto.** El repositorio `iconos/` trae
+{n_iconos} iconos numerados (`nz-i-001`…), cada uno con número estable, nombre castellano y
+licencia en `iconos/iconos.json`. Se usan así:
+
+```html
+<svg class="nz-icon" aria-hidden="true"><use href="iconos/sprite.svg#nz-i-042"/></svg>
+```
+
+El número no cambia nunca: si el nombre se renombra, el 042 sigue siendo el 042. Para
+añadir uno: `python3 scripts/iconos.py anadir lucide:nombre`. Catálogo navegable:
+`iconos/index.html`.
 
 ## 4b. Móvil y escritorio: lo que ya viene resuelto (no lo reinventes)
 

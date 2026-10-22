@@ -1,14 +1,14 @@
 ---
 name: aurora-design-system
 description: "Usa al construir o tocar cualquier web con Aurora (Ntizar/Aurora). El repo manda: resuelve la versión vigente y pide LLM.md + components.json antes de escribir CSS."
-version: "9.8.0"
+version: "9.9.0"
 tags: [css, design-system, aurora, ntizar, agent-ready, movil, escritorio, tipografia]
 ---
 
 # Aurora — doctrina única (el repo es la orden máxima)
 
 Design system CSS puro, sin build, sin dependencias, namespaced bajo `.nz-`.
-**v9.8.0 · 2186 objetos · 411 familias · 656 demos · 18 categorías · 189 tokens · 59 gemelas OKLch · 36 componentes generativos.**
+**v9.9.0 · 2186 objetos · 411 familias · 656 demos · 18 categorías · 189 tokens · 59 gemelas OKLch · 36 componentes generativos · 288 iconos numerados.**
 *(Cabecera de testigo, no de autoridad: resuélvela con el PASO 0.)*
 
 > ⚠️ `Ntizar/Aurora` **manda sobre esta skill**. Esta skill es un puntero; el repo
@@ -241,6 +241,7 @@ paquete ni generar `DESIGN.md`/`.impeccable/` — duplicarían `LLM.md` + `compo
 | Kanban en un sidebar estrecho | `.nz-kanban-wrap` > `.nz-kanban`: en <48rem se queda en filas |
 | El dato que importa en acento (p3/p8) | `.nz-num--accent`, `.nz-kpi--accent`, `.nz-lbl--accent`, `.nz-lead--accent`, `.nz-text--accent-soft`, `.nz-highlight--accent` |
 | Énfasis sin negrita | `.nz-text--peso-medio`, `.nz-text--peso-fuerte` |
+| Un icono (p9) | `.nz-icon` + SVG **del repositorio** `iconos/` (`nz-i-042`): `<svg class="nz-icon"><use href="iconos/sprite.svg#nz-i-042"/></svg>`. Nunca un emoji ni un símbolo de texto |
 
 Léxico cerrado de modificadores (igual en los 18 packs): tamaño `--2xs/--xs/--sm/--lg/--xl`,
 tono `--brand/--accent/--success/--warning/--danger/--info/--neutral`, énfasis `--solid/--soft/--outline/--ghost`,
@@ -444,6 +445,9 @@ AuroraOpenUI.stream(respuestaDelModelo, "#lienzo");    // streaming; cae a parse
 - Este mismo `SKILL.md` **dentro del repo** (la CI valida que no se separe).
 - `references/migracion-v6-a-v7.md` y el caso Aurora en la skill `design-system-coherence-audit`.
 - `references/metodo-diseno.md` — checklists del método de diseño (brief → critique → harden → polish).
+- **`iconos/`** — repositorio de iconos numerados (Lucide, ISC): `README.md` (doctrina y
+  licencia), `iconos.json` (manifiesto), `sprite.svg`, `index.html` (catálogo). Se amplía con
+  `python3 scripts/iconos.py anadir lucide:nombre`; el número no se reutiliza nunca.
 - `references/paginas-herramienta.md` — patrón inspector para páginas-herramienta y playgrounds: layout una vista, fit puro del lienzo, pickers y paletas en vivo, guía generada del mismo módulo.
 
 Hecho con ❤️ por David Antizar

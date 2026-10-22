@@ -1,10 +1,10 @@
 {
  "name": "Aurora",
- "version": "9.8.0",
+ "version": "9.9.0",
  "type": "css-only design system",
  "namespace": ".nz-",
  "tokens": "tokens.css",
- "cdn": "https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v9.8.0/",
+ "cdn": "https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v9.9.0/",
  "manifiesto": {
   "gradientes": 0,
   "glass": 0,
@@ -193,6 +193,32 @@
    "demos": 18,
    "pagina": "paginas/18-escenario.html"
   }
+ },
+ "iconos": {
+  "total": 288,
+  "siguiente": 289,
+  "grupos": {
+   "Acciones": 35,
+   "Archivos": 21,
+   "Comercio": 11,
+   "Comunicación": 16,
+   "Datos y gráficas": 21,
+   "Estados": 20,
+   "Formato y objetos": 27,
+   "Mapas y transporte": 17,
+   "Marcas": 15,
+   "Media y dispositivos": 24,
+   "Navegación": 33,
+   "Personas y organización": 12,
+   "Sistema y desarrollo": 36
+  },
+  "coleccion": "Lucide",
+  "licencia": "ISC",
+  "manifiesto": "iconos/iconos.json",
+  "sprite": "iconos/sprite.svg",
+  "catalogo": "iconos/index.html",
+  "convencion": "NNN-nombre.svg",
+  "uso": "<svg class=\"nz-icon\" aria-hidden=\"true\"><use href=\"iconos/sprite.svg#nz-i-NNN\"/></svg>"
  },
  "lexico": {
   "tamano": [

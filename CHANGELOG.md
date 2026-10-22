@@ -3,6 +3,33 @@
 Formato: [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/).
 Versionado: [SemVer](https://semver.org/lang/es/).
 
+## [9.9.0] — 2026-10-22
+
+### Añadido
+
+- **Repositorio de iconos numerados** (`iconos/`): **288 iconos** de Lucide (ISC) con número
+  estable `nz-i-NNN` que **no se reutiliza nunca** — el número es la referencia, el nombre es
+  la comodidad. Cada icono es un SVG de 24×24 con `fill="none"` y `stroke="currentColor"`
+  (sin un solo color a mano), así que funciona igual en claro y en oscuro.
+- **`iconos/iconos.json`**: manifiesto con número, id de Lucide, nombre castellano, grupo,
+  licencia, alias y hash de cada fichero. La licencia viaja con el icono: sin atribución no
+  se sirve.
+- **`iconos/sprite.svg`** (288 `<symbol id="nz-i-NNN">`) e **`iconos/index.html`**: catálogo
+  navegable por número, nombre o id de Lucide, con buscador y copia del código al portapapeles.
+- **`scripts/iconos.py`**: `sembrar`, `anadir`, `retirar` (deja el hueco declarado),
+  `listar`, `sprite`, `catalogo` y `--check` (compara bytes: el catálogo no se edita a mano).
+- **`scripts/auditar-iconos.py`**: numeración sin huecos ni repetidos, ficha ↔ fichero,
+  higiene del SVG (ni color ni `stroke-width` ni `<text>`), sprite y catálogo sincronizados.
+  Va en la CI, junto al lint del catálogo.
+- `components.json` publica el bloque `iconos` (total, grupos, manifiesto, sprite, uso) y
+  `LLM.md` explica cómo consumirlo: un agente ya no puede elegir «un emoji que parezca un
+  icono» sin salirse de lo escrito.
+
+### Corregido
+
+- `README.md` anunciaba la versión **9.6.0** con el sistema en 9.8.0 (badge y ejemplo de
+  entrega congelada).
+
 ## [9.8.0] — 2026-10-21
 
 ### Añadido
