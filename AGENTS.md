@@ -78,9 +78,11 @@ y `.demo-*`.
 3. Regenera y valida:
 
 ```bash
-python scripts/generar-base-datos.py   # índice de la base de datos
-python scripts/build-catalog.py        # páginas + portada + índice del buscador
+# EL ORDEN IMPORTA: components.json manda, base-diseno deriva de él y audit/ lleva la
+# versión dentro. Regenerar en otro orden deja ficheros desfasados que la CI caza.
 python scripts/generar-llm-docs.py     # LLM.md + components.json + llms.txt
+python scripts/generar-base-datos.py   # índice de la base de datos (deriva de components.json)
+python scripts/build-catalog.py        # páginas + portada + índice del buscador
 python scripts/audit-catalog.py        # auditoría campo a campo → audit/AUDITORIA.md
 python scripts/audit-html.py           # informe navegable → audit/index.html
 python scripts/validar-css.py          # manifiesto + cobertura (esto es lo que corre CI)
