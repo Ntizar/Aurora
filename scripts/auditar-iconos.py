@@ -39,7 +39,7 @@ CATALOGO = DIR / "index.html"
 # Palabras que en castellano se escriben igual que en inglés: no son una fuga
 # de idioma, son préstamos asentados. Cualquier otra coincidencia es un fallo.
 PRESTAMOS = {"menu", "kanban", "video", "radio", "terminal", "wifi", "bluetooth",
-             "bot", "webhook", "podcast", "email"}
+             "bot", "webhook", "podcast", "email", "diploma"}
 
 fallos: list[str] = []
 avisos: list[str] = []
@@ -65,13 +65,18 @@ def main(argv) -> int:
     m = json.loads(MANIFIESTO.read_text(encoding="utf-8"))
 
     # 1. estructura del manifiesto
-    for clave in ("coleccion", "fuente", "licencia", "convencion", "total", "siguiente", "iconos"):
+    for clave in ("colecciones", "convencion", "total", "siguiente", "iconos"):
         if clave not in m:
             fallo(f"manifiesto sin «{clave}»")
-    lic = m.get("licencia", {})
-    for clave in ("spdx", "url", "atribucion"):
-        if not lic.get(clave):
-            fallo(f"licencia sin «{clave}»: sin atribución no se puede servir el icono")
+    colecciones = m.get("colecciones", {})
+    if not colecciones:
+        fallo("manifiesto sin colecciones: no se puede saber de dónde sale cada icono")
+    for nombre_col, c in colecciones.items():
+        lic = c.get("licencia", {})
+        for clave in ("spdx", "url", "atribucion"):
+            if not lic.get(clave):
+                fallo(f"colección {nombre_col}: licencia sin «{clave}» — sin atribución no "
+                      f"se puede servir el icono")
     if m.get("convencion", {}).get("prefijo") != "nz-i-":
         fallo("la convención debe usar el prefijo nz-i-")
 
@@ -97,10 +102,17 @@ def main(argv) -> int:
     if len(ids) != len(set(ids)):
         fallo("ids repetidos en el manifiesto")
 
-    lucides = [i["lucide"] for i in activos]
-    dup_lucide = sorted({x for x in lucides if lucides.count(x) > 1})
-    if dup_lucide:
-        fallo(f"el mismo icono de Lucide entra dos veces: {dup_lucide}")
+    pares = [(i.get("coleccion", "lucide"), i["origen"]) for i in activos]
+    dup = sorted({x for x in pares if pares.count(x) > 1})
+    if dup:
+        fallo(f"el mismo icono entra dos veces: {dup}")
+    for i in activos:
+        col = i.get("coleccion", "lucide")
+        if col not in colecciones:
+            fallo(f"{i['id']}: colección «{col}» que no está declarada")
+        elif i.get("licencia") != colecciones[col]["licencia"]["spdx"]:
+            fallo(f"{i['id']}: licencia {i.get('licencia')} y la colección dice "
+                  f"{colecciones[col]['licencia']['spdx']}")
 
     # 3 y 5. fichas ↔ ficheros, higiene del SVG
     en_disco = {p.name for p in DIR.glob("*.svg")} - {"sprite.svg"}
@@ -137,6 +149,8 @@ def main(argv) -> int:
             fallo(f"{archivo}: tamaño en píxeles de diseño")
         if 'data-icono="' not in cabecera:
             fallo(f"{archivo}: sin data-icono (el número debe ir en el fichero)")
+        if 'data-coleccion="' not in cabecera or 'data-origen="' not in cabecera:
+            fallo(f"{archivo}: sin data-coleccion/data-origen (no se sabría de dónde sale)")
 
         cuerpo = cuerpo_de(texto)
         import hashlib
@@ -145,9 +159,11 @@ def main(argv) -> int:
             fallo(f"{archivo}: el fichero cambió y el manifiesto no (hash distinto)")
 
         # 6. nombre castellano
-        if (i.get("grupo") != "marcas" and i["nombre"] == i["lucide"]
+        origen_base = re.sub(r"-(linear|bold|outline|broken|line-duotone|bold-duotone)$",
+                             "", i["origen"])
+        if (i.get("grupo") != "marcas" and i["nombre"] == origen_base
                 and i["nombre"] not in PRESTAMOS):
-            fallo(f"{i['id']}: el nombre sigue en inglés ({i['lucide']})")
+            fallo(f"{i['id']}: el nombre sigue en inglés ({i['origen']})")
 
     # 4. nada huérfano
     referenciados = {i["archivo"] for i in activos if i.get("archivo")}

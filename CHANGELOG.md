@@ -3,6 +3,28 @@
 Formato: [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/).
 Versionado: [SemVer](https://semver.org/lang/es/).
 
+## [9.12.0] — 2026-10-22
+
+### Añadido
+
+- **Segunda colección: Solar (CC BY 4.0)**. 50 iconos **lineales** —el peso de trazo, no los
+  `bold`/`outline`/`duotone`, que son otro dibujo y romperían la unidad— con número
+  **continuo**: `nz-i-289`…`nz-i-338`. El número sigue siendo único entre colecciones; lo que
+  cambia es el estilo, y el manifiesto dice de dónde sale cada uno (`coleccion` + `origen`).
+- `iconos/iconos.json` pasa a declarar **`colecciones`** con la licencia y la atribución de
+  cada una (ISC · Lucide Contributors; CC BY 4.0 · 480 Design). Un icono de Solar no viaja
+  sin su atribución: `auditar-iconos.py` falla si falta.
+- `iconos.py` entiende cualquier prefijo de Iconify (`anadir solar:magic-stick-3`), normaliza
+  los atributos de trazo de Solar y ya no deduplica nombres **entre** colecciones: dos
+  «estrella» legítimas, dos números distintos.
+- El catálogo muestra `coleccion:origen` en cada ficha, cuenta las colecciones en la cabecera
+  y atribuye las dos licencias al pie.
+
+### Corregido
+
+- El slug del fichero ya no añade `-2` cuando dos iconos comparten nombre: el número del
+  prefijo ya hace único el fichero. Lo cazó el auditor en el propio sembrado.
+
 ## [9.11.2] — 2026-10-22
 
 ### Cambiado

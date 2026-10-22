@@ -5,8 +5,9 @@ nunca**. El número es la referencia pública: un diseño, un ticket o un agente
 «el icono 042» y todos hablan del mismo dibujo. El nombre castellano es la comodidad; el
 número es el contrato.
 
-- Colección: **Lucide** · licencia **ISC** · [lucide.dev](https://lucide.dev) ·
-  Lucide Contributors.
+- Colecciones: **Lucide** (ISC, trazo preciso, [lucide.dev](https://lucide.dev)) y
+  **Solar** (CC BY 4.0, trazo 1,5, más expresivo, 480 Design). El número es único entre las
+  dos: `nz-i-001` es siempre el mismo dibujo, venga de donde venga.
 - Formato: SVG plano de 24×24, `fill="none"`, `stroke="currentColor"`,
   `stroke-width` heredado de `--nz-icon-stroke`. Ni un color a mano: el icono se pinta con
   el color del texto y por eso funciona igual en claro y en oscuro.
@@ -23,7 +24,7 @@ número es el contrato.
 | `index.html` | Catálogo navegable por número, nombre o id de Lucide | **No** — se genera |
 | `README.md` | Este documento (doctrina) | Sí |
 
-Cifras vivas: **288 iconos · 13 grupos**. El número no se escribe aquí porque caduca:
+Cifras vivas: **338 iconos (288 Lucide + 50 Solar) · 13 grupos**. El número no se escribe aquí porque caduca:
 `python3 scripts/iconos.py listar | tail -1` o el propio `iconos.json`.
 
 ## Cómo se consume
@@ -61,6 +62,7 @@ El catálogo trae selector de tono; con `?tono=acento` se abre ya en naranja.
 
 ```bash
 python3 scripts/iconos.py anadir lucide:pill --grupo estados        # asigna el siguiente número
+python3 scripts/iconos.py anadir solar:magic-stick-3 --nombre varita # otra colección, mismo número
 python3 scripts/iconos.py listar --grupo mapas                      # qué hay y con qué número
 python3 scripts/iconos.py retirar 042                               # lo retira y deja el hueco declarado
 python3 scripts/iconos.py todo                                      # sprite + catálogo
@@ -83,8 +85,13 @@ no está traducido, **no inventa**: lo dice y para. Se añade al glosario (o se 
 5. **El fichero se llama `NNN-nombre.svg`** y el número va también dentro (`data-icono`).
 6. **El catálogo y el sprite no se editan a mano**: `iconos.py --check` compara bytes y caza
    cualquier retoque.
-7. **Atribución obligatoria.** Si un producto sirve estos iconos, mantiene la mención a
-   Lucide (ISC) que trae este README y el manifiesto. El icono no viaja sin su licencia.
+7. **Atribución obligatoria.** Lucide es ISC y Solar es **CC BY 4.0**: si un producto sirve
+   iconos de Solar, mantiene la mención a **480 Design** (y a Lucide, si usa los suyos). El
+   manifiesto guarda la licencia de cada icono y `scripts/auditar-iconos.py` falla si falta.
+   El icono no viaja sin su licencia.
+8. **Un estilo por colección.** De Solar entra solo el peso **lineal**: `bold`, `outline`,
+   `broken` y `duotone` son otro dibujo, no otra versión, y mezclarlos rompería la unidad
+   visual del sistema. Si algún día hace falta duotono, será un objeto aparte, no un icono más.
 
 ## Por qué numerar y no solo nombrar
 

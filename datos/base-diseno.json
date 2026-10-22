@@ -1,6 +1,6 @@
 {
  "name": "Aurora — base de datos de diseño",
- "version": "9.11.2",
+ "version": "9.12.0",
  "descripcion": "Índice consultable del sistema: familias, tokens, recetas, combos y marcas. Cada ficha enlaza a su demo viva y lleva el markup real.",
  "fuente": "components.json + specs/ + recetas/ + examples/ + combos/ + marcas/registro.json + COMPOSICION.md",
  "explorador": "base.html",

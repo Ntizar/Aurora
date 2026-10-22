@@ -44,7 +44,29 @@ DIR = ROOT / "iconos"
 MANIFIESTO = DIR / "iconos.json"
 SPRITE = DIR / "sprite.svg"
 CATALOGO = DIR / "index.html"
-FUENTE = "https://raw.githubusercontent.com/iconify/icon-sets/master/json/lucide.json"
+FUENTES = {
+    "lucide": "https://raw.githubusercontent.com/iconify/icon-sets/master/json/lucide.json",
+    "solar": "https://raw.githubusercontent.com/iconify/icon-sets/master/json/solar.json",
+}
+
+COLECCIONES = {
+    "lucide": {
+        "nombre": "Lucide",
+        "fuente": "https://github.com/lucide-icons/lucide",
+        "estilo": "trazo 24 px, preciso",
+        "licencia": {"titulo": "ISC", "spdx": "ISC",
+                     "url": "https://github.com/lucide-icons/lucide/blob/main/LICENSE",
+                     "atribucion": "Lucide Contributors · https://lucide.dev"},
+    },
+    "solar": {
+        "nombre": "Solar",
+        "fuente": "https://www.figma.com/community/file/1166831539721848736",
+        "estilo": "trazo 1,5 · lineal (los demás pesos no entran: son otro dibujo)",
+        "licencia": {"titulo": "CC BY 4.0", "spdx": "CC-BY-4.0",
+                     "url": "https://creativecommons.org/licenses/by/4.0/",
+                     "atribucion": "480 Design · https://solar-icons.vercel.app"},
+    },
+}
 CACHE = Path.home() / ".cache" / "aurora-iconos"
 PREFIJO = "nz-i-"
 DIGITOS = 3
@@ -380,6 +402,62 @@ NUCLEO = [
     ("mouse-pointer", "puntero", "formato"),
 ]
 
+# Solar: solo el peso **lineal** (trazo). Los demás pesos (bold, outline, duotone)
+# son otro dibujo, no otra versión: mezclarlos en el mismo set rompería la unidad
+# visual del sistema. Licencia CC BY 4.0 → la atribución viaja en el manifiesto.
+NUCLEO_SOLAR = [
+    ("star-fall-linear", "estrella-fugaz", "sistema"),
+    ("planet-linear", "planeta", "sistema"),
+    ("rocket-2-linear", "cohete", "sistema"),
+    ("cup-star-linear", "copa-ganadora", "formato"),
+    ("graph-up-linear", "grafica-sube", "datos"),
+    ("chart-2-linear", "grafica", "datos"),
+    ("wallet-money-linear", "cartera", "comercio"),
+    ("card-linear", "tarjeta-bancaria", "comercio"),
+    ("home-smile-linear", "hogar-feliz", "navegacion"),
+    ("user-heart-linear", "usuario-favorito", "personas"),
+    ("heart-pulse-linear", "pulso", "estados"),
+    ("cloud-storm-linear", "tormenta", "sistema"),
+    ("sun-fog-linear", "sol-con-niebla", "sistema"),
+    ("moon-stars-linear", "luna-estrellada", "sistema"),
+    ("leaf-linear", "hoja", "sistema"),
+    ("fire-linear", "fuego", "sistema"),
+    ("bolt-linear", "rayo", "sistema"),
+    ("flashlight-on-linear", "linterna", "sistema"),
+    ("cpu-bolt-linear", "procesador-rayo", "sistema"),
+    ("server-square-linear", "servidor-cuadrado", "sistema"),
+    ("code-square-linear", "codigo-cuadrado", "sistema"),
+    ("bug-minimalistic-linear", "fallo-software", "sistema"),
+    ("widget-linear", "componente", "sistema"),
+    ("settings-minimalistic-linear", "ajustes-simples", "acciones"),
+    ("map-point-linear", "punto-en-mapa", "mapas"),
+    ("routing-linear", "enrutado", "mapas"),
+    ("bus-linear", "autobus", "mapas"),
+    ("scooter-linear", "patinete", "mapas"),
+    ("delivery-linear", "reparto", "comercio"),
+    ("shop-linear", "tienda", "comercio"),
+    ("cart-large-linear", "carrito", "comercio"),
+    ("bag-smile-linear", "bolsa-feliz", "comercio"),
+    ("safe-2-linear", "caja-fuerte", "comercio"),
+    ("shield-star-linear", "escudo-estrella", "estados"),
+    ("verified-check-linear", "verificado", "estados"),
+    ("medal-star-linear", "medalla-estrella", "formato"),
+    ("cup-linear", "copa", "formato"),
+    ("hand-heart-linear", "mano-con-corazon", "personas"),
+    ("atom-linear", "atomo", "sistema"),
+    ("palette-round-linear", "paleta-redonda", "formato"),
+    ("pen-new-square-linear", "lapiz-en-cuadrado", "acciones"),
+    ("gallery-wide-linear", "galeria-ancha", "media"),
+    ("video-frame-linear", "fotograma", "media"),
+    ("music-note-2-linear", "nota-musical", "media"),
+    ("notebook-bookmark-linear", "cuaderno-con-marcador", "archivos"),
+    ("book-2-linear", "libro", "archivos"),
+    ("diploma-linear", "diploma", "archivos"),
+    ("case-minimalistic-linear", "maletin-simple", "personas"),
+    ("buildings-2-linear", "edificios", "personas"),
+    ("users-group-rounded-linear", "grupo-de-usuarios", "personas"),
+]
+
 # Glosario para `anadir`: token inglés → castellano. Un id nuevo se traduce
 # componiendo sus tokens; si falta uno, el script lo dice y no inventa nombres.
 GLOSARIO = {
@@ -477,12 +555,12 @@ ALIAS = {}
 # ---------------------------------------------------------------------------
 # Fuente
 # ---------------------------------------------------------------------------
-def descargar() -> dict:
+def descargar(coleccion: str = "lucide") -> dict:
     CACHE.mkdir(parents=True, exist_ok=True)
-    destino = CACHE / "lucide.json"
+    destino = CACHE / f"{coleccion}.json"
     if not destino.exists():
-        print(f"· descargando Lucide desde Iconify ({FUENTE})")
-        with urllib.request.urlopen(FUENTE, timeout=60) as r:
+        print(f"· descargando {coleccion} desde Iconify")
+        with urllib.request.urlopen(FUENTES[coleccion], timeout=90) as r:
             destino.write_bytes(r.read())
     return json.loads(destino.read_text(encoding="utf-8"))
 
@@ -496,7 +574,7 @@ def cuerpo_de(datos: dict, nombre: str) -> tuple[str, str]:
     if nombre in alias and alias[nombre].get("parent") in iconos:
         padre = alias[nombre]["parent"]
         return normalizar(iconos[padre]["body"]), padre
-    raise SystemExit(f"icono desconocido en Lucide: {nombre}")
+    raise SystemExit(f"icono desconocido en la colección: {nombre}")
 
 
 def normalizar(body: str) -> str:
@@ -506,7 +584,10 @@ def normalizar(body: str) -> str:
     trazo: al subirlos a la raíz, el grupo sobra. Se desenvuelve solo cuando es
     un único grupo exterior (nada de tocar grupos internos con transformación).
     """
-    cuerpo = body.replace(ATTRS_STD, "").strip()
+    cuerpo = body.replace(ATTRS_STD, "")
+    # Solar los pone por elemento y con 1,5: fuera también (el grosor es del sistema).
+    cuerpo = re.sub(r'\s(?:fill="none"|stroke="currentColor"|stroke-linecap="round"'
+                    r'|stroke-linejoin="round"|stroke-width="[\d.]+")', "", cuerpo).strip()
     cuerpo = re.sub(r"\s+>", ">", cuerpo)
     m = re.match(r"^<g[^>]*>(.*)</g>$", cuerpo, re.S)
     if m and "<g" not in m.group(1):
@@ -520,13 +601,16 @@ def hash_de(cuerpo: str) -> str:
     return "sha256:" + hashlib.sha256(cuerpo.encode("utf-8")).hexdigest()[:16]
 
 
-def svg_archivo(numero: int, nombre: str, cuerpo: str, lucide: str, spdx: str) -> str:
+def svg_archivo(numero: int, nombre: str, cuerpo: str, coleccion: str,
+                origen: str, spdx: str) -> str:
     return (
         f'<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" '
         f'viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" '
         f'stroke-linecap="round" stroke-linejoin="round" role="img" '
-        f'data-icono="{PREFIJO}{numero:0{DIGITOS}d}" data-lucide="{lucide}">\n'
-        f"  <!-- {PREFIJO}{numero:0{DIGITOS}d} · {nombre} · Lucide ({spdx}) -->\n"
+        f'data-icono="{PREFIJO}{numero:0{DIGITOS}d}" '
+        f'data-coleccion="{coleccion}" data-origen="{origen}">\n'
+        f"  <!-- {PREFIJO}{numero:0{DIGITOS}d} · {nombre} · "
+        f"{COLECCIONES[coleccion]['nombre']} ({spdx}) -->\n"
         f"  {cuerpo}\n</svg>\n"
     )
 
@@ -534,14 +618,7 @@ def svg_archivo(numero: int, nombre: str, cuerpo: str, lucide: str, spdx: str) -
 def manifiesto_vacio() -> dict:
     return {
         "sistema": "Aurora",
-        "coleccion": "Lucide",
-        "fuente": "https://github.com/lucide-icons/lucide",
-        "licencia": {
-            "titulo": "ISC",
-            "spdx": "ISC",
-            "url": "https://github.com/lucide-icons/lucide/blob/main/LICENSE",
-            "atribucion": "Lucide Contributors · https://lucide.dev",
-        },
+        "colecciones": COLECCIONES,
         "convencion": {
             "prefijo": PREFIJO,
             "digitos": DIGITOS,
@@ -555,6 +632,35 @@ def manifiesto_vacio() -> dict:
         "numerosRetirados": [],
         "iconos": [],
     }
+
+
+
+def resumen_licencias(m: dict) -> str:
+    usadas = []
+    for i in m.get("iconos", []):
+        lic = i.get("licencia")
+        if lic and lic not in usadas:
+            usadas.append(lic)
+    return " · ".join(usadas) or "sin licencia"
+
+
+def resumen_colecciones(m: dict) -> str:
+    cuenta = {}
+    for i in m.get("iconos", []):
+        if i.get("estado", "activo") != "activo":
+            continue
+        c = i.get("coleccion", "lucide")
+        cuenta[c] = cuenta.get(c, 0) + 1
+    return " · ".join(f"{COLECCIONES[c]['nombre']} {n}" for c, n in sorted(cuenta.items()))
+
+
+def atribucion(m: dict) -> str:
+    partes = []
+    for clave in dict.fromkeys(i.get("coleccion", "lucide") for i in m.get("iconos", [])):
+        c = COLECCIONES[clave]
+        lic = c["licencia"]
+        partes.append(f"{c['nombre']} ({lic['spdx']}), {lic['atribucion']}")
+    return "Iconos de " + "; ".join(partes) + "."
 
 
 def cargar() -> dict:
@@ -575,22 +681,21 @@ def guardar(m: dict) -> None:
 # ---------------------------------------------------------------------------
 # Numérico / nombres
 # ---------------------------------------------------------------------------
-def numero_de(m: dict, lucide: str):
+def numero_de(m: dict, coleccion: str, origen: str):
     for i in m["iconos"]:
-        if i["lucide"] == lucide and i.get("estado", "activo") == "activo":
+        if (i.get("coleccion", "lucide") == coleccion and i["origen"] == origen
+                and i.get("estado", "activo") == "activo"):
             return i["numero"]
     return None
 
 
 def slug_de(m: dict, nombre: str) -> str:
-    base = re.sub(r"[^a-z0-9-]", "-", nombre.lower())
-    usado = {i["archivo"] for i in m["iconos"] if i.get("archivo")}
-    if any(u.endswith(f"-{base}.svg") for u in usado):
-        n = 2
-        while any(u.endswith(f"-{base}-{n}.svg") for u in usado):
-            n += 1
-        base = f"{base}-{n}"
-    return base
+    """NNN-nombre.svg: el número ya hace único el fichero.
+
+    El nombre puede repetirse entre colecciones («estrella» en Lucide y en Solar),
+    y eso es legítimo: lo que no se repite es el número.
+    """
+    return re.sub(r"[^a-z0-9-]", "-", nombre.lower())
 
 
 def nombre_por_tokens(lucide: str):
@@ -601,28 +706,34 @@ def nombre_por_tokens(lucide: str):
     return "-".join(GLOSARIO[t] for t in tokens), []
 
 
-def alta(m: dict, datos: dict, lucide: str, nombre: str, grupo: str) -> dict | None:
-    if numero_de(m, lucide):
+def alta(m: dict, datos: dict, coleccion: str, origen: str,
+         nombre: str, grupo: str) -> dict | None:
+    if numero_de(m, coleccion, origen):
         return None
     if grupo not in GRUPOS:
         raise SystemExit(f"grupo desconocido: {grupo} (válidos: {', '.join(GRUPOS)})")
+    # El mismo nombre en dos colecciones es legítimo (la estrella de Lucide y la de
+    # Solar). Dentro de la misma colección sería un duplicado disfrazado.
     choque = next((i for i in m["iconos"]
-                   if i.get("estado", "activo") == "activo" and i["nombre"] == nombre), None)
+                   if i.get("estado", "activo") == "activo" and i["nombre"] == nombre
+                   and i.get("coleccion", "lucide") == coleccion), None)
     if choque:
         raise SystemExit(f"ya existe {choque['id']} con el nombre «{nombre}» "
-                         f"(lucide:{choque['lucide']}); pasa un --nombre distinto")
-    cuerpo, real = cuerpo_de(datos, lucide)
+                         f"({coleccion}:{choque['origen']}); pasa un --nombre distinto")
+    cuerpo, real = cuerpo_de(datos, origen)
     numero = max((i["numero"] for i in m["iconos"]), default=0) + 1
     slug = slug_de(m, nombre)
     archivo = f"{numero:0{DIGITOS}d}-{slug}.svg"
-    spdx = m["licencia"]["spdx"]
-    (DIR / archivo).write_text(svg_archivo(numero, nombre, cuerpo, real, spdx), encoding="utf-8")
+    spdx = COLECCIONES[coleccion]["licencia"]["spdx"]
+    (DIR / archivo).write_text(
+        svg_archivo(numero, nombre, cuerpo, coleccion, real, spdx), encoding="utf-8")
     entradas_alias = sorted(a for a, v in datos.get("aliases", {}).items() if v.get("parent") == real)
     e = {
         "numero": numero,
         "id": f"{PREFIJO}{numero:0{DIGITOS}d}",
-        "lucide": real,
-        "solicitado": lucide if lucide != real else None,
+        "coleccion": coleccion,
+        "origen": real,
+        "solicitado": origen if origen != real else None,
         "nombre": nombre,
         "archivo": archivo,
         "grupo": grupo,
@@ -632,7 +743,7 @@ def alta(m: dict, datos: dict, lucide: str, nombre: str, grupo: str) -> dict | N
         "hash": hash_de(cuerpo),
         "estado": "activo",
     }
-    if lucide == real:
+    if origen == real:
         del e["solicitado"]
     m["iconos"].append(e)
     return e
@@ -642,13 +753,16 @@ def alta(m: dict, datos: dict, lucide: str, nombre: str, grupo: str) -> dict | N
 # Comandos
 # ---------------------------------------------------------------------------
 def sembrar(argv):
-    datos = descargar()
     DIR.mkdir(parents=True, exist_ok=True)
     m = cargar()
     nuevos = 0
-    for lucide, nombre, grupo in NUCLEO:
-        if alta(m, datos, lucide, nombre, grupo):
-            nuevos += 1
+    for coleccion, semilla in (("lucide", NUCLEO), ("solar", NUCLEO_SOLAR)):
+        if not semilla:
+            continue
+        datos = descargar(coleccion)
+        for origen, nombre, grupo in semilla:
+            if alta(m, datos, coleccion, origen, nombre, grupo):
+                nuevos += 1
     guardar(m)
     print(f"sembrado: {nuevos} iconos nuevos · total {m['total']} · siguiente {PREFIJO}{m['siguiente']:0{DIGITOS}d}")
     sprite(None)
@@ -657,11 +771,17 @@ def sembrar(argv):
 
 def anadir(argv):
     if not argv:
-        raise SystemExit("uso: iconos.py anadir lucide:house [lucide:key …] [--grupo mapas] [--nombre nombre-es]")
+        raise SystemExit("uso: iconos.py anadir lucide:house [solar:star-fall …] "
+                         "[--grupo mapas] [--coleccion solar] [--nombre nombre-es]")
     grupo = "varios"
     if "--grupo" in argv:
         i = argv.index("--grupo")
         grupo = argv[i + 1]
+        del argv[i:i + 2]
+    coleccion_fija = None
+    if "--coleccion" in argv:
+        i = argv.index("--coleccion")
+        coleccion_fija = argv[i + 1]
         del argv[i:i + 2]
     nombre_forzado = None
     if "--nombre" in argv:
@@ -671,19 +791,28 @@ def anadir(argv):
     if nombre_forzado and len(argv) > 1:
         raise SystemExit("--nombre vale para UN icono: añade de uno en uno para no bautizar "
                          "todos con el mismo nombre")
-    datos = descargar()
     m = cargar()
+    cache = {}
     for bruto in argv:
-        lucide = bruto.split(":", 1)[1] if ":" in bruto else bruto
-        nombre, faltan = nombre_por_tokens(lucide)
+        if ":" in bruto:
+            coleccion, origen = bruto.split(":", 1)
+        else:
+            coleccion, origen = (coleccion_fija or "lucide"), bruto
+        if coleccion not in COLECCIONES:
+            raise SystemExit(f"colección desconocida: {coleccion} "
+                             f"(válidas: {', '.join(COLECCIONES)})")
+        if coleccion not in cache:
+            cache[coleccion] = descargar(coleccion)
+        datos = cache[coleccion]
+        nombre, faltan = nombre_por_tokens(origen)
         if nombre_forzado:
             nombre = nombre_forzado
         elif faltan:
             raise SystemExit(
-                f"«{lucide}» tiene tokens sin traducir: {', '.join(faltan)}. "
+                f"«{origen}» tiene tokens sin traducir: {', '.join(faltan)}. "
                 f"Añádelos a GLOSARIO en scripts/iconos.py o pasa --nombre <castellano>.")
-        e = alta(m, datos, lucide, nombre, grupo)
-        print(f"  {'+' if e else '='} {lucide} → " +
+        e = alta(m, datos, coleccion, origen, nombre, grupo)
+        print(f"  {'+' if e else '='} {coleccion}:{origen} → " +
               (f"{e['id']} {e['nombre']} ({e['archivo']})" if e else "ya estaba"))
     guardar(m)
     sprite(None)
@@ -702,7 +831,9 @@ def retirar(argv):
         e["estado"] = "retirado"
         if e.get("archivo"):
             (DIR / e["archivo"]).unlink(missing_ok=True)
-        m["numerosRetirados"].append({"numero": n, "id": e["id"], "lucide": e["lucide"],
+        m["numerosRetirados"].append({"numero": n, "id": e["id"],
+                                      "coleccion": e.get("coleccion", "lucide"),
+                                      "origen": e["origen"],
                                       "nombre": e["nombre"], "motivo": "retirado"})
         print(f"  − {e['id']} {e['nombre']} retirado (el número no se reutiliza)")
     guardar(m)
@@ -720,7 +851,8 @@ def listar(argv):
             continue
         if grupo and i["grupo"] != grupo:
             continue
-        print(f"{i['id']}  {i['nombre']:<28} {i['grupo']:<14} lucide:{i['lucide']}")
+        print(f"{i['id']}  {i['nombre']:<28} {i['grupo']:<14} "
+              f"{i.get('coleccion', 'lucide')}:{i['origen']}")
     print(f"\n{m['total']} iconos · siguiente {PREFIJO}{m['siguiente']:0{DIGITOS}d}")
 
 
@@ -738,8 +870,8 @@ def sprite(argv) -> str:
                       f'data-nombre="{i["nombre"]}">{cuerpo}</symbol>')
     texto = (
         '<svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" aria-hidden="true">\n'
-        f"<!-- Aurora · sprite de iconos numerados · Lucide ({m['licencia']['spdx']}) · "
-        f"{m['total']} símbolos · generado por scripts/iconos.py -->\n"
+        f"<!-- Aurora · sprite de iconos numerados · "
+        f"{m['total']} símbolos · {resumen_licencias(m)} · generado por scripts/iconos.py -->\n"
         + "\n".join(piezas) + "\n</svg>\n"
     )
     SPRITE.write_text(texto, encoding="utf-8")
@@ -766,7 +898,8 @@ def catalogo(argv) -> str:
     for i in vivos:
         ruta = DIR / i["archivo"]
         cuerpo = extraer_cuerpo(ruta.read_text(encoding="utf-8"))
-        buscar = " ".join([i["id"], i["nombre"], i["lucide"], i["grupoNombre"],
+        buscar = " ".join([i["id"], i["nombre"], i["origen"],
+                           i.get("coleccion", "lucide"), i["grupoNombre"],
                            " ".join(i.get("alias", []))]).lower()
         fichas.append(
             '<li class="nz-article nz-article--bordered" '
@@ -779,7 +912,7 @@ def catalogo(argv) -> str:
             "</div>\n"
             f'  <p class="nz-text--peso-fuerte">{i["nombre"]}</p>\n'
             f'  <p class="nz-text--small nz-text--muted">{i["id"]} · {i["grupoNombre"]}</p>\n'
-            f'  <p class="nz-text--small nz-text--mono">{i["lucide"]}</p>\n'
+            f'  <p class="nz-text--small nz-text--mono">{i.get("coleccion", "lucide")}:{i["origen"]}</p>\n'
             "</li>")
 
     grupos = []
@@ -803,7 +936,7 @@ def catalogo(argv) -> str:
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Aurora · Iconos numerados · {m['total']} iconos</title>
-<meta name="description" content="Repositorio de iconos numerados de Aurora: {m['total']} iconos Lucide ({m['licencia']['spdx']}) con número estable nz-i-NNN, sprite y manifiesto.">
+<meta name="description" content="Repositorio de iconos numerados de Aurora: {m['total']} iconos ({resumen_licencias(m)}) con número estable nz-i-NNN, sprite y manifiesto.">
 <link rel="stylesheet" href="../tokens.css">
 <link rel="stylesheet" href="../packs/p1-layout.css">
 <link rel="stylesheet" href="../packs/p3-typography.css">
@@ -816,13 +949,13 @@ def catalogo(argv) -> str:
 <body class="nz">
 <main class="nz-container" id="contenido">
   <header class="nz-stack">
-    <p class="nz-text--small nz-text--muted">Aurora v{version} · colección {m['coleccion']} · licencia {m['licencia']['spdx']}</p>
+    <p class="nz-text--small nz-text--muted">Aurora v{version} · {resumen_colecciones(m)} · {resumen_licencias(m)}</p>
     <h1 class="nz-h1">Iconos numerados</h1>
     <p class="nz-lead">Cada icono tiene un número estable —<span class="nz-text--accent-soft">{PREFIJO}001</span>, {PREFIJO}042— que no se reutiliza nunca. El número es la referencia; el nombre es la comodidad. Todos son SVG de 24×24 con el color y el grosor del sistema.</p>
     <div class="nz-cluster">{''.join(grupos)}</div>
     <div class="nz-field">
       <label class="nz-field__label" for="buscarIcono">Buscar por número, nombre o id de Lucide</label>
-      <input class="nz-input nz-input--search" id="buscarIcono" type="search" placeholder="042, hogar, lucide:house…" autocomplete="off">
+      <input class="nz-input nz-input--search" id="buscarIcono" type="search" placeholder="042, hogar, solar:planet…" autocomplete="off">
       <p class="nz-field__help" id="cuentaIconos">{m['total']} iconos · todos visibles</p>
     </div>
     <div class="nz-cluster" role="group" aria-label="Tono de los iconos">
@@ -847,7 +980,7 @@ def catalogo(argv) -> str:
     <pre class="nz-code nz-code--block">&lt;svg class="nz-icon" aria-hidden="true"&gt;&lt;use href="iconos/sprite.svg#{PREFIJO}042"/&gt;&lt;/svg&gt;</pre>
     <p>Y por número, desde el manifiesto:</p>
     <pre class="nz-code nz-code--block">python3 -c "import json;m=json.load(open('iconos/iconos.json'));print([i for i in m['iconos'] if i['numero']==42][0])"</pre>
-    <p class="nz-text--small nz-text--muted">Iconos de <a href="https://lucide.dev">Lucide</a> ({m['licencia']['spdx']}), {m['licencia']['atribucion']}. Manifiesto: <span class="nz-text--mono">iconos/iconos.json</span> · sprite: <span class="nz-text--mono">iconos/sprite.svg</span>.</p>
+    <p class="nz-text--small nz-text--muted">{atribucion(m)} Manifiesto: <span class="nz-text--mono">iconos/iconos.json</span> · sprite: <span class="nz-text--mono">iconos/sprite.svg</span>.</p>
   </section>
 </main>
 <footer class="nz-container">

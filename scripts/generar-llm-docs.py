@@ -42,7 +42,7 @@ sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
 bc = import_module("build-catalog")
 
 ROOT = bc.ROOT
-VERSION = "9.11.2"
+VERSION = "9.12.0"
 # El canal vivo no se copia a mano: sale de data/canales.json (único dueño)
 _canales = json.loads((ROOT / "data" / "canales.json").read_text(encoding="utf-8"))
 CANAL_VIVO = _canales["canales"]["vivo"]["rango"]
@@ -679,7 +679,7 @@ def resumen_iconos():
     ruta = ROOT / "iconos" / "iconos.json"
     vacio = {"total": 0, "grupos": {}, "siguiente": None, "manifiesto": "iconos/iconos.json",
              "sprite": "iconos/sprite.svg", "catalogo": "iconos/index.html",
-             "coleccion": "", "licencia": "", "convencion": ""}
+             "colecciones": {}, "licencias": [], "convencion": ""}
     if not ruta.exists():
         return vacio
     m = json.loads(ruta.read_text(encoding="utf-8"))
@@ -687,12 +687,17 @@ def resumen_iconos():
     grupos = {}
     for i in vivos:
         grupos[i["grupoNombre"]] = grupos.get(i["grupoNombre"], 0) + 1
+    coles = {}
+    for i in vivos:
+        c = i.get("coleccion", "lucide")
+        coles[c] = coles.get(c, 0) + 1
+    licencias = sorted({i["licencia"] for i in vivos if i.get("licencia")})
     return {
         "total": len(vivos),
         "siguiente": m.get("siguiente"),
         "grupos": dict(sorted(grupos.items())),
-        "coleccion": m.get("coleccion", ""),
-        "licencia": m.get("licencia", {}).get("spdx", ""),
+        "colecciones": dict(sorted(coles.items())),
+        "licencias": licencias,
         "manifiesto": "iconos/iconos.json",
         "sprite": "iconos/sprite.svg",
         "catalogo": "iconos/index.html",
