@@ -26,7 +26,7 @@ Pagina(children: any[], ancho?: "contenido" | "app") — Marco de la página. Si
 Seccion(children: any[], titulo?: string, borde?: boolean) — Bloque con aire propio y titular opcional. La unidad de una landing o un informe.
 Pila(children: any[], hueco?: "2xs" | "sm" | "lg" | "xl") — Columna vertical con hueco entre bloques.
 Fila(children: any[], hueco?: "compacto" | "amplio") — Grupo horizontal de elementos cortos (botones, chips, etiquetas) que mide lo que mide y envuelve en móvil. No estira a sus hijos.
-Rejilla(children: any[], columnas?: "auto" | "2" | "4") — Rejilla de panel que responde a su contenedor, no al monitor. columnas=auto decide sola.
+Rejilla(children: any[], columnas?: "auto" | "2" | "4") — Rejilla de panel que responde a su contenedor, no al monitor. columnas=auto decide sola. El modo auto (por defecto) encaja las piezas al ancho real con auto-fit: las cajas nunca quedan enormes ni se pisan.
 DosColumnas(izquierda: any[], derecha: any[], reparto?: "50-50" | "2-1" | "40-60" | "60-40") — Dos bloques con reparto elegido. En móvil se apilan.
 Tarjeta(children: any[], titulo?: string, borde?: boolean) — Superficie de contenido con titular opcional. Es la tarjeta de Aurora (no existe Card).
 
@@ -184,4 +184,4 @@ a2 = Boton("Ver histórico", "contorno")
 - ¿Hay un solo titular nivel 1 y el acento está donde importa?
 - ¿Los números están formateados en castellano?
 
-<!-- aurora-openui · spec 360b8ba4ef8df8f4 · 36 componentes · generado por scripts/generar-openui.py -->
+<!-- aurora-openui · spec 58252a3b70b20833 · 36 componentes · generado por scripts/generar-openui.py -->

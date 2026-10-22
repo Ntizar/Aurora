@@ -71,8 +71,8 @@
   };
 
   R.Rejilla = function (p, ctx) {
-    var col = p.columnas === "2" ? "2" : p.columnas === "4" ? "4" : "";
-    return '<div class="' + cl("nz-dash-grid", col && "nz-dash-grid--" + col) + '">' + ctx.nodos(p.children) + "</div>";
+    var col = p.columnas === "2" ? "2" : p.columnas === "4" ? "4" : "ajuste";
+    return '<div class="' + cl("nz-dash-grid", "nz-dash-grid--" + col) + '">' + ctx.nodos(p.children) + "</div>";
   };
 
   R.DosColumnas = function (p, ctx) {

@@ -1,10 +1,10 @@
 {
  "resumen": {
-  "objetos_declarados": 2194,
+  "objetos_declarados": 2195,
   "familias": 411,
   "demos": 659,
   "categorias": 18,
-  "clases_usadas_en_demos": 2193,
+  "clases_usadas_en_demos": 2194,
   "clases_sin_demo": 1,
   "familias_sin_demo": 0,
   "fantasmas": 0,
@@ -19,9 +19,9 @@
  },
  "packs": {
   "p1-layout.css": {
-   "lineas": 393,
-   "bytes": 23130,
-   "clases": 179,
+   "lineas": 394,
+   "bytes": 23228,
+   "clases": 180,
    "familias": 67,
    "hex": 0,
    "gradientes": 0,
@@ -204,7 +204,7 @@
    "nombre": "Layout y estructura",
    "pack": "p1-layout.css",
    "demos": 54,
-   "objetos": 179,
+   "objetos": 180,
    "familias": 67,
    "sin_demo": [],
    "familias_sin_demo": []
@@ -2037,10 +2037,11 @@
   "nz-dash-grid": {
    "cat": 1,
    "pack": "p1-layout.css",
-   "n_clases": 4,
+   "n_clases": 5,
    "mods": [
     "2",
     "4",
+    "ajuste",
     "sidebar"
    ],
    "partes": [],

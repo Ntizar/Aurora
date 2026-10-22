@@ -266,6 +266,14 @@
 
 .cat-base-ficha { border-left: 3px solid var(--nz-accent); border-radius: 0; box-shadow: none; }
 
+/* ── Calma v10.0: presupuesto de sombra del shell ──────────────────────────
+   Las cajas base son plano + filete; la elevación se queda en el topbar
+   sticky y en los anillos de foco. Medido 2026-10-22: con solo este
+   presupuesto la portada pasa de 67 elementos con sombra a 15. */
+.cat-demo, .cat-cat, .cat-live-card, .cat-base-ficha, .cat-base-swatch { box-shadow: none; }
+.cat-demo, .cat-cat, .cat-live-card, .cat-base-ficha { border: var(--nz-border-w) solid var(--nz-border-soft); }
+.cat-demo:hover, .cat-cat:hover { box-shadow: none; border-color: var(--nz-brand-soft); }
+
 @media (min-width: 960px) {
   .cat-base-hero { grid-template-columns: minmax(0, 1.25fr) minmax(18rem, 0.75fr); gap: var(--nz-space-8); padding-block: var(--nz-space-10) var(--nz-space-12); }
   .cat-base-hero__titulo { margin-top: var(--nz-space-4); }

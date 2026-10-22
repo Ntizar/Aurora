@@ -256,7 +256,7 @@
     "children"
    ],
    "additionalProperties": false,
-   "description": "Rejilla de panel que responde a su contenedor, no al monitor. columnas=auto decide sola."
+   "description": "Rejilla de panel que responde a su contenedor, no al monitor. columnas=auto decide sola. El modo auto (por defecto) encaja las piezas al ancho real con auto-fit: las cajas nunca quedan enormes ni se pisan."
   },
   "DosColumnas": {
    "type": "object",

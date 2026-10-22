@@ -483,7 +483,7 @@ def portada(specs, censo_cat, totales, packs):
     <h1>Aurora</h1>
     <p class="cat-hero__sub">Un sistema, tres formas de construir: <b>a mano</b>, con un <b>agente</b> o con un <b>modelo en caliente</b>. {t['clases']} objetos verificados, marcas por preset y un lenguaje para que el diseño lo escriba la IA sin salirse nunca del censo.</p>
     <div class="cat-ctas">
-      <a class="nz-btn nz-btn--primary" href="openui/index.html">Interfaces generativas</a>
+      <a class="nz-btn nz-btn--primary" href="portada-v10.html">Ver la v10 generada con OpenUI</a>
       <a class="nz-btn nz-btn--accent" href="openui/index.html#plantillas">Plantillas por arquetipo</a>
       <a class="nz-btn nz-btn--soft" href="paginas/01-layout.html">Explorar el catálogo</a>
       <a class="nz-btn nz-btn--ghost" href="base.html">Base de datos de diseño</a>

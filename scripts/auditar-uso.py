@@ -23,6 +23,8 @@ Composición (COMPOSICION.md):
   · font-size propio por debajo de 13px                     → AVISO
   · más de 4 tamaños tipográficos                           → AVISO
   · app/panel sin contenedor ancho                          → AVISO
+  · superficie (.nz-article/.nz-bento) dentro de otra        → AVISO (calma v10)
+  · box-shadow a mano fuera de token                         → AVISO (calma v10)
 
 Uso:
   python scripts/auditar-uso.py pagina.html [otra.html …]
@@ -36,6 +38,7 @@ import json
 import pathlib
 import re
 import sys
+from html.parser import HTMLParser
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 CDN_RE = re.compile(
@@ -83,6 +86,32 @@ COLOR_RE = re.compile(
 FONT_PX_RE = re.compile(r"font-size\s*:\s*(\d+(?:\.\d+)?)px")
 PESO_RE = re.compile(r"font-weight\s*:\s*(\d{3})\b")
 TEXTO_VAR_RE = re.compile(r"var\((--nz-text-(?:2xs|xs|sm|base|md|lg|xl|2xl|3xl|4xl))\)")
+
+# Calma v10.0: superficies que no deben anidarse (caja dentro de caja = el
+# ruido que David detectó: piezas grandes, elevadas y pisándose).
+SUPERFICIE_RE = re.compile(r"\bnz-(?:article|bento)\b")
+
+
+class _PilaSuperficies(HTMLParser):
+    """Cuenta superficies que se abren dentro de otra superficie abierta."""
+
+    def __init__(self):
+        super().__init__()
+        self.pila = []       # tags de superficie abiertos
+        self.anidadas = 0
+
+    def handle_starttag(self, tag, attrs):
+        es = bool(SUPERFICIE_RE.search(dict(attrs).get("class", "")))
+        if es:
+            if self.pila:
+                self.anidadas += 1
+            self.pila.append(tag)
+
+    def handle_endtag(self, tag):
+        for i in range(len(self.pila) - 1, -1, -1):
+            if self.pila[i] == tag:
+                del self.pila[i:]
+                break
 
 
 def auditar_composicion(html):
@@ -146,6 +175,19 @@ def auditar_composicion(html):
     if es_app and not hay_ancho:
         avisos.append("ancho-composicion: parece una app/panel y no declara contenedor ancho "
                       "(nz-container / nz-container--fluid / nz-dash-grid)")
+
+    # 8 · calma (v10.0): superficie dentro de superficie (máx 1 nivel)
+    pila = _PilaSuperficies()
+    pila.feed(html)
+    if pila.anidadas:
+        avisos.append(f"anidacion-superficies: {pila.anidadas} superficie(s) dentro de otra "
+                      "(.nz-article/.nz-bento) — el contenido ya es contenido: aplane la interior")
+
+    # 9 · calma (v10.0): sombra escrita a mano, fuera de token
+    sueltas = [s for s in STYLE_RE.findall(html) if "box-shadow" in s and "--nz-" not in s]
+    if sueltas:
+        avisos.append(f"sombra-a-mano: {len(sueltas)} box-shadow fuera de token (var(--nz-shadow-*)) — "
+                      "presupuesto de sombra: plano + filete; elevación solo para lo que importa")
 
     return fallos, avisos
 
@@ -333,7 +375,7 @@ def selftest():
     mala = f"""<!DOCTYPE html><html lang="es"><head>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Ntizar/Aurora@master/tokens.css">
 <style>.x {{ background: linear-gradient(90deg, red, blue); color: #ff0000; font-size: 11px; font-weight: 800 }}</style>
-</head><body><h1>Uno</h1><h1>Dos</h1><main class="nz-container nz-card nz-boton">\U0001F511 Hola</main></body></html>"""
+</head><body><h1>Uno</h1><h1>Dos</h1><main class="nz-container nz-card nz-boton"><div class="nz-article"><div class="nz-bento">\U0001F511 Hola</div></div></main><div style="box-shadow: 0 2px 4px black">sombra suelta</div></body></html>"""
 
     # Y una página BUENA: debe salir con 0 fallos (si no, hay falso positivo).
     buena = """<!DOCTYPE html><html lang="es" data-nz-theme="light"><head>
@@ -360,6 +402,8 @@ def selftest():
         ("dos <h1> (ley 5)", "jerarquia" in texto),
         ("font-size < 13px (ley 4)", "minimo-tipografico" in texto),
         ("peso a mano (ley 6b)", "peso-a-mano" in texto),
+        ("superficie anidada (calma v10)", "anidacion-superficies" in texto),
+        ("sombra a mano (calma v10)", "sombra-a-mano" in texto),
         ("página buena sin fallos", not f_buena),
     ]
     ok = True

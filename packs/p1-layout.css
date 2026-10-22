@@ -211,6 +211,7 @@
 
 /* ---- 26 Dashboard grid ---- */
 .nz-dash-grid { display: grid; gap: var(--nz-space-4); grid-template-columns: 1fr; container-type: inline-size; }
+.nz-dash-grid--ajuste { grid-template-columns: repeat(auto-fit, minmax(min(16rem, 100%), 1fr)); }
 .nz-dash-grid--2 { grid-template-columns: 1fr; }
 .nz-dash-grid--4 { grid-template-columns: 1fr; }
 .nz-dash-grid--sidebar { grid-template-columns: 1fr; }

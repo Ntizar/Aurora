@@ -1,229 +1,229 @@
 {
-  "cat": 9,
-  "nombre": "Media e iconografía",
-  "desc": "Imágenes responsive (formas, filtros, ratios), figure, avatares (tamaños, forma, presencia, grupos), logotipos y nube de logos, iconos en caja, media object, vídeo, audio, hueco de mapa y galería.",
-  "pack": "p9-media.css",
-  "fichero": "09-media.html",
-  "demos": [
-    {
-      "titulo": "Imagen responsive",
-      "tag": ".nz-img · --rounded",
-      "markup": "<img class=\"nz-img nz-img--rounded\" src=\"data:image/svg+xml;utf8,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%27640%27 height=%27360%27%3E%3Crect width=%27640%27 height=%27360%27 fill=%27%23dbeafe%27/%3E%3C/svg%3E\" alt=\"Foto de ejemplo\">"
-    },
-    {
-      "titulo": "Imagen con borde, con sombra y a sangre",
-      "tag": ".nz-img--bordered · --shadow · --full",
-      "markup": "<div class=\"nz-stack nz-stack--sm\" style=\"max-width:16rem\"><img class=\"nz-img nz-img--bordered\" src=\"data:image/svg+xml;utf8,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%27400%27 height=%27300%27%3E%3Crect width=%27400%27 height=%27300%27 fill=%27%23f3f4f6%27/%3E%3C/svg%3E\" alt=\"Con borde\"><img class=\"nz-img nz-img--shadow\" src=\"data:image/svg+xml;utf8,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%27400%27 height=%27300%27%3E%3Crect width=%27400%27 height=%27300%27 fill=%27%23f3f4f6%27/%3E%3C/svg%3E\" alt=\"Con sombra\"><img class=\"nz-img nz-img--full\" src=\"data:image/svg+xml;utf8,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%27400%27 height=%27300%27%3E%3Crect width=%27400%27 height=%27300%27 fill=%27%23f3f4f6%27/%3E%3C/svg%3E\" alt=\"A sangre\" style=\"height:6rem\"></div>"
-    },
-    {
-      "titulo": "Imagen en blanco y negro y con zoom al pasar",
-      "tag": ".nz-img--grayscale · --zoom",
-      "markup": "<div class=\"nz-cluster\"><img class=\"nz-img nz-img--grayscale nz-img--rounded\" src=\"data:image/svg+xml;utf8,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%27400%27 height=%27300%27%3E%3Crect width=%27400%27 height=%27300%27 fill=%27%23f3f4f6%27/%3E%3C/svg%3E\" alt=\"Gris\" style=\"width:10rem\"><img class=\"nz-img nz-img--zoom\" src=\"data:image/svg+xml;utf8,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%27400%27 height=%27300%27%3E%3Crect width=%27400%27 height=%27300%27 fill=%27%23f3f4f6%27/%3E%3C/svg%3E\" alt=\"Zoom\" style=\"width:10rem\"></div>"
-    },
-    {
-      "titulo": "Imagen circular y con proporción fija",
-      "tag": ".nz-img--circle · --ratio-1x1 · --ratio-16x9",
-      "markup": "<div class=\"nz-cluster\"><img class=\"nz-img nz-img--circle\" src=\"data:image/svg+xml;utf8,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%27300%27 height=%27300%27%3E%3Crect width=%27300%27 height=%27300%27 fill=%27%23ffedd5%27/%3E%3C/svg%3E\" alt=\"Círculo\" style=\"width:72px\"><img class=\"nz-img nz-img--ratio-1x1\" src=\"data:image/svg+xml;utf8,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%27300%27 height=%27300%27%3E%3Crect width=%27300%27 height=%27300%27 fill=%27%23ffedd5%27/%3E%3C/svg%3E\" alt=\"1:1\" style=\"width:8rem\"><img class=\"nz-img nz-img--ratio-16x9\" src=\"data:image/svg+xml;utf8,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%27400%27 height=%27300%27%3E%3Crect width=%27400%27 height=%27300%27 fill=%27%23f3f4f6%27/%3E%3C/svg%3E\" alt=\"16:9\" style=\"width:12rem\"></div>"
-    },
-    {
-      "titulo": "Caja de imagen 16:9",
-      "tag": ".nz-cover--16x9",
-      "markup": "<div class=\"nz-cover nz-cover--16x9\" style=\"max-width:16rem;background:var(--nz-brand-soft)\"></div>"
-    },
-    {
-      "titulo": "Covers 1:1, 4:3, 3:2",
-      "tag": ".nz-cover--1x1 · --4x3 · --3x2",
-      "markup": "<div class=\"nz-cluster\"><div class=\"nz-cover nz-cover--1x1\" style=\"flex:1;max-width:6rem;background:var(--nz-bg-inset)\"></div><div class=\"nz-cover nz-cover--4x3\" style=\"flex:1.4;max-width:8rem;background:var(--nz-brand-soft)\"></div><div class=\"nz-cover nz-cover--3x2\" style=\"flex:1.6;max-width:9rem;background:var(--nz-accent-soft)\"></div></div>"
-    },
-    {
-      "titulo": "Figure",
-      "tag": ".nz-figure · __img · figcaption",
-      "markup": "<figure class=\"nz-figure\" style=\"max-width:18rem\"><div class=\"nz-figure__img\"><img class=\"nz-img nz-img--full\" src=\"data:image/svg+xml;utf8,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%27640%27 height=%27360%27%3E%3Crect width=%27640%27 height=%27360%27 fill=%27%23dbeafe%27/%3E%3C/svg%3E\" alt=\"Plano\"></div><figcaption>Leyenda bajo la imagen.</figcaption></figure>"
-    },
-    {
-      "titulo": "Figure de marca y figure pequeña",
-      "tag": ".nz-figure--brand · --sm",
-      "markup": "<div class=\"nz-stack nz-stack--lg\"><figure class=\"nz-figure nz-figure--brand\"><div class=\"nz-figure__img\"><img class=\"nz-img nz-img--full\" src=\"data:image/svg+xml;utf8,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%27640%27 height=%27360%27%3E%3Crect width=%27640%27 height=%27360%27 fill=%27%23dbeafe%27/%3E%3C/svg%3E\" alt=\"Marca\"></div><figcaption>Destacada en azul de marca.</figcaption></figure> <figure class=\"nz-figure nz-figure--sm\"><div class=\"nz-figure__img\"><img class=\"nz-img nz-img--full\" src=\"data:image/svg+xml;utf8,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%27400%27 height=%27300%27%3E%3Crect width=%27400%27 height=%27300%27 fill=%27%23f3f4f6%27/%3E%3C/svg%3E\" alt=\"Pequeña\"></div><figcaption>Versión compacta.</figcaption></figure></div>"
-    },
-    {
-      "titulo": "Figure con leyenda a la izquierda y crédito",
-      "tag": ".nz-figure--caption-left · __credit",
-      "markup": "<figure class=\"nz-figure nz-figure--caption-left\" style=\"max-width:16rem\"><div class=\"nz-figure__img\"><img class=\"nz-img nz-img--full\" src=\"data:image/svg+xml;utf8,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%27400%27 height=%27300%27%3E%3Crect width=%27400%27 height=%27300%27 fill=%27%23f3f4f6%27/%3E%3C/svg%3E\" alt=\"Foto\"></div><figcaption>Foto de obra <span class=\"nz-figure__credit\">· © Ntizar</span></figcaption></figure>"
-    },
-    {
-      "titulo": "Avatares",
-      "tag": ".nz-avatar--xs · --sm · --md · --lg",
-      "markup": "<div class=\"nz-cluster\"><span class=\"nz-avatar nz-avatar--xs\">XS</span><span class=\"nz-avatar nz-avatar--sm\">SM</span><span class=\"nz-avatar nz-avatar--md\">MD</span><span class=\"nz-avatar nz-avatar--lg\">LG</span></div>"
-    },
-    {
-      "titulo": "Avatares grandes y de color",
-      "tag": ".nz-avatar--xl · --2xl · --accent · --dark",
-      "markup": "<div class=\"nz-cluster\"><span class=\"nz-avatar nz-avatar--xl\">XL</span><span class=\"nz-avatar nz-avatar--2xl\">2XL</span><span class=\"nz-avatar nz-avatar--md nz-avatar--accent\">AC</span><span class=\"nz-avatar nz-avatar--md nz-avatar--dark\">DK</span></div>"
-    },
-    {
-      "titulo": "Avatar cuadrado y con anillo",
-      "tag": ".nz-avatar--square · --ring",
-      "markup": "<div class=\"nz-cluster\"><span class=\"nz-avatar nz-avatar--md nz-avatar--square\">A7</span><span class=\"nz-avatar nz-avatar--md nz-avatar--ring\">DA</span></div>"
-    },
-    {
-      "titulo": "Avatar con punto de presencia",
-      "tag": ".nz-avatar--status · --busy · --offline",
-      "markup": "<div class=\"nz-cluster\"><span class=\"nz-avatar nz-avatar--md nz-avatar--status\">ON</span><span class=\"nz-avatar nz-avatar--md nz-avatar--status nz-avatar--busy\">OC</span><span class=\"nz-avatar nz-avatar--md nz-avatar--status nz-avatar--offline\">OFF</span></div>"
-    },
-    {
-      "titulo": "Grupo de avatares",
-      "tag": ".nz-avatar-group · __more · --sm",
-      "markup": "<div class=\"nz-cluster\"><div class=\"nz-avatar-group\"><span class=\"nz-avatar nz-avatar--sm\">A</span><span class=\"nz-avatar nz-avatar--sm\">B</span><span class=\"nz-avatar nz-avatar--sm\">C</span><span class=\"nz-avatar nz-avatar--sm nz-avatar-group__more\">+2</span></div> <div class=\"nz-avatar-group nz-avatar-group--sm\"><span class=\"nz-avatar nz-avatar--xs\">A</span><span class=\"nz-avatar nz-avatar--xs\">B</span><span class=\"nz-avatar nz-avatar--xs nz-avatar-group__more\">+9</span></div></div>"
-    },
-    {
-      "titulo": "Barra de avatares",
-      "tag": ".nz-avatar__bar",
-      "markup": "<div class=\"nz-avatar__bar\"><span class=\"nz-avatar nz-avatar--sm\">DA</span><span class=\"nz-media__title\">David Antizar</span><span class=\"nz-badge nz-badge--brand\">Autor</span></div>"
-    },
-    {
-      "titulo": "Logo marca",
-      "tag": ".nz-brand · __mark",
-      "markup": "<span class=\"nz-brand\"><span class=\"nz-brand__mark\">A7</span> Aurora</span>"
-    },
-    {
-      "titulo": "Marca grande, pequeña y de acento",
-      "tag": ".nz-brand--lg · --sm · --accent · __mark--accent",
-      "markup": "<div class=\"nz-cluster\"><span class=\"nz-brand nz-brand--lg\"><span class=\"nz-brand__mark\">A7</span> Aurora</span><span class=\"nz-brand nz-brand--sm\"><span class=\"nz-brand__mark\">A7</span> Aurora</span><span class=\"nz-brand nz-brand--accent\"><span class=\"nz-brand__mark nz-brand__mark--accent\">7</span> Pro</span></div>"
-    },
-    {
-      "titulo": "Marca monoespaciada y marca oscura",
-      "tag": ".nz-brand--mono · __mark--dark",
-      "markup": "<div class=\"nz-cluster\"><span class=\"nz-brand nz-brand--mono\"><span class=\"nz-brand__mark\">v7</span> aurora-7</span><span class=\"nz-brand\"><span class=\"nz-brand__mark nz-brand__mark--dark\">A7</span> Ntizar</span></div>"
-    },
-    {
-      "titulo": "Logomark",
-      "tag": ".nz-logomark · --accent · --outline",
-      "markup": "<div class=\"nz-cluster\"><span class=\"nz-logomark\" style=\"width:40px;height:40px\">A7</span><span class=\"nz-logomark nz-logomark--accent\" style=\"width:40px;height:40px\">7</span><span class=\"nz-logomark nz-logomark--outline\" style=\"width:40px;height:40px\">N</span></div>"
-    },
-    {
-      "titulo": "Icono en caja",
-      "tag": ".nz-icon-tile · --accent · --success · --danger",
-      "markup": "<div class=\"nz-cluster\"><span class=\"nz-icon-tile\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 2l2.4 7.6L22 12l-7.6 2.4L12 22l-2.4-7.6L2 12l7.6-2.4z\"/></svg></span><span class=\"nz-icon-tile nz-icon-tile--accent\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 2v20M2 12h20M4.9 4.9l14.2 14.2M19.1 4.9 4.9 19.1\"/></svg></span><span class=\"nz-icon-tile nz-icon-tile--success\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M20 6 9 17l-5-5\"/></svg></span><span class=\"nz-icon-tile nz-icon-tile--danger\">!</span></div>"
-    },
-    {
-      "titulo": "Icono en caja pequeño, grande y extra grande",
-      "tag": ".nz-icon-tile--sm · --lg · --xl",
-      "markup": "<div class=\"nz-cluster\"><span class=\"nz-icon-tile nz-icon-tile--sm\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"3\"/></svg></span><span class=\"nz-icon-tile\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 2l2.4 7.6L22 12l-7.6 2.4L12 22l-2.4-7.6L2 12l7.6-2.4z\"/></svg></span><span class=\"nz-icon-tile nz-icon-tile--lg\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 2l2.4 7.6L22 12l-7.6 2.4L12 22l-2.4-7.6L2 12l7.6-2.4z\"/></svg></span><span class=\"nz-icon-tile nz-icon-tile--xl\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 2l2.4 7.6L22 12l-7.6 2.4L12 22l-2.4-7.6L2 12l7.6-2.4z\"/></svg></span></div>"
-    },
-    {
-      "titulo": "Icono en caja de marca, de contorno y circular",
-      "tag": ".nz-icon-tile--brand · --outline · --circle",
-      "markup": "<div class=\"nz-cluster\"><span class=\"nz-icon-tile nz-icon-tile--brand\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 2l2.4 7.6L22 12l-7.6 2.4L12 22l-2.4-7.6L2 12l7.6-2.4z\"/></svg></span><span class=\"nz-icon-tile nz-icon-tile--outline\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 2l2.4 7.6L22 12l-7.6 2.4L12 22l-2.4-7.6L2 12l7.6-2.4z\"/></svg></span><span class=\"nz-icon-tile nz-icon-tile--circle nz-icon-tile--accent\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 2v20M2 12h20M4.9 4.9l14.2 14.2M19.1 4.9 4.9 19.1\"/></svg></span></div>"
-    },
-    {
-      "titulo": "Media object",
-      "tag": ".nz-media · __fig · __body · __title · __desc",
-      "markup": "<div class=\"nz-media\"><span class=\"nz-avatar nz-avatar--md nz-media__fig\">AM</span><div class=\"nz-media__body\"><span class=\"nz-media__title\">Ana Martín</span><span class=\"nz-media__desc\">Diseñadora de producto.</span></div></div>"
-    },
-    {
-      "titulo": "Media invertida, centrada y compacta",
-      "tag": ".nz-media--reverse · --center · --sm",
-      "markup": "<div class=\"nz-stack nz-stack--sm\"><div class=\"nz-media nz-media--reverse nz-media--center\"><span class=\"nz-avatar nz-avatar--md nz-media__fig\">AM</span><div class=\"nz-media__body\"><span class=\"nz-media__title\">Invertida y centrada</span><span class=\"nz-media__desc\">Avatar a la derecha.</span></div></div> <div class=\"nz-media nz-media--sm\"><span class=\"nz-icon-tile nz-icon-tile--sm nz-media__fig\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 2l2.4 7.6L22 12l-7.6 2.4L12 22l-2.4-7.6L2 12l7.6-2.4z\"/></svg></span><div class=\"nz-media__body\"><span class=\"nz-media__title\">Versión compacta</span><span class=\"nz-media__desc\">Para listas densas.</span></div></div></div>"
-    },
-    {
-      "titulo": "Media de marca, con borde y con enlace",
-      "tag": ".nz-media--brand · --bordered · __link",
-      "markup": "<div class=\"nz-media nz-media--brand nz-media--bordered\" style=\"max-width:24rem\"><span class=\"nz-icon-tile nz-media__fig\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 3l2.2 6.8L21 12l-6.8 2.2L12 21l-2.2-6.8L3 12l6.8-2.2z\"/></svg></span><div class=\"nz-media__body\"><span class=\"nz-media__title\">Novedades de la versión 7</span><span class=\"nz-media__desc\">Doce categorías y más de mil objetos.</span><a href=\"#contenido\" class=\"nz-media__link\">Ver el registro →</a></div></div>"
-    },
-    {
-      "titulo": "Vídeo",
-      "tag": ".nz-video · __play",
-      "markup": "<div class=\"nz-video\" style=\"max-width:16rem\"><button class=\"nz-video__play\" aria-label=\"reproducir\"><i><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"m8 5 11 7-11 7z\"/></svg></i></button></div>"
-    },
-    {
-      "titulo": "Vídeo 4:3 a sangre",
-      "tag": ".nz-video--4x3 · --full",
-      "markup": "<div class=\"nz-video nz-video--4x3 nz-video--full\" style=\"max-width:16rem\"><button class=\"nz-video__play\" aria-label=\"reproducir\"><i><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"m8 5 11 7-11 7z\"/></svg></i></button></div>"
-    },
-    {
-      "titulo": "Vídeo con controles, tiempo y barra",
-      "tag": ".nz-video__controls · __time · __bar",
-      "markup": "<div class=\"nz-video\" style=\"max-width:18rem\"><button class=\"nz-video__play\" aria-label=\"reproducir\"><i><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"m8 5 11 7-11 7z\"/></svg></i></button><div class=\"nz-video__controls\"><span class=\"nz-video__time\">01:24</span><span class=\"nz-video__bar\"><i style=\"width:38%\"></i></span><span class=\"nz-video__time\">03:42</span></div></div>"
-    },
-    {
-      "titulo": "Reproductor de audio",
-      "tag": ".nz-audio · __play · __track · __time",
-      "markup": "<div class=\"nz-audio\" style=\"max-width:22rem\"><button class=\"nz-audio__play\" aria-label=\"reproducir\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"m8 5 11 7-11 7z\"/></svg></button><span class=\"nz-audio__track\"><i style=\"width:46%\"></i></span><span class=\"nz-audio__time\">2:18 / 5:02</span></div>"
-    },
-    {
-      "titulo": "Reproductor de audio de acento",
-      "tag": ".nz-audio--accent",
-      "markup": "<div class=\"nz-audio nz-audio--accent\" style=\"max-width:22rem\"><button class=\"nz-audio__play\" aria-label=\"reproducir\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"m8 5 11 7-11 7z\"/></svg></button><span class=\"nz-audio__track\"><i style=\"width:12%\"></i></span><span class=\"nz-audio__time\">0:34 / 4:10</span></div>"
-    },
-    {
-      "titulo": "Hueco de mapa",
-      "tag": ".nz-mapa-placeholder · __pin · __label",
-      "markup": "<div class=\"nz-mapa-placeholder\" style=\"max-width:22rem\"><span class=\"nz-mapa-placeholder__pin\"></span><span class=\"nz-mapa-placeholder__label\">Sede central · Madrid</span></div>"
-    },
-    {
-      "titulo": "Galería de dos y de tres columnas",
-      "tag": ".nz-galeria · --2 · --3 · __item",
-      "markup": "<div class=\"nz-stack nz-stack--lg\"><div class=\"nz-galeria nz-galeria--2\" style=\"max-width:18rem\"><div class=\"nz-galeria__item\"><img class=\"nz-img nz-img--full\" src=\"data:image/svg+xml;utf8,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%27400%27 height=%27300%27%3E%3Crect width=%27400%27 height=%27300%27 fill=%27%23f3f4f6%27/%3E%3C/svg%3E\" alt=\"Uno\"></div><div class=\"nz-galeria__item\"><img class=\"nz-img nz-img--full\" src=\"data:image/svg+xml;utf8,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%27640%27 height=%27360%27%3E%3Crect width=%27640%27 height=%27360%27 fill=%27%23dbeafe%27/%3E%3C/svg%3E\" alt=\"Dos\"></div></div> <div class=\"nz-galeria nz-galeria--3\" style=\"max-width:26rem\"><div class=\"nz-galeria__item\"><img class=\"nz-img nz-img--full\" src=\"data:image/svg+xml;utf8,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%27300%27 height=%27300%27%3E%3Crect width=%27300%27 height=%27300%27 fill=%27%23ffedd5%27/%3E%3C/svg%3E\" alt=\"Tres\"></div><div class=\"nz-galeria__item\"><img class=\"nz-img nz-img--full\" src=\"data:image/svg+xml;utf8,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%27400%27 height=%27300%27%3E%3Crect width=%27400%27 height=%27300%27 fill=%27%23f3f4f6%27/%3E%3C/svg%3E\" alt=\"Cuatro\"></div><div class=\"nz-galeria__item\"><img class=\"nz-img nz-img--full\" src=\"data:image/svg+xml;utf8,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%27640%27 height=%27360%27%3E%3Crect width=%27640%27 height=%27360%27 fill=%27%23dbeafe%27/%3E%3C/svg%3E\" alt=\"Cinco\"></div></div></div>"
-    },
-    {
-      "titulo": "Galería tipo mosaico",
-      "tag": ".nz-galeria--masonry · __item--tall",
-      "markup": "<div class=\"nz-galeria nz-galeria--masonry\" style=\"max-width:20rem\"><div class=\"nz-galeria__item nz-galeria__item--tall\"><img class=\"nz-img nz-img--full\" src=\"data:image/svg+xml;utf8,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%27640%27 height=%27360%27%3E%3Crect width=%27640%27 height=%27360%27 fill=%27%23dbeafe%27/%3E%3C/svg%3E\" alt=\"Alta\"></div><div class=\"nz-galeria__item\"><img class=\"nz-img nz-img--full\" src=\"data:image/svg+xml;utf8,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%27300%27 height=%27300%27%3E%3Crect width=%27300%27 height=%27300%27 fill=%27%23ffedd5%27/%3E%3C/svg%3E\" alt=\"Baja\"></div><div class=\"nz-galeria__item\"><img class=\"nz-img nz-img--full\" src=\"data:image/svg+xml;utf8,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%27400%27 height=%27300%27%3E%3Crect width=%27400%27 height=%27300%27 fill=%27%23f3f4f6%27/%3E%3C/svg%3E\" alt=\"Baja\"></div><div class=\"nz-galeria__item\"><img class=\"nz-img nz-img--full\" src=\"data:image/svg+xml;utf8,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%27640%27 height=%27360%27%3E%3Crect width=%27640%27 height=%27360%27 fill=%27%23dbeafe%27/%3E%3C/svg%3E\" alt=\"Baja\"></div></div>"
-    },
-    {
-      "titulo": "Nube de logotipos",
-      "tag": ".nz-logo-nube · __item · __item--muted",
-      "markup": "<div class=\"nz-logo-nube\" style=\"max-width:28rem\"><span class=\"nz-logo-nube__item nz-brand\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 2.8 21.2 12 12 21.2 2.8 12Z\"/></svg> Marca</span><span class=\"nz-logo-nube__item nz-brand\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"6.5\"/></svg> Otra</span><span class=\"nz-logo-nube__item nz-logo-nube__item--muted\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 4.5 20 18.5H4Z\"/></svg> Tercera</span><span class=\"nz-logo-nube__item nz-logo-nube__item--muted\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><rect x=\"5\" y=\"5\" width=\"14\" height=\"14\" rx=\"2\"/></svg> Cuarta</span></div>"
-    },
-    {
-      "titulo": "Fila de logos",
-      "tag": ".nz-logos",
-      "markup": "<div class=\"nz-logos\"><span class=\"nz-brand\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 2.8 21.2 12 12 21.2 2.8 12Z\"/></svg> Marca</span><span class=\"nz-brand\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"6.5\"/></svg> Otra</span><span class=\"nz-brand\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 4.5 20 18.5H4Z\"/></svg> Tercera</span></div>"
-    },
-    {
-      "titulo": "Imagen con badge",
-      "tag": ".nz-media-badge · --right · --bottom · --center",
-      "markup": "<div class=\"nz-cover nz-cover--16x9\" style=\"max-width:16rem;position:relative;background:var(--nz-bg-inset)\"><span class=\"nz-media-badge nz-media-badge--right nz-media-badge--brand\">PRO</span><span class=\"nz-media-badge nz-media-badge--bottom nz-media-badge--center\">16:9</span></div>"
-    },
-    {
-      "titulo": "Badges de color sobre imagen",
-      "tag": ".nz-media-badge--danger · --top-izq",
-      "markup": "<div class=\"nz-cover nz-cover--16x9\" style=\"max-width:16rem;position:relative;background:var(--nz-bg-inset)\"><span class=\"nz-media-badge nz-media-badge--top-izq nz-media-badge--danger\">−25%</span><span class=\"nz-media-badge nz-media-badge--bottom nz-media-badge--brand\">Nuevo</span></div>"
-    },
-    {
-      "titulo": "Imagen de fondo",
-      "tag": ".nz-bgimg",
-      "markup": "<div class=\"nz-bgimg\" style=\"max-width:20rem;min-height:6rem;border-radius:var(--nz-radius-md);background-color:var(--nz-gray-700);display:grid;place-items:center\"><span class=\"nz-media__title\" style=\"color:var(--nz-gray-0)\">Texto sobre imagen</span></div>"
-    },
-    {
-      "titulo": "Fondo con tinte de marca",
-      "tag": ".nz-bgimg--brand · --accent",
-      "markup": "<div class=\"nz-cluster\"><div class=\"nz-bgimg nz-bgimg--brand\" style=\"max-width:16rem;min-height:6rem;border-radius:var(--nz-radius-md);background-color:var(--nz-gray-700);display:grid;place-items:center\"><span class=\"nz-media__title\">Tinte azul</span></div><div class=\"nz-bgimg nz-bgimg--accent\" style=\"max-width:16rem;min-height:6rem;border-radius:var(--nz-radius-md);background-color:var(--nz-gray-700);display:grid;place-items:center\"><span class=\"nz-media__title\">Tinte naranja</span></div></div>"
-    },
-    {
-      "titulo": "Logos: densidad y tamaño",
-      "tag": ".nz-logos--compact/--spacious · .nz-logo-nube--sm/--lg",
-      "markup": "<div class=\"nz-stack nz-stack--sm\"><div class=\"nz-logos nz-logos--compact\"><span class=\"nz-brand\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 2.8 21.2 12 12 21.2 2.8 12Z\"/></svg> Marca</span><span class=\"nz-brand\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"6.5\"/></svg> Otra</span><span class=\"nz-brand\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 4.5 20 18.5H4Z\"/></svg> Tercera</span></div><div class=\"nz-logos nz-logos--spacious\"><span class=\"nz-brand\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 2.8 21.2 12 12 21.2 2.8 12Z\"/></svg> Marca</span><span class=\"nz-brand\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"6.5\"/></svg> Otra</span><span class=\"nz-brand\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 4.5 20 18.5H4Z\"/></svg> Tercera</span></div><div class=\"nz-logo-nube nz-logo-nube--sm\"><span class=\"nz-logo-nube__item nz-brand\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 2.8 21.2 12 12 21.2 2.8 12Z\"/></svg> Pequeño</span><span class=\"nz-logo-nube__item nz-logo-nube__item--muted\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><rect x=\"5\" y=\"5\" width=\"14\" height=\"14\" rx=\"2\"/></svg> Muted</span></div><div class=\"nz-logo-nube nz-logo-nube--lg\"><span class=\"nz-logo-nube__item nz-brand\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 2.8 21.2 12 12 21.2 2.8 12Z\"/></svg> Grande</span><span class=\"nz-logo-nube__item nz-logo-nube__item--muted\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><rect x=\"5\" y=\"5\" width=\"14\" height=\"14\" rx=\"2\"/></svg> Muted</span></div></div>"
-    },
-    {
-      "titulo": "Mapa con tono",
-      "tag": ".nz-mapa-placeholder--brand · --neutral",
-      "markup": "<div class=\"nz-cluster\"><div class=\"nz-mapa-placeholder nz-mapa-placeholder--brand\" style=\"max-width:16rem\"><span class=\"nz-mapa-placeholder__pin\"></span><span class=\"nz-mapa-placeholder__label\">Tono marca</span></div><div class=\"nz-mapa-placeholder nz-mapa-placeholder--neutral\" style=\"max-width:16rem\"><span class=\"nz-mapa-placeholder__pin\"></span><span class=\"nz-mapa-placeholder__label\">Tono neutro</span></div></div>"
-    },
-    {
-      "titulo": "Icono",
-      "tag": ".nz-icon · --sm · --lg · --xl · --brand · --muted · --filled",
-      "markup": "<div class=\"nz-cluster\"><span class=\"nz-lbl\">Trazo que hereda el texto</span><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M20 6 9 17l-5-5\"/></svg><svg class=\"nz-icon nz-icon--sm\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"8\" r=\"4\"/><path d=\"M4 21a8 8 0 0 1 16 0\"/></svg><svg class=\"nz-icon nz-icon--lg\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><circle cx=\"11\" cy=\"11\" r=\"7\"/><path d=\"m20 20-3.5-3.5\"/></svg><svg class=\"nz-icon nz-icon--xl nz-icon--muted\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M18 8a6 6 0 1 0-12 0c0 7-3 9-3 9h18s-3-2-3-9\"/><path d=\"M13.7 21a2 2 0 0 1-3.4 0\"/></svg><svg class=\"nz-icon nz-icon--brand\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M20 6 9 17l-5-5\"/></svg><svg class=\"nz-icon nz-icon--filled\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"6\"/></svg><svg class=\"nz-icon nz-icon--filled nz-icon--brand\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"6\"/></svg></div>"
-    },
-    {
-      "titulo": "Icono con tono y grosor de trazo",
-      "tag": ".nz-icon--accent · --success · --warning · --danger · --info · --fino · --grueso",
-      "markup": "<p class=\"nz-cluster nz-cluster--spacious\"><span class=\"nz-cluster nz-cluster--compact\"><svg class=\"nz-icon nz-icon--xl nz-icon--accent\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"9\"/><path d=\"M12 8v8M8 12h8\"/></svg><span class=\"nz-text--small\">Acento</span></span><span class=\"nz-cluster nz-cluster--compact\"><svg class=\"nz-icon nz-icon--xl nz-icon--success\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"9\"/><path d=\"m8 12 3 3 5-6\"/></svg><span class=\"nz-text--small\">Éxito</span></span><span class=\"nz-cluster nz-cluster--compact\"><svg class=\"nz-icon nz-icon--xl nz-icon--warning\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 3 2 20h20L12 3Z\"/><path d=\"M12 9v5M12 17h.01\"/></svg><span class=\"nz-text--small\">Aviso</span></span><span class=\"nz-cluster nz-cluster--compact\"><svg class=\"nz-icon nz-icon--xl nz-icon--danger\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"9\"/><path d=\"m15 9-6 6M9 9l6 6\"/></svg><span class=\"nz-text--small\">Peligro</span></span><span class=\"nz-cluster nz-cluster--compact\"><svg class=\"nz-icon nz-icon--xl nz-icon--info\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"9\"/><path d=\"M12 11v6M12 8h.01\"/></svg><span class=\"nz-text--small\">Información</span></span><span class=\"nz-cluster nz-cluster--compact\"><svg class=\"nz-icon nz-icon--xl nz-icon--fino nz-icon--lg\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M3 12h18M12 3v18\"/></svg><span class=\"nz-text--small\">Trazo fino</span></span><span class=\"nz-cluster nz-cluster--compact\"><svg class=\"nz-icon nz-icon--xl nz-icon--grueso nz-icon--sm\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M3 12h18M12 3v18\"/></svg><span class=\"nz-text--small\">Trazo grueso</span></span></p>"
-    },
-    {
-      "titulo": "Logotipo y logos fluidos: escalan y no desbordan",
-      "tag": ".nz-brand · .nz-logos (img al 100%) · .nz-logo-nube (auto-fit)",
-      "markup": "<div class=\"nz-stack nz-stack--sm\"><span class=\"nz-brand\"><span class=\"nz-brand__mark\">A</span> Aurora</span><span class=\"nz-brand nz-brand--lg\"><span class=\"nz-brand__mark\">A</span> Aurora grande</span><div class=\"nz-logos\" style=\"max-width:10rem\"><img src=\"data:image/svg+xml;utf8,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%27320%27 height=%2780%27 viewBox=%270 0 320 80%27%3E%3Crect width=%27320%27 height=%2780%27 rx=%2716%27 fill=%27%23dbeafe%27/%3E%3Ctext x=%2732%27 y=%2750%27 font-family=%27sans-serif%27 font-size=%2726%27 fill=%27%232563eb%27%3ELogotipo ancho%3C/text%3E%3C/svg%3E\" alt=\"Logotipo de ejemplo\"><span>Marca</span></div><div class=\"nz-logo-nube\" style=\"max-width:20rem\"><span class=\"nz-logo-nube__item\">Marca uno</span><span class=\"nz-logo-nube__item\">Marca dos</span><span class=\"nz-logo-nube__item nz-logo-nube__item--muted\">Marca tres</span><span class=\"nz-logo-nube__item\">Marca cuatro</span></div></div>"
-    }
-  ]
+ "cat": 9,
+ "nombre": "Media e iconografía",
+ "desc": "Imágenes responsive (formas, filtros, ratios), figure, avatares (tamaños, forma, presencia, grupos), logotipos y nube de logos, iconos en caja, media object, vídeo, audio, hueco de mapa y galería.",
+ "pack": "p9-media.css",
+ "fichero": "09-media.html",
+ "demos": [
+  {
+   "titulo": "Imagen responsive",
+   "tag": ".nz-img · --rounded",
+   "markup": "<img class=\"nz-img nz-img--rounded\" src=\"data:image/svg+xml;utf8,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%27640%27 height=%27360%27%3E%3Crect width=%27640%27 height=%27360%27 fill=%27%23dbeafe%27/%3E%3C/svg%3E\" alt=\"Foto de ejemplo\">"
+  },
+  {
+   "titulo": "Imagen con borde, con sombra y a sangre",
+   "tag": ".nz-img--bordered · --shadow · --full",
+   "markup": "<div class=\"nz-stack nz-stack--sm\" style=\"max-width:16rem\"><img class=\"nz-img nz-img--bordered\" src=\"data:image/svg+xml;utf8,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%27400%27 height=%27300%27%3E%3Crect width=%27400%27 height=%27300%27 fill=%27%23f3f4f6%27/%3E%3C/svg%3E\" alt=\"Con borde\"><img class=\"nz-img nz-img--shadow\" src=\"data:image/svg+xml;utf8,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%27400%27 height=%27300%27%3E%3Crect width=%27400%27 height=%27300%27 fill=%27%23f3f4f6%27/%3E%3C/svg%3E\" alt=\"Con sombra\"><img class=\"nz-img nz-img--full\" src=\"data:image/svg+xml;utf8,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%27400%27 height=%27300%27%3E%3Crect width=%27400%27 height=%27300%27 fill=%27%23f3f4f6%27/%3E%3C/svg%3E\" alt=\"A sangre\" style=\"height:6rem\"></div>"
+  },
+  {
+   "titulo": "Imagen en blanco y negro y con zoom al pasar",
+   "tag": ".nz-img--grayscale · --zoom",
+   "markup": "<div class=\"nz-cluster\"><img class=\"nz-img nz-img--grayscale nz-img--rounded\" src=\"data:image/svg+xml;utf8,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%27400%27 height=%27300%27%3E%3Crect width=%27400%27 height=%27300%27 fill=%27%23f3f4f6%27/%3E%3C/svg%3E\" alt=\"Gris\" style=\"width:10rem\"><img class=\"nz-img nz-img--zoom\" src=\"data:image/svg+xml;utf8,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%27400%27 height=%27300%27%3E%3Crect width=%27400%27 height=%27300%27 fill=%27%23f3f4f6%27/%3E%3C/svg%3E\" alt=\"Zoom\" style=\"width:10rem\"></div>"
+  },
+  {
+   "titulo": "Imagen circular y con proporción fija",
+   "tag": ".nz-img--circle · --ratio-1x1 · --ratio-16x9",
+   "markup": "<div class=\"nz-cluster\"><img class=\"nz-img nz-img--circle\" src=\"data:image/svg+xml;utf8,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%27300%27 height=%27300%27%3E%3Crect width=%27300%27 height=%27300%27 fill=%27%23ffedd5%27/%3E%3C/svg%3E\" alt=\"Círculo\" style=\"width:72px\"><img class=\"nz-img nz-img--ratio-1x1\" src=\"data:image/svg+xml;utf8,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%27300%27 height=%27300%27%3E%3Crect width=%27300%27 height=%27300%27 fill=%27%23ffedd5%27/%3E%3C/svg%3E\" alt=\"1:1\" style=\"width:8rem\"><img class=\"nz-img nz-img--ratio-16x9\" src=\"data:image/svg+xml;utf8,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%27400%27 height=%27300%27%3E%3Crect width=%27400%27 height=%27300%27 fill=%27%23f3f4f6%27/%3E%3C/svg%3E\" alt=\"16:9\" style=\"width:12rem\"></div>"
+  },
+  {
+   "titulo": "Caja de imagen 16:9",
+   "tag": ".nz-cover--16x9",
+   "markup": "<div class=\"nz-cover nz-cover--16x9\" style=\"max-width:16rem;background:var(--nz-brand-soft)\"></div>"
+  },
+  {
+   "titulo": "Covers 1:1, 4:3, 3:2",
+   "tag": ".nz-cover--1x1 · --4x3 · --3x2",
+   "markup": "<div class=\"nz-cluster\"><div class=\"nz-cover nz-cover--1x1\" style=\"flex:1;max-width:6rem;background:var(--nz-bg-inset)\"></div><div class=\"nz-cover nz-cover--4x3\" style=\"flex:1.4;max-width:8rem;background:var(--nz-brand-soft)\"></div><div class=\"nz-cover nz-cover--3x2\" style=\"flex:1.6;max-width:9rem;background:var(--nz-accent-soft)\"></div></div>"
+  },
+  {
+   "titulo": "Figure",
+   "tag": ".nz-figure · __img · figcaption",
+   "markup": "<figure class=\"nz-figure\" style=\"max-width:18rem\"><div class=\"nz-figure__img\"><img class=\"nz-img nz-img--full\" src=\"data:image/svg+xml;utf8,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%27640%27 height=%27360%27%3E%3Crect width=%27640%27 height=%27360%27 fill=%27%23dbeafe%27/%3E%3C/svg%3E\" alt=\"Plano\"></div><figcaption>Leyenda bajo la imagen.</figcaption></figure>"
+  },
+  {
+   "titulo": "Figure de marca y figure pequeña",
+   "tag": ".nz-figure--brand · --sm",
+   "markup": "<div class=\"nz-stack nz-stack--lg\"><figure class=\"nz-figure nz-figure--brand\"><div class=\"nz-figure__img\"><img class=\"nz-img nz-img--full\" src=\"data:image/svg+xml;utf8,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%27640%27 height=%27360%27%3E%3Crect width=%27640%27 height=%27360%27 fill=%27%23dbeafe%27/%3E%3C/svg%3E\" alt=\"Marca\"></div><figcaption>Destacada en azul de marca.</figcaption></figure> <figure class=\"nz-figure nz-figure--sm\"><div class=\"nz-figure__img\"><img class=\"nz-img nz-img--full\" src=\"data:image/svg+xml;utf8,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%27400%27 height=%27300%27%3E%3Crect width=%27400%27 height=%27300%27 fill=%27%23f3f4f6%27/%3E%3C/svg%3E\" alt=\"Pequeña\"></div><figcaption>Versión compacta.</figcaption></figure></div>"
+  },
+  {
+   "titulo": "Figure con leyenda a la izquierda y crédito",
+   "tag": ".nz-figure--caption-left · __credit",
+   "markup": "<figure class=\"nz-figure nz-figure--caption-left\" style=\"max-width:16rem\"><div class=\"nz-figure__img\"><img class=\"nz-img nz-img--full\" src=\"data:image/svg+xml;utf8,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%27400%27 height=%27300%27%3E%3Crect width=%27400%27 height=%27300%27 fill=%27%23f3f4f6%27/%3E%3C/svg%3E\" alt=\"Foto\"></div><figcaption>Foto de obra <span class=\"nz-figure__credit\">· © Ntizar</span></figcaption></figure>"
+  },
+  {
+   "titulo": "Avatares",
+   "tag": ".nz-avatar--xs · --sm · --md · --lg",
+   "markup": "<div class=\"nz-cluster\"><span class=\"nz-avatar nz-avatar--xs\">XS</span><span class=\"nz-avatar nz-avatar--sm\">SM</span><span class=\"nz-avatar nz-avatar--md\">MD</span><span class=\"nz-avatar nz-avatar--lg\">LG</span></div>"
+  },
+  {
+   "titulo": "Avatares grandes y de color",
+   "tag": ".nz-avatar--xl · --2xl · --accent · --dark",
+   "markup": "<div class=\"nz-cluster\"><span class=\"nz-avatar nz-avatar--xl\">XL</span><span class=\"nz-avatar nz-avatar--2xl\">2XL</span><span class=\"nz-avatar nz-avatar--md nz-avatar--accent\">AC</span><span class=\"nz-avatar nz-avatar--md nz-avatar--dark\">DK</span></div>"
+  },
+  {
+   "titulo": "Avatar cuadrado y con anillo",
+   "tag": ".nz-avatar--square · --ring",
+   "markup": "<div class=\"nz-cluster\"><span class=\"nz-avatar nz-avatar--md nz-avatar--square\">A7</span><span class=\"nz-avatar nz-avatar--md nz-avatar--ring\">DA</span></div>"
+  },
+  {
+   "titulo": "Avatar con punto de presencia",
+   "tag": ".nz-avatar--status · --busy · --offline",
+   "markup": "<div class=\"nz-cluster\"><span class=\"nz-avatar nz-avatar--md nz-avatar--status\">ON</span><span class=\"nz-avatar nz-avatar--md nz-avatar--status nz-avatar--busy\">OC</span><span class=\"nz-avatar nz-avatar--md nz-avatar--status nz-avatar--offline\">OFF</span></div>"
+  },
+  {
+   "titulo": "Grupo de avatares",
+   "tag": ".nz-avatar-group · __more · --sm",
+   "markup": "<div class=\"nz-cluster\"><div class=\"nz-avatar-group\"><span class=\"nz-avatar nz-avatar--sm\">A</span><span class=\"nz-avatar nz-avatar--sm\">B</span><span class=\"nz-avatar nz-avatar--sm\">C</span><span class=\"nz-avatar nz-avatar--sm nz-avatar-group__more\">+2</span></div> <div class=\"nz-avatar-group nz-avatar-group--sm\"><span class=\"nz-avatar nz-avatar--xs\">A</span><span class=\"nz-avatar nz-avatar--xs\">B</span><span class=\"nz-avatar nz-avatar--xs nz-avatar-group__more\">+9</span></div></div>"
+  },
+  {
+   "titulo": "Barra de avatares",
+   "tag": ".nz-avatar__bar",
+   "markup": "<div class=\"nz-avatar__bar\"><span class=\"nz-avatar nz-avatar--sm\">DA</span><span class=\"nz-media__title\">David Antizar</span><span class=\"nz-badge nz-badge--brand\">Autor</span></div>"
+  },
+  {
+   "titulo": "Logo marca",
+   "tag": ".nz-brand · __mark",
+   "markup": "<span class=\"nz-brand\"><span class=\"nz-brand__mark\">A7</span> Aurora</span>"
+  },
+  {
+   "titulo": "Marca grande, pequeña y de acento",
+   "tag": ".nz-brand--lg · --sm · --accent · __mark--accent",
+   "markup": "<div class=\"nz-cluster\"><span class=\"nz-brand nz-brand--lg\"><span class=\"nz-brand__mark\">A7</span> Aurora</span><span class=\"nz-brand nz-brand--sm\"><span class=\"nz-brand__mark\">A7</span> Aurora</span><span class=\"nz-brand nz-brand--accent\"><span class=\"nz-brand__mark nz-brand__mark--accent\">7</span> Pro</span></div>"
+  },
+  {
+   "titulo": "Marca monoespaciada y marca oscura",
+   "tag": ".nz-brand--mono · __mark--dark",
+   "markup": "<div class=\"nz-cluster\"><span class=\"nz-brand nz-brand--mono\"><span class=\"nz-brand__mark\">v7</span> aurora-7</span><span class=\"nz-brand\"><span class=\"nz-brand__mark nz-brand__mark--dark\">A7</span> Ntizar</span></div>"
+  },
+  {
+   "titulo": "Logomark",
+   "tag": ".nz-logomark · --accent · --outline",
+   "markup": "<div class=\"nz-cluster\"><span class=\"nz-logomark\" style=\"width:40px;height:40px\">A7</span><span class=\"nz-logomark nz-logomark--accent\" style=\"width:40px;height:40px\">7</span><span class=\"nz-logomark nz-logomark--outline\" style=\"width:40px;height:40px\">N</span></div>"
+  },
+  {
+   "titulo": "Icono en caja",
+   "tag": ".nz-icon-tile · --accent · --success · --danger",
+   "markup": "<div class=\"nz-cluster\"><span class=\"nz-icon-tile\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 2l2.4 7.6L22 12l-7.6 2.4L12 22l-2.4-7.6L2 12l7.6-2.4z\"/></svg></span><span class=\"nz-icon-tile nz-icon-tile--accent\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 2v20M2 12h20M4.9 4.9l14.2 14.2M19.1 4.9 4.9 19.1\"/></svg></span><span class=\"nz-icon-tile nz-icon-tile--success\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M20 6 9 17l-5-5\"/></svg></span><span class=\"nz-icon-tile nz-icon-tile--danger\">!</span></div>"
+  },
+  {
+   "titulo": "Icono en caja pequeño, grande y extra grande",
+   "tag": ".nz-icon-tile--sm · --lg · --xl",
+   "markup": "<div class=\"nz-cluster\"><span class=\"nz-icon-tile nz-icon-tile--sm\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"3\"/></svg></span><span class=\"nz-icon-tile\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 2l2.4 7.6L22 12l-7.6 2.4L12 22l-2.4-7.6L2 12l7.6-2.4z\"/></svg></span><span class=\"nz-icon-tile nz-icon-tile--lg\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 2l2.4 7.6L22 12l-7.6 2.4L12 22l-2.4-7.6L2 12l7.6-2.4z\"/></svg></span><span class=\"nz-icon-tile nz-icon-tile--xl\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 2l2.4 7.6L22 12l-7.6 2.4L12 22l-2.4-7.6L2 12l7.6-2.4z\"/></svg></span></div>"
+  },
+  {
+   "titulo": "Icono en caja de marca, de contorno y circular",
+   "tag": ".nz-icon-tile--brand · --outline · --circle",
+   "markup": "<div class=\"nz-cluster\"><span class=\"nz-icon-tile nz-icon-tile--brand\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 2l2.4 7.6L22 12l-7.6 2.4L12 22l-2.4-7.6L2 12l7.6-2.4z\"/></svg></span><span class=\"nz-icon-tile nz-icon-tile--outline\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 2l2.4 7.6L22 12l-7.6 2.4L12 22l-2.4-7.6L2 12l7.6-2.4z\"/></svg></span><span class=\"nz-icon-tile nz-icon-tile--circle nz-icon-tile--accent\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 2v20M2 12h20M4.9 4.9l14.2 14.2M19.1 4.9 4.9 19.1\"/></svg></span></div>"
+  },
+  {
+   "titulo": "Media object",
+   "tag": ".nz-media · __fig · __body · __title · __desc",
+   "markup": "<div class=\"nz-media\"><span class=\"nz-avatar nz-avatar--md nz-media__fig\">AM</span><div class=\"nz-media__body\"><span class=\"nz-media__title\">Ana Martín</span><span class=\"nz-media__desc\">Diseñadora de producto.</span></div></div>"
+  },
+  {
+   "titulo": "Media invertida, centrada y compacta",
+   "tag": ".nz-media--reverse · --center · --sm",
+   "markup": "<div class=\"nz-stack nz-stack--sm\"><div class=\"nz-media nz-media--reverse nz-media--center\"><span class=\"nz-avatar nz-avatar--md nz-media__fig\">AM</span><div class=\"nz-media__body\"><span class=\"nz-media__title\">Invertida y centrada</span><span class=\"nz-media__desc\">Avatar a la derecha.</span></div></div> <div class=\"nz-media nz-media--sm\"><span class=\"nz-icon-tile nz-icon-tile--sm nz-media__fig\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 2l2.4 7.6L22 12l-7.6 2.4L12 22l-2.4-7.6L2 12l7.6-2.4z\"/></svg></span><div class=\"nz-media__body\"><span class=\"nz-media__title\">Versión compacta</span><span class=\"nz-media__desc\">Para listas densas.</span></div></div></div>"
+  },
+  {
+   "titulo": "Media de marca, con borde y con enlace",
+   "tag": ".nz-media--brand · --bordered · __link",
+   "markup": "<div class=\"nz-media nz-media--brand nz-media--bordered\" style=\"max-width:24rem\"><span class=\"nz-icon-tile nz-media__fig\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 3l2.2 6.8L21 12l-6.8 2.2L12 21l-2.2-6.8L3 12l6.8-2.2z\"/></svg></span><div class=\"nz-media__body\"><span class=\"nz-media__title\">Novedades de la versión 7</span><span class=\"nz-media__desc\">Doce categorías y más de mil objetos.</span><a href=\"#contenido\" class=\"nz-media__link\">Ver el registro →</a></div></div>"
+  },
+  {
+   "titulo": "Vídeo",
+   "tag": ".nz-video · __play",
+   "markup": "<div class=\"nz-video\" style=\"max-width:16rem\"><button class=\"nz-video__play\" aria-label=\"reproducir\"><i><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"m8 5 11 7-11 7z\"/></svg></i></button></div>"
+  },
+  {
+   "titulo": "Vídeo 4:3 a sangre",
+   "tag": ".nz-video--4x3 · --full",
+   "markup": "<div class=\"nz-video nz-video--4x3 nz-video--full\" style=\"max-width:16rem\"><button class=\"nz-video__play\" aria-label=\"reproducir\"><i><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"m8 5 11 7-11 7z\"/></svg></i></button></div>"
+  },
+  {
+   "titulo": "Vídeo con controles, tiempo y barra",
+   "tag": ".nz-video__controls · __time · __bar",
+   "markup": "<div class=\"nz-video\" style=\"max-width:18rem\"><button class=\"nz-video__play\" aria-label=\"reproducir\"><i><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"m8 5 11 7-11 7z\"/></svg></i></button><div class=\"nz-video__controls\"><span class=\"nz-video__time\">01:24</span><span class=\"nz-video__bar\"><i style=\"width:38%\"></i></span><span class=\"nz-video__time\">03:42</span></div></div>"
+  },
+  {
+   "titulo": "Reproductor de audio",
+   "tag": ".nz-audio · __play · __track · __time",
+   "markup": "<div class=\"nz-audio\" style=\"max-width:22rem\"><button class=\"nz-audio__play\" aria-label=\"reproducir\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"m8 5 11 7-11 7z\"/></svg></button><span class=\"nz-audio__track\"><i style=\"width:46%\"></i></span><span class=\"nz-audio__time\">2:18 / 5:02</span></div>"
+  },
+  {
+   "titulo": "Reproductor de audio de acento",
+   "tag": ".nz-audio--accent",
+   "markup": "<div class=\"nz-audio nz-audio--accent\" style=\"max-width:22rem\"><button class=\"nz-audio__play\" aria-label=\"reproducir\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"m8 5 11 7-11 7z\"/></svg></button><span class=\"nz-audio__track\"><i style=\"width:12%\"></i></span><span class=\"nz-audio__time\">0:34 / 4:10</span></div>"
+  },
+  {
+   "titulo": "Hueco de mapa",
+   "tag": ".nz-mapa-placeholder · __pin · __label",
+   "markup": "<div class=\"nz-mapa-placeholder\" style=\"max-width:22rem\"><span class=\"nz-mapa-placeholder__pin\"></span><span class=\"nz-mapa-placeholder__label\">Sede central · Madrid</span></div>"
+  },
+  {
+   "titulo": "Galería de dos y de tres columnas",
+   "tag": ".nz-galeria · --2 · --3 · __item",
+   "markup": "<div class=\"nz-stack nz-stack--lg\"><div class=\"nz-galeria nz-galeria--2\" style=\"max-width:18rem\"><div class=\"nz-galeria__item\"><img class=\"nz-img nz-img--full\" src=\"data:image/svg+xml;utf8,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%27400%27 height=%27300%27%3E%3Crect width=%27400%27 height=%27300%27 fill=%27%23f3f4f6%27/%3E%3C/svg%3E\" alt=\"Uno\"></div><div class=\"nz-galeria__item\"><img class=\"nz-img nz-img--full\" src=\"data:image/svg+xml;utf8,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%27640%27 height=%27360%27%3E%3Crect width=%27640%27 height=%27360%27 fill=%27%23dbeafe%27/%3E%3C/svg%3E\" alt=\"Dos\"></div></div> <div class=\"nz-galeria nz-galeria--3\" style=\"max-width:26rem\"><div class=\"nz-galeria__item\"><img class=\"nz-img nz-img--full\" src=\"data:image/svg+xml;utf8,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%27300%27 height=%27300%27%3E%3Crect width=%27300%27 height=%27300%27 fill=%27%23ffedd5%27/%3E%3C/svg%3E\" alt=\"Tres\"></div><div class=\"nz-galeria__item\"><img class=\"nz-img nz-img--full\" src=\"data:image/svg+xml;utf8,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%27400%27 height=%27300%27%3E%3Crect width=%27400%27 height=%27300%27 fill=%27%23f3f4f6%27/%3E%3C/svg%3E\" alt=\"Cuatro\"></div><div class=\"nz-galeria__item\"><img class=\"nz-img nz-img--full\" src=\"data:image/svg+xml;utf8,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%27640%27 height=%27360%27%3E%3Crect width=%27640%27 height=%27360%27 fill=%27%23dbeafe%27/%3E%3C/svg%3E\" alt=\"Cinco\"></div></div></div>"
+  },
+  {
+   "titulo": "Galería tipo mosaico",
+   "tag": ".nz-galeria--masonry · __item--tall",
+   "markup": "<div class=\"nz-galeria nz-galeria--masonry\" style=\"max-width:20rem\"><div class=\"nz-galeria__item nz-galeria__item--tall\"><img class=\"nz-img nz-img--full\" src=\"data:image/svg+xml;utf8,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%27640%27 height=%27360%27%3E%3Crect width=%27640%27 height=%27360%27 fill=%27%23dbeafe%27/%3E%3C/svg%3E\" alt=\"Alta\"></div><div class=\"nz-galeria__item\"><img class=\"nz-img nz-img--full\" src=\"data:image/svg+xml;utf8,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%27300%27 height=%27300%27%3E%3Crect width=%27300%27 height=%27300%27 fill=%27%23ffedd5%27/%3E%3C/svg%3E\" alt=\"Baja\"></div><div class=\"nz-galeria__item\"><img class=\"nz-img nz-img--full\" src=\"data:image/svg+xml;utf8,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%27400%27 height=%27300%27%3E%3Crect width=%27400%27 height=%27300%27 fill=%27%23f3f4f6%27/%3E%3C/svg%3E\" alt=\"Baja\"></div><div class=\"nz-galeria__item\"><img class=\"nz-img nz-img--full\" src=\"data:image/svg+xml;utf8,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%27640%27 height=%27360%27%3E%3Crect width=%27640%27 height=%27360%27 fill=%27%23dbeafe%27/%3E%3C/svg%3E\" alt=\"Baja\"></div></div>"
+  },
+  {
+   "titulo": "Nube de logotipos",
+   "tag": ".nz-logo-nube · __item · __item--muted",
+   "markup": "<div class=\"nz-logo-nube\" style=\"max-width:28rem\"><span class=\"nz-logo-nube__item nz-brand\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 2.8 21.2 12 12 21.2 2.8 12Z\"/></svg> Marca</span><span class=\"nz-logo-nube__item nz-brand\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"6.5\"/></svg> Otra</span><span class=\"nz-logo-nube__item nz-logo-nube__item--muted\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 4.5 20 18.5H4Z\"/></svg> Tercera</span><span class=\"nz-logo-nube__item nz-logo-nube__item--muted\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><rect x=\"5\" y=\"5\" width=\"14\" height=\"14\" rx=\"2\"/></svg> Cuarta</span></div>"
+  },
+  {
+   "titulo": "Fila de logos",
+   "tag": ".nz-logos",
+   "markup": "<div class=\"nz-logos\"><span class=\"nz-brand\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 2.8 21.2 12 12 21.2 2.8 12Z\"/></svg> Marca</span><span class=\"nz-brand\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"6.5\"/></svg> Otra</span><span class=\"nz-brand\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 4.5 20 18.5H4Z\"/></svg> Tercera</span></div>"
+  },
+  {
+   "titulo": "Imagen con badge",
+   "tag": ".nz-media-badge · --right · --bottom · --center",
+   "markup": "<div class=\"nz-cover nz-cover--16x9\" style=\"max-width:16rem;position:relative;background:var(--nz-bg-inset)\"><span class=\"nz-media-badge nz-media-badge--right nz-media-badge--brand\">PRO</span><span class=\"nz-media-badge nz-media-badge--bottom nz-media-badge--center\">16:9</span></div>"
+  },
+  {
+   "titulo": "Badges de color sobre imagen",
+   "tag": ".nz-media-badge--danger · --top-izq",
+   "markup": "<div class=\"nz-cover nz-cover--16x9\" style=\"max-width:16rem;position:relative;background:var(--nz-bg-inset)\"><span class=\"nz-media-badge nz-media-badge--top-izq nz-media-badge--danger\">−25%</span><span class=\"nz-media-badge nz-media-badge--bottom nz-media-badge--brand\">Nuevo</span></div>"
+  },
+  {
+   "titulo": "Imagen de fondo",
+   "tag": ".nz-bgimg",
+   "markup": "<div class=\"nz-bgimg\" style=\"max-width:20rem;min-height:6rem;border-radius:var(--nz-radius-md);background-color:var(--nz-gray-700);display:grid;place-items:center\"><span class=\"nz-media__title\" style=\"color:var(--nz-gray-0)\">Texto sobre imagen</span></div>"
+  },
+  {
+   "titulo": "Fondo con tinte de marca",
+   "tag": ".nz-bgimg--brand · --accent",
+   "markup": "<div class=\"nz-cluster\"><div class=\"nz-bgimg nz-bgimg--brand\" style=\"max-width:16rem;min-height:6rem;border-radius:var(--nz-radius-md);background-color:var(--nz-gray-700);display:grid;place-items:center\"><span class=\"nz-media__title\">Tinte azul</span></div><div class=\"nz-bgimg nz-bgimg--accent\" style=\"max-width:16rem;min-height:6rem;border-radius:var(--nz-radius-md);background-color:var(--nz-gray-700);display:grid;place-items:center\"><span class=\"nz-media__title\">Tinte naranja</span></div></div>"
+  },
+  {
+   "titulo": "Logos: densidad y tamaño",
+   "tag": ".nz-logos--compact/--spacious · .nz-logo-nube--sm/--lg",
+   "markup": "<div class=\"nz-stack nz-stack--sm\"><div class=\"nz-logos nz-logos--compact\"><span class=\"nz-brand\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 2.8 21.2 12 12 21.2 2.8 12Z\"/></svg> Marca</span><span class=\"nz-brand\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"6.5\"/></svg> Otra</span><span class=\"nz-brand\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 4.5 20 18.5H4Z\"/></svg> Tercera</span></div><div class=\"nz-logos nz-logos--spacious\"><span class=\"nz-brand\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 2.8 21.2 12 12 21.2 2.8 12Z\"/></svg> Marca</span><span class=\"nz-brand\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"6.5\"/></svg> Otra</span><span class=\"nz-brand\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 4.5 20 18.5H4Z\"/></svg> Tercera</span></div><div class=\"nz-logo-nube nz-logo-nube--sm\"><span class=\"nz-logo-nube__item nz-brand\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 2.8 21.2 12 12 21.2 2.8 12Z\"/></svg> Pequeño</span><span class=\"nz-logo-nube__item nz-logo-nube__item--muted\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><rect x=\"5\" y=\"5\" width=\"14\" height=\"14\" rx=\"2\"/></svg> Muted</span></div><div class=\"nz-logo-nube nz-logo-nube--lg\"><span class=\"nz-logo-nube__item nz-brand\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 2.8 21.2 12 12 21.2 2.8 12Z\"/></svg> Grande</span><span class=\"nz-logo-nube__item nz-logo-nube__item--muted\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><rect x=\"5\" y=\"5\" width=\"14\" height=\"14\" rx=\"2\"/></svg> Muted</span></div></div>"
+  },
+  {
+   "titulo": "Mapa con tono",
+   "tag": ".nz-mapa-placeholder--brand · --neutral",
+   "markup": "<div class=\"nz-cluster\"><div class=\"nz-mapa-placeholder nz-mapa-placeholder--brand\" style=\"max-width:16rem\"><span class=\"nz-mapa-placeholder__pin\"></span><span class=\"nz-mapa-placeholder__label\">Tono marca</span></div><div class=\"nz-mapa-placeholder nz-mapa-placeholder--neutral\" style=\"max-width:16rem\"><span class=\"nz-mapa-placeholder__pin\"></span><span class=\"nz-mapa-placeholder__label\">Tono neutro</span></div></div>"
+  },
+  {
+   "titulo": "Icono",
+   "tag": ".nz-icon · --sm · --lg · --xl · --brand · --muted · --filled",
+   "markup": "<div class=\"nz-cluster\"><span class=\"nz-lbl\">Trazo que hereda el texto</span><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M20 6 9 17l-5-5\"/></svg><svg class=\"nz-icon nz-icon--sm\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"8\" r=\"4\"/><path d=\"M4 21a8 8 0 0 1 16 0\"/></svg><svg class=\"nz-icon nz-icon--lg\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><circle cx=\"11\" cy=\"11\" r=\"7\"/><path d=\"m20 20-3.5-3.5\"/></svg><svg class=\"nz-icon nz-icon--xl nz-icon--muted\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M18 8a6 6 0 1 0-12 0c0 7-3 9-3 9h18s-3-2-3-9\"/><path d=\"M13.7 21a2 2 0 0 1-3.4 0\"/></svg><svg class=\"nz-icon nz-icon--brand\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M20 6 9 17l-5-5\"/></svg><svg class=\"nz-icon nz-icon--filled\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"6\"/></svg><svg class=\"nz-icon nz-icon--filled nz-icon--brand\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"6\"/></svg></div>"
+  },
+  {
+   "titulo": "Icono con tono y grosor de trazo",
+   "tag": ".nz-icon--accent · --success · --warning · --danger · --info · --fino · --grueso · --invert",
+   "markup": "<p class=\"nz-cluster nz-cluster--spacious\"><span class=\"nz-cluster nz-cluster--compact\"><svg class=\"nz-icon nz-icon--xl nz-icon--accent\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"9\"/><path d=\"M12 8v8M8 12h8\"/></svg><span class=\"nz-text--small\">Acento</span></span><span class=\"nz-cluster nz-cluster--compact\"><svg class=\"nz-icon nz-icon--xl nz-icon--success\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"9\"/><path d=\"m8 12 3 3 5-6\"/></svg><span class=\"nz-text--small\">Éxito</span></span><span class=\"nz-cluster nz-cluster--compact\"><svg class=\"nz-icon nz-icon--xl nz-icon--warning\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 3 2 20h20L12 3Z\"/><path d=\"M12 9v5M12 17h.01\"/></svg><span class=\"nz-text--small\">Aviso</span></span><span class=\"nz-cluster nz-cluster--compact\"><svg class=\"nz-icon nz-icon--xl nz-icon--danger\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"9\"/><path d=\"m15 9-6 6M9 9l6 6\"/></svg><span class=\"nz-text--small\">Peligro</span></span><span class=\"nz-cluster nz-cluster--compact\"><svg class=\"nz-icon nz-icon--xl nz-icon--info\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"9\"/><path d=\"M12 11v6M12 8h.01\"/></svg><span class=\"nz-text--small\">Información</span></span><span class=\"nz-cluster nz-cluster--compact\"><svg class=\"nz-icon nz-icon--xl nz-icon--fino nz-icon--lg\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M3 12h18M12 3v18\"/></svg><span class=\"nz-text--small\">Trazo fino</span></span><span class=\"nz-cluster nz-cluster--compact\"><svg class=\"nz-icon nz-icon--xl nz-icon--grueso nz-icon--sm\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M3 12h18M12 3v18\"/></svg><span class=\"nz-text--small\">Trazo grueso</span></span></p><svg class=\"nz-icon nz-icon--invert\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 2l2.4 7.6L22 12l-7.6 2.4L12 22l-2.4-7.6L2 12l7.6-2.4L12 2z\"/></svg>"
+  },
+  {
+   "titulo": "Logotipo y logos fluidos: escalan y no desbordan",
+   "tag": ".nz-brand · .nz-logos (img al 100%) · .nz-logo-nube (auto-fit)",
+   "markup": "<div class=\"nz-stack nz-stack--sm\"><span class=\"nz-brand\"><span class=\"nz-brand__mark\">A</span> Aurora</span><span class=\"nz-brand nz-brand--lg\"><span class=\"nz-brand__mark\">A</span> Aurora grande</span><div class=\"nz-logos\" style=\"max-width:10rem\"><img src=\"data:image/svg+xml;utf8,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%27320%27 height=%2780%27 viewBox=%270 0 320 80%27%3E%3Crect width=%27320%27 height=%2780%27 rx=%2716%27 fill=%27%23dbeafe%27/%3E%3Ctext x=%2732%27 y=%2750%27 font-family=%27sans-serif%27 font-size=%2726%27 fill=%27%232563eb%27%3ELogotipo ancho%3C/text%3E%3C/svg%3E\" alt=\"Logotipo de ejemplo\"><span>Marca</span></div><div class=\"nz-logo-nube\" style=\"max-width:20rem\"><span class=\"nz-logo-nube__item\">Marca uno</span><span class=\"nz-logo-nube__item\">Marca dos</span><span class=\"nz-logo-nube__item nz-logo-nube__item--muted\">Marca tres</span><span class=\"nz-logo-nube__item\">Marca cuatro</span></div></div>"
+  }
+ ]
 }

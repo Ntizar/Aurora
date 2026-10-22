@@ -18,3 +18,4 @@ desktop.ini
 borradores/
 *.local.css
 *.local.html
+scripts/node_modules/

@@ -3,6 +3,30 @@
 Formato: [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/).
 Versionado: [SemVer](https://semver.org/lang/es/).
 
+## [10.0.0] — 2026-10-22
+
+### Calma (el presupuesto manda)
+
+- **Presupuesto de sombra en el shell**: las cajas del catálogo (`.cat-demo`, `.cat-cat`,
+  `.cat-live-card`, fichas de `base.html`) pasan a plano + filete; la elevación se queda en
+  el topbar sticky y los anillos de foco. Medido: la portada baja de 67 elementos con sombra
+  a 15 sin tocar el layout.
+- **`.nz-dash-grid--ajuste`**: rejilla con `auto-fit minmax(16rem, 1fr)` que encaja las
+  piezas al ancho real. El runtime OpenUI la emite por defecto (`Rejilla` en modo `auto`).
+- **Lint (auditar-uso.py)**: dos reglas nuevas — `anidacion-superficies` (superficie dentro
+  de superficie -> aviso) y `sombra-a-mano` (box-shadow fuera de token -> aviso). Selftest: 15 defectos.
+
+### Generative UI
+
+- **`portada-v10.html`**: la demo de portada generada con openui-lang, ahora pre-renderizada
+  y estática (12 KB, cero JS obligatorio, lint 0 fallos y 0 avisos, móvil medido sin desbordes
+  en 320/390/1280). El hero del catálogo enlaza a ella.
+
+### Casa
+
+- Licencia **MIT** (`LICENSE` + `NOTICE.md` para terceros y atribución).
+- Censo: 2195 objetos. `briefs/portada-v10.openui` versionado como demo del pipeline.
+
 ## [9.12.1] — 2026-10-22
 
 ### Corregido

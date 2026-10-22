@@ -1,10 +1,10 @@
 {
  "name": "Aurora",
- "version": "9.12.1",
+ "version": "10.0.0",
  "type": "css-only design system",
  "namespace": ".nz-",
  "tokens": "tokens.css",
- "cdn": "https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v9.12.1/",
+ "cdn": "https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v10.0.0/",
  "manifiesto": {
   "gradientes": 0,
   "glass": 0,
@@ -19,7 +19,7 @@
   "objetivoTactil": "44px"
  },
  "resumen": {
-  "objetos": 2194,
+  "objetos": 2195,
   "familias": 411,
   "categorias": 18,
   "demos": 659,
@@ -35,7 +35,7 @@
    "categoria": 1,
    "nombre": "Layout y estructura",
    "descripcion": "El esqueleto de cualquier web: contenedores, rejillas y spans, filas, pilas, landmarks, sticky, bleed, regiones de página y helpers de flujo.",
-   "objetos": 179,
+   "objetos": 180,
    "familias": 67,
    "demos": 54,
    "pagina": "paginas/01-layout.html"
@@ -2218,11 +2218,13 @@
     "nz-dash-grid",
     "nz-dash-grid--2",
     "nz-dash-grid--4",
+    "nz-dash-grid--ajuste",
     "nz-dash-grid--sidebar"
    ],
    "modificadores": [
     "2",
     "4",
+    "ajuste",
     "sidebar"
    ],
    "partes": [],
@@ -2232,7 +2234,7 @@
    "nTokens": 1,
    "markup": {
     "demo": "paginas/01-layout.html",
-    "titulo": "Dashboard grid: 2, 3, 4 y con barra lateral",
+    "titulo": "Dashboard grid: 2, 3, 4, con barra lateral y auto-ajuste",
     "markup": "<div class=\"nz-dash-grid nz-dash-grid--2\"><div class=\"demo-box\">--2</div><div class=\"demo-box\">--2</div></div>"
    },
    "noUsar": [

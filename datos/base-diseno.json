@@ -1,12 +1,12 @@
 {
  "name": "Aurora — base de datos de diseño",
- "version": "9.12.1",
+ "version": "10.0.0",
  "descripcion": "Índice consultable del sistema: familias, tokens, recetas, combos y marcas. Cada ficha enlaza a su demo viva y lleva el markup real.",
  "fuente": "components.json + specs/ + recetas/ + examples/ + combos/ + marcas/registro.json + COMPOSICION.md",
  "explorador": "base.html",
  "resumen": {
   "familias": 411,
-  "clases": 2194,
+  "clases": 2195,
   "tokens": 236,
   "categorias": 18,
   "recetas": 6,
@@ -86,7 +86,7 @@
    "descripcion": "El esqueleto de cualquier web: contenedores, rejillas y spans, filas, pilas, landmarks, sticky, bleed, regiones de página y helpers de flujo.",
    "pack": "p1-layout.css",
    "pagina": "paginas/01-layout.html",
-   "objetos": 179,
+   "objetos": 180,
    "familias": 67,
    "demos": 54,
    "cuandoUsar": "Cuando necesites el esqueleto de la página: contenedores, rejillas, app shell, split, bento o regiones. Empieza aquí antes de colocar cualquier objeto.",
@@ -6593,16 +6593,18 @@
    "categoria": 1,
    "pack": "p1-layout.css",
    "demo": "paginas/01-layout.html",
-   "titulo": "Dashboard grid: 2, 3, 4 y con barra lateral",
+   "titulo": "Dashboard grid: 2, 3, 4, con barra lateral y auto-ajuste",
    "clases": [
     "nz-dash-grid",
     "nz-dash-grid--2",
     "nz-dash-grid--4",
+    "nz-dash-grid--ajuste",
     "nz-dash-grid--sidebar"
    ],
    "modificadores": [
     "2",
     "4",
+    "ajuste",
     "sidebar"
    ],
    "partes": [],
@@ -6618,6 +6620,7 @@
    "tags": [
     "2",
     "4",
+    "ajuste",
     "appshell",
     "bento",
     "contenedor",

@@ -6,10 +6,10 @@ Generada por `scripts/audit-catalog.py` a partir de los packs CSS y de `specs/*.
 
 | Comprobación | Valor | |
 |---|---|---|
-| Objetos declarados | 2194 |  |
+| Objetos declarados | 2195 |  |
 | Familias de objeto | 411 |  |
 | Demos en vivo | 659 |  |
-| Clases usadas en demos | 2193 |  |
+| Clases usadas en demos | 2194 |  |
 | Objetos fantasma (usados y no declarados) | 0 | 🟢 |
 | Clases declaradas sin demo | 1 | 🟡 |
 | Familias sin demo | 0 | 🟢 |
@@ -26,7 +26,7 @@ Familias sin ninguna variante (`--mod`): **166** de 411 — ahí está el margen
 
 | pack | líneas | objetos | familias | hex | grad. | glass | !imp. |
 |---|---|---|---|---|---|---|---|
-| p1-layout.css | 393 | 179 | 67 | 0 | 0 | 0 | 0 |
+| p1-layout.css | 394 | 180 | 67 | 0 | 0 | 0 | 0 |
 | p10-commerce.css | 258 | 156 | 22 | 0 | 0 | 0 | 0 |
 | p11-social.css | 189 | 107 | 15 | 0 | 0 | 0 | 0 |
 | p12-system.css | 143 | 80 | 25 | 0 | 0 | 0 | 1 |
@@ -49,7 +49,7 @@ Familias sin ninguna variante (`--mod`): **166** de 411 — ahí está el margen
 
 | # | categoría | pack | objetos | familias | demos | sin demo | familias sin demo |
 |---|---|---|---|---|---|---|---|
-| 01 | Layout y estructura | p1-layout.css | 179 | 67 | 54 | 0 | 0 |
+| 01 | Layout y estructura | p1-layout.css | 180 | 67 | 54 | 0 | 0 |
 | 02 | Navegación | p2-navigation.css | 78 | 10 | 36 | 0 | 0 |
 | 03 | Tipografía | p3-typography.css | 135 | 41 | 44 | 0 | 0 |
 | 04 | Acciones y botones | p4-actions.css | 78 | 7 | 17 | 0 | 0 |
