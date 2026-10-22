@@ -606,6 +606,11 @@ def alta(m: dict, datos: dict, lucide: str, nombre: str, grupo: str) -> dict | N
         return None
     if grupo not in GRUPOS:
         raise SystemExit(f"grupo desconocido: {grupo} (válidos: {', '.join(GRUPOS)})")
+    choque = next((i for i in m["iconos"]
+                   if i.get("estado", "activo") == "activo" and i["nombre"] == nombre), None)
+    if choque:
+        raise SystemExit(f"ya existe {choque['id']} con el nombre «{nombre}» "
+                         f"(lucide:{choque['lucide']}); pasa un --nombre distinto")
     cuerpo, real = cuerpo_de(datos, lucide)
     numero = max((i["numero"] for i in m["iconos"]), default=0) + 1
     slug = slug_de(m, nombre)
@@ -663,6 +668,9 @@ def anadir(argv):
         i = argv.index("--nombre")
         nombre_forzado = argv[i + 1]
         del argv[i:i + 2]
+    if nombre_forzado and len(argv) > 1:
+        raise SystemExit("--nombre vale para UN icono: añade de uno en uno para no bautizar "
+                         "todos con el mismo nombre")
     datos = descargar()
     m = cargar()
     for bruto in argv:

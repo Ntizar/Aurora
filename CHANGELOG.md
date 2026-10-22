@@ -3,6 +3,16 @@
 Formato: [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/).
 Versionado: [SemVer](https://semver.org/lang/es/).
 
+## [9.9.1] — 2026-10-22
+
+### Corregido
+
+- `iconos.py anadir --nombre` bautizaba **todos** los iconos del comando con el mismo nombre
+  castellano: el segundo acababa en `290-pastilla-2.svg` y `auditar-iconos.py` lo rechazaba
+  con razón. Ahora `--nombre` exige un solo icono por invocación.
+- `anadir` permitía dos iconos con el mismo nombre. El número los distingue, el nombre no:
+  ahora se niega y dice qué número lo tiene ya.
+
 ## [9.9.0] — 2026-10-22
 
 ### Añadido
