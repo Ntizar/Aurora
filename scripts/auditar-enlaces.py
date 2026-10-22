@@ -97,6 +97,12 @@ def main():
         # Camino de vuelta: la página cuelga de una carpeta y no ofrece la portada.
         if f.resolve() != portada and portada not in destinos:
             sin_vuelta.append(rel)
+        # Etiquetas partidas: un <link> sin cerrar se traga el siguiente y su CSS
+        # no llega. Es un fallo invisible (el HTML "pasa") que costó una tarde.
+        for i, linea in enumerate(texto.split("\n"), 1):
+            s = linea.strip()
+            if s.startswith("<link") and not s.endswith(">"):
+                rotos.append(("%s:%d" % (rel, i), "etiqueta <link> sin cerrar"))
         # Botón de marca: en toda página de subcarpeta, un enlace llamado «Aurora»
         # que lleve a la portada y que esté ARRIBA (antes del primer titular).
         if f.resolve() != portada and not marca_arriba(texto, f, portada):

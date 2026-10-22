@@ -647,7 +647,7 @@ def pagina_combo(nombre, combo, bloques, familias_usadas, objetos):
     # Barra de sitio: la marca «Aurora» vuelve a la portada y las cinco secciones
     # están a un clic desde cualquier página (antes había que editar la URL).
     A('<nav class="nz-navbar nz-navbar--bordered" aria-label="Sitio">')
-    A('  <a class="nz-navbar__brand" href="../../index.html"><i></i>Aurora</a>')
+    A('  <a class="nz-navbar__brand nz-navbar__link" href="../../index.html"><i></i>Aurora</a>')
     A('  <span class="nz-navbar__links">')
     for url, texto in (("base.html", "Catálogo"), ("bloques/recetas/index.html", "Bloques"),
                        ("marcas/index.html", "Marcas"), ("openui/index.html", "OpenUI"),
