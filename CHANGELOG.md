@@ -3,6 +3,21 @@
 Formato: [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/).
 Versionado: [SemVer](https://semver.org/lang/es/).
 
+## [9.11.2] — 2026-10-22
+
+### Cambiado
+
+- **La marca escala con su tipografía**: `.nz-brand__mark` pasa de 28/36/22 px a
+  1,75/2,25/1,7 **em**. Un logotipo en una cabecera grande o en una tarjeta pequeña crece y
+  encoge con el texto en vez de quedarse clavado en píxeles.
+- **Logos fluidos**: en `.nz-logos`, las imágenes y los textos llevan `max-height: 1.75em`
+  (antes 28 px) y `max-width: 100%` con `object-fit: contain`; un logotipo ancho se encoge en
+  su hueco en vez de desbordar. Los hijos ya no fuerzan el ancho del contenedor.
+- **Nube de logotipos por contenedor**: `.nz-logo-nube` deja los escalones 1→2→4 columnas por
+  `@media` y usa `auto-fit` con `minmax(min(100%, 12rem), 1fr)`. En una barra lateral de 20rem
+  ya no intenta cuatro columnas; en una página ancha pasa de cuatro sin media queries.
+- `.nz-brand` y `.nz-logomark` no pueden ser más anchos que su caja (`max-width: 100%`).
+
 ## [9.11.1] — 2026-10-22
 
 ### Corregido

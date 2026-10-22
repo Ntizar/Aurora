@@ -1,6 +1,6 @@
 {
  "name": "Aurora — base de datos de diseño",
- "version": "9.11.1",
+ "version": "9.11.2",
  "descripcion": "Índice consultable del sistema: familias, tokens, recetas, combos y marcas. Cada ficha enlaza a su demo viva y lleva el markup real.",
  "fuente": "components.json + specs/ + recetas/ + examples/ + combos/ + marcas/registro.json + COMPOSICION.md",
  "explorador": "base.html",
@@ -247,7 +247,7 @@
    "pagina": "paginas/09-media.html",
    "objetos": 127,
    "familias": 18,
-   "demos": 43,
+   "demos": 44,
    "cuandoUsar": "Cuando haya imagen, vídeo, audio, avatar, galería o figure. Todo con proporción y pie resueltos.",
    "tags": [
     "media",
@@ -2612,7 +2612,7 @@
    "categoria": 9,
    "pack": "p9-media.css",
    "demo": "paginas/09-media.html",
-   "titulo": "Logo marca",
+   "titulo": "Logotipo y logos fluidos: escalan y no desbordan",
    "clases": [
     "nz-brand",
     "nz-brand--accent",
@@ -2656,7 +2656,7 @@
     "--nz-tracking-tight"
    ],
    "nTokens": 17,
-   "markup": "<span class=\"nz-brand\"><span class=\"nz-brand__mark\">A7</span> Aurora</span>",
+   "markup": "<span class=\"nz-brand\"><span class=\"nz-brand__mark\">A</span> Aurora</span>",
    "noUsar": "",
    "cuandoUsar": "Cuando haya imagen, vídeo, audio, avatar, galería o figure. Todo con proporción y pie resueltos.",
    "tags": [
@@ -11932,7 +11932,7 @@
    "categoria": 9,
    "pack": "p9-media.css",
    "demo": "paginas/09-media.html",
-   "titulo": "Logos: densidad y tamaño",
+   "titulo": "Logotipo y logos fluidos: escalan y no desbordan",
    "clases": [
     "nz-logo-nube",
     "nz-logo-nube--lg",
@@ -11963,7 +11963,7 @@
     "--nz-text-sm"
    ],
    "nTokens": 11,
-   "markup": "<div class=\"nz-logo-nube nz-logo-nube--lg\"><span class=\"nz-logo-nube__item nz-brand\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 2.8 21.2 12 12 21.2 2.8 12Z\"/></svg> Grande</span><span class=\"nz-logo-nube__item nz-logo-nube__item--muted\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><rect x=\"5\" y=\"5\" width=\"14\" height=\"14\" rx=\"2\"/></svg> Muted</span></div>",
+   "markup": "<div class=\"nz-logo-nube\" style=\"max-width:20rem\"><span class=\"nz-logo-nube__item\">Marca uno</span><span class=\"nz-logo-nube__item\">Marca dos</span><span class=\"nz-logo-nube__item nz-logo-nube__item--muted\">Marca tres</span><span class=\"nz-logo-nube__item\">Marca cuatro</span></div>",
    "noUsar": "",
    "cuandoUsar": "Cuando haya imagen, vídeo, audio, avatar, galería o figure. Todo con proporción y pie resueltos.",
    "tags": [

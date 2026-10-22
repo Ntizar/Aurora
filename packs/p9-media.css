@@ -62,16 +62,16 @@
 .nz-avatar-group--sm .nz-avatar { margin-left: -0.35rem; border-width: var(--nz-border-w); }
 
 /* ---- Logotipo / palabra de marca ---- */
-.nz-brand { display: inline-flex; align-items: center; gap: var(--nz-space-2); font-weight: var(--nz-peso-titulo); letter-spacing: var(--nz-tracking-tight); color: var(--nz-text); }
-.nz-brand__mark { display: inline-grid; place-items: center; width: 28px; height: 28px; border-radius: var(--nz-radius-sm); background: var(--nz-brand); color: var(--nz-text-invert); font-size: var(--nz-text-sm); }
-.nz-brand--lg .nz-brand__mark { width: 36px; height: 36px; font-size: var(--nz-text-md); }
+.nz-brand { display: inline-flex; align-items: center; gap: var(--nz-space-2); max-width: 100%; min-width: 0; font-weight: var(--nz-peso-titulo); letter-spacing: var(--nz-tracking-tight); color: var(--nz-text); }
+.nz-brand__mark { flex: none; display: inline-grid; place-items: center; width: 1.75em; height: 1.75em; border-radius: var(--nz-radius-sm); background: var(--nz-brand); color: var(--nz-text-invert); font-size: var(--nz-text-sm); }
+.nz-brand--lg .nz-brand__mark { width: 2.25em; height: 2.25em; font-size: var(--nz-text-md); }
 .nz-brand--sm { font-size: var(--nz-text-sm); }
-.nz-brand--sm .nz-brand__mark { width: 22px; height: 22px; font-size: var(--nz-text-2xs); border-radius: var(--nz-radius-xs); }
+.nz-brand--sm .nz-brand__mark { width: 1.7em; height: 1.7em; font-size: var(--nz-text-2xs); border-radius: var(--nz-radius-xs); }
 .nz-brand--mono .nz-brand__mark { font-family: var(--nz-font-mono); font-weight: var(--nz-peso-fuerte); }
 .nz-brand__mark--accent { background: var(--nz-accent); }
 .nz-brand__mark--dark { background: var(--nz-gray-900); color: var(--nz-gray-50); }
 .nz-brand--accent { color: var(--nz-accent-text); }
-.nz-logomark { display: inline-grid; place-items: center; border-radius: var(--nz-radius-md); background: var(--nz-brand); color: var(--nz-text-invert); }
+.nz-logomark { display: inline-grid; place-items: center; max-width: 100%; border-radius: var(--nz-radius-md); background: var(--nz-brand); color: var(--nz-text-invert); }
 .nz-logomark--accent { background: var(--nz-accent); }
 .nz-logomark--outline { background: transparent; box-shadow: inset 0 0 0 var(--nz-border-w-strong) var(--nz-border); color: var(--nz-text-soft); }
 
@@ -148,15 +148,18 @@
 .nz-media-badge--danger { background: var(--nz-danger); color: var(--nz-text-invert); border-radius: var(--nz-radius-full); padding: 0 var(--nz-space-2); font-size: var(--nz-text-xs); font-weight: var(--nz-peso-fuerte); }
 
 /* ---- Nube de logotipos ---- */
-.nz-logo-nube { display: grid; gap: var(--nz-space-3); grid-template-columns: 1fr; }
-@media (min-width: 640px) { .nz-logo-nube { grid-template-columns: repeat(2, 1fr); } }
-@media (min-width: 960px) { .nz-logo-nube { grid-template-columns: repeat(4, 1fr); } }
+/* La nube responde a SU contenedor (una barra lateral de 20rem no puede enseñar
+   cuatro columnas). auto-fit + min(100%, …) y ni una media query. */
+.nz-logo-nube { display: grid; gap: var(--nz-space-3); grid-template-columns: repeat(auto-fit, minmax(min(100%, 12rem), 1fr)); }
+.nz-logo-nube > * { min-width: 0; }
 .nz-logo-nube__item { display: grid; place-items: center; min-height: 56px; padding: var(--nz-space-3); border-radius: var(--nz-radius-md); background: var(--nz-surface); box-shadow: var(--nz-shadow-xs); color: var(--nz-text-mute); font-weight: var(--nz-peso-fuerte); }
 .nz-logo-nube__item--muted { background: var(--nz-bg-soft); box-shadow: none; color: var(--nz-text-faint); }
 
 /* ---- Fila de logotipos (logos grid) ---- */
 .nz-logos { display: flex; flex-wrap: wrap; align-items: center; gap: var(--nz-space-4) var(--nz-space-6); opacity: .8; }
-.nz-logos img, .nz-logos span { max-height: 28px; }
+.nz-logos > * { flex: 0 1 auto; min-width: 0; }
+.nz-logos img, .nz-logos span, .nz-logos svg { max-height: 1.75em; max-width: 100%; width: auto; height: auto; }
+.nz-logos img { object-fit: contain; }
 
 /* ---- Fondo con imagen ---- */
 .nz-bgimg { background-size: cover; background-position: center; position: relative; }
