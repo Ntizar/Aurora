@@ -106,7 +106,7 @@ python3 scripts/canal.py --check && python3 scripts/canal.py --purgar
 | `marcas/` | 6 presets (aurora, indigo, esmeralda, violeta, carmesí, ntizar) + generador OKLCH |
 | `specs/NN.json` | **Fuente de verdad** de las demos: el catálogo se genera de aquí |
 | `base.html` + `datos/base-diseno.json` | Base de datos consultable: familias, tokens, recetas, combos, marcas y leyes |
-| `recetas/` · `examples/` · `combos/` | Páginas completas y esqueletos por tipo, listos para copiar |
+| `bloques/recetas/` · `bloques/ejemplos/` · `bloques/combos/` | Páginas completas y esqueletos por tipo, listos para copiar |
 | `openui/` | Capa generativa: componentes, prompt, spec, runtime vanilla, **plantillas por arquetipo** y probador |
 | `AGENTS.md` · `COMPOSICION.md` · `LLM.md` | Reglas duras, contrato de composición y guía de decisión |
 
@@ -139,7 +139,7 @@ Aurora/
 ├── marcas/                            # presets de color con generador OKLCH
 ├── specs/ → paginas/ · index.html     # las demos son la fuente; el catálogo se genera
 ├── base.html · datos/                 # base de datos de diseño (vista + JSON)
-├── recetas/ · examples/ · combos/     # páginas completas y esqueletos por tipo
+├── bloques/recetas/ · bloques/ejemplos/ · bloques/combos/     # páginas completas y esqueletos por tipo
 ├── openui/                            # capa generativa: componentes, prompt, spec, runtime
 ├── scripts/                           # generadores y auditores (lo que corre la CI)
 ├── docs/                              # RUTA-COHERENCIA y planes archivados

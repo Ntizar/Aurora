@@ -52,11 +52,11 @@ def packs_de(programa, fuente, censo):
 
 def ref_de_canal(canal):
     if canal == "congelado":
-        canales = json.loads((ROOT / "data" / "canales.json").read_text(encoding="utf-8"))
+        canales = json.loads((ROOT / "datos" / "canales.json").read_text(encoding="utf-8"))
         return canales["canales"]["congelado"]["tag"]
     if canal == "local":
         return None
-    canales = json.loads((ROOT / "data" / "canales.json").read_text(encoding="utf-8"))
+    canales = json.loads((ROOT / "datos" / "canales.json").read_text(encoding="utf-8"))
     return canales["canales"]["vivo"]["rango"]
 
 

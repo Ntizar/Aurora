@@ -1,590 +1,88 @@
 <!DOCTYPE html>
-<html lang="es" data-nz-theme="light">
+<html lang="es" data-nz-theme="light" data-nz-marca="ntizar">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>Aurora · Design System Ntizar · 2195 objetos de frontend</title>
-<meta name="description" content="Design system CSS de Ntizar: 2195 objetos en 18 categorías. Elige dos colores y el sistema entero se rehace. Responsive first, táctil 44px, light y dark.">
+<title>Aurora · el diseño lo escribe un modelo</title>
+<meta name="description" content="Página generada con Aurora a partir de un programa OpenUI Lang.">
 <link rel="stylesheet" href="tokens.css">
-<link rel="stylesheet" href="packs/p0-catalog.css">
 <link rel="stylesheet" href="packs/p1-layout.css">
-<link rel="stylesheet" href="packs/p3-typography.css">
-<link rel="stylesheet" href="packs/p4-actions.css">
-<link rel="stylesheet" href="packs/p5-forms.css">
-<link rel="stylesheet" href="packs/p6-feedback.css">
-<link rel="stylesheet" href="packs/p8-data.css">
-<link rel="stylesheet" href="packs/p9-media.css">
 <link rel="stylesheet" href="packs/p12-system.css">
 <link rel="stylesheet" href="packs/p13-charts.css">
-<link rel="stylesheet" href="packs/p16-cristal.css">
-<link rel="stylesheet" href="marcas/aurora.css">
-<link rel="stylesheet" href="marcas/indigo.css">
-<link rel="stylesheet" href="marcas/esmeralda.css">
-<link rel="stylesheet" href="marcas/violeta.css">
-<link rel="stylesheet" href="marcas/carmesi.css">
-<style>
-  .objBuscar { position: relative; margin-top: var(--nz-space-6); max-width: 34rem; }
-  .objResultados { margin-top: var(--nz-space-3); display: grid; gap: var(--nz-space-1); max-height: 24rem; overflow-y: auto; }
-  .objr { display: flex; align-items: center; gap: var(--nz-space-3); min-height: 44px; padding: 0 var(--nz-space-3); border-radius: var(--nz-radius-md); background: var(--nz-surface); box-shadow: var(--nz-shadow-xs); text-decoration: none; color: var(--nz-text); }
-  .objr:hover { background: var(--nz-brand-soft); }
-  .objr code { font-family: var(--nz-font-mono); font-size: var(--nz-text-xs); color: var(--nz-brand); }
-  .objr span { margin-left: auto; font-size: var(--nz-text-xs); color: var(--nz-text-mute); }
-
-  /* --- Portada: showcase del sistema (shell, solo clases .cat-*) --- */
-  .cat-h2 { font-size: var(--nz-text-xl); letter-spacing: var(--nz-tracking-tight); margin-bottom: var(--nz-space-3); }
-  .cat-p { color: var(--nz-text-soft); max-width: 62ch; margin-bottom: var(--nz-space-4); }
-  .cat-marcas { display: flex; flex-wrap: wrap; gap: var(--nz-space-2); margin-bottom: var(--nz-space-4); }
-  .cat-marca { min-height: var(--nz-tactil); padding: 0 var(--nz-space-4); display: inline-flex; align-items: center; gap: var(--nz-space-2);
-    border: var(--nz-border-w) solid var(--nz-border); border-radius: var(--nz-radius-full); background: var(--nz-surface);
-    color: var(--nz-text); font: inherit; font-weight: 600; cursor: pointer; }
-  .cat-marca i { width: 14px; height: 14px; border-radius: var(--nz-radius-full); display: inline-block; }
-  .cat-marca[aria-pressed="true"] { border-color: var(--nz-brand); box-shadow: var(--nz-focus-ring); }
-  .cat-rampa { display: grid; grid-template-columns: repeat(10, 1fr); border-radius: var(--nz-radius-md); overflow: hidden; margin-bottom: var(--nz-space-3); }
-  .cat-rampa span { height: 44px; display: grid; place-items: center; font-size: var(--nz-text-2xs); font-family: var(--nz-font-mono); }
-  .cat-ideas { display: grid; gap: var(--nz-space-3); grid-template-columns: 1fr; }
-  @media (min-width: 640px) { .cat-ideas { grid-template-columns: repeat(2, 1fr); } }
-  @media (min-width: 960px) { .cat-ideas { grid-template-columns: repeat(4, 1fr); } }
-  .cat-idea { display: grid; gap: var(--nz-space-1); min-width: 0; padding: var(--nz-space-4); border: var(--nz-border-w) solid var(--nz-border);
-    border-radius: var(--nz-radius-lg); background: var(--nz-surface); box-shadow: var(--nz-shadow-xs); text-decoration: none; color: var(--nz-text); }
-  .cat-idea:hover { border-color: var(--nz-brand); }
-  .cat-idea b { font-size: var(--nz-text-base); }
-  .cat-idea span { font-size: var(--nz-text-sm); color: var(--nz-text-soft); }
-  .cat-idea pre { min-width: 0; max-width: 100%; margin-top: var(--nz-space-2); }
-  .cat-muestra { display: grid; gap: var(--nz-space-4); grid-template-columns: 1fr; }
-  @media (min-width: 960px) { .cat-muestra { grid-template-columns: repeat(3, 1fr); align-items: start; } }
-  .cat-muestra__col { display: grid; gap: var(--nz-space-2); align-content: start; }
-  .cat-muestra__t { font-size: var(--nz-text-2xs); font-weight: 800; letter-spacing: var(--nz-tracking-caps); text-transform: uppercase; color: var(--nz-text-faint); }
-  .cat-panel { display: grid; gap: var(--nz-space-3); padding: var(--nz-space-4); border: var(--nz-border-w) solid var(--nz-border);
-    border-radius: var(--nz-radius-lg); background: var(--nz-surface); box-shadow: var(--nz-shadow-xs); margin-bottom: var(--nz-space-4); }
-  .cat-controles { display: flex; flex-wrap: wrap; gap: var(--nz-space-3); align-items: end; }
-  .cat-campo { display: grid; gap: var(--nz-space-1); font-size: var(--nz-text-2xs); font-weight: 800;
-    letter-spacing: var(--nz-tracking-caps); text-transform: uppercase; color: var(--nz-text-faint); }
-  .cat-campo input[type="color"] { width: 76px; height: var(--nz-tactil); padding: 2px; border: var(--nz-border-w) solid var(--nz-border);
-    border-radius: var(--nz-radius-md); background: var(--nz-surface); cursor: pointer; }
-  .cat-select { min-height: var(--nz-tactil); padding: 0 var(--nz-space-3); border: var(--nz-border-w) solid var(--nz-border);
-    border-radius: var(--nz-radius-md); background: var(--nz-surface); color: var(--nz-text); font: inherit; font-size: var(--nz-text-sm); }
-  .cat-previa { display: grid; gap: var(--nz-space-4); grid-template-columns: 1fr; }
-  @media (min-width: 640px) { .cat-previa { grid-template-columns: 2fr 1fr; align-items: start; } }
-  @media (min-width: 960px) { .cat-muestra { grid-template-columns: repeat(3, 1fr); } }
-</style>
+<link rel="stylesheet" href="packs/p2-navigation.css">
+<link rel="stylesheet" href="packs/p3-typography.css">
+<link rel="stylesheet" href="packs/p4-actions.css">
+<link rel="stylesheet" href="packs/p6-feedback.css">
+<link rel="stylesheet" href="packs/p8-data.css">
 </head>
 <body class="nz">
-
-<div class="cat-above">
-
-  <a class="nz-skip-link" href="#contenido">Saltar al contenido</a>
-
-  <header class="cat-topbar">
-    <span class="cat-brandmark"><i></i><i></i> Aurora</span>
-    <span class="cat-count">v10.0.0 · design system + generative UI</span>
-    <span class="cat-topbar__tools">
-      <a class="cat-icobtn" href="base.html" title="Base de datos de diseño" aria-label="Base de datos de diseño"><svg class="nz-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg></a>
-      <a class="cat-icobtn" href="audit/index.html" title="Auditoría del sistema" aria-label="Auditoría del sistema"><svg class="nz-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></a>
-      <button class="cat-icobtn" id="btnTheme" aria-label="Cambiar tema" title="Light / Dark"><svg class="nz-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button>
-    </span>
-  </header>
-
-  <section class="cat-hero cat-in">
-    <p class="cat-eyebrow">Design System Ntizar · v10.0.0</p>
-    <h1>Aurora</h1>
-    <p class="cat-hero__sub">Un sistema, tres formas de construir: <b>a mano</b>, con un <b>agente</b> o con un <b>modelo en caliente</b>. 2195 objetos verificados, marcas por preset y un lenguaje para que el diseño lo escriba la IA sin salirse nunca del censo.</p>
-    <div class="cat-ctas">
-      <a class="nz-btn nz-btn--primary" href="portada-v10.html">Ver la v10 generada con OpenUI</a>
-      <a class="nz-btn nz-btn--accent" href="openui/index.html#plantillas">Plantillas por arquetipo</a>
-      <a class="nz-btn nz-btn--soft" href="paginas/01-layout.html">Explorar el catálogo</a>
-      <a class="nz-btn nz-btn--ghost" href="base.html">Base de datos de diseño</a>
-      <span class="cat-hint">Si vienes de un modelo: <code>PROMPT.md</code> + <code>aurora.spec.json</code> y el runtime lo pinta. Si vienes a copiar: el catálogo tiene una demo por objeto.</span>
-    </div>
-    <div class="objBuscar">
-      <div class="cat-search">
-        <span class="cat-search__icon" aria-hidden="true"><svg class="nz-icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></span>
-        <input class="cat-search__input" id="objBuscar" type="search" placeholder="Buscar un objeto: btn, modal, chart… (pulsa /)" aria-label="Buscar objeto en todo el sistema">
-      </div>
-      <div class="objResultados" id="objResultados" hidden></div>
-    </div>
-    <div class="cat-stats">
-      <div class="cat-stat"><b><span data-cuenta="2195">0</span></b><span>objetos</span></div>
-      <div class="cat-stat"><b>659</b><span>demos en vivo</span></div>
-      <div class="cat-stat"><b>36</b><span>componentes generativos</span></div>
-      <div class="cat-stat"><b>5</b><span>arquetipos</span></div>
-      <div class="cat-stat"><b>6</b><span>marcas</span></div>
-      <div class="cat-stat"><b>0</b><span>clases inventadas</span></div>
-    </div>
-  </section>
-
-  <main id="contenido" style="max-width:var(--nz-container-max);margin-inline:auto;padding:0 var(--nz-gutter)">
-
-    <section class="cat-in" style="--d:.04s;margin-block:var(--nz-space-12)" id="generativa">
-      <p class="cat-eyebrow" style="margin-bottom:var(--nz-space-2)">Lo nuevo · Generative UI</p>
-      <h2 class="cat-h2">Que el diseño lo escriba un modelo, sin salirse del sistema</h2>
-      <p class="cat-p">El modelo no escribe HTML ni CSS: escribe <b>openui-lang</b>, un lenguaje de 8 a 40 líneas. El parser comprueba tipos, enums y aridad antes de pintar, y el runtime emite <b>solo clases del censo</b>. Un programa ocupa la mitad de tokens que el JSON equivalente, y una clase inventada es imposible por construcción.</p>
-
-      <div class="cat-pillrow" style="margin-bottom:var(--nz-space-5)">
-        <span class="cat-pill"><i></i> L0 · marcas (identidad)</span>
-        <span class="cat-pill"><i></i> L1 · 18 packs (implementación)</span>
-        <span class="cat-pill"><i></i> L2 · 36 componentes (vocabulario)</span>
-        <span class="cat-pill"><i></i> L3 · 5 arquetipos (estructura)</span>
-      </div>
-
-      <div class="nz-split nz-split--2-1" style="margin-bottom:var(--nz-space-5)">
-        <article class="nz-article nz-article--bordered">
-          <p class="cat-eyebrow" style="margin-bottom:var(--nz-space-2)">Lo que escribe el modelo</p>
-          <b style="display:block;margin-bottom:var(--nz-space-2)">Un panel, en cuatro líneas</b>
-<pre class="nz-code nz-code--block">root = Pagina([barra, kpis, tabla], "contenido")
-barra = Navegacion("Ferroviaria Sur", ["Panel", "Rutas"])
-kpis = Rejilla([Kpi("Puntualidad", "94,2 %", "+2,1 pp", "sube", "acento")], "4")
-tabla = Tabla(["Ruta", "Salidas", "Puntualidad"], [["MAD-BCN", "42", "96 %"]], true, "comoda", true, "Salidas")</pre>
-          <p class="cat-hint">Nada de HTML ni CSS. Ni una clase: el modelo elige componentes, el runtime los viste.</p>
-        </article>
-        <article class="nz-article nz-article--bordered">
-          <p class="cat-eyebrow" style="margin-bottom:var(--nz-space-2)">Lo que pinta Aurora</p>
-          <div class="nz-cluster nz-cluster--between" style="margin-bottom:var(--nz-space-3)">
-            <b>Ferroviaria Sur</b>
-            <span class="nz-cluster nz-cluster--compact"><span class="nz-chip">Panel</span><span class="nz-chip">Rutas</span></span>
-          </div>
-          <div class="nz-kpi nz-kpi--accent" style="margin-bottom:var(--nz-space-3)">
-            <span class="nz-kpi__label">Puntualidad</span>
-            <span class="nz-kpi__value nz-kpi__value--accent">94,2 %</span>
-            <span class="nz-kpi__delta nz-kpi__delta--up">+2,1 pp</span>
-          </div>
-          <div class="nz-table-wrap nz-table-wrap--apilable">
-            <table class="nz-table nz-table--apilable nz-table--compact">
-              <thead><tr><th>Ruta</th><th style="text-align:right">Salidas</th><th style="text-align:right">Puntualidad</th></tr></thead>
-              <tbody>
-                <tr><td data-etiqueta="Ruta">MAD-BCN</td><td class="nz-table__num nz-table__right" data-etiqueta="Salidas">42</td><td class="nz-table__num nz-table__right" data-etiqueta="Puntualidad">96 %</td></tr>
-                <tr><td data-etiqueta="Ruta">MAD-VLC</td><td class="nz-table__num nz-table__right" data-etiqueta="Salidas">31</td><td class="nz-table__num nz-table__right" data-etiqueta="Puntualidad">88 %</td></tr>
-              </tbody>
-            </table>
-          </div>
-          <p class="cat-hint">Responsive, táctil y con contraste: lo trae el sistema, no la generación.</p>
-        </article>
-      </div>
-
-      <div class="cat-ideas" style="margin-bottom:var(--nz-space-4)">
-        <div class="cat-idea" style="cursor:default"><b>1 · Valida</b><span>El parser oficial comprueba tipos, enums y número de argumentos. Un programa mal formado no llega al DOM.</span></div>
-        <div class="cat-idea" style="cursor:default"><b>2 · Pinta</b><span>El runtime convierte el árbol en markup del censo, con su responsive y su contraste. Sin React y sin build.</span></div>
-        <div class="cat-idea" style="cursor:default"><b>3 · Sella</b><span>El mismo lint de las páginas escritas a mano: 0 clases fuera del censo o no se entrega.</span></div>
-        <div class="cat-idea" style="cursor:default"><b>4 · Versiona</b><span>Canal vivo para tus webs, tag exacto para clientes. Un cambio en Aurora llega solo o no llega.</span></div>
-      </div>
-
-      <div class="cat-ideas">
-        <a class="cat-idea" href="openui/index.html#plantillas"><b>Panel operativo</b><span>KPIs, serie y tabla. El arquetipo de trabajo diario.</span></a>
-        <a class="cat-idea" href="openui/index.html#plantillas"><b>Informe</b><span>Resumen ejecutivo, objetivos real-meta y recomendación.</span></a>
-        <a class="cat-idea" href="openui/index.html#plantillas"><b>Landing</b><span>Hero, propuestas de valor, precio y cierre.</span></a>
-        <a class="cat-idea" href="openui/index.html#plantillas"><b>Ajustes</b><span>Formulario por pasos, preferencias y acciones.</span></a>
-        <a class="cat-idea" href="openui/index.html#plantillas"><b>Agente</b><span>Conversación, trazas de herramientas y aprobación.</span></a>
-        <a class="cat-idea" href="openui/PROMPT.md"><b>El prompt</b><span>El system prompt que convierte un modelo en diseñador de Aurora. 14 KB.</span></a>
-        <a class="cat-idea" href="CONTRATO.md"><b>El contrato</b><span>Qué propaga solo, qué exige migración y cómo se deshace un cambio.</span></a>
-        <a class="cat-idea" href="openui/aurora.spec.json"><b>La biblioteca</b><span>36 componentes con firmas y JSON Schema. Lo que el parser entiende.</span></a>
-      </div>
-
-      <p style="margin-top:var(--nz-space-5)">
-        <a class="nz-btn nz-btn--primary" href="openui/index.html">Abrir el probador</a>
-        <a class="nz-btn nz-btn--soft" href="openui/index.html#plantillas">Probar una plantilla</a>
-      </p>
-      <p class="cat-hint">En un producto: <code>python scripts/generar-web.py --brief encargo.json</code> genera el programa, la página y pasa el lint. El modelo y la clave salen de la configuración, nunca del código.</p>
-    </section>
-
-    <section class="cat-in" style="--d:.06s;margin-block:var(--nz-space-12)">
-      <h2 style="font-size:var(--nz-text-xl);letter-spacing:var(--nz-tracking-tight);margin-bottom:var(--nz-space-4)">Manifiesto</h2>
-      <div class="cat-pillrow">
-        <span class="cat-pill"><i></i> Responsive first</span>
-        <span class="cat-pill"><i></i> Azul #2563eb</span>
-        <span class="cat-pill"><i></i> Naranja #f97316</span>
-        <span class="cat-pill"><i></i> Sombras multicapa</span>
-        <span class="cat-pill"><i></i> expo-out ≤ 300 ms</span>
-        <span class="cat-pill"><i></i> Táctil 44 px</span>
-        <span class="cat-pill"><i></i> Safe-area iOS</span>
-        <span class="cat-pill"><i></i> Light + dark</span>
-        <span class="cat-pill"><i></i> Cero JS obligatorio</span>
-        <span class="cat-pill cat-pill--no"><i></i> Sin gradientes</span>
-        <span class="cat-pill cat-pill--no"><i></i> Sin glass</span>
-        <span class="cat-pill cat-pill--no"><i></i> Sin IA-slop</span>
-      </div>
-    </section>
-
-    <section class="cat-in" style="--d:.055s;margin-block:var(--nz-space-12)">
-      <h2 class="cat-h2">Dos canales: se actualiza cuando tú quieras</h2>
-      <p class="cat-p">Un cambio de tokens o de CSS llega a todas las webs que apuntan al canal vivo, sin tocarlas. Una entrega a cliente se queda en el tag exacto. Lo que nunca se usa es <code>@master</code>.</p>
-      <div class="cat-ideas" style="grid-template-columns:repeat(2,1fr)">
-        <div class="cat-idea" style="cursor:default">
-          <b>Canal vivo · <code>@v10</code></b>
-          <span>Webs y paneles propios. Recibe cada release 9.x: un cambio en Aurora llega solo.</span>
-<pre class="nz-code nz-code--block">&lt;link rel="stylesheet"
-  href="https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v10/tokens.css"&gt;</pre>
-        </div>
-        <div class="cat-idea" style="cursor:default">
-          <b>Canal congelado · <code>@v10.0.0</code></b>
-          <span>Entregas a cliente. Reproducible dentro de dos años; no cambia hasta que se sube.</span>
-<pre class="nz-code nz-code--block">&lt;link rel="stylesheet"
-  href="https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v10.0.0/tokens.css"&gt;</pre>
-        </div>
-      </div>
-      <p class="cat-hint">Renombrar o quitar algo exige versión major y migrador; lo aditivo viaja solo. Detalle en <a href="CONTRATO.md">CONTRATO.md</a> y <code>python scripts/canal.py</code>.</p>
-    </section>
-
-    <section class="cat-in" style="--d:.05s;margin-block:var(--nz-space-12)">
-      <h2 class="cat-h2">Pruébalo: tu color, tu tipografía, tu acabado</h2>
-      <p class="cat-p">Aurora es <b>azul <code>#2563eb</code></b> y <b>naranja <code>#f97316</code></b> por defecto. Cambia esos dos —o cualquiera— y el sistema entero se rehace: botones, foco, sombras, fondos suaves y modo oscuro. Sin tocar una línea de CSS.</p>
-
-      <div class="cat-panel">
-        <div class="cat-controles">
-          <label class="cat-campo" for="inputMarca"><span>Color de marca</span>
-            <input id="inputMarca" type="color" value="#2563eb"></label>
-          <label class="cat-campo" for="inputAcento"><span>Color de acento</span>
-            <input id="inputAcento" type="color" value="#f97316"></label>
-          <label class="cat-campo" for="selFuente"><span>Tipografía</span>
-            <select id="selFuente" class="cat-select">
-              <option value="inter" selected>Inter</option>
-              <option value="geist">Geist</option>
-              <option value="manrope">Manrope</option>
-              <option value="jakarta">Plus Jakarta Sans</option>
-              <option value="grotesk">Space Grotesk</option>
-              <option value="system">La del sistema</option>
-            </select></label>
-          <label class="cat-campo" for="selEstilo"><span>Acabado</span>
-            <select id="selEstilo" class="cat-select">
-              <option value="solido" selected>Sólido</option>
-              <option value="cristal">Cristal líquido</option>
-            </select></label>
-          <button class="cat-marca" id="btnAurora" type="button">Volver a azul y naranja</button>
-        </div>
-        <div class="cat-rampa" id="marcasRampa" aria-hidden="true"></div>
-        <p class="cat-hint" id="marcaAviso" role="status"></p>
-      </div>
-
-      <div class="cat-previa">
-        <div class="nz-cristal" id="previaVidrio" style="padding:var(--nz-space-5)">
-          <span class="nz-cristal__brillo"></span>
-          <p class="cat-muestra__t">Vista previa</p>
-          <div class="nz-cluster">
-            <button class="nz-btn nz-btn--primary" type="button">Guardar</button>
-            <button class="nz-btn nz-btn--soft" type="button">Suave</button>
-            <span class="nz-badge nz-badge--brand">Nuevo</span>
-            <span class="nz-badge nz-badge--success">Correcto</span>
-          </div>
-          <p class="cat-hint" style="margin-top:var(--nz-space-4)">Con el acabado «Cristal líquido» esta tarjeta desenfoca lo que tiene detrás.</p>
-        </div>
-        <div class="nz-kpi nz-kpi--brand">
-          <span class="nz-kpi__label">Con tu color</span>
-          <span class="nz-kpi__value">1 284</span>
-          <span class="nz-kpi__delta nz-kpi__delta--up">+6,2 %</span>
-        </div>
-      </div>
-
-      <p class="cat-hint">En tus proyectos se usa igual: <code>&lt;html data-nz-marca="indigo"&gt;</code>, tu propia rampa con <code>python scripts/generar-marca.py</code>, el vidrio con <code>data-nz-estilo="cristal"</code> (categoría 16) y la tipografía con <code>--nz-font</code>. El probador carga las fuentes de muestra solo aquí; en un producto, Inter viaja dentro de <code>tokens.css</code>.</p>
-    </section>
-
-    <section class="cat-in" style="--d:.07s;margin-block:var(--nz-space-12)">
-      <h2 class="cat-h2">El sistema, en cinco ideas</h2>
-      <div class="cat-ideas">
-        <a class="cat-idea" href="base.html"><b>Base de datos de diseño</b><span>Todo el sistema consultable: busca por lo que quieres construir y copia el markup real.</span></a>
-        <a class="cat-idea" href="marcas/index.html"><b>Motor de temas</b><span>Dos colores y cambia todo. Cinco marcas listas y generador OKLCH con contraste AA.</span></a>
-        <a class="cat-idea" href="COMPOSICION.md"><b>Contrato de composición</b><span>Doce leyes: cero emojis, presupuesto de color, ancho por tipo de página.</span></a>
-        <a class="cat-idea" href="recetas/index.html"><b>Recetas canónicas</b><span>Admin, dashboard, ajustes, acceso e informe. Cópialas y adapta.</span></a>
-        <a class="cat-idea" href="audit/index.html"><b>Arnés de verificación</b><span>El lint caza emojis, jerarquía, presupuesto de color y tipografía mínima.</span></a>
-      </div>
-    </section>
-
-    <section class="cat-in" style="--d:.075s;margin-block:var(--nz-space-12)">
-      <h2 class="cat-h2">La base de datos de diseño</h2>
-      <p class="cat-p">No es una carpeta de snippets: es un índice consultable de todo el sistema. Busca por lo que quieres construir —«tabla apilable», «dashboard», «acento»— y obtén la familia con su markup real, los tokens que consume, la demo viva y las recetas completas. Cada ficha se copia con un botón.</p>
-      <div class="cat-ideas">
-        <a class="cat-idea" href="base.html#f=nz-table"><b>411 familias</b><span>Componentes y patrones con clases, partes, modificadores, tokens y cuándo usarlos.</span></a>
-        <a class="cat-idea" href="base.html#f=--nz-marca-600"><b>236 tokens</b><span>Marca y base, color, tipografía, espacio, geometría, foco y movimiento. Con su valor.</span></a>
-        <a class="cat-idea" href="base.html#f=recetas%2Fdashboard.html"><b>11 páginas</b><span>Recetas canónicas y arranques mínimos: admin, dashboard, ajustes, acceso, informe, landing y chat.</span></a>
-        <a class="cat-idea" href="base.html#f=dashboard"><b>8 combos</b><span>Esqueletos de página por tipo, con los packs exactos que hay que enlazar.</span></a>
-      </div>
-      <p style="margin-top:var(--nz-space-4)"><a class="nz-btn nz-btn--accent" href="base.html">Abrir el explorador</a></p>
-    </section>
-
-    <section class="cat-in" style="--d:.08s;margin-block:var(--nz-space-12)">
-      <h2 class="cat-h2">Muestra viva</h2>
-      <div class="cat-muestra">
-        <div class="nz-kpi nz-kpi--brand">
-          <span class="nz-kpi__label">Usuarios activos</span>
-          <span class="nz-kpi__value">1 284</span>
-          <span class="nz-kpi__delta nz-kpi__delta--up">+6,2 % este mes</span>
-        </div>
-        <div class="cat-muestra__col">
-          <span class="cat-muestra__t">Acciones</span>
-          <div class="nz-cluster">
-            <button class="nz-btn nz-btn--primary" type="button">Guardar</button>
-            <button class="nz-btn nz-btn--soft" type="button">Suave</button>
-            <button class="nz-btn nz-btn--outline" type="button">Borde</button>
-          </div>
-          <span class="cat-muestra__t">Estados</span>
-          <div class="nz-cluster">
-            <span class="nz-badge nz-badge--brand">Nuevo</span>
-            <span class="nz-badge nz-badge--success">Correcto</span>
-            <span class="nz-badge nz-badge--warning">Pendiente</span>
-          </div>
-          <span class="cat-muestra__t">Formulario</span>
-          <div class="nz-field">
-            <label class="nz-field__label" for="muestraCorreo">Correo</label>
-            <input class="nz-input" id="muestraCorreo" type="email" placeholder="tu@correo.com">
-            <span class="nz-field__help">La etiqueta siempre visible; el recuadro de ejemplo no sustituye al nombre.</span>
-          </div>
-        </div>
-        <div class="cat-muestra__col">
-          <span class="cat-muestra__t">Aviso</span>
-          <div class="nz-alert nz-alert--info" role="status">
-            <div class="nz-alert__body"><p class="nz-alert__msg">Los colores de este aviso también salen de la marca que elijas arriba.</p></div>
-          </div>
-          <span class="cat-muestra__t">Iconos (no emojis)</span>
-          <div class="nz-cluster">
-            <svg class="nz-icon nz-icon--lg nz-icon--brand" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
-            <svg class="nz-icon nz-icon--lg" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
-            <svg class="nz-icon nz-icon--lg" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 8a6 6 0 1 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/></svg>
-            <svg class="nz-icon nz-icon--lg" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>
-          </div>
-          <span class="cat-muestra__t">Gráfico interactivo</span>
-          <div class="nz-chart nz-chart--interactivo">
-            <div class="nz-chart__head">
-              <div>
-                <span class="nz-chart__title">Pedidos por mes</span>
-                <span class="nz-chart__sub">Pasa el ratón por las barras</span>
-              </div>
-            </div>
-            <div class="nz-chart__body">
-              <div class="nz-chart-bar nz-chart-bar--sm">
-                <div class="nz-chart-bar__col" data-etiqueta="Enero"><div class="nz-chart-bar__bar" data-valor="45 pedidos" style="height:45%"></div><span class="nz-chart-bar__label">Ene</span></div>
-                <div class="nz-chart-bar__col" data-etiqueta="Febrero"><div class="nz-chart-bar__bar" data-valor="70 pedidos" style="height:70%"></div><span class="nz-chart-bar__label">Feb</span></div>
-                <div class="nz-chart-bar__col" data-etiqueta="Marzo"><div class="nz-chart-bar__bar" data-valor="58 pedidos" style="height:58%"></div><span class="nz-chart-bar__label">Mar</span></div>
-                <div class="nz-chart-bar__col" data-etiqueta="Abril"><div class="nz-chart-bar__bar" data-valor="82 pedidos" style="height:82%"></div><span class="nz-chart-bar__label">Abr</span></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="cat-in" style="--d:.09s;margin-block:var(--nz-space-12)">
-      <h2 class="cat-h2">Recetas canónicas</h2>
-      <p class="cat-p">Cada tipo de página tiene una forma correcta, y está escrita: cero emojis, presupuesto de color y ancho adecuado.</p>
-      <div class="cat-ideas">
-        <a class="cat-idea" href="recetas/admin.html"><b>Admin</b><span>Barra lateral, KPIs y tabla ancha con estados.</span></a>
-        <a class="cat-idea" href="recetas/dashboard.html"><b>Dashboard</b><span>Indicadores, gráficos CSS y los tres estados.</span></a>
-        <a class="cat-idea" href="recetas/ajustes.html"><b>Ajustes</b><span>Secciones y formularios con etiquetas visibles.</span></a>
-        <a class="cat-idea" href="recetas/login.html"><b>Acceso</b><span>Tarjeta centrada, un CTA y el error donde se mira.</span></a>
-        <a class="cat-idea" href="recetas/informe.html"><b>Informe</b><span>Prosa a una columna y tablas anchas.</span></a>
-      </div>
-    </section>
-
-    <section class="cat-in" style="--d:.1s;margin-block:var(--nz-space-12)">
-      <h2 style="font-size:var(--nz-text-xl);letter-spacing:var(--nz-tracking-tight)">18 categorías · 2195 objetos</h2>
-      <div class="cat-grid" style="margin-top:var(--nz-space-4)">
-        <a class="cat-cat cat-cat--wide cat-in" href="paginas/01-layout.html">
-          <span class="cat-cat__n">01</span>
-          <span class="cat-cat__name">Layout y estructura</span>
-          <span class="cat-cat__meta">180 objetos · 54 demos</span>
-          <span class="cat-cat__arrow">→</span>
-        </a>
-        <a class="cat-cat cat-in" href="paginas/02-navigation.html">
-          <span class="cat-cat__n">02</span>
-          <span class="cat-cat__name">Navegación</span>
-          <span class="cat-cat__meta">78 objetos · 36 demos</span>
-          <span class="cat-cat__arrow">→</span>
-        </a>
-        <a class="cat-cat cat-in" href="paginas/03-typography.html">
-          <span class="cat-cat__n">03</span>
-          <span class="cat-cat__name">Tipografía</span>
-          <span class="cat-cat__meta">135 objetos · 44 demos</span>
-          <span class="cat-cat__arrow">→</span>
-        </a>
-        <a class="cat-cat cat-in" href="paginas/04-actions.html">
-          <span class="cat-cat__n">04</span>
-          <span class="cat-cat__name">Acciones y botones</span>
-          <span class="cat-cat__meta">78 objetos · 17 demos</span>
-          <span class="cat-cat__arrow">→</span>
-        </a>
-        <a class="cat-cat cat-cat--wide cat-in" href="paginas/05-forms.html">
-          <span class="cat-cat__n">05</span>
-          <span class="cat-cat__name">Formularios e inputs</span>
-          <span class="cat-cat__meta">102 objetos · 44 demos</span>
-          <span class="cat-cat__arrow">→</span>
-        </a>
-        <a class="cat-cat cat-in" href="paginas/06-feedback.html">
-          <span class="cat-cat__n">06</span>
-          <span class="cat-cat__name">Feedback y estados</span>
-          <span class="cat-cat__meta">153 objetos · 52 demos</span>
-          <span class="cat-cat__arrow">→</span>
-        </a>
-        <a class="cat-cat cat-in" href="paginas/07-overlays.html">
-          <span class="cat-cat__n">07</span>
-          <span class="cat-cat__name">Overlays y diálogo</span>
-          <span class="cat-cat__meta">118 objetos · 34 demos</span>
-          <span class="cat-cat__arrow">→</span>
-        </a>
-        <a class="cat-cat cat-in" href="paginas/08-data.html">
-          <span class="cat-cat__n">08</span>
-          <span class="cat-cat__name">Datos, tablas y listas</span>
-          <span class="cat-cat__meta">145 objetos · 40 demos</span>
-          <span class="cat-cat__arrow">→</span>
-        </a>
-        <a class="cat-cat cat-in" href="paginas/09-media.html">
-          <span class="cat-cat__n">09</span>
-          <span class="cat-cat__name">Media e iconografía</span>
-          <span class="cat-cat__meta">127 objetos · 44 demos</span>
-          <span class="cat-cat__arrow">→</span>
-        </a>
-        <a class="cat-cat cat-in" href="paginas/10-commerce.html">
-          <span class="cat-cat__n">10</span>
-          <span class="cat-cat__name">Comercio y producto</span>
-          <span class="cat-cat__meta">156 objetos · 48 demos</span>
-          <span class="cat-cat__arrow">→</span>
-        </a>
-        <a class="cat-cat cat-in" href="paginas/11-social.html">
-          <span class="cat-cat__n">11</span>
-          <span class="cat-cat__name">Social y marketing</span>
-          <span class="cat-cat__meta">107 objetos · 39 demos</span>
-          <span class="cat-cat__arrow">→</span>
-        </a>
-        <a class="cat-cat cat-in" href="paginas/12-system.html">
-          <span class="cat-cat__n">12</span>
-          <span class="cat-cat__name">Accesibilidad y sistema</span>
-          <span class="cat-cat__meta">80 objetos · 29 demos</span>
-          <span class="cat-cat__arrow">→</span>
-        </a>
-        <a class="cat-cat cat-cat--wide cat-in" href="paginas/13-charts.html">
-          <span class="cat-cat__n">13</span>
-          <span class="cat-cat__name">Gráficos y visualización</span>
-          <span class="cat-cat__meta">216 objetos · 38 demos</span>
-          <span class="cat-cat__arrow">→</span>
-        </a>
-        <a class="cat-cat cat-in" href="paginas/14-ai.html">
-          <span class="cat-cat__n">14</span>
-          <span class="cat-cat__name">IA y agentes</span>
-          <span class="cat-cat__meta">180 objetos · 32 demos</span>
-          <span class="cat-cat__arrow">→</span>
-        </a>
-        <a class="cat-cat cat-in" href="paginas/15-apps.html">
-          <span class="cat-cat__n">15</span>
-          <span class="cat-cat__name">Apps y escritorio</span>
-          <span class="cat-cat__meta">75 objetos · 38 demos</span>
-          <span class="cat-cat__arrow">→</span>
-        </a>
-        <a class="cat-cat cat-in" href="paginas/16-cristal.html">
-          <span class="cat-cat__n">16</span>
-          <span class="cat-cat__name">Cristal (capa de estilo)</span>
-          <span class="cat-cat__meta">8 objetos · 5 demos</span>
-          <span class="cat-cat__arrow">→</span>
-        </a>
-        <a class="cat-cat cat-in" href="paginas/17-patrones.html">
-          <span class="cat-cat__n">17</span>
-          <span class="cat-cat__name">Patrones compuestos</span>
-          <span class="cat-cat__meta">224 objetos · 47 demos</span>
-          <span class="cat-cat__arrow">→</span>
-        </a>
-        <a class="cat-cat cat-in" href="paginas/18-escenario.html">
-          <span class="cat-cat__n">18</span>
-          <span class="cat-cat__name">Escenario (charlas en beats)</span>
-          <span class="cat-cat__meta">33 objetos · 18 demos</span>
-          <span class="cat-cat__arrow">→</span>
-        </a>
-      </div>
-    </section>
-
-    <section class="cat-in" style="--d:.14s;margin-block:var(--nz-space-12)">
-      <h2 style="font-size:var(--nz-text-xl);letter-spacing:var(--nz-tracking-tight);margin-bottom:var(--nz-space-4)">Señales de vida</h2>
-      <div class="cat-livegrid">
-        <div class="cat-live-card">
-          <h3>Botón que cicla</h3>
-          <div class="cat-live-slot"><button class="nz-btn nz-btn--primary" id="liveSave">Guardar cambios</button></div>
-        </div>
-        <div class="cat-live-card">
-          <h3>Interruptor</h3>
-          <div class="cat-live-slot"><label class="nz-switch"><input type="checkbox" checked><span class="nz-switch__track"><span class="nz-switch__thumb"></span></span><span class="nz-switch__label">Activo</span></label></div>
-        </div>
-        <div class="cat-live-card">
-          <h3>Progreso</h3>
-          <div class="cat-live-slot"><div class="nz-progress" style="width:100%"><div class="nz-progress__bar" id="liveProg" style="width:76%"></div></div></div>
-        </div>
-        <div class="cat-live-card">
-          <h3>Cuenta atrás</h3>
-          <div class="cat-live-slot"><span class="nz-num nz-num--stat" data-cuenta="2195">0</span></div>
-        </div>
-      </div>
-    </section>
-
-  </main>
-
-  <footer class="cat-footer">
-    Aurora · Hecho con ❤️ por David Antizar · 2195 objetos, 659 demos, 1 sistema
-  </footer>
-
-</div>
-
-<script src="js/catalog.js"></script>
-<script src="js/personalizar.js"></script>
-<script src="js/graficos.js"></script>
-<script>
-  /* Buscador global de objetos: carga el índice y ofrece resultados con enlace. */
-  (function () {
-    var inp = document.getElementById('objBuscar');
-    var out = document.getElementById('objResultados');
-    if (!inp || !out) return;
-    var indice = null, cargando = false;
-    function normaliza(t) { return (t || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, ''); }
-    function pinta(q) {
-      if (!indice) return;
-      var nq = normaliza(q);
-      var res = indice.filter(function (o) { return !nq || normaliza(o.c).indexOf(nq) !== -1 || normaliza(o.n).indexOf(nq) !== -1; }).slice(0, 60);
-      if (!q) { out.innerHTML = ''; out.hidden = true; return; }
-      out.hidden = false;
-      if (!res.length) { out.innerHTML = '<p class="cat-hint">Ningún objeto coincide con «' + q + '».</p>'; return; }
-      var html = res.map(function (o) {
-        return '<a class="objr" href="paginas/' + o.f + '#obj"><code>.' + o.c + '</code><span>' + o.n + '</span></a>';
-      }).join('');
-      out.innerHTML = '<p class="cat-hint">' + res.length + ' de ' + indice.length + ' objetos</p>' + html;
-    }
-    inp.addEventListener('input', function () {
-      var q = inp.value.trim();
-      if (!indice && !cargando) {
-        cargando = true;
-        fetch('datos/objetos.json').then(function (r) { return r.json(); }).then(function (d) {
-          indice = d; cargando = false; pinta(inp.value.trim());
-        }).catch(function () {
-          cargando = false;
-          out.hidden = false;
-          out.innerHTML = '<p class="cat-hint">Abre el catálogo por HTTP (GitHub Pages) para buscar en los objetos.</p>';
-        });
-      }
-      pinta(q);
-    });
-  })();
-
-  /* Selector de marca en vivo: cambia --nz-marca-* y todo el sistema se rehace. */
-  (function () {
-    var raiz = document.documentElement;
-    var barra = document.getElementById('marcasBarra');
-    var rampa = document.getElementById('marcasRampa');
-    if (!barra || !rampa) return;
-    function pinta() {
-      var cs = getComputedStyle(raiz), html = '';
-      [50, 100, 200, 300, 400, 500, 600, 700, 800, 900].forEach(function (i) {
-        var c = cs.getPropertyValue('--nz-marca-' + i).trim();
-        html += '<span style="background:' + c + ';color:' + (i >= 500 ? '#fff' : '#111827') + '">' + i + '</span>';
-      });
-      rampa.innerHTML = html;
-    }
-    function marca(n) {
-      raiz.setAttribute('data-nz-marca', n);
-      [].forEach.call(barra.querySelectorAll('.cat-marca'), function (o) {
-        o.setAttribute('aria-pressed', String(o.getAttribute('data-marca') === n));
-      });
-      try { localStorage.setItem('nz-marca', n); } catch (e) { /* irrelevante */ }
-      pinta();
-    }
-    barra.addEventListener('click', function (e) {
-      var b = e.target.closest('.cat-marca');
-      if (b) marca(b.getAttribute('data-marca'));
-    });
-    try { var g = localStorage.getItem('nz-marca'); if (g) marca(g); } catch (e) { /* irrelevante */ }
-    var bt = document.getElementById('btnTheme');
-    if (bt) bt.addEventListener('click', function () { setTimeout(pinta, 40); });
-    pinta();
-  })();
+<a class="nz-skip-link" href="#contenido">Saltar al contenido</a>
+<main id="contenido"><div class="nz-container"><div class="nz-navbar nz-navbar--bordered"><span class="nz-navbar__brand"><i></i>Aurora</span><span class="nz-navbar__links"><a class="nz-navbar__link" href="base.html">Catálogo</a><a class="nz-navbar__link" href="bloques/recetas/index.html">Bloques</a><a class="nz-navbar__link" href="marcas/index.html">Marcas</a><a class="nz-navbar__link" href="openui/index.html">OpenUI</a></span></div><section class="nz-section nz-section--bordered"><h1 class="nz-h1">El diseño lo escribe un modelo. Aurora impide que quede mal.</h1><p class="nz-lead nz-lead--lg">Aurora es un sistema de diseño con contrato: 411 objetos verificados, 18 packs CSS puros sin build y un lenguaje generativo. Webs, paneles, mapas e informes de nivel top, sin IA-slop por construcción, y con la marca que tú decidas.</p><div class="nz-cluster nz-cluster--compact"><a class="nz-btn nz-btn--primary" href="openui/index.html">Escribir un programa</a><a class="nz-btn nz-btn--outline" href="base.html">Ver el catálogo</a><a class="nz-btn nz-btn--outline" href="marcas/index.html">Poner tu marca</a></div></section><div class="nz-dash-grid nz-dash-grid--4"><div class="nz-kpi"><span class="nz-kpi__label">Objetos verificados</span><span class="nz-kpi__value">2.195</span><span class="nz-kpi__delta nz-kpi__delta--flat">uno por uno</span></div><div class="nz-kpi"><span class="nz-kpi__label">Componentes generativos</span><span class="nz-kpi__value">36</span><span class="nz-kpi__delta nz-kpi__delta--flat">vocabulario cerrado</span></div><div class="nz-kpi nz-kpi--accent"><span class="nz-kpi__label">Clases inventadas</span><span class="nz-kpi__value nz-kpi__value--accent">0</span><span class="nz-kpi__delta nz-kpi__delta--flat">imposible por construcción</span></div><div class="nz-kpi"><span class="nz-kpi__label">Marcas listas</span><span class="nz-kpi__value">6</span><span class="nz-kpi__delta nz-kpi__delta--up">+ la tuya en 60 s</span></div></div><section class="nz-section nz-section--bordered"><h2 class="nz-h2">Cómo funciona</h2><h2 class="nz-h2">Cuatro capas, un solo contrato</h2><p>L0 marcas: la identidad. L1 packs: la implementación, 18 hojas de estilo CSS puro. L2 openui: el vocabulario que escribe el modelo. L3 arquetipos: cinco estructuras ya decididas y auditadas. El programa valida tipos, enums y aridad antes de tocar el DOM, y el runtime emite solo clases del censo.</p><div class="nz-callout nz-callout--note"><p>Sin gradiente, sin glass, sin negritas a mano: las leyes del contrato las impone el runtime y el lint, no la buena fe del modelo.</p></div></section><section class="nz-section nz-section--bordered"><h2 class="nz-h2">El mismo encargo, dos destinos</h2><h2 class="nz-h2">La diferencia no es el modelo: es el sistema</h2><div class="nz-split"><div class="nz-stack nz-stack--sm"><article class="nz-article nz-article--bordered"><h3 class="nz-h3">Sin sistema</h3><p>Pantalla de inicio con degradado azul→morado, tarjetas de esquinas imposibles y cuatro negritas que gritan a la vez. Bonita en la captura, inservible en el móvil.</p><div class="nz-callout nz-callout--danger"><p>IA-slop: cada generación, un idioma visual distinto.</p></div></article></div><div class="nz-stack nz-stack--sm"><article class="nz-article nz-article--bordered"><h3 class="nz-h3">Con Aurora</h3><div class="nz-kpi nz-kpi--accent"><span class="nz-kpi__label">Puntualidad</span><span class="nz-kpi__value nz-kpi__value--accent">94,2 %</span><span class="nz-kpi__delta nz-kpi__delta--up">+2,1 pp</span></div><div class="nz-chart-bar nz-chart-bar--sm"><div class="nz-chart-bar__col"><span class="nz-chart-bar__value">186</span><div class="nz-chart-bar__bar nz-chart-bar__bar--brand" style="height:82.3%"></div><span class="nz-chart-bar__label">L</span></div><div class="nz-chart-bar__col"><span class="nz-chart-bar__value">204</span><div class="nz-chart-bar__bar nz-chart-bar__bar--brand" style="height:90.3%"></div><span class="nz-chart-bar__label">M</span></div><div class="nz-chart-bar__col"><span class="nz-chart-bar__value">198</span><div class="nz-chart-bar__bar nz-chart-bar__bar--brand" style="height:87.6%"></div><span class="nz-chart-bar__label">X</span></div><div class="nz-chart-bar__col"><span class="nz-chart-bar__value">212</span><div class="nz-chart-bar__bar nz-chart-bar__bar--brand" style="height:93.8%"></div><span class="nz-chart-bar__label">J</span></div><div class="nz-chart-bar__col"><span class="nz-chart-bar__value">226</span><div class="nz-chart-bar__bar nz-chart-bar__bar--brand" style="height:100%"></div><span class="nz-chart-bar__label">V</span></div><div class="nz-chart-bar__col"><span class="nz-chart-bar__value">152</span><div class="nz-chart-bar__bar nz-chart-bar__bar--brand" style="height:67.3%"></div><span class="nz-chart-bar__label">S</span></div><div class="nz-chart-bar__col"><span class="nz-chart-bar__value">106</span><div class="nz-chart-bar__bar nz-chart-bar__bar--brand" style="height:46.9%"></div><span class="nz-chart-bar__label">D</span></div></div><div class="nz-table-wrap nz-table-wrap--apilable"><table class="nz-table nz-table--apilable nz-table--comfortable"><thead><tr><th class="">Ruta</th><th class="nz-table__num nz-table__right" style="text-align:right">Salidas</th><th class="">Puntualidad</th></tr></thead><tbody><tr><td data-etiqueta="Ruta">MAD-BCN</td><td data-etiqueta="Salidas" class="nz-table__num nz-table__right">42</td><td data-etiqueta="Puntualidad">96 %</td></tr><tr><td data-etiqueta="Ruta">MAD-VLC</td><td data-etiqueta="Salidas" class="nz-table__num nz-table__right">31</td><td data-etiqueta="Puntualidad">88 %</td></tr></tbody></table></div></article></div></div></section><section class="nz-section nz-section--bordered"><h2 class="nz-h2">Tres formas de construir</h2><h2 class="nz-h2">Entra por donde quieras</h2><div class="nz-dash-grid nz-dash-grid--ajuste"><article class="nz-article nz-article--bordered"><h3 class="nz-h3">A mano</h3><p>Enlaza tokens.css y los packs que uses desde el CDN, copia un bloque del catálogo y pega. Sin build, sin dependencias, móvil resuelto.</p><a class="nz-btn nz-btn--outline nz-btn--sm" href="bloques/recetas/index.html">Ver bloques</a></article><article class="nz-article nz-article--bordered"><h3 class="nz-h3">Con tu agente</h3><p>Dale LLM.md y components.json a tu agente: elige clases del censo y auditar-uso.py sella su HTML antes de entregar.</p><a class="nz-btn nz-btn--outline nz-btn--sm" href="LLM.md">Guía para agentes</a></article><article class="nz-article nz-article--bordered"><h3 class="nz-h3">Con un modelo en caliente</h3><p>El modelo escribe openui-lang; el parser valida y el runtime pinta. La página que estás leyendo salió así, en 50 líneas.</p><a class="nz-btn nz-btn--outline nz-btn--sm" href="openui/index.html">Abrir el playground</a></article></div></section><section class="nz-section nz-section--bordered"><h2 class="nz-h2">Hazlo tuyo en sesenta segundos</h2><h2 class="nz-h2">No es mi azul y mi naranja</h2><div class="nz-cluster nz-cluster--compact"><span class="nz-chip">Aurora</span><span class="nz-chip">Índigo</span><span class="nz-chip">Violeta</span><span class="nz-chip">Carmesí</span><span class="nz-chip">Esmeralda</span></div><div class="nz-callout nz-callout--note"><p>Dos colores de cualquier marca real y generar-marca.py saca la rampa OKLCH con contraste AA, sombras, fondos suaves y modo oscuro. El punto de partida no es el branding de Ntizar: es el tuyo. Pruébalo en vivo en la sección de marcas.</p></div></section><section class="nz-section nz-section--bordered"><h2 class="nz-h2">Y mapas, claro</h2><h2 class="nz-h2">El bastidor del mapa también es diseño</h2><p>Marco, leyenda, controles flotantes y ficha emergente salen del censo; la librería de tiles es tuya: MapLibre, Leaflet o el proveedor que quieras. Aurora no posee el motor: posee su cara.</p></section><section class="nz-section nz-section--bordered"><h2 class="nz-h2">Por dónde empezar</h2><h2 class="nz-h2">Cuatro pasos</h2><ol class="nz-stepper"><li class="nz-stepper__step is-done"><span class="nz-stepper__num">1</span>Elige tus dos colores</li><li class="nz-stepper__step is-active"><span class="nz-stepper__num">2</span>Pide un panel al modelo</li><li class="nz-stepper__step"><span class="nz-stepper__num">3</span>Sella con el lint</li><li class="nz-stepper__step"><span class="nz-stepper__num">4</span>Publica en el canal vivo</li></ol></section><section class="nz-section nz-section--bordered"><h2 class="nz-h2">Esta página es este programa</h2><h2 class="nz-h2">Sin trucos</h2><p>El programa openui-lang que genera esta página viaja embebido abajo y se muestra tal cual: 50 líneas. Compila con programa-a-html.py, pasa el lint y se publica en el canal vivo.</p></section></div>
+</main>
+<script type="text/plain" id="programa">
+root = Pagina([barra, apertura, cifras, generativa, contraste, formas, tuyo, mapas, cierre, codigo], "contenido")
+barra = Navegacion("Aurora", ["Catálogo", "Bloques", "Marcas", "OpenUI"])
+apertura = Seccion([t1, claim, acciones])
+t1 = Titular("El diseño lo escribe un modelo. Aurora impide que quede mal.", "1")
+claim = Entradilla("Aurora es un sistema de diseño con contrato: 2.195 objetos verificados, 18 packs CSS puros sin build y un lenguaje generativo. Webs, paneles, mapas e informes de nivel top, sin IA-slop por construcción, y con la marca que tú decidas.", "lg")
+acciones = Fila([cta1, cta2, cta3], "compacto")
+cta1 = Boton("Escribir un programa", "primario")
+cta2 = Boton("Ver el catálogo", "contorno")
+cta3 = Boton("Poner tu marca", "contorno")
+cifras = Rejilla([k1, k2, k3, k4], "4")
+k1 = Kpi("Objetos verificados", "2.195", "uno por uno", "plano")
+k2 = Kpi("Componentes generativos", "36", "vocabulario cerrado", "plano")
+k3 = Kpi("Clases inventadas", "0", "imposible por construcción", "plano", "acento")
+k4 = Kpi("Marcas listas", "6", "+ la tuya en 60 s", "sube")
+generativa = Seccion([t2, g1, g2], "Cómo funciona", true)
+t2 = Titular("Cuatro capas, un solo contrato", "2")
+g1 = Texto("L0 marcas: la identidad. L1 packs: la implementación, 18 hojas de estilo CSS puro. L2 openui: el vocabulario que escribe el modelo. L3 arquetipos: cinco estructuras ya decididas y auditadas. El programa valida tipos, enums y aridad antes de tocar el DOM, y el runtime emite solo clases del censo.")
+g2 = Nota("Sin gradiente, sin glass, sin negritas a mano: las leyes del contrato las impone el runtime y el lint, no la buena fe del modelo.")
+contraste = Seccion([t3, par], "El mismo encargo, dos destinos", true)
+t3 = Titular("La diferencia no es el modelo: es el sistema", "2")
+par = DosColumnas([sin], [con], "50-50")
+sin = Tarjeta([s1, sn], "Sin sistema", true)
+s1 = Texto("Pantalla de inicio con degradado azul→morado, tarjetas de esquinas imposibles y cuatro negritas que gritan a la vez. Bonita en la captura, inservible en el móvil.")
+sn = Nota("IA-slop: cada generación, un idioma visual distinto.", "peligro")
+con = Tarjeta([c1, barras, tabla], "Con Aurora", true)
+c1 = Kpi("Puntualidad", "94,2 %", "+2,1 pp", "sube", "acento")
+barras = Barras(["L", "M", "X", "J", "V", "S", "D"], [186, 204, 198, 212, 226, 152, 106])
+tabla = Tabla(["Ruta", "Salidas", "Puntualidad"], [["MAD-BCN", "42", "96 %"], ["MAD-VLC", "31", "88 %"]], true, "comoda", false, "Salidas")
+formas = Seccion([t4, rejillaFormas], "Tres formas de construir", true)
+t4 = Titular("Entra por donde quieras", "2")
+rejillaFormas = Rejilla([f1, f2, f3])
+f1 = Tarjeta([pf1, b1], "A mano", true)
+pf1 = Texto("Enlaza tokens.css y los packs que uses desde el CDN, copia un bloque del catálogo y pega. Sin build, sin dependencias, móvil resuelto.")
+b1 = Boton("Ver bloques", "contorno", "sm")
+f2 = Tarjeta([pf2, b2], "Con tu agente", true)
+pf2 = Texto("Dale LLM.md y components.json a tu agente: elige clases del censo y auditar-uso.py sella su HTML antes de entregar.")
+b2 = Boton("Guía para agentes", "contorno", "sm")
+f3 = Tarjeta([pf3, b3], "Con un modelo en caliente", true)
+pf3 = Texto("El modelo escribe openui-lang; el parser valida y el runtime pinta. La página que estás leyendo salió así, en 50 líneas.")
+b3 = Boton("Abrir el playground", "contorno", "sm")
+tuyo = Seccion([t5, chips, tn], "Hazlo tuyo en sesenta segundos", true)
+t5 = Titular("No es mi azul y mi naranja", "2")
+chips = Fila([ch1, ch2, ch3, ch4, ch5], "compacto")
+ch1 = Chip("Aurora", "neutro")
+ch2 = Chip("Índigo", "neutro")
+ch3 = Chip("Violeta", "neutro")
+ch4 = Chip("Carmesí", "neutro")
+ch5 = Chip("Esmeralda", "neutro")
+tn = Nota("Dos colores de cualquier marca real y generar-marca.py saca la rampa OKLCH con contraste AA, sombras, fondos suaves y modo oscuro. El punto de partida no es el branding de Ntizar: es el tuyo. Pruébalo en vivo en la sección de marcas.")
+mapas = Seccion([t6, mp], "Y mapas, claro", true)
+t6 = Titular("El bastidor del mapa también es diseño", "2")
+mp = Texto("Marco, leyenda, controles flotantes y ficha emergente salen del censo; la librería de tiles es tuya: MapLibre, Leaflet o el proveedor que quieras. Aurora no posee el motor: posee su cara.")
+cierre = Seccion([t7, pasos], "Por dónde empezar", true)
+t7 = Titular("Cuatro pasos", "2")
+pasos = Pasos(["Elige tus dos colores", "Pide un panel al modelo", "Sella con el lint", "Publica en el canal vivo"], 1)
+codigo = Seccion([t8, codigoNota], "Esta página es este programa", true)
+t8 = Titular("Sin trucos", "2")
+codigoNota = Texto("El programa openui-lang que genera esta página viaja embebido abajo y se muestra tal cual: 50 líneas. Compila con programa-a-html.py, pasa el lint y se publica en el canal vivo.")
 </script>
+
+<footer class="nz-footer">
+  <p>Hecho con ❤️ por David Antizar</p>
+</footer>
+
 </body>
 </html>

@@ -116,7 +116,7 @@ la página salía azul porque el CSS la hacía azul.
 
 ## 5. Forma de cada tipo de página
 
-Cada tipo tiene **una forma correcta**. Copia la receta de `recetas/`.
+Cada tipo tiene **una forma correcta**. Copia la receta de `bloques/recetas/`.
 
 | Tipo | Estructura | Ancho |
 |---|---|---|
@@ -220,7 +220,7 @@ el lienzo se plantaba en 1152px, el 60%.
 ## 12. Antes / después (el caso real que originó el plan)
 
 Un panel de admin generado con Aurora, frente al mismo panel compuesto con este contrato
-(receta `recetas/admin.html`):
+(receta `bloques/recetas/admin.html`):
 
 | | Antes | Después |
 |---|---|---|

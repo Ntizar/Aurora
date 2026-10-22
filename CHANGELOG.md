@@ -3,6 +3,27 @@
 Formato: [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/).
 Versionado: [SemVer](https://semver.org/lang/es/).
 
+## [10.1.0] — 2026-10-22
+
+### La portada explica el proyecto
+
+- **`index.html` es la portada generada con OpenUI**: un programa openui-lang
+  (`briefs/portada.openui`, 50 líneas) pre-renderizado en
+  `briefs/portada.tmpl.html`; `build-catalog.py` le clava las cifras reales del
+  censo y el rango del canal vivo. Narrativa de historia, no de inventario:
+  qué es, cómo funciona, el mismo encargo con y sin sistema, tres formas de
+  construir, marca tuya, mapas y el programa a la vista. El shell `cat-*`
+  desaparece de la portada (su contenido vive en `base.html` y `marcas/`).
+
+### Limpieza de carpetas
+
+- `recetas/`, `examples/` y `combos/` -> **`bloques/{recetas,ejemplos,combos}/`**:
+  un solo concepto con tres sabores, como ya se documentaba.
+- `data/` y `datos/` fusionadas en **`datos/`** (dos carpetas con nombre casi
+  idéntico era ruido puro).
+- Retirados `portada-v10.html` y `briefs/portada-v10.openui` (sustituidos por
+  `index.html` y `briefs/portada.openui`).
+
 ## [10.0.0] — 2026-10-22
 
 ### Calma (el presupuesto manda)

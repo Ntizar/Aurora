@@ -1,8 +1,8 @@
 {
  "name": "Aurora — base de datos de diseño",
- "version": "10.0.0",
+ "version": "10.1.0",
  "descripcion": "Índice consultable del sistema: familias, tokens, recetas, combos y marcas. Cada ficha enlaza a su demo viva y lleva el markup real.",
- "fuente": "components.json + specs/ + recetas/ + examples/ + combos/ + marcas/registro.json + COMPOSICION.md",
+ "fuente": "components.json + specs/ + bloques/recetas/ + bloques/ejemplos/ + bloques/combos/ + marcas/registro.json + COMPOSICION.md",
  "explorador": "base.html",
  "resumen": {
   "familias": 411,
@@ -23830,7 +23830,7 @@
   {
    "id": "admin",
    "titulo": "Panel de administración",
-   "fichero": "recetas/admin.html",
+   "fichero": "bloques/recetas/admin.html",
    "tipo": "admin",
    "nivel": "canonica",
    "descripcion": "Tabla densa con filtros, acciones masivas, estados y detalle. El patrón de gestión de usuarios.",
@@ -23854,7 +23854,7 @@
   {
    "id": "ajustes",
    "titulo": "Ajustes de cuenta",
-   "fichero": "recetas/ajustes.html",
+   "fichero": "bloques/recetas/ajustes.html",
    "tipo": "ajustes",
    "nivel": "canonica",
    "descripcion": "Preferencias en dos columnas con navegación lateral, formularios y guardado por sección.",
@@ -23887,7 +23887,7 @@
   {
    "id": "charla",
    "titulo": "Charla en beats",
-   "fichero": "recetas/charla.html",
+   "fichero": "bloques/recetas/charla.html",
    "tipo": "charla",
    "nivel": "canonica",
    "descripcion": "Presentación con el objeto de escenario: ritmo, jerarquía y un dato por beat.",
@@ -23908,7 +23908,7 @@
   {
    "id": "dashboard",
    "titulo": "Panel de indicadores",
-   "fichero": "recetas/dashboard.html",
+   "fichero": "bloques/recetas/dashboard.html",
    "tipo": "dashboard",
    "nivel": "canonica",
    "descripcion": "KPIs, gráficos y tabla en un app shell. El patrón de producto analítico.",
@@ -23933,7 +23933,7 @@
   {
    "id": "informe",
    "titulo": "Informe ejecutivo",
-   "fichero": "recetas/informe.html",
+   "fichero": "bloques/recetas/informe.html",
    "tipo": "informe",
    "nivel": "canonica",
    "descripcion": "Cifras, tabla y conclusiones en prosa. El patrón de entregable.",
@@ -23965,7 +23965,7 @@
   {
    "id": "login",
    "titulo": "Acceso",
-   "fichero": "recetas/login.html",
+   "fichero": "bloques/recetas/login.html",
    "tipo": "login",
    "nivel": "canonica",
    "descripcion": "Formulario de entrada con validación visible y estados de error.",
@@ -23988,7 +23988,7 @@
   {
    "id": "chat-ia",
    "titulo": "Chat de IA",
-   "fichero": "examples/chat-ia.html",
+   "fichero": "bloques/ejemplos/chat-ia.html",
    "tipo": "chat-ia",
    "nivel": "minima",
    "descripcion": "Conversación con prompts, tool call y plan de tarea. El patrón de agente.",
@@ -24008,7 +24008,7 @@
   {
    "id": "dashboard",
    "titulo": "Dashboard mínimo",
-   "fichero": "examples/dashboard.html",
+   "fichero": "bloques/ejemplos/dashboard.html",
    "tipo": "dashboard",
    "nivel": "minima",
    "descripcion": "Versión de arranque del panel: cuatro KPIs y una tabla.",
@@ -24032,7 +24032,7 @@
   {
    "id": "forms",
    "titulo": "Formulario de alta",
-   "fichero": "examples/forms.html",
+   "fichero": "bloques/ejemplos/forms.html",
    "tipo": "forms",
    "nivel": "minima",
    "descripcion": "Formulario completo con fieldset, ayudas y validación.",
@@ -24055,7 +24055,7 @@
   {
    "id": "landing",
    "titulo": "Landing",
-   "fichero": "examples/landing.html",
+   "fichero": "bloques/ejemplos/landing.html",
    "tipo": "landing",
    "nivel": "minima",
    "descripcion": "Hero, features, prueba social y CTA. El patrón de marketing.",
@@ -24082,7 +24082,7 @@
   {
    "id": "login",
    "titulo": "Login mínimo",
-   "fichero": "examples/login.html",
+   "fichero": "bloques/ejemplos/login.html",
    "tipo": "login",
    "nivel": "minima",
    "descripcion": "Versión de arranque del acceso.",
@@ -24106,7 +24106,7 @@
  "combos": [
   {
    "id": "charla-beats",
-   "fichero": "combos/charla-beats.html",
+   "fichero": "bloques/combos/charla-beats.html",
    "packs": [
     "p1-layout.css",
     "p3-typography.css",
@@ -24128,7 +24128,7 @@
   },
   {
    "id": "chat-ia",
-   "fichero": "combos/chat-ia.html",
+   "fichero": "bloques/combos/chat-ia.html",
    "packs": [
     "p1-layout.css",
     "p3-typography.css",
@@ -24151,7 +24151,7 @@
   },
   {
    "id": "dashboard",
-   "fichero": "combos/dashboard.html",
+   "fichero": "bloques/combos/dashboard.html",
    "packs": [
     "p1-layout.css",
     "p2-navigation.css",
@@ -24175,7 +24175,7 @@
   },
   {
    "id": "e-commerce",
-   "fichero": "combos/e-commerce.html",
+   "fichero": "bloques/combos/e-commerce.html",
    "packs": [
     "p1-layout.css",
     "p3-typography.css",
@@ -24198,7 +24198,7 @@
   },
   {
    "id": "escritorio-app",
-   "fichero": "combos/escritorio-app.html",
+   "fichero": "bloques/combos/escritorio-app.html",
    "packs": [
     "p1-layout.css",
     "p2-navigation.css",
@@ -24223,7 +24223,7 @@
   },
   {
    "id": "landing",
-   "fichero": "combos/landing.html",
+   "fichero": "bloques/combos/landing.html",
    "packs": [
     "p1-layout.css",
     "p3-typography.css",
@@ -24246,7 +24246,7 @@
   },
   {
    "id": "login-form",
-   "fichero": "combos/login-form.html",
+   "fichero": "bloques/combos/login-form.html",
    "packs": [
     "p1-layout.css",
     "p3-typography.css",
@@ -24271,7 +24271,7 @@
   },
   {
    "id": "prototipo",
-   "fichero": "combos/prototipo.html",
+   "fichero": "bloques/combos/prototipo.html",
    "packs": [
     "all.css"
    ],

@@ -1,10 +1,10 @@
 {
  "name": "Aurora",
- "version": "10.0.0",
+ "version": "10.1.0",
  "type": "css-only design system",
  "namespace": ".nz-",
  "tokens": "tokens.css",
- "cdn": "https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v10.0.0/",
+ "cdn": "https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v10.1.0/",
  "manifiesto": {
   "gradientes": 0,
   "glass": 0,
@@ -516,7 +516,7 @@
  },
  "combosEsqueleto": {
   "landing": {
-   "fichero": "combos/landing.html",
+   "fichero": "bloques/combos/landing.html",
    "familias": [
     "nz-hero-bleed",
     "nz-thirds",
@@ -526,7 +526,7 @@
    ]
   },
   "dashboard": {
-   "fichero": "combos/dashboard.html",
+   "fichero": "bloques/combos/dashboard.html",
    "familias": [
     "nz-navbar",
     "nz-dash-grid",
@@ -537,7 +537,7 @@
    ]
   },
   "chat-ia": {
-   "fichero": "combos/chat-ia.html",
+   "fichero": "bloques/combos/chat-ia.html",
    "familias": [
     "nz-chat",
     "nz-prompt",
@@ -546,7 +546,7 @@
    ]
   },
   "login-form": {
-   "fichero": "combos/login-form.html",
+   "fichero": "bloques/combos/login-form.html",
    "familias": [
     "nz-article",
     "nz-h2",
@@ -557,7 +557,7 @@
    ]
   },
   "escritorio-app": {
-   "fichero": "combos/escritorio-app.html",
+   "fichero": "bloques/combos/escritorio-app.html",
    "familias": [
     "nz-window",
     "nz-appnav",
@@ -566,7 +566,7 @@
    ]
   },
   "e-commerce": {
-   "fichero": "combos/e-commerce.html",
+   "fichero": "bloques/combos/e-commerce.html",
    "familias": [
     "nz-product",
     "nz-cart",
@@ -575,7 +575,7 @@
    ]
   },
   "charla-beats": {
-   "fichero": "combos/charla-beats.html",
+   "fichero": "bloques/combos/charla-beats.html",
    "familias": [
     "nz-recorrido",
     "nz-escenario",
@@ -584,7 +584,7 @@
    ]
   },
   "prototipo": {
-   "fichero": "combos/prototipo.html",
+   "fichero": "bloques/combos/prototipo.html",
    "familias": [
     "nz-btn",
     "nz-field",

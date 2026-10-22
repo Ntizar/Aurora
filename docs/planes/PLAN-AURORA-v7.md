@@ -42,7 +42,7 @@ tokens → contrato de composición). El repaso fino de los 349 objetos viene de
 Todo sale de scripts sobre el repo, no de mirar capturas.
 
 ### 1.1 La capa de generación — el culpable nº1
-- `specs/*.json` (demos): **0 emojis**. `examples/`: 1-2 (solo el ❤️ del pie). El sistema es sobrio.
+- `specs/*.json` (demos): **0 emojis**. `bloques/ejemplos/`: 1-2 (solo el ❤️ del pie). El sistema es sobrio.
 - `app/*.js` de NtizarKey: **97 emojis** (🔑⚙️🔒👁️✏️🗑️👥⚡✅📊…). El agente los mete por costumbre.
 - `AGENTS.md` y `LLM.md` de v7 documentan **objetos** («qué clase uso»), no **composición**
   («cómo se monta una página»). No hay una sola regla sobre jerarquía, densidad, anchos ni color.
@@ -184,7 +184,7 @@ Cada fase: **objetivo · entregable · verificación (receipt)**. Sin receipt no
 
 ### F4 · Recetas canónicas — 2-3 días ⭐
 - **Objetivo:** que "así se ve bien" exista como archivo copiable, no como idea.
-- **Entregable:** `recetas/` con login, dashboard, **admin** (caso NtizarKey), settings,
+- **Entregable:** `bloques/recetas/` con login, dashboard, **admin** (caso NtizarKey), settings,
   tabla-detalle, landing, informe y formulario denso. Cada una: 0 emojis, presupuesto de color,
   anchos correctos, densidad decidida.
 - **Verificación:** cada receta pasa el arnés (F5) con 0 fallos + captura visual.

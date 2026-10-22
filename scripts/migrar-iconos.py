@@ -3,7 +3,7 @@
 """Migra los símbolos de texto que hacían de icono a SVG `.nz-icon`.
 
 Los specs son la fuente de verdad de las demos: se reemplaza ahí y se regenera.
-También se aplica a examples/ (páginas de consumidor) y al shell del catálogo.
+También se aplica a bloques/ejemplos/ (páginas de consumidor) y al shell del catálogo.
 
 Es idempotente: si ya no queda ningún símbolo, no cambia nada.
 
@@ -114,7 +114,7 @@ def main() -> int:
             p.write_text(json.dumps(d, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
             print(f"specs/{p.name}: iconos migrados")
 
-    for p in sorted((ROOT / "examples").glob("*.html")):
+    for p in sorted((ROOT / "bloques" / "ejemplos").glob("*.html")):
         t = p.read_text(encoding="utf-8")
         nuevo = t
         for simbolo, svg in SVG.items():
@@ -123,7 +123,7 @@ def main() -> int:
         if nuevo != t:
             p.write_text(nuevo, encoding="utf-8")
             cambios += 1
-            print(f"examples/{p.name}: iconos migrados")
+            print(f"bloques/ejemplos/{p.name}: iconos migrados")
 
     print(f"Total: {cambios} bloque(s) actualizados")
     return 0

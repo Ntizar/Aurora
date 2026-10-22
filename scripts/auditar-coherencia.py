@@ -51,7 +51,7 @@ RX_INLINE = re.compile(r'style="([^"]*)"')
 
 def htmls() -> list[Path]:
     rutas = [ROOT / "index.html", ROOT / "base.html", ROOT / "stress-test.html"]
-    for carpeta in ("recetas", "examples", "paginas"):
+    for carpeta in ("bloques/recetas", "bloques/ejemplos", "paginas"):
         rutas += sorted((ROOT / carpeta).glob("*.html"))
     return [p for p in rutas if p.is_file()]
 
@@ -68,7 +68,7 @@ def auditar_html(p: Path, fallos: list[str], avisos: list[str]) -> None:
     # Una receta no puede ser dark entera: el dark es un modo, no la identidad
     # de una página. Se permite si la página lo declara como demo de tema.
     tema = RX_TEMA.search(t)
-    if tema and tema.group(1) == "dark" and rel.startswith("recetas/"):
+    if tema and tema.group(1) == "dark" and rel.startswith("bloques/recetas/"):
         fallos.append(f"{rel}: receta forzada a dark; usa light y un bloque --profundo")
 
     for v in set(RX_VERSION.findall(t)):
@@ -79,7 +79,7 @@ def auditar_html(p: Path, fallos: list[str], avisos: list[str]) -> None:
         if m != major:
             fallos.append(f"{rel}: CDN @v{m} (canal) ≠ major vigente v{major}")
 
-    if rel.startswith(("recetas/", "examples/")) and ATRIBUCION not in t:
+    if rel.startswith(("bloques/recetas/", "bloques/ejemplos/")) and ATRIBUCION not in t:
         fallos.append(f"{rel}: falta la atribución exacta «{ATRIBUCION}»")
 
     for m in RX_SIDEBAR_ICONO.finditer(t):

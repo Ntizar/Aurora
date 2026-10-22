@@ -32,11 +32,11 @@ No es una opinión: son siete comprobaciones que se pueden falsar.
 
 - Se creó `scripts/auditar-coherencia.py` y se midió el baseline: **211 incoherencias**.
 - Se migraron **60 bloques de demos** de 12 specs a SVG `.nz-icon`; también el shell
-  del catálogo (`paginas/*.html`) y `examples/login.html`.
+  del catálogo (`paginas/*.html`) y `bloques/ejemplos/login.html`.
 - La receta `charla.html` dejó de estar forzada a dark: ahora es light con un solo
   beat `--profundo`, y ese bloque redefine sus tokens de texto (antes el contraste
   solo funcionaba por casualidad en dark).
-- Los 5 `examples/` dejaron de enlazar `@v8.3.0` y usan `@v9.2.0`.
+- Los 5 `bloques/ejemplos/` dejaron de enlazar `@v8.3.0` y usan `@v9.2.0`.
 - El footer de la charla volvió a la atribución exacta.
 - `auditar-coherencia.py --check` entra en la CI.
 
@@ -136,6 +136,6 @@ introducir glass como base o duplicar patrones entre packs.
   Se revisan en la fase 3; algunos son datos del gráfico, no diseño.
 - **`href="#"` en recetas:** admin tiene enlaces de menú muertos; se convierten
   a páginas reales en la fase 1.5.
-- **`examples/`:** no están en el lint de la CI; se añaden en la fase 4.
+- **`bloques/ejemplos/`:** no están en el lint de la CI; se añaden en la fase 4.
 
 Hecho con ❤️ por David Antizar

@@ -71,7 +71,7 @@ versión. Lo que se mueve es **a dónde apunta el rango**, no el tag.
 - **major** (`9.x → 10.0.0`): renombrar o quitar algo del contrato. Exige:
   1. fichero de migración en `openui/migraciones/`,
   2. `python3 scripts/migrar-programas.py` sobre los programas,
-  3. un major nuevo en `data/canales.json` (el canal vivo cambia de rango),
+  3. un major nuevo en `datos/canales.json` (el canal vivo cambia de rango),
   4. nota en `CHANGELOG.md` con «qué deja de existir».
 
 ## 6. El lock de cada web

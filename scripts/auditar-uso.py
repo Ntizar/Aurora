@@ -44,7 +44,7 @@ ROOT = pathlib.Path(__file__).resolve().parent.parent
 CDN_RE = re.compile(
     r'href="(https://cdn\.jsdelivr\.net/gh/Ntizar/Aurora@([^/"]+)/([^"]+))"')
 CLASE_RE = re.compile(r'class="([^"]*)"')
-# enlaces locales (recetas/ y páginas del propio repo): ../tokens.css, ../packs/x.css
+# enlaces locales (bloques/recetas/ y páginas del propio repo): ../tokens.css, ../packs/x.css
 LOCAL_RE = re.compile(r'href="(?:\.\./)?(tokens\.css|packs/[a-z0-9-]+\.css)"')
 STYLE_RE = re.compile(r'style="([^"]*)"')
 STYLE_BLOCK_RE = re.compile(r"<style[^>]*>(.*?)</style>", re.S)
@@ -343,8 +343,8 @@ def main():
                          for p in [pathlib.Path(a)] if p.exists())
     if not rutas:
         rutas = [(str(p), p.read_text(encoding="utf-8"))
-                 for p in map(pathlib.Path, sorted(glob.glob(str(ROOT / "examples" / "*.html"))))]
-        print(f"(sin argumentos: auditando examples/ de fábrica)")
+                 for p in map(pathlib.Path, sorted(glob.glob(str(ROOT / "bloques" / "ejemplos" / "*.html"))))]
+        print(f"(sin argumentos: auditando bloques/ejemplos/ de fábrica)")
 
     total_fallos = 0
     for nombre, html in rutas:

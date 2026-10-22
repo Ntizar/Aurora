@@ -22,8 +22,8 @@ Si eres un agente (o una persona con prisa), lee esto antes de tocar nada.
 6. **Táctil 44px** en todo lo que se pulsa.
 7. **Una clase, un dueño**: una clase se declara en un solo pack.
 8. **La base de datos no se escribe a mano.** `datos/base-diseno.json` se genera con
-   `scripts/generar-base-datos.py` desde `components.json`, `specs/`, `recetas/`,
-   `combos/` y `marcas/`; `base.html` es solo la vista. Si se edita a mano, `--check` lo caza.
+   `scripts/generar-base-datos.py` desde `components.json`, `specs/`, `bloques/recetas/`,
+   `bloques/combos/` y `marcas/`; `base.html` es solo la vista. Si se edita a mano, `--check` lo caza.
 9. **Responsive por contenedor, no por monitor.** Los objetos compuestos (`.nz-dash-grid`,
    `.nz-split`, `.nz-bento`, `.nz-chart`, `.nz-chat`, `.nz-kanban-wrap`) consultan su
    contenedor. La base sigue siendo móvil; los escalones de contenedor solo suman.
@@ -48,15 +48,15 @@ Si eres un agente (o una persona con prisa), lee esto antes de tocar nada.
 | `datos/base-diseno.json` | Base de datos de diseño (familias, tokens, recetas, combos, marcas) | **No** — se regenera |
 | `base.html` | Explorador de la base de datos (vista) | Sí |
 | `stress-test.html` | Prueba viva del responsive por contenedor | Sí |
-| `combos/*.html` | Esqueletos de página por tipo | **No** — los genera `generar-llm-docs.py` |
-| `examples/` · `recetas/` | Páginas completas para copiar | Sí |
+| `bloques/combos/*.html` | Esqueletos de página por tipo | **No** — los genera `generar-llm-docs.py` |
+| `bloques/ejemplos/` · `bloques/recetas/` | Páginas completas para copiar | Sí |
 | `openui/componentes.json` · `openui/ejemplos.json` | **Fuente** de la capa generativa (qué componente expone qué objeto) | Sí |
 | `openui/aurora.spec.json` · `aurora.schema.json` · `PROMPT.md` | Salidas de `generar-openui.py` | **No** — se regeneran |
 | `openui/aurora-openui.js` · `openui/index.html` | Runtime vanilla y probador en vivo | Sí |
 | `openui/plantillas/*.json` | Plantillas por arquetipo (fuente) | Sí |
 | `openui/plantillas/index.json` | Índice generado de plantillas | **No** — `plantilla.py --index` |
 | `briefs/*.json` | Encargos de ejemplo para `generar-web.py` | Sí |
-| `data/canales.json` | A qué versión apunta cada canal (vivo / congelado) | Sí |
+| `datos/canales.json` | A qué versión apunta cada canal (vivo / congelado) | Sí |
 | `openui/migraciones/*.json` | Recetas de migración para un major | Sí |
 | `docs/planes/` | Planes archivados | Sí, pero no es documentación viva |
 | `audit/` | Informe de auditoría | **No** — se regenera |
@@ -122,7 +122,7 @@ Los 18 packs hablan el mismo idioma. Usa estos modificadores, y solo estos:
 - `LLM.md` — guía de decisión (~20 KB): qué pack cargar y qué clases usar.
 - `components.json` — API completa machine-readable: familia → pack, clases, modificadores,
   partes, tokens y página de demo.
-- `examples/` y `recetas/` — páginas completas que puedes copiar y adaptar.
+- `bloques/ejemplos/` y `bloques/recetas/` — páginas completas que puedes copiar y adaptar.
 - `paginas/` — catálogo con una demo viva por objeto.
 - `iconos/` — repositorio de iconos numerados: `iconos/README.md` (doctrina),
   `iconos/index.html` (catálogo navegable), `iconos/iconos.json` (manifiesto con licencia)

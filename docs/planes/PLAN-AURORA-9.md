@@ -50,7 +50,7 @@ escritorio). Quedan dos huecos que ese plan no cubría:
    pasan a la API. Ej.: `nz-chart-bar` no para magnitudes dispares → `nz-chart-tablebar`.
 4. **`llms.txt`** en la raíz (estándar que los crawlers de LLMs ya respetan) apuntando a
    LLM.md + components.json + examples.
-5. **`combos/` ampliado** con el markup esqueleto de cada combo (hoy solo lista packs).
+5. **`bloques/combos/` ampliado** con el markup esqueleto de cada combo (hoy solo lista packs).
 
 ### C · Cierre y prueba viva (v9.2)
 1. Cadena CI completa en verde + tag v9.x + skill local sincronizada (contrato de sincronía §2).

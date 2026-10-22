@@ -7,9 +7,9 @@ No inventa nada: indexa lo que ya existe y lo enriquece con metadatos derivados.
 Fuentes (todas dentro del repo):
   · components.json      → familias, clases, tokens, markup, anti-patrones, alias, combos
   · specs/*.json         → categorías y demos
-  · recetas/*.html       → páginas canónicas completas
-  · examples/*.html      → recetas mínimas de arranque
-  · combos/*.html        → esqueletos de página por tipo
+  · bloques/recetas/*.html       → páginas canónicas completas
+  · bloques/ejemplos/*.html      → recetas mínimas de arranque
+  · bloques/combos/*.html        → esqueletos de página por tipo
   · marcas/registro.json → presets de color
   · COMPOSICION.md       → las 12 leyes duras
 
@@ -270,7 +270,7 @@ def construir() -> dict:
         }
 
     recetas = []
-    for p in sorted((ROOT / "recetas").glob("*.html")):
+    for p in sorted((ROOT / "bloques" / "recetas").glob("*.html")):
         if p.stem == "index":
             continue
         m = metadatos_html(p)
@@ -278,7 +278,7 @@ def construir() -> dict:
         recetas.append({
             "id": p.stem,
             "titulo": titulo,
-            "fichero": f"recetas/{p.name}",
+            "fichero": f"bloques/recetas/{p.name}",
             "tipo": p.stem,
             "nivel": "canonica",
             "descripcion": desc,
@@ -289,13 +289,13 @@ def construir() -> dict:
         })
 
     ejemplos = []
-    for p in sorted((ROOT / "examples").glob("*.html")):
+    for p in sorted((ROOT / "bloques" / "ejemplos").glob("*.html")):
         m = metadatos_html(p)
         titulo, desc = EJEMPLOS_META.get(p.stem, (m["titulo"], ""))
         ejemplos.append({
             "id": p.stem,
             "titulo": titulo,
-            "fichero": f"examples/{p.name}",
+            "fichero": f"bloques/ejemplos/{p.name}",
             "tipo": p.stem,
             "nivel": "minima",
             "descripcion": desc,
@@ -312,7 +312,7 @@ def construir() -> dict:
         esq = esqueletos.get(nombre, {})
         combos.append({
             "id": nombre,
-            "fichero": esq.get("fichero", f"combos/{nombre}.html"),
+            "fichero": esq.get("fichero", f"bloques/combos/{nombre}.html"),
             "packs": c.get("packs", []),
             "tipico": c.get("tipico", ""),
             "familias": esq.get("familias", []),
@@ -352,7 +352,7 @@ def construir() -> dict:
         "name": "Aurora — base de datos de diseño",
         "version": comp.get("version", ""),
         "descripcion": "Índice consultable del sistema: familias, tokens, recetas, combos y marcas. Cada ficha enlaza a su demo viva y lleva el markup real.",
-        "fuente": "components.json + specs/ + recetas/ + examples/ + combos/ + marcas/registro.json + COMPOSICION.md",
+        "fuente": "components.json + specs/ + bloques/recetas/ + bloques/ejemplos/ + bloques/combos/ + marcas/registro.json + COMPOSICION.md",
         "explorador": "base.html",
         "resumen": {
             "familias": len(familias),

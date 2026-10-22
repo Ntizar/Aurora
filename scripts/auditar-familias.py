@@ -58,7 +58,7 @@ def main() -> int:
         por_pack[ruta.name] = bloques_del_pack(ruta)
 
     recetas = ""
-    for r in sorted((ROOT / "recetas").glob("*.html")):
+    for r in sorted((ROOT / "bloques" / "recetas").glob("*.html")):
         recetas += r.read_text(encoding="utf-8")
 
     familias = sorted(objetos)
@@ -127,7 +127,7 @@ def main() -> int:
         print(f"  {n:4d}  {v}")
     print()
     print(f"Familias con 0 modificadores: {sum(1 for f in filas if f['modificadores'] == 0)}")
-    print(f"Familias usadas en recetas/: {sum(1 for f in filas if f['en_recetas'])}")
+    print(f"Familias usadas en bloques/recetas/: {sum(1 for f in filas if f['en_recetas'])}")
     print(f"Familias con color a mano:    {sum(1 for f in filas if f['hex_crudo'])}")
     print()
     print("Grupos numéricos (candidatos a colapsar):",

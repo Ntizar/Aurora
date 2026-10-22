@@ -1,14 +1,14 @@
 ---
 name: aurora-design-system
 description: "Usa al construir o tocar cualquier web con Aurora (Ntizar/Aurora). El repo manda: resuelve la versión vigente y pide LLM.md + components.json antes de escribir CSS."
-version: "10.0.0"
+version: "10.1.0"
 tags: [css, design-system, aurora, ntizar, agent-ready, movil, escritorio, tipografia]
 ---
 
 # Aurora — doctrina única (el repo es la orden máxima)
 
 Design system CSS puro, sin build, sin dependencias, namespaced bajo `.nz-`.
-**v10.0.0 · 2195 objetos · 411 familias · 659 demos · 18 categorías · 189 tokens · 59 gemelas OKLch · 36 componentes generativos · 338 iconos numerados.**
+**v10.1.0 · 2195 objetos · 411 familias · 659 demos · 18 categorías · 189 tokens · 59 gemelas OKLch · 36 componentes generativos · 338 iconos numerados.**
 *(Cabecera de testigo, no de autoridad: resuélvela con el PASO 0.)*
 
 > ⚠️ `Ntizar/Aurora` **manda sobre esta skill**. Esta skill es un puntero; el repo
@@ -46,7 +46,7 @@ curl -s https://cdn.jsdelivr.net/gh/Ntizar/Aurora@master/components.json  # API 
 ```
 
 Con el repo clonado, tira de disco (más rápido, sin red):
-`C:/Users/d_ant/Projects/Aurora-8/{LLM.md,components.json,COMPOSICION.md,recetas/,SKILL.md}`.
+`C:/Users/d_ant/Projects/Aurora-8/{LLM.md,components.json,COMPOSICION.md,bloques/recetas/,SKILL.md}`.
 
 **La regla, en una línea:** *para leer, la verdad viva; para publicar, el tag resuelto.*
 `@master` sirve para consultar documentos; el `<link>` que entregas va siempre pineado
@@ -61,7 +61,7 @@ cuesta ~250 KB. Nunca pegues CSS de packs en el prompt.
 |---|---|
 | Qué packs enlazar y qué clases usar | `@master/LLM.md` (o `@$V/LLM.md` si quieres la foto exacta de una release) |
 | API exacta: familias, partes, modificadores, tokens, alias EN→ES | `@master/components.json` |
-| Página completa que ya funciona | `@master/examples/` (login, dashboard, landing, chat-ia, forms) |
+| Página completa que ya funciona | `@master/bloques/ejemplos/` (login, dashboard, landing, chat-ia, forms) |
 | Demo viva de un objeto | `https://ntizar.github.io/Aurora/paginas/NN-*.html` |
 | Reglas duras y estado del repo | `@master/AGENTS.md` · `@master/SKILL.md` |
 
@@ -189,7 +189,7 @@ El lint lo comprueba (`acento-ausente`, `acento-testimonial`).
 ## 6. Flujo del agente para generar HTML con Aurora
 
 1. **PASO 0**: resuelve `$V` y lee `LLM.md` + `components.json` del repo. Si buscas por necesidad («tabla apilable», «dashboard», «acento»), empieza por `base.html` o `datos/base-diseno.json`: es el índice que ya trae markup, tokens y anti-patrón.
-2. **Copia una receta de `examples/`** y quítale lo que no uses.
+2. **Copia una receta de `bloques/ejemplos/`** y quítale lo que no uses.
 3. **Escribe el HTML** con los objetos del censo, responsive first, tokens, 44px. Si la
    interfaz la genera un modelo en caliente (chat, panel dinámico), ve a §14: lenguaje +
    `PROMPT.md` + `aurora-openui.js`, no HTML suelto.
@@ -314,7 +314,7 @@ Criterio de admisión: (a) resuelve un problema real y repetido, (b) es responsi
   `tokens.css`); corregido en 9.2: el `<link>` externo sobra.
 - ❌ **Editar a mano `components.json` o `datos/base-diseno.json`.** Son salidas de
   generador: la CI las compara y `auditar-base.py --check` caza cualquier retoque. Se
-  cambia la fuente (`specs/`, packs, `recetas/`, `marcas/`) y se regenera.
+  cambia la fuente (`specs/`, packs, `bloques/recetas/`, `marcas/`) y se regenera.
 - ❌ **Resolver un objeto compuesto solo con `@media`.** Un chart o un kanban dentro de
   un sidebar de 320px se rompe aunque el monitor sea 4K. Los objetos compuestos consultan
   su contenedor; si el objeto no es contenedor, se declara el contexto con `.nz-cq`.
@@ -441,7 +441,7 @@ AuroraOpenUI.stream(respuestaDelModelo, "#lienzo");    // streaming; cae a parse
 ## 15. Referencias
 
 
-- **`Ntizar/Aurora`** — la orden máxima. `LLM.md`, `components.json`, `AGENTS.md`, `COMPOSICION.md`, `examples/`, `recetas/`, `specs/`, `paginas/`, `audit/`, `scripts/auditar-uso.py`.
+- **`Ntizar/Aurora`** — la orden máxima. `LLM.md`, `components.json`, `AGENTS.md`, `COMPOSICION.md`, `bloques/ejemplos/`, `bloques/recetas/`, `specs/`, `paginas/`, `audit/`, `scripts/auditar-uso.py`.
 - **`openui/`** — capa generativa: `componentes.json` (fuente), `PROMPT.md`, `aurora.spec.json`, `aurora-openui.js`, `index.html` (probador), `ejemplos.json`.
 - Este mismo `SKILL.md` **dentro del repo** (la CI valida que no se separe).
 - `references/migracion-v6-a-v7.md` y el caso Aurora en la skill `design-system-coherence-audit`.

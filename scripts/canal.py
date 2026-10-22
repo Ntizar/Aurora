@@ -28,7 +28,7 @@ import sys
 import urllib.request
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
-CANALES = ROOT / "data" / "canales.json"
+CANALES = ROOT / "datos" / "canales.json"
 
 
 def leer_canales():

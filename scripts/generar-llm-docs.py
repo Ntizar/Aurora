@@ -15,9 +15,9 @@ Novedades v9.1 (Fase B del plan Aurora 9):
     anti-patrones «noUsar»
   · alias ampliados 32 → 150 al vocabulario natural de los LLMs (verificados
     contra el censo; el generador aborta si alguno apunta a algo inexistente)
-  · llms.txt en la raíz apuntando a LLM.md, components.json y examples/
+  · llms.txt en la raíz apuntando a LLM.md, components.json y bloques/ejemplos/
   · punto 5 de la Fase B: cada combo genera además su MARKUP ESQUELETO en
-    combos/<combo>.html (receta de arranque completa con las clases reales
+    bloques/combos/<combo>.html (receta de arranque completa con las clases reales
     del sistema). Nada se escribe a mano: los bloques se EXTRAEN de las demos
     reales de specs/ y se validan contra el censo de los packs — si una clase
     del esqueleto no existe, o una familia no pertenece a los packs del combo,
@@ -42,9 +42,9 @@ sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
 bc = import_module("build-catalog")
 
 ROOT = bc.ROOT
-VERSION = "10.0.0"
-# El canal vivo no se copia a mano: sale de data/canales.json (único dueño)
-_canales = json.loads((ROOT / "data" / "canales.json").read_text(encoding="utf-8"))
+VERSION = "10.1.0"
+# El canal vivo no se copia a mano: sale de datos/canales.json (único dueño)
+_canales = json.loads((ROOT / "datos" / "canales.json").read_text(encoding="utf-8"))
 CANAL_VIVO = _canales["canales"]["vivo"]["rango"]
 CDN = f"https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v{VERSION}/"
 
@@ -495,7 +495,7 @@ FAMILIAS_COMBO = {
 # familias del sistema forman su página típica; el generador EXTRAe el bloque
 # de cada familia de las demos reales de specs/ (nada a mano, nada inventado),
 # valida todas las clases contra el censo de los packs y compone una receta de
-# arranque completa en combos/<combo>.html. Si una clase no existe o una
+# arranque completa en bloques/combos/<combo>.html. Si una clase no existe o una
 # familia no pertenece a los packs del combo, el generador ABORTA.
 # ---------------------------------------------------------------------------
 
@@ -765,11 +765,11 @@ def main():
     if len(tokens) < 100:
         sys.exit(f"INVENTARIO DE TOKENS SOSPECHOSO: solo {len(tokens)} en :root")
 
-    # --- punto 5 Fase B: esqueleto de cada combo → combos/<combo>.html ---
+    # --- punto 5 Fase B: esqueleto de cada combo → bloques/combos/<combo>.html ---
     # Cada bloque sale de las demos reales de specs/ y pasa dos verificaciones
     # duras: que todas sus clases existan en el censo de los packs y que la
     # familia declare clases en los packs del combo. Si no, el generador aborta.
-    combos_dir = ROOT / "combos"
+    combos_dir = ROOT / "bloques" / "combos"
     combos_dir.mkdir(exist_ok=True)
     combos_esqueleto = {}
     for nombre_combo, combo in COMBOS.items():
@@ -779,7 +779,7 @@ def main():
             pagina_combo(nombre_combo, combo, bloques, familias_usadas),
             encoding="utf-8")
         combos_esqueleto[nombre_combo] = {
-            "fichero": f"combos/{nombre_combo}.html",
+            "fichero": f"bloques/combos/{nombre_combo}.html",
             "familias": familias_usadas,
         }
 
@@ -1004,7 +1004,7 @@ Usar las clases correctas **no basta**. Antes de entregar, cumple el contrato de
 10. Iconos `.nz-icon` en SVG en línea, **nunca emojis**.
 
 La forma correcta de cada tipo de página está en `COMPOSICION.md` §5, y hay páginas
-completas listas para copiar en `recetas/`.
+completas listas para copiar en `bloques/recetas/`.
 
 ## 5. Buscas un nombre en inglés y no existe
 
@@ -1119,7 +1119,7 @@ python scripts/auditar-contraste.py            # contraste WCAG de pares + parid
 colores a mano, gradientes, desktop-first y atribución. EJECÚTALO sobre tu HTML
 antes de darlo por bueno y corrige lo que marque.
 
-Recetas completas y funcionando en `examples/` (login, dashboard, landing,
+Recetas completas y funcionando en `bloques/ejemplos/` (login, dashboard, landing,
 chat-ia, forms): cópialas como punto de partida.
 
 **Base de datos de diseño:** `base.html` es el explorador (búsqueda por lo que
@@ -1176,12 +1176,12 @@ Documentos para agentes (léelos en este orden):
   `modificadoresLexico`), tokens `--nz-*` que consume, markup mínimo de
   ejemplo extraído de las demos reales y `noUsar` (anti-patrones). Alias
   EN→ES en `alias`.
-- [examples/]({CDN}): 5 páginas completas listas para copiar (login,
+- [bloques/ejemplos/]({CDN}): 5 páginas completas listas para copiar (login,
   dashboard, landing, chat-ia, forms).
 - [base.html]({CDN}base.html) y [datos/base-diseno.json]({CDN}datos/base-diseno.json):
   base de datos de diseño consultable. {total_bases} familias con markup, tokens,
   recetas, combos y marcas en un índice; búscalo antes de leer un pack.
-- [combos/]({CDN}): esqueleto markup de cada tipo de página (landing,
+- [bloques/combos/]({CDN}): esqueleto markup de cada tipo de página (landing,
   dashboard, chat-ia, login-form, e-commerce, escritorio-app, charla-beats,
   prototipo) con clases reales validadas; mapa en `components.json`
   (`combos` y `combosEsqueleto`).

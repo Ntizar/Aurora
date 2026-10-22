@@ -8,8 +8,8 @@ Design system CSS puro, sin dependencias ni build. 2195 objetos en 18 categoría
 ```html
 <html lang="es" data-nz-theme="light">
 <head>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v10.0.0/tokens.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v10.0.0/packs/all.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v10.1.0/tokens.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v10.1.0/packs/all.css">
 </head>
 <body class="nz">
 ```
@@ -37,14 +37,14 @@ Carga **solo los packs que uses** en producción (cada uno pesa 12-40 KB) o
 **Esqueletos listos para arrancar** (markup de cada tipo de página con las
 clases reales del sistema, extraído y validado de las demos — cópialos):
 
-- `combos/charla-beats.html` — esqueleto **charla-beats**: `nz-recorrido`, `nz-escenario`, `nz-nodo`, `nz-qr`
-- `combos/chat-ia.html` — esqueleto **chat-ia**: `nz-chat`, `nz-prompt`, `nz-toolcall`, `nz-taskplan`
-- `combos/dashboard.html` — esqueleto **dashboard**: `nz-navbar`, `nz-dash-grid`, `nz-kpi`, `nz-table`, `nz-chart`, `nz-chart-bar`
-- `combos/e-commerce.html` — esqueleto **e-commerce**: `nz-product`, `nz-cart`, `nz-checkout-steps`, `nz-pricetable`
-- `combos/escritorio-app.html` — esqueleto **escritorio-app**: `nz-window`, `nz-appnav`, `nz-kanban`, `nz-statusbar`
-- `combos/landing.html` — esqueleto **landing**: `nz-hero-bleed`, `nz-thirds`, `nz-plans`, `nz-badge`, `nz-footer`
-- `combos/login-form.html` — esqueleto **login-form**: `nz-article`, `nz-h2`, `nz-lead`, `nz-field`, `nz-btn`, `nz-alert`
-- `combos/prototipo.html` — esqueleto **prototipo**: `nz-btn`, `nz-field`, `nz-alert`, `nz-kpi`
+- `bloques/combos/charla-beats.html` — esqueleto **charla-beats**: `nz-recorrido`, `nz-escenario`, `nz-nodo`, `nz-qr`
+- `bloques/combos/chat-ia.html` — esqueleto **chat-ia**: `nz-chat`, `nz-prompt`, `nz-toolcall`, `nz-taskplan`
+- `bloques/combos/dashboard.html` — esqueleto **dashboard**: `nz-navbar`, `nz-dash-grid`, `nz-kpi`, `nz-table`, `nz-chart`, `nz-chart-bar`
+- `bloques/combos/e-commerce.html` — esqueleto **e-commerce**: `nz-product`, `nz-cart`, `nz-checkout-steps`, `nz-pricetable`
+- `bloques/combos/escritorio-app.html` — esqueleto **escritorio-app**: `nz-window`, `nz-appnav`, `nz-kanban`, `nz-statusbar`
+- `bloques/combos/landing.html` — esqueleto **landing**: `nz-hero-bleed`, `nz-thirds`, `nz-plans`, `nz-badge`, `nz-footer`
+- `bloques/combos/login-form.html` — esqueleto **login-form**: `nz-article`, `nz-h2`, `nz-lead`, `nz-field`, `nz-btn`, `nz-alert`
+- `bloques/combos/prototipo.html` — esqueleto **prototipo**: `nz-btn`, `nz-field`, `nz-alert`, `nz-kpi`
 
 La lista completa de familias y su fichero está en `components.json`
 (clave `combosEsqueleto`).
@@ -165,7 +165,7 @@ Usar las clases correctas **no basta**. Antes de entregar, cumple el contrato de
 10. Iconos `.nz-icon` en SVG en línea, **nunca emojis**.
 
 La forma correcta de cada tipo de página está en `COMPOSICION.md` §5, y hay páginas
-completas listas para copiar en `recetas/`.
+completas listas para copiar en `bloques/recetas/`.
 
 ## 5. Buscas un nombre en inglés y no existe
 
@@ -402,7 +402,7 @@ Los 236 tokens están inventariados en `components.json` (sección
   El 800 no existe en el sistema y nada por debajo de 16px lleva 700.
 - ❌ Texto de interfaz a 12px: los 12px son para datos, no para etiquetas.
 - ❌ Enlazar Google Fonts (o cualquier CDN de fuentes): `tokens.css` ya sirve la fuente.
-- ❌ Enlazar `@master` en producción: pinea la versión (`@v10.0.0`) o jsDelivr te servirá CSS viejo desde su caché.
+- ❌ Enlazar `@master` en producción: pinea la versión (`@v10.1.0`) o jsDelivr te servirá CSS viejo desde su caché.
 
 ## 8b. Canales: qué versión enlazar
 
@@ -411,7 +411,7 @@ Dos canales, un sistema. La regla de oro: **nunca `@master`**.
 | Canal | URL | Cuándo |
 |---|---|---|
 | vivo | `@v10` | webs propias: recibe cada release 9.x sin tocarlas |
-| congelado | `@10.0.0` | entregas a cliente: reproducible dentro de dos años |
+| congelado | `@10.1.0` | entregas a cliente: reproducible dentro de dos años |
 
 Si el proyecto trae `aurora.lock`, respétalo: dice qué canal y qué tag está comiendo.
 Un cambio aditivo llega solo; renombrar o quitar algo exige major y migración
@@ -429,7 +429,7 @@ python scripts/auditar-contraste.py            # contraste WCAG de pares + parid
 colores a mano, gradientes, desktop-first y atribución. EJECÚTALO sobre tu HTML
 antes de darlo por bueno y corrige lo que marque.
 
-Recetas completas y funcionando en `examples/` (login, dashboard, landing,
+Recetas completas y funcionando en `bloques/ejemplos/` (login, dashboard, landing,
 chat-ia, forms): cópialas como punto de partida.
 
 **Base de datos de diseño:** `base.html` es el explorador (búsqueda por lo que

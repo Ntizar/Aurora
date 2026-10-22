@@ -95,7 +95,7 @@ La magia de consumo de ObsidianUI, en clave Aurora (sin React, sin build):
 
 - `data/` (canales) y `datos/` (base de diseño) fusionados en `datos/` — dos carpetas con
   nombre casi idéntico es ruido puro.
-- `combos/` + `examples/` + `recetas/` → un solo concepto: **`bloques/`** con índice
+- `bloques/combos/` + `bloques/ejemplos/` + `bloques/recetas/` → un solo concepto: **`bloques/`** con índice
   generado (cada bloque: HTML completo + su programa `.openui` + su ficha en el registro).
 - Raíz: queda `index.html` compilado + `tokens.css` + packs + `openui/` + `datos/` +
   `bloques/` + `scripts/` + docs. La maquinaria (specs, generadores) sigue en `scripts/`.
