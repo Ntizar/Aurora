@@ -3,6 +3,15 @@
 Formato: [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/).
 Versionado: [SemVer](https://semver.org/lang/es/).
 
+## [9.11.1] — 2026-10-22
+
+### Corregido
+
+- `examples/forms.html` usaba `.nz-icon` (lo metió el barrido de glifos) sin enlazar
+  `p9-media.css`: la receta se servía con el icono sin estilo. Lo cazó el lint del consumidor
+  en la CI, no en local — el paso que audita `examples/` es el único que se me quedó sin
+  correr antes de taggear. Regla para la próxima: **la cadena entera, en el orden de la CI**.
+
 ## [9.11.0] — 2026-10-22
 
 ### Corregido
