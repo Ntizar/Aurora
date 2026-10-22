@@ -10,7 +10,7 @@ nunca del sistema.
 
 [![CI](https://github.com/Ntizar/Aurora/actions/workflows/validar.yml/badge.svg)](https://github.com/Ntizar/Aurora/actions/workflows/validar.yml)
 [![Pages](https://github.com/Ntizar/Aurora/actions/workflows/pages.yml/badge.svg)](https://github.com/Ntizar/Aurora/actions/workflows/pages.yml)
-![versión](https://img.shields.io/badge/versi%C3%B3n-9.12.0-2563eb)
+![versión](https://img.shields.io/badge/versi%C3%B3n-9.12.1-2563eb)
 
 **[Catálogo](https://ntizar.github.io/Aurora/)** · **[Base de datos](https://ntizar.github.io/Aurora/base.html)** · **[Generative UI](https://ntizar.github.io/Aurora/openui/)** · **[Iconos](https://ntizar.github.io/Aurora/iconos/)** · **[Contrato](CONTRATO.md)**
 
@@ -43,7 +43,7 @@ catálogo lo enseña, funciona; si algo se rompe, el push se pone en rojo antes 
 ```
 
 `@v9` es el **canal vivo**: se mueve con cada release 9.x, así que un cambio en Aurora llega
-solo a todas las webs que lo usan. Para una entrega congelada, el tag exacto (`@v9.12.0`).
+solo a todas las webs que lo usan. Para una entrega congelada, el tag exacto (`@v9.12.1`).
 El detalle completo está en **[CONTRATO.md](CONTRATO.md)**.
 
 ## Las cuatro capas

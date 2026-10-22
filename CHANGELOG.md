@@ -3,6 +3,17 @@
 Formato: [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/).
 Versionado: [SemVer](https://semver.org/lang/es/).
 
+## [9.12.1] — 2026-10-22
+
+### Corregido
+
+- El informe de auditoría (`audit/`) se había quedado en la versión anterior: la CI regenera
+  `audit-catalog.py` y `audit-html.py` y compara bytes, así que el tag 9.12.0 salió con el
+  informe desfasado aunque todo lo demás estuviera verde en local. Ya está regenerado.
+  La lección no es nueva (está escrita en §13: **la cadena entera, en el orden de la CI**),
+  pero se me volvió a escapar el mismo paso: ahora `audit/` entra en la comprobación mental
+  antes de taggear, no después.
+
 ## [9.12.0] — 2026-10-22
 
 ### Añadido
