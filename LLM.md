@@ -410,7 +410,7 @@ Dos canales, un sistema. La regla de oro: **nunca `@master`**.
 
 | Canal | URL | Cuándo |
 |---|---|---|
-| vivo | `@v9` | webs propias: recibe cada release 9.x sin tocarlas |
+| vivo | `@v10` | webs propias: recibe cada release 9.x sin tocarlas |
 | congelado | `@10.0.0` | entregas a cliente: reproducible dentro de dos años |
 
 Si el proyecto trae `aurora.lock`, respétalo: dice qué canal y qué tag está comiendo.

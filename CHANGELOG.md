@@ -24,6 +24,8 @@ Versionado: [SemVer](https://semver.org/lang/es/).
 
 ### Casa
 
+- **Canales**: el canal vivo pasa a `@v10` y el congelado a `@v10.0.0` (salto de major a propósito, `data/canales.json`).
+
 - Licencia **MIT** (`LICENSE` + `NOTICE.md` para terceros y atribución).
 - Censo: 2195 objetos. `briefs/portada-v10.openui` versionado como demo del pipeline.
 

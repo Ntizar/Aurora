@@ -1,25 +1,25 @@
 {
-  "version": 1,
-  "politica": "Propios en vivo; entregas a cliente congeladas en el tag exacto.",
-  "canales": {
-    "vivo": {
-      "rango": "v9",
-      "resuelve": "última release 9.x publicada",
-      "uso": "webs y paneles propios, catálogo, demos",
-      "riesgo": "un cambio malo llega a todas a la vez: CI verde + canario antes de subir"
-    },
-    "congelado": {
-      "tag": "v9.12.1",
-      "uso": "entregas a cliente, auditorías y cualquier cosa que deba verse igual dentro de dos años",
-      "riesgo": "no recibe correcciones hasta que se sube a propósito"
-    }
+ "version": 1,
+ "politica": "Propios en vivo; entregas a cliente congeladas en el tag exacto.",
+ "canales": {
+  "vivo": {
+   "rango": "v10",
+   "resuelve": "última release 10.x publicada",
+   "uso": "webs y paneles propios, catálogo, demos",
+   "riesgo": "un cambio malo llega a todas a la vez: CI verde + canario antes de subir"
   },
-  "reglas": [
-    "El rango del canal vivo solo cubre el major: v9 llega hasta v9.x, nunca a v10.",
-    "Un tag publicado es inmutable: jamás se reescribe ni se mueve.",
-    "Aditivo (nuevo componente, prop opcional, demo) = minor.",
-    "Cambio de contrato (renombrar o quitar clase/componente/prop) = major + migrador.",
-    "El lock de cada web fija canal, rango, tag resuelto y versión de spec."
-  ],
-  "cdn": "https://cdn.jsdelivr.net/gh/Ntizar/Aurora@{ref}/"
+  "congelado": {
+   "tag": "v10.0.0",
+   "uso": "entregas a cliente, auditorías y cualquier cosa que deba verse igual dentro de dos años",
+   "riesgo": "no recibe correcciones hasta que se sube a propósito"
+  }
+ },
+ "reglas": [
+  "El rango del canal vivo solo cubre el major: v9 llega hasta v9.x, nunca a v10.",
+  "Un tag publicado es inmutable: jamás se reescribe ni se mueve.",
+  "Aditivo (nuevo componente, prop opcional, demo) = minor.",
+  "Cambio de contrato (renombrar o quitar clase/componente/prop) = major + migrador.",
+  "El lock de cada web fija canal, rango, tag resuelto y versión de spec."
+ ],
+ "cdn": "https://cdn.jsdelivr.net/gh/Ntizar/Aurora@{ref}/"
 }

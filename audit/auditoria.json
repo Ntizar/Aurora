@@ -4,8 +4,8 @@
   "familias": 411,
   "demos": 659,
   "categorias": 18,
-  "clases_usadas_en_demos": 2194,
-  "clases_sin_demo": 1,
+  "clases_usadas_en_demos": 2195,
+  "clases_sin_demo": 0,
   "familias_sin_demo": 0,
   "fantasmas": 0,
   "duplicados": 0,
@@ -278,9 +278,7 @@
    "demos": 44,
    "objetos": 127,
    "familias": 18,
-   "sin_demo": [
-    "nz-icon--invert"
-   ],
+   "sin_demo": [],
    "familias_sin_demo": []
   },
   "10": {
