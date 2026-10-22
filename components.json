@@ -1,10 +1,10 @@
 {
  "name": "Aurora",
- "version": "9.10.0",
+ "version": "9.11.0",
  "type": "css-only design system",
  "namespace": ".nz-",
  "tokens": "tokens.css",
- "cdn": "https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v9.10.0/",
+ "cdn": "https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v9.11.0/",
  "manifiesto": {
   "gradientes": 0,
   "glass": 0,
@@ -22,7 +22,7 @@
   "objetos": 2194,
   "familias": 411,
   "categorias": 18,
-  "demos": 657,
+  "demos": 658,
   "tokens": 236,
   "tokensDark": 61,
   "alias": 150,
@@ -37,7 +37,7 @@
    "descripcion": "El esqueleto de cualquier web: contenedores, rejillas y spans, filas, pilas, landmarks, sticky, bleed, regiones de página y helpers de flujo.",
    "objetos": 179,
    "familias": 67,
-   "demos": 53,
+   "demos": 54,
    "pagina": "paginas/01-layout.html"
   },
   "p2-navigation.css": {
@@ -3708,7 +3708,7 @@
    "markup": {
     "demo": "paginas/02-navigation.html",
     "titulo": "Menú con hamburguesa (sin JS)",
-    "markup": "<div class=\"nz-menu\"><input class=\"nz-vh\" type=\"checkbox\" id=\"menuN1\"><label class=\"nz-menu__btn\" for=\"menuN1\">☰</label><div class=\"nz-menu__drop\"><a href=\"#contenido\" class=\"nz-menu__item\" aria-current=\"page\">Inicio</a><a href=\"#contenido\" class=\"nz-menu__item\">Perfil</a><a href=\"#contenido\" class=\"nz-menu__item\">Ajustes</a></div></div>"
+    "markup": "<div class=\"nz-menu\"><input class=\"nz-vh\" type=\"checkbox\" id=\"menuN1\"><label class=\"nz-menu__btn\" for=\"menuN1\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M4 6h16M4 12h16M4 18h16\"/></svg></label><div class=\"nz-menu__drop\"><a href=\"#contenido\" class=\"nz-menu__item\" aria-current=\"page\">Inicio</a><a href=\"#contenido\" class=\"nz-menu__item\">Perfil</a><a href=\"#contenido\" class=\"nz-menu__item\">Ajustes</a></div></div>"
    },
    "modificadoresLexico": [
     "danger"
@@ -5369,9 +5369,9 @@
    ],
    "nTokens": 15,
    "markup": {
-    "demo": "paginas/10-commerce.html",
-    "titulo": "Reparto de valoraciones",
-    "markup": "<span class=\"nz-text--muted\">5★</span>"
+    "demo": "paginas/09-media.html",
+    "titulo": "Icono con tono y grosor de trazo",
+    "markup": "<span class=\"nz-text--small\">Éxito</span>"
    },
    "modificadoresLexico": [
     "danger",
@@ -5728,7 +5728,7 @@
    "markup": {
     "demo": "paginas/04-actions.html",
     "titulo": "Botones flotantes (FAB)",
-    "markup": "<button class=\"nz-fab nz-fab--extended\">＋ Crear pedido</button>"
+    "markup": "<button class=\"nz-fab\" aria-label=\"Nuevo\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 5v14M5 12h14\"/></svg></button>"
    },
    "modificadoresLexico": [
     "accent",
@@ -7012,7 +7012,7 @@
    "markup": {
     "demo": "paginas/06-feedback.html",
     "titulo": "Banner a ancho completo",
-    "markup": "<div class=\"nz-banner\"><div class=\"nz-banner__body\">🎉 Ya está disponible Aurora.1</div></div>"
+    "markup": "<div class=\"nz-banner nz-banner--brand\"><div class=\"nz-banner__body\">Nuevo pack de gráficos incluido</div></div>"
    },
    "modificadoresLexico": [
     "accent",
@@ -7259,7 +7259,7 @@
    "markup": {
     "demo": "paginas/06-feedback.html",
     "titulo": "Empty pequeño, de marca y con borde",
-    "markup": "<div class=\"nz-empty nz-empty--bordered\"><span class=\"nz-empty__icon\">📂</span><p class=\"nz-empty__title\">Carpeta vacía</p></div>"
+    "markup": "<div class=\"nz-empty nz-empty--bordered\"><span class=\"nz-empty__icon\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z\"/><path d=\"M3 11h18\"/></svg></span><p class=\"nz-empty__title\">Carpeta vacía</p></div>"
    },
    "noUsar": [
     "No como excusa: un estado vacío guía a la siguiente acción, no solo anuncia vacío."
@@ -8221,8 +8221,8 @@
    "nTokens": 24,
    "markup": {
     "demo": "paginas/07-overlays.html",
-    "titulo": "Menú contextual",
-    "markup": "<span class=\"nz-menu-pop\"><input class=\"nz-vh\" type=\"checkbox\" id=\"mc-b\"> <label class=\"nz-btn nz-btn--ghost\" for=\"mc-b\">Insertar ▾</label> <div class=\"nz-menu-pop__list nz-menu-pop__list--left\"><button class=\"nz-menu-pop__item\">Tabla</button><button class=\"nz-menu-pop__item\">Gráfico</button></div></span>"
+    "titulo": "Menú compacto con ítem deshabilitado",
+    "markup": "<div class=\"nz-menu-pop nz-menu-pop--compact\"><input class=\"nz-vh\" type=\"checkbox\" id=\"mc-d\"> <label class=\"nz-btn nz-btn--ghost\" for=\"mc-d\">Compacto</label> <div class=\"nz-menu-pop__list\"><button class=\"nz-menu-pop__item\">Renombrar</button><button class=\"nz-menu-pop__item nz-menu-pop__item--disabled\">Mover a carpeta</button><button class=\"nz-menu-pop__item\">Descargar</button></div></div>"
    },
    "modificadoresLexico": [
     "compact",
@@ -9735,8 +9735,8 @@
    "nTokens": 17,
    "markup": {
     "demo": "paginas/09-media.html",
-    "titulo": "Fila de logos",
-    "markup": "<span class=\"nz-brand\">● Otra</span>"
+    "titulo": "Logo marca",
+    "markup": "<span class=\"nz-brand\"><span class=\"nz-brand__mark\">A7</span> Aurora</span>"
    },
    "modificadoresLexico": [
     "accent",
@@ -9911,8 +9911,8 @@
    "nTokens": 11,
    "markup": {
     "demo": "paginas/04-actions.html",
-    "titulo": "Botones de solo icono",
-    "markup": "<svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"m8 5 11 7-11 7z\"/></svg>"
+    "titulo": "Grupo de botones",
+    "markup": "<svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"m5 9 7 7 7-7\"/></svg>"
    },
    "modificadoresLexico": [
     "accent",
@@ -9976,8 +9976,8 @@
    "nTokens": 17,
    "markup": {
     "demo": "paginas/09-media.html",
-    "titulo": "Icono en caja pequeño, grande y extra grande",
-    "markup": "<span class=\"nz-icon-tile nz-icon-tile--sm\">◦</span>"
+    "titulo": "Icono en caja",
+    "markup": "<span class=\"nz-icon-tile nz-icon-tile--danger\">!</span>"
    },
    "modificadoresLexico": [
     "accent",
@@ -10073,7 +10073,7 @@
    "markup": {
     "demo": "paginas/09-media.html",
     "titulo": "Logos: densidad y tamaño",
-    "markup": "<div class=\"nz-logo-nube nz-logo-nube--lg\"><span class=\"nz-logo-nube__item nz-brand\">◆ Grande</span><span class=\"nz-logo-nube__item nz-logo-nube__item--muted\">■ Muted</span></div>"
+    "markup": "<div class=\"nz-logo-nube nz-logo-nube--lg\"><span class=\"nz-logo-nube__item nz-brand\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 2.8 21.2 12 12 21.2 2.8 12Z\"/></svg> Grande</span><span class=\"nz-logo-nube__item nz-logo-nube__item--muted\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><rect x=\"5\" y=\"5\" width=\"14\" height=\"14\" rx=\"2\"/></svg> Muted</span></div>"
    },
    "modificadoresLexico": [
     "lg",
@@ -10138,7 +10138,7 @@
    "markup": {
     "demo": "paginas/09-media.html",
     "titulo": "Fila de logos",
-    "markup": "<div class=\"nz-logos\"><span class=\"nz-brand\">◆ Marca</span><span class=\"nz-brand\">● Otra</span><span class=\"nz-brand\">▲ Tercera</span></div>"
+    "markup": "<div class=\"nz-logos\"><span class=\"nz-brand\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 2.8 21.2 12 12 21.2 2.8 12Z\"/></svg> Marca</span><span class=\"nz-brand\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"6.5\"/></svg> Otra</span><span class=\"nz-brand\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 4.5 20 18.5H4Z\"/></svg> Tercera</span></div>"
    },
    "modificadoresLexico": [
     "compact",
@@ -10400,8 +10400,8 @@
    "nTokens": 26,
    "markup": {
     "demo": "paginas/10-commerce.html",
-    "titulo": "Carrito vacío",
-    "markup": "<div class=\"nz-cart nz-cart--mini\"><div class=\"nz-cart__empty\"><span aria-hidden=\"true\">🛒</span><b>Tu carrito está vacío</b><span>Añade algo y vuelve por aquí.</span><button class=\"nz-btn nz-btn--soft nz-btn--sm\">Ver productos</button></div></div>"
+    "titulo": "Carrito mini",
+    "markup": "<div class=\"nz-cart nz-cart--mini\"><div class=\"nz-cart__head\"><span class=\"nz-cart__count\">2</span><span>2 artículos</span></div><div class=\"nz-cart__items\"><div class=\"nz-cart__line\"><span>Manta térmica</span><b>24 €</b></div></div><div class=\"nz-cart__foot\"><span class=\"nz-cart__total\">24 €</span><button class=\"nz-btn nz-btn--soft nz-btn--sm\">Ver carrito</button></div></div>"
    },
    "modificadoresLexico": []
   },
@@ -11303,7 +11303,7 @@
    "markup": {
     "demo": "paginas/10-commerce.html",
     "titulo": "Estrellas grandes, de marca y pequeñas",
-    "markup": "<div class=\"nz-stars nz-stars--sm\"><span class=\"nz-stars__row\"><span class=\"nz-stars__star nz-stars__star--full\">★</span><span class=\"nz-stars__star nz-stars__star--full\">★</span><span class=\"nz-stars__star nz-stars__star--full\">★</span><span class=\"nz-stars__star\">★</span><span class=\"nz-stars__star\">★</span></span><span class=\"nz-stars__count\">Pequeñas</span></div>"
+    "markup": "<div class=\"nz-stars nz-stars--sm\"><span class=\"nz-stars__row\"><span class=\"nz-stars__star nz-stars__star--full\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 3l2.7 5.9 6.3.8-4.6 4.4 1.2 6.4L12 17.4 6.4 20.5l1.2-6.4L3 9.7l6.3-.8z\"/></svg></span><span class=\"nz-stars__star nz-stars__star--full\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 3l2.7 5.9 6.3.8-4.6 4.4 1.2 6.4L12 17.4 6.4 20.5l1.2-6.4L3 9.7l6.3-.8z\"/></svg></span><span class=\"nz-stars__star nz-stars__star--full\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 3l2.7 5.9 6.3.8-4.6 4.4 1.2 6.4L12 17.4 6.4 20.5l1.2-6.4L3 9.7l6.3-.8z\"/></svg></span><span class=\"nz-stars__star\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 3l2.7 5.9 6.3.8-4.6 4.4 1.2 6.4L12 17.4 6.4 20.5l1.2-6.4L3 9.7l6.3-.8z\"/></svg></span><span class=\"nz-stars__star\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 3l2.7 5.9 6.3.8-4.6 4.4 1.2 6.4L12 17.4 6.4 20.5l1.2-6.4L3 9.7l6.3-.8z\"/></svg></span></span><span class=\"nz-stars__count\">Pequeñas</span></div>"
    },
    "modificadoresLexico": [
     "brand",
@@ -11443,7 +11443,7 @@
    "markup": {
     "demo": "paginas/10-commerce.html",
     "titulo": "Lista de deseos",
-    "markup": "<span class=\"nz-wishlist\"><button class=\"nz-wishlist__btn\" aria-label=\"Añadir a la lista de deseos\">♡</button><span class=\"nz-wishlist__count\">12</span></span>"
+    "markup": "<span class=\"nz-wishlist\"><button class=\"nz-wishlist__btn\" aria-label=\"Añadir a la lista de deseos\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 20.3 4.6 13a4.6 4.6 0 0 1 6.5-6.5l.9.9.9-.9A4.6 4.6 0 0 1 19.4 13Z\"/></svg></button><span class=\"nz-wishlist__count\">12</span></span>"
    },
    "modificadoresLexico": []
   },
@@ -11481,8 +11481,8 @@
    "nTokens": 13,
    "markup": {
     "demo": "paginas/11-social.html",
-    "titulo": "Actividad reciente",
-    "markup": "<ul class=\"nz-activity\"><li class=\"nz-activity__item\"><span class=\"nz-activity__icon\">♥</span><span>Ana guardó tu post</span><span class=\"nz-activity__time\">hace 5 min</span></li><li class=\"nz-activity__item\"><span class=\"nz-activity__icon\">↻</span><span>Luis lo compartió</span><span class=\"nz-activity__time\">hace 1 h</span></li></ul>"
+    "titulo": "Actividad · item destacado",
+    "markup": "<div class=\"nz-activity\"><div class=\"nz-activity__item\"><span class=\"nz-activity__icon\" aria-hidden=\"true\">*</span><div>Maria ha comentado tu publicacion</div><time class=\"nz-activity__time\">2h</time></div><div class=\"nz-activity__item is-highlight\"><span class=\"nz-activity__icon\" aria-hidden=\"true\">*</span><div>Tu repo alcanza 100 stars</div><time class=\"nz-activity__time\">ahora</time></div></div>"
    },
    "modificadoresLexico": []
   },
@@ -11980,8 +11980,8 @@
    "nTokens": 17,
    "markup": {
     "demo": "paginas/11-social.html",
-    "titulo": "Compartir copiando enlace",
-    "markup": "<div class=\"nz-share nz-share--copy\"><button>🔗 <span class=\"nz-share__label\">Copiar enlace</span></button><button>✉ <span class=\"nz-share__label\">Correo</span></button></div>"
+    "titulo": "Compartir en marca",
+    "markup": "<div class=\"nz-share nz-share--brand\"><button aria-label=\"Compartir en X\">𝕏</button><button aria-label=\"Compartir en LinkedIn\">in</button><span class=\"nz-share__count\">24</span></div>"
    },
    "modificadoresLexico": [
     "brand",
@@ -12023,8 +12023,8 @@
    "nTokens": 12,
    "markup": {
     "demo": "paginas/11-social.html",
-    "titulo": "Post de feed",
-    "markup": "<button class=\"nz-social\">➤</button>"
+    "titulo": "Métricas sociales",
+    "markup": "<button class=\"nz-social nz-social--count\">1.240</button>"
    },
    "modificadoresLexico": []
   },
@@ -12159,7 +12159,7 @@
    "markup": {
     "demo": "paginas/11-social.html",
     "titulo": "Logos de confianza",
-    "markup": "<div class=\"nz-trust\"><span class=\"nz-trust__logo\">★ Cliente A</span><span class=\"nz-trust__logo\">◆ Cliente B</span><span class=\"nz-trust__logo\">● Cliente C</span></div>"
+    "markup": "<div class=\"nz-trust\"><span class=\"nz-trust__logo\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 3l2.7 5.9 6.3.8-4.6 4.4 1.2 6.4L12 17.4 6.4 20.5l1.2-6.4L3 9.7l6.3-.8z\"/></svg> Cliente A</span><span class=\"nz-trust__logo\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 2.8 21.2 12 12 21.2 2.8 12Z\"/></svg> Cliente B</span><span class=\"nz-trust__logo\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"6.5\"/></svg> Cliente C</span></div>"
    },
    "modificadoresLexico": [
     "sm"
@@ -12936,7 +12936,7 @@
    "markup": {
     "demo": "paginas/12-system.html",
     "titulo": "Zona táctil mínima de 44 px",
-    "markup": "<button class=\"nz-btn nz-btn--icon nz-tap-44\" aria-label=\"Favorito\">★</button>"
+    "markup": "<span class=\"nz-tap-44\"><span class=\"nz-badge nz-badge--brand\">44 px de caja</span></span>"
    },
    "modificadoresLexico": []
   },
@@ -14836,7 +14836,7 @@
    "markup": {
     "demo": "paginas/14-ai.html",
     "titulo": "Guardarraíl y retroalimentación",
-    "markup": "<div class=\"nz-feedback\"><button class=\"nz-feedback__btn nz-feedback__btn--on\" aria-label=\"Buena respuesta\">▲</button><button class=\"nz-feedback__btn\" aria-label=\"Mala respuesta\">▼</button></div>"
+    "markup": "<div class=\"nz-feedback\"><button class=\"nz-feedback__btn nz-feedback__btn--on\" aria-label=\"Buena respuesta\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 4.5 20 18.5H4Z\"/></svg></button><button class=\"nz-feedback__btn\" aria-label=\"Mala respuesta\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"m5 9 7 7 7-7\"/></svg></button></div>"
    },
    "modificadoresLexico": []
   },
@@ -14875,7 +14875,7 @@
    "markup": {
     "demo": "paginas/14-ai.html",
     "titulo": "Guardarraíl y retroalimentación",
-    "markup": "<div class=\"nz-guardrail\"><span class=\"nz-guardrail__icon\">⚠</span><div><span class=\"nz-guardrail__title\">Datos personales detectados</span><span class=\"nz-guardrail__msg\">Se ha anonimizado el DNI antes de enviarlo al modelo.</span></div></div>"
+    "markup": "<div class=\"nz-guardrail\"><span class=\"nz-guardrail__icon\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 3 2 20h20Z\"/><path d=\"M12 9.5v4.5M12 17h.01\"/></svg></span><div><span class=\"nz-guardrail__title\">Datos personales detectados</span><span class=\"nz-guardrail__msg\">Se ha anonimizado el DNI antes de enviarlo al modelo.</span></div></div>"
    },
    "modificadoresLexico": []
   },
@@ -15016,7 +15016,7 @@
    "markup": {
     "demo": "paginas/14-ai.html",
     "titulo": "Selector de modelo",
-    "markup": "<div class=\"nz-modelpick\"><button class=\"nz-modelpick__btn\">modelo: qwen3.8-flash ▾</button><div class=\"nz-modelpick__list\"><span class=\"nz-modelpick__item nz-modelpick__item--active\">qwen3.8-flash<span class=\"nz-modelpick__meta\">rápido</span></span><span class=\"nz-modelpick__item\">glm5.3-flash<span class=\"nz-modelpick__meta\">preciso</span></span><span class=\"nz-modelpick__item\">qwen3-vl<span class=\"nz-modelpick__meta\">visión</span></span></div></div>"
+    "markup": "<div class=\"nz-modelpick\"><button class=\"nz-modelpick__btn\">modelo: qwen3.8-flash <svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"m5 9 7 7 7-7\"/></svg></button><div class=\"nz-modelpick__list\"><span class=\"nz-modelpick__item nz-modelpick__item--active\">qwen3.8-flash<span class=\"nz-modelpick__meta\">rápido</span></span><span class=\"nz-modelpick__item\">glm5.3-flash<span class=\"nz-modelpick__meta\">preciso</span></span><span class=\"nz-modelpick__item\">qwen3-vl<span class=\"nz-modelpick__meta\">visión</span></span></div></div>"
    },
    "modificadoresLexico": []
   },
@@ -15672,7 +15672,7 @@
    "markup": {
     "demo": "paginas/15-apps.html",
     "titulo": "Estado vacío de aplicación",
-    "markup": "<div class=\"nz-appempty\"><i aria-hidden=\"true\">▢</i><b>No hay documentos abiertos</b><p>Abre un archivo del explorador o crea uno nuevo para empezar a trabajar.</p><button>Crear documento</button></div>"
+    "markup": "<div class=\"nz-appempty\"><i aria-hidden=\"true\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><rect x=\"4\" y=\"4\" width=\"16\" height=\"16\" rx=\"2\"/></svg></i><b>No hay documentos abiertos</b><p>Abre un archivo del explorador o crea uno nuevo para empezar a trabajar.</p><button>Crear documento</button></div>"
    },
    "modificadoresLexico": []
   },
@@ -16442,7 +16442,7 @@
    "markup": {
     "demo": "paginas/15-apps.html",
     "titulo": "Diálogo de confirmación de sistema",
-    "markup": "<div class=\"nz-sysdialog\"><input class=\"nz-vh\" type=\"checkbox\" id=\"sd15\"><label for=\"sd15\">⚠ Probar el diálogo de confirmación</label><div class=\"nz-sysdialog__scrim\"><div class=\"nz-sysdialog__panel\" role=\"alertdialog\" aria-labelledby=\"sd15t\"><h4 id=\"sd15t\">¿Cerrar sin guardar?</h4><p>Los cambios en presupuesto.nz se perderán.</p><footer><label for=\"sd15\" class=\"is-primary\">Cancelar</label><button class=\"is-danger\">Cerrar sin guardar</button></footer></div></div></div>"
+    "markup": "<div class=\"nz-sysdialog\"><input class=\"nz-vh\" type=\"checkbox\" id=\"sd15\"><label for=\"sd15\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 3 2 20h20Z\"/><path d=\"M12 9.5v4.5M12 17h.01\"/></svg> Probar el diálogo de confirmación</label><div class=\"nz-sysdialog__scrim\"><div class=\"nz-sysdialog__panel\" role=\"alertdialog\" aria-labelledby=\"sd15t\"><h4 id=\"sd15t\">¿Cerrar sin guardar?</h4><p>Los cambios en presupuesto.nz se perderán.</p><footer><label for=\"sd15\" class=\"is-primary\">Cancelar</label><button class=\"is-danger\">Cerrar sin guardar</button></footer></div></div></div>"
    },
    "modificadoresLexico": []
   },
@@ -16618,7 +16618,7 @@
    "markup": {
     "demo": "paginas/15-apps.html",
     "titulo": "Bandeja / menú de sistema (sin JS)",
-    "markup": "<div class=\"nz-tray\"><input class=\"nz-vh\" type=\"checkbox\" id=\"tray15\"><label for=\"tray15\">▤ Bandeja del sistema</label><div class=\"nz-tray__menu\"><p>Sistema</p><button class=\"nz-tray__item\">Sincronizar ahora<span>Ctrl S</span></button><button class=\"nz-tray__item\">Modo concentración<span>Off</span></button><hr><button class=\"nz-tray__item\">Cerrar sesión<span>Ctrl Q</span></button></div></div>"
+    "markup": "<div class=\"nz-tray\"><input class=\"nz-vh\" type=\"checkbox\" id=\"tray15\"><label for=\"tray15\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M4 7h16M4 12h16M4 17h9\"/></svg> Bandeja del sistema</label><div class=\"nz-tray__menu\"><p>Sistema</p><button class=\"nz-tray__item\">Sincronizar ahora<span>Ctrl S</span></button><button class=\"nz-tray__item\">Modo concentración<span>Off</span></button><hr><button class=\"nz-tray__item\">Cerrar sesión<span>Ctrl Q</span></button></div></div>"
    },
    "modificadoresLexico": []
   },
@@ -16655,7 +16655,7 @@
    "markup": {
     "demo": "paginas/15-apps.html",
     "titulo": "Árbol de archivos y carpetas",
-    "markup": "<div class=\"nz-tree\" role=\"tree\" aria-label=\"Explorador de archivos\"><div class=\"nz-tree__item\" role=\"treeitem\" tabindex=\"0\" aria-expanded=\"true\"><i aria-hidden=\"true\">▾</i>src<small>4 archivos</small></div><ul role=\"group\"><li class=\"nz-tree__item\" role=\"none\"><span class=\"nz-tree__item\" role=\"treeitem\" tabindex=\"0\"><i aria-hidden=\"true\">·</i>main.css<small>2 KB</small></span></li><li class=\"nz-tree__item\" role=\"none\"><span class=\"nz-tree__item\" role=\"treeitem\" tabindex=\"0\" aria-current=\"page\"><i aria-hidden=\"true\">·</i>tokens.css<small>6 KB</small></span></li></ul><div class=\"nz-tree__item\" role=\"treeitem\" tabindex=\"0\" aria-expanded=\"false\"><i aria-hidden=\"true\">▸</i>dist</div></div>"
+    "markup": "<div class=\"nz-tree\" role=\"tree\" aria-label=\"Explorador de archivos\"><div class=\"nz-tree__item\" role=\"treeitem\" tabindex=\"0\" aria-expanded=\"true\"><i aria-hidden=\"true\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"m5 9 7 7 7-7\"/></svg></i>src<small>4 archivos</small></div><ul role=\"group\"><li class=\"nz-tree__item\" role=\"none\"><span class=\"nz-tree__item\" role=\"treeitem\" tabindex=\"0\"><i aria-hidden=\"true\">·</i>main.css<small>2 KB</small></span></li><li class=\"nz-tree__item\" role=\"none\"><span class=\"nz-tree__item\" role=\"treeitem\" tabindex=\"0\" aria-current=\"page\"><i aria-hidden=\"true\">·</i>tokens.css<small>6 KB</small></span></li></ul><div class=\"nz-tree__item\" role=\"treeitem\" tabindex=\"0\" aria-expanded=\"false\"><i aria-hidden=\"true\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"m9 5 7 7-7 7\"/></svg></i>dist</div></div>"
    },
    "modificadoresLexico": []
   },
@@ -16691,7 +16691,7 @@
    "markup": {
     "demo": "paginas/15-apps.html",
     "titulo": "Perfil de usuario de app",
-    "markup": "<div class=\"nz-userbox\"><span class=\"nz-userbox__avatar\" aria-hidden=\"true\">DA</span><div><b>David Antizar</b><span>Sesión de trabajo · plan Pro</span></div><i aria-hidden=\"true\">▾</i></div>"
+    "markup": "<div class=\"nz-userbox\"><span class=\"nz-userbox__avatar\" aria-hidden=\"true\">DA</span><div><b>David Antizar</b><span>Sesión de trabajo · plan Pro</span></div><i aria-hidden=\"true\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"m5 9 7 7 7-7\"/></svg></i></div>"
    },
    "modificadoresLexico": []
   },

@@ -42,7 +42,7 @@ sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
 bc = import_module("build-catalog")
 
 ROOT = bc.ROOT
-VERSION = "9.10.0"
+VERSION = "9.11.0"
 # El canal vivo no se copia a mano: sale de data/canales.json (único dueño)
 _canales = json.loads((ROOT / "data" / "canales.json").read_text(encoding="utf-8"))
 CANAL_VIVO = _canales["canales"]["vivo"]["rango"]

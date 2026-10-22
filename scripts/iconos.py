@@ -830,7 +830,7 @@ def catalogo(argv) -> str:
     </div>
   </header>
 
-  <ul class="nz-dash-grid nz-dash-grid--4" id="rejillaIconos" role="list">
+  <ul class="nz-grid-auto nz-grid-auto--compact" id="rejillaIconos" role="list">
 {chr(10).join(fichas)}
   </ul>
 

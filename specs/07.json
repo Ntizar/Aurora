@@ -73,7 +73,7 @@
     {
       "titulo": "Popover con lista de acciones",
       "tag": ".nz-popover · __body · __arrow · __title · __item · __item--danger · __sep",
-      "markup": "<div class=\"nz-popover\"><input class=\"nz-vh\" type=\"checkbox\" id=\"po-a\"> <label class=\"nz-btn nz-btn--ghost\" for=\"po-a\">Más acciones ▼</label> <div class=\"nz-popover__body\"><span class=\"nz-popover__arrow\"></span><span class=\"nz-popover__title\">Documento</span><a href=\"#contenido\" class=\"nz-popover__item\">Editar</a><a href=\"#contenido\" class=\"nz-popover__item\">Duplicar</a><div class=\"nz-popover__sep\"></div><a href=\"#contenido\" class=\"nz-popover__item nz-popover__item--danger\">Eliminar</a></div></div>"
+      "markup": "<div class=\"nz-popover\"><input class=\"nz-vh\" type=\"checkbox\" id=\"po-a\"> <label class=\"nz-btn nz-btn--ghost\" for=\"po-a\">Más acciones <svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"m5 9 7 7 7-7\"/></svg></label> <div class=\"nz-popover__body\"><span class=\"nz-popover__arrow\"></span><span class=\"nz-popover__title\">Documento</span><a href=\"#contenido\" class=\"nz-popover__item\">Editar</a><a href=\"#contenido\" class=\"nz-popover__item\">Duplicar</a><div class=\"nz-popover__sep\"></div><a href=\"#contenido\" class=\"nz-popover__item nz-popover__item--danger\">Eliminar</a></div></div>"
     },
     {
       "titulo": "Popover rico y popover de marca",
@@ -98,7 +98,7 @@
     {
       "titulo": "Menú contextual",
       "tag": ".nz-menu-pop · __list · __list--left · __item · __item--danger · __sep",
-      "markup": "<span class=\"nz-cluster\"><span class=\"nz-menu-pop\"><input class=\"nz-vh\" type=\"checkbox\" id=\"mc-a\"> <label class=\"nz-btn nz-btn--ghost\" for=\"mc-a\">⋯</label> <div class=\"nz-menu-pop__list\"><button class=\"nz-menu-pop__item\">Abrir</button><button class=\"nz-menu-pop__item\">Copiar enlace</button><div class=\"nz-menu-pop__sep\"></div><button class=\"nz-menu-pop__item nz-menu-pop__item--danger\">Eliminar</button></div></span> <span class=\"nz-menu-pop\"><input class=\"nz-vh\" type=\"checkbox\" id=\"mc-b\"> <label class=\"nz-btn nz-btn--ghost\" for=\"mc-b\">Insertar ▾</label> <div class=\"nz-menu-pop__list nz-menu-pop__list--left\"><button class=\"nz-menu-pop__item\">Tabla</button><button class=\"nz-menu-pop__item\">Gráfico</button></div></span></span>"
+      "markup": "<span class=\"nz-cluster\"><span class=\"nz-menu-pop\"><input class=\"nz-vh\" type=\"checkbox\" id=\"mc-a\"> <label class=\"nz-btn nz-btn--ghost\" for=\"mc-a\">⋯</label> <div class=\"nz-menu-pop__list\"><button class=\"nz-menu-pop__item\">Abrir</button><button class=\"nz-menu-pop__item\">Copiar enlace</button><div class=\"nz-menu-pop__sep\"></div><button class=\"nz-menu-pop__item nz-menu-pop__item--danger\">Eliminar</button></div></span> <span class=\"nz-menu-pop\"><input class=\"nz-vh\" type=\"checkbox\" id=\"mc-b\"> <label class=\"nz-btn nz-btn--ghost\" for=\"mc-b\">Insertar <svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"m5 9 7 7 7-7\"/></svg></label> <div class=\"nz-menu-pop__list nz-menu-pop__list--left\"><button class=\"nz-menu-pop__item\">Tabla</button><button class=\"nz-menu-pop__item\">Gráfico</button></div></span></span>"
     },
     {
       "titulo": "Menú contextual con grupos y atajos",

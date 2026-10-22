@@ -6,11 +6,11 @@
 marcas por preset y una capa generativa para que el diseño lo escriba el modelo — sin salirse
 nunca del sistema.
 
-2.194 objetos · 411 familias · 657 demos en vivo · 18 categorías · 36 componentes generativos · 288 iconos numerados
+2.194 objetos · 411 familias · 658 demos en vivo · 18 categorías · 36 componentes generativos · 288 iconos numerados
 
 [![CI](https://github.com/Ntizar/Aurora/actions/workflows/validar.yml/badge.svg)](https://github.com/Ntizar/Aurora/actions/workflows/validar.yml)
 [![Pages](https://github.com/Ntizar/Aurora/actions/workflows/pages.yml/badge.svg)](https://github.com/Ntizar/Aurora/actions/workflows/pages.yml)
-![versión](https://img.shields.io/badge/versi%C3%B3n-9.10.0-2563eb)
+![versión](https://img.shields.io/badge/versi%C3%B3n-9.11.0-2563eb)
 
 **[Catálogo](https://ntizar.github.io/Aurora/)** · **[Base de datos](https://ntizar.github.io/Aurora/base.html)** · **[Generative UI](https://ntizar.github.io/Aurora/openui/)** · **[Iconos](https://ntizar.github.io/Aurora/iconos/)** · **[Contrato](CONTRATO.md)**
 
@@ -43,7 +43,7 @@ catálogo lo enseña, funciona; si algo se rompe, el push se pone en rojo antes 
 ```
 
 `@v9` es el **canal vivo**: se mueve con cada release 9.x, así que un cambio en Aurora llega
-solo a todas las webs que lo usan. Para una entrega congelada, el tag exacto (`@v9.10.0`).
+solo a todas las webs que lo usan. Para una entrega congelada, el tag exacto (`@v9.11.0`).
 El detalle completo está en **[CONTRATO.md](CONTRATO.md)**.
 
 ## Las cuatro capas

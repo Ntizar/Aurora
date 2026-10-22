@@ -1,6 +1,6 @@
 {
  "name": "Aurora — base de datos de diseño",
- "version": "9.10.0",
+ "version": "9.11.0",
  "descripcion": "Índice consultable del sistema: familias, tokens, recetas, combos y marcas. Cada ficha enlaza a su demo viva y lleva el markup real.",
  "fuente": "components.json + specs/ + recetas/ + examples/ + combos/ + marcas/registro.json + COMPOSICION.md",
  "explorador": "base.html",
@@ -88,7 +88,7 @@
    "pagina": "paginas/01-layout.html",
    "objetos": 179,
    "familias": 67,
-   "demos": 53,
+   "demos": 54,
    "cuandoUsar": "Cuando necesites el esqueleto de la página: contenedores, rejillas, app shell, split, bento o regiones. Empieza aquí antes de colocar cualquier objeto.",
    "tags": [
     "layout",
@@ -677,7 +677,7 @@
    "categoria": 11,
    "pack": "p11-social.css",
    "demo": "paginas/11-social.html",
-   "titulo": "Actividad reciente",
+   "titulo": "Actividad · item destacado",
    "clases": [
     "nz-activity",
     "nz-activity__icon",
@@ -706,7 +706,7 @@
     "--nz-text-xs"
    ],
    "nTokens": 13,
-   "markup": "<ul class=\"nz-activity\"><li class=\"nz-activity__item\"><span class=\"nz-activity__icon\">♥</span><span>Ana guardó tu post</span><span class=\"nz-activity__time\">hace 5 min</span></li><li class=\"nz-activity__item\"><span class=\"nz-activity__icon\">↻</span><span>Luis lo compartió</span><span class=\"nz-activity__time\">hace 1 h</span></li></ul>",
+   "markup": "<div class=\"nz-activity\"><div class=\"nz-activity__item\"><span class=\"nz-activity__icon\" aria-hidden=\"true\">*</span><div>Maria ha comentado tu publicacion</div><time class=\"nz-activity__time\">2h</time></div><div class=\"nz-activity__item is-highlight\"><span class=\"nz-activity__icon\" aria-hidden=\"true\">*</span><div>Tu repo alcanza 100 stars</div><time class=\"nz-activity__time\">ahora</time></div></div>",
    "noUsar": "",
    "cuandoUsar": "Cuando haya comunidad, perfil, testimonios, share o métricas sociales.",
    "tags": [
@@ -1127,7 +1127,7 @@
     "--nz-text-xl"
    ],
    "nTokens": 18,
-   "markup": "<div class=\"nz-appempty\"><i aria-hidden=\"true\">▢</i><b>No hay documentos abiertos</b><p>Abre un archivo del explorador o crea uno nuevo para empezar a trabajar.</p><button>Crear documento</button></div>",
+   "markup": "<div class=\"nz-appempty\"><i aria-hidden=\"true\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><rect x=\"4\" y=\"4\" width=\"16\" height=\"16\" rx=\"2\"/></svg></i><b>No hay documentos abiertos</b><p>Abre un archivo del explorador o crea uno nuevo para empezar a trabajar.</p><button>Crear documento</button></div>",
    "noUsar": "",
    "cuandoUsar": "Cuando construyas una herramienta de escritorio web: ventana, appnav, kanban, actbar o statusbar.",
    "tags": [
@@ -2217,7 +2217,7 @@
     "--nz-text-xs"
    ],
    "nTokens": 19,
-   "markup": "<div class=\"nz-banner\"><div class=\"nz-banner__body\">🎉 Ya está disponible Aurora.1</div></div>",
+   "markup": "<div class=\"nz-banner nz-banner--brand\"><div class=\"nz-banner__body\">Nuevo pack de gráficos incluido</div></div>",
    "noUsar": "",
    "cuandoUsar": "Cuando el sistema tenga que contar algo: alertas, badges, toasts, callouts, skeletons, empty states y progreso.",
    "tags": [
@@ -2612,7 +2612,7 @@
    "categoria": 9,
    "pack": "p9-media.css",
    "demo": "paginas/09-media.html",
-   "titulo": "Fila de logos",
+   "titulo": "Logo marca",
    "clases": [
     "nz-brand",
     "nz-brand--accent",
@@ -2656,7 +2656,7 @@
     "--nz-tracking-tight"
    ],
    "nTokens": 17,
-   "markup": "<span class=\"nz-brand\">● Otra</span>",
+   "markup": "<span class=\"nz-brand\"><span class=\"nz-brand__mark\">A7</span> Aurora</span>",
    "noUsar": "",
    "cuandoUsar": "Cuando haya imagen, vídeo, audio, avatar, galería o figure. Todo con proporción y pie resueltos.",
    "tags": [
@@ -3336,7 +3336,7 @@
    "categoria": 10,
    "pack": "p10-commerce.css",
    "demo": "paginas/10-commerce.html",
-   "titulo": "Carrito vacío",
+   "titulo": "Carrito mini",
    "clases": [
     "nz-cart",
     "nz-cart--drawer",
@@ -3393,7 +3393,7 @@
     "--nz-text-soft"
    ],
    "nTokens": 26,
-   "markup": "<div class=\"nz-cart nz-cart--mini\"><div class=\"nz-cart__empty\"><span aria-hidden=\"true\">🛒</span><b>Tu carrito está vacío</b><span>Añade algo y vuelve por aquí.</span><button class=\"nz-btn nz-btn--soft nz-btn--sm\">Ver productos</button></div></div>",
+   "markup": "<div class=\"nz-cart nz-cart--mini\"><div class=\"nz-cart__head\"><span class=\"nz-cart__count\">2</span><span>2 artículos</span></div><div class=\"nz-cart__items\"><div class=\"nz-cart__line\"><span>Manta térmica</span><b>24 €</b></div></div><div class=\"nz-cart__foot\"><span class=\"nz-cart__total\">24 €</span><button class=\"nz-btn nz-btn--soft nz-btn--sm\">Ver carrito</button></div></div>",
    "noUsar": "",
    "cuandoUsar": "Cuando haya producto, precio, carrito, checkout, plan o reseña. El flujo de compra ya viene pensado.",
    "tags": [
@@ -7493,7 +7493,7 @@
     "--nz-text-xs"
    ],
    "nTokens": 20,
-   "markup": "<div class=\"nz-empty nz-empty--bordered\"><span class=\"nz-empty__icon\">📂</span><p class=\"nz-empty__title\">Carpeta vacía</p></div>",
+   "markup": "<div class=\"nz-empty nz-empty--bordered\"><span class=\"nz-empty__icon\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z\"/><path d=\"M3 11h18\"/></svg></span><p class=\"nz-empty__title\">Carpeta vacía</p></div>",
    "noUsar": [
     "No como excusa: un estado vacío guía a la siguiente acción, no solo anuncia vacío."
    ],
@@ -8062,7 +8062,7 @@
     "--nz-z-drawer"
    ],
    "nTokens": 15,
-   "markup": "<button class=\"nz-fab nz-fab--extended\">＋ Crear pedido</button>",
+   "markup": "<button class=\"nz-fab\" aria-label=\"Nuevo\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 5v14M5 12h14\"/></svg></button>",
    "noUsar": "",
    "cuandoUsar": "Cuando el usuario deba hacer algo: botones, grupos de acción, enlaces de acción y estados de carga.",
    "tags": [
@@ -8215,7 +8215,7 @@
     "--nz-text-sm"
    ],
    "nTokens": 9,
-   "markup": "<div class=\"nz-feedback\"><button class=\"nz-feedback__btn nz-feedback__btn--on\" aria-label=\"Buena respuesta\">▲</button><button class=\"nz-feedback__btn\" aria-label=\"Mala respuesta\">▼</button></div>",
+   "markup": "<div class=\"nz-feedback\"><button class=\"nz-feedback__btn nz-feedback__btn--on\" aria-label=\"Buena respuesta\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 4.5 20 18.5H4Z\"/></svg></button><button class=\"nz-feedback__btn\" aria-label=\"Mala respuesta\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"m5 9 7 7 7-7\"/></svg></button></div>",
    "noUsar": "",
    "cuandoUsar": "Cuando haya conversación, prompts, tool calls, planes de tarea o aprobación humana. Los estados del agente son parte del diseño.",
    "tags": [
@@ -9259,7 +9259,7 @@
     "--nz-warning-soft"
    ],
    "nTokens": 10,
-   "markup": "<div class=\"nz-guardrail\"><span class=\"nz-guardrail__icon\">⚠</span><div><span class=\"nz-guardrail__title\">Datos personales detectados</span><span class=\"nz-guardrail__msg\">Se ha anonimizado el DNI antes de enviarlo al modelo.</span></div></div>",
+   "markup": "<div class=\"nz-guardrail\"><span class=\"nz-guardrail__icon\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 3 2 20h20Z\"/><path d=\"M12 9.5v4.5M12 17h.01\"/></svg></span><div><span class=\"nz-guardrail__title\">Datos personales detectados</span><span class=\"nz-guardrail__msg\">Se ha anonimizado el DNI antes de enviarlo al modelo.</span></div></div>",
    "noUsar": "",
    "cuandoUsar": "Cuando haya conversación, prompts, tool calls, planes de tarea o aprobación humana. Los estados del agente son parte del diseño.",
    "tags": [
@@ -10154,7 +10154,7 @@
    "categoria": 9,
    "pack": "p9-media.css",
    "demo": "paginas/09-media.html",
-   "titulo": "Botones de solo icono",
+   "titulo": "Grupo de botones",
    "clases": [
     "nz-icon",
     "nz-icon--accent",
@@ -10203,7 +10203,7 @@
     "--nz-warning"
    ],
    "nTokens": 11,
-   "markup": "<svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"m8 5 11 7-11 7z\"/></svg>",
+   "markup": "<svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"m5 9 7 7 7-7\"/></svg>",
    "noUsar": "",
    "cuandoUsar": "Cuando haya imagen, vídeo, audio, avatar, galería o figure. Todo con proporción y pie resueltos.",
    "tags": [
@@ -10237,7 +10237,7 @@
    "categoria": 9,
    "pack": "p9-media.css",
    "demo": "paginas/09-media.html",
-   "titulo": "Icono en caja pequeño, grande y extra grande",
+   "titulo": "Icono en caja",
    "clases": [
     "nz-icon-tile",
     "nz-icon-tile--accent",
@@ -10282,7 +10282,7 @@
     "--nz-text-xl"
    ],
    "nTokens": 17,
-   "markup": "<span class=\"nz-icon-tile nz-icon-tile--sm\">◦</span>",
+   "markup": "<span class=\"nz-icon-tile nz-icon-tile--danger\">!</span>",
    "noUsar": "",
    "cuandoUsar": "Cuando haya imagen, vídeo, audio, avatar, galería o figure. Todo con proporción y pie resueltos.",
    "tags": [
@@ -11963,7 +11963,7 @@
     "--nz-text-sm"
    ],
    "nTokens": 11,
-   "markup": "<div class=\"nz-logo-nube nz-logo-nube--lg\"><span class=\"nz-logo-nube__item nz-brand\">◆ Grande</span><span class=\"nz-logo-nube__item nz-logo-nube__item--muted\">■ Muted</span></div>",
+   "markup": "<div class=\"nz-logo-nube nz-logo-nube--lg\"><span class=\"nz-logo-nube__item nz-brand\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 2.8 21.2 12 12 21.2 2.8 12Z\"/></svg> Grande</span><span class=\"nz-logo-nube__item nz-logo-nube__item--muted\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><rect x=\"5\" y=\"5\" width=\"14\" height=\"14\" rx=\"2\"/></svg> Muted</span></div>",
    "noUsar": "",
    "cuandoUsar": "Cuando haya imagen, vídeo, audio, avatar, galería o figure. Todo con proporción y pie resueltos.",
    "tags": [
@@ -12050,7 +12050,7 @@
     "--nz-space-8"
    ],
    "nTokens": 4,
-   "markup": "<div class=\"nz-logos\"><span class=\"nz-brand\">◆ Marca</span><span class=\"nz-brand\">● Otra</span><span class=\"nz-brand\">▲ Tercera</span></div>",
+   "markup": "<div class=\"nz-logos\"><span class=\"nz-brand\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 2.8 21.2 12 12 21.2 2.8 12Z\"/></svg> Marca</span><span class=\"nz-brand\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"6.5\"/></svg> Otra</span><span class=\"nz-brand\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 4.5 20 18.5H4Z\"/></svg> Tercera</span></div>",
    "noUsar": "",
    "cuandoUsar": "Cuando haya imagen, vídeo, audio, avatar, galería o figure. Todo con proporción y pie resueltos.",
    "tags": [
@@ -12567,7 +12567,7 @@
     "--nz-text-soft"
    ],
    "nTokens": 21,
-   "markup": "<div class=\"nz-menu\"><input class=\"nz-vh\" type=\"checkbox\" id=\"menuN1\"><label class=\"nz-menu__btn\" for=\"menuN1\">☰</label><div class=\"nz-menu__drop\"><a href=\"#contenido\" class=\"nz-menu__item\" aria-current=\"page\">Inicio</a><a href=\"#contenido\" class=\"nz-menu__item\">Perfil</a><a href=\"#contenido\" class=\"nz-menu__item\">Ajustes</a></div></div>",
+   "markup": "<div class=\"nz-menu\"><input class=\"nz-vh\" type=\"checkbox\" id=\"menuN1\"><label class=\"nz-menu__btn\" for=\"menuN1\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M4 6h16M4 12h16M4 18h16\"/></svg></label><div class=\"nz-menu__drop\"><a href=\"#contenido\" class=\"nz-menu__item\" aria-current=\"page\">Inicio</a><a href=\"#contenido\" class=\"nz-menu__item\">Perfil</a><a href=\"#contenido\" class=\"nz-menu__item\">Ajustes</a></div></div>",
    "noUsar": "",
    "cuandoUsar": "Cuando el usuario tenga que orientarse o moverse: navbar, tabs, sidebar, breadcrumbs, paginación o stepper.",
    "tags": [
@@ -12641,7 +12641,7 @@
    "categoria": 7,
    "pack": "p7-overlays.css",
    "demo": "paginas/07-overlays.html",
-   "titulo": "Menú contextual",
+   "titulo": "Menú compacto con ítem deshabilitado",
    "clases": [
     "nz-menu-pop",
     "nz-menu-pop--compact",
@@ -12697,7 +12697,7 @@
     "--nz-z-popover"
    ],
    "nTokens": 24,
-   "markup": "<span class=\"nz-menu-pop\"><input class=\"nz-vh\" type=\"checkbox\" id=\"mc-b\"> <label class=\"nz-btn nz-btn--ghost\" for=\"mc-b\">Insertar ▾</label> <div class=\"nz-menu-pop__list nz-menu-pop__list--left\"><button class=\"nz-menu-pop__item\">Tabla</button><button class=\"nz-menu-pop__item\">Gráfico</button></div></span>",
+   "markup": "<div class=\"nz-menu-pop nz-menu-pop--compact\"><input class=\"nz-vh\" type=\"checkbox\" id=\"mc-d\"> <label class=\"nz-btn nz-btn--ghost\" for=\"mc-d\">Compacto</label> <div class=\"nz-menu-pop__list\"><button class=\"nz-menu-pop__item\">Renombrar</button><button class=\"nz-menu-pop__item nz-menu-pop__item--disabled\">Mover a carpeta</button><button class=\"nz-menu-pop__item\">Descargar</button></div></div>",
    "noUsar": "",
    "cuandoUsar": "Cuando algo deba aparecer encima sin cambiar de página: modales, drawers, sheets, popovers y tooltips.",
    "tags": [
@@ -13074,7 +13074,7 @@
     "--nz-z-popover"
    ],
    "nTokens": 18,
-   "markup": "<div class=\"nz-modelpick\"><button class=\"nz-modelpick__btn\">modelo: qwen3.8-flash ▾</button><div class=\"nz-modelpick__list\"><span class=\"nz-modelpick__item nz-modelpick__item--active\">qwen3.8-flash<span class=\"nz-modelpick__meta\">rápido</span></span><span class=\"nz-modelpick__item\">glm5.3-flash<span class=\"nz-modelpick__meta\">preciso</span></span><span class=\"nz-modelpick__item\">qwen3-vl<span class=\"nz-modelpick__meta\">visión</span></span></div></div>",
+   "markup": "<div class=\"nz-modelpick\"><button class=\"nz-modelpick__btn\">modelo: qwen3.8-flash <svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"m5 9 7 7 7-7\"/></svg></button><div class=\"nz-modelpick__list\"><span class=\"nz-modelpick__item nz-modelpick__item--active\">qwen3.8-flash<span class=\"nz-modelpick__meta\">rápido</span></span><span class=\"nz-modelpick__item\">glm5.3-flash<span class=\"nz-modelpick__meta\">preciso</span></span><span class=\"nz-modelpick__item\">qwen3-vl<span class=\"nz-modelpick__meta\">visión</span></span></div></div>",
    "noUsar": "",
    "cuandoUsar": "Cuando haya conversación, prompts, tool calls, planes de tarea o aprobación humana. Los estados del agente son parte del diseño.",
    "tags": [
@@ -17329,7 +17329,7 @@
    "categoria": 11,
    "pack": "p11-social.css",
    "demo": "paginas/11-social.html",
-   "titulo": "Compartir copiando enlace",
+   "titulo": "Compartir en marca",
    "clases": [
     "nz-share",
     "nz-share--brand",
@@ -17367,7 +17367,7 @@
     "--nz-tracking-caps"
    ],
    "nTokens": 17,
-   "markup": "<div class=\"nz-share nz-share--copy\"><button>🔗 <span class=\"nz-share__label\">Copiar enlace</span></button><button>✉ <span class=\"nz-share__label\">Correo</span></button></div>",
+   "markup": "<div class=\"nz-share nz-share--brand\"><button aria-label=\"Compartir en X\">𝕏</button><button aria-label=\"Compartir en LinkedIn\">in</button><span class=\"nz-share__count\">24</span></div>",
    "noUsar": "",
    "cuandoUsar": "Cuando haya comunidad, perfil, testimonios, share o métricas sociales.",
    "tags": [
@@ -17834,7 +17834,7 @@
    "categoria": 11,
    "pack": "p11-social.css",
    "demo": "paginas/11-social.html",
-   "titulo": "Post de feed",
+   "titulo": "Métricas sociales",
    "clases": [
     "nz-social",
     "nz-social--count",
@@ -17864,7 +17864,7 @@
     "--nz-text-xs"
    ],
    "nTokens": 12,
-   "markup": "<button class=\"nz-social\">➤</button>",
+   "markup": "<button class=\"nz-social nz-social--count\">1.240</button>",
    "noUsar": "",
    "cuandoUsar": "Cuando haya comunidad, perfil, testimonios, share o métricas sociales.",
    "tags": [
@@ -18829,7 +18829,7 @@
     "--nz-warning-soft"
    ],
    "nTokens": 10,
-   "markup": "<div class=\"nz-stars nz-stars--sm\"><span class=\"nz-stars__row\"><span class=\"nz-stars__star nz-stars__star--full\">★</span><span class=\"nz-stars__star nz-stars__star--full\">★</span><span class=\"nz-stars__star nz-stars__star--full\">★</span><span class=\"nz-stars__star\">★</span><span class=\"nz-stars__star\">★</span></span><span class=\"nz-stars__count\">Pequeñas</span></div>",
+   "markup": "<div class=\"nz-stars nz-stars--sm\"><span class=\"nz-stars__row\"><span class=\"nz-stars__star nz-stars__star--full\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 3l2.7 5.9 6.3.8-4.6 4.4 1.2 6.4L12 17.4 6.4 20.5l1.2-6.4L3 9.7l6.3-.8z\"/></svg></span><span class=\"nz-stars__star nz-stars__star--full\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 3l2.7 5.9 6.3.8-4.6 4.4 1.2 6.4L12 17.4 6.4 20.5l1.2-6.4L3 9.7l6.3-.8z\"/></svg></span><span class=\"nz-stars__star nz-stars__star--full\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 3l2.7 5.9 6.3.8-4.6 4.4 1.2 6.4L12 17.4 6.4 20.5l1.2-6.4L3 9.7l6.3-.8z\"/></svg></span><span class=\"nz-stars__star\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 3l2.7 5.9 6.3.8-4.6 4.4 1.2 6.4L12 17.4 6.4 20.5l1.2-6.4L3 9.7l6.3-.8z\"/></svg></span><span class=\"nz-stars__star\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 3l2.7 5.9 6.3.8-4.6 4.4 1.2 6.4L12 17.4 6.4 20.5l1.2-6.4L3 9.7l6.3-.8z\"/></svg></span></span><span class=\"nz-stars__count\">Pequeñas</span></div>",
    "noUsar": "",
    "cuandoUsar": "Cuando haya producto, precio, carrito, checkout, plan o reseña. El flujo de compra ya viene pensado.",
    "tags": [
@@ -19414,7 +19414,7 @@
     "--nz-z-modal"
    ],
    "nTokens": 26,
-   "markup": "<div class=\"nz-sysdialog\"><input class=\"nz-vh\" type=\"checkbox\" id=\"sd15\"><label for=\"sd15\">⚠ Probar el diálogo de confirmación</label><div class=\"nz-sysdialog__scrim\"><div class=\"nz-sysdialog__panel\" role=\"alertdialog\" aria-labelledby=\"sd15t\"><h4 id=\"sd15t\">¿Cerrar sin guardar?</h4><p>Los cambios en presupuesto.nz se perderán.</p><footer><label for=\"sd15\" class=\"is-primary\">Cancelar</label><button class=\"is-danger\">Cerrar sin guardar</button></footer></div></div></div>",
+   "markup": "<div class=\"nz-sysdialog\"><input class=\"nz-vh\" type=\"checkbox\" id=\"sd15\"><label for=\"sd15\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 3 2 20h20Z\"/><path d=\"M12 9.5v4.5M12 17h.01\"/></svg> Probar el diálogo de confirmación</label><div class=\"nz-sysdialog__scrim\"><div class=\"nz-sysdialog__panel\" role=\"alertdialog\" aria-labelledby=\"sd15t\"><h4 id=\"sd15t\">¿Cerrar sin guardar?</h4><p>Los cambios en presupuesto.nz se perderán.</p><footer><label for=\"sd15\" class=\"is-primary\">Cancelar</label><button class=\"is-danger\">Cerrar sin guardar</button></footer></div></div></div>",
    "noUsar": "",
    "cuandoUsar": "Cuando construyas una herramienta de escritorio web: ventana, appnav, kanban, actbar o statusbar.",
    "tags": [
@@ -19998,7 +19998,7 @@
    "partes": [],
    "tokens": [],
    "nTokens": 0,
-   "markup": "<button class=\"nz-btn nz-btn--icon nz-tap-44\" aria-label=\"Favorito\">★</button>",
+   "markup": "<span class=\"nz-tap-44\"><span class=\"nz-badge nz-badge--brand\">44 px de caja</span></span>",
    "noUsar": "",
    "cuandoUsar": "Cuando necesites accesibilidad, utilidades de visibilidad, print o estados de sistema. Es la capa transversal.",
    "tags": [
@@ -20560,7 +20560,7 @@
    "categoria": 3,
    "pack": "p3-typography.css",
    "demo": "paginas/03-typography.html",
-   "titulo": "Reparto de valoraciones",
+   "titulo": "Icono con tono y grosor de trazo",
    "clases": [
     "nz-text--accent-soft",
     "nz-text--brand-soft",
@@ -20608,7 +20608,7 @@
     "--nz-warning"
    ],
    "nTokens": 15,
-   "markup": "<span class=\"nz-text--muted\">5★</span>",
+   "markup": "<span class=\"nz-text--small\">Éxito</span>",
    "noUsar": "",
    "cuandoUsar": "Cuando necesites jerarquía de texto, prosa larga, cifras o utilidades de lectura. La escala ya está recortada: no inventes tamaños.",
    "tags": [
@@ -21420,7 +21420,7 @@
     "--nz-z-popover"
    ],
    "nTokens": 23,
-   "markup": "<div class=\"nz-tray\"><input class=\"nz-vh\" type=\"checkbox\" id=\"tray15\"><label for=\"tray15\">▤ Bandeja del sistema</label><div class=\"nz-tray__menu\"><p>Sistema</p><button class=\"nz-tray__item\">Sincronizar ahora<span>Ctrl S</span></button><button class=\"nz-tray__item\">Modo concentración<span>Off</span></button><hr><button class=\"nz-tray__item\">Cerrar sesión<span>Ctrl Q</span></button></div></div>",
+   "markup": "<div class=\"nz-tray\"><input class=\"nz-vh\" type=\"checkbox\" id=\"tray15\"><label for=\"tray15\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M4 7h16M4 12h16M4 17h9\"/></svg> Bandeja del sistema</label><div class=\"nz-tray__menu\"><p>Sistema</p><button class=\"nz-tray__item\">Sincronizar ahora<span>Ctrl S</span></button><button class=\"nz-tray__item\">Modo concentración<span>Off</span></button><hr><button class=\"nz-tray__item\">Cerrar sesión<span>Ctrl Q</span></button></div></div>",
    "noUsar": "",
    "cuandoUsar": "Cuando construyas una herramienta de escritorio web: ventana, appnav, kanban, actbar o statusbar.",
    "tags": [
@@ -21466,7 +21466,7 @@
     "--nz-text-xs"
    ],
    "nTokens": 15,
-   "markup": "<div class=\"nz-tree\" role=\"tree\" aria-label=\"Explorador de archivos\"><div class=\"nz-tree__item\" role=\"treeitem\" tabindex=\"0\" aria-expanded=\"true\"><i aria-hidden=\"true\">▾</i>src<small>4 archivos</small></div><ul role=\"group\"><li class=\"nz-tree__item\" role=\"none\"><span class=\"nz-tree__item\" role=\"treeitem\" tabindex=\"0\"><i aria-hidden=\"true\">·</i>main.css<small>2 KB</small></span></li><li class=\"nz-tree__item\" role=\"none\"><span class=\"nz-tree__item\" role=\"treeitem\" tabindex=\"0\" aria-current=\"page\"><i aria-hidden=\"true\">·</i>tokens.css<small>6 KB</small></span></li></ul><div class=\"nz-tree__item\" role=\"treeitem\" tabindex=\"0\" aria-expanded=\"false\"><i aria-hidden=\"true\">▸</i>dist</div></div>",
+   "markup": "<div class=\"nz-tree\" role=\"tree\" aria-label=\"Explorador de archivos\"><div class=\"nz-tree__item\" role=\"treeitem\" tabindex=\"0\" aria-expanded=\"true\"><i aria-hidden=\"true\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"m5 9 7 7 7-7\"/></svg></i>src<small>4 archivos</small></div><ul role=\"group\"><li class=\"nz-tree__item\" role=\"none\"><span class=\"nz-tree__item\" role=\"treeitem\" tabindex=\"0\"><i aria-hidden=\"true\">·</i>main.css<small>2 KB</small></span></li><li class=\"nz-tree__item\" role=\"none\"><span class=\"nz-tree__item\" role=\"treeitem\" tabindex=\"0\" aria-current=\"page\"><i aria-hidden=\"true\">·</i>tokens.css<small>6 KB</small></span></li></ul><div class=\"nz-tree__item\" role=\"treeitem\" tabindex=\"0\" aria-expanded=\"false\"><i aria-hidden=\"true\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"m9 5 7 7-7 7\"/></svg></i>dist</div></div>",
    "noUsar": "",
    "cuandoUsar": "Cuando construyas una herramienta de escritorio web: ventana, appnav, kanban, actbar o statusbar.",
    "tags": [
@@ -21629,7 +21629,7 @@
     "--nz-warning"
    ],
    "nTokens": 18,
-   "markup": "<div class=\"nz-trust\"><span class=\"nz-trust__logo\">★ Cliente A</span><span class=\"nz-trust__logo\">◆ Cliente B</span><span class=\"nz-trust__logo\">● Cliente C</span></div>",
+   "markup": "<div class=\"nz-trust\"><span class=\"nz-trust__logo\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 3l2.7 5.9 6.3.8-4.6 4.4 1.2 6.4L12 17.4 6.4 20.5l1.2-6.4L3 9.7l6.3-.8z\"/></svg> Cliente A</span><span class=\"nz-trust__logo\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 2.8 21.2 12 12 21.2 2.8 12Z\"/></svg> Cliente B</span><span class=\"nz-trust__logo\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"6.5\"/></svg> Cliente C</span></div>",
    "noUsar": "",
    "cuandoUsar": "Cuando haya comunidad, perfil, testimonios, share o métricas sociales.",
    "tags": [
@@ -21708,7 +21708,7 @@
     "--nz-tracking-caps"
    ],
    "nTokens": 14,
-   "markup": "<div class=\"nz-userbox\"><span class=\"nz-userbox__avatar\" aria-hidden=\"true\">DA</span><div><b>David Antizar</b><span>Sesión de trabajo · plan Pro</span></div><i aria-hidden=\"true\">▾</i></div>",
+   "markup": "<div class=\"nz-userbox\"><span class=\"nz-userbox__avatar\" aria-hidden=\"true\">DA</span><div><b>David Antizar</b><span>Sesión de trabajo · plan Pro</span></div><i aria-hidden=\"true\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"m5 9 7 7 7-7\"/></svg></i></div>",
    "noUsar": "",
    "cuandoUsar": "Cuando construyas una herramienta de escritorio web: ventana, appnav, kanban, actbar o statusbar.",
    "tags": [
@@ -22116,7 +22116,7 @@
     "--nz-text-xs"
    ],
    "nTokens": 12,
-   "markup": "<span class=\"nz-wishlist\"><button class=\"nz-wishlist__btn\" aria-label=\"Añadir a la lista de deseos\">♡</button><span class=\"nz-wishlist__count\">12</span></span>",
+   "markup": "<span class=\"nz-wishlist\"><button class=\"nz-wishlist__btn\" aria-label=\"Añadir a la lista de deseos\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 20.3 4.6 13a4.6 4.6 0 0 1 6.5-6.5l.9.9.9-.9A4.6 4.6 0 0 1 19.4 13Z\"/></svg></button><span class=\"nz-wishlist__count\">12</span></span>",
    "noUsar": "",
    "cuandoUsar": "Cuando haya producto, precio, carrito, checkout, plan o reseña. El flujo de compra ya viene pensado.",
    "tags": [

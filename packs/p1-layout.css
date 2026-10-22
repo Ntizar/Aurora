@@ -30,7 +30,7 @@
 .nz-grid-12 { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--nz-space-4); }
 
 /* ---- 04 Grid CSS auto-fit ---- */
-.nz-grid-auto { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: var(--nz-space-4); }
+.nz-grid-auto { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)); gap: var(--nz-space-4); }
 
 /* ---- 05 Spans de rejilla (1..12) — escalan con el número de columnas ---- */
 .nz-span-1 { grid-column: span 1; } .nz-span-2 { grid-column: span 2; } .nz-span-3 { grid-column: span 3; } .nz-span-4 { grid-column: span 4; }
@@ -214,6 +214,8 @@
 .nz-dash-grid--2 { grid-template-columns: 1fr; }
 .nz-dash-grid--4 { grid-template-columns: 1fr; }
 .nz-dash-grid--sidebar { grid-template-columns: 1fr; }
+
+.nz-grid-auto > * { min-width: 0; }
 @media (min-width: 640px) {
   .nz-dash-grid--2 { grid-template-columns: repeat(2, 1fr); }
   .nz-dash-grid--4 { grid-template-columns: repeat(2, 1fr); }
@@ -351,8 +353,8 @@
 .nz-bento--spacious { gap: var(--nz-space-6); }
 .nz-grid-12--compact { gap: var(--nz-space-2); }
 .nz-grid-12--spacious { gap: var(--nz-space-6); }
-.nz-grid-auto--compact { gap: var(--nz-space-2); }
-.nz-grid-auto--spacious { gap: var(--nz-space-6); }
+.nz-grid-auto--compact { grid-template-columns: repeat(auto-fit, minmax(min(100%, 160px), 1fr)); gap: var(--nz-space-2); }
+.nz-grid-auto--spacious { grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)); gap: var(--nz-space-6); }
 .nz-hero-bleed--compact { padding: var(--nz-space-6) var(--nz-gutter); }
 .nz-hero-bleed--spacious { padding: var(--nz-space-16) var(--nz-gutter); }
 .nz-hero-bleed--brand { background: var(--nz-brand); color: var(--nz-text-invert); }

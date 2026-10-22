@@ -23,12 +23,12 @@
     {
       "titulo": "Menú con hamburguesa (sin JS)",
       "tag": ".nz-menu · __btn · __drop · __item · input:checked",
-      "markup": "<div class=\"nz-menu\"><input class=\"nz-vh\" type=\"checkbox\" id=\"menuN1\"><label class=\"nz-menu__btn\" for=\"menuN1\">☰</label><div class=\"nz-menu__drop\"><a href=\"#contenido\" class=\"nz-menu__item\" aria-current=\"page\">Inicio</a><a href=\"#contenido\" class=\"nz-menu__item\">Perfil</a><a href=\"#contenido\" class=\"nz-menu__item\">Ajustes</a></div></div>"
+      "markup": "<div class=\"nz-menu\"><input class=\"nz-vh\" type=\"checkbox\" id=\"menuN1\"><label class=\"nz-menu__btn\" for=\"menuN1\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M4 6h16M4 12h16M4 18h16\"/></svg></label><div class=\"nz-menu__drop\"><a href=\"#contenido\" class=\"nz-menu__item\" aria-current=\"page\">Inicio</a><a href=\"#contenido\" class=\"nz-menu__item\">Perfil</a><a href=\"#contenido\" class=\"nz-menu__item\">Ajustes</a></div></div>"
     },
     {
       "titulo": "Menú: separador, peligro, deshabilitado y alineado a la derecha",
       "tag": ".nz-menu--right · __sep · __item--danger · __item--disabled",
-      "markup": "<div class=\"nz-hstack demo-box\" style=\"padding:var(--nz-space-8) var(--nz-space-2) var(--nz-space-2)\"><span class=\"demo-box\">barra</span><div class=\"nz-menu nz-menu--right\"><input class=\"nz-vh\" type=\"checkbox\" id=\"menuN2\"><label class=\"nz-menu__btn\" for=\"menuN2\">☰</label><div class=\"nz-menu__drop\"><a href=\"#contenido\" class=\"nz-menu__item\">Cuenta</a><div class=\"nz-menu__sep\"></div><a href=\"#contenido\" class=\"nz-menu__item nz-menu__item--danger\">Cerrar sesión</a><a href=\"#contenido\" class=\"nz-menu__item nz-menu__item--disabled\" aria-disabled=\"true\">Facturación (pronto)</a></div></div></div>"
+      "markup": "<div class=\"nz-hstack demo-box\" style=\"padding:var(--nz-space-8) var(--nz-space-2) var(--nz-space-2)\"><span class=\"demo-box\">barra</span><div class=\"nz-menu nz-menu--right\"><input class=\"nz-vh\" type=\"checkbox\" id=\"menuN2\"><label class=\"nz-menu__btn\" for=\"menuN2\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M4 6h16M4 12h16M4 18h16\"/></svg></label><div class=\"nz-menu__drop\"><a href=\"#contenido\" class=\"nz-menu__item\">Cuenta</a><div class=\"nz-menu__sep\"></div><a href=\"#contenido\" class=\"nz-menu__item nz-menu__item--danger\">Cerrar sesión</a><a href=\"#contenido\" class=\"nz-menu__item nz-menu__item--disabled\" aria-disabled=\"true\">Facturación (pronto)</a></div></div></div>"
     },
     {
       "titulo": "Sidebar de navegación",

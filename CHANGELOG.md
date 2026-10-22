@@ -3,6 +3,31 @@
 Formato: [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/).
 Versionado: [SemVer](https://semver.org/lang/es/).
 
+## [9.11.0] — 2026-10-22
+
+### Corregido
+
+- **129 símbolos de texto haciendo de icono** en el catálogo (`★ ♥ ♡ 🛒 ☰ ⚠ 📦 🔍 📂 🎉 🔗 ✉ ➤
+  🔖 ✓ ✗ ⛔ 💬 ◆ ● ■ ▲ ▸ ▾ ◍ ▢ ▤ ◦ ⬆ ↻`). La regla 10 llevaba incumplida desde siempre por dos
+  motivos: `migrar-iconos.py` solo conocía un puñado de glifos y `paginas/` no pasa por el lint
+  del consumidor, así que nadie lo veía. Ahora son SVG del sistema, el migrador los conoce
+  todos (incluida la pasada para «5★» y «★★★★★») y el único glifo de texto que queda es la
+  atribución y las teclas de `<kbd>`, que son tipografía, no icono.
+- Un `<button>` del feed se quedó sin nombre accesible al cambiar el glifo por un SVG: lleva
+  `aria-label`. Lo cazó `audit-a11y.py`.
+
+### Añadido / Cambiado
+
+- **`.nz-icon--xl` pasa de `2rem` a `2em`**: el icono grande también sigue a la tipografía, así
+  que en un panel con texto a 13 px no se queda clavado en 32 px.
+- **`.nz-grid-auto`** (ya existía) se endurece con `minmax(min(100%, 240px), 1fr)`: una rejilla
+  de fichas ya no desborda dentro de un contenedor estrecho. `--compact` (160 px) y
+  `--spacious` (320 px) ganan **eje de tamaño** —antes solo cambiaban el hueco—, y el catálogo
+  de iconos los usa: dos columnas desde 360 px, seis o más en escritorio.
+- La demo de «Aspect ratio» deja de saltarse el sistema con un `style="grid-template-columns:…"`
+  inline: usa el modificador.
+- Nueva demo «Rejilla automática: caben las que quepan» con los tres tamaños.
+
 ## [9.10.0] — 2026-10-22
 
 ### Añadido

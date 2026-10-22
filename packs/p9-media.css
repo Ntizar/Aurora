@@ -198,7 +198,8 @@
 }
 .nz-icon--sm { width: 1em; height: 1em; }
 .nz-icon--lg { width: 1.5em; height: 1.5em; }
-.nz-icon--xl { width: 2rem; height: 2rem; }
+/* 2em, no 2rem: el icono grande también sigue a la tipografía del sitio. */
+.nz-icon--xl { width: 2em; height: 2em; }
 .nz-icon--filled { fill: currentColor; stroke: none; }
 .nz-icon--brand { color: var(--nz-brand); }
 .nz-icon--muted { color: var(--nz-text-mute); }

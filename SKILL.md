@@ -1,14 +1,14 @@
 ---
 name: aurora-design-system
 description: "Usa al construir o tocar cualquier web con Aurora (Ntizar/Aurora). El repo manda: resuelve la versión vigente y pide LLM.md + components.json antes de escribir CSS."
-version: "9.10.0"
+version: "9.11.0"
 tags: [css, design-system, aurora, ntizar, agent-ready, movil, escritorio, tipografia]
 ---
 
 # Aurora — doctrina única (el repo es la orden máxima)
 
 Design system CSS puro, sin build, sin dependencias, namespaced bajo `.nz-`.
-**v9.10.0 · 2194 objetos · 411 familias · 657 demos · 18 categorías · 189 tokens · 59 gemelas OKLch · 36 componentes generativos · 288 iconos numerados.**
+**v9.11.0 · 2194 objetos · 411 familias · 658 demos · 18 categorías · 189 tokens · 59 gemelas OKLch · 36 componentes generativos · 288 iconos numerados.**
 *(Cabecera de testigo, no de autoridad: resuélvela con el PASO 0.)*
 
 > ⚠️ `Ntizar/Aurora` **manda sobre esta skill**. Esta skill es un puntero; el repo
@@ -138,6 +138,7 @@ en 960px y dejaba el 40% de la pantalla vacío en un monitor):
 | Una **herramienta** (panel, tablero, tabla, mapa, editor) a pantalla completa | `<main class="nz-container nz-container--app">` — **sin tope de ancho** |
 | Prosa o landing que no se estire hasta reventar | `.nz-container` (72 → 84rem ≥1200 → 96rem ≥1440, ya viene solo) |
 | Rejilla de panel en escritorio | `.nz-dash-grid` (llega a 6 columnas en el tramo de 1440) |
+| Muchas fichas pequeñas (iconos, miniaturas) | `.nz-grid-auto` (+`--compact` 160 px, `--spacious` 320 px): auto-fit con `min(100%, N)`, sin media queries y sin desbordar a 320 px |
 | Márgenes laterales correctos | `--nz-gutter` (16 → 24 → 32px, automático) |
 
 La **letra no crece** con el monitor: los titulares están topados a propósito (3xl 34px,

@@ -188,12 +188,12 @@
     {
       "titulo": "Zona de arrastrar y soltar ficheros",
       "tag": ".nz-filezona · __icono/__texto/__input",
-      "markup": "<div class=\"nz-filezona\" style=\"max-width:24rem\"><span class=\"nz-filezona__icono\">⬆</span><span class=\"nz-filezona__texto\">Arrastra tus ficheros aquí o toca para elegirlos</span><span class=\"nz-field__help\">PDF, PNG o ZIP · máximo 20 MB</span><input class=\"nz-filezona__input\" type=\"file\" aria-label=\"Subir ficheros\"></div>"
+      "markup": "<div class=\"nz-filezona\" style=\"max-width:24rem\"><span class=\"nz-filezona__icono\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 20V5\"/><path d=\"m5.5 11.5 6.5-6.5 6.5 6.5\"/></svg></span><span class=\"nz-filezona__texto\">Arrastra tus ficheros aquí o toca para elegirlos</span><span class=\"nz-field__help\">PDF, PNG o ZIP · máximo 20 MB</span><input class=\"nz-filezona__input\" type=\"file\" aria-label=\"Subir ficheros\"></div>"
     },
     {
       "titulo": "Zona de ficheros activa (arrastrando encima)",
       "tag": ".nz-filezona.is-active",
-      "markup": "<div class=\"nz-filezona is-active\" style=\"max-width:24rem\"><span class=\"nz-filezona__icono\">⬆</span><span class=\"nz-filezona__texto\">Suelta para subir 3 ficheros</span><input class=\"nz-filezona__input\" type=\"file\" aria-label=\"Soltar ficheros\"></div>"
+      "markup": "<div class=\"nz-filezona is-active\" style=\"max-width:24rem\"><span class=\"nz-filezona__icono\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 20V5\"/><path d=\"m5.5 11.5 6.5-6.5 6.5 6.5\"/></svg></span><span class=\"nz-filezona__texto\">Suelta para subir 3 ficheros</span><input class=\"nz-filezona__input\" type=\"file\" aria-label=\"Soltar ficheros\"></div>"
     },
     {
       "titulo": "Rejilla de formulario a 2 columnas",

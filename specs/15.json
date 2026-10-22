@@ -53,7 +53,7 @@
     {
       "titulo": "Árbol de archivos y carpetas",
       "tag": ".nz-tree__item · ul anidado",
-      "markup": "<div class=\"nz-tree\" role=\"tree\" aria-label=\"Explorador de archivos\"><div class=\"nz-tree__item\" role=\"treeitem\" tabindex=\"0\" aria-expanded=\"true\"><i aria-hidden=\"true\">▾</i>src<small>4 archivos</small></div><ul role=\"group\"><li class=\"nz-tree__item\" role=\"none\"><span class=\"nz-tree__item\" role=\"treeitem\" tabindex=\"0\"><i aria-hidden=\"true\">·</i>main.css<small>2 KB</small></span></li><li class=\"nz-tree__item\" role=\"none\"><span class=\"nz-tree__item\" role=\"treeitem\" tabindex=\"0\" aria-current=\"page\"><i aria-hidden=\"true\">·</i>tokens.css<small>6 KB</small></span></li></ul><div class=\"nz-tree__item\" role=\"treeitem\" tabindex=\"0\" aria-expanded=\"false\"><i aria-hidden=\"true\">▸</i>dist</div></div>"
+      "markup": "<div class=\"nz-tree\" role=\"tree\" aria-label=\"Explorador de archivos\"><div class=\"nz-tree__item\" role=\"treeitem\" tabindex=\"0\" aria-expanded=\"true\"><i aria-hidden=\"true\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"m5 9 7 7 7-7\"/></svg></i>src<small>4 archivos</small></div><ul role=\"group\"><li class=\"nz-tree__item\" role=\"none\"><span class=\"nz-tree__item\" role=\"treeitem\" tabindex=\"0\"><i aria-hidden=\"true\">·</i>main.css<small>2 KB</small></span></li><li class=\"nz-tree__item\" role=\"none\"><span class=\"nz-tree__item\" role=\"treeitem\" tabindex=\"0\" aria-current=\"page\"><i aria-hidden=\"true\">·</i>tokens.css<small>6 KB</small></span></li></ul><div class=\"nz-tree__item\" role=\"treeitem\" tabindex=\"0\" aria-expanded=\"false\"><i aria-hidden=\"true\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"m9 5 7 7-7 7\"/></svg></i>dist</div></div>"
     },
     {
       "titulo": "Editor de código (gutter, línea activa, sintaxis)",
@@ -103,7 +103,7 @@
     {
       "titulo": "Perfil de usuario de app",
       "tag": ".nz-userbox · __avatar",
-      "markup": "<div class=\"nz-userbox\"><span class=\"nz-userbox__avatar\" aria-hidden=\"true\">DA</span><div><b>David Antizar</b><span>Sesión de trabajo · plan Pro</span></div><i aria-hidden=\"true\">▾</i></div>"
+      "markup": "<div class=\"nz-userbox\"><span class=\"nz-userbox__avatar\" aria-hidden=\"true\">DA</span><div><b>David Antizar</b><span>Sesión de trabajo · plan Pro</span></div><i aria-hidden=\"true\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"m5 9 7 7 7-7\"/></svg></i></div>"
     },
     {
       "titulo": "Notificación de sistema con acciones",
@@ -118,12 +118,12 @@
     {
       "titulo": "Bandeja / menú de sistema (sin JS)",
       "tag": ".nz-tray__menu · input:checked",
-      "markup": "<div class=\"nz-tray\"><input class=\"nz-vh\" type=\"checkbox\" id=\"tray15\"><label for=\"tray15\">▤ Bandeja del sistema</label><div class=\"nz-tray__menu\"><p>Sistema</p><button class=\"nz-tray__item\">Sincronizar ahora<span>Ctrl S</span></button><button class=\"nz-tray__item\">Modo concentración<span>Off</span></button><hr><button class=\"nz-tray__item\">Cerrar sesión<span>Ctrl Q</span></button></div></div>"
+      "markup": "<div class=\"nz-tray\"><input class=\"nz-vh\" type=\"checkbox\" id=\"tray15\"><label for=\"tray15\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M4 7h16M4 12h16M4 17h9\"/></svg> Bandeja del sistema</label><div class=\"nz-tray__menu\"><p>Sistema</p><button class=\"nz-tray__item\">Sincronizar ahora<span>Ctrl S</span></button><button class=\"nz-tray__item\">Modo concentración<span>Off</span></button><hr><button class=\"nz-tray__item\">Cerrar sesión<span>Ctrl Q</span></button></div></div>"
     },
     {
       "titulo": "Diálogo de confirmación de sistema",
       "tag": ".nz-sysdialog · __scrim/__panel",
-      "markup": "<div class=\"nz-sysdialog\"><input class=\"nz-vh\" type=\"checkbox\" id=\"sd15\"><label for=\"sd15\">⚠ Probar el diálogo de confirmación</label><div class=\"nz-sysdialog__scrim\"><div class=\"nz-sysdialog__panel\" role=\"alertdialog\" aria-labelledby=\"sd15t\"><h4 id=\"sd15t\">¿Cerrar sin guardar?</h4><p>Los cambios en presupuesto.nz se perderán.</p><footer><label for=\"sd15\" class=\"is-primary\">Cancelar</label><button class=\"is-danger\">Cerrar sin guardar</button></footer></div></div></div>"
+      "markup": "<div class=\"nz-sysdialog\"><input class=\"nz-vh\" type=\"checkbox\" id=\"sd15\"><label for=\"sd15\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 3 2 20h20Z\"/><path d=\"M12 9.5v4.5M12 17h.01\"/></svg> Probar el diálogo de confirmación</label><div class=\"nz-sysdialog__scrim\"><div class=\"nz-sysdialog__panel\" role=\"alertdialog\" aria-labelledby=\"sd15t\"><h4 id=\"sd15t\">¿Cerrar sin guardar?</h4><p>Los cambios en presupuesto.nz se perderán.</p><footer><label for=\"sd15\" class=\"is-primary\">Cancelar</label><button class=\"is-danger\">Cerrar sin guardar</button></footer></div></div></div>"
     },
     {
       "titulo": "Medidor de uso de recursos (CPU / RAM)",
@@ -153,7 +153,7 @@
     {
       "titulo": "Estado vacío de aplicación",
       "tag": ".nz-appempty",
-      "markup": "<div class=\"nz-appempty\"><i aria-hidden=\"true\">▢</i><b>No hay documentos abiertos</b><p>Abre un archivo del explorador o crea uno nuevo para empezar a trabajar.</p><button>Crear documento</button></div>"
+      "markup": "<div class=\"nz-appempty\"><i aria-hidden=\"true\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><rect x=\"4\" y=\"4\" width=\"16\" height=\"16\" rx=\"2\"/></svg></i><b>No hay documentos abiertos</b><p>Abre un archivo del explorador o crea uno nuevo para empezar a trabajar.</p><button>Crear documento</button></div>"
     },
     {
       "titulo": "Pie de ventana con contadores",

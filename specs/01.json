@@ -138,7 +138,7 @@
     {
       "titulo": "Aspect ratio: todos los formatos",
       "tag": ".nz-aspect · --1x1 · --4x3 · --3x4 · --16x9 · --9x16 · --21x9 · --2x1",
-      "markup": "<div class=\"nz-grid-auto\" style=\"grid-template-columns:repeat(auto-fit,minmax(110px,1fr))\"><div class=\"nz-aspect nz-aspect--1x1\"><div class=\"demo-box\" style=\"display:flex;align-items:center;justify-content:center\">1:1</div></div><div class=\"nz-aspect nz-aspect--4x3\"><div class=\"demo-box\" style=\"display:flex;align-items:center;justify-content:center\">4:3</div></div><div class=\"nz-aspect nz-aspect--3x4\"><div class=\"demo-box\" style=\"display:flex;align-items:center;justify-content:center\">3:4</div></div><div class=\"nz-aspect nz-aspect--16x9\"><div class=\"demo-box demo-box--brand\" style=\"display:flex;align-items:center;justify-content:center\">16:9</div></div><div class=\"nz-aspect nz-aspect--9x16\"><div class=\"demo-box\" style=\"display:flex;align-items:center;justify-content:center\">9:16</div></div><div class=\"nz-aspect nz-aspect--21x9\"><div class=\"demo-box\" style=\"display:flex;align-items:center;justify-content:center\">21:9</div></div><div class=\"nz-aspect nz-aspect--2x1\"><div class=\"demo-box demo-box--accent\" style=\"display:flex;align-items:center;justify-content:center\">2:1</div></div></div>"
+      "markup": "<div class=\"nz-grid-auto nz-grid-auto--compact\"><div class=\"nz-aspect nz-aspect--1x1\"><div class=\"demo-box\" style=\"display:flex;align-items:center;justify-content:center\">1:1</div></div><div class=\"nz-aspect nz-aspect--4x3\"><div class=\"demo-box\" style=\"display:flex;align-items:center;justify-content:center\">4:3</div></div><div class=\"nz-aspect nz-aspect--3x4\"><div class=\"demo-box\" style=\"display:flex;align-items:center;justify-content:center\">3:4</div></div><div class=\"nz-aspect nz-aspect--16x9\"><div class=\"demo-box demo-box--brand\" style=\"display:flex;align-items:center;justify-content:center\">16:9</div></div><div class=\"nz-aspect nz-aspect--9x16\"><div class=\"demo-box\" style=\"display:flex;align-items:center;justify-content:center\">9:16</div></div><div class=\"nz-aspect nz-aspect--21x9\"><div class=\"demo-box\" style=\"display:flex;align-items:center;justify-content:center\">21:9</div></div><div class=\"nz-aspect nz-aspect--2x1\"><div class=\"demo-box demo-box--accent\" style=\"display:flex;align-items:center;justify-content:center\">2:1</div></div></div>"
     },
     {
       "titulo": "Masonry: 2, 3 y 4 columnas",
@@ -228,7 +228,7 @@
     {
       "titulo": "Región de chat: base, izquierda y burbuja",
       "tag": ".nz-region-chat · --left · --sm",
-      "markup": "<div class=\"nz-region-chat demo-box\">región chat · abajo a la derecha</div><div class=\"nz-region-chat nz-region-chat--left demo-box\">--left · abajo a la izquierda</div><div class=\"nz-region-chat nz-region-chat--sm\">--sm · burbuja redonda de chat 💬</div>"
+      "markup": "<div class=\"nz-region-chat demo-box\">región chat · abajo a la derecha</div><div class=\"nz-region-chat nz-region-chat--left demo-box\">--left · abajo a la izquierda</div><div class=\"nz-region-chat nz-region-chat--sm\">--sm · burbuja redonda de chat <svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M21 12a8 8 0 0 1-8 8H8l-5 3V12a8 8 0 0 1 8-8h2a8 8 0 0 1 8 8Z\"/></svg></div>"
     },
     {
       "titulo": "Región de toolbar: base, sticky y flotante",
@@ -269,6 +269,11 @@
       "titulo": "Contenedor de consulta: la rejilla responde a su sitio",
       "tag": ".nz-cq · .nz-dash-grid--4",
       "markup": "<div class=\"nz-cq\" style=\"width:22rem;border:var(--nz-border-w) solid var(--nz-border);border-radius:var(--nz-radius-md);padding:var(--nz-space-2)\"><div class=\"nz-dash-grid nz-dash-grid--4\"><div class=\"nz-kpi\"><span class=\"nz-kpi__label\">A</span><span class=\"nz-kpi__value\">1</span></div><div class=\"nz-kpi\"><span class=\"nz-kpi__label\">B</span><span class=\"nz-kpi__value\">2</span></div><div class=\"nz-kpi\"><span class=\"nz-kpi__label\">C</span><span class=\"nz-kpi__value\">3</span></div><div class=\"nz-kpi\"><span class=\"nz-kpi__label\">D</span><span class=\"nz-kpi__value\">4</span></div></div></div>"
+    },
+    {
+      "titulo": "Rejilla automática: caben las que quepan",
+      "tag": ".nz-grid-auto · --compact · --spacious",
+      "markup": "<div class=\"nz-grid-auto nz-grid-auto--compact\"><span class=\"nz-badge nz-badge--neutral\">ficha 1</span><span class=\"nz-badge nz-badge--neutral\">ficha 2</span><span class=\"nz-badge nz-badge--neutral\">ficha 3</span><span class=\"nz-badge nz-badge--neutral\">ficha 4</span><span class=\"nz-badge nz-badge--neutral\">ficha 5</span><span class=\"nz-badge nz-badge--neutral\">ficha 6</span></div><div class=\"nz-grid-auto\"><span class=\"nz-badge nz-badge--neutral\">ficha 1</span><span class=\"nz-badge nz-badge--neutral\">ficha 2</span><span class=\"nz-badge nz-badge--neutral\">ficha 3</span><span class=\"nz-badge nz-badge--neutral\">ficha 4</span><span class=\"nz-badge nz-badge--neutral\">ficha 5</span><span class=\"nz-badge nz-badge--neutral\">ficha 6</span></div><div class=\"nz-grid-auto nz-grid-auto--spacious\"><span class=\"nz-badge nz-badge--neutral\">ficha 1</span><span class=\"nz-badge nz-badge--neutral\">ficha 2</span><span class=\"nz-badge nz-badge--neutral\">ficha 3</span><span class=\"nz-badge nz-badge--neutral\">ficha 4</span><span class=\"nz-badge nz-badge--neutral\">ficha 5</span><span class=\"nz-badge nz-badge--neutral\">ficha 6</span></div>"
     }
   ]
 }
