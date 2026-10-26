@@ -91,6 +91,7 @@ jobs:
           python scripts/build-catalog.py
           python scripts/audit-catalog.py
           python scripts/audit-html.py
+          python scripts/iconos.py todo
           python scripts/hornear-golden.py --check
           if ! git diff --quiet -- index.html paginas datos packs/all.css audit components.json LLM.md llms.txt combos openui iconos; then
             echo "::error::Lo generado no coincide con lo commiteado. Ejecuta generar-base-datos.py, generar-llm-docs.py, generar-openui.py, build-catalog.py, audit-catalog.py y audit-html.py, y commitea el resultado."
