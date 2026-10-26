@@ -7,6 +7,31 @@ Versionado: [SemVer](https://semver.org/lang/es/).
 
 (sin cambios aún)
 
+## [10.5.0] — 2026-10-26
+
+### Limpieza de portada e índices, esquinas rectas y escala medida
+
+- **Portada al día del proyecto**: texto de «36 componentes» a la cifra viva
+  (nuevo placeholder `{{COMPONENTES}}` clavado desde `openui/componentes.json`,
+  igual que `{{VIVO}}` y `{{CONGELADO}}` desde `datos/canales.json`). Secciones
+  reorganizadas a «cómo funciona hoy»: héroe con cifras fundidas, **Cómo
+  funciona** (cuatro pasos reales), comparación, tres puertas, **mapa del
+  sistema** (seis tarjetas con enlace a cada índice), marcas, **Versionado y
+  agentes** (canales `@v10`/`10.5.0` + MCP) y el programa.
+- **Menú único de seis en todos los índices** (portada, base, iconos, marcas,
+  openui, recetas, combos): Catálogo · Bloques · Marcas · Iconos · OpenUI ·
+  GitHub — mismo orden en cada página; antes cada índice tiraba a su bola
+  (faltaba Iconos en la portada, GitHub en cinco).
+- **Esquinas rectas en todo el sistema**: la escala `--nz-radius-*` pasa a 0
+  (decisión de dirección); los círculos semánticos (`50%` de puntos y avatares)
+  se conservan. Consistente por construcción en los 18 packs, el shell del
+  catálogo y las demos.
+- **Tipografía con topes medidos** (plan §4.2): sección 24 · página 28 ·
+  display de landing 38 (antes llegaban a 27/34/50).
+- **Doc enderezada**: `bloques/recetas/` **sí existe** (recetas canónicas) —
+  se retiró el «404» de SKILL y README; la capa L1 del README deja de citar
+  cifras sin fuente.
+
 ## [10.4.0] — 2026-10-26
 
 ### Del wireframe al producto: rediseño de las referencias y expresión del lenguaje

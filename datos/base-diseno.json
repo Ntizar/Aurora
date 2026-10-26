@@ -1,6 +1,6 @@
 {
  "name": "Aurora — base de datos de diseño",
- "version": "10.4.0",
+ "version": "10.5.0",
  "descripcion": "Índice consultable del sistema: familias, tokens, recetas, combos y marcas. Cada ficha enlaza a su demo viva y lleva el markup real.",
  "fuente": "components.json + specs/ + bloques/recetas/ + bloques/ejemplos/ + bloques/combos/ + marcas/registro.json + COMPOSICION.md",
  "explorador": "base.html",
@@ -23267,21 +23267,21 @@
   },
   {
    "nombre": "--nz-text-2xl",
-   "valor": "clamp(1.5rem, 1.37rem + 0.52vw, 1.6875rem)",
+   "valor": "clamp(1.375rem, 1.3rem + 0.3vw, 1.5rem)",
    "seccion": "Roles temáticos",
    "esColor": false,
    "dark": false
   },
   {
    "nombre": "--nz-text-3xl",
-   "valor": "clamp(1.75rem, 1.46rem + 1.1vw, 2.125rem)",
+   "valor": "clamp(1.625rem, 1.42rem + 0.72vw, 1.75rem)",
    "seccion": "Roles temáticos",
    "esColor": false,
    "dark": false
   },
   {
    "nombre": "--nz-text-4xl",
-   "valor": "clamp(2.25rem, 1.6rem + 2.6vw, 3.125rem)",
+   "valor": "clamp(2rem, 1.68rem + 1.6vw, 2.375rem)",
    "seccion": "Roles temáticos",
    "esColor": false,
    "dark": false
@@ -23512,42 +23512,42 @@
   },
   {
    "nombre": "--nz-radius-xs",
-   "valor": "4px",
+   "valor": "0px",
    "seccion": "GEOMETRÍA · radios, objetivo táctil y alturas de control",
    "esColor": false,
    "dark": false
   },
   {
    "nombre": "--nz-radius-sm",
-   "valor": "8px",
+   "valor": "0px",
    "seccion": "GEOMETRÍA · radios, objetivo táctil y alturas de control",
    "esColor": false,
    "dark": false
   },
   {
    "nombre": "--nz-radius-md",
-   "valor": "12px",
+   "valor": "0px",
    "seccion": "GEOMETRÍA · radios, objetivo táctil y alturas de control",
    "esColor": false,
    "dark": false
   },
   {
    "nombre": "--nz-radius-lg",
-   "valor": "16px",
+   "valor": "0px",
    "seccion": "GEOMETRÍA · radios, objetivo táctil y alturas de control",
    "esColor": false,
    "dark": false
   },
   {
    "nombre": "--nz-radius-xl",
-   "valor": "24px",
+   "valor": "0px",
    "seccion": "GEOMETRÍA · radios, objetivo táctil y alturas de control",
    "esColor": false,
    "dark": false
   },
   {
    "nombre": "--nz-radius-full",
-   "valor": "999px",
+   "valor": "0px",
    "seccion": "GEOMETRÍA · radios, objetivo táctil y alturas de control",
    "esColor": false,
    "dark": false

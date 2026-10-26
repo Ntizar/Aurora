@@ -1,14 +1,14 @@
 ---
 name: aurora-design-system
 description: "Usa al construir o tocar cualquier web con Aurora (Ntizar/Aurora). El repo manda: resuelve la versión vigente y pide LLM.md + components.json antes de escribir CSS."
-version: "10.4.0"
+version: "10.5.0"
 tags: [css, design-system, aurora, ntizar, agent-ready, movil, escritorio, tipografia]
 ---
 
 # Aurora — doctrina única (el repo es la orden máxima)
 
 Design system CSS puro, sin build, sin dependencias, namespaced bajo `.nz-`.
-**v10.4.0 · 2195 objetos · 411 familias · 659 demos · 18 categorías · 189 tokens · 59 gemelas OKLch · 38 componentes generativos · 338 iconos numerados.**
+**v10.5.0 · 2195 objetos · 411 familias · 659 demos · 18 categorías · 189 tokens · 59 gemelas OKLch · 38 componentes generativos · 338 iconos numerados.**
 *(Cabecera de testigo, no de autoridad: resuélvela con el PASO 0.)*
 
 > ⚠️ `Ntizar/Aurora` **manda sobre esta skill**. Esta skill es un puntero; el repo
@@ -67,9 +67,10 @@ cuesta ~250 KB. Nunca pegues CSS de packs en el prompt.
 | Markup exacto de un objeto | `components.json` → `objetos[<familia>].markup.markup` (el bloque real, extraído de su demo) |
 | Reglas duras y estado del repo | `@master/AGENTS.md` · `@master/SKILL.md` |
 
-**⚠️ `bloques/recetas/` NO existe** (404): las páginas completas listas para copiar viven en
-`bloques/ejemplos/` y los esqueletos cortos en `bloques/combos/`. Para el markup de UN objeto
-concreto, `objetos[...].markup.markup` es la vía corta y no hace falta abrir la demo entera.
+**Tres familias de `bloques/`, no una**: `recetas/` son las páginas canónicas por tipo
+(admin, dashboard, ajustes, acceso…), `ejemplos/` las completas listas para copiar
+(landing, login, dashboard, chat-ia, forms) y `combos/` los esqueletos por arquetipo.
+Para el markup de UN objeto concreto, `objetos[...].markup.markup` es la vía corta.
 
 **Corolario:** si algo no está en `components.json`, no existe. No lo inventes: o usas
 el objeto que sí existe, o **se añade al repo** (§9), que es donde vive todo el CSS
@@ -238,9 +239,9 @@ El lint lo comprueba (`acento-ausente`, `acento-testimonial`).
 ## 6. Flujo del agente para generar HTML con Aurora
 
 1. **PASO 0**: resuelve `$V` y lee `LLM.md` + `components.json` del repo. Si buscas por necesidad («tabla apilable», «dashboard», «acento»), empieza por `base.html` o `datos/base-diseno.json`: es el índice que ya trae markup, tokens y anti-patrón.
-2. **Copia un bloque de `bloques/ejemplos/` o `bloques/combos/`** y quítale lo que no uses.
-   Para un objeto suelto, el markup está en `components.json` → `objetos[...].markup.markup`
-   (`bloques/recetas/` no existe: 404). **Si vas a generar muchas páginas con la misma
+2. **Copia una receta de `bloques/recetas/` o un bloque de `bloques/ejemplos/`** y quítale
+   lo que no uses. Para un objeto suelto, el markup está en `components.json` →
+   `objetos[...].markup.markup`. **Si vas a generar muchas páginas con la misma
    forma, no copies markup a mano:** escribe un renderizador de bloques (una función por
    bloque, objetos y variantes como datos) y deja que el lint lo cubra. Copiar a mano se
    desincroniza del sistema en cuanto cambia un pack.

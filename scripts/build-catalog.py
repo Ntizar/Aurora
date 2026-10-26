@@ -447,11 +447,17 @@ def portada(specs, censo_cat, totales, packs):
     miles = lambda n: f"{n:,}".replace(",", ".")
 
     programa = (ROOT / "briefs" / "portada.openui").read_text(encoding="utf-8")
+    componentes = json.loads(
+        (ROOT / "openui" / "componentes.json").read_text(encoding="utf-8"))["componentes"]
     claves = {
         "{{OBJETOS}}": miles(resumen.get("objetos", 0)),
         "{{FAMILIAS}}": miles(resumen.get("familias", 0)),
         "{{PACKS}}": str(len([p for p in PACKS_COMPONENTES if (PACKS / p).exists()])),
         "{{MARCAS}}": str(len(marcas)),
+        # Una sola fuente para la portada: len(componentes.json) y datos/canales.json.
+        "{{COMPONENTES}}": str(len(componentes)),
+        "{{VIVO}}": vivo,
+        "{{CONGELADO}}": canales["canales"]["congelado"]["tag"],
     }
     # Las cifras se clavan en el programa ANTES de inyectarlo: el bloque de código
     # que ve el lector es el programa que se compiló de verdad, no una plantilla.

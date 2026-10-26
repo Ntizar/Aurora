@@ -42,7 +42,7 @@ sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
 bc = import_module("build-catalog")
 
 ROOT = bc.ROOT
-VERSION = "10.4.0"
+VERSION = "10.5.0"
 # El canal vivo no se copia a mano: sale de datos/canales.json (único dueño)
 _canales = json.loads((ROOT / "datos" / "canales.json").read_text(encoding="utf-8"))
 CANAL_VIVO = _canales["canales"]["vivo"]["rango"]
@@ -649,10 +649,14 @@ def pagina_combo(nombre, combo, bloques, familias_usadas, objetos):
     A('<nav class="nz-navbar nz-navbar--bordered" aria-label="Sitio">')
     A('  <a class="nz-navbar__brand nz-navbar__link" href="../../index.html"><i></i>Aurora</a>')
     A('  <span class="nz-navbar__links">')
+    # Orden canónico compartido por TODOS los índices: Catálogo · Bloques · Marcas ·
+    # Iconos · OpenUI · GitHub (menú único de seis, mismo orden en cada página).
     for url, texto in (("base.html", "Catálogo"), ("bloques/recetas/index.html", "Bloques"),
-                       ("marcas/index.html", "Marcas"), ("openui/index.html", "OpenUI"),
-                       ("iconos/index.html", "Iconos")):
-        A('    <a class="nz-navbar__link" href="../../%s">%s</a>' % (url, texto))
+                       ("marcas/index.html", "Marcas"), ("iconos/index.html", "Iconos"),
+                       ("openui/index.html", "OpenUI"),
+                       ("https://github.com/Ntizar/Aurora", "GitHub")):
+        A('    <a class="nz-navbar__link" href="%s%s">%s</a>'
+          % ("../../" if not url.startswith("http") else "", url, texto))
     A('  </span>')
     A('</nav>')
     A('')

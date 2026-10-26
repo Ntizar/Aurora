@@ -10,7 +10,7 @@ nunca del sistema.
 
 [![CI](https://github.com/Ntizar/Aurora/actions/workflows/validar.yml/badge.svg)](https://github.com/Ntizar/Aurora/actions/workflows/validar.yml)
 [![Pages](https://github.com/Ntizar/Aurora/actions/workflows/pages.yml/badge.svg)](https://github.com/Ntizar/Aurora/actions/workflows/pages.yml)
-![versión](https://img.shields.io/badge/versi%C3%B3n-10.4.0-2563eb)
+![versión](https://img.shields.io/badge/versi%C3%B3n-10.5.0-2563eb)
 
 **[Catálogo](https://ntizar.github.io/Aurora/)** · **[Base de datos](https://ntizar.github.io/Aurora/base.html)** · **[Generative UI](https://ntizar.github.io/Aurora/openui/)** · **[Iconos](https://ntizar.github.io/Aurora/iconos/)** · **[Contrato](CONTRATO.md)**
 
@@ -52,7 +52,7 @@ El detalle completo está en **[CONTRATO.md](CONTRATO.md)**.
 
 ```
 L0  marcas/      presets de tokens: identidad (datos, no código)
-L1  packs/       2.186 objetos CSS: la implementación
+L1  packs/       18 hojas CSS: la implementación
 L2  openui/      38 componentes: el vocabulario que usa el modelo
 L3  (plantillas) arquetipos: panel, informe, landing, ajustes, agente
 ```
@@ -133,7 +133,7 @@ el presupuesto de color ya vienen resueltos — el modelo pone contenido, no arq
 | `marcas/` | 6 presets (aurora, indigo, esmeralda, violeta, carmesí, ntizar) + generador OKLCH |
 | `specs/NN.json` | **Fuente de verdad** de las demos: el catálogo se genera de aquí |
 | `base.html` + `datos/base-diseno.json` | Base de datos consultable: familias, tokens, recetas, combos, marcas y leyes |
-| `bloques/ejemplos/` · `bloques/combos/` | Páginas completas y esqueletos por tipo, listos para copiar (`bloques/recetas/` ya no existe) |
+| `bloques/recetas/` · `bloques/ejemplos/` · `bloques/combos/` | Recetas canónicas, páginas completas y esqueletos por tipo, listos para copiar |
 | `examples/golden/` | Producto de muestra (landing + ficha) generado desde `.openui` con `hornear-golden.py` |
 | `llms.txt` · `llms-full.txt` | Guía corta y referencia completa por componente para agentes |
 | `scripts/mcp-aurora.py` | Servidor MCP (5 herramientas, stdlib pura): censo vivo, lint y compilador para Claude/Cursor |

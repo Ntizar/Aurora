@@ -220,9 +220,9 @@
   --nz-text-md:   var(--nz-text-base);   /* alias deprecado de base */
   --nz-text-lg:   1.125rem;   /* 18px — subtítulo */
   --nz-text-xl:   clamp(1.25rem, 1.16rem + 0.36vw, 1.4375rem);  /* 20 → 23 */
-  --nz-text-2xl:  clamp(1.5rem, 1.37rem + 0.52vw, 1.6875rem);   /* 24 → 27 */
-  --nz-text-3xl:  clamp(1.75rem, 1.46rem + 1.1vw, 2.125rem);    /* 28 → 34 */
-  --nz-text-4xl:  clamp(2.25rem, 1.6rem + 2.6vw, 3.125rem);     /* 36 → 50 */
+  --nz-text-2xl:  clamp(1.375rem, 1.3rem + 0.3vw, 1.5rem);     /* 22 → 24 — sección */
+  --nz-text-3xl:  clamp(1.625rem, 1.42rem + 0.72vw, 1.75rem);   /* 26 → 28 — página */
+  --nz-text-4xl:  clamp(2rem, 1.68rem + 1.6vw, 2.375rem);       /* 32 → 38 — display de landing */
   --nz-leading-tight: 1.2;
   --nz-leading-snug: 1.375;
   --nz-leading-normal: 1.6;
@@ -269,12 +269,16 @@
   --nz-container-narrow: 44rem;                      /* 704px, prose */
 
   /* ---- 9. GEOMETRÍA · radios, objetivo táctil y alturas de control ---- */
-  --nz-radius-xs: 4px;
-  --nz-radius-sm: 8px;
-  --nz-radius-md: 12px;
-  --nz-radius-lg: 16px;
-  --nz-radius-xl: 24px;
-  --nz-radius-full: 999px;
+  /* Esquinas rectas en todo el sistema (decisión de dirección 2026-10-26):
+     la escala queda en 0 y el LOOK es consistente por construcción. Los
+     círculos semánticos (puntos de estado, avatares) no usan estos tokens:
+     siguen con border-radius: 50% explícito. */
+  --nz-radius-xs: 0px;
+  --nz-radius-sm: 0px;
+  --nz-radius-md: 0px;
+  --nz-radius-lg: 0px;
+  --nz-radius-xl: 0px;
+  --nz-radius-full: 0px;
   --nz-border-w: 1px;
   --nz-border-w-strong: 1.5px;
   --nz-tactil: 2.75rem;      /* 44px — el objetivo táctil, ahora es token */
