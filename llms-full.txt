@@ -1,6 +1,6 @@
-# Aurora — referencia completa por componente (v10.5.0)
+# Aurora — referencia completa por componente (v10.6.0)
 
-> Extiende llms.txt con la API exacta de las 411 familias:
+> Extiende llms.txt con la API exacta de las 413 familias:
 > clases, markup real, tokens, alias y anti-patrón. Generado desde
 > components.json por scripts/generar-llm-docs.py — no lo edites a mano.
 
@@ -668,7 +668,7 @@ markup: <div class="nz-errorstate nz-errorstate--neutral"><h3>Sin conexion</h3><
 ## nz-esc-dato · packs/p18-escenario.css
 clases: nz-esc-dato
 tokens: --nz-esc-dato, --nz-leading-snug, --nz-text-soft
-markup: <p class="nz-esc-dato">Se buscan por significado, no por nombre: la consulta no dice cómo se llama el skill, dice qué se necesita.</p>
+markup: <p class="nz-esc-dato">familias con demo viva, markup real y contraste auditado. Lo que no está en el censo, no existe.</p>
 
 ## nz-esc-editorial · packs/p18-escenario.css
 clases: nz-esc-editorial, nz-esc-editorial--accent, nz-esc-editorial--brand, nz-esc-editorial--muted
@@ -678,7 +678,12 @@ markup: <p class="nz-esc-editorial">No falta modelo: falta memoria.</p>
 ## nz-esc-etiqueta · packs/p18-escenario.css
 clases: nz-esc-etiqueta, nz-esc-etiqueta--accent
 tokens: --nz-accent-strong, --nz-esc-etiqueta, --nz-font-mono, --nz-peso-fuerte, --nz-text-mute, --nz-tracking-caps
-markup: <p class="nz-esc-etiqueta">el problema</p>
+markup: <p class="nz-esc-etiqueta">cierre</p>
+
+## nz-esc-nav · packs/p18-escenario.css
+clases: nz-esc-nav, nz-esc-nav__contador, nz-esc-nav__enlace, nz-esc-nav__enlace--final
+tokens: --nz-bg-inset, --nz-border, --nz-border-w, --nz-brand, --nz-brand-strong, --nz-font-mono, --nz-peso-fuerte, --nz-space-2, --nz-space-3, --nz-surface, --nz-tactil, --nz-text, --nz-text-2xs, --nz-text-invert, --nz-text-mute, --nz-text-sm, --nz-tracking-caps
+markup: <div class="nz-esc-nav"><span class="nz-esc-nav__contador">01 / 03 · portada</span><a class="nz-esc-nav__enlace" href="#d18p-2">Siguiente →</a></div>
 
 ## nz-esc-numeral · packs/p18-escenario.css
 clases: nz-esc-numeral, nz-esc-numeral--accent, nz-esc-numeral--brand
@@ -691,7 +696,7 @@ tokens: --nz-accent-strong, --nz-brand-strong, --nz-esc-titular, --nz-font-titul
 markup: <p class="nz-esc-titular">La charla.</p>
 
 ## nz-escenario · packs/p18-escenario.css
-clases: nz-escenario, nz-escenario--lienzo, nz-escenario--profundo, nz-escenario__cuerpo, nz-escenario__marca, nz-escenario__pie
+clases: nz-escenario, nz-escenario--lienzo, nz-escenario--pantalla, nz-escenario--profundo, nz-escenario__cuerpo, nz-escenario__marca, nz-escenario__pie
 tokens: --nz-bg, --nz-bg-soft, --nz-border, --nz-border-soft, --nz-border-w, --nz-font-mono, --nz-gray-0, --nz-gray-300, --nz-gray-400, --nz-gray-500, --nz-gray-700, --nz-gray-800, --nz-gray-900, --nz-gray-950, --nz-radius-lg, --nz-space-3, --nz-space-6, --nz-surface, --nz-text, --nz-text-2xs, --nz-text-faint, --nz-text-mute, --nz-text-soft, --nz-tracking-caps
 markup: <div class="nz-escenario"><div class="nz-escenario__cuerpo"><p class="nz-esc-titular">La charla.</p></div><div class="nz-escenario__pie"><span class="nz-escenario__marca">01 · portada</span><span class="nz-escenario__marca">un clic = un beat</span></div></div>
 
@@ -1350,6 +1355,9 @@ markup: <div class="nz-prefs"><h4>Apariencia</h4><div class="nz-prefs__row"><div
 clases: nz-preguntas-frecuentes, nz-preguntas-frecuentes__item, nz-preguntas-frecuentes__pregunta, nz-preguntas-frecuentes__respuesta
 tokens: --nz-border-soft, --nz-border-w, --nz-peso-fuerte, --nz-radius-md, --nz-space-2, --nz-space-3, --nz-space-4, --nz-surface, --nz-text, --nz-text-sm, --nz-text-soft
 markup: <div class="nz-preguntas-frecuentes" style="max-width:40rem"><details class="nz-preguntas-frecuentes__item" open><summary class="nz-preguntas-frecuentes__pregunta">¿Cómo cambio de plan?</summary><div class="nz-preguntas-frecuentes__respuesta">Desde Ajustes → Facturación, elige el nuevo plan y el cambio es inmediato.</div></details><details class="nz-preguntas-frecuentes__item"><summary class="nz-preguntas-frecuentes__pregunta">¿Puedo exportar mis datos?</summary><div class="nz-preguntas-frecuentes__respuesta">Sí, en CSV o JSON desde el menú de cada tabla.</div></details><details class="nz-preguntas-frecuentes__item"><summary class="nz-preguntas-frecuentes__pregunta">¿Qué pasa si supero los asientos?</summary><div class="nz-preguntas-frecuentes__respuesta">Se factura el exceso a 12 € por asiento y mes.</div></details></div>
+
+## nz-presentacion · packs/p18-escenario.css
+clases: nz-presentacion
 
 ## nz-pretty · packs/p3-typography.css
 clases: nz-pretty

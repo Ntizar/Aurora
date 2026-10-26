@@ -220,6 +220,72 @@
   }
 }
 
+/* ---- 06 Presentación: el deck a pantalla completa (modo charla) ----
+   La página entera es la presentación: cada slide ocupa el viewport completo
+   y el navegador salta de uno en uno con rueda, swype o las anclas de la barra.
+   Cero JS: el snap lo hace el navegador y sin él las slides se apilan legibles.
+   La barra de la portada va DENTRO de la primera slide: no tapa ningún snap.
+   El snap se declara SOLO cuando el deck es hijo directo de <body>: así una
+   demo de presentación suelta dentro del catálogo no secuestra el scroll de
+   su propia página (la presentación manda su página; la demo, no). */
+@supports selector(:has(*)) {
+  html:has(> body > .nz-presentacion) {
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+  }
+}
+.nz-presentacion {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+.nz-escenario--pantalla {
+  min-height: 100svh;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  justify-content: center;
+  border: 0;
+  border-radius: 0;
+}
+@media (min-width: 960px) {
+  .nz-escenario--pantalla { gap: var(--nz-space-8); padding-inline: var(--nz-gutter); }
+}
+/* Barra de slide: posición (contador) y movimiento (anclas con destino real).
+   El contador se escribe en cada slide — sin JS no hay «actual» dinámico y el
+   contenido nunca miente: el que compone el deck pone su número. */
+.nz-esc-nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--nz-space-3);
+  width: 100%;
+  margin-top: auto;   /* anclado al pie de la slide, aunque el cuerpo crezca */
+}
+.nz-esc-nav__contador {
+  font-family: var(--nz-font-mono);
+  font-size: var(--nz-text-2xs);
+  letter-spacing: var(--nz-tracking-caps);
+  text-transform: uppercase;
+  color: var(--nz-text-mute);
+}
+.nz-esc-nav__enlace {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--nz-space-2);
+  min-height: var(--nz-tactil);
+  padding: 0 var(--nz-space-3);
+  background: var(--nz-surface);
+  border: var(--nz-border-w) solid var(--nz-border);
+  color: var(--nz-text);
+  font-size: var(--nz-text-sm);
+  font-weight: var(--nz-peso-fuerte);
+  text-decoration: none;
+}
+.nz-esc-nav__enlace:hover { background: var(--nz-bg-inset); }
+.nz-esc-nav__enlace--final { background: var(--nz-brand); border-color: var(--nz-brand); color: var(--nz-text-invert); }
+.nz-esc-nav__enlace--final:hover { background: var(--nz-brand-strong); border-color: var(--nz-brand-strong); }
+
 /* ---- 04 QR de cierre ---- */
 .nz-qr {
   display: flex;

@@ -1,10 +1,10 @@
 {
  "resumen": {
-  "objetos_declarados": 2195,
-  "familias": 411,
-  "demos": 659,
+  "objetos_declarados": 2201,
+  "familias": 413,
+  "demos": 661,
   "categorias": 18,
-  "clases_usadas_en_demos": 2195,
+  "clases_usadas_en_demos": 2201,
   "clases_sin_demo": 0,
   "familias_sin_demo": 0,
   "fantasmas": 0,
@@ -14,7 +14,7 @@
   "glass": 0,
   "gradientes": 0,
   "important": 1,
-  "familias_sin_variantes": 166,
+  "familias_sin_variantes": 167,
   "packs": 18
  },
  "packs": {
@@ -109,10 +109,10 @@
    "important": 0
   },
   "p18-escenario.css": {
-   "lineas": 254,
-   "bytes": 7186,
-   "clases": 33,
-   "familias": 10,
+   "lineas": 320,
+   "bytes": 9639,
+   "clases": 39,
+   "familias": 12,
    "hex": 0,
    "gradientes": 0,
    "glass": 0,
@@ -356,9 +356,9 @@
   "18": {
    "nombre": "Escenario (charlas en beats)",
    "pack": "p18-escenario.css",
-   "demos": 18,
-   "objetos": 33,
-   "familias": 10,
+   "demos": 20,
+   "objetos": 39,
+   "familias": 12,
    "sin_demo": [],
    "familias_sin_demo": []
   }
@@ -2353,6 +2353,20 @@
    "partes": [],
    "demostrado": true
   },
+  "nz-esc-nav": {
+   "cat": 18,
+   "pack": "p18-escenario.css",
+   "n_clases": 4,
+   "mods": [
+    "final"
+   ],
+   "partes": [
+    "contador",
+    "enlace",
+    "enlace--final"
+   ],
+   "demostrado": true
+  },
   "nz-esc-numeral": {
    "cat": 18,
    "pack": "p18-escenario.css",
@@ -2379,9 +2393,10 @@
   "nz-escenario": {
    "cat": 18,
    "pack": "p18-escenario.css",
-   "n_clases": 6,
+   "n_clases": 7,
    "mods": [
     "lienzo",
+    "pantalla",
     "profundo"
    ],
    "partes": [
@@ -4271,6 +4286,14 @@
     "pregunta",
     "respuesta"
    ],
+   "demostrado": true
+  },
+  "nz-presentacion": {
+   "cat": 18,
+   "pack": "p18-escenario.css",
+   "n_clases": 1,
+   "mods": [],
+   "partes": [],
    "demostrado": true
   },
   "nz-pretty": {
@@ -6245,6 +6268,7 @@
   "nz-preferencias",
   "nz-prefs",
   "nz-preguntas-frecuentes",
+  "nz-presentacion",
   "nz-pretty",
   "nz-print-hide",
   "nz-prompt",

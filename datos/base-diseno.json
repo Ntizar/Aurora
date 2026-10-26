@@ -1,18 +1,18 @@
 {
  "name": "Aurora — base de datos de diseño",
- "version": "10.5.0",
+ "version": "10.6.0",
  "descripcion": "Índice consultable del sistema: familias, tokens, recetas, combos y marcas. Cada ficha enlaza a su demo viva y lleva el markup real.",
  "fuente": "components.json + specs/ + bloques/recetas/ + bloques/ejemplos/ + bloques/combos/ + marcas/registro.json + COMPOSICION.md",
  "explorador": "base.html",
  "resumen": {
-  "familias": 411,
-  "clases": 2195,
+  "familias": 413,
+  "clases": 2201,
   "tokens": 236,
   "categorias": 18,
   "recetas": 6,
   "ejemplos": 5,
   "paginas": 11,
-  "combos": 8,
+  "combos": 9,
   "marcas": 6,
   "principios": 12,
   "alias": 150
@@ -421,9 +421,9 @@
    "descripcion": "El estilo de una charla en beats dentro del sistema: un lienzo 16:9, la escala de texto del escenario (titular, editorial, numeral, etiqueta y dato), nodos con enlaces para los diagramas que se construyen clic a clic, y el marco del QR de cierre. En móvil el escenario se apila en columna legible; el lienzo de proyector entra desde 960 px.",
    "pack": "p18-escenario.css",
    "pagina": "paginas/18-escenario.html",
-   "objetos": 33,
-   "familias": 10,
-   "demos": 18,
+   "objetos": 39,
+   "familias": 12,
+   "demos": 20,
    "cuandoUsar": "Cuando presentes una charla o historia en beats: titular, editorial, numeral, dato, nodo y QR.",
    "tags": [
     "escenario",
@@ -7676,7 +7676,7 @@
    "categoria": 18,
    "pack": "p18-escenario.css",
    "demo": "paginas/18-escenario.html",
-   "titulo": "Numeral con etiqueta y dato",
+   "titulo": "Slide de dos columnas: enunciado y evidencia en el mismo lienzo",
    "clases": [
     "nz-esc-dato"
    ],
@@ -7688,7 +7688,7 @@
     "--nz-text-soft"
    ],
    "nTokens": 3,
-   "markup": "<p class=\"nz-esc-dato\">Se buscan por significado, no por nombre: la consulta no dice cómo se llama el skill, dice qué se necesita.</p>",
+   "markup": "<p class=\"nz-esc-dato\">familias con demo viva, markup real y contraste auditado. Lo que no está en el censo, no existe.</p>",
    "noUsar": "",
    "cuandoUsar": "Cuando presentes una charla o historia en beats: titular, editorial, numeral, dato, nodo y QR.",
    "tags": [
@@ -7751,7 +7751,7 @@
    "categoria": 18,
    "pack": "p18-escenario.css",
    "demo": "paginas/18-escenario.html",
-   "titulo": "Escenario: un beat con cuerpo y pie",
+   "titulo": "Modo presentación: cada slide ocupa la pantalla (snap + barra con contador)",
    "clases": [
     "nz-esc-etiqueta",
     "nz-esc-etiqueta--accent"
@@ -7769,7 +7769,7 @@
     "--nz-tracking-caps"
    ],
    "nTokens": 6,
-   "markup": "<p class=\"nz-esc-etiqueta\">el problema</p>",
+   "markup": "<p class=\"nz-esc-etiqueta\">cierre</p>",
    "noUsar": "",
    "cuandoUsar": "Cuando presentes una charla o historia en beats: titular, editorial, numeral, dato, nodo y QR.",
    "tags": [
@@ -7778,6 +7778,60 @@
     "charla",
     "esc etiqueta",
     "escenario",
+    "historia",
+    "presentacion"
+   ],
+   "alias": []
+  },
+  {
+   "id": "nz-esc-nav",
+   "categoria": 18,
+   "pack": "p18-escenario.css",
+   "demo": "paginas/18-escenario.html",
+   "titulo": "Modo presentación: cada slide ocupa la pantalla (snap + barra con contador)",
+   "clases": [
+    "nz-esc-nav",
+    "nz-esc-nav__contador",
+    "nz-esc-nav__enlace",
+    "nz-esc-nav__enlace--final"
+   ],
+   "modificadores": [
+    "final"
+   ],
+   "partes": [
+    "contador",
+    "enlace",
+    "enlace--final"
+   ],
+   "tokens": [
+    "--nz-bg-inset",
+    "--nz-border",
+    "--nz-border-w",
+    "--nz-brand",
+    "--nz-brand-strong",
+    "--nz-font-mono",
+    "--nz-peso-fuerte",
+    "--nz-space-2",
+    "--nz-space-3",
+    "--nz-surface",
+    "--nz-tactil",
+    "--nz-text",
+    "--nz-text-2xs",
+    "--nz-text-invert",
+    "--nz-text-mute",
+    "--nz-text-sm",
+    "--nz-tracking-caps"
+   ],
+   "nTokens": 17,
+   "markup": "<div class=\"nz-esc-nav\"><span class=\"nz-esc-nav__contador\">01 / 03 · portada</span><a class=\"nz-esc-nav__enlace\" href=\"#d18p-2\">Siguiente →</a></div>",
+   "noUsar": "",
+   "cuandoUsar": "Cuando presentes una charla o historia en beats: titular, editorial, numeral, dato, nodo y QR.",
+   "tags": [
+    "beat",
+    "charla",
+    "esc nav",
+    "escenario",
+    "final",
     "historia",
     "presentacion"
    ],
@@ -7878,6 +7932,7 @@
    "clases": [
     "nz-escenario",
     "nz-escenario--lienzo",
+    "nz-escenario--pantalla",
     "nz-escenario--profundo",
     "nz-escenario__cuerpo",
     "nz-escenario__marca",
@@ -7885,6 +7940,7 @@
    ],
    "modificadores": [
     "lienzo",
+    "pantalla",
     "profundo"
    ],
    "partes": [
@@ -7928,6 +7984,7 @@
     "escenario",
     "historia",
     "lienzo",
+    "pantalla",
     "presentacion",
     "profundo"
    ],
@@ -15039,6 +15096,31 @@
    "alias": [
     "faq"
    ]
+  },
+  {
+   "id": "nz-presentacion",
+   "categoria": 18,
+   "pack": "p18-escenario.css",
+   "demo": "paginas/18-escenario.html",
+   "titulo": "",
+   "clases": [
+    "nz-presentacion"
+   ],
+   "modificadores": [],
+   "partes": [],
+   "tokens": [],
+   "nTokens": 0,
+   "markup": "",
+   "noUsar": "",
+   "cuandoUsar": "Cuando presentes una charla o historia en beats: titular, editorial, numeral, dato, nodo y QR.",
+   "tags": [
+    "beat",
+    "charla",
+    "escenario",
+    "historia",
+    "presentacion"
+   ],
+   "alias": []
   },
   {
    "id": "nz-pretty",
@@ -24114,8 +24196,6 @@
    "fichero": "bloques/combos/charla-beats.html",
    "packs": [
     "p1-layout.css",
-    "p3-typography.css",
-    "p4-actions.css",
     "p18-escenario.css"
    ],
    "tipico": "lienzo 16:9 + titular/editorial/numeral + nodos del diagrama + QR de cierre",
@@ -24272,6 +24352,22 @@
     "form",
     "login",
     "login-form"
+   ]
+  },
+  {
+   "id": "presentacion",
+   "fichero": "bloques/combos/presentacion.html",
+   "packs": [
+    "p1-layout.css",
+    "p2-navigation.css",
+    "p18-escenario.css"
+   ],
+   "tipico": "deck de slides a pantalla completa con barra de posición y anclas",
+   "familias": [
+    "nz-presentacion"
+   ],
+   "tags": [
+    "presentacion"
    ]
   },
   {

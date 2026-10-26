@@ -42,7 +42,7 @@ sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
 bc = import_module("build-catalog")
 
 ROOT = bc.ROOT
-VERSION = "10.5.0"
+VERSION = "10.6.0"
 # El canal vivo no se copia a mano: sale de datos/canales.json (único dueño)
 _canales = json.loads((ROOT / "datos" / "canales.json").read_text(encoding="utf-8"))
 CANAL_VIVO = _canales["canales"]["vivo"]["rango"]
@@ -449,6 +449,10 @@ COMBOS = {
                   "p5-forms.css", "p6-feedback.css"],
         "tipico": "card centrada + field + input + botón + alerta de error",
     },
+    "presentacion": {
+        "packs": ["p1-layout.css", "p2-navigation.css", "p18-escenario.css"],
+        "tipico": "deck de slides a pantalla completa con barra de posición y anclas",
+    },
     "escritorio-app": {
         "packs": ["p1-layout.css", "p2-navigation.css", "p3-typography.css",
                   "p4-actions.css", "p6-feedback.css", "p8-data.css", "p15-apps.css"],
@@ -460,8 +464,7 @@ COMBOS = {
         "tipico": "producto + cart + checkout-steps + pricetable",
     },
     "charla-beats": {
-        "packs": ["p1-layout.css", "p3-typography.css", "p4-actions.css",
-                  "p18-escenario.css"],
+        "packs": ["p1-layout.css", "p18-escenario.css"],
         "tipico": "lienzo 16:9 + titular/editorial/numeral + nodos del diagrama + QR de cierre",
     },
     "prototipo": {
@@ -486,6 +489,7 @@ FAMILIAS_COMBO = {
     "e-commerce": ["nz-product", "nz-cart", "nz-checkout-steps",
                     "nz-pricetable"],
     "charla-beats": ["nz-recorrido", "nz-escenario", "nz-nodo", "nz-qr"],
+    "presentacion": ["nz-presentacion"],
     "prototipo": ["nz-btn", "nz-field", "nz-alert", "nz-kpi"],
 }
 

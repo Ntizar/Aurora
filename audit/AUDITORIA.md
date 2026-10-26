@@ -6,10 +6,10 @@ Generada por `scripts/audit-catalog.py` a partir de los packs CSS y de `specs/*.
 
 | Comprobación | Valor | |
 |---|---|---|
-| Objetos declarados | 2195 |  |
-| Familias de objeto | 411 |  |
-| Demos en vivo | 659 |  |
-| Clases usadas en demos | 2195 |  |
+| Objetos declarados | 2201 |  |
+| Familias de objeto | 413 |  |
+| Demos en vivo | 661 |  |
+| Clases usadas en demos | 2201 |  |
 | Objetos fantasma (usados y no declarados) | 0 | 🟢 |
 | Clases declaradas sin demo | 0 | 🟢 |
 | Familias sin demo | 0 | 🟢 |
@@ -20,7 +20,7 @@ Generada por `scripts/audit-catalog.py` a partir de los packs CSS y de `specs/*.
 | Colores a mano fuera de tokens.css | 0 | 🟢 |
 | !important | 1 | 🟡 |
 
-Familias sin ninguna variante (`--mod`): **166** de 411 — ahí está el margen de ampliación.
+Familias sin ninguna variante (`--mod`): **167** de 413 — ahí está el margen de ampliación.
 
 ## 1. Por pack
 
@@ -35,7 +35,7 @@ Familias sin ninguna variante (`--mod`): **166** de 411 — ahí está el margen
 | p15-apps.css | 377 | 75 | 31 | 0 | 0 | 0 | 0 |
 | p16-cristal.css | 144 | 8 | 2 | 0 | 0 | 0 | 0 |
 | p17-patrones.css | 666 | 224 | 46 | 0 | 0 | 0 | 0 |
-| p18-escenario.css | 254 | 33 | 10 | 0 | 0 | 0 | 0 |
+| p18-escenario.css | 320 | 39 | 12 | 0 | 0 | 0 | 0 |
 | p2-navigation.css | 193 | 78 | 10 | 0 | 0 | 0 | 0 |
 | p3-typography.css | 210 | 135 | 41 | 0 | 0 | 0 | 0 |
 | p4-actions.css | 178 | 78 | 7 | 0 | 0 | 0 | 0 |
@@ -66,7 +66,7 @@ Familias sin ninguna variante (`--mod`): **166** de 411 — ahí está el margen
 | 15 | Apps y escritorio | p15-apps.css | 75 | 31 | 38 | 0 | 0 |
 | 16 | Cristal (capa de estilo) | p16-cristal.css | 8 | 2 | 5 | 0 | 0 |
 | 17 | Patrones compuestos | p17-patrones.css | 224 | 46 | 47 | 0 | 0 |
-| 18 | Escenario (charlas en beats) | p18-escenario.css | 33 | 10 | 18 | 0 | 0 |
+| 18 | Escenario (charlas en beats) | p18-escenario.css | 39 | 12 | 20 | 0 | 0 |
 
 ## 3. Objetos fantasma
 
@@ -91,4 +91,4 @@ Ninguno. ✅
 
 ## 7. Familias sin variantes (margen de ampliación)
 
-`nz--leading-normal`, `nz--leading-snug`, `nz--leading-tight`, `nz--tracking-caps`, `nz--tracking-tight`, `nz-actbar`, `nz-activity`, `nz-agenda`, `nz-agenda-disponibilidad`, `nz-align-justify`, `nz-align-left`, `nz-align-right`, `nz-appempty`, `nz-appnav`, `nz-appstatus`, `nz-arbol`, `nz-aside`, `nz-asistente-pasos`, `nz-atajo-teclado`, `nz-attach`, `nz-aviso-accion`, `nz-aviso-sistema`, `nz-balance`, `nz-bandeja-avisos`, `nz-barra-filtros`, `nz-bloque-carga`, `nz-bloque-precios`, `nz-bloque-testimonio`, `nz-buscador-facetas`, `nz-cabecera-informe`, `nz-cabecera-pagina`, `nz-caja-comentarios`, `nz-caps`, `nz-center`, `nz-center-x`, `nz-center-xy`, `nz-center-y`, `nz-centro-notificaciones`, `nz-chart-radar`, `nz-chart-range`, `nz-chart-tablebar`, `nz-chat-empty`, `nz-checklist-entrega`, `nz-cite`, `nz-codepad`, `nz-col`, `nz-collapsible`, `nz-columns-2`, `nz-columns-3`, `nz-comparador-planes`, `nz-comparativa-productos`, `nz-cq`, `nz-cristal-barra`, `nz-dateline`, `nz-desglose-precio`, `nz-docs`, `nz-editor-campos`, `nz-esc-dato`, `nz-estado-vacio`, `nz-eyebrow`, `nz-facturacion-estados`, `nz-ficha-entidad`, `nz-ficha-producto`, `nz-figura`, `nz-filezona`, `nz-filtro-rango`, `nz-focus-accent`, `nz-focus-ring`, `nz-formulario-seccion`, `nz-galeria-filtros`, `nz-hide-escritorio`, `nz-hide-movil`, `nz-high-contrast-note`, `nz-indent`, `nz-initial`, `nz-input-icon`, `nz-inspector`, `nz-kanban`, `nz-kanban-wrap`, `nz-launcher`, `nz-linea-pasos`, `nz-lista-tareas`, `nz-maintenance-banner`, `nz-menu-cuenta`, `nz-metrica-tendencia`, `nz-min-target`, `nz-month`, `nz-nav-landmark`, `nz-nota`, `nz-offline-bar`, `nz-overflow-x`, `nz-overflow-y`, `nz-panel-actividad`, `nz-panel-filtros`, `nz-password`, `nz-pathbar`, `nz-pay`, `nz-perfil-pestanas`, `nz-pie-acciones`, `nz-preferencias`, `nz-prefs`, `nz-preguntas-frecuentes`, `nz-pretty`, `nz-print-hide`, `nz-prompt`, `nz-propsheet`, `nz-ptemplate`, `nz-qr`, `nz-reason`, `nz-recorrido`, `nz-reduced-motion-ok`, `nz-rejilla-estadisticas`, `nz-resmon`, `nz-resumen-pedido`, `nz-ribbon`, `nz-root`, `nz-route`, `nz-rtl`, `nz-safe`, `nz-safe-x`, `nz-selector-vista`, `nz-show-escritorio`, `nz-show-movil`, `nz-skip-links-group`, `nz-social-proof`, `nz-span-1`, `nz-span-10`, `nz-span-11`, `nz-span-12`, `nz-span-2`, `nz-span-3`, `nz-span-4`, `nz-span-5`, `nz-span-6`, `nz-span-7`, `nz-span-8`, `nz-span-9`, `nz-splitview`, `nz-spotlight`, `nz-sr-only-focusable`, `nz-stat-badge`, `nz-sticky-bottom`, `nz-sticky-top`, `nz-sysdialog`, `nz-sysinfo`, `nz-sysnotif`, `nz-tabfocus-visible`, `nz-tabla-lote`, `nz-tabla-resumen`, `nz-tap-44`, `nz-tarjeta-curso`, `nz-tarjeta-equipo`, `nz-tarjeta-servicio`, `nz-tarjeta-suscripcion`, `nz-taskwin`, `nz-term`, `nz-tokens`, `nz-tray`, `nz-tree`, `nz-userbox`, `nz-version-badge`, `nz-vh`, `nz-visually-hidden`, `nz-widget`, `nz-winfoot`, `nz-wishlist`
+`nz--leading-normal`, `nz--leading-snug`, `nz--leading-tight`, `nz--tracking-caps`, `nz--tracking-tight`, `nz-actbar`, `nz-activity`, `nz-agenda`, `nz-agenda-disponibilidad`, `nz-align-justify`, `nz-align-left`, `nz-align-right`, `nz-appempty`, `nz-appnav`, `nz-appstatus`, `nz-arbol`, `nz-aside`, `nz-asistente-pasos`, `nz-atajo-teclado`, `nz-attach`, `nz-aviso-accion`, `nz-aviso-sistema`, `nz-balance`, `nz-bandeja-avisos`, `nz-barra-filtros`, `nz-bloque-carga`, `nz-bloque-precios`, `nz-bloque-testimonio`, `nz-buscador-facetas`, `nz-cabecera-informe`, `nz-cabecera-pagina`, `nz-caja-comentarios`, `nz-caps`, `nz-center`, `nz-center-x`, `nz-center-xy`, `nz-center-y`, `nz-centro-notificaciones`, `nz-chart-radar`, `nz-chart-range`, `nz-chart-tablebar`, `nz-chat-empty`, `nz-checklist-entrega`, `nz-cite`, `nz-codepad`, `nz-col`, `nz-collapsible`, `nz-columns-2`, `nz-columns-3`, `nz-comparador-planes`, `nz-comparativa-productos`, `nz-cq`, `nz-cristal-barra`, `nz-dateline`, `nz-desglose-precio`, `nz-docs`, `nz-editor-campos`, `nz-esc-dato`, `nz-estado-vacio`, `nz-eyebrow`, `nz-facturacion-estados`, `nz-ficha-entidad`, `nz-ficha-producto`, `nz-figura`, `nz-filezona`, `nz-filtro-rango`, `nz-focus-accent`, `nz-focus-ring`, `nz-formulario-seccion`, `nz-galeria-filtros`, `nz-hide-escritorio`, `nz-hide-movil`, `nz-high-contrast-note`, `nz-indent`, `nz-initial`, `nz-input-icon`, `nz-inspector`, `nz-kanban`, `nz-kanban-wrap`, `nz-launcher`, `nz-linea-pasos`, `nz-lista-tareas`, `nz-maintenance-banner`, `nz-menu-cuenta`, `nz-metrica-tendencia`, `nz-min-target`, `nz-month`, `nz-nav-landmark`, `nz-nota`, `nz-offline-bar`, `nz-overflow-x`, `nz-overflow-y`, `nz-panel-actividad`, `nz-panel-filtros`, `nz-password`, `nz-pathbar`, `nz-pay`, `nz-perfil-pestanas`, `nz-pie-acciones`, `nz-preferencias`, `nz-prefs`, `nz-preguntas-frecuentes`, `nz-presentacion`, `nz-pretty`, `nz-print-hide`, `nz-prompt`, `nz-propsheet`, `nz-ptemplate`, `nz-qr`, `nz-reason`, `nz-recorrido`, `nz-reduced-motion-ok`, `nz-rejilla-estadisticas`, `nz-resmon`, `nz-resumen-pedido`, `nz-ribbon`, `nz-root`, `nz-route`, `nz-rtl`, `nz-safe`, `nz-safe-x`, `nz-selector-vista`, `nz-show-escritorio`, `nz-show-movil`, `nz-skip-links-group`, `nz-social-proof`, `nz-span-1`, `nz-span-10`, `nz-span-11`, `nz-span-12`, `nz-span-2`, `nz-span-3`, `nz-span-4`, `nz-span-5`, `nz-span-6`, `nz-span-7`, `nz-span-8`, `nz-span-9`, `nz-splitview`, `nz-spotlight`, `nz-sr-only-focusable`, `nz-stat-badge`, `nz-sticky-bottom`, `nz-sticky-top`, `nz-sysdialog`, `nz-sysinfo`, `nz-sysnotif`, `nz-tabfocus-visible`, `nz-tabla-lote`, `nz-tabla-resumen`, `nz-tap-44`, `nz-tarjeta-curso`, `nz-tarjeta-equipo`, `nz-tarjeta-servicio`, `nz-tarjeta-suscripcion`, `nz-taskwin`, `nz-term`, `nz-tokens`, `nz-tray`, `nz-tree`, `nz-userbox`, `nz-version-badge`, `nz-vh`, `nz-visually-hidden`, `nz-widget`, `nz-winfoot`, `nz-wishlist`

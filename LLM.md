@@ -1,6 +1,6 @@
 # Aurora — guía de decisión para agentes
 
-Design system CSS puro, sin dependencias ni build. 2195 objetos en 18 categorías.
+Design system CSS puro, sin dependencias ni build. 2201 objetos en 18 categorías.
 **No pegues el CSS en el prompt**: enlaza por CDN y usa las clases de esta guía.
 
 ## 1. Mínimo obligatorio
@@ -8,8 +8,8 @@ Design system CSS puro, sin dependencias ni build. 2195 objetos en 18 categoría
 ```html
 <html lang="es" data-nz-theme="light">
 <head>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v10.5.0/tokens.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v10.5.0/packs/all.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v10.6.0/tokens.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v10.6.0/packs/all.css">
 </head>
 <body class="nz">
 ```
@@ -26,9 +26,10 @@ van cada uno. Dark mode: cambia a `data-nz-theme="dark"` en el `<html>`.
 | dashboard | `tokens.css` + `p1-layout.css, p2-navigation.css, p3-typography.css, p4-actions.css, p8-data.css, p13-charts.css` | appshell + navbar + KPIs + tablas + gráficos |
 | chat-ia | `tokens.css` + `p1-layout.css, p3-typography.css, p4-actions.css, p5-forms.css, p14-ai.css` | chat + prompt + toolcall + taskplan + adjuntos |
 | login-form | `tokens.css` + `p1-layout.css, p3-typography.css, p4-actions.css, p5-forms.css, p6-feedback.css` | card centrada + field + input + botón + alerta de error |
+| presentacion | `tokens.css` + `p1-layout.css, p2-navigation.css, p18-escenario.css` | deck de slides a pantalla completa con barra de posición y anclas |
 | escritorio-app | `tokens.css` + `p1-layout.css, p2-navigation.css, p3-typography.css, p4-actions.css, p6-feedback.css, p8-data.css, p15-apps.css` | window + appnav + kanban/agenda + statusbar |
 | e-commerce | `tokens.css` + `p1-layout.css, p3-typography.css, p4-actions.css, p10-commerce.css, p8-data.css` | producto + cart + checkout-steps + pricetable |
-| charla-beats | `tokens.css` + `p1-layout.css, p3-typography.css, p4-actions.css, p18-escenario.css` | lienzo 16:9 + titular/editorial/numeral + nodos del diagrama + QR de cierre |
+| charla-beats | `tokens.css` + `p1-layout.css, p18-escenario.css` | lienzo 16:9 + titular/editorial/numeral + nodos del diagrama + QR de cierre |
 | prototipo | `tokens.css` + `all.css` | exploración rápida: un solo enlace con todos los packs |
 
 Carga **solo los packs que uses** en producción (cada uno pesa 12-40 KB) o
@@ -44,6 +45,7 @@ clases reales del sistema, extraído y validado de las demos — cópialos):
 - `bloques/combos/escritorio-app.html` — esqueleto **escritorio-app**: `nz-window`, `nz-appnav`, `nz-kanban`, `nz-statusbar`
 - `bloques/combos/landing.html` — esqueleto **landing**: `nz-hero-bleed`, `nz-thirds`, `nz-plans`, `nz-badge`, `nz-footer`
 - `bloques/combos/login-form.html` — esqueleto **login-form**: `nz-article`, `nz-h2`, `nz-lead`, `nz-field`, `nz-btn`, `nz-alert`
+- `bloques/combos/presentacion.html` — esqueleto **presentacion**: `nz-presentacion`
 - `bloques/combos/prototipo.html` — esqueleto **prototipo**: `nz-btn`, `nz-field`, `nz-alert`, `nz-kpi`
 
 La lista completa de familias y su fichero está en `components.json`
@@ -402,7 +404,7 @@ Los 236 tokens están inventariados en `components.json` (sección
   El 800 no existe en el sistema y nada por debajo de 16px lleva 700.
 - ❌ Texto de interfaz a 12px: los 12px son para datos, no para etiquetas.
 - ❌ Enlazar Google Fonts (o cualquier CDN de fuentes): `tokens.css` ya sirve la fuente.
-- ❌ Enlazar `@master` en producción: pinea la versión (`@v10.5.0`) o jsDelivr te servirá CSS viejo desde su caché.
+- ❌ Enlazar `@master` en producción: pinea la versión (`@v10.6.0`) o jsDelivr te servirá CSS viejo desde su caché.
 
 ## 8b. Canales: qué versión enlazar
 
@@ -411,7 +413,7 @@ Dos canales, un sistema. La regla de oro: **nunca `@master`**.
 | Canal | URL | Cuándo |
 |---|---|---|
 | vivo | `@v10` | webs propias: recibe cada release de su serie sin tocarlas |
-| congelado | `@10.5.0` | entregas a cliente: reproducible dentro de dos años |
+| congelado | `@10.6.0` | entregas a cliente: reproducible dentro de dos años |
 
 Si el proyecto trae `aurora.lock`, respétalo: dice qué canal y qué tag está comiendo.
 Un cambio aditivo llega solo; renombrar o quitar algo exige major y migración
@@ -434,7 +436,7 @@ chat-ia, forms): cópialas como punto de partida.
 
 **Base de datos de diseño:** `base.html` es el explorador (búsqueda por lo que
 quieres construir, ficha con markup y preview) y `datos/base-diseno.json` es el
-índice machine-readable: 411 familias con su markup, 236 tokens,
+índice machine-readable: 413 familias con su markup, 236 tokens,
 recetas, combos, marcas y las 12 leyes. Consúltalo antes de leer un pack.
 
 ## 10. Interfaces generativas (OpenUI Lang)

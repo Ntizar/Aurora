@@ -172,7 +172,7 @@ def auditar_composicion(html):
                       "400 cuerpo, 500 apoyo, 600 interfaz, 700 solo titulares y cifras (el 800 no existe)")
 
     # 7 · ancho por tipo de página
-    es_app = bool(re.search(r"nz-appshell|nz-navbar|nz-dash-grid", html))
+    es_app = bool(re.search(r"nz-appshell|nz-navbar|nz-dash-grid", html)) and not re.search(r"nz-presentacion|nz-recorrido|nz-escenario", html)
     hay_ancho = bool(re.search(r"nz-container(?![\w-])|nz-container--(?:fluid|wide)|nz-main--wide|nz-dash-grid", html))
     if es_app and not hay_ancho:
         avisos.append("ancho-composicion: parece una app/panel y no declara contenedor ancho "

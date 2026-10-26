@@ -7,6 +7,28 @@ Versionado: [SemVer](https://semver.org/lang/es/).
 
 (sin cambios aún)
 
+## [10.6.0] — 2026-10-26
+
+### Presentaciones: de charla en beats a deck de verdad
+
+- **Modo presentación (p18)**: `.nz-presentacion` convierte la página en un
+  deck — cada `.nz-escenario--pantalla` ocupa el viewport completo y el
+  navegador salta de slide en slide con rueda, swype o anclas (scroll-snap,
+  **cero JS**). El snap solo se activa cuando el deck es hijo directo de
+  `<body>`: una demo suelta en el catálogo no secuestra el scroll de su
+  página.
+- **Barra de slide**: `.nz-esc-nav` con contador de posición (`02 / 03 · el
+  dato`) y anclas reales `← Anterior` / `Siguiente →` / `↺ Repetir`
+  (`.nz-esc-nav__enlace--final` en naranja). Táctil 44 px y foco del sistema.
+- **Combo `presentacion`** (noveno): esqueleto generado de la demo real —
+  deck de tres slides (portada, dato, cierre) con contadores coherentes, listo
+  para rellenar y proyectar en F11.
+- **Dos demos nuevas en la categoría 18** (20 demos): deck completo con
+  snap + barra, y slide de dos columnas (tesis/evidencia) con `nz-split`.
+- **Lint afinado**: una página de escenario/presentación deja de leerse como
+  «panel» (`ancho-composicion`) y `charla-beats` se queda solo con los packs
+  que usa (p3/p4 declarados sin uso) — ambos combos en **0 fallos, 0 avisos**.
+
 ## [10.5.0] — 2026-10-26
 
 ### Limpieza de portada e índices, esquinas rectas y escala medida
