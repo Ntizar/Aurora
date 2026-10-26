@@ -9,6 +9,7 @@
    "componentes": [
     "Pagina",
     "Seccion",
+    "Hero",
     "Pila",
     "Fila",
     "Rejilla",
@@ -43,6 +44,7 @@
   {
    "nombre": "Interfaz",
    "componentes": [
+    "Icono",
     "Boton",
     "Etiqueta",
     "Chip",
@@ -101,6 +103,7 @@
    "clases": [
     "nz-section",
     "nz-section--bordered",
+    "nz-section--compact",
     "nz-lbl"
    ],
    "descripcion": "Bloque con aire propio. El titulo es el RÓTULO del bloque (pastilla pequeña, no titular): los titulares se ponen con Titular dentro. La unidad de una landing o un informe.",
@@ -117,6 +120,48 @@
     {
      "nombre": "borde",
      "tipo": "booleano",
+     "opcional": true
+    },
+    {
+     "nombre": "densidad",
+     "tipo": "enum",
+     "valores": [
+      "normal",
+      "compacta"
+     ],
+     "opcional": true
+    }
+   ]
+  },
+  {
+   "nombre": "Hero",
+   "clases": [
+    "nz-hero-bleed",
+    "nz-hero-bleed--brand",
+    "nz-hero-bleed--compact"
+   ],
+   "descripcion": "Banda a sangre para apertura o cambio de ritmo. tono=brand pinta fondo azul con tinta INVERTIDA: dentro solo caben Titular, Texto (p sin clase, hereda la tinta) y Etiqueta; NUNCA Entradilla ni nada con clase propia de color (heredan gris y se ilegibilizan sobre azul). Sin tono, la banda es bg-soft (ritmo suave entre bloques blancos).",
+   "props": [
+    {
+     "nombre": "children",
+     "tipo": "nodos"
+    },
+    {
+     "nombre": "tono",
+     "tipo": "enum",
+     "valores": [
+      "neutro",
+      "brand"
+     ],
+     "opcional": true
+    },
+    {
+     "nombre": "densidad",
+     "tipo": "enum",
+     "valores": [
+      "normal",
+      "compacto"
+     ],
      "opcional": true
     }
    ]
@@ -268,7 +313,7 @@
     "nz-h2--accent",
     "nz-h2--brand"
    ],
-   "descripcion": "Titular jerárquico. nivel=1 solo una vez por página.",
+   "descripcion": "Titular jerárquico. nivel=1 solo una vez por página. nivel=display es el h1 de apertura (4xl con tracking apretado): SOLO para el héroe o la cabecera de una página de producto — no multiplica titulares de sección.",
    "props": [
     {
      "nombre": "texto",
@@ -280,7 +325,8 @@
      "valores": [
       "1",
       "2",
-      "3"
+      "3",
+      "display"
      ],
      "opcional": true
     },
@@ -432,6 +478,19 @@
      ],
      "opcional": true,
      "porDefecto": "fino"
+    }
+   ]
+  },
+  {
+   "nombre": "Icono",
+   "clases": [
+    "nz-icon"
+   ],
+   "descripcion": "Icono del sprite numerado (iconos/sprite.svg, 338 símbolos). Decorativo: sale con aria-hidden y el significado lo lleva el texto de al lado — nunca icono solo. numero: dígitos del símbolo, con o sin ceros (\"097\" o \"97\"). Bajo subruta, el enlace del sprite se resuelve con el --base de hornear.",
+   "props": [
+    {
+     "nombre": "numero",
+     "tipo": "texto"
     }
    ]
   },

@@ -9,6 +9,7 @@
    "components": [
     "Pagina",
     "Seccion",
+    "Hero",
     "Pila",
     "Fila",
     "Rejilla",
@@ -43,6 +44,7 @@
   {
    "name": "Interfaz",
    "components": [
+    "Icono",
     "Boton",
     "Etiqueta",
     "Chip",
@@ -77,8 +79,12 @@
    "description": "Marco de la página. Siempre la raíz. ancho=app llena la pantalla (herramientas y paneles); contenido va topado."
   },
   "Seccion": {
-   "signature": "Seccion(children: any[], titulo?: string, borde?: boolean)",
+   "signature": "Seccion(children: any[], titulo?: string, borde?: boolean, densidad?: \"normal\" | \"compacta\")",
    "description": "Bloque con aire propio. El titulo es el RÓTULO del bloque (pastilla pequeña, no titular): los titulares se ponen con Titular dentro. La unidad de una landing o un informe."
+  },
+  "Hero": {
+   "signature": "Hero(children: any[], tono?: \"neutro\" | \"brand\", densidad?: \"normal\" | \"compacto\")",
+   "description": "Banda a sangre para apertura o cambio de ritmo. tono=brand pinta fondo azul con tinta INVERTIDA: dentro solo caben Titular, Texto (p sin clase, hereda la tinta) y Etiqueta; NUNCA Entradilla ni nada con clase propia de color (heredan gris y se ilegibilizan sobre azul). Sin tono, la banda es bg-soft (ritmo suave entre bloques blancos)."
   },
   "Pila": {
    "signature": "Pila(children: any[], hueco?: \"2xs\" | \"sm\" | \"lg\" | \"xl\")",
@@ -101,8 +107,8 @@
    "description": "Superficie de contenido con titular opcional. Es la tarjeta de Aurora (no existe Card)."
   },
   "Titular": {
-   "signature": "Titular(texto: string, nivel?: \"1\" | \"2\" | \"3\", tono?: \"marca\" | \"acento\")",
-   "description": "Titular jerárquico. nivel=1 solo una vez por página."
+   "signature": "Titular(texto: string, nivel?: \"1\" | \"2\" | \"3\" | \"display\", tono?: \"marca\" | \"acento\")",
+   "description": "Titular jerárquico. nivel=1 solo una vez por página. nivel=display es el h1 de apertura (4xl con tracking apretado): SOLO para el héroe o la cabecera de una página de producto — no multiplica titulares de sección."
   },
   "Entradilla": {
    "signature": "Entradilla(texto: string, tamano?: \"sm\" | \"lg\", tono?: \"marca\" | \"acento\")",
@@ -123,6 +129,10 @@
   "Separador": {
    "signature": "Separador(etiqueta?: string, trazo?: \"fino\" | \"discontinuo\")",
    "description": "Línea de separación, con etiqueta opcional."
+  },
+  "Icono": {
+   "signature": "Icono(numero: string)",
+   "description": "Icono del sprite numerado (iconos/sprite.svg, 338 símbolos). Decorativo: sale con aria-hidden y el significado lo lleva el texto de al lado — nunca icono solo. numero: dígitos del símbolo, con o sin ceros (\"097\" o \"97\"). Bajo subruta, el enlace del sprite se resuelve con el --base de hornear."
   },
   "Kpi": {
    "signature": "Kpi(etiqueta: string, valor: string, delta?: string, tendencia?: \"sube\" | \"baja\" | \"plano\", tono?: \"neutro\" | \"marca\" | \"acento\", tamano?: \"sm\" | \"lg\")",
@@ -227,6 +237,9 @@
    "Seccion": {
     "$ref": "#/$defs/Seccion"
    },
+   "Hero": {
+    "$ref": "#/$defs/Hero"
+   },
    "Pila": {
     "$ref": "#/$defs/Pila"
    },
@@ -259,6 +272,9 @@
    },
    "Separador": {
     "$ref": "#/$defs/Separador"
+   },
+   "Icono": {
+    "$ref": "#/$defs/Icono"
    },
    "Kpi": {
     "$ref": "#/$defs/Kpi"
@@ -333,6 +349,7 @@
   "required": [
    "Pagina",
    "Seccion",
+   "Hero",
    "Pila",
    "Fila",
    "Rejilla",
@@ -344,6 +361,7 @@
    "Lista",
    "Cifra",
    "Separador",
+   "Icono",
    "Kpi",
    "Tabla",
    "Barras",
@@ -403,6 +421,13 @@
      },
      "borde": {
       "type": "boolean"
+     },
+     "densidad": {
+      "type": "string",
+      "enum": [
+       "normal",
+       "compacta"
+      ]
      }
     },
     "required": [
@@ -410,6 +435,34 @@
     ],
     "additionalProperties": false,
     "description": "Bloque con aire propio. El titulo es el RÓTULO del bloque (pastilla pequeña, no titular): los titulares se ponen con Titular dentro. La unidad de una landing o un informe."
+   },
+   "Hero": {
+    "type": "object",
+    "properties": {
+     "children": {
+      "type": "array",
+      "items": {}
+     },
+     "tono": {
+      "type": "string",
+      "enum": [
+       "neutro",
+       "brand"
+      ]
+     },
+     "densidad": {
+      "type": "string",
+      "enum": [
+       "normal",
+       "compacto"
+      ]
+     }
+    },
+    "required": [
+     "children"
+    ],
+    "additionalProperties": false,
+    "description": "Banda a sangre para apertura o cambio de ritmo. tono=brand pinta fondo azul con tinta INVERTIDA: dentro solo caben Titular, Texto (p sin clase, hereda la tinta) y Etiqueta; NUNCA Entradilla ni nada con clase propia de color (heredan gris y se ilegibilizan sobre azul). Sin tono, la banda es bg-soft (ritmo suave entre bloques blancos)."
    },
    "Pila": {
     "type": "object",
@@ -536,7 +589,8 @@
       "enum": [
        "1",
        "2",
-       "3"
+       "3",
+       "display"
       ]
      },
      "tono": {
@@ -551,7 +605,7 @@
      "texto"
     ],
     "additionalProperties": false,
-    "description": "Titular jerárquico. nivel=1 solo una vez por página."
+    "description": "Titular jerárquico. nivel=1 solo una vez por página. nivel=display es el h1 de apertura (4xl con tracking apretado): SOLO para el héroe o la cabecera de una página de producto — no multiplica titulares de sección."
    },
    "Entradilla": {
     "type": "object",
@@ -664,6 +718,19 @@
     "required": [],
     "additionalProperties": false,
     "description": "Línea de separación, con etiqueta opcional."
+   },
+   "Icono": {
+    "type": "object",
+    "properties": {
+     "numero": {
+      "type": "string"
+     }
+    },
+    "required": [
+     "numero"
+    ],
+    "additionalProperties": false,
+    "description": "Icono del sprite numerado (iconos/sprite.svg, 338 símbolos). Decorativo: sale con aria-hidden y el significado lo lleva el texto de al lado — nunca icono solo. numero: dígitos del símbolo, con o sin ceros (\"097\" o \"97\"). Bajo subruta, el enlace del sprite se resuelve con el --base de hornear."
    },
    "Kpi": {
     "type": "object",

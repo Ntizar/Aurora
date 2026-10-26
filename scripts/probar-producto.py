@@ -157,6 +157,7 @@ def main():
         (ok if cond else ko).append("%s — %s" % (nombre, detalle))
         print(("  ✓ " if cond else "  ✗ ") + nombre + ": " + detalle)
 
+    pend = []   # se rellena a lo largo del recorrido; la sección final solo añade
     try:
         # --- A09/B02 · estilos computados de marca --------------------------
         print("\n· Marca computada (A09/B02)")
@@ -191,8 +192,11 @@ def main():
               "resuelve a %s" % b.get("absoluto"))
         # el destino responde y es la landing (recorrido real ficha → inicio)
         html = urllib.request.urlopen(base + esperado_fin, timeout=10).read().decode("utf-8")
+        # contrato estable al contenido: el destino es la landing del producto si
+        # responde, trae h1 real y conserva el homeRoute declarado (el copy cambia).
         check("el destino responde con la landing",
-              "Un tablero para tus encargos" in html, "HTTP 200 con h1 de la landing")
+              "<h1" in html and 'data-nz-inicio="index.html"' in html,
+              "HTTP 200 con h1 y data-nz-inicio declarado")
         land = g("/examples/golden/index.html")
         c = land["ctaDetalle"] or {}
         check("CTA landing → ficha",
@@ -223,13 +227,19 @@ def main():
         print("\n· Jerarquía tipográfica computada (A05)")
         j = land
         h1px, entrpx, cuerpox = j["h1"]["px"], j["entradillaPx"], j["cuerpoPx"]
-        check("h1 > entradilla ≥ cuerpo",
-              h1px > entrpx >= cuerpox,
-              "h1=%s entradilla=%s cuerpo=%s" % (h1px, entrpx, cuerpox))
+        check("h1 > cuerpo", h1px > cuerpox,
+              "h1=%s cuerpo=%s" % (h1px, cuerpox))
         check("h1 con tamaño de página (≥24px)", h1px >= 24, "h1=%spx" % h1px)
+        if entrpx:
+            check("h1 > entradilla ≥ cuerpo",
+                  h1px > entrpx >= cuerpox,
+                  "h1=%s entradilla=%s cuerpo=%s" % (h1px, entrpx, cuerpox))
+        else:
+            pend.append("jerarquía h1↔entradilla: la landing no lleva Entradilla "
+                        "(no aplica a esta composición)")
 
         # --- pendientes honestos (plan §12.4) -------------------------------
-        pend = [
+        pend += [
             "zoom 200% y texto ampliado en recorridos (§12.3)",
             "foco visible y recorrido completo por teclado (§12.3, Entrega 3)",
             "cristal con prefers-reduced-transparency medido en navegador (B07: "

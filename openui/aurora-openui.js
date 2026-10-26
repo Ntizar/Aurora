@@ -64,7 +64,9 @@
   };
 
   R.Seccion = function (p, ctx) {
-    return '<section class="' + cl("nz-section", p.borde !== false && "nz-section--bordered") + '">' +
+    // densidad "normal" (por defecto): sin modificador — declaración explícita para el auditor
+    var densidad = p.densidad === "normal" || !p.densidad ? "" : p.densidad === "compacta" ? "nz-section--compact" : "";
+    return '<section class="' + cl("nz-section", p.borde !== false && "nz-section--bordered", densidad) + '">' +
       // El rótulo es una pastilla pequeña, no un titular: dos h2 del mismo tamaño
       // (rótulo + titular) competían en la misma sección y eso es ruido, no jerarquía.
       (p.titulo ? '<span class="nz-lbl">' + esc(p.titulo) + "</span>" : "") + ctx.nodos(p.children) + "</section>";
@@ -93,6 +95,14 @@
       '<div class="nz-stack nz-stack--sm">' + ctx.nodos(p.derecha) + "</div></div>";
   };
 
+  R.Hero = function (p, ctx) {
+    var tono = p.tono === "brand" ? "nz-hero-bleed--brand" : "";
+    // densidad "normal" (por defecto): sin modificador — declaración explícita para el auditor
+    var densidad = p.densidad === "normal" || !p.densidad ? "" : p.densidad === "compacto" ? "nz-hero-bleed--compact" : "";
+    // banda a sangre: dentro, la tinta la pone el contenedor (brand = invertida).
+    return '<div class="' + cl("nz-hero-bleed", tono, densidad) + '">' + ctx.nodos(p.children) + "</div>";
+  };
+
   R.Tarjeta = function (p, ctx) {
     return '<article class="' + cl("nz-article", p.borde !== false && "nz-article--bordered") + '">' +
       (p.titulo ? '<h3 class="nz-h3">' + esc(p.titulo) + "</h3>" : "") + ctx.nodos(p.children) + "</article>";
@@ -101,6 +111,11 @@
   R.Titular = function (p) {
     var nivel = String(p.nivel || "2");
     var tono = p.tono === "acento" ? "--accent" : p.tono === "marca" ? "--brand" : "";
+    if (nivel === "display") {
+      // h1 de apertura: 4xl + tracking apretado. Sin modificador de tono
+      // (el tono no tiene forma para display); la tinta la pone el contenedor.
+      return '<h1 class="nz-display">' + esc(p.texto) + "</h1>";
+    }
     if (nivel === "1") {
       return '<h1 class="' + cl("nz-h1", tono && "nz-h1" + tono) + '">' + esc(p.texto) + "</h1>";
     }
@@ -137,7 +152,16 @@
     return '<hr class="' + cl("nz-divider", p.trazo === "discontinuo" && "nz-divider--dashed") + '">';
   };
 
-  R.Kpi = function (p) {
+  R.Icono = function (p) {
+    var n = String(p.numero == null ? "" : p.numero).replace(/[^0-9]/g, "");
+    if (!n) return "";
+    while (n.length < 3) n = "0" + n;
+    // decorativo (aria-hidden): el significado lo lleva el texto de al lado.
+    return '<svg class="nz-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">' +
+      '<use href="iconos/sprite.svg#nz-i-' + n + '"></use></svg>';
+  };
+
+  R.Kpi = function (p, ctx) {
     var tono = p.tono === "acento" ? "nz-kpi--accent" : p.tono === "marca" ? "nz-kpi--brand" : "";
     var claseValor = p.tono === "acento" ? "nz-kpi__value--accent" : p.tono === "marca" ? "nz-kpi__value--brand" : "";
     var tendencia = TENDENCIA[p.tendencia] ? "nz-kpi__delta--" + TENDENCIA[p.tendencia] : "";

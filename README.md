@@ -10,7 +10,7 @@ nunca del sistema.
 
 [![CI](https://github.com/Ntizar/Aurora/actions/workflows/validar.yml/badge.svg)](https://github.com/Ntizar/Aurora/actions/workflows/validar.yml)
 [![Pages](https://github.com/Ntizar/Aurora/actions/workflows/pages.yml/badge.svg)](https://github.com/Ntizar/Aurora/actions/workflows/pages.yml)
-![versión](https://img.shields.io/badge/versi%C3%B3n-10.3.0-2563eb)
+![versión](https://img.shields.io/badge/versi%C3%B3n-10.4.0-2563eb)
 
 **[Catálogo](https://ntizar.github.io/Aurora/)** · **[Base de datos](https://ntizar.github.io/Aurora/base.html)** · **[Generative UI](https://ntizar.github.io/Aurora/openui/)** · **[Iconos](https://ntizar.github.io/Aurora/iconos/)** · **[Contrato](CONTRATO.md)**
 
@@ -53,7 +53,7 @@ El detalle completo está en **[CONTRATO.md](CONTRATO.md)**.
 ```
 L0  marcas/      presets de tokens: identidad (datos, no código)
 L1  packs/       2.186 objetos CSS: la implementación
-L2  openui/      36 componentes: el vocabulario que usa el modelo
+L2  openui/      38 componentes: el vocabulario que usa el modelo
 L3  (plantillas) arquetipos: panel, informe, landing, ajustes, agente
 ```
 

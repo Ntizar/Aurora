@@ -16,14 +16,15 @@ sin explicaciones y sin HTML. Aurora pone el CSS; tú solo eliges componentes y 
    La sintaxis con nombre (`Kpi(etiqueta: "Ventas")`) NO existe y rompe el programa.
 7. Los opcionales se omiten desde el final.
 
-## Firmas de componentes (36)
+## Firmas de componentes (38)
 
 Los argumentos con `?` son opcionales. Los sub-componentes pueden ir en línea o por referencia
 (mejor por referencia: el streaming se ve antes).
 
 ### Estructura
 Pagina(children: any[], ancho?: "contenido" | "app") — Marco de la página. Siempre la raíz. ancho=app llena la pantalla (herramientas y paneles); contenido va topado.
-Seccion(children: any[], titulo?: string, borde?: boolean) — Bloque con aire propio. El titulo es el RÓTULO del bloque (pastilla pequeña, no titular): los titulares se ponen con Titular dentro. La unidad de una landing o un informe.
+Seccion(children: any[], titulo?: string, borde?: boolean, densidad?: "normal" | "compacta") — Bloque con aire propio. El titulo es el RÓTULO del bloque (pastilla pequeña, no titular): los titulares se ponen con Titular dentro. La unidad de una landing o un informe.
+Hero(children: any[], tono?: "neutro" | "brand", densidad?: "normal" | "compacto") — Banda a sangre para apertura o cambio de ritmo. tono=brand pinta fondo azul con tinta INVERTIDA: dentro solo caben Titular, Texto (p sin clase, hereda la tinta) y Etiqueta; NUNCA Entradilla ni nada con clase propia de color (heredan gris y se ilegibilizan sobre azul). Sin tono, la banda es bg-soft (ritmo suave entre bloques blancos).
 Pila(children: any[], hueco?: "2xs" | "sm" | "lg" | "xl") — Columna vertical con hueco entre bloques.
 Fila(children: any[], hueco?: "compacto" | "amplio") — Grupo horizontal de elementos cortos (botones, chips, etiquetas) que mide lo que mide y envuelve en móvil. No estira a sus hijos.
 Rejilla(children: any[], columnas?: "auto" | "2" | "4") — Rejilla de panel que responde a su contenedor, no al monitor. columnas=auto decide sola. El modo auto (por defecto) encaja las piezas al ancho real con auto-fit: las cajas nunca quedan enormes ni se pisan.
@@ -31,7 +32,7 @@ DosColumnas(izquierda: any[], derecha: any[], reparto?: "50-50" | "2-1" | "40-60
 Tarjeta(children: any[], titulo?: string, borde?: boolean) — Superficie de contenido con titular opcional. Es la tarjeta de Aurora (no existe Card).
 
 ### Texto
-Titular(texto: string, nivel?: "1" | "2" | "3", tono?: "marca" | "acento") — Titular jerárquico. nivel=1 solo una vez por página.
+Titular(texto: string, nivel?: "1" | "2" | "3" | "display", tono?: "marca" | "acento") — Titular jerárquico. nivel=1 solo una vez por página. nivel=display es el h1 de apertura (4xl con tracking apretado): SOLO para el héroe o la cabecera de una página de producto — no multiplica titulares de sección.
 Entradilla(texto: string, tamano?: "sm" | "lg", tono?: "marca" | "acento") — Párrafo de entrada, más grande que el cuerpo. Máximo dos frases.
 Texto(texto: string) — Párrafo de cuerpo corriente.
 Lista(items: string[], estilo?: "check" | "num" | "dividida") — Lista de puntos. estilo=check para entregables validados.
@@ -49,6 +50,7 @@ Anillo(valor: number, etiqueta?: string, tono?: "marca" | "acento", tamano?: "sm
 Progreso(valor: number, etiqueta?: string) — Barra de avance lineal de 0 a 100.
 
 ### Interfaz
+Icono(numero: string) — Icono del sprite numerado (iconos/sprite.svg, 338 símbolos). Decorativo: sale con aria-hidden y el significado lo lleva el texto de al lado — nunca icono solo. numero: dígitos del símbolo, con o sin ceros ("097" o "97"). Bajo subruta, el enlace del sprite se resuelve con el --base de hornear.
 Boton(texto: string, tono?: "primario" | "acento" | "suave" | "contorno" | "fantasma", tamano?: "sm" | "lg", bloque?: boolean, href?: string) — Acción. tono=primario para la acción principal, acento para la secundaria que importa. Con href se pinta como enlace (misma pinta, navega).
 Etiqueta(texto: string, tono?: "marca" | "acento" | "exito" | "aviso" | "peligro" | "neutro", forma?: "relleno" | "contorno" | "punto") — Estado o categoría corta, en línea con el texto.
 Chip(texto: string, tono?: "neutro" | "marca" | "acento" | "exito" | "peligro") — Filtro aplicado o etiqueta removible.
@@ -184,4 +186,4 @@ a2 = Boton("Ver histórico", "contorno")
 - ¿Hay un solo titular nivel 1 y el acento está donde importa?
 - ¿Los números están formateados en castellano?
 
-<!-- aurora-openui · spec 748c80c9da2e43a4 · 36 componentes · generado por scripts/generar-openui.py -->
+<!-- aurora-openui · spec 4da6571e5a9f8e42 · 38 componentes · generado por scripts/generar-openui.py -->

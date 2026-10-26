@@ -186,6 +186,11 @@ def main():
     else:
         pie = ('<footer class="nz-footer">\n  <p>Hecho con ❤️ por David Antizar</p>\n</footer>')
 
+    # --base también al sprite de iconos dentro del main (bajo subruta):
+    # href="iconos/sprite.svg" → href="../../iconos/sprite.svg".
+    if base:
+        cuerpo = cuerpo.replace('href="iconos/', 'href="%siconos/' % base)
+
     doc = """<!DOCTYPE html>
 <html lang="es" data-nz-theme="%(tema)s" data-nz-marca="%(marca)s" data-nz-firma="%(firma)s"%(attr_inicio)s%(attr_modo)s>
 <head>

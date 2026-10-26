@@ -7,6 +7,29 @@ Versionado: [SemVer](https://semver.org/lang/es/).
 
 (sin cambios aún)
 
+## [10.4.0] — 2026-10-26
+
+### Del wireframe al producto: rediseño de las referencias y expresión del lenguaje
+
+- **Crítica de diseño atacada en su causa**: las golden eran 3 tarjetas gordas en
+  blanco plano y el lenguaje no dejaba hacerlo mejor. De 36 a **38 componentes**
+  (todas con clases que ya estaban en el censo):
+  - `Hero(children, tono?, densidad?)` — banda a sangre (bg-soft de ritmo o
+    `--brand` azul con tinta invertida; dentro, solo Titular/Texto/Etiqueta).
+  - `Seccion(..., densidad)` → `nz-section--compact`.
+  - `Titular(texto, "display")` — h1 de apertura 4xl con tracking (hero aprobado).
+  - `Icono(numero)` — sprite numerado (`iconos/sprite.svg#nz-i-NNN`),
+    `aria-hidden`, resuelto bajo subruta con el nuevo `--base` de hornear para
+    el sprite (antes solo para CSS).
+- **Golden v4**: héroe display sobre azul,8 fichas en rejilla fija de 4 con
+  icono arriba, KPIs `sm`, banda de ritmo con sparkline y tabla `compacta`,
+  ficha con split60/40 (partidas + historial + progreso).
+- **Tests estabilizados**: `probar-producto.py` ya no ata sus aserciones al copy
+  (h1 y homeRoute, no frases), la jerarquía sin entradilla consta como «no
+  aplica» en vez de reventar, y `pend` se inicializa antes de usarse.
+- **Auditor del lenguaje**: el regex no confunde fragmentos de URL (`#nz-i-*`)
+  ni `data-nz-*` con clases.
+
 ## [10.3.0] — 2026-10-26
 
 ### Agent-ready: Aurora que habla con los agentes (referencia affectUI)
