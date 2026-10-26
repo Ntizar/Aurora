@@ -7,6 +7,24 @@ Versionado: [SemVer](https://semver.org/lang/es/).
 
 (sin cambios aún)
 
+## [10.3.0] — 2026-10-26
+
+### Agent-ready: Aurora que habla con los agentes (referencia affectUI)
+
+- **`scripts/mcp-aurora.py` — servidor MCP** en stdlib pura (NDJSON sobre stdio, cero
+  dependencias, autochequeo `--test` en la CI): `estado_del_sistema` (versión y canales
+  vivos — el PASO 0 automatizado, nunca de memoria), `buscar_por_necesidad` (índice del
+  censo en castellano), `leer_componente` (API exacta: clases, markup, tokens, noUsar),
+  `validar_html` (el auditar-uso.py del repo como juez remoto) y `compilar_programa`
+  (OpenUI Lang → HTML con marca/packs/firma). Conexión: `claude mcp add aurora -- …`.
+- **`llms-full.txt`** — referencia completa por componente (411 familias con markup real,
+  tokens, alias y anti-patrón, 255 KB) generada desde `components.json`; `llms.txt` la
+  enlaza. Estándar llms-full del ecosistema de agentes.
+- **README: «Pantallas completas, no solo piezas»** — plantillas (5 arquetipos), combos
+  (8 tipos) y `examples/golden/` presentados como el producto de tres capas; la vía
+  «Agente» documenta el MCP; `bloques/recetas/` deja de citarse (404).
+- **SKILL.md**: fila MCP y `llms-full.txt` en §14, referencias en §15.
+
 ## [10.2.0] — 2026-10-26
 
 ### Contrato de producto: inicio, política de URL, firma y marca (plan de mejora)

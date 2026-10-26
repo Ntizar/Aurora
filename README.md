@@ -10,7 +10,7 @@ nunca del sistema.
 
 [![CI](https://github.com/Ntizar/Aurora/actions/workflows/validar.yml/badge.svg)](https://github.com/Ntizar/Aurora/actions/workflows/validar.yml)
 [![Pages](https://github.com/Ntizar/Aurora/actions/workflows/pages.yml/badge.svg)](https://github.com/Ntizar/Aurora/actions/workflows/pages.yml)
-![versión](https://img.shields.io/badge/versi%C3%B3n-10.2.0-2563eb)
+![versión](https://img.shields.io/badge/versi%C3%B3n-10.3.0-2563eb)
 
 **[Catálogo](https://ntizar.github.io/Aurora/)** · **[Base de datos](https://ntizar.github.io/Aurora/base.html)** · **[Generative UI](https://ntizar.github.io/Aurora/openui/)** · **[Iconos](https://ntizar.github.io/Aurora/iconos/)** · **[Contrato](CONTRATO.md)**
 
@@ -65,8 +65,19 @@ El modelo trabaja en **L2** y elige **L0** por nombre. Nunca escribe en L1.
 con su markup copiable. Si dudas, la [base de datos de diseño](https://ntizar.github.io/Aurora/base.html)
 busca por lo que quieres construir («tabla apilable», «dashboard», «acento»).
 
-**Agente** — `LLM.md` (22 KB) decide qué packs enlazar y qué clases usar; `components.json`
-es la API completa machine-readable; `scripts/auditar-uso.py` audita el HTML generado:
+**Agente** — con una línea lo conectas por **MCP** y consulta el censo vivo, valida y
+compila sin bajar medio megabyte:
+
+```bash
+claude mcp add aurora -- python scripts/mcp-aurora.py   # Claude Code
+# cursor / VS Code: "mcpServers": {"aurora": {"command": "python", "args": ["…/scripts/mcp-aurora.py"]}}
+```
+
+Cinco herramientas: `estado_del_sistema` (versión y canales, nunca de memoria),
+`buscar_por_necesidad`, `leer_componente`, `validar_html` y `compilar_programa`.
+Autochequeo: `python scripts/mcp-aurora.py --test`. Sin MCP a mano, la vía clásica es
+`LLM.md` (guía) + `components.json` (API) + `llms-full.txt` (las 411 familias con su
+markup) y el juez:
 
 ```bash
 python3 scripts/auditar-uso.py mi-pagina.html   # clases inventadas, packs, composición
@@ -99,6 +110,20 @@ python3 scripts/programa-a-html.py p.openui -o dist/panel.html --marca ntizar
 python3 scripts/canal.py --check && python3 scripts/canal.py --purgar
 ```
 
+## Pantallas completas, no solo piezas
+
+Nadie quiere una web de piezas sueltas: el sistema entrega la página COMPLETA en tres
+capas, ya auditada y con su estructura revisada.
+
+| Nivel | Qué hay | Dónde |
+|---|---|---|
+| Plantilla por arquetipo | panel, informe, landing, ajustes y agente — variables y estructura fija | `openui/plantillas/` |
+| Esqueleto por tipo | 8 combos: landing, dashboard, chat-ia, login-form, e-commerce, escritorio-app, charla-beats, prototipo | `bloques/combos/` |
+| Producto de muestra | landing + ficha bajo subruta, modo producto, medidas en navegador (18 comprobaciones) | `examples/golden/` |
+
+Encaja tu dato en la plantilla del arquetipo: la jerarquía, el responsive, los estados y
+el presupuesto de color ya vienen resueltos — el modelo pone contenido, no arquitectura.
+
 ## Qué hay dentro
 
 | Pieza | Qué es |
@@ -108,7 +133,10 @@ python3 scripts/canal.py --check && python3 scripts/canal.py --purgar
 | `marcas/` | 6 presets (aurora, indigo, esmeralda, violeta, carmesí, ntizar) + generador OKLCH |
 | `specs/NN.json` | **Fuente de verdad** de las demos: el catálogo se genera de aquí |
 | `base.html` + `datos/base-diseno.json` | Base de datos consultable: familias, tokens, recetas, combos, marcas y leyes |
-| `bloques/recetas/` · `bloques/ejemplos/` · `bloques/combos/` | Páginas completas y esqueletos por tipo, listos para copiar |
+| `bloques/ejemplos/` · `bloques/combos/` | Páginas completas y esqueletos por tipo, listos para copiar (`bloques/recetas/` ya no existe) |
+| `examples/golden/` | Producto de muestra (landing + ficha) generado desde `.openui` con `hornear-golden.py` |
+| `llms.txt` · `llms-full.txt` | Guía corta y referencia completa por componente para agentes |
+| `scripts/mcp-aurora.py` | Servidor MCP (5 herramientas, stdlib pura): censo vivo, lint y compilador para Claude/Cursor |
 | `openui/` | Capa generativa: componentes, prompt, spec, runtime vanilla, **plantillas por arquetipo** y probador |
 | `AGENTS.md` · `COMPOSICION.md` · `LLM.md` | Reglas duras, contrato de composición y guía de decisión |
 

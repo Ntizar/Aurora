@@ -1,14 +1,14 @@
 ---
 name: aurora-design-system
 description: "Usa al construir o tocar cualquier web con Aurora (Ntizar/Aurora). El repo manda: resuelve la versión vigente y pide LLM.md + components.json antes de escribir CSS."
-version: "10.2.0"
+version: "10.3.0"
 tags: [css, design-system, aurora, ntizar, agent-ready, movil, escritorio, tipografia]
 ---
 
 # Aurora — doctrina única (el repo es la orden máxima)
 
 Design system CSS puro, sin build, sin dependencias, namespaced bajo `.nz-`.
-**v10.2.0 · 2195 objetos · 411 familias · 659 demos · 18 categorías · 189 tokens · 59 gemelas OKLch · 36 componentes generativos · 338 iconos numerados.**
+**v10.3.0 · 2195 objetos · 411 familias · 659 demos · 18 categorías · 189 tokens · 59 gemelas OKLch · 36 componentes generativos · 338 iconos numerados.**
 *(Cabecera de testigo, no de autoridad: resuélvela con el PASO 0.)*
 
 > ⚠️ `Ntizar/Aurora` **manda sobre esta skill**. Esta skill es un puntero; el repo
@@ -640,6 +640,8 @@ LLM → OpenUI Lang (8-20 líneas) → parser → runtime vanilla → markup .nz
 | Verlo funcionando | `openui/index.html` (probador en vivo + plantillas) |
 | Empezar por un arquetipo | `openui/plantillas/` + `scripts/plantilla.py` (panel, informe, landing, ajustes, agente) |
 | De un encargo a una página | `scripts/generar-web.py --brief encargo.json` (modelo + validación + lint) |
+| Que un agente consulte Aurora sin bajar el censo | `scripts/mcp-aurora.py` (MCP en stdio, stdlib pura): `estado_del_sistema`, `buscar_por_necesidad`, `leer_componente`, `validar_html`, `compilar_programa`. Conexión: `claude mcp add aurora -- python scripts/mcp-aurora.py`; autochequeo `--test` (está en la CI) |
+| API exacta de UNA familia en texto plano | `llms-full.txt` (411 familias: clases, markup, tokens, alias, noUsar) — generado por `generar-llm-docs.py` |
 | De un programa a una página estática (0 JS) | `scripts/hornear.py prog.openui --salida x.html`: compila, pinta en Chrome headless y extrae el `<main>` ya horneado |
 
 ```js
@@ -688,6 +690,7 @@ AuroraOpenUI.stream(respuestaDelModelo, "#lienzo");    // streaming; cae a parse
 - `references/navegacion-del-sitio.md` — la barra de sitio: marca «Aurora» arriba a la izquierda, las cinco secciones, variante del catálogo, tabla de profundidad → prefijo relativo, y receta de arreglo masivo de rutas.
 - `references/metodo-diseno.md` — checklists del método de diseño (brief → critique → harden → polish).
 - `references/paginas-herramienta.md` — patrón inspector para páginas-herramienta y playgrounds: layout una vista, fit puro del lienzo, pickers y paletas en vivo, guía generada del mismo módulo.
+- `scripts/mcp-aurora.py` — servidor MCP del sistema (5 herramientas sobre components.json, base-diseno.json y los auditores; NDJSON sobre stdio, cero dependencias).
 - `references/openui-desde-fuera.md` — compilar openui-lang en Node sin Python (`pintar(programa, null)`), validar argumentos contra `$defs` (enum, tipo, obligatorios) porque el runtime no lo hace, reparación mecánica del opcional saltado, presupuesto de color sobre el programa, y las reglas de prompt que hacen que un modelo componga una landing bien.
 - El censo visto desde fuera (aplanar `clase → pack`, iconos en línea, prueba diferencial contra `auditar-uso.py`): §1b de esta skill.
 - **`iconos/`** — repositorio de iconos numerados (Lucide ISC + Solar CC BY 4.0; el número

@@ -42,7 +42,7 @@ sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
 bc = import_module("build-catalog")
 
 ROOT = bc.ROOT
-VERSION = "10.2.0"
+VERSION = "10.3.0"
 # El canal vivo no se copia a mano: sale de datos/canales.json (único dueño)
 _canales = json.loads((ROOT / "datos" / "canales.json").read_text(encoding="utf-8"))
 CANAL_VIVO = _canales["canales"]["vivo"]["rango"]
@@ -1210,6 +1210,9 @@ Documentos para agentes (léelos en este orden):
   EN→ES en `alias`.
 - [bloques/ejemplos/]({CDN}): 5 páginas completas listas para copiar (login,
   dashboard, landing, chat-ia, forms).
+- [llms-full.txt]({CDN}llms-full.txt): referencia completa por componente — las
+  {total_clases} clases con markup real, tokens, alias y anti-patrón de cada una.
+  Cuando necesites la API exacta de UNA pieza sin abrir components.json.
 - [base.html]({CDN}base.html) y [datos/base-diseno.json]({CDN}datos/base-diseno.json):
   base de datos de diseño consultable. {total_bases} familias con markup, tokens,
   recetas, combos y marcas en un índice; búscalo antes de leer un pack.
@@ -1239,6 +1242,41 @@ Reglas mínimas que no se negocian:
 Hecho con ❤️ por David Antizar
 """
     (ROOT / "llms.txt").write_text(llms, encoding="utf-8")
+
+    # ---------- llms-full.txt: la API entera, componente a componente ----------
+    # Una sola fuente (components.json) y generado siempre en la cadena de
+    # regeneración: tocarlo a mano es un anti-patrón (§10 de SKILL.md).
+    filas = [
+        f"# Aurora — referencia completa por componente (v{VERSION})",
+        "",
+        "> Extiende llms.txt con la API exacta de las " + str(len(objetos)) + " familias:",
+        "> clases, markup real, tokens, alias y anti-patrón. Generado desde",
+        "> components.json por scripts/generar-llm-docs.py — no lo edites a mano.",
+        "",
+    ]
+    for nombre in sorted(objetos):
+        o = objetos[nombre]
+        m = (o.get("markup") or {}).get("markup", "")
+        no_usar = o.get("noUsar", "")
+        if isinstance(no_usar, list):
+            no_usar = " ".join(str(x) for x in no_usar)
+        filas.append(f"## {nombre} · packs/{o.get('pack', '?')}")
+        if o.get("clases"):
+            filas.append("clases: " + ", ".join(o["clases"]))
+        if o.get("alias"):
+            alias = o["alias"]
+            if isinstance(alias, dict):
+                alias = [f"{k} → {v}" for k, v in alias.items()]
+            filas.append("alias: " + ", ".join(alias))
+        if o.get("tokens"):
+            filas.append("tokens: " + ", ".join(o["tokens"]))
+        if m:
+            filas.append("markup: " + m.replace("\n", " "))
+        if no_usar:
+            filas.append("noUsar: " + str(no_usar))
+        filas.append("")
+    full = "\n".join(filas)
+    (ROOT / "llms-full.txt").write_text(full, encoding="utf-8")
 
     n_markup = sum(1 for o in objetos.values() if o["markup"]["markup"])
     n_anti = sum(1 for o in objetos.values() if "noUsar" in o)

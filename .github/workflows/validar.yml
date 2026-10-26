@@ -83,6 +83,9 @@ jobs:
       - name: Producto medido en navegador (marca, firma, navegación y overflow)
         run: python scripts/probar-producto.py
 
+      - name: Servidor MCP de agente (protocolo y 5 herramientas)
+        run: python scripts/mcp-aurora.py --test
+
       - name: Regenerar y comprobar que no hay diferencias
         run: |
           python scripts/generar-base-datos.py
@@ -93,9 +96,9 @@ jobs:
           python scripts/audit-html.py
           python scripts/iconos.py todo
           python scripts/hornear-golden.py --check
-          if ! git diff --quiet -- index.html paginas datos packs/all.css audit components.json LLM.md llms.txt combos openui iconos; then
+          if ! git diff --quiet -- index.html paginas datos packs/all.css audit components.json LLM.md llms.txt llms-full.txt combos openui iconos; then
             echo "::error::Lo generado no coincide con lo commiteado. Ejecuta generar-base-datos.py, generar-llm-docs.py, generar-openui.py, build-catalog.py, audit-catalog.py y audit-html.py, y commitea el resultado."
-            git --no-pager diff --stat -- index.html paginas datos packs/all.css audit components.json LLM.md llms.txt combos iconos
+            git --no-pager diff --stat -- index.html paginas datos packs/all.css audit components.json LLM.md llms.txt llms-full.txt combos iconos
             exit 1
           fi
           echo "Catálogo, base de datos, API LLM e informe de auditoría sincronizados con specs/ y los packs."
