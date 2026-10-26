@@ -28,7 +28,7 @@ procedimiento. Resuélvela en cada tarea:
 # a) con el repo clonado (lo normal en esta máquina) — la vía rápida
 #    (ajusta la carpeta al nombre de tu clon: Aurora-8, Aurora-7, Aurora…)
 git -C C:/Users/d_ant/Projects/Aurora-8 fetch --tags -q
-V=$(git -C C:/Users/d_ant/Projects/Aurora-8 describe --tags --abbrev=0)   # p.ej. v9.5.0
+V=$(git -C C:/Users/d_ant/Projects/Aurora-8 describe --tags --abbrev=0)   # p.ej. v10.2.0
 
 # b) sin repo — pregunta a GitHub
 curl -s https://api.github.com/repos/Ntizar/Aurora/tags | grep -m1 '"name"'
@@ -61,14 +61,44 @@ cuesta ~250 KB. Nunca pegues CSS de packs en el prompt.
 |---|---|
 | Qué packs enlazar y qué clases usar | `@master/LLM.md` (o `@$V/LLM.md` si quieres la foto exacta de una release) |
 | API exacta: familias, partes, modificadores, tokens, alias EN→ES | `@master/components.json` |
-| Página completa que ya funciona | `@master/bloques/ejemplos/` (login, dashboard, landing, chat-ia, forms) |
+| Página completa que ya funciona | `@master/bloques/ejemplos/` (`landing.html`, `login.html`, `dashboard.html`, `chat-ia.html`, `forms.html`) |
+| Esqueleto mínimo por tipo de página | `@master/bloques/combos/<arquetipo>.html` (los 8 de `combosEsqueleto` en `components.json`) |
 | Demo viva de un objeto | `https://ntizar.github.io/Aurora/paginas/NN-*.html` |
+| Markup exacto de un objeto | `components.json` → `objetos[<familia>].markup.markup` (el bloque real, extraído de su demo) |
 | Reglas duras y estado del repo | `@master/AGENTS.md` · `@master/SKILL.md` |
+
+**⚠️ `bloques/recetas/` NO existe** (404): las páginas completas listas para copiar viven en
+`bloques/ejemplos/` y los esqueletos cortos en `bloques/combos/`. Para el markup de UN objeto
+concreto, `objetos[...].markup.markup` es la vía corta y no hace falta abrir la demo entera.
 
 **Corolario:** si algo no está en `components.json`, no existe. No lo inventes: o usas
 el objeto que sí existe, o **se añade al repo** (§9), que es donde vive todo el CSS
 bueno y de donde lo heredará el siguiente proyecto. Un patrón resuelto dos veces en dos
 proyectos es un fallo del sistema, no del proyecto.
+
+### 1b. Consumir el censo desde FUERA del repo (página en otro lenguaje o proyecto)
+
+Cuando el consumidor no es Python (un `src/censo.json` en Node, un port a otro lenguaje),
+aplanar el censo a `clase → pack` es el primer paso de cualquier herramienta propia. Dos
+trampas que cuestan una ronda entera:
+
+- **`objetos[f].pack` es el NOMBRE del fichero (`p1-layout.css`), no la ruta.** El `<link>`
+  real y el auditor usan `packs/p1-layout.css`. Guarda ya la ruta (`'packs/' + pack`) o
+  reportará «falta por enlazar el pack» en TODAS las páginas correctas.
+- **`objetos[f].clases` trae base + modificadores + partes.** Recórrelas todas: si solo
+  indexas el nombre de la familia, cualquier modificador suelto (`nz-btn--lg`) sale como
+  clase inventada.
+
+**Prueba diferencial obligatoria:** pasa el MISMO fichero por `scripts/auditar-uso.py` (el
+original, que es el juez) y por tu port. Mismo veredicto, o el que está mal es el port. Y una
+prueba de fuego con un HTML saboteado a propósito (clase inventada + gradiente +
+`backdrop-filter` + `!important` + dos `<h1>` + un emoji): los dos tienen que cantar los seis.
+
+**Iconos en una página autocontenida:** `<use href="iconos/sprite.svg#nz-i-NNN">` depende de
+una ruta relativa que resuelva. Cuando la página se sirve suelta (generada, descargada,
+embebida), descarga `iconos/NNN-nombre.svg` e **incrusta su contenido en línea** dentro del
+`<svg class="nz-icon" viewBox="0 0 24 24">`. Los SVG ya vienen con
+`stroke="currentColor"`, así heredan el color del contenedor.
 
 ## 2. Contrato de sincronía (esta skill ↔ repo)
 
@@ -80,6 +110,11 @@ El repo manda; la skill se reescribe en el mismo ciclo. La CI lo exige:
 4. Tag `vX.Y.Z` **en el último commit verde** y `git push origin vX.Y.Z`.
 5. `python scripts/validar-css.py` → `RESULTADO: VÁLIDO`. Si no, no está terminado: la
    puerta compara `components.json`, el generador, el tag de git y **este `SKILL.md`**.
+6. **Canales (el lock manda)**: el canal vivo es un RANGO jsDelivr (`@v10`) gobernado por
+   `datos/canales.json`; NUNCA un tag flotante de git (el validador toma «último tag» y
+   exige la versión exacta). El canal congelado se sube «a propósito» en cada release; si
+   no, `canal.py --check` pone la CI en rojo. Procedimiento y horneado estático:
+   `references/portada-y-canal.md`.
 
 Consecuencia práctica: **la versión de esta cabecera es lo único que caduca.** Todo lo
 demás (objetos, clases, cifras, móvil) se lee del repo en el PASO 0, así que una versión
@@ -90,14 +125,16 @@ nueva del sistema no te deja ciego: solo obliga a refrescar la cabecera.
 ```html
 <html lang="es" data-nz-theme="light">   <!-- o "dark" -->
 <head>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v9/tokens.css">   <!-- canal vivo -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v9/packs/all.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v10/tokens.css">   <!-- canal vivo -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v10/packs/all.css">
 </head>
 <body class="nz">
 ```
 
-`@v9` es el **canal vivo** (se mueve con cada 9.x). Para una entrega congelada, el tag exacto
-que resolviste en el PASO 0. Nunca `@master`. El detalle está en `CONTRATO.md` del repo. `all.css` solo para prototipos; en producción enlaza
+`@v10` es el **canal vivo** (se mueve con cada 10.x). Para una entrega congelada, el tag exacto
+que resolviste en el PASO 0. Nunca `@master`. Los consumidores fijados en `@v9` o en un tag
+exacto de la serie 9 no cambian: `@v9` resuelve su major para siempre (el detalle está en
+`CONTRATO.md` del repo). `all.css` solo para prototipos; en producción enlaza
 los packs que uses (12-40 KB cada uno). Purga: `curl https://purge.jsdelivr.net/gh/Ntizar/Aurora@$V/<fichero>`.
 
 ## 4. Móvil: ya viene resuelto — no lo reinventes por proyecto
@@ -140,6 +177,12 @@ en 960px y dejaba el 40% de la pantalla vacío en un monitor):
 | Rejilla de panel en escritorio | `.nz-dash-grid` (llega a 6 columnas en el tramo de 1440) |
 | Muchas fichas pequeñas (iconos, miniaturas) | `.nz-grid-auto` (+`--compact` 160 px, `--spacious` 320 px): auto-fit con `min(100%, N)`, sin media queries y sin desbordar a 320 px |
 | Márgenes laterales correctos | `--nz-gutter` (16 → 24 → 32px, automático) |
+| **Chat o herramienta conversacional** con compositor siempre a la vista | `.nz-chat` con **altura definida** (`min-height` solo no basta: crece con el hilo y empuja el compositor fuera de pantalla) + `.nz-prompt` dentro de `.nz-chat__foot`, y en escritorio `.nz-split--3-2` con un panel de fuentes/contexto al lado |
+
+**Texto** (lo que se verifica contra el censo): el cuerpo va en `.nz-prose`, los rótulos y
+notas en `.nz-lbl`, la entradilla en `.nz-lead`. La familia `nz-text` existe **solo con
+modificador** (`--muted`, `--small`, `--large`, `--peso-*`…): `nz-text` a secas,
+`nz-text--2xs` y `nz-text--xs` **no existen** y el auditor los canta como clase inventada.
 
 La **letra no crece** con el monitor: los titulares están topados a propósito (3xl 34px,
 4xl 50px). Un h1 de 56px en un 27" no es jerarquía, es desproporción.
@@ -162,7 +205,13 @@ El lint lo comprueba (`acento-ausente`, `acento-testimonial`).
 
 1. Todo lo público vive bajo `.nz-` (nada de clases globales).
 2. Todo valor es un token `var(--nz-*)` — ni un `#2563eb` ni un `16px` a mano.
-3. **0 gradientes, 0 `backdrop-filter`, 0 `!important`** (excepciones: `.nz-visually-hidden`, `.nz-print-hide`, helpers de visibilidad con sufijo `[class]`).
+3. **0 gradientes, 0 `backdrop-filter`, 0 `!important`** — salvo las dos excepciones
+   oficiales que el sistema SÍ ofrece: la capa de cristal `p16-cristal.css` (`.nz-cristal`,
+   `data-nz-estilo="cristal"`: ÚNICA capa con blur y gradiente, uso CONTROLADO — navegación,
+   superficie flotante o panel destacado; nunca cristal anidado ni detrás de tablas y
+   formularios; trae fallback opaco por tema) y los helpers de ocultación
+   (`.nz-visually-hidden`, `.nz-print-hide`, helpers de visibilidad con sufijo `[class]`).
+   Si necesitas cristal en un pack nuevo, va por `p16-cristal`, no se reimplementa.
 4. BEM: `.nz-thing`, `__parte`, `--modificador`, estado `.is-x` o `[aria-*]`.
 5. Responsive first: contenedor primero (container queries), base móvil en 1 columna y crecer con `@media (min-width: 640/960/1200)` hasta el escritorio. Nunca `max-width` como estrategia (los `max-width` de consumidor solo para apagar un patrón móvil, nunca para construirlo).
 6. Táctil 44px en todo lo que se pulsa.
@@ -189,7 +238,12 @@ El lint lo comprueba (`acento-ausente`, `acento-testimonial`).
 ## 6. Flujo del agente para generar HTML con Aurora
 
 1. **PASO 0**: resuelve `$V` y lee `LLM.md` + `components.json` del repo. Si buscas por necesidad («tabla apilable», «dashboard», «acento»), empieza por `base.html` o `datos/base-diseno.json`: es el índice que ya trae markup, tokens y anti-patrón.
-2. **Copia una receta de `bloques/ejemplos/`** y quítale lo que no uses.
+2. **Copia un bloque de `bloques/ejemplos/` o `bloques/combos/`** y quítale lo que no uses.
+   Para un objeto suelto, el markup está en `components.json` → `objetos[...].markup.markup`
+   (`bloques/recetas/` no existe: 404). **Si vas a generar muchas páginas con la misma
+   forma, no copies markup a mano:** escribe un renderizador de bloques (una función por
+   bloque, objetos y variantes como datos) y deja que el lint lo cubra. Copiar a mano se
+   desincroniza del sistema en cuanto cambia un pack.
 3. **Escribe el HTML** con los objetos del censo, responsive first, tokens, 44px. Si la
    interfaz la genera un modelo en caliente (chat, panel dinámico), ve a §14: lenguaje +
    `PROMPT.md` + `aurora-openui.js`, no HTML suelto.
@@ -212,6 +266,88 @@ El lint lo comprueba (`acento-ausente`, `acento-testimonial`).
 Checklists completos: `references/metodo-diseno.md` (skill local). Método absorbido de
 Impeccable (impeccable.style) como metodología, nunca como dependencia: no instalar su
 paquete ni generar `DESIGN.md`/`.impeccable/` — duplicarían `LLM.md` + `components.json`.
+
+### 6c. Vía generativa: el modelo escribe el diseño (openui-lang)
+
+El programa usa los 36 componentes de `openui/PROMPT.md` (argumentos POSICIONALES, sin nombrados;
+`root = Pagina([...])` en la primera línea). Se compila desde el repo:
+
+`python scripts/programa-a-html.py mi-programa.openui --salida out.html --marca ntizar --tema light --canal congelado --titulo "..." [--firma full|subtle|none] [--inicio ruta.html] [--modo producto]`
+
+`--canal vivo` emite los enlaces al rango `@vX` (webs propias); `--canal congelado`, para entregas
+a cliente. `--packs` imprime solo los packs que el programa usa (el compilador resuelve marca,
+tema y packs exactos). `--marca` inexistente **falla con diagnóstico** (el preset va enlazado
+detrás de `tokens.css`, nunca fallback silencioso). `--firma` declara la política de atribución
+(`full`/`subtle`/`none` → `data-nz-firma`; exactamente una aparición o ninguna, repetida = fallo
+del lint). `--inicio` + `--modo producto` marcan el homeRoute y las reglas de producto (la marca
+enlaza al inicio, ningún `#` placeholder). Desde ahí, flujo normal: `auditar-uso.py` → 0 fallos,
+y render medido en navegador — **ojo a la trampa (c) de §13.3 antes de dar nada por roto**.
+
+**Página estática de verdad (sin JS): hornea, no copies a mano.** `programa-a-html.py` deja el
+`<main>` vacío y pinta en cliente. Si la página debe hablar a SEO (landing, portada del propio
+sistema) o no debe depender de JavaScript, se hornea:
+
+`python scripts/hornear.py prog.openui --salida out.html [--plantilla-base] [--base ../] [--firma ...] [--inicio ...] [--modo producto]`
+
+Compila, sirve el repo por HTTP local (el runtime carga la spec con `fetch`, que en `file://`
+falla por CORS), pinta en Chrome/Edge headless con `--virtual-time-budget`, extrae el `<main>`
+ya pintado y escribe el estático. **Nunca escribas el HTML a mano a partir del programa**: es
+cómo la portada de Aurora llegó a prometer «el programa se muestra abajo» sin nada abajo, y
+cuesta el doble de tokens en cada retoque. En la portada del sistema la cadena es
+`briefs/portada.openui` → `hornear.py --plantilla-base` → `briefs/portada.tmpl.html` →
+`build-catalog.py` (clava `{{OBJETOS}}`, `{{FAMILIAS}}`, `{{PACKS}}`, `{{MARCAS}}` y el
+programa entero en un `<pre>` para que la promesa sea verificable). Las páginas de producto de
+referencia (`examples/golden/`) se hornean con `scripts/hornear-golden.py` — única definición,
+`--check` detecta HTML desfasado de su `.openui`.
+
+Dos detalles del vocabulario que se aprendieron midiendo: `Boton(texto, tono?, tamano?, bloque?,
+href?)` pinta `<a>` cuando lleva `href` (sin él, `<button>`; antes todos los CTA de una página
+generada eran botones muertos), y ningún enlace con esquema inadmisible pinta: el compilador
+rechaza `javascript:`/`vbscript:`/`data:` en el programa y los renderers vuelven a comprobarlo
+(`urlAdmitida()`), además del `auditar-enlaces.py` sobre DOM real. `Navegacion(marca, enlaces,
+urls?, inicio?)` lleva las URLs en paralelo con sus enlaces y `inicio` es el homeRoute: si va,
+la marca se pinta como `<a>` a ese destino; si no, se usa `data-nz-inicio` de la página y, sin
+destino admisible, la marca queda sin enlace (nunca un `#` de relleno en modo producto). Y
+`Seccion(children, rotulo?, borde?)` pinta el rótulo como `nz-lbl`, no como `h2`: dos `h2` del
+mismo tamaño en la misma sección son ruido, no jerarquía.
+
+Para gastar menos prompt: `generar-web.py --prompt breve` (por defecto) omite los tres ejemplos
+largos de `PROMPT.md` cuando ya se parte de una plantilla de arquetipo (~1.040 tokens menos por
+generación); `--prompt completo` los devuelve. Procedimiento completo de horneado + release:
+`references/portada-y-canal.md`.
+
+**Compilar desde fuera del repo (Node, sin Python) y validar el programa antes de pintarlo.**
+`auditar-openui.py` audita la coherencia interna del repo, **no** una pagina generada:
+para una pagina tuya el juez es `auditar-uso.py` sobre el HTML resultante. El runtime se
+usa en Node cargando el IIFE `openui/aurora-openui.js` en un contexto `vm` con un `fetch`
+que devuelve `aurora.spec.json` desde disco y un `import` que rechaza (fuerza el parser
+local), y llamando `pintar(programa, null)`: sin contenedor no toca DOM y devuelve el HTML
+como cadena. **Y valida los argumentos contra `spec.schema.$defs` ANTES de compilar, porque
+el runtime no lo hace**: un booleano en la posicion de un enum pinta `.nz-btn--true` (clase
+inventada) y una cadena donde se espera una lista **se imprime como contenido visible** en
+la pagina. Recetas de carga, validacion, reparacion mecanica, presupuesto de color sobre el
+programa y reglas de prompt: `references/openui-desde-fuera.md`.
+
+**Un generador con N plantillas fijas es una jaula.** Si el producto solo elige entre
+composiciones predefinidas, N documentos distintos producen N webs que se parecen y el
+usuario lo nota («no me gusta que todo sea lo mismo»). Cuando pida variedad, dale al modelo
+un lenguaje de composicion (openui-lang) mas un registro de estilo, y **mide que N estilos
+dan N estructuras** — conjunto de componentes y secuencia de bloques distintos, no «se ven
+distintas» a ojo — y que las N pasan el lint con 0 fallos.
+
+**Variedad NO es recargar.** La misma peticion que pide formatos distintos suele pedir,
+literalmente en la misma frase, que el diseno sea «mas simple y agradable». Las dos cosas
+van juntas o la entrega falla: la variedad se paga con **estructura** (que componentes, en
+que orden, con que densidad), nunca con mas adornos, mas sombras ni mas color. Si al
+diversificar suben las superficies, las sombras o los momentos de marca, has entendido mal
+la peticion (§13b). Antes de dar por buena una variante, comprueba que su presupuesto de
+superficies y color no es peor que el de la receta canonica.
+
+Dos verdades de auditoria medidas, no deducidas: que la portada del sistema vista el sistema se
+comprueba con `grep -c 'class="cat-' index.html` (el shell cat-* es legitimo solo en el catálogo;
+cientos de usos en la portada = no-dogfooding); y «que cualquiera pueda usarlo» exige un
+`LICENSE` en la raíz del repo — sin licencia es legalmente falso. Comprueba ambos antes de
+vender la promesa.
 
 ## 7. Necesito X → uso Y (verificado contra el censo)
 
@@ -256,8 +392,26 @@ forma `--square/--rounded/--pill`, elevación `--flat/--raised`, estados `.is-ac
 3. `<html lang="es" data-nz-theme="light">` + `<body class="nz">` + CDN pineado a `$V`.
 4. Footer exacto con atribución.
 5. Móvil medido, no admirado: `scrollWidth == clientWidth` a 320/360/390 en todas las pestañas; táctil 44px.
+   Procedimiento fiable de emulación con CDP: abre la pestaña en `about:blank`, aplica
+   `Emulation.setDeviceMetricsOverride(width, height, deviceScaleFactor, mobile)` ANTES de navegar al HTML, y mide después. Si aplicas el override sobre una página YA cargada, el layout sigue hecho al ancho de viewport anterior y mide desbordes fantasma (p. ej. el contenedor queda a 374px con clientWidth 320): el desborde es del test, no de la página. Para medir otra ventana no sirven `window.open` en `file://`: el origen null bloquea el acceso al documento hijo (cross-origin).
+   **Y si `innerWidth` no coincide con el ancho que pediste, el test no ha corrido: no lo interpretes.** Encadenar overrides en una sesión de navegador ya usada deja de aplicarse en silencio —pides 360 y `innerWidth` sigue en 1264— y cualquier medida que saques de ahí es del escritorio disfrazada de móvil. Comprueba `innerWidth + '×' + innerHeight` en cada iteración y, si no cuadra, repite en una **sesión limpia**; no des el móvil por bueno hasta que el ancho declarado y el real coincidan.
+5b. **La acción principal se ve sin desplazar, y también en MÓVIL.** En una herramienta (chat, formulario, panel) el control que el usuario necesita —enviar, guardar, filtrar— debe estar dentro del viewport a 1908×913. Ni el auditor ni el test de móvil lo detectan: mide `getBoundingClientRect()` del control contra `innerHeight`. Un titular grande + entradilla + aviso antes de la herramienta se come 200px y deja el compositor por debajo del pliegue.
+    **El escritorio aprobado no implica el móvil aprobado:** el mismo hero a dos columnas se apila en móvil, el titular se come la pantalla y el botón queda al borde (medido: 695-747px de 760 en 320×760, que en un terminal real de 640 de alto no cabe). Mide a 320/360/390 con el override aplicado **antes** de navegar, y si no cabe, sube la herramienta con `order` en el contenedor flex —**sin cambiar el orden del DOM**, para no romper el lector de pantalla— y aprieta el hero solo en móvil (`@media (max-width: 639px)`, titular un escalón menos y fuera los adornos).
 6. Escritorio y print (si es informe) sin regresión. Mirar la página en preview.
 7. Si tocaste el sistema: `generar-base-datos.py && auditar-base.py --check && auditar-responsive.py` en verde. La base de datos y los container queries no se degradan en silencio.
+8. **Enlaces y navegación**: `python scripts/auditar-enlaces.py` → 0 enlaces rotos, 0 anclajes
+   rotos, 0 IDs duplicados, 0 protocolos inseguros, 0 placeholders `#` en modo producto y
+   camino a la portada (o al `data-nz-inicio` del producto) en todas las páginas. Nació de un
+   fallo caro: al mover `recetas/` a `bloques/recetas/` las rutas se quedaron en `../` (un
+   nivel) y **todas las recetas se sirvieron sin CSS** durante una release entera; nadie lo
+   vio porque el HTML era válido. Mover una carpeta = reescribir rutas relativas + pasar este
+   auditor. Ignora `<pre>`/`<code>` (ahí hay ejemplos escapados, no enlaces) y también los
+   comentarios: un `<h1>` citado en un comentario corta la búsqueda y da un falso «sin botón».
+9. Si la página la generó openui-lang: compilada con `programa-a-html.py` (u horneada con
+   `hornear.py`/`hornear-golden.py`), `auditar-uso.py` en 0 fallos y render medido en navegador
+   **tras resolver el runtime** (trampa c de §13.3). Si es producto de referencia:
+   `python scripts/probar-producto.py` → 18 comprobaciones (marca computada, política de firma,
+   recorrido de navegación, overflow y jerarquía) en verde.
 
 ## 9. Ampliar el repo (aquí va todo el CSS bueno)
 
@@ -277,6 +431,19 @@ Criterio de admisión: (a) resuelve un problema real y repetido, (b) es responsi
 
 - ❌ Clases de la v6: `nz-card--glass-liquid-*`, `nz-gradient-text`, `nz-aurora-mesh`, `nz-orb`, `u-nz-text-brand`, `data-nz-skin`. En v7 no existen. Títulos destacados: `.nz-h1--brand`.
 - ❌ Inventar clases (auditadas en el pasado: `nz-btn--glass-liquid-secondary`, `nz-fieldset__legend` — lo real es `__leyenda`). Si no está en `components.json`, no existe.
+- ❌ **Malos tamaños de texto.** `nz-text` a secas (sin modificador), `nz-text--2xs` y `nz-text--xs` **no existen** (cuerpo = `nz-prose`, rótulo = `nz-lbl`, entradilla = `nz-lead`; de la familia `nz-text` solo valen los modificadores: `--muted`, `--small`, `--large`, `--peso-*`), y las partes de `.nz-alert` son `__icon`/`__body`/`__title`/`__msg`/`__action`/`__close` — `__text` tampoco. El auditor las caza todas, pero cuesta una iteración cada vez: consúltalas antes de escribir el primer párrafo.
+- ❌ **`.nz-switch` sin `__track` + `__thumb`.** El markup correcto es `<label class="nz-switch"><input type="checkbox"><span class="nz-switch__track"><span class="nz-switch__thumb"></span></span><span class="nz-switch__label">…</span></label>`. Sin el track/thumb el `<input>` queda **inerte**: el usuario no puede cambiar de estado y lo reporta como «no me deja», no como bug de UI. Compruébalo con un clic real y leyendo `checked` antes y después.
+- ❌ **Usar `.nz-callout` para texto largo o citas.** Es un objeto de **aviso corto** (título + mensaje): metido en un contenedor estrecho parte la prosa palabra por palabra y parece una tabla. Para una cita: atribución en `.nz-lbl` y el texto literal en `.nz-prose`; una sola insignia de estado por respuesta, no una por cita.
+- ❌ **Emojis como iconos de estado** (✅ ❔ ⚠): el auditor los marca (`emoji-en-ui`) y cambian de forma según la fuente. Usa el sprite: `nz-i-069` verificado, `nz-i-073` pregunta, `nz-i-072` atención, `nz-i-016` cerrar, `nz-i-074` información.
+- ❌ **Creer al auditor cuando dice «pack p9-media sin uso aparente».** Solo ve el HTML estático: si los `.nz-icon` los crea el JS, el pack hace falta igualmente. Comprueba en el navegador (`document.querySelectorAll('svg.nz-icon').length`) antes de quitarlo.
+- ❌ **Escribir `body { … }` o cualquier CSS propio en la página, más allá de un contenedor de layout.** No hace falta: `tokens.css` ya pinta `body` (fondo, tinta, Inter) y los packs dan las superficies. Un `<style>` propio solo invita a colores a mano (el lint lo marca) y a competir con la cascada del sistema. Si lo que quieres no existe, va al repo (§9) o se resuelve con un objeto existente.
+- ❌ **`span.nz-lbl` suelto como hijo directo de `nz-stack`:** se estira a todo el ancho y parece una barra vacía. Envuélvelo en `nz-cluster` (o úsalo dentro de un cluster junto a otros elementos).
+- ❌ **Dejar el `<h1>` con `nz-h1--brand` por defecto.** El titular en tinta + UN momento de marca en la acción principal (botón primario) + UN momento de acento en el dato lee mejor y respeta el presupuesto: con `--brand` en el h1 más dos botones primarios, `acento-testimonial` salta. La receta de `bloques/ejemplos/landing.html` lo hace así.
+- ❌ **Poner un `.nz-lead`, `.nz-prose` o `.nz-text--muted` dentro de un `--brand` a sangre.** `.nz-hero-bleed--brand` pinta fondo de marca y tinta invertida en el contenedor, pero las familias de texto traen su propio `color: var(--nz-text-soft)`: gris oscuro sobre azul, ilegible. El sistema **no tiene utilidad de texto invertido**, así que o el hero de marca lleva solo titulares (que heredan la tinta invertida) o va en fondo suave. Con `--brand` y prosa dentro, el contraste se rompe aunque el lint no lo vea.
+- ❌ **Un elemento de rejilla/flex dentro de un contenedor que es flex en columna y no estira a sus hijos.** `.nz-cta-banner` es `display:flex; flex-direction:column; align-items:flex-start`: un `.nz-split` hijo NO reparte en columnas y el texto se queda en una columna de un carácter (con el titular partido palabra por palabra). Para repartir dentro de un banner, el cuerpo se monta con `.nz-cluster`/`.nz-split` **con `width:100%`**, o se usa el objeto tal como viene. Síntoma delator: un titular de 4 palabras en 4 líneas. Se ve en captura, no en el lint.
+- ❌ **`.nz-timeline` con contenido rico sin envolver los textos en pila.** `__title`, `__desc` y `__time` son `inline`: puestos como hermanos dentro de `__item` se leen en una sola línea corrida («Solicita acceso Contacta para abrir…»). Van dentro de un `.nz-stack nz-stack--2xs` dentro del `__item`. Y si cada paso tiene muy poco texto, el timeline se queda flaco en una columna estrecha: para procesos de negocio (3-4 pasos con una frase) unas `.nz-article` con `.nz-badge` numerado ocupan el ancho mejor que un timeline.
+- ❌ **`.nz-list--icon` esperando que pinte un icono.** Pinta una **caja** de fondo marca-soft y el icono que pongas dentro se suma a ella: sale un cuadro vacío que parece un checkbox de formulario. Para una lista de puntos con marca de verificación usa `.nz-list--check` y deja que el sistema ponga el glifo; el `--icon` es para cuando la caja ES el icono.
+- ❌ **Dar por hecho que el acordeón se ve desplegable.** `.nz-preguntas-frecuentes__pregunta` no trae indicador: sin chevron el usuario ve cajas de texto estáticas y no sabe que se abren. Añade el icono del sprite (`iconos/011-angulo-abajo.svg`) dentro del `<summary>` y gíralo con `.nz-preguntas-frecuentes__item[open] .nz-preguntas-frecuentes__pregunta .nz-icon { transform: rotate(180deg) }` — es geometría, no color, así que cabe en un `<style>` propio.
 - ❌ Usar una versión «de memoria» en vez del PASO 0 (resolver `$V` del repo).
 - ❌ Colores a mano o degradados azul→naranja: el azul es primario y el naranja acento, **en elementos separados**. Gradiente solo monocromo si acaso (en v7, ninguno).
 - ❌ KPIs gigantes (2.5rem+) y bordes decorativos superiores en cards («look de IA»).
@@ -312,9 +479,22 @@ Criterio de admisión: (a) resuelve un problema real y repetido, (b) es responsi
   ya viene en el sistema, y una dependencia externa rompe las capturas headless y la
   paridad entre máquinas. La portada lo hacía con Inter (duplicaba la fuente que sirve
   `tokens.css`); corregido en 9.2: el `<link>` externo sobra.
-- ❌ **Editar a mano `components.json` o `datos/base-diseno.json`.** Son salidas de
-  generador: la CI las compara y `auditar-base.py --check` caza cualquier retoque. Se
-  cambia la fuente (`specs/`, packs, `bloques/recetas/`, `marcas/`) y se regenera.
+- ❌ **Editar a mano algo que genera un script.** `components.json`, `datos/base-diseno.json`,
+  `paginas/*.html`, `bloques/combos/*`, `iconos/index.html`, `briefs/portada.tmpl.html`,
+  `examples/golden/*.html`: son salidas de build. Parchearlas a mano parece que funciona y la
+  siguiente regeneración lo pisa o el `--check` lo canta en el acto («desincronizado: ejecuta
+  iconos.py todo»). **Se arregla el generador y se regenera**; si el cambio debe durar, va al
+  generador con su comentario de por qué.
+- ❌ **Insertar una etiqueta «después del atributo» en vez de después de la etiqueta.** Un
+  `<link rel="stylesheet" href="...p1.css"` + `<link ... p2.css">>` deja la primera sin su `>` y el
+  sobrante cierra la segunda: el navegador carga 6 hojas y no la 7, el HTML «valida» y el elemento
+  sale con el azul por defecto del enlace. Ancla el reemplazo en el `>` de cierre
+  (`href="...\.css">`) y deja que el auditor cace cualquier `<link>` sin cerrar.
+- ❌ **Suponer que el CDN ya tiene lo que acabas de escribir en el repo.** El tag publicado va por
+  detrás: si añades `text-decoration: none` a `.nz-navbar__brand` y la página enlaza `@vX.Y.Z`, la
+  marca sale subrayada allí. Puente sin release: suma una clase que **ya** traiga la propiedad en
+  el tag publicado (`class="nz-navbar__brand nz-navbar__link"`), o publica versión nueva — nunca
+  `style=""` a mano.
 - ❌ **Resolver un objeto compuesto solo con `@media`.** Un chart o un kanban dentro de
   un sidebar de 320px se rompe aunque el monitor sea 4K. Los objetos compuestos consultan
   su contenedor; si el objeto no es contenedor, se declara el contexto con `.nz-cq`.
@@ -333,7 +513,9 @@ Criterio de admisión: (a) resuelve un problema real y repetido, (b) es responsi
 
 No es cambiar dos URLs: es reescribir markup. Medido en caso real: de 107 clases usadas
 solo 22 existían en v7. Sin equivalencia 1:1 (`nz-card` → `nz-article`/`nz-bento`/`nz-thirds`;
-mesh/orbs/3D desaparecen). Receta y script de medición en `references/migracion-v6-a-v7.md`.
+mesh/orbs/3D desaparecen). El caso completo, con el script de medición de clases supervivientes,
+está en la skill `design-system-coherence-audit` (en la instalación local ya no existe
+`references/migracion-v6-a-v7.md`: no apuntes a ficheros que no puedas abrir).
 
 ## 13. Lecciones que costaron tiempo (verificadas, no teoria)
 
@@ -346,10 +528,21 @@ mesh/orbs/3D desaparecen). Receta y script de medición en `references/migracion
    confiar en que el JS revele deja el dato invisible si el JS falla, si una captura headless
    congela la animación o si la pestaña está en segundo plano. Arranca en `0.55` y pon red de
    seguridad por tiempo: el dato siempre se lee, la animación solo lo adereza.
-3. **Verificar en navegador tiene dos trampas.** (a) En pestaña oculta `IntersectionObserver` y
+3. **Verificar en navegador tiene cuatro trampas.** (a) En pestaña oculta `IntersectionObserver` y
    `setTimeout` no disparan: llama a `Page.bringToFront` y espera antes de medir. (b) Al editar
    CSS/JS en `file://` el navegador sirve caché: `Network.setCacheDisabled(true)` o verás el
-   fichero viejo y perseguirás un bug fantasma (y creerás que tu arreglo no funciona).
+   fichero viejo y perseguirás un bug fantasma (y creerás que tu arreglo no funciona). (c) Una
+   página compilada desde openui-lang **pinta en cliente**: el compilador deja `<main>` vacío y
+   embebe el programa y el runtime (`openui/aurora-openui.js`; la ruta `js/aurora-openui.js`
+   no existe). La primera pasada recién cargada da Times New Roman y 0 componentes — no está
+   rota: `AuroraOpenUI.iniciar` aún está resolviendo la spec. Espera ~3 s y **remide**
+   (estilo computado, `querySelector` de `.nz-*`, desborde) antes de concluir nada. (La vía
+   `probar-producto.py` y el horneado existen precisamente para no depender de esa espera.)
+   (d) Si el CSS viene del CDN, 1-2 s no bastan: medido, a 1,2 s la navbar daba 36 px y peso 400
+   (sin hoja) y a 5 s daba 61 px y `display:flex`. Antes de gritar «sin CSS», lista
+   `document.styleSheets` y comprueba que **el pack que necesitas está en la lista**; y no te fíes
+   de `curl -w %{size_download}` contra jsDelivr (devuelve 0 B con 200): el estado fiable es el
+   navegador, no el tamaño.
 4. **Un tag de git es inmutable.** El CDN `@vX.Y.Z` seguirá sirviendo el commit viejo aunque
    `master` avance: cualquier funcionalidad nueva necesita versión nueva (`VERSION` en
    `scripts/generar-llm-docs.py`, `components.json`, badge del README, tag) y todas deben decir
@@ -383,6 +576,51 @@ mesh/orbs/3D desaparecen). Receta y script de medición en `references/migracion
    de tema sin re-aplicar la paleta activa deja colores ilegibles en el nuevo tema.
    Pickers creados una vez, estado «a mano» cuando el usuario toca un picker, y cada
    paleta con tonos light y dark propios.
+10. **La cascada se pelea con igualdad de especificidad y la gana el que va después.**
+   `[data-nz-marca="x"]` y `:root` puntúan lo mismo (0,1,0): el `<link>` de la marca tiene que
+   ir **después** de `tokens.css` o los defaults del sistema pisan la marca y el color elegido
+   no aparece por ningún sitio. El lint no lo ve (las clases y los tokens son correctos): se
+   diagnostica **midiendo** `getComputedStyle(document.documentElement).getPropertyValue('--nz-marca-600')`
+   contra el color pedido (así se cazó y cerró el B02: el atributo declaraba una marca que
+   nadie enlazaba). Lo mismo aplica a cualquier custom property que se consuma sobrescrita.
+11. **Un helper que devuelve cadena vacía cuando falta el asset esconde el fallo.** Un
+   `icono(nombre)` que hace `try { leer svg } catch { '' }` deja un hueco limpio y silencioso
+   cuando el fichero no está descargado: el lint pasa, el render no desborda y el elemento
+   simplemente no tiene icono (un `<summary>` sin chevron parece un diseño, no un bug).
+   Cuenta los assets referenciados contra los presentes, o haz que el helper avise una vez.
+
+## 13b. La elegancia vive en el presupuesto, no en el gusto (medido 2026-10-22)
+
+El ruido visual que David detecta («cajas grandes que se pisan») NO está en los packs:
+medido con arnés de superficies, la portada y su shell `cat-*` a mano tienen 104 superficies,
+17 anidadas y 67 sombras; las recetas canónicas solo 33-37 superficies y 4 anidadas.
+Recortar SOLO las sombras (presupuesto: 1 elemento elevado por región, cajas base =
+plano + filete) bajó la portada de 67 sombras a 15 sin tocar nada más: el ruido es
+presupuesto, no gusto. Para v10 eso pasa a lint (`sombra-budget`, `anidacion-max=2`,
+densidad `compacta` por defecto, `Rejilla` auto-fit minmax en vez de columnas fijas)
+y la portada se genera con openui en lugar del shell a mano. Plan: `docs/planes/PLAN-AURORA-v10.md`.
+
+## 13c. Publicar una release y hornear páginas estáticas (verificado end-to-end)
+
+- **Orden de regeneración obligatorio**: `generar-llm-docs.py` → `generar-base-datos.py` →
+  `build-catalog.py` → `audit-catalog/audit-html` → `iconos.py todo`. La base de datos lee
+  `components.json` (que escribe generar-llm-docs con la `VERSION` nueva): si inviertes el
+  orden, se desincroniza y `auditar-base.py --check` la caza (cazado en vivo: 10.1.0 → 10.2.0).
+- **El tag se crea sobre el commit final** y entonces `validar-css.py` pasa en verde: antes
+  del tag dice «desalineación de versión» — es el huevo-gallina esperado, no lo persigas
+  antes de tiempo.
+- **Tras un salto de canal**, la CI caza dos rezagados siempre: páginas del site enlazando
+  `@vX` viejo (sed de `Aurora@vX/` en `bloques/`) y `iconos/index.html` desincronizado
+  (`python scripts/iconos.py todo`; ya va en la regeneración de la CI).
+- **El canal congelado sube a propósito en cada release** (`datos/canales.json`): si no,
+  `canal.py --check` lo caza con «actualízalo a propósito».
+- **Renombrar carpetas del site**: el sed de `x/` NO basta — busca también la forma sin
+  barra (`(ROOT / "x")` en scripts y workflows) o dejarás medios caminos rotos.
+- **`git add -A` arrastra `scripts/node_modules`** si no está ignorado: revisa
+  `git show --stat` antes de pushear.
+- **El lint se caza a su autor**: un programa openui-lang con demasiados tonos falla
+  `presupuesto-color` y `dos-protagonistas` al hornearlo — ajusta los tonos en el PROGRAMA,
+  nunca parchees el HTML generado.
 
 ## 14. Interfaces generativas (OpenUI Lang, v9.4)
 
@@ -436,21 +674,25 @@ AuroraOpenUI.stream(respuestaDelModelo, "#lienzo");    // streaming; cae a parse
 10. **Parte de la plantilla, no de cero.** Si el encargo encaja con un arquetipo, se rellena
     su plantilla; la estructura ya está auditada y el modelo solo cambia datos.
 11. **Qué enlaza cada web lo decide el contrato, no el proyecto** (`CONTRATO.md`): canal vivo
-    `@v9` (recibe cada 9.x) o tag exacto (entrega congelada). Nunca `@master`. Un cambio
+    `@v10` (recibe cada 10.x) o tag exacto (entrega congelada). Nunca `@master`. Un cambio
     aditivo llega solo; renombrar o quitar exige major + `migrar-programas.py`.
 
 ## 15. Referencias
 
 
-- **`Ntizar/Aurora`** — la orden máxima. `LLM.md`, `components.json`, `AGENTS.md`, `COMPOSICION.md`, `bloques/ejemplos/`, `bloques/recetas/`, `specs/`, `paginas/`, `audit/`, `scripts/auditar-uso.py`.
-- **`openui/`** — capa generativa: `componentes.json` (fuente), `PROMPT.md`, `aurora.spec.json`, `aurora-openui.js`, `index.html` (probador), `ejemplos.json`.
+- **`Ntizar/Aurora`** — la orden máxima. `LLM.md`, `components.json`, `AGENTS.md`, `COMPOSICION.md`, `bloques/{ejemplos,combos}/`, `examples/golden/`, `specs/`, `paginas/`, `audit/`, `scripts/auditar-uso.py`.
+- **`openui/`** — capa generativa: `componentes.json` (fuente), `PROMPT.md`, `aurora.spec.json`, `aurora-openui.js`, `index.html` (probador), `plantillas/`, `ejemplos.json`.
 - Este mismo `SKILL.md` **dentro del repo** (la CI valida que no se separe).
-- `references/migracion-v6-a-v7.md` y el caso Aurora en la skill `design-system-coherence-audit`.
+- El caso de migración v6→v7 y la auditoría de coherencia, en la skill `design-system-coherence-audit`.
+- `references/portada-y-canal.md` — horneado estático de páginas openui-lang (portada del sistema), pipeline `briefs/portada.openui` → `portada.tmpl.html` → `index.html`, y doctrina de canales/release.
+- `references/navegacion-del-sitio.md` — la barra de sitio: marca «Aurora» arriba a la izquierda, las cinco secciones, variante del catálogo, tabla de profundidad → prefijo relativo, y receta de arreglo masivo de rutas.
 - `references/metodo-diseno.md` — checklists del método de diseño (brief → critique → harden → polish).
+- `references/paginas-herramienta.md` — patrón inspector para páginas-herramienta y playgrounds: layout una vista, fit puro del lienzo, pickers y paletas en vivo, guía generada del mismo módulo.
+- `references/openui-desde-fuera.md` — compilar openui-lang en Node sin Python (`pintar(programa, null)`), validar argumentos contra `$defs` (enum, tipo, obligatorios) porque el runtime no lo hace, reparación mecánica del opcional saltado, presupuesto de color sobre el programa, y las reglas de prompt que hacen que un modelo componga una landing bien.
+- El censo visto desde fuera (aplanar `clase → pack`, iconos en línea, prueba diferencial contra `auditar-uso.py`): §1b de esta skill.
 - **`iconos/`** — repositorio de iconos numerados (Lucide ISC + Solar CC BY 4.0; el número
   es único entre colecciones): `README.md` (doctrina y
   licencia), `iconos.json` (manifiesto), `sprite.svg`, `index.html` (catálogo). Se amplía con
   `python3 scripts/iconos.py anadir lucide:nombre`; el número no se reutiliza nunca.
-- `references/paginas-herramienta.md` — patrón inspector para páginas-herramienta y playgrounds: layout una vista, fit puro del lienzo, pickers y paletas en vivo, guía generada del mismo módulo.
 
 Hecho con ❤️ por David Antizar
