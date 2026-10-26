@@ -384,10 +384,12 @@ def fragmento_elemento(mu, m):
     return m.group(0)
 
 
-def markup_minimo(base, tope=1200):
+def markup_minimo(base, tope=1500):
     """Markup mínimo de ejemplo de una familia: el elemento más pequeño de las
     demos reales cuyo class lleva la familia. Preferido: el elemento raíz
-    (`.nz-base` o `.nz-base--mod`), no una sub-parte `__`. Nada a mano."""
+    (`.nz-base` o `.nz-base--mod`), no una sub-parte `__`. Nada a mano.
+    El techo es el mismo de una demo de receta (1500): así un deck completo
+    (.nz-presentacion) cabe como ejemplo mínimo de su familia."""
     mejor = None
     for cat in sorted(specs_por_cat):
         for demo in specs_por_cat[cat]["demos"]:
