@@ -8,8 +8,8 @@ Design system CSS puro, sin dependencias ni build. 2195 objetos en 18 categoría
 ```html
 <html lang="es" data-nz-theme="light">
 <head>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v10.1.0/tokens.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v10.1.0/packs/all.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v10.2.0/tokens.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v10.2.0/packs/all.css">
 </head>
 <body class="nz">
 ```
@@ -386,13 +386,13 @@ Los 236 tokens están inventariados en `components.json` (sección
 ## 8. Anti-patrones (NO lo hagas)
 
 - ❌ Pegar el CSS de los packs en el prompt (250 KB ≈ 60.000 tokens). Enlaza por CDN.
-- ❌ Inventar clases (`nz-gradient-text`, `nz-btn--glass-liquid-brand`, `nz-card--glass`): no existen aquí. Es la doctrina de Aurora v6, **jubilada**: Aurora es sólido, sin glass ni gradientes.
+- ❌ Inventar clases (`nz-gradient-text`, `nz-btn--glass-liquid-brand`, `nz-card--glass`): no existen aquí. Es la doctrina de Aurora v6, **jubilada**: Aurora es sólido por defecto. El ÚNICO glass oficial es la capa `p16-cristal.css` (`.nz-cristal`, `data-nz-estilo="cristal"`) — se activa, no se reimplementa; nunca en tablas, formularios ni cristal anidado.
 - ❌ Escribir colores a mano (`#2563eb`, `rgb(...)`): usa tokens `var(--nz-*)`.
 - ❌ Texto blanco sobre relleno de acento o texto acento plano (`color: var(--nz-accent)`):
   en claro cae a 2,80:1 y falla WCAG. Texto de acento → `var(--nz-accent-text)`;
   tinta sobre relleno de acento → `var(--nz-accent-ink)`. La auditoría
   `scripts/auditar-contraste.py` lo caza.
-- ❌ Gradientes, `backdrop-filter` o `!important`: prohibidos por el manifiesto y la CI los detecta.
+- ❌ Gradientes, `backdrop-filter` o `!important` fuera de sus excepciones oficiales (la capa `.nz-cristal` y los helpers de ocultación): el manifiesto los permite SOLO ahí y la CI los detecta en cualquier otro sitio.
 - ❌ Clases globales sin `.nz-`: romperías la convivencia con otros frameworks.
 - ❌ Desktop-first: el sistema es responsive first (base móvil en 1 columna, crece con
   `min-width` hasta el escritorio, y los objetos responden a su contenedor).
@@ -402,7 +402,7 @@ Los 236 tokens están inventariados en `components.json` (sección
   El 800 no existe en el sistema y nada por debajo de 16px lleva 700.
 - ❌ Texto de interfaz a 12px: los 12px son para datos, no para etiquetas.
 - ❌ Enlazar Google Fonts (o cualquier CDN de fuentes): `tokens.css` ya sirve la fuente.
-- ❌ Enlazar `@master` en producción: pinea la versión (`@v10.1.0`) o jsDelivr te servirá CSS viejo desde su caché.
+- ❌ Enlazar `@master` en producción: pinea la versión (`@v10.2.0`) o jsDelivr te servirá CSS viejo desde su caché.
 
 ## 8b. Canales: qué versión enlazar
 
@@ -410,8 +410,8 @@ Dos canales, un sistema. La regla de oro: **nunca `@master`**.
 
 | Canal | URL | Cuándo |
 |---|---|---|
-| vivo | `@v10` | webs propias: recibe cada release 9.x sin tocarlas |
-| congelado | `@10.1.0` | entregas a cliente: reproducible dentro de dos años |
+| vivo | `@v10` | webs propias: recibe cada release de su serie sin tocarlas |
+| congelado | `@10.2.0` | entregas a cliente: reproducible dentro de dos años |
 
 Si el proyecto trae `aurora.lock`, respétalo: dice qué canal y qué tag está comiendo.
 Un cambio aditivo llega solo; renombrar o quitar algo exige major y migración

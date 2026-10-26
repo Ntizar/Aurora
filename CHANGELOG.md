@@ -5,6 +5,60 @@ Versionado: [SemVer](https://semver.org/lang/es/).
 
 ## [Sin publicar]
 
+(sin cambios aún)
+
+## [10.2.0] — 2026-10-26
+
+### Contrato de producto: inicio, política de URL, firma y marca (plan de mejora)
+
+- **Shell con ruta de inicio (B03/A02)**: `Navegacion` gana la prop opcional
+  `inicio` (homeRoute) con prioridad `p.inicio` → `<html data-nz-inicio>` → marca
+  sin enlace. La marca es un `<a>` real al inicio del producto y funciona bajo
+  subruta desde móvil y desde enlace profundo (`examples/golden/` lo demuestra
+  medido en navegador, no prometido).
+- **Política de protocolos doble (B04/A04)**: el compilador rechaza el programa
+  (`javascript:`/`vbscript:`/`data:` con línea informada) y los renderers del
+  runtime no pintan enlaces con esquema inadmisible (`urlAdmitida()`), además del
+  auditor sobre DOM real: anclajes resueltos, IDs duplicados, protocolos,
+  placeholders `#` en modo producto, base de despliegue y externos con caché.
+- **Firma configurable (B05/A08)**: `--firma full|subtle|none` en compilador y
+  horneado → `data-nz-firma`; el lint comprueba la política elegida (0 o 1 vez;
+  repetida = fallo) y excluye las demos vivas del recuento. Nada de firmas
+  incrustadas en piezas sueltas.
+- **Preset de marca cargado de verdad (B02/A09)**: `programa-a-html.py` y
+  `hornear.py` enlazan `marcas/<marca>.css` detrás de `tokens.css`; marca
+  inexistente = error con diagnóstico (sin fallback silencioso). Medido:
+  aurora `#2563eb` vs ntizar `#0057ff` en estilos computados.
+- **Doctrina de materiales unificada (A01/B01)**: el cristal deja de estar
+  «prohibido y implementado»: `p16-cristal` es la ÚNICA capa oficial con blur y
+  gradiente, de uso controlado (navegación o superficie flotante), en AGENTS.md,
+  COMPOSICION.md (ley 11) y el prompt de LLM. Resto del sistema, cero.
+- **Fallbacks de cristal corregidos (B07)**: rama oscura en el fallback sin blur
+  (antes caía sobre blanco con texto claro) y `prefers-reduced-transparency`
+  que ahora anula el filtro y reasigna superficies opacas por tema.
+
+### Producto de muestra y pruebas de navegador (§15)
+
+- **`examples/golden/`**: landing (`index.html`) y ficha de detalle generadas
+  desde `.openui` con modo producto, marca ntizar y firma política — 0 fallos de
+  composición, 985 enlaces locales, 0 anclajes rotos.
+- **`scripts/probar-producto.py`**: matriz mínima de navegador real (plan §12.3)
+  — 18 comprobaciones: marca computada, política de firma, recorrido
+  ficha↔inicio con HTTP real, overflow 390/768/1440 en claro y oscuro y
+  jerarquía tipográfica computada. Declara sus pendientes; no los aprueba por
+  herencia.
+- **`scripts/hornear-golden.py`**: única definición del horneado golden; local y
+  CI ejecutan lo mismo y `--check` detecta HTML desfasado de su fuente.
+- **CI**: golden en el lint, paso de producto en navegador y `--check` de golden
+  en la sección de regeneración.
+
+### Documentación alineada (A11)
+
+- README: recuento vivo único (2.195 objetos), badge `10.2.0` (era 9.12.1) y
+  canal vivo `@v10` con consumidores de la serie 9 intactos; `CONTRATO.md`
+  refleja el mismo canal. Registro de contradicciones A01–A13 en
+  `docs/current/contradicciones.md` con estado y garantía de cada una.
+
 ### La portada se hornea: una sola fuente, la mitad de tokens
 
 - **`scripts/hornear.py`** cierra el círculo: `.openui` → compila → pinta en Chrome

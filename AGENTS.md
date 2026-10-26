@@ -12,8 +12,16 @@ Si eres un agente (o una persona con prisa), lee esto antes de tocar nada.
 
 1. **Todo lo público vive bajo `.nz-`**. Nada de clases globales sueltas.
 2. **Todo valor es un token `--nz-*`**. Ni un `#2563eb` ni un `16px` de diseño a mano.
-3. **Sin gradientes, sin `backdrop-filter`, sin `!important`**
-   (solo se admiten en `.nz-visually-hidden`, `.nz-vh` y `.nz-print-hide`).
+3. **Sin gradientes, sin `backdrop-filter`, sin `!important`** — salvo las dos
+   excepciones oficiales, que este sistema SÍ ofrece y no son un error:
+   - **La capa de cristal `p16-cristal.css`** (`.nz-cristal`, `data-nz-estilo="cristal"`):
+     es la ÚNICA capa con `backdrop-filter` y gradiente. Uso CONTROLADO — navegación,
+     superficie flotante o panel destacado sobre fondo con profundidad; nunca cristal
+     anidado ni detrás de tablas y formularios (ley B01 del plan: material, no adorno).
+     Trae su fallback opaco y `prefers-reduced-transparency` propio.
+   - **`.nz-visually-hidden`, `.nz-vh`, `.nz-print-hide`**: `!important` de ocultación.
+   Todo lo demás, cero. Si necesitas cristal en un pack nuevo, va por `p16-cristal`,
+   no se reimplementa.
 4. **BEM**: `.nz-thing`, `.nz-thing__parte`, `.nz-thing--modificador`, estado `.is-x` o `[aria-*]`.
 5. **Responsive first de verdad**: el objeto responde primero a su **contenedor**
    (container queries) y después al viewport (base móvil en 1 columna, crecer con

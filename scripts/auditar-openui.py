@@ -28,7 +28,7 @@ import sys
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 OPENUI = ROOT / "openui"
 
-RE_CLASE = re.compile(r"nz-[a-z0-9_-]+")
+RE_CLASE = re.compile(r"(?<!data-)nz-[a-z0-9_-]+")  # data-nz-inicio/theme NO son clases
 RE_RENDER = re.compile(r"R\.([A-ZÁÉÍÓÚÑ][\w]*)\s*=")
 
 

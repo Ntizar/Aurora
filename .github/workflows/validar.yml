@@ -24,7 +24,7 @@ jobs:
         run: python scripts/validar-css.py
 
       - name: Lint de las recetas, ejemplos, combos y páginas del explorador
-        run: python scripts/auditar-uso.py index.html base.html stress-test.html bloques/ejemplos/*.html bloques/recetas/*.html bloques/combos/*.html iconos/index.html marcas/index.html
+        run: python scripts/auditar-uso.py index.html base.html stress-test.html bloques/ejemplos/*.html bloques/recetas/*.html bloques/combos/*.html iconos/index.html marcas/index.html examples/golden/*.html
 
       - name: Enlaces locales y camino de vuelta a la portada
         run: python scripts/auditar-enlaces.py
@@ -80,6 +80,9 @@ jobs:
       - name: Responsive multifunción (container queries y stress test)
         run: python scripts/auditar-responsive.py
 
+      - name: Producto medido en navegador (marca, firma, navegación y overflow)
+        run: python scripts/probar-producto.py
+
       - name: Regenerar y comprobar que no hay diferencias
         run: |
           python scripts/generar-base-datos.py
@@ -88,6 +91,7 @@ jobs:
           python scripts/build-catalog.py
           python scripts/audit-catalog.py
           python scripts/audit-html.py
+          python scripts/hornear-golden.py --check
           if ! git diff --quiet -- index.html paginas datos packs/all.css audit components.json LLM.md llms.txt combos openui iconos; then
             echo "::error::Lo generado no coincide con lo commiteado. Ejecuta generar-base-datos.py, generar-llm-docs.py, generar-openui.py, build-catalog.py, audit-catalog.py y audit-html.py, y commitea el resultado."
             git --no-pager diff --stat -- index.html paginas datos packs/all.css audit components.json LLM.md llms.txt combos iconos

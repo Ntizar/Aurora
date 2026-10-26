@@ -6,11 +6,11 @@
 marcas por preset y una capa generativa para que el diseño lo escriba el modelo — sin salirse
 nunca del sistema.
 
-2.194 objetos · 411 familias · 659 demos en vivo · 18 categorías · 36 componentes generativos · 338 iconos numerados
+2.195 objetos · 411 familias · 659 demos en vivo · 18 categorías · 36 componentes generativos · 338 iconos numerados
 
 [![CI](https://github.com/Ntizar/Aurora/actions/workflows/validar.yml/badge.svg)](https://github.com/Ntizar/Aurora/actions/workflows/validar.yml)
 [![Pages](https://github.com/Ntizar/Aurora/actions/workflows/pages.yml/badge.svg)](https://github.com/Ntizar/Aurora/actions/workflows/pages.yml)
-![versión](https://img.shields.io/badge/versi%C3%B3n-9.12.1-2563eb)
+![versión](https://img.shields.io/badge/versi%C3%B3n-10.2.0-2563eb)
 
 **[Catálogo](https://ntizar.github.io/Aurora/)** · **[Base de datos](https://ntizar.github.io/Aurora/base.html)** · **[Generative UI](https://ntizar.github.io/Aurora/openui/)** · **[Iconos](https://ntizar.github.io/Aurora/iconos/)** · **[Contrato](CONTRATO.md)**
 
@@ -27,10 +27,10 @@ catálogo lo enseña, funciona; si algo se rompe, el push se pone en rojo antes 
 ```html
 <html lang="es" data-nz-theme="light" data-nz-marca="aurora">
 <head>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v9/tokens.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v9/packs/p1-layout.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v9/packs/p3-typography.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v9/packs/p4-actions.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v10/tokens.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v10/packs/p1-layout.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v10/packs/p3-typography.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v10/packs/p4-actions.css">
 </head>
 <body class="nz">
   <main class="nz-container">
@@ -42,8 +42,10 @@ catálogo lo enseña, funciona; si algo se rompe, el push se pone en rojo antes 
 </html>
 ```
 
-`@v9` es el **canal vivo**: se mueve con cada release 9.x, así que un cambio en Aurora llega
-solo a todas las webs que lo usan. Para una entrega congelada, el tag exacto (`@v9.12.1`).
+`@v10` es el **canal vivo**: se mueve con cada release 10.x, así que un cambio en Aurora llega
+solo a todas las webs que lo usan. Para una entrega congelada, el tag exacto (`@v10.2.0`).
+Los consumidores fijados en `@v9` o en un tag exacto de la serie 9 no cambian: `@v9` sigue
+resolviendo su major para siempre.
 El detalle completo está en **[CONTRATO.md](CONTRATO.md)**.
 
 ## Las cuatro capas
@@ -102,7 +104,7 @@ python3 scripts/canal.py --check && python3 scripts/canal.py --purgar
 | Pieza | Qué es |
 |---|---|
 | `tokens.css` | 234 tokens (más 61 en oscuro) con gemela OKLch y contraste auditado |
-| `packs/p1…p18.css` | Los 18 packs, uno por categoría: 2.186 objetos, 411 familias, 656 demos |
+| `packs/p1…p18.css` | Los 18 packs, uno por categoría (recuento vivo en `components.json` y `audit/AUDITORIA.md`; una sola fuente) |
 | `marcas/` | 6 presets (aurora, indigo, esmeralda, violeta, carmesí, ntizar) + generador OKLCH |
 | `specs/NN.json` | **Fuente de verdad** de las demos: el catálogo se genera de aquí |
 | `base.html` + `datos/base-diseno.json` | Base de datos consultable: familias, tokens, recetas, combos, marcas y leyes |

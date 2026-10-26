@@ -57,7 +57,7 @@ Nota(texto: string, tono?: "nota" | "consejo" | "aviso" | "peligro" | "marca" | 
 Pestanas(pestanas: string[], activa?: number, forma?: "linea" | "pastilla") — Pestañas de sección. Envuelven en varias líneas; nunca se cortan.
 Segmentado(opciones: string[], activa?: number) — Selector de 2 a 4 opciones excluyentes, tipo Hoy/Semana/Mes.
 Pasos(pasos: string[], actual?: number) — Proceso por etapas con la etapa actual marcada.
-Navegacion(marca: string, enlaces: string[], urls?: string[]) — Barra de navegación con marca y enlaces. urls va en paralelo a enlaces: la primera lleva a la primera. Sin urls, los enlaces son anclas.
+Navegacion(marca: string, enlaces: string[], urls?: string[], inicio?: string) — Barra de navegación con marca y enlaces. urls va en paralelo a enlaces: la primera lleva a la primera. Sin urls, los enlaces son anclas. inicio es la ruta de inicio del producto (homeRoute): si va, la marca se pinta como enlace a ese destino; si no va, se usa el data-nz-inicio de la página (<html>) y, en su defecto, la marca queda sin enlace.
 
 ### Formularios
 Campo(etiqueta: string, tipo?: "texto" | "numero" | "email" | "fecha" | "busqueda", valor?: string, ayuda?: string, error?: string, requerido?: boolean) — Campo de formulario con etiqueta, ayuda y error. Nunca un input sin etiqueta.
@@ -184,4 +184,4 @@ a2 = Boton("Ver histórico", "contorno")
 - ¿Hay un solo titular nivel 1 y el acento está donde importa?
 - ¿Los números están formateados en castellano?
 
-<!-- aurora-openui · spec 5744f2400b821bf8 · 36 componentes · generado por scripts/generar-openui.py -->
+<!-- aurora-openui · spec 748c80c9da2e43a4 · 36 componentes · generado por scripts/generar-openui.py -->

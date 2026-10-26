@@ -70,7 +70,7 @@
   },
   {
    "id": 11,
-   "titulo": "Cero gradientes, cero glass, cero `!important` (manifiesto)",
+   "titulo": "Cero gradientes, cero glass, cero `!important` salvo las excepciones oficiales: la capa `p16-cristal` (única capa con blur/gradiente, uso controlado: navegación o superficie flotante, con fallback opaco) y los helpers de ocultación (`.nz-visually-hidden`, `.nz-print-hide`)",
    "lint": "lint: manifiesto"
   },
   {

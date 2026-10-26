@@ -189,8 +189,8 @@
    "description": "Proceso por etapas con la etapa actual marcada."
   },
   "Navegacion": {
-   "signature": "Navegacion(marca: string, enlaces: string[], urls?: string[])",
-   "description": "Barra de navegación con marca y enlaces. urls va en paralelo a enlaces: la primera lleva a la primera. Sin urls, los enlaces son anclas."
+   "signature": "Navegacion(marca: string, enlaces: string[], urls?: string[], inicio?: string)",
+   "description": "Barra de navegación con marca y enlaces. urls va en paralelo a enlaces: la primera lleva a la primera. Sin urls, los enlaces son anclas. inicio es la ruta de inicio del producto (homeRoute): si va, la marca se pinta como enlace a ese destino; si no va, se usa el data-nz-inicio de la página (<html>) y, en su defecto, la marca queda sin enlace."
   },
   "Campo": {
    "signature": "Campo(etiqueta: string, tipo?: \"texto\" | \"numero\" | \"email\" | \"fecha\" | \"busqueda\", valor?: string, ayuda?: string, error?: string, requerido?: boolean)",
@@ -1159,6 +1159,9 @@
       "items": {
        "type": "string"
       }
+     },
+     "inicio": {
+      "type": "string"
      }
     },
     "required": [
@@ -1166,7 +1169,7 @@
      "enlaces"
     ],
     "additionalProperties": false,
-    "description": "Barra de navegación con marca y enlaces. urls va en paralelo a enlaces: la primera lleva a la primera. Sin urls, los enlaces son anclas."
+    "description": "Barra de navegación con marca y enlaces. urls va en paralelo a enlaces: la primera lleva a la primera. Sin urls, los enlaces son anclas. inicio es la ruta de inicio del producto (homeRoute): si va, la marca se pinta como enlace a ese destino; si no va, se usa el data-nz-inicio de la página (<html>) y, en su defecto, la marca queda sin enlace."
    },
    "Campo": {
     "type": "object",

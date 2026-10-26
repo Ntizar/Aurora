@@ -42,7 +42,7 @@ sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
 bc = import_module("build-catalog")
 
 ROOT = bc.ROOT
-VERSION = "10.1.0"
+VERSION = "10.2.0"
 # El canal vivo no se copia a mano: sale de datos/canales.json (único dueño)
 _canales = json.loads((ROOT / "datos" / "canales.json").read_text(encoding="utf-8"))
 CANAL_VIVO = _canales["canales"]["vivo"]["rango"]
@@ -656,10 +656,16 @@ def pagina_combo(nombre, combo, bloques, familias_usadas, objetos):
     A('  </span>')
     A('</nav>')
     A('')
+    # El esqueleto envuelve sus bloques en <main id="contenido">: es el destino
+    # real de las anclas internas que traen las demos (navbar y appnav enlazan a
+    # #contenido) y el target del skip-link. Sin este id, el combo se servía con
+    # anclaves rotos (auditoría de enlaces).
+    A('<main id="contenido">')
     for base, frag in bloques:
         A(f'  <!-- {base} (bloque de demo real) -->')
         A("  " + frag)
         A('')
+    A('</main>')
     A('<footer class="nz-footer nz-footer--compact">')
     A(f'  Esqueleto del combo «{nombre}» · Hecho con ❤️ por David Antizar')
     A('</footer>')
@@ -1101,13 +1107,13 @@ Los {len(tokens)} tokens están inventariados en `components.json` (sección
 ## 8. Anti-patrones (NO lo hagas)
 
 - ❌ Pegar el CSS de los packs en el prompt (250 KB ≈ 60.000 tokens). Enlaza por CDN.
-- ❌ Inventar clases (`nz-gradient-text`, `nz-btn--glass-liquid-brand`, `nz-card--glass`): no existen aquí. Es la doctrina de Aurora v6, **jubilada**: Aurora es sólido, sin glass ni gradientes.
+- ❌ Inventar clases (`nz-gradient-text`, `nz-btn--glass-liquid-brand`, `nz-card--glass`): no existen aquí. Es la doctrina de Aurora v6, **jubilada**: Aurora es sólido por defecto. El ÚNICO glass oficial es la capa `p16-cristal.css` (`.nz-cristal`, `data-nz-estilo="cristal"`) — se activa, no se reimplementa; nunca en tablas, formularios ni cristal anidado.
 - ❌ Escribir colores a mano (`#2563eb`, `rgb(...)`): usa tokens `var(--nz-*)`.
 - ❌ Texto blanco sobre relleno de acento o texto acento plano (`color: var(--nz-accent)`):
   en claro cae a 2,80:1 y falla WCAG. Texto de acento → `var(--nz-accent-text)`;
   tinta sobre relleno de acento → `var(--nz-accent-ink)`. La auditoría
   `scripts/auditar-contraste.py` lo caza.
-- ❌ Gradientes, `backdrop-filter` o `!important`: prohibidos por el manifiesto y la CI los detecta.
+- ❌ Gradientes, `backdrop-filter` o `!important` fuera de sus excepciones oficiales (la capa `.nz-cristal` y los helpers de ocultación): el manifiesto los permite SOLO ahí y la CI los detecta en cualquier otro sitio.
 - ❌ Clases globales sin `.nz-`: romperías la convivencia con otros frameworks.
 - ❌ Desktop-first: el sistema es responsive first (base móvil en 1 columna, crece con
   `min-width` hasta el escritorio, y los objetos responden a su contenedor).
@@ -1125,7 +1131,7 @@ Dos canales, un sistema. La regla de oro: **nunca `@master`**.
 
 | Canal | URL | Cuándo |
 |---|---|---|
-| vivo | `@{CANAL_VIVO}` | webs propias: recibe cada release 9.x sin tocarlas |
+| vivo | `@{CANAL_VIVO}` | webs propias: recibe cada release de su serie sin tocarlas |
 | congelado | `@{VERSION}` | entregas a cliente: reproducible dentro de dos años |
 
 Si el proyecto trae `aurora.lock`, respétalo: dice qué canal y qué tag está comiendo.
@@ -1189,7 +1195,8 @@ Hecho con ❤️ por David Antizar
 
 > Sistema de diseño CSS-only, sin build y sin dependencias. Namespace `.nz-`,
 > tokens `--nz-*`, BEM, responsive first. {total_clases} clases en {total_bases} familias,
-> {len(censo_cat)} packs. Sin gradientes, sin glass, sin `!important`.
+> {len(censo_cat)} packs. Sin gradientes ni `!important`; glass solo en la capa
+> `.nz-cristal` (uso controlado, con fallback opaco).
 
 Documentos para agentes (léelos en este orden):
 

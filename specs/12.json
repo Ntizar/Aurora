@@ -13,7 +13,7 @@
     {
       "titulo": "Grupo de enlaces de salto",
       "tag": ".nz-skip-links-group",
-      "markup": "<nav class=\"nz-skip-links-group\" aria-label=\"Enlaces de salto\"><a class=\"nz-skip-links-group__link\" href=\"#contenido\">Ir al contenido</a><a class=\"nz-skip-links-group__link\" href=\"#menu\">Ir al menú</a><a class=\"nz-skip-links-group__link\" href=\"#pie\">Ir al pie</a></nav>"
+      "markup": "<nav class=\"nz-skip-links-group\" aria-label=\"Enlaces de salto\"><a class=\"nz-skip-links-group__link\" href=\"#contenido\">Ir al contenido</a><a class=\"nz-skip-links-group__link\" href=\"#menu\">Ir al menú</a><a class=\"nz-skip-links-group__link\" href=\"#pie\">Ir al pie</a></nav><span class=\"nz-landmark__label\" id=\"menu\">Men\u00fa</span><span class=\"nz-landmark__label\" id=\"pie\">Pie</span>"
     },
     {
       "titulo": "Oculto para la vista",

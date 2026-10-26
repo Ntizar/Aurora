@@ -93,7 +93,10 @@
   --nz-cristal-sombra: 0 1px 2px rgba(0, 0, 0, 0.35), 0 12px 40px rgba(0, 0, 0, 0.45);
 }
 
-/* ---- 5. Sin soporte o con movimiento reducido: superficie sólida, nunca roto ---- */
+/* ---- 5. Sin soporte o con transparencia reducida: superficie sólida, nunca roto ----
+   Los dos fallbacks reasignan los tokens a valores OPACOS por tema (el modo cristal
+   los deja translúcidos) y anulan el filtro de la regla base. Auditoría §7: sin la
+   rama oscura, el tema oscuro caía sobre `--nz-gray-0` (blanco) con texto claro. */
 @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
   .nz-cristal,
   .nz-cristal-barra { background: var(--nz-surface); }
@@ -101,10 +104,40 @@
     --nz-surface: var(--nz-gray-0);
     --nz-surface-2: var(--nz-gray-50);
     --nz-bg-soft: var(--nz-gray-50);
+    --nz-border: var(--nz-gray-200);
+    --nz-border-soft: var(--nz-gray-100);
+  }
+  [data-nz-estilo="cristal"][data-nz-theme="dark"] {
+    --nz-surface: var(--nz-gray-950);
+    --nz-surface-2: var(--nz-gray-900);
+    --nz-bg-soft: var(--nz-gray-950);
+    --nz-border: var(--nz-gray-700);
+    --nz-border-soft: var(--nz-gray-800);
   }
 }
 
 @media (prefers-reduced-transparency: reduce) {
+  /* Quita filtro y brillo (el background de la regla base NO los anula por sí solo)
+     y elige la superficie opaca por tema — no `var(--nz-surface)` tal cual, que con
+     el modo cristal activo sigue siendo translúcido. */
   .nz-cristal,
-  .nz-cristal-barra { background: var(--nz-surface); }
+  .nz-cristal-barra {
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+    background: var(--nz-surface);
+  }
+  [data-nz-estilo="cristal"] {
+    --nz-surface: var(--nz-gray-0);
+    --nz-surface-2: var(--nz-gray-50);
+    --nz-bg-soft: var(--nz-gray-50);
+    --nz-border: var(--nz-gray-200);
+    --nz-border-soft: var(--nz-gray-100);
+  }
+  [data-nz-estilo="cristal"][data-nz-theme="dark"] {
+    --nz-surface: var(--nz-gray-950);
+    --nz-surface-2: var(--nz-gray-900);
+    --nz-bg-soft: var(--nz-gray-950);
+    --nz-border: var(--nz-gray-700);
+    --nz-border-soft: var(--nz-gray-800);
+  }
 }

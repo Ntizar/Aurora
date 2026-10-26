@@ -22,7 +22,7 @@ Verificación: `python scripts/auditar-uso.py tu-pagina.html` comprueba estas re
 | 8 | **Ritmo vertical**: la separación entre secciones sale de `--nz-rh-seccion`, no del aire | lint: `ritmo-vertical` |
 | 9 | **Una densidad por página** (compact / normal / spacious) | revisión |
 | 10 | **Iconos = `.nz-icon` (SVG en línea con `currentColor`)**, nunca emoji ni fuente de iconos | lint: `emoji-en-ui` |
-| 11 | **Cero gradientes, cero glass, cero `!important`** (manifiesto) | lint: manifiesto |
+| 11 | **Cero gradientes, cero glass, cero `!important`** salvo las excepciones oficiales: la capa `p16-cristal` (única capa con blur/gradiente, uso controlado: navegación o superficie flotante, con fallback opaco) y los helpers de ocultación (`.nz-visually-hidden`, `.nz-print-hide`) | lint: manifiesto |
 | 12 | **Todo color es un token** `var(--nz-*)`; cero hex a mano | lint: `color-a-mano` |
 
 > Por qué la ley 1 y la 10: los emojis no son iconos. Cambian de forma en cada sistema
@@ -211,9 +211,12 @@ el lienzo se plantaba en 1152px, el 60%.
 9. ☐ Iconos SVG, no emojis.
 10. ☐ Etiquetas de formulario visibles.
 11. ☐ Los tres estados (vacío / carga / error) en las vistas de datos.
-12. ☐ `scrollWidth == clientWidth` a 320/360/390 y atribución exacta.
-13. ☐ **A 1920px el lienzo no se queda corto**: ≥95% en una herramienta (100% con `--app`) y ≥80% en una página de contenido (medido, no admirado).
-14. ☐ La fuente es la del sistema (Inter servida por `tokens.css`), no la del sistema operativo.
+12. ☐ `scrollWidth == clientWidth` a 320/360/390.
+13. ☐ Firma según la política `data-nz-firma` de la página: `none` → 0,
+    `subtle`/`full` → exactamente UNA vez la cadena «Hecho con ❤️ por David Antizar»
+    (nunca dos: `firma-repetida` es fallo del lint; ver AGENTS.md §6).
+14. ☐ **A 1920px el lienzo no se queda corto**: ≥95% en una herramienta (100% con `--app`) y ≥80% en una página de contenido (medido, no admirado).
+15. ☐ La fuente es la del sistema (Inter servida por `tokens.css`), no del sistema operativo.
 
 ---
 

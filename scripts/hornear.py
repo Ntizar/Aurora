@@ -80,10 +80,10 @@ def servir(directorio, puerto):
     return httpd
 
 
-def compilar(programa, tmp, marca, tema, titulo, descripcion):
+def compilar(programa, tmp, marca, tema, titulo, descripcion, firma="full"):
     cmd = [sys.executable, str(ROOT / "scripts" / "programa-a-html.py"), str(programa),
            "--salida", str(tmp), "--marca", marca, "--tema", tema, "--canal", "local",
-           "--titulo", titulo, "--descripcion", descripcion]
+           "--firma", firma, "--titulo", titulo, "--descripcion", descripcion]
     out = subprocess.run(cmd, capture_output=True, text=True)
     if out.returncode != 0:
         raise SystemExit(out.stdout + out.stderr)
@@ -105,6 +105,12 @@ def main():
     ap.add_argument("--salida", "-o", required=True)
     ap.add_argument("--marca", default="ntizar")
     ap.add_argument("--tema", default="light", choices=["light", "dark"])
+    ap.add_argument("--firma", default="full", choices=["full", "subtle", "none"],
+                    help="política de atribución: full · subtle (línea secundaria) · none (sin firma)")
+    ap.add_argument("--inicio", default="",
+                    help="homeRoute: ruta de inicio del producto; la marca de la barra enlaza a ella")
+    ap.add_argument("--modo", default="sitio", choices=["sitio", "producto"],
+                    help="sitio (reglas del catálogo) · producto (entrega: homeRoute, sin placeholders #)")
     ap.add_argument("--titulo")
     ap.add_argument("--descripcion", default="Página generada con Aurora a partir de un programa OpenUI Lang.")
     ap.add_argument("--base", default="", help="prefijo de los enlaces CSS ('' si la salida va en la raíz del repo)")
@@ -126,7 +132,8 @@ def main():
     # (audit/.hornear/) apuntan a audit/ y el CSS no llega: el runtime no pinta.
     (ROOT / "audit").mkdir(exist_ok=True)
     tmp = ROOT / "audit" / "_horneado.html"
-    print("1/3 compilando  %s" % compilar(programa, tmp, args.marca, args.tema, titulo, args.descripcion))
+    print("1/3 compilando  %s" % compilar(programa, tmp, args.marca, args.tema, titulo,
+                                          args.descripcion, args.firma))
 
     puerto = puerto_libre()
     httpd = servir(ROOT, puerto)
@@ -165,11 +172,22 @@ def main():
     packs = subprocess.run([sys.executable, str(ROOT / "scripts" / "programa-a-html.py"),
                             str(programa), "--packs"], capture_output=True, text=True).stdout.split()
     base = args.base
+    # B02: el preset de marca viaja DETRÁS de tokens.css (mismísima especificidad
+    # que :root; gana el orden). Sin esta hoja, data-nz-marca no pinta nada.
     hojas = "\n".join('<link rel="stylesheet" href="%s%s">' % (base, h) for h in
-                      ["tokens.css"] + ["packs/%s" % p for p in packs])
+                      ["tokens.css", "marcas/%s.css" % marca] + ["packs/%s" % p for p in packs])
+
+    # B05: política de atribución del proyecto (full · subtle · none).
+    if args.firma == "none":
+        pie = ""
+    elif args.firma == "subtle":
+        pie = ('<footer class="nz-footer">\n  <p class="nz-text--small nz-text--muted">'
+               'Hecho con ❤️ por David Antizar</p>\n</footer>')
+    else:
+        pie = ('<footer class="nz-footer">\n  <p>Hecho con ❤️ por David Antizar</p>\n</footer>')
 
     doc = """<!DOCTYPE html>
-<html lang="es" data-nz-theme="%(tema)s" data-nz-marca="%(marca)s">
+<html lang="es" data-nz-theme="%(tema)s" data-nz-marca="%(marca)s" data-nz-firma="%(firma)s"%(attr_inicio)s%(attr_modo)s>
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
@@ -181,13 +199,13 @@ def main():
 <a class="nz-skip-link" href="#contenido">Saltar al contenido</a>
 <main id="contenido">%(cuerpo)s
 </main>
-<footer class="nz-footer">
-  <p>Hecho con ❤️ por David Antizar</p>
-</footer>
+%(pie)s
 </body>
 </html>
-""" % dict(tema=tema, marca=marca, titulo=titulo, descripcion=args.descripcion,
-           hojas=hojas, cuerpo=cuerpo, apendice=apendice)
+""" % dict(tema=tema, marca=marca, firma=args.firma, titulo=titulo, descripcion=args.descripcion,
+           hojas=hojas, cuerpo=cuerpo, pie=pie, apendice=apendice,
+           attr_inicio=(' data-nz-inicio="%s"' % args.inicio) if args.inicio else "",
+           attr_modo=(' data-nz-modo="%s"' % args.modo) if args.modo != "sitio" else "")
 
     # Cifras y programa sin clavar cuando se hornea la plantilla base.
 

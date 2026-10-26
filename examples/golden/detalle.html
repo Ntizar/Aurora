@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es" data-nz-theme="light" data-nz-marca="ntizar" data-nz-firma="full" data-nz-inicio="index.html" data-nz-modo="producto">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>EN-2291 · Ficha de encargo — Ntizar</title>
+<meta name="description" content="Página generada con Aurora a partir de un programa OpenUI Lang.">
+<link rel="stylesheet" href="../../tokens.css">
+<link rel="stylesheet" href="../../marcas/ntizar.css">
+<link rel="stylesheet" href="../../packs/p1-layout.css">
+<link rel="stylesheet" href="../../packs/p12-system.css">
+<link rel="stylesheet" href="../../packs/p2-navigation.css">
+<link rel="stylesheet" href="../../packs/p3-typography.css">
+<link rel="stylesheet" href="../../packs/p4-actions.css">
+<link rel="stylesheet" href="../../packs/p8-data.css">
+</head>
+<body class="nz">
+<a class="nz-skip-link" href="#contenido">Saltar al contenido</a>
+<main id="contenido"><div class="nz-container"><div class="nz-navbar nz-navbar--bordered"><a class="nz-navbar__brand" href="index.html"><i></i>Ntizar · Encargos</a><span class="nz-navbar__links"><a class="nz-navbar__link" href="index.html">Producto</a><a class="nz-navbar__link" href="detalle.html">Ficha</a></span></div><section class="nz-section nz-section--bordered"><p>Encargos / EN-2291</p><h1 class="nz-h1">EN-2291 · Reporte trimestral de flota</h1><p class="nz-lead">Cliente Ferrovia Norte · entrega el 30 de octubre · estado: en revisión</p></section><div class="nz-dash-grid nz-dash-grid--ajuste"><div class="nz-kpi"><span class="nz-kpi__label">Partidas</span><span class="nz-kpi__value">6</span><span class="nz-kpi__delta nz-kpi__delta--flat">2 pendientes</span></div><div class="nz-kpi"><span class="nz-kpi__label">Horas previsión</span><span class="nz-kpi__value">31</span><span class="nz-kpi__delta nz-kpi__delta--flat">sobre 40 presupuestadas</span></div><div class="nz-kpi nz-kpi--accent"><span class="nz-kpi__label">Días restantes</span><span class="nz-kpi__value nz-kpi__value--accent">4</span><span class="nz-kpi__delta nz-kpi__delta--flat">sin holgura</span></div></div><section class="nz-section nz-section--bordered"><span class="nz-lbl">Partidas</span><h2 class="nz-h2">Partidas del encargo</h2><div class="nz-table-wrap nz-table-wrap--apilable"><table class="nz-table nz-table--apilable nz-table--comfortable"><thead><tr><th class="">Partida</th><th class="">Estado</th><th class="">Horas</th></tr></thead><tbody><tr><td data-etiqueta="Partida">Recolección de datos</td><td data-etiqueta="Estado">Entregada</td><td data-etiqueta="Horas">6</td></tr><tr><td data-etiqueta="Partida">Limpieza de series</td><td data-etiqueta="Estado">En curso</td><td data-etiqueta="Horas">8</td></tr><tr><td data-etiqueta="Partida">Modelo de puntualidad</td><td data-etiqueta="Estado">En curso</td><td data-etiqueta="Horas">9</td></tr><tr><td data-etiqueta="Partida">Informe ejecutivo</td><td data-etiqueta="Estado">Revisión</td><td data-etiqueta="Horas">5</td></tr><tr><td data-etiqueta="Partida">Mapa de rutas</td><td data-etiqueta="Estado">Borrador</td><td data-etiqueta="Horas">3</td></tr></tbody></table></div></section><section class="nz-section nz-section--bordered"><span class="nz-lbl">Historial</span><h2 class="nz-h2">Lo que ya está decidido</h2><ul class="nz-list"><li class="nz-list__item">24 oct · aceptado con alcance reducido</li><li class="nz-list__item">23 oct · primera propuesta enviada</li><li class="nz-list__item">21 oct · encargo recibido del cliente</li></ul><pre class="nz-code nz-code--block" tabindex="0" role="region" aria-label="Programa OpenUI de esta página">root = Pagina([barra, ficha, cifras, partidas, historial, volver], &quot;contenido&quot;)
+barra = Navegacion(&quot;Ntizar · Encargos&quot;, [&quot;Producto&quot;, &quot;Ficha&quot;], [&quot;index.html&quot;, &quot;detalle.html&quot;], &quot;index.html&quot;)
+ficha = Seccion([miga, t1, entradilla])
+miga = Texto(&quot;Encargos / EN-2291&quot;)
+t1 = Titular(&quot;EN-2291 · Reporte trimestral de flota&quot;, &quot;1&quot;)
+entradilla = Entradilla(&quot;Cliente Ferrovia Norte · entrega el 30 de octubre · estado: en revisión&quot;, &quot;md&quot;)
+cifras = Rejilla([k1, k2, k3], &quot;3&quot;)
+k1 = Kpi(&quot;Partidas&quot;, &quot;6&quot;, &quot;2 pendientes&quot;, &quot;plano&quot;)
+k2 = Kpi(&quot;Horas previsión&quot;, &quot;31&quot;, &quot;sobre 40 presupuestadas&quot;, &quot;plano&quot;)
+k3 = Kpi(&quot;Días restantes&quot;, &quot;4&quot;, &quot;sin holgura&quot;, &quot;plano&quot;, &quot;acento&quot;)
+partidas = Seccion([t2, tabla], &quot;Partidas&quot;)
+t2 = Titular(&quot;Partidas del encargo&quot;, &quot;2&quot;)
+tabla = Tabla([&quot;Partida&quot;, &quot;Estado&quot;, &quot;Horas&quot;], [[&quot;Recolección de datos&quot;, &quot;Entregada&quot;, &quot;6&quot;], [&quot;Limpieza de series&quot;, &quot;En curso&quot;, &quot;8&quot;], [&quot;Modelo de puntualidad&quot;, &quot;En curso&quot;, &quot;9&quot;], [&quot;Informe ejecutivo&quot;, &quot;Revisión&quot;, &quot;5&quot;], [&quot;Mapa de rutas&quot;, &quot;Borrador&quot;, &quot;3&quot;]], true, &quot;comoda&quot;, false, &quot;Partidas del encargo&quot;)
+historial = Seccion([t3, lista], &quot;Historial&quot;)
+t3 = Titular(&quot;Lo que ya está decidido&quot;, &quot;2&quot;)
+lista = Lista([&quot;24 oct · aceptado con alcance reducido&quot;, &quot;23 oct · primera propuesta enviada&quot;, &quot;21 oct · encargo recibido del cliente&quot;], &quot;vertical&quot;, false)
+volver = Fila([btn1], &quot;compacto&quot;)
+btn1 = Boton(&quot;Volver al inicio&quot;, &quot;contorno&quot;, &quot;md&quot;, false, &quot;index.html&quot;)
+</pre></section><div class="nz-cluster nz-cluster--compact"><a class="nz-btn nz-btn--outline" href="index.html">Volver al inicio</a></div></div>
+</main>
+<footer class="nz-footer">
+  <p>Hecho con ❤️ por David Antizar</p>
+</footer>
+</body>
+</html>

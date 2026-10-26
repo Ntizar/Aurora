@@ -41,6 +41,15 @@
     if (v == null || v === "") return [];
     return [v];
   }
+  /* A04 · política de protocolos del enlace (plan §6.2.5): escapar comillas no
+     rechaza esquemas no permitidos. Solo navegación explícita: relativos, #anclas,
+     http(s), mailto y tel. javascript:/vbscript:/data: (no-imagen) → NO admisible:
+     el renderer no pinta el enlace (el compilador además rechaza el programa). */
+  function urlAdmitida(u) {
+    var s = String(u == null ? "" : u).trim();
+    if (!s) return false;
+    return !/^(?:javascript|vbscript|data(?![a-z]*\/[sp]v?g))/i.test(s);
+  }
   function fila(v) { return Array.isArray(v) ? v.map(function (x) { return String(x == null ? "" : x); }) : []; }
   /* El enum habla castellano; el modificador del censo habla inglés. Tabla explícita
      para que `auditar-openui.py` pueda exigir que cada valor esté tratado. */
@@ -247,9 +256,10 @@
   R.Boton = function (p) {
     var tono = { "primario": "nz-btn--primary", "acento": "nz-btn--accent", "suave": "nz-btn--soft", "contorno": "nz-btn--outline", "fantasma": "nz-btn--ghost" }[p.tono] || "";
     var clase = cl("nz-btn", tono, p.tamano && "nz-btn--" + p.tamano, p.bloque && "nz-btn--block");
-    if (p.href) {
+    if (p.href && urlAdmitida(p.href)) {
       return '<a class="' + clase + '" href="' + esc(p.href) + '">' + esc(p.texto) + "</a>";
     }
+    // sin href o con esquema inadmisible: botón declarativo, nunca un enlace tóxico
     return '<button type="button" class="' + clase + '">' + esc(p.texto) + "</button>";
   };
 
@@ -307,9 +317,21 @@
     var urls = list(p.urls);
     var enlaces = list(p.enlaces).map(function (e, i) {
       var destino = urls[i] ? urls[i] : "#";
+      if (!urlAdmitida(destino)) {
+        return '<span class="nz-navbar__link">' + esc(e) + "</span>";
+      }
       return '<a class="nz-navbar__link" href="' + esc(destino) + '">' + esc(e) + "</a>";
     }).join("");
-    return '<div class="nz-navbar nz-navbar--bordered"><span class="nz-navbar__brand"><i></i>' + esc(p.marca) + "</span>" +
+    // B03 · homeRoute: la marca enlaza al inicio del producto. Prioridad:
+    // p.inicio (el programa) → data-nz-inicio de la página → sin enlace.
+    var inicio = p.inicio;
+    if (!inicio && typeof document !== "undefined" && document.documentElement) {
+      inicio = document.documentElement.getAttribute("data-nz-inicio") || "";
+    }
+    var marca = inicio && urlAdmitida(inicio)
+      ? '<a class="nz-navbar__brand" href="' + esc(inicio) + '"><i></i>' + esc(p.marca) + "</a>"
+      : '<span class="nz-navbar__brand"><i></i>' + esc(p.marca) + "</span>";
+    return '<div class="nz-navbar nz-navbar--bordered">' + marca +
       '<span class="nz-navbar__links">' + enlaces + "</span></div>";
   };
 

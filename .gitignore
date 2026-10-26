@@ -19,3 +19,6 @@ borradores/
 *.local.css
 *.local.html
 scripts/node_modules/
+
+# Temporales de la cadena de producto (hornerado intermedio, sondas de navegador)
+audit/_*

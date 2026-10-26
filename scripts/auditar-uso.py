@@ -45,7 +45,8 @@ CDN_RE = re.compile(
     r'href="(https://cdn\.jsdelivr\.net/gh/Ntizar/Aurora@([^/"]+)/([^"]+))"')
 CLASE_RE = re.compile(r'class="([^"]*)"')
 # enlaces locales (bloques/recetas/ y páginas del propio repo): ../tokens.css, ../packs/x.css
-LOCAL_RE = re.compile(r'href="(?:\.\./)?(tokens\.css|packs/[a-z0-9-]+\.css)"')
+# Cualquier profundidad de subruta (examples/golden/ → ../../): el grupo se queda con el final
+LOCAL_RE = re.compile(r'href="[^"]*?(tokens\.css|packs/[a-z0-9-]+\.css)"')
 STYLE_RE = re.compile(r'style="([^"]*)"')
 STYLE_BLOCK_RE = re.compile(r"<style[^>]*>(.*?)</style>", re.S)
 # Página generada en caliente: el programa OpenUI va embebido y sus componentes
@@ -80,6 +81,7 @@ EMOJI_RE = re.compile("[\U0001F000-\U0001FAFF\u2600-\u26FF\u2700-\u27BF\u2B00-\u
 TIPOGRAFICOS = set("\u2713\u2715\u2717\u2794\u279c\u2192\u2190\u2191\u2193"
                    "\u2b05\u2b06\u2b07\u2b95")
 ATRIBUCION = "Hecho con ❤️ por David Antizar"
+PIE = ATRIBUCION  # la cadena exacta que se recuenta bajo la política data-nz-firma
 # elementos que gastan un "momento" de color saturado
 COLOR_RE = re.compile(
     r"nz-(?:btn|cta|badge|chip|lbl|kpi|alert)(?:--(?:primary|accent|brand|success|warning|danger|info))")
@@ -296,15 +298,29 @@ def auditar(html, clase_a_familia, packs_conocidos):
     if "@media" in bloques and re.search(r"@media[^{]*max-width", bloques):
         avisos.append("@media (max-width) detectado: Aurora es responsive first (base 1 columna + min-width, contenedor primero)")
 
-    # --- 5. Estructura mínima -------------------------------------------------
+    # --- 5. Estructura mínima y POLÍTICA DE FIRMA (B05) -----------------------
     if not re.search(r'<html[^>]*lang="es"', html):
         avisos.append('<html> sin lang="es"')
     if not re.search(r'<html[^>]*data-nz-theme="(light|dark)"', html):
         avisos.append('<html> sin data-nz-theme="light|dark"')
     if not re.search(r"<body[^>]*class=\"[^\"]*\bnz\b", html):
         avisos.append('<body> sin class="nz"')
-    if "Hecho con ❤️ por David Antizar" not in html:
-        avisos.append('Falta la atribución exacta: "Hecho con ❤️ por David Antizar"')
+
+    # La atribución es una POLÍTICA del proyecto (data-nz-firma), no un mandato
+    # ciego: none → 0 firmas · subtle/full → exactamente 1 · repetida → fallo.
+    # Las demos vivas del catálogo (secciones cat-demo) muestran el componente
+    # footer con su texto de muestra: se excluyen del recuento, no son el pie.
+    m_pol = re.search(r'data-nz-firma="(full|subtle|none)"', html)
+    politica = m_pol.group(1) if m_pol else "full"
+    firmas = re.sub(r'<section class="cat-demo.*?</section>', "",
+                    muestra, flags=re.S).count(PIE)
+    if politica == "none":
+        if firmas:
+            fallos.append(f"firma-none: la política none no admite firma y aparece {firmas} vez/veces")
+    elif firmas == 0:
+        fallos.append('atribución: falta la firma exacta "%s" (política %s)' % (PIE, politica))
+    elif firmas > 1:
+        fallos.append(f"firma-repetida: {firmas} apariciones de la firma; máximo una si está activada")
 
     # --- 6. Composición (COMPOSICION.md) -------------------------------------
     f2, a2 = auditar_composicion(muestra)

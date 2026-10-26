@@ -13,19 +13,21 @@ si el cambio es compatible o hay migración.
 
 | Canal | Referencia CDN | Quién lo usa | Qué implica |
 |---|---|---|---|
-| **vivo** | `@v9` (rango de major) | webs y paneles propios, catálogo, demos | se mueve con cada release 9.x: un cambio llega solo |
-| **congelado** | `@v9.6.0` (tag exacto) | entregas a cliente, auditorías, informes congelados | no cambia hasta que se sube a propósito |
+| **vivo** | `@v10` (rango de major) | webs y paneles propios, catálogo, demos | se mueve con cada release 10.x: un cambio llega solo |
+| **congelado** | `@v9.6.0` (tag exacto) | entregas a cliente, auditorías, informes congelados | no cambia hasta que se suba a propósito |
+| **serie 9 (fijada)** | `@v9` o tag exacto 9.x | consumidores existentes de la serie 9 | se queda donde está: `@v9` resuelve su major para siempre |
 
 ```html
 <!-- web propia: sigue el canal vivo -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v9/tokens.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v9/packs/p1-layout.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v10/tokens.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v10/packs/p1-layout.css">
 
 <!-- entrega a cliente: congelada -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v9.6.0/tokens.css">
 ```
 
-El rango cubre **solo el major**: `@v9` nunca saltará a una v10 que rompa contrato.
+El rango cubre **solo el major**: `@v10` nunca saltará a una v11 que rompa contrato, y
+`@v9` sigue resolviendo la serie 9 para siempre — nadie se mueve de dónde está fijado.
 
 Resolución y comprobación, sin adivinar:
 
@@ -37,7 +39,7 @@ python3 scripts/canal.py --check    # puerta de CI (offline); --online añade el
 
 ## 2b. Tras publicar: purga el canal
 
-Un tag es inmutable, pero **un rango se cachea en el edge**. Hasta que no se purga, `@v9`
+Un tag es inmutable, pero **un rango se cachea en el edge**. Hasta que no se purga, `@v10`
 puede seguir sirviendo la versión anterior durante horas — y la promesa del canal vivo se
 rompe en silencio. Forma parte del release, no es opcional:
 
@@ -45,7 +47,7 @@ rompe en silencio. Forma parte del release, no es opcional:
 python3 scripts/canal.py --purgar     # purga los 34 ficheros del canal y verifica
 ```
 
-La verificación es la que manda: compara lo que sirve `@v9` con el último tag y dice
+La verificación es la que manda: compara lo que sirve `@v10` con el último tag y dice
 **OK** o **DESFASADO**. Si dice DESFASADO, el release no ha terminado.
 
 ## 3. Un tag publicado es inmutable

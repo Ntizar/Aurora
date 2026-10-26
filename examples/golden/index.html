@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es" data-nz-theme="light" data-nz-marca="ntizar" data-nz-firma="full" data-nz-inicio="index.html" data-nz-modo="producto">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Ntizar · Encargos — tablero de encargos de cliente</title>
+<meta name="description" content="Página generada con Aurora a partir de un programa OpenUI Lang.">
+<link rel="stylesheet" href="../../tokens.css">
+<link rel="stylesheet" href="../../marcas/ntizar.css">
+<link rel="stylesheet" href="../../packs/p1-layout.css">
+<link rel="stylesheet" href="../../packs/p12-system.css">
+<link rel="stylesheet" href="../../packs/p2-navigation.css">
+<link rel="stylesheet" href="../../packs/p3-typography.css">
+<link rel="stylesheet" href="../../packs/p4-actions.css">
+<link rel="stylesheet" href="../../packs/p6-feedback.css">
+<link rel="stylesheet" href="../../packs/p8-data.css">
+</head>
+<body class="nz">
+<a class="nz-skip-link" href="#contenido">Saltar al contenido</a>
+<main id="contenido"><div class="nz-container"><div class="nz-navbar nz-navbar--bordered"><a class="nz-navbar__brand" href="index.html"><i></i>Ntizar · Encargos</a><span class="nz-navbar__links"><a class="nz-navbar__link" href="index.html">Producto</a><a class="nz-navbar__link" href="detalle.html">Ficha</a></span></div><section class="nz-section nz-section--bordered"><h1 class="nz-h1">Un tablero para tus encargos que no se rompe ni en el móvil</h1><p class="nz-lead nz-lead--lg">Encargos, plazos y estados en una sola pantalla. Aurora pinta la interfaz, tú pones los datos: azul para estructura, naranja para el dato que importa.</p><div class="nz-cluster nz-cluster--compact"><a class="nz-btn nz-btn--primary nz-btn--lg" href="detalle.html">Ver la ficha de un encargo</a><a class="nz-btn nz-btn--outline nz-btn--lg" href="https://github.com/Ntizar/Aurora">Ver el repositorio</a></div></section><div class="nz-dash-grid nz-dash-grid--4"><div class="nz-kpi"><span class="nz-kpi__label">Encargos activos</span><span class="nz-kpi__value">18</span><span class="nz-kpi__delta nz-kpi__delta--flat">esta semana</span></div><div class="nz-kpi"><span class="nz-kpi__label">Plazo medio</span><span class="nz-kpi__value">4,2 días</span><span class="nz-kpi__delta nz-kpi__delta--up">-0,8 d</span></div><div class="nz-kpi nz-kpi--accent"><span class="nz-kpi__label">Sin plazo asignado</span><span class="nz-kpi__value nz-kpi__value--accent">2</span><span class="nz-kpi__delta nz-kpi__delta--flat">requieren revisión</span></div><div class="nz-kpi"><span class="nz-kpi__label">Entregadas a tiempo</span><span class="nz-kpi__value">94 %</span><span class="nz-kpi__delta nz-kpi__delta--up">+3 pp</span></div></div><section class="nz-section nz-section--bordered"><span class="nz-lbl">Qué hace</span><h2 class="nz-h2">Tres cosas bien hechas, ni una más</h2><div class="nz-dash-grid nz-dash-grid--ajuste"><article class="nz-article nz-article--bordered"><h3 class="nz-h3">Cola por prioridad</h3><p>Cada encargo entra por su cola y sale por fecha comprometida. Sin columnas fantasma ni arrastrar tarjetas para aparentar que trabajas.</p></article><article class="nz-article nz-article--bordered"><h3 class="nz-h3">Estado honesto</h3><p>Borrador, en curso, revisión o entregado: el estado es el dato y no un adorno de color. El naranja se reserva para lo que no puede esperar.</p></article><article class="nz-article nz-article--bordered"><h3 class="nz-h3">Ficha con historial</h3><p>Abrir un encargo muestra sus partidas, sus fechas y lo que ya estaba decidido. Volver al inicio siempre es un enlace, no una esperanza.</p></article></div></section><div class="nz-alert nz-alert--info" role="status"><span class="nz-alert__icon" aria-hidden="true">i</span><div class="nz-alert__body"><span class="nz-alert__title">Esta página es un producto de muestra</span><span class="nz-alert__msg">Se generó desde examples/golden/landing.openui con modo producto y ruta de inicio declarada: la marca lleva al inicio y ningún destino es un placeholder.</span></div></div><section class="nz-section nz-section--bordered"><span class="nz-lbl">Siguiente paso</span><h2 class="nz-h2">Abre la ficha y vuelve por el enlace de la marca</h2><a class="nz-btn nz-btn--primary" href="detalle.html">Abrir la ficha de encargo</a><pre class="nz-code nz-code--block" tabindex="0" role="region" aria-label="Programa OpenUI de esta página">root = Pagina([barra, hero, cifras, features, aviso, cierre], &quot;contenido&quot;)
+barra = Navegacion(&quot;Ntizar · Encargos&quot;, [&quot;Producto&quot;, &quot;Ficha&quot;], [&quot;index.html&quot;, &quot;detalle.html&quot;], &quot;index.html&quot;)
+hero = Seccion([t1, entradilla, acciones])
+t1 = Titular(&quot;Un tablero para tus encargos que no se rompe ni en el móvil&quot;, &quot;1&quot;)
+entradilla = Entradilla(&quot;Encargos, plazos y estados en una sola pantalla. Aurora pinta la interfaz, tú pones los datos: azul para estructura, naranja para el dato que importa.&quot;, &quot;lg&quot;)
+acciones = Fila([cta1, cta2], &quot;compacto&quot;)
+cta1 = Boton(&quot;Ver la ficha de un encargo&quot;, &quot;primario&quot;, &quot;lg&quot;, false, &quot;detalle.html&quot;)
+cta2 = Boton(&quot;Ver el repositorio&quot;, &quot;contorno&quot;, &quot;lg&quot;, false, &quot;https://github.com/Ntizar/Aurora&quot;)
+cifras = Rejilla([k1, k2, k3, k4], &quot;4&quot;)
+k1 = Kpi(&quot;Encargos activos&quot;, &quot;18&quot;, &quot;esta semana&quot;, &quot;plano&quot;)
+k2 = Kpi(&quot;Plazo medio&quot;, &quot;4,2 días&quot;, &quot;-0,8 d&quot;, &quot;sube&quot;)
+k3 = Kpi(&quot;Sin plazo asignado&quot;, &quot;2&quot;, &quot;requieren revisión&quot;, &quot;plano&quot;, &quot;acento&quot;)
+k4 = Kpi(&quot;Entregadas a tiempo&quot;, &quot;94 %&quot;, &quot;+3 pp&quot;, &quot;sube&quot;)
+features = Seccion([t2, rejilla], &quot;Qué hace&quot;, true)
+t2 = Titular(&quot;Tres cosas bien hechas, ni una más&quot;, &quot;2&quot;)
+rejilla = Rejilla([f1, f2, f3])
+f1 = Tarjeta([d1], &quot;Cola por prioridad&quot;, true)
+d1 = Texto(&quot;Cada encargo entra por su cola y sale por fecha comprometida. Sin columnas fantasma ni arrastrar tarjetas para aparentar que trabajas.&quot;)
+f2 = Tarjeta([d2], &quot;Estado honesto&quot;, true)
+d2 = Texto(&quot;Borrador, en curso, revisión o entregado: el estado es el dato y no un adorno de color. El naranja se reserva para lo que no puede esperar.&quot;)
+f3 = Tarjeta([d3], &quot;Ficha con historial&quot;, true)
+d3 = Texto(&quot;Abrir un encargo muestra sus partidas, sus fechas y lo que ya estaba decidido. Volver al inicio siempre es un enlace, no una esperanza.&quot;)
+aviso = Aviso(&quot;Esta página es un producto de muestra&quot;, &quot;Se generó desde examples/golden/landing.openui con modo producto y ruta de inicio declarada: la marca lleva al inicio y ningún destino es un placeholder.&quot;, &quot;info&quot;)
+cierre = Seccion([t3, cta3], &quot;Siguiente paso&quot;, true)
+t3 = Titular(&quot;Abre la ficha y vuelve por el enlace de la marca&quot;, &quot;2&quot;)
+cta3 = Boton(&quot;Abrir la ficha de encargo&quot;, &quot;primario&quot;, &quot;md&quot;, false, &quot;detalle.html&quot;)
+</pre></section></div>
+</main>
+<footer class="nz-footer">
+  <p>Hecho con ❤️ por David Antizar</p>
+</footer>
+</body>
+</html>
