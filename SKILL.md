@@ -502,6 +502,12 @@ Criterio de admisión: (a) resuelve un problema real y repetido, (b) es responsi
 - ❌ **Declarar `container-type` en `.nz-table-wrap`.** El `thead` sticky necesita su
   propio scroll container; el contexto de consulta lo ponen `.nz-dash-grid` y `.nz-split`.
 - ❌ **Dejar el patrón resuelto en el proyecto y no subirlo al repo.**
+- ❌ **Resolver el PASO 0 con el clon sin mirar `origin/master`.** El clon puede estar N
+  commits atrás (caso real: se trabajó una release entera contra un árbol que origin ya
+  había sustituido por un major nuevo). `git fetch` + comparar antes de diseñar; si
+  difieren, alinear primero. Y el tag se publica SOLO cuando master ya está en origin: si
+  el push de master se rechaza, el tag puede subirse igual y secuestrar el canal vivo
+  (`git describe` elige el tag más alto, aunque cuelgue de una línea muerta).
 - ❌ **Un `.nz-segmented` de 3+ opciones dentro de un panel estrecho (inspector de 20rem) sin wrap**: la última opción se trunca fuera del panel. `flex-wrap: wrap` en los segmented del panel (página herramienta → `references/paginas-herramienta.md`).
 - ❌ **`pre { white-space: pre }` dentro de una rejilla hecha a mano sin `min-width: 0` en el ítem**: el ancho intrínseco del código empuja el track y el documento desborda en móvil — aunque los objetos del sistema ya traigan `min-width: 0`, una rejilla local no lo hereda.
 
