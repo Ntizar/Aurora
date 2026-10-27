@@ -68,6 +68,34 @@ MONO_SEMANTICOS = {
                "danger": "#ffffff", "danger-soft": "#2e2e2e", "danger-tint": "#3a3a3a",
                "warning": "#b5b5b5", "warning-soft": "#262626", "warning-tint": "#333333"},
 }
+# Lienzos pisados (v10.9.0, decision de David): la marca monocromo NO usa los
+# neutros navy del tema oscuro por defecto. PRIORITARIA la light: blanco puro
+# con dato en negro; el full black queda como data-nz-theme="dark". El gris es
+# affordancia (botones, chips, bordes), no jerarquia: el texto secundario va
+# casi blanco (#ececec) y solo el terciario baja (#a3a3a3).
+MONO_LIENZO = {
+    "claro": {"bg": "#ffffff", "bg-soft": "#fafafa", "bg-inset": "#f0f0f0",
+              "surface": "#ffffff", "surface-2": "#f7f7f7",
+              "border": "#e4e4e4", "border-soft": "#efefef", "border-strong": "#c9c9c9",
+              "text": "#000000", "text-soft": "#1a1a1a", "text-mute": "#3d3d3d",
+              "text-faint": "#767676", "text-invert": "#ffffff"},
+    "oscuro": {"bg": "#000000", "bg-soft": "#060606", "bg-inset": "#171717",
+               "surface": "#0a0a0a", "surface-2": "#151515",
+               "border": "#1f1f1f", "border-soft": "#161616", "border-strong": "#2e2e2e",
+               "text": "#ffffff", "text-soft": "#ececec", "text-mute": "#dedede",
+               "text-faint": "#a3a3a3", "text-invert": "#000000"},
+}
+# Señal de la marca: par de gráficos (azul = medida, naranja = el dato que
+# importa) y semáforo de estado en PUNTO (dot), nunca chip lleno. Light lleva
+# tonos oscurecidos para legible sobre blanco; dark, vivos sobre negro.
+MONO_SENAL = {
+    "claro": {"mono-azul": "#2563eb", "mono-naranja": "#ea580c",
+              "signal-danger": "#dc2626", "signal-warning": "#d97706",
+              "signal-success": "#16a34a"},
+    "oscuro": {"mono-azul": "#417eff", "mono-naranja": "#f97316",
+               "signal-danger": "#f87171", "signal-warning": "#fbbf24",
+               "signal-success": "#4ade80"},
+}
 
 
 # ---------------------------------------------------------------- color: sRGB <-> OKLCH
@@ -277,16 +305,26 @@ def informe_contraste(nombre: str, datos: dict) -> tuple[list[str], bool]:
 
 
 def generar_mono(nombre: str, verboso: bool = True) -> dict:
-    """Marca monocroma: escaleras fijas + estados grises en claro y oscuro.
+    """Marca monocroma v2: light prioritaria + full black opt-in + señal.
 
-    El informe de contraste es el MISMO que el de las marcas cromáticas
-    (informe_contraste): con estas escaleras todos los pares pasan AA.
+    - Base [data-nz-marca]: rampas de tinta + estados grises + LIENZO light
+      pisado (blanco puro, dato en negro) + señal light (azul/naranja de
+      gráficos y semáforo en punto, AA sobre blanco).
+    - [data-nz-theme="dark"][data-nz-marca]: full black — lienzo negro pisado,
+      estados y señal oscuros (peligro invertido a blanco, el chip ZeroLeaks).
+    El informe de contraste es el MISMO que el de las marcas cromáticas.
     """
+    def vars_de(dic: dict) -> list[str]:
+        return [f"  --nz-{k}: {v};" for k, v in dic.items()]
+
     lineas = [
         f"/* Aurora · marca «{nombre}» — monocroma, generada por scripts/generar-marca.py --mono",
         f"   tinta {MONO_MARCA['600']} (estructura) · resalte {MONO_ACENTO['500']} (el dato que importa)",
-        "   Estados (success/danger/warning) en escala de grises: la jerarquia la da la",
-        "   luminancia y en oscuro el peligro se INVERTE a blanco (chip ZeroLeaks).",
+        "   LIGHT PRIORITARIA: el lienzo por defecto es blanco pisado con dato en negro;",
+        "   el full black se activa con data-nz-theme=\"dark\". El gris es affordancia",
+        "   (botones, chips, bordes), no jerarquia: el texto secundario va casi blanco.",
+        "   Señal: --nz-mono-azul/--nz-mono-naranja SOLO en gráficos y --nz-signal-*",
+        "   para el semáforo de estado en punto (nunca chip lleno). AA en ambos temas.",
         f"   Activa con: <html data-nz-marca=\"{nombre}\">",
         "   Hecho con ❤️ por David Antizar */",
         "",
@@ -297,22 +335,31 @@ def generar_mono(nombre: str, verboso: bool = True) -> dict:
     lineas.append("  /* rampa de acento (resalte) */")
     lineas += [f"  --nz-acento-{k}: {v};" for k, v in MONO_ACENTO.items()]
     lineas.append("  /* estados en grises (claro) */")
-    lineas += [f"  --nz-{k}: {v};" for k, v in MONO_SEMANTICOS["claro"].items()]
+    lineas += vars_de(MONO_SEMANTICOS["claro"])
+    lineas.append("  /* lienzo light pisado — prioritario */")
+    lineas += vars_de(MONO_LIENZO["claro"])
+    lineas.append("  /* señal: gráficos y semáforo (claro) */")
+    lineas += vars_de(MONO_SENAL["claro"])
     lineas.append("}")
     lineas.append("")
     lineas.append(f"[data-nz-theme=\"dark\"][data-nz-marca=\"{nombre}\"] {{")
-    lineas.append("  /* estados en grises (oscuro): el peligro se invierte a blanco */")
-    lineas += [f"  --nz-{k}: {v};" for k, v in MONO_SEMANTICOS["oscuro"].items()]
+    lineas.append("  /* full black opt-in: lienzo, estados y señal (oscuro) */")
+    lineas += vars_de(MONO_SEMANTICOS["oscuro"])
+    lineas += vars_de(MONO_LIENZO["oscuro"])
+    lineas += vars_de(MONO_SENAL["oscuro"])
     lineas.append("}")
     (DIR_MARCAS / f"{nombre}.css").write_text("\n".join(lineas) + "\n", encoding="utf-8")
     datos = {"nombre": nombre, "marca": MONO_MARCA["600"], "acento": MONO_ACENTO["500"],
              "marca_rampa": dict(MONO_MARCA), "acento_rampa": dict(MONO_ACENTO),
              "marca_original": MONO_MARCA["600"], "marca_ajustada_aa": False,
-             "contraste_marca_600": round(contraste(MONO_MARCA["600"], "#ffffff"), 2)}
+             "contraste_marca_600": round(contraste(MONO_MARCA["600"], "#ffffff"), 2),
+             "tema_prioritario": "claro",
+             "lienzo": {t: dict(v) for t, v in MONO_LIENZO.items()},
+             "senal": {t: dict(v) for t, v in MONO_SENAL.items()}}
     filas, ok = informe_contraste(nombre, datos)
     datos["contraste_ok"] = ok
     if verboso:
-        print(f"\n■ {nombre}  (monocroma · tinta {MONO_MARCA['600']} · resalte {MONO_ACENTO['500']})  → marcas/{nombre}.css")
+        print(f"\n■ {nombre}  (monocroma v2 · light prioritaria · full black opt-in)  → marcas/{nombre}.css")
         for f in filas:
             print(f)
     return datos

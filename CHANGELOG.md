@@ -3,6 +3,25 @@
 Formato: [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/).
 Versionado: [SemVer](https://semver.org/lang/es/).
 
+## [10.9.0] — 2026-10-27
+
+### Añadido
+
+- **Marca `monocromo` v2 — light prioritaria**: el lienzo por defecto de la marca
+  pasa a blanco pisado (#ffffff) con dato en negro y texto secundario casi
+  blanco (#ececec): la jerarquía la dan tamaño y peso, el gris queda como
+  affordancia (botones, chips, bordes). El **full black** (#000000, ZeroLeaks
+  pleno) se activa con `data-nz-theme="dark"` — decision de David tras iterar
+  6 maquetas: «la light prioritaria siempre, con opción de cambiar».
+- **Señal tokenizada**: `--nz-mono-azul` / `--nz-mono-naranja` (SOLO gráficos:
+  donut, barras, sparkline) y `--nz-signal-danger/warning/success` para el
+  semáforo de estado **en punto** (dot de 8px dentro de chip neutro, nunca chip
+  lleno). Light lleva tonos oscurecidos AA sobre blanco; dark, vivos sobre negro.
+- `scripts/auditar-contraste.py` entiende bloques `[data-nz-theme="dark"]`
+  dentro de los ficheros de marca: se aplican solo en el tema oscuro, así que
+  pisar lienzos ya no despista al auditor (v1 pasaba por suerte).
+- El registro de marca incluye `tema_prioritario`, `lienzo` y `senal` por tema.
+
 ## [10.8.0] — 2026-10-27
 
 ### Añadido

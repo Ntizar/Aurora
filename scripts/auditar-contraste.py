@@ -218,8 +218,19 @@ def main() -> int:
         tema.update(declaraciones(css_tema))
         fuentes = [(f"tema {nombre_tema}", tema)]
         for p in presets:
+            txt = p.read_text(encoding="utf-8")
+            # Bloques dark dentro de la marca (p. ej. monocromo pisa lienzos en
+            # [data-nz-theme="dark"][data-nz-marca=...]): se aplican SOLO en el tema oscuro.
+            oscuros = [_bloque_balanceado(txt, m.end() - 1)
+                       for m in re.finditer(r'\[data-nz-theme="dark"\][^{]*\{', txt)]
+            sin_oscuro = txt
+            for bloque in oscuros:
+                sin_oscuro = sin_oscuro.replace(bloque, "")
             decl = dict(tema)
-            decl.update(declaraciones(p.read_text(encoding="utf-8")))
+            decl.update(declaraciones(sin_oscuro))
+            if nombre_tema == "oscuro":
+                for bloque in oscuros:
+                    decl.update(declaraciones(bloque))
             fuentes.append((f"tema {nombre_tema} · marca {p.stem}", decl))
         for nombre_fuente, decl in fuentes:
             print(f"\n--- {nombre_fuente} ---")

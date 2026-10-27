@@ -214,6 +214,55 @@
     "marca_original": "#111111",
     "marca_ajustada_aa": false,
     "contraste_marca_600": 18.88,
+    "tema_prioritario": "claro",
+    "lienzo": {
+      "claro": {
+        "bg": "#ffffff",
+        "bg-soft": "#fafafa",
+        "bg-inset": "#f0f0f0",
+        "surface": "#ffffff",
+        "surface-2": "#f7f7f7",
+        "border": "#e4e4e4",
+        "border-soft": "#efefef",
+        "border-strong": "#c9c9c9",
+        "text": "#000000",
+        "text-soft": "#1a1a1a",
+        "text-mute": "#3d3d3d",
+        "text-faint": "#767676",
+        "text-invert": "#ffffff"
+      },
+      "oscuro": {
+        "bg": "#000000",
+        "bg-soft": "#060606",
+        "bg-inset": "#171717",
+        "surface": "#0a0a0a",
+        "surface-2": "#151515",
+        "border": "#1f1f1f",
+        "border-soft": "#161616",
+        "border-strong": "#2e2e2e",
+        "text": "#ffffff",
+        "text-soft": "#ececec",
+        "text-mute": "#dedede",
+        "text-faint": "#a3a3a3",
+        "text-invert": "#000000"
+      }
+    },
+    "senal": {
+      "claro": {
+        "mono-azul": "#2563eb",
+        "mono-naranja": "#ea580c",
+        "signal-danger": "#dc2626",
+        "signal-warning": "#d97706",
+        "signal-success": "#16a34a"
+      },
+      "oscuro": {
+        "mono-azul": "#417eff",
+        "mono-naranja": "#f97316",
+        "signal-danger": "#f87171",
+        "signal-warning": "#fbbf24",
+        "signal-success": "#4ade80"
+      }
+    },
     "contraste_ok": true
   }
 ]

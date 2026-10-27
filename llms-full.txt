@@ -1,4 +1,4 @@
-# Aurora — referencia completa por componente (v10.8.0)
+# Aurora — referencia completa por componente (v10.9.0)
 
 > Extiende llms.txt con la API exacta de las 413 familias:
 > clases, markup real, tokens, alias y anti-patrón. Generado desde

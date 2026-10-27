@@ -1,7 +1,10 @@
 /* Aurora · marca «monocromo» — monocroma, generada por scripts/generar-marca.py --mono
    tinta #111111 (estructura) · resalte #a3a3a3 (el dato que importa)
-   Estados (success/danger/warning) en escala de grises: la jerarquia la da la
-   luminancia y en oscuro el peligro se INVERTE a blanco (chip ZeroLeaks).
+   LIGHT PRIORITARIA: el lienzo por defecto es blanco pisado con dato en negro;
+   el full black se activa con data-nz-theme="dark". El gris es affordancia
+   (botones, chips, bordes), no jerarquia: el texto secundario va casi blanco.
+   Señal: --nz-mono-azul/--nz-mono-naranja SOLO en gráficos y --nz-signal-*
+   para el semáforo de estado en punto (nunca chip lleno). AA en ambos temas.
    Activa con: <html data-nz-marca="monocromo">
    Hecho con ❤️ por David Antizar */
 
@@ -36,10 +39,30 @@
   --nz-warning: #5c5c5c;
   --nz-warning-soft: #f2f2f2;
   --nz-warning-tint: #e2e2e2;
+  /* lienzo light pisado — prioritario */
+  --nz-bg: #ffffff;
+  --nz-bg-soft: #fafafa;
+  --nz-bg-inset: #f0f0f0;
+  --nz-surface: #ffffff;
+  --nz-surface-2: #f7f7f7;
+  --nz-border: #e4e4e4;
+  --nz-border-soft: #efefef;
+  --nz-border-strong: #c9c9c9;
+  --nz-text: #000000;
+  --nz-text-soft: #1a1a1a;
+  --nz-text-mute: #3d3d3d;
+  --nz-text-faint: #767676;
+  --nz-text-invert: #ffffff;
+  /* señal: gráficos y semáforo (claro) */
+  --nz-mono-azul: #2563eb;
+  --nz-mono-naranja: #ea580c;
+  --nz-signal-danger: #dc2626;
+  --nz-signal-warning: #d97706;
+  --nz-signal-success: #16a34a;
 }
 
 [data-nz-theme="dark"][data-nz-marca="monocromo"] {
-  /* estados en grises (oscuro): el peligro se invierte a blanco */
+  /* full black opt-in: lienzo, estados y señal (oscuro) */
   --nz-success: #d9d9d9;
   --nz-success-soft: #2b2b2b;
   --nz-success-tint: #383838;
@@ -49,4 +72,22 @@
   --nz-warning: #b5b5b5;
   --nz-warning-soft: #262626;
   --nz-warning-tint: #333333;
+  --nz-bg: #000000;
+  --nz-bg-soft: #060606;
+  --nz-bg-inset: #171717;
+  --nz-surface: #0a0a0a;
+  --nz-surface-2: #151515;
+  --nz-border: #1f1f1f;
+  --nz-border-soft: #161616;
+  --nz-border-strong: #2e2e2e;
+  --nz-text: #ffffff;
+  --nz-text-soft: #ececec;
+  --nz-text-mute: #dedede;
+  --nz-text-faint: #a3a3a3;
+  --nz-text-invert: #000000;
+  --nz-mono-azul: #417eff;
+  --nz-mono-naranja: #f97316;
+  --nz-signal-danger: #f87171;
+  --nz-signal-warning: #fbbf24;
+  --nz-signal-success: #4ade80;
 }
