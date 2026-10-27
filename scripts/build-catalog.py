@@ -231,6 +231,7 @@ def pagina(spec, censo_cat, totales, nav, packs):
     A(f"<title>Aurora · {n:02d} {html.escape(spec['nombre'])} · {len(clases_pack)} objetos</title>")
     A(f'<meta name="description" content="{html.escape(spec["desc"])}">')
     A('<link rel="stylesheet" href="../tokens.css">')
+    A('<link rel="stylesheet" href="../marcas/monocromo.css">')
     A('<link rel="stylesheet" href="../packs/' + PACK_SHELL + '">')
     A("<!--PACKS-->")
     A("</head>")

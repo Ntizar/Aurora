@@ -938,6 +938,7 @@ def catalogo(argv) -> str:
 <title>Aurora · Iconos numerados · {m['total']} iconos</title>
 <meta name="description" content="Repositorio de iconos numerados de Aurora: {m['total']} iconos ({resumen_licencias(m)}) con número estable nz-i-NNN, sprite y manifiesto.">
 <link rel="stylesheet" href="../tokens.css">
+<link rel="stylesheet" href="../marcas/monocromo.css">
 <link rel="stylesheet" href="../packs/p1-layout.css">
 <link rel="stylesheet" href="../packs/p2-navigation.css">
 <link rel="stylesheet" href="../packs/p3-typography.css">
