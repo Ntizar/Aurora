@@ -411,6 +411,56 @@
       (p.detalle ? '<div class="nz-toolcall__result">' + esc(p.detalle) + "</div>" : "") + "</div>";
   };
 
+  /* ---------- presentación: deck con barra autocontenida ----------------
+     El componente pinta el contador («02 / 03 · el dato») y las anclas
+     (Anterior · Siguiente · ↺ Repetir) según la posición real: el programa
+     no escribe posiciones y no puede desincronizarse. La última slide
+     repite desde la primera. Fuera de deck, Slide se pinta sola. */
+  function slideHTML(p, ctx, pos) {
+    var cuerpo = ctx.nodos(p.children);
+    var fondo = p.fondo === "profundo" ? " nz-escenario--profundo" : "";
+    var abierta = '<section class="nz-escenario nz-escenario--pantalla' + fondo + '"' +
+      (pos && pos.id ? ' id="' + pos.id + '"' : "") +
+      '><div class="nz-escenario__cuerpo">' + cuerpo + "</div>";
+    if (!pos) return abierta + "</section>";
+    var n1 = pos.i + 1, t = pos.total;
+    var contador = (n1 < 10 ? "0" : "") + n1 + " / " + (t < 10 ? "0" : "") + t +
+      (p.titulo ? " · " + esc(p.titulo) : "");
+    var izq = pos.i > 0
+      ? '<a class="nz-esc-nav__enlace" href="#' + pos.prev + '"><span aria-hidden="true">←</span> Anterior</a>'
+      : "";
+    var der = pos.i === pos.total - 1
+      ? '<a class="nz-esc-nav__enlace nz-esc-nav__enlace--final" href="#' + pos.prim + '">↺ Repetir</a>'
+      : '<a class="nz-esc-nav__enlace" href="#' + pos.next + '">Siguiente <span aria-hidden="true">→</span></a>';
+    return abierta + '<nav class="nz-esc-nav">' + izq +
+      '<span class="nz-esc-nav__contador">' + contador + "</span>" + der + "</nav></section>";
+  }
+
+  R.Slide = function (p, ctx) {
+    return slideHTML(p, ctx, null);
+  };
+
+  R.Presentacion = function (p, ctx) {
+    var hijos = list(p.children);
+    if (!hijos.length) return "";
+    // el deck manda su propio scroll: la página pasa a modo presentación
+    // (snap en <html> sin depender de dónde se inserte el marcado).
+    if (typeof document !== "undefined" && document.documentElement) {
+      document.documentElement.setAttribute("data-nz-presentacion", "");
+    }
+    var base = "nzp" + Math.random().toString(36).slice(2, 7);
+    var ids = hijos.map(function (_, i) { return base + "-" + (i + 1); });
+    var cuerpo = hijos.map(function (s, i) {
+      var nodo = (s && s.type === "element" && s.typeName === "Slide") ? s : null;
+      var props = nodo ? (nodo.props || {}) : { children: s };
+      return slideHTML(props, ctx, {
+        i: i, total: hijos.length, id: ids[i],
+        prev: ids[i - 1], next: ids[i + 1], prim: ids[0]
+      });
+    }).join("");
+    return '<div class="nz-presentacion">' + cuerpo + "</div>";
+  };
+
   /* ---------- recorrido del árbol ---------------------------------------- */
   function renderNode(nodo) {
     if (!nodo) return "";

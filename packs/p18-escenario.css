@@ -225,9 +225,17 @@
    y el navegador salta de uno en uno con rueda, swype o las anclas de la barra.
    Cero JS: el snap lo hace el navegador y sin él las slides se apilan legibles.
    La barra de la portada va DENTRO de la primera slide: no tapa ningún snap.
-   El snap se declara SOLO cuando el deck es hijo directo de <body>: así una
-   demo de presentación suelta dentro del catálogo no secuestra el scroll de
-   su propia página (la presentación manda su página; la demo, no). */
+   Dos vías de declaración, ninguna por casualidad: (a) el deck estático que
+   es hijo directo de <body> manda su página; (b) el runtime de OpenUI marca
+   <html> con data-nz-presentacion al pintar un Presentacion, sin depender de
+   dónde inserte el marcado. Así una demo de presentación suelta dentro del
+   catálogo no secuestra el scroll de su propia página. */
+html[data-nz-presentacion] {
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+}
+/* La barra en modo deck (fixed, sin flujo) vive en SU pack: p2-navigation,
+   sección 07 — aquí solo manda el snap del deck. */
 @supports selector(:has(*)) {
   html:has(> body > .nz-presentacion) {
     scroll-snap-type: y mandatory;

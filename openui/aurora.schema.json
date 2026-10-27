@@ -115,6 +115,12 @@
   },
   "Herramienta": {
    "$ref": "#/$defs/Herramienta"
+  },
+  "Presentacion": {
+   "$ref": "#/$defs/Presentacion"
+  },
+  "Slide": {
+   "$ref": "#/$defs/Slide"
   }
  },
  "required": [
@@ -155,7 +161,9 @@
   "Interruptor",
   "Casilla",
   "Chat",
-  "Herramienta"
+  "Herramienta",
+  "Presentacion",
+  "Slide"
  ],
  "additionalProperties": false,
  "$defs": {
@@ -1142,6 +1150,44 @@
    ],
    "additionalProperties": false,
    "description": "Llamada a herramienta de un agente, con estado y resultado."
+  },
+  "Presentacion": {
+   "type": "object",
+   "properties": {
+    "children": {
+     "type": "array",
+     "items": {}
+    }
+   },
+   "required": [
+    "children"
+   ],
+   "additionalProperties": false,
+   "description": "Deck de presentación: cada slide ocupa la pantalla y el navegador salta de una a otra con rueda, swype o las anclas que pinta el propio componente. El contador de posición («02 / 03 · el dato») y los enlaces Anterior / Siguiente / Repetir se generan solos: el programa solo decide contenido y orden. Sus hijos son Slide; cualquier otro nodo se pinta como una slide suelta."
+  },
+  "Slide": {
+   "type": "object",
+   "properties": {
+    "children": {
+     "type": "array",
+     "items": {}
+    },
+    "titulo": {
+     "type": "string"
+    },
+    "fondo": {
+     "type": "string",
+     "enum": [
+      "claro",
+      "profundo"
+     ]
+    }
+   },
+   "required": [
+    "children"
+   ],
+   "additionalProperties": false,
+   "description": "Una pantalla del deck. titulo es el rótulo de posición que se ve en la barra («portada»). fondo=\"profundo\" la pinta en negro: el cierre de la charla. Fuera de Presentacion se pinta como slide suelta, sin barra."
   }
  }
 }

@@ -190,3 +190,19 @@
 .nz-stepper--compact .nz-stepper__step { font-size: var(--nz-text-xs); min-height: 44px; }
 .nz-stepper--compact .nz-stepper__num { min-width: 22px; height: 22px; }
 .nz-stepper--vertical { flex-direction: column; align-items: flex-start; gap: var(--nz-space-3); overflow-x: visible; }
+
+/* ---- 07 Modo presentación: la barra se aparta del flujo ----
+   Cuando un deck ocupa la página (el runtime de OpenUI marca
+   <html data-nz-presentacion>), dos cosas le pasan a la barra: el primer
+   snap la esconde (el navegador alinea la slide1 al top del viewport) y,
+   en flujo, la empuja y desborda su 100svh. Pasa a fixed: no ocupa flujo,
+   cada slide mide exactamente la pantalla y el camino de vuelta siempre
+   está visible encima. El contexto es un atributo del <html>, igual que
+   data-nz-theme; la clase vive solo aquí (una familia, un pack). */
+html[data-nz-presentacion] .nz-navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 3;
+}

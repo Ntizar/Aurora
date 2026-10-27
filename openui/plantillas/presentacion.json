@@ -1,0 +1,23 @@
+{
+ "nombre": "presentacion",
+ "descripcion": "Presentación en slides: portada con marca, un dato a pantalla completa y cierre oscuro. El deck ocupa el viewport y salta slide a slide con rueda o anclas.",
+ "marca": "aurora",
+ "variables": [
+  {
+   "nombre": "entidad",
+   "defecto": "Ntizar",
+   "ayuda": "marca de la barra"
+  },
+  {
+   "nombre": "titular",
+   "defecto": "Tus encargos, a la vista. Ni uno perdido.",
+   "ayuda": "titular de la portada"
+  },
+  {
+   "nombre": "dato",
+   "defecto": "4,2 días",
+   "ayuda": "cifra de la slide de datos"
+  }
+ ],
+ "programa": "root = Pagina([barra, deck], \"contenido\")\nbarra = Navegacion(\"{{entidad}}\", [\"Concepto\", \"Datos\", \"Cierre\"])\ndeck = Presentacion([s1, s2, s3])\ns1 = Slide([e1, t1], \"portada\")\ne1 = Etiqueta(\"{{entidad}}\", \"marca\")\nt1 = Titular(\"{{titular}}\", \"1\")\ns2 = Slide([cifra, nota], \"el dato\")\ncifra = Cifra(\"{{dato}}\", \"acento\", \"lg\")\nnota = Texto(\"de media por encargo, 0,8 menos que el mes pasado.\")\ns3 = Slide([t3], \"cierre\", \"profundo\")\nt3 = Titular(\"Gracias.\", \"2\")"
+}

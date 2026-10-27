@@ -1,14 +1,14 @@
 ---
 name: aurora-design-system
 description: "Usa al construir o tocar cualquier web con Aurora (Ntizar/Aurora). El repo manda: resuelve la versión vigente y pide LLM.md + components.json antes de escribir CSS."
-version: "10.6.0"
+version: "10.7.0"
 tags: [css, design-system, aurora, ntizar, agent-ready, movil, escritorio, tipografia]
 ---
 
 # Aurora — doctrina única (el repo es la orden máxima)
 
 Design system CSS puro, sin build, sin dependencias, namespaced bajo `.nz-`.
-**v10.6.0 · 2201 objetos · 413 familias · 661 demos · 18 categorías · 189 tokens · 59 gemelas OKLch · 38 componentes generativos · 338 iconos numerados.**
+**v10.7.0 · 2201 objetos · 413 familias · 661 demos · 18 categorías · 189 tokens · 59 gemelas OKLch · 40 componentes generativos · 338 iconos numerados.**
 *(Cabecera de testigo, no de autoridad: resuélvela con el PASO 0.)*
 
 > ⚠️ `Ntizar/Aurora` **manda sobre esta skill**. Esta skill es un puntero; el repo
@@ -270,7 +270,7 @@ paquete ni generar `DESIGN.md`/`.impeccable/` — duplicarían `LLM.md` + `compo
 
 ### 6c. Vía generativa: el modelo escribe el diseño (openui-lang)
 
-El programa usa los 36 componentes de `openui/PROMPT.md` (argumentos POSICIONALES, sin nombrados;
+El programa usa los 40 componentes de `openui/PROMPT.md` (argumentos POSICIONALES, sin nombrados;
 `root = Pagina([...])` en la primera línea). Se compila desde el repo:
 
 `python scripts/programa-a-html.py mi-programa.openui --salida out.html --marca ntizar --tema light --canal congelado --titulo "..." [--firma full|subtle|none] [--inicio ruta.html] [--modo producto]`
@@ -639,7 +639,7 @@ LLM → OpenUI Lang (8-20 líneas) → parser → runtime vanilla → markup .nz
 | Pintar el resultado en el navegador | `openui/aurora-openui.js` → `AuroraOpenUI.iniciar()` + `.stream(texto, "#lienzo")` |
 | Añadir un objeto al lenguaje | `openui/componentes.json` (a mano) → `python3 scripts/generar-openui.py` |
 | Verlo funcionando | `openui/index.html` (probador en vivo + plantillas) |
-| Empezar por un arquetipo | `openui/plantillas/` + `scripts/plantilla.py` (panel, informe, landing, ajustes, agente) |
+| Empezar por un arquetipo | `openui/plantillas/` + `scripts/plantilla.py` (panel, informe, landing, ajustes, agente, presentación) |
 | De un encargo a una página | `scripts/generar-web.py --brief encargo.json` (modelo + validación + lint) |
 | Que un agente consulte Aurora sin bajar el censo | `scripts/mcp-aurora.py` (MCP en stdio, stdlib pura): `estado_del_sistema`, `buscar_por_necesidad`, `leer_componente`, `validar_html`, `compilar_programa`. Conexión: `claude mcp add aurora -- python scripts/mcp-aurora.py`; autochequeo `--test` (está en la CI) |
 | API exacta de UNA familia en texto plano | `llms-full.txt` (411 familias: clases, markup, tokens, alias, noUsar) — generado por `generar-llm-docs.py` |

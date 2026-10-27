@@ -7,6 +7,28 @@ Versionado: [SemVer](https://semver.org/lang/es/).
 
 (sin cambios aún)
 
+## [10.7.0] — 2026-10-26
+
+### Presentaciones en el lenguaje: el modelo compone el deck
+
+- **`Presentacion` + `Slide`** (40 componentes, grupo «Presentación»): el
+  programa solo declara slides y contenido — **el runtime pinta el contador
+  («02 / 03 · el dato») y las anclas (Anterior · Siguiente · ↺ Repetir) desde
+  la posición real**: las posiciones no se escriben, luego no se
+  desincronizan. `Slide(children, titulo?, fondo?)` con `fondo="profundo"`
+  para el cierre; fuera de deck se pinta como slide suelta.
+- **Modo deck automático**: al pintar un `Presentacion` el runtime marca
+  `<html data-nz-presentacion>` — el snap del navegador y una **navbar fixed**
+  solo en modo presentación: la barra no ocupa flujo, cada slide mide
+  exactamente la pantalla y el camino de vuelta nunca se pierde (el primer
+  snap la escondía y el flujo desbordaba el 100svh: medido y corregido).
+- **Plantilla «presentación»** (sexto arquetipo) y **ejemplo en el prompt**
+  del generador: portada, dato y cierre en once líneas.
+- **Prueba end-to-end**: programa → `programa-a-html` → navegador: DOM con
+  los tres contadores coherentes, anclas con destino, atributo de snap
+  activo, lint del sitio en **0 fallos** y captura de las tres slides
+  verificada. Docs al día: 40 componentes, 6 arquetipos, 9 combos.
+
 ## [10.6.0] — 2026-10-26
 
 ### Presentaciones: de charla en beats a deck de verdad

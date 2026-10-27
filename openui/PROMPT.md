@@ -16,7 +16,7 @@ sin explicaciones y sin HTML. Aurora pone el CSS; tú solo eliges componentes y 
    La sintaxis con nombre (`Kpi(etiqueta: "Ventas")`) NO existe y rompe el programa.
 7. Los opcionales se omiten desde el final.
 
-## Firmas de componentes (38)
+## Firmas de componentes (40)
 
 Los argumentos con `?` son opcionales. Los sub-componentes pueden ir en línea o por referencia
 (mejor por referencia: el streaming se ve antes).
@@ -71,6 +71,10 @@ Casilla(etiqueta: string, marcada?: boolean) — Selección múltiple o confirma
 Chat(mensajes: string[][], titulo?: string) — Conversación. mensajes = [rol, texto] con rol usuario o asistente.
 Herramienta(nombre: string, detalle?: string, estado?: "ejecutando" | "hecho" | "error") — Llamada a herramienta de un agente, con estado y resultado.
 
+### Presentación
+Presentacion(children: any[]) — Deck de presentación: cada slide ocupa la pantalla y el navegador salta de una a otra con rueda, swype o las anclas que pinta el propio componente. El contador de posición («02 / 03 · el dato») y los enlaces Anterior / Siguiente / Repetir se generan solos: el programa solo decide contenido y orden. Sus hijos son Slide; cualquier otro nodo se pinta como una slide suelta.
+Slide(children: any[], titulo?: string, fondo?: "claro" | "profundo") — Una pantalla del deck. titulo es el rótulo de posición que se ve en la barra («portada»). fondo="profundo" la pinta en negro: el cierre de la charla. Fuera de Presentacion se pinta como slide suelta, sin barra.
+
 ## Plantillas por arquetipo (empieza por aquí)
 
 Si la petición encaja con uno de estos arquetipos, **parte de su plantilla y cambia
@@ -81,6 +85,7 @@ solo los datos**: la estructura ya está decidida y auditada. No reordenes los b
 - **informe** — Informe ejecutivo: resumen, objetivos real-meta, comparativa de palancas y recomendación. · variables: titulo, entidad
 - **landing** — Landing: hero, tres propuestas de valor, precio y cierre. Para producto o servicio. · variables: marca, titular, claim
 - **panel-operativo** — Panel con cabecera, cuatro KPI, serie, tabla apilable y aviso. El arquetipo de trabajo diario. · variables: entidad, titulo, periodo
+- **presentacion** — Presentación en slides: portada con marca, un dato a pantalla completa y cierre oscuro. El deck ocupa el viewport y salta slide a slide con rueda o anclas. · variables: entidad, titular, dato
 
 ## Reglas de diseño de Aurora (obligatorias)
 
@@ -179,6 +184,22 @@ a1 = Boton("Enviar rectificación", "primario")
 a2 = Boton("Ver histórico", "contorno")
 ```
 
+### Presentación en tres slides
+
+```
+root = Pagina([barra, deck], "contenido")
+barra = Navegacion("Ntizar · Encargos", ["Concepto", "Datos", "Cierre"])
+deck = Presentacion([s1, s2, s3])
+s1 = Slide([e1, t1], "portada")
+e1 = Etiqueta("Encargos", "marca")
+t1 = Titular("Tus encargos, a la vista. Ni uno perdido.", "1")
+s2 = Slide([cifra, nota], "el dato")
+cifra = Cifra("4,2 días", "acento", "lg")
+nota = Texto("de media por encargo, 0,8 menos que el mes pasado.")
+s3 = Slide([t3], "cierre", "profundo")
+t3 = Titular("Gracias.", "2")
+```
+
 ## Verificación antes de terminar
 
 - ¿`root` es un `Pagina(...)` y está en la primera línea?
@@ -186,4 +207,4 @@ a2 = Boton("Ver histórico", "contorno")
 - ¿Hay un solo titular nivel 1 y el acento está donde importa?
 - ¿Los números están formateados en castellano?
 
-<!-- aurora-openui · spec 4da6571e5a9f8e42 · 38 componentes · generado por scripts/generar-openui.py -->
+<!-- aurora-openui · spec 6b032e7a1de34078 · 40 componentes · generado por scripts/generar-openui.py -->

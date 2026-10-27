@@ -1,14 +1,14 @@
 {
  "resumen": {
-  "objetos_declarados": 2201,
+  "objetos_declarados": 2202,
   "familias": 413,
   "demos": 661,
   "categorias": 18,
   "clases_usadas_en_demos": 2201,
-  "clases_sin_demo": 0,
-  "familias_sin_demo": 0,
+  "clases_sin_demo": 1,
+  "familias_sin_demo": 1,
   "fantasmas": 0,
-  "duplicados": 0,
+  "duplicados": 1,
   "tokens_fantasma": 0,
   "hex": 0,
   "glass": 0,
@@ -109,10 +109,10 @@
    "important": 0
   },
   "p18-escenario.css": {
-   "lineas": 320,
-   "bytes": 9639,
-   "clases": 39,
-   "familias": 12,
+   "lineas": 338,
+   "bytes": 10338,
+   "clases": 40,
+   "familias": 13,
    "hex": 0,
    "gradientes": 0,
    "glass": 0,
@@ -357,10 +357,14 @@
    "nombre": "Escenario (charlas en beats)",
    "pack": "p18-escenario.css",
    "demos": 20,
-   "objetos": 39,
-   "familias": 12,
-   "sin_demo": [],
-   "familias_sin_demo": []
+   "objetos": 40,
+   "familias": 13,
+   "sin_demo": [
+    "nz-navbar"
+   ],
+   "familias_sin_demo": [
+    "nz-navbar"
+   ]
   }
  },
  "hallazgos": {
@@ -371,7 +375,12 @@
    "p12-system.css": 1
   },
   "tokens_fantasma": [],
-  "duplicados": {},
+  "duplicados": {
+   "nz-navbar": [
+    "p2-navigation.css",
+    "p18-escenario.css"
+   ]
+  },
   "fantasmas": []
  },
  "familias": {
@@ -3845,8 +3854,8 @@
    "demostrado": true
   },
   "nz-navbar": {
-   "cat": 2,
-   "pack": "p2-navigation.css",
+   "cat": 18,
+   "pack": "p18-escenario.css",
    "n_clases": 9,
    "mods": [
     "bordered",

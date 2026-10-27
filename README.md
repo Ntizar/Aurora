@@ -6,11 +6,11 @@
 marcas por preset y una capa generativa para que el diseño lo escriba el modelo — sin salirse
 nunca del sistema.
 
-2.195 objetos · 411 familias · 659 demos en vivo · 18 categorías · 36 componentes generativos · 338 iconos numerados
+2.201 objetos · 413 familias · 661 demos en vivo · 18 categorías · 40 componentes generativos · 338 iconos numerados
 
 [![CI](https://github.com/Ntizar/Aurora/actions/workflows/validar.yml/badge.svg)](https://github.com/Ntizar/Aurora/actions/workflows/validar.yml)
 [![Pages](https://github.com/Ntizar/Aurora/actions/workflows/pages.yml/badge.svg)](https://github.com/Ntizar/Aurora/actions/workflows/pages.yml)
-![versión](https://img.shields.io/badge/versi%C3%B3n-10.6.0-2563eb)
+![versión](https://img.shields.io/badge/versi%C3%B3n-10.7.0-2563eb)
 
 **[Catálogo](https://ntizar.github.io/Aurora/)** · **[Base de datos](https://ntizar.github.io/Aurora/base.html)** · **[Generative UI](https://ntizar.github.io/Aurora/openui/)** · **[Iconos](https://ntizar.github.io/Aurora/iconos/)** · **[Contrato](CONTRATO.md)**
 
@@ -53,8 +53,8 @@ El detalle completo está en **[CONTRATO.md](CONTRATO.md)**.
 ```
 L0  marcas/      presets de tokens: identidad (datos, no código)
 L1  packs/       18 hojas CSS: la implementación
-L2  openui/      38 componentes: el vocabulario que usa el modelo
-L3  (plantillas) arquetipos: panel, informe, landing, ajustes, agente
+L2  openui/      40 componentes: el vocabulario que usa el modelo
+L3  (plantillas) arquetipos: panel, informe, landing, ajustes, agente, presentación
 ```
 
 El modelo trabaja en **L2** y elige **L0** por nombre. Nunca escribe en L1.
@@ -117,8 +117,8 @@ capas, ya auditada y con su estructura revisada.
 
 | Nivel | Qué hay | Dónde |
 |---|---|---|
-| Plantilla por arquetipo | panel, informe, landing, ajustes y agente — variables y estructura fija | `openui/plantillas/` |
-| Esqueleto por tipo | 8 combos: landing, dashboard, chat-ia, login-form, e-commerce, escritorio-app, charla-beats, prototipo | `bloques/combos/` |
+| Plantilla por arquetipo | panel, informe, landing, ajustes, agente y presentación — variables y estructura fija | `openui/plantillas/` |
+| Esqueleto por tipo | 9 combos: landing, dashboard, chat-ia, login-form, e-commerce, escritorio-app, charla-beats, prototipo, presentación | `bloques/combos/` |
 | Producto de muestra | landing + ficha bajo subruta, modo producto, medidas en navegador (18 comprobaciones) | `examples/golden/` |
 
 Encaja tu dato en la plantilla del arquetipo: la jerarquía, el responsive, los estados y
