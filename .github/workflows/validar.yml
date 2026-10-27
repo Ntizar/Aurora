@@ -23,6 +23,11 @@ jobs:
       - name: Validar el sistema (manifiesto + cobertura + HTML)
         run: python scripts/validar-css.py
 
+      - name: Auditor de movimiento (duraciones, curvas, techo y reduced-motion)
+        run: |
+          python scripts/auditar-movimiento.py --selftest
+          python scripts/auditar-movimiento.py
+
       - name: Lint de las recetas, ejemplos, combos y páginas del explorador
         run: python scripts/auditar-uso.py index.html base.html stress-test.html bloques/ejemplos/*.html bloques/recetas/*.html bloques/combos/*.html iconos/index.html marcas/index.html examples/golden/*.html
 
