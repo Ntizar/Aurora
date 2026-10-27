@@ -600,7 +600,26 @@ está en la skill `design-system-coherence-audit` (en la instalación local ya n
    simplemente no tiene icono (un `<summary>` sin chevron parece un diseño, no un bug).
    Cuenta los assets referenciados contra los presentes, o haz que el helper avise una vez.
 
-## 13b. La elegancia vive en el presupuesto, no en el gusto (medido 2026-10-22)
+## 15. **specs/NN.json se edita con roundtrip verificado, no a dedo.** Cuatro de los
+    ficheros se regeneran byte a byte con `json.dumps(indent=2)` y newline final, pero
+    specs/13.json no (sin newline final): si no compruebas el roundtrip antes de editar,
+    el diff sale entero reformateado y el ruido tapa el cambio. El test barato:
+    `json.dumps(json.load(f), indent=2) + "\n" == contenido` por fichero, y respetar lo
+    que diga cada uno (13 sin `\n` final).
+16. **El runtime openui no puede llevar fragmentos `nz-…` dinámicos en sus strings.**
+    `RE_CLASE` de `auditar-openui.py` caza cualquier `nz-…` del código como clase emitida:
+    un id de patrón `nz-trama-diag-N` o una `var(--nz-x)` dentro de una cadena cantan
+    «clase fuera del censo». Los ids generados van FUERA del espacio `nz-` (`tramaDiag-N`)
+    y el color por clases compuestas del censo (`.nz-chart-donut__seg--brand.nz-trama--diagonal`),
+    nunca por `style="color: …"`.
+17. **Un juez de CSS no juzga dentro de `prefers-reduced-motion`.** Ese bloque es la
+    salida de emergencia: una `animation-duration: 1.6s` ahí no es una duración a mano,
+    es la técnica (ralentizar el spinner en vez de congelarlo). Igual que el lint de
+    cristal tiene su excepción declarada, `auditar-movimiento.py` excluye el bloque entero.
+18. **El renderer es `R.Anillo` (doble L castellano).** Buscar `R.Anilo` al editar el
+    runtime acaba en «substring not found» o, peor, en insertar un duplicado.
+
+13b. La elegancia vive en el presupuesto, no en el gusto (medido 2026-10-22)
 
 El ruido visual que David detecta («cajas grandes que se pisan») NO está en los packs:
 medido con arnés de superficies, la portada y su shell `cat-*` a mano tienen 104 superficies,
