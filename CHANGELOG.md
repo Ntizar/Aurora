@@ -3,6 +3,18 @@
 Formato: [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/).
 Versionado: [SemVer](https://semver.org/lang/es/).
 
+## [Sin publicar]
+
+### Cambiado
+
+- **Portada reescrita**: HTML estático legible (briefs/portada.tmpl.html a mano, sin
+  programa OpenUI de por medio) con la marca monocromo light y una carta de
+  presentación que explica cómo funciona de verdad: dos CSS del CDN, clases del
+  censo y un sello con el lint. La transparencia del programa deja paso a la
+  claridad; el programa sigue vivo en openui/ y su probador.
+- El meta description de la portada ya recibe las cifras (antes salía con las
+  claves de plantilla sin sustituir).
+
 ## [10.9.0] — 2026-10-27
 
 ### Añadido

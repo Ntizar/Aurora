@@ -1,110 +1,124 @@
 <!DOCTYPE html>
-<html lang="es" data-nz-theme="light" data-nz-marca="ntizar" data-nz-firma="full">
+<html lang="es" data-nz-marca="monocromo">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>Aurora — el design system de Ntizar</title>
-<meta name="description" content="{OBJETOS} clases verificadas en {FAMILIAS} familias, {PACKS} packs sin build y {COMPONENTES} componentes generativos que impiden las clases inventadas. Catálogo, marcas, MCP para agentes y producto de muestra medido en navegador.">
+<title>Aurora — design system monocromo, sin build</title>
+<meta name="description" content="2.201 clases CSS verificadas en 413 familias, 18 hojas sin build y 40 componentes generativos. Design system monocromo light: blanco para el dato, negro para el lienzo, color solo donde mide.">
 <link rel="stylesheet" href="tokens.css">
-<link rel="stylesheet" href="marcas/ntizar.css">
+<link rel="stylesheet" href="marcas/monocromo.css">
 <link rel="stylesheet" href="packs/p1-layout.css">
-<link rel="stylesheet" href="packs/p12-system.css">
 <link rel="stylesheet" href="packs/p2-navigation.css">
 <link rel="stylesheet" href="packs/p3-typography.css">
 <link rel="stylesheet" href="packs/p4-actions.css">
 <link rel="stylesheet" href="packs/p6-feedback.css">
 <link rel="stylesheet" href="packs/p8-data.css">
+<link rel="stylesheet" href="packs/p12-system.css">
 </head>
 <body class="nz">
 <a class="nz-skip-link" href="#contenido">Saltar al contenido</a>
-<main id="contenido"><div class="nz-container"><div class="nz-navbar nz-navbar--bordered"><a class="nz-navbar__brand" href="index.html"><i></i>Aurora</a><span class="nz-navbar__links"><a class="nz-navbar__link" href="base.html">Catálogo</a><a class="nz-navbar__link" href="bloques/recetas/index.html">Bloques</a><a class="nz-navbar__link" href="marcas/index.html">Marcas</a><a class="nz-navbar__link" href="iconos/index.html">Iconos</a><a class="nz-navbar__link" href="openui/index.html">OpenUI</a><a class="nz-navbar__link" href="https://github.com/Ntizar/Aurora">GitHub</a></span></div><section class="nz-section nz-section--bordered"><h1 class="nz-h1">El modelo escribe el diseño. Aurora no le deja equivocarse.</h1><p class="nz-lead nz-lead--lg">2.201 clases verificadas en 413 familias, 18 hojas CSS sin build y 40 componentes generativos. Lo escribe un modelo o lo escribes tú: el contrato es el mismo.</p><div class="nz-cluster nz-cluster--compact"><a class="nz-btn nz-btn--primary nz-btn--lg" href="openui/index.html">Probar OpenUI</a><a class="nz-btn nz-btn--outline nz-btn--lg" href="base.html">Ver el catálogo</a><a class="nz-btn nz-btn--outline nz-btn--lg" href="examples/golden/index.html">Ver el producto de muestra</a></div><div class="nz-dash-grid nz-dash-grid--4"><div class="nz-kpi"><span class="nz-kpi__label">Clases verificadas</span><span class="nz-kpi__value">2.201</span><span class="nz-kpi__delta nz-kpi__delta--flat">en 413 familias</span></div><div class="nz-kpi"><span class="nz-kpi__label">Hojas CSS</span><span class="nz-kpi__value">18</span><span class="nz-kpi__delta nz-kpi__delta--flat">sin build ni dependencias</span></div><div class="nz-kpi nz-kpi--accent"><span class="nz-kpi__label">Clases inventadas</span><span class="nz-kpi__value nz-kpi__value--accent">0</span><span class="nz-kpi__delta nz-kpi__delta--flat">no compilan</span></div><div class="nz-kpi"><span class="nz-kpi__label">Marcas listas</span><span class="nz-kpi__value">7</span><span class="nz-kpi__delta nz-kpi__delta--up">+ la tuya en un minuto</span></div></div></section><section class="nz-section nz-section--bordered"><span class="nz-lbl">Cómo funciona</span><h2 class="nz-h2">De un encargo a una página, en cuatro pasos</h2><p class="nz-lead nz-lead--sm">El modelo escribe openui-lang (40 componentes, argumentos posicionales) y el parser valida tipos, enums y aridad antes de tocar el DOM.</p><ol class="nz-stepper"><li class="nz-stepper__step is-done"><span class="nz-stepper__num">1</span>Eliges la entrada</li><li class="nz-stepper__step is-active"><span class="nz-stepper__num">2</span>El modelo escribe el programa</li><li class="nz-stepper__step"><span class="nz-stepper__num">3</span>El lint sella el HTML</li><li class="nz-stepper__step"><span class="nz-stepper__num">4</span>Se hornea y se publica</li></ol><p>Un programa ocupa la mitad de tokens que el marcado equivalente. Esta portada es su propio programa: el fichero completo está abajo, tal cual.</p><div class="nz-alert nz-alert--info" role="status"><span class="nz-alert__icon" aria-hidden="true">i</span><div class="nz-alert__body"><span class="nz-alert__title">Sin clases de la casa</span><span class="nz-alert__msg">Lo que no está en components.json no existe para el modelo: o se usa lo que hay o se amplía el censo en el repo.</span></div></div></section><section class="nz-section nz-section--bordered"><span class="nz-lbl">Comparación</span><h2 class="nz-h2">La diferencia no es el modelo: es el sistema</h2><div class="nz-split"><div class="nz-stack nz-stack--sm"><article class="nz-article nz-article--bordered"><h3 class="nz-h3">Sin sistema</h3><p>Degradado azul a morado, tarjetas de esquinas imposibles, cuatro negritas gritando a la vez y una tabla que desborda el móvil. Bonita en la captura, inservible en producción.</p><div class="nz-callout nz-callout--danger"><p>IA-slop: cada generación inventa un idioma visual nuevo.</p></div></article></div><div class="nz-stack nz-stack--sm"><article class="nz-article nz-article--bordered"><h3 class="nz-h3">Con Aurora</h3><div class="nz-kpi nz-kpi--accent"><span class="nz-kpi__label">Puntualidad</span><span class="nz-kpi__value nz-kpi__value--accent">94,2 %</span><span class="nz-kpi__delta nz-kpi__delta--up">+2,1 pp</span></div><div class="nz-progress"><div class="nz-progress__bar" style="width:94%"></div><span class="nz-progress__caption">Salidas puntuales · 42 de 45</span></div><div class="nz-table-wrap nz-table-wrap--apilable"><table class="nz-table nz-table--apilable nz-table--compact"><thead><tr><th class="">Ruta</th><th class="nz-table__num nz-table__right" style="text-align:right">Salidas</th><th class="">Puntualidad</th></tr></thead><tbody><tr><td data-etiqueta="Ruta">MAD-BCN</td><td data-etiqueta="Salidas" class="nz-table__num nz-table__right">42</td><td data-etiqueta="Puntualidad">96 %</td></tr><tr><td data-etiqueta="Ruta">MAD-VLC</td><td data-etiqueta="Salidas" class="nz-table__num nz-table__right">31</td><td data-etiqueta="Puntualidad">88 %</td></tr></tbody></table></div></article></div></div></section><section class="nz-section nz-section--bordered"><span class="nz-lbl">Tres puertas</span><h2 class="nz-h2">Cómo se usa, en tres puertas</h2><div class="nz-dash-grid nz-dash-grid--ajuste"><article class="nz-article nz-article--bordered"><h3 class="nz-h3">A mano</h3><p>Enlaza tokens.css y los packs que uses desde el CDN y copia un bloque del catálogo. Sin build, sin dependencias y el móvil ya viene resuelto.</p><a class="nz-btn nz-btn--outline nz-btn--sm" href="bloques/recetas/index.html">Ver bloques</a></article><article class="nz-article nz-article--bordered"><h3 class="nz-h3">Con tu agente</h3><p>MCP en una línea o la vía clásica: LLM.md decide packs y clases, components.json da la API y auditar-uso.py sella antes de entregar.</p><a class="nz-btn nz-btn--outline nz-btn--sm" href="LLM.md">Guía para agentes</a></article><article class="nz-article nz-article--bordered"><h3 class="nz-h3">Con un modelo</h3><p>El modelo escribe el programa y lo ves pintarse en vivo, componente a componente, sin escribir HTML.</p><a class="nz-btn nz-btn--outline nz-btn--sm" href="openui/index.html">Abrir OpenUI</a></article></div></section><section class="nz-section nz-section--bordered"><span class="nz-lbl">El sistema, dónde vive cada cosa</span><h2 class="nz-h2">Un índice para cada cosa, todos conectados</h2><div class="nz-dash-grid nz-dash-grid--ajuste"><article class="nz-article nz-article--bordered"><h3 class="nz-h3">Catálogo</h3><p>411 familias con markup real, tokens y demo viva. Busca por necesidad.</p><a class="nz-btn nz-btn--outline nz-btn--sm" href="base.html">Abrir base</a></article><article class="nz-article nz-article--bordered"><h3 class="nz-h3">Bloques</h3><p>Recetas canónicas por tipo de página, listas para copiar.</p><a class="nz-btn nz-btn--outline nz-btn--sm" href="bloques/recetas/index.html">Ver recetas</a></article><article class="nz-article nz-article--bordered"><h3 class="nz-h3">Marcas</h3><p>Seis presets y generador OKLCH con contraste AA y modo oscuro.</p><a class="nz-btn nz-btn--outline nz-btn--sm" href="marcas/index.html">Cambiar marca</a></article><article class="nz-article nz-article--bordered"><h3 class="nz-h3">Iconos</h3><p>338 símbolos numerados, sprite y ficha por icono. Nunca emojis.</p><a class="nz-btn nz-btn--outline nz-btn--sm" href="iconos/index.html">Ver iconos</a></article><article class="nz-article nz-article--bordered"><h3 class="nz-h3">OpenUI</h3><p>Probador en vivo y plantillas por arquetipo del lenguaje generativo.</p><a class="nz-btn nz-btn--outline nz-btn--sm" href="openui/index.html">Abrir probador</a></article><article class="nz-article nz-article--bordered"><h3 class="nz-h3">Producto de muestra</h3><p>Landing y ficha bajo subruta, medidas en navegador: 18 comprobaciones.</p><a class="nz-btn nz-btn--outline nz-btn--sm" href="examples/golden/index.html">Ver muestra</a></article></div></section><section class="nz-section nz-section--bordered"><span class="nz-lbl">Marca</span><h2 class="nz-h2">El azul y el naranja son míos; los tuyos se ponen en un minuto</h2><p>Dos colores de cualquier marca real y generar-marca.py saca la rampa OKLCH con contraste AA, fondos suaves y modo oscuro. Aurora no posee la marca: posee la cara que la hace legible.</p><div class="nz-cluster nz-cluster--compact"><span class="nz-chip">Aurora</span><span class="nz-chip">Índigo</span><span class="nz-chip">Violeta</span><span class="nz-chip">Carmesí</span><span class="nz-chip">Esmeralda</span><span class="nz-chip">Ámbar</span></div><a class="nz-btn nz-btn--outline nz-btn--sm" href="marcas/index.html">Cambiar la marca</a></section><section class="nz-section nz-section--bordered"><span class="nz-lbl">Versionado y agentes</span><h2 class="nz-h2">Dos canales, un sistema</h2><article class="nz-article nz-article--bordered"><h3 class="nz-h3">Canal vivo · @v10</h3><p>Un cambio de tokens o CSS llega a todas las webs que apuntan al rango sin tocarlas. Nunca se usa @master.</p></article><article class="nz-article nz-article--bordered"><h3 class="nz-h3">Congelado · v10.9.0</h3><p>Entregas a cliente con el tag exacto: reproducible dentro de dos años, no cambia hasta que se sube a propósito. Detalle en CONTRATO.md y canal.py.</p></article><div class="nz-alert nz-alert--info" role="status"><span class="nz-alert__icon" aria-hidden="true">i</span><div class="nz-alert__body"><span class="nz-alert__title">Para agentes, en una línea</span><span class="nz-alert__msg">claude mcp add aurora -- python scripts/mcp-aurora.py: consulta el censo vivo, valida HTML con el lint del repo y compila programas. Sin MCP: llms-full.txt con las 411 familias.</span></div></div></section><section class="nz-section nz-section--bordered"><span class="nz-lbl">Transparencia</span><h2 class="nz-h2">El programa, tal cual</h2><p>Sin capturas ni fragmentos escogidos: el fichero que genera esta página va entero justo debajo, inyectado por el build desde briefs/portada.openui.</p><pre class="nz-code nz-code--block" tabindex="0" role="region" aria-label="Programa OpenUI de esta página">root = Pagina([barra, apertura, como, contraste, puertas, mapa, marcas, canales, codigo], &quot;contenido&quot;)
-barra = Navegacion(&quot;Aurora&quot;, [&quot;Catálogo&quot;, &quot;Bloques&quot;, &quot;Marcas&quot;, &quot;Iconos&quot;, &quot;OpenUI&quot;, &quot;GitHub&quot;], [&quot;base.html&quot;, &quot;bloques/recetas/index.html&quot;, &quot;marcas/index.html&quot;, &quot;iconos/index.html&quot;, &quot;openui/index.html&quot;, &quot;https://github.com/Ntizar/Aurora&quot;], &quot;index.html&quot;)
-apertura = Seccion([t1, claim, acciones, cifras])
-t1 = Titular(&quot;El modelo escribe el diseño. Aurora no le deja equivocarse.&quot;, &quot;1&quot;)
-claim = Entradilla(&quot;2.201 clases verificadas en 413 familias, 18 hojas CSS sin build y 40 componentes generativos. Lo escribe un modelo o lo escribes tú: el contrato es el mismo.&quot;, &quot;lg&quot;)
-acciones = Fila([cta1, cta2, cta3], &quot;compacto&quot;)
-cta1 = Boton(&quot;Probar OpenUI&quot;, &quot;primario&quot;, &quot;lg&quot;, false, &quot;openui/index.html&quot;)
-cta2 = Boton(&quot;Ver el catálogo&quot;, &quot;contorno&quot;, &quot;lg&quot;, false, &quot;base.html&quot;)
-cta3 = Boton(&quot;Ver el producto de muestra&quot;, &quot;contorno&quot;, &quot;lg&quot;, false, &quot;examples/golden/index.html&quot;)
-cifras = Rejilla([k1, k2, k3, k4], &quot;4&quot;)
-k1 = Kpi(&quot;Clases verificadas&quot;, &quot;2.201&quot;, &quot;en 413 familias&quot;, &quot;plano&quot;)
-k2 = Kpi(&quot;Hojas CSS&quot;, &quot;18&quot;, &quot;sin build ni dependencias&quot;, &quot;plano&quot;)
-k3 = Kpi(&quot;Clases inventadas&quot;, &quot;0&quot;, &quot;no compilan&quot;, &quot;plano&quot;, &quot;acento&quot;)
-k4 = Kpi(&quot;Marcas listas&quot;, &quot;7&quot;, &quot;+ la tuya en un minuto&quot;, &quot;sube&quot;)
-como = Seccion([t2, e2, pasos, ahorro, aviso], &quot;Cómo funciona&quot;, true)
-t2 = Titular(&quot;De un encargo a una página, en cuatro pasos&quot;, &quot;2&quot;)
-e2 = Entradilla(&quot;El modelo escribe openui-lang (40 componentes, argumentos posicionales) y el parser valida tipos, enums y aridad antes de tocar el DOM.&quot;, &quot;sm&quot;)
-pasos = Pasos([&quot;Eliges la entrada&quot;, &quot;El modelo escribe el programa&quot;, &quot;El lint sella el HTML&quot;, &quot;Se hornea y se publica&quot;], 1)
-ahorro = Texto(&quot;Un programa ocupa la mitad de tokens que el marcado equivalente. Esta portada es su propio programa: el fichero completo está abajo, tal cual.&quot;)
-aviso = Aviso(&quot;Sin clases de la casa&quot;, &quot;Lo que no está en components.json no existe para el modelo: o se usa lo que hay o se amplía el censo en el repo.&quot;, &quot;info&quot;)
-contraste = Seccion([t3, par], &quot;Comparación&quot;, true)
-t3 = Titular(&quot;La diferencia no es el modelo: es el sistema&quot;, &quot;2&quot;)
-par = DosColumnas([sin], [con], &quot;50-50&quot;)
-sin = Tarjeta([s1, sn], &quot;Sin sistema&quot;, true)
-s1 = Texto(&quot;Degradado azul a morado, tarjetas de esquinas imposibles, cuatro negritas gritando a la vez y una tabla que desborda el móvil. Bonita en la captura, inservible en producción.&quot;)
-sn = Nota(&quot;IA-slop: cada generación inventa un idioma visual nuevo.&quot;, &quot;peligro&quot;)
-con = Tarjeta([c1, avan, tabla], &quot;Con Aurora&quot;, true)
-c1 = Kpi(&quot;Puntualidad&quot;, &quot;94,2 %&quot;, &quot;+2,1 pp&quot;, &quot;sube&quot;, &quot;acento&quot;)
-avan = Progreso(94, &quot;Salidas puntuales · 42 de 45&quot;)
-tabla = Tabla([&quot;Ruta&quot;, &quot;Salidas&quot;, &quot;Puntualidad&quot;], [[&quot;MAD-BCN&quot;, &quot;42&quot;, &quot;96 %&quot;], [&quot;MAD-VLC&quot;, &quot;31&quot;, &quot;88 %&quot;]], true, &quot;compacta&quot;, false, &quot;Salidas&quot;)
-puertas = Seccion([t4, rejillaPuertas], &quot;Tres puertas&quot;, true)
-t4 = Titular(&quot;Cómo se usa, en tres puertas&quot;, &quot;2&quot;)
-rejillaPuertas = Rejilla([f1, f2, f3])
-f1 = Tarjeta([p1, b1], &quot;A mano&quot;, true)
-p1 = Texto(&quot;Enlaza tokens.css y los packs que uses desde el CDN y copia un bloque del catálogo. Sin build, sin dependencias y el móvil ya viene resuelto.&quot;)
-b1 = Boton(&quot;Ver bloques&quot;, &quot;contorno&quot;, &quot;sm&quot;, false, &quot;bloques/recetas/index.html&quot;)
-f2 = Tarjeta([p2b, b2], &quot;Con tu agente&quot;, true)
-p2b = Texto(&quot;MCP en una línea o la vía clásica: LLM.md decide packs y clases, components.json da la API y auditar-uso.py sella antes de entregar.&quot;)
-b2 = Boton(&quot;Guía para agentes&quot;, &quot;contorno&quot;, &quot;sm&quot;, false, &quot;LLM.md&quot;)
-f3 = Tarjeta([p3, b3], &quot;Con un modelo&quot;, true)
-p3 = Texto(&quot;El modelo escribe el programa y lo ves pintarse en vivo, componente a componente, sin escribir HTML.&quot;)
-b3 = Boton(&quot;Abrir OpenUI&quot;, &quot;contorno&quot;, &quot;sm&quot;, false, &quot;openui/index.html&quot;)
-mapa = Seccion([t5, fichasIdx], &quot;El sistema, dónde vive cada cosa&quot;, true)
-t5 = Titular(&quot;Un índice para cada cosa, todos conectados&quot;, &quot;2&quot;)
-fichasIdx = Rejilla([x1, x2, x3, x4, x5, x6])
-x1 = Tarjeta([y1, cX1], &quot;Catálogo&quot;)
-y1 = Texto(&quot;411 familias con markup real, tokens y demo viva. Busca por necesidad.&quot;)
-cX1 = Boton(&quot;Abrir base&quot;, &quot;contorno&quot;, &quot;sm&quot;, false, &quot;base.html&quot;)
-x2 = Tarjeta([y2, cX2], &quot;Bloques&quot;)
-y2 = Texto(&quot;Recetas canónicas por tipo de página, listas para copiar.&quot;)
-cX2 = Boton(&quot;Ver recetas&quot;, &quot;contorno&quot;, &quot;sm&quot;, false, &quot;bloques/recetas/index.html&quot;)
-x3 = Tarjeta([y3, cX3], &quot;Marcas&quot;)
-y3 = Texto(&quot;Seis presets y generador OKLCH con contraste AA y modo oscuro.&quot;)
-cX3 = Boton(&quot;Cambiar marca&quot;, &quot;contorno&quot;, &quot;sm&quot;, false, &quot;marcas/index.html&quot;)
-x4 = Tarjeta([y4, cX4], &quot;Iconos&quot;)
-y4 = Texto(&quot;338 símbolos numerados, sprite y ficha por icono. Nunca emojis.&quot;)
-cX4 = Boton(&quot;Ver iconos&quot;, &quot;contorno&quot;, &quot;sm&quot;, false, &quot;iconos/index.html&quot;)
-x5 = Tarjeta([y5, cX5], &quot;OpenUI&quot;)
-y5 = Texto(&quot;Probador en vivo y plantillas por arquetipo del lenguaje generativo.&quot;)
-cX5 = Boton(&quot;Abrir probador&quot;, &quot;contorno&quot;, &quot;sm&quot;, false, &quot;openui/index.html&quot;)
-x6 = Tarjeta([y6, cX6], &quot;Producto de muestra&quot;)
-y6 = Texto(&quot;Landing y ficha bajo subruta, medidas en navegador: 18 comprobaciones.&quot;)
-cX6 = Boton(&quot;Ver muestra&quot;, &quot;contorno&quot;, &quot;sm&quot;, false, &quot;examples/golden/index.html&quot;)
-marcas = Seccion([t6, m1, chips, tm], &quot;Marca&quot;, true)
-t6 = Titular(&quot;El azul y el naranja son míos; los tuyos se ponen en un minuto&quot;, &quot;2&quot;)
-m1 = Texto(&quot;Dos colores de cualquier marca real y generar-marca.py saca la rampa OKLCH con contraste AA, fondos suaves y modo oscuro. Aurora no posee la marca: posee la cara que la hace legible.&quot;)
-chips = Fila([ch1, ch2, ch3, ch4, ch5, ch6], &quot;compacto&quot;)
-ch1 = Chip(&quot;Aurora&quot;, &quot;neutro&quot;)
-ch2 = Chip(&quot;Índigo&quot;, &quot;neutro&quot;)
-ch3 = Chip(&quot;Violeta&quot;, &quot;neutro&quot;)
-ch4 = Chip(&quot;Carmesí&quot;, &quot;neutro&quot;)
-ch5 = Chip(&quot;Esmeralda&quot;, &quot;neutro&quot;)
-ch6 = Chip(&quot;Ámbar&quot;, &quot;neutro&quot;)
-tm = Boton(&quot;Cambiar la marca&quot;, &quot;contorno&quot;, &quot;sm&quot;, false, &quot;marcas/index.html&quot;)
-canales = Seccion([t7, viva, congelada, mcp], &quot;Versionado y agentes&quot;, true)
-t7 = Titular(&quot;Dos canales, un sistema&quot;, &quot;2&quot;)
-viva = Tarjeta([v1], &quot;Canal vivo · @v10&quot;)
-v1 = Texto(&quot;Un cambio de tokens o CSS llega a todas las webs que apuntan al rango sin tocarlas. Nunca se usa @master.&quot;)
-congelada = Tarjeta([v2], &quot;Congelado · v10.9.0&quot;)
-v2 = Texto(&quot;Entregas a cliente con el tag exacto: reproducible dentro de dos años, no cambia hasta que se sube a propósito. Detalle en CONTRATO.md y canal.py.&quot;)
-mcp = Aviso(&quot;Para agentes, en una línea&quot;, &quot;claude mcp add aurora -- python scripts/mcp-aurora.py: consulta el censo vivo, valida HTML con el lint del repo y compila programas. Sin MCP: llms-full.txt con las 411 familias.&quot;, &quot;info&quot;)
-codigo = Seccion([t8, g2], &quot;Transparencia&quot;, true)
-t8 = Titular(&quot;El programa, tal cual&quot;, &quot;2&quot;)
-g2 = Texto(&quot;Sin capturas ni fragmentos escogidos: el fichero que genera esta página va entero justo debajo, inyectado por el build desde briefs/portada.openui.&quot;)
-</pre></section></div>
-</main>
-<footer class="nz-footer">
-  <p>Hecho con ❤️ por David Antizar</p>
-</footer>
+<div class="nz-container" style="padding-top:var(--nz-space-4);padding-bottom:var(--nz-space-6)">
+
+  <nav class="nz-navbar nz-navbar--bordered">
+    <a class="nz-navbar__brand" href="index.html"><i></i>Aurora</a>
+    <span class="nz-navbar__links">
+      <a class="nz-navbar__link" href="base.html">Catálogo</a>
+      <a class="nz-navbar__link" href="bloques/recetas/index.html">Bloques</a>
+      <a class="nz-navbar__link" href="marcas/index.html">Marcas</a>
+      <a class="nz-navbar__link" href="iconos/index.html">Iconos</a>
+      <a class="nz-navbar__link" href="openui/index.html">OpenUI</a>
+      <a class="nz-btn nz-btn--accent nz-btn--sm" href="https://github.com/Ntizar/Aurora">GitHub</a>
+    </span>
+  </nav>
+
+  <section style="margin-top:var(--nz-space-7);max-width:46rem">
+    <span class="nz-lbl">Design system de Ntizar · monocromo light</span>
+    <h1 class="nz-h1" style="margin-top:var(--nz-space-2)">CSS sin build que un modelo de IA no puede romper.</h1>
+    <p class="nz-lead nz-lead--lg" style="margin-top:var(--nz-space-3)">Aurora es una caja de componentes CSS puros —2.201 clases en 413 familias— con un lint que impide inventar clases y una estética monocroma: blanco para el dato, negro para el lienzo, color solo donde mide.</p>
+    <div class="nz-cluster" style="margin-top:var(--nz-space-5)">
+      <a class="nz-btn nz-btn--primary nz-btn--lg" href="base.html">Explorar el catálogo</a>
+      <a class="nz-btn nz-btn--outline nz-btn--lg" href="LLM.md">Guía para agentes</a>
+      <a class="nz-btn nz-btn--outline nz-btn--lg" href="openui/index.html">Probar OpenUI</a>
+    </div>
+  </section>
+
+  <div class="nz-dash-grid nz-dash-grid--4" style="margin-top:var(--nz-space-6)">
+    <div class="nz-kpi"><span class="nz-kpi__label">Clases verificadas</span><span class="nz-kpi__value">2.201</span><span class="nz-kpi__delta nz-kpi__delta--flat">en 413 familias</span></div>
+    <div class="nz-kpi"><span class="nz-kpi__label">Hojas CSS</span><span class="nz-kpi__value">18</span><span class="nz-kpi__delta nz-kpi__delta--flat">sin build ni dependencias</span></div>
+    <div class="nz-kpi nz-kpi--accent"><span class="nz-kpi__label">Clases inventadas</span><span class="nz-kpi__value nz-kpi__value--accent">0</span><span class="nz-kpi__delta nz-kpi__delta--flat">el lint no las deja compilar</span></div>
+    <div class="nz-kpi"><span class="nz-kpi__label">Marcas</span><span class="nz-kpi__value">7</span><span class="nz-kpi__delta nz-kpi__delta--up">monocromo light por defecto</span></div>
+  </div>
+
+  <section style="margin-top:var(--nz-space-7)">
+    <span class="nz-lbl">Cómo funciona de verdad</span>
+    <h2 class="nz-h2" style="margin-top:var(--nz-space-1)">Dos CSS, clases del censo y un sello. Nada más.</h2>
+    <div class="nz-stack nz-stack--sm" style="margin-top:var(--nz-space-4)">
+      <article class="nz-article nz-article--bordered" style="padding:var(--nz-space-4) var(--nz-space-5)">
+        <h3 class="nz-h3" style="font-size:var(--nz-text-lg)">1 · Enlazas los CSS</h3>
+        <pre class="nz-code nz-code--block" tabindex="0" role="region" aria-label="Enlace al CDN de Aurora">&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v10/tokens.css"&gt;
+&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v10/packs/p1-layout.css"&gt;</pre>
+        <p class="nz-text--small" style="color:var(--nz-text-soft);margin-top:var(--nz-space-3)">Servidos por jsDelivr, pineados al canal vivo @v10. Sin npm, sin build, sin JavaScript de runtime: cualquier servidor estático los sirve.</p>
+      </article>
+      <article class="nz-article nz-article--bordered" style="padding:var(--nz-space-4) var(--nz-space-5)">
+        <h3 class="nz-h3" style="font-size:var(--nz-text-lg)">2 · Escribes clases del censo</h3>
+        <pre class="nz-code nz-code--block" tabindex="0" role="region" aria-label="Markup de ejemplo con Aurora">&lt;button class="nz-btn nz-btn--primary"&gt;Guardar&lt;/button&gt;</pre>
+        <p class="nz-text--small" style="color:var(--nz-text-soft);margin-top:var(--nz-space-3)">Cada clase del censo lleva su demo viva en el catálogo y su ficha en <code>components.json</code>. Lo que no está en el censo, no existe: ni para ti ni para un modelo.</p>
+      </article>
+    </div>
+    <div class="nz-split" style="margin-top:var(--nz-space-4)">
+      <article class="nz-article nz-article--bordered" style="padding:var(--nz-space-4) var(--nz-space-5)">
+        <h3 class="nz-h3" style="font-size:var(--nz-text-lg)">3 · Un sello antes de publicar</h3>
+        <p>El lint <code>auditar-uso.py</code> —o el MCP de Aurora, dentro de tu agente— revisa el HTML antes de entregar: clases inventadas, packs que faltan, colores a mano, desbordes del móvil. 0 fallos o no está terminado.</p>
+      </article>
+      <article class="nz-article nz-article--bordered" style="padding:var(--nz-space-4) var(--nz-space-5)">
+        <h3 class="nz-h3" style="font-size:var(--nz-text-lg)">¿Y si escribe un modelo?</h3>
+        <p>OpenUI-lang: el modelo escribe un programa corto de 40 componentes, el parser valida tipos y aridad antes de tocar el DOM y el mismo lint sella el resultado. Mismo contrato, mitad de tokens.</p>
+        <a class="nz-btn nz-btn--outline nz-btn--sm" href="openui/index.html" style="margin-top:var(--nz-space-3)">Verlo en vivo</a>
+      </article>
+    </div>
+  </section>
+
+  <section style="margin-top:var(--nz-space-7)">
+    <span class="nz-lbl">La estética</span>
+    <h2 class="nz-h2" style="margin-top:var(--nz-space-1)">Monocromo: blanco, negro y color solo en los datos</h2>
+    <p class="nz-lead nz-lead--sm" style="margin-top:var(--nz-space-2)">La marca por defecto es <strong>monocromo light</strong>: lienzo blanco, dato en negro y el gris reservado para lo que se toca —botones, chips, bordes—. El color aparece dos veces y siempre con permiso: azul y naranja miden en los gráficos, y un punto de semáforo marca el estado sin convertir la página en un árbol de Navidad. Con <code>data-nz-theme="dark"</code> el lienzo pasa a negro puro y la señal se invierte.</p>
+    <div class="nz-cluster nz-cluster--compact" style="margin-top:var(--nz-space-4)">
+      <span class="nz-chip">blanco = dato</span>
+      <span class="nz-chip">negro = lienzo</span>
+      <span class="nz-chip">gris = affordancia</span>
+      <span class="nz-chip">azul/naranja = medida</span>
+      <span class="nz-chip">punto = estado</span>
+    </div>
+    <div style="margin-top:var(--nz-space-4)"><a class="nz-btn nz-btn--outline nz-btn--sm" href="marcas/index.html">Ver las 7 marcas</a></div>
+  </section>
+
+  <section style="margin-top:var(--nz-space-7)">
+    <span class="nz-lbl">Todo lo que hay</span>
+    <h2 class="nz-h2" style="margin-top:var(--nz-space-1)">Seis puertas, un mismo contrato</h2>
+    <div class="nz-dash-grid nz-dash-grid--ajuste" style="margin-top:var(--nz-space-4)">
+      <article class="nz-article nz-article--bordered"><h3 class="nz-h3">Catálogo</h3><p>413 familias con markup real, tokens y demo viva. Se busca por necesidad, no por nombre de clase.</p><a class="nz-btn nz-btn--outline nz-btn--sm" href="base.html">Abrir la base</a></article>
+      <article class="nz-article nz-article--bordered"><h3 class="nz-h3">Bloques</h3><p>Recetas canónicas por tipo de página —login, panel, landing—, listas para copiar y ajustar.</p><a class="nz-btn nz-btn--outline nz-btn--sm" href="bloques/recetas/index.html">Ver bloques</a></article>
+      <article class="nz-article nz-article--bordered"><h3 class="nz-h3">Marcas</h3><p>7 presets con contraste AA y el generador OKLCH para la tuya en un minuto. Monocromo light por defecto.</p><a class="nz-btn nz-btn--outline nz-btn--sm" href="marcas/index.html">Cambiar de marca</a></article>
+      <article class="nz-article nz-article--bordered"><h3 class="nz-h3">Iconos</h3><p>338 símbolos numerados con sprite y ficha por icono. Nunca un emoji haciendo de icono.</p><a class="nz-btn nz-btn--outline nz-btn--sm" href="iconos/index.html">Ver iconos</a></article>
+      <article class="nz-article nz-article--bordered"><h3 class="nz-h3">OpenUI</h3><p>El lenguaje generativo con probador en vivo y plantillas por arquetipo: panel, informe, landing, ajustes, agente.</p><a class="nz-btn nz-btn--outline nz-btn--sm" href="openui/index.html">Abrir el probador</a></article>
+      <article class="nz-article nz-article--bordered"><h3 class="nz-h3">Producto de muestra</h3><p>Una landing y una ficha reales bajo subruta, medidas en navegador: 18 comprobaciones que la CI repite.</p><a class="nz-btn nz-btn--outline nz-btn--sm" href="examples/golden/index.html">Ver la muestra</a></article>
+    </div>
+  </section>
+
+  <section style="margin-top:var(--nz-space-7)">
+    <span class="nz-lbl">Para agentes</span>
+    <h2 class="nz-h2" style="margin-top:var(--nz-space-1)">Una línea y está dentro</h2>
+    <div class="nz-alert nz-alert--info" role="status" style="margin-top:var(--nz-space-3)">
+      <span class="nz-alert__icon" aria-hidden="true">i</span>
+      <div class="nz-alert__body">
+        <span class="nz-alert__title">MCP de Aurora</span>
+        <span class="nz-alert__msg">claude mcp add aurora -- python scripts/mcp-aurora.py — censo vivo, lint de HTML y compilador de programas. Sin MCP: llms-full.txt y LLM.md.</span>
+      </div>
+    </div>
+    <p class="nz-text--small" style="color:var(--nz-text-soft);margin-top:var(--nz-space-3)">Versionado con dos canales: el vivo @v10 recibe cada release sin tocar tus webs; el congelado v10.9.0 deja la entrega reproducible dentro de dos años. Detalle en CONTRATO.md.</p>
+  </section>
+
+  <p style="margin-top:var(--nz-space-7);color:var(--nz-text-faint);font-size:var(--nz-text-sm)">Hecho con ❤️ por David Antizar</p>
+</div>
 </body>
 </html>

@@ -434,11 +434,9 @@ CSS_PORTADA = """
 
 
 def portada(specs, censo_cat, totales, packs):
-    """La portada es un programa openui-lang horneado: la fuente única es
-    briefs/portada.openui -> scripts/hornear.py -> briefs/portada.tmpl.html.
-    Aquí solo se clavan las cifras reales del censo, el programa (tal cual, para
-    que la página no pueda prometer algo que no enseña) y el rango del canal vivo:
-    la portada nunca inventa un número ni escribe markup a mano."""
+    """La portada es HTML escrito a mano (briefs/portada.tmpl.html) que explica
+    cómo funciona el sistema; el build SOLO clava las cifras reales del censo,
+    las marcas y los canales. La portada nunca inventa un número."""
     censo = json.loads((ROOT / "components.json").read_text(encoding="utf-8"))
     resumen = censo.get("resumen") or {}
     marcas = json.loads((ROOT / "marcas" / "registro.json").read_text(encoding="utf-8"))
@@ -446,7 +444,6 @@ def portada(specs, censo_cat, totales, packs):
     vivo = canales["canales"]["vivo"]["rango"]
     miles = lambda n: f"{n:,}".replace(",", ".")
 
-    programa = (ROOT / "briefs" / "portada.openui").read_text(encoding="utf-8")
     componentes = json.loads(
         (ROOT / "openui" / "componentes.json").read_text(encoding="utf-8"))["componentes"]
     claves = {
@@ -459,17 +456,12 @@ def portada(specs, censo_cat, totales, packs):
         "{{VIVO}}": vivo,
         "{{CONGELADO}}": canales["canales"]["congelado"]["tag"],
     }
-    # Las cifras se clavan en el programa ANTES de inyectarlo: el bloque de código
-    # que ve el lector es el programa que se compiló de verdad, no una plantilla.
-    for clave, valor in claves.items():
-        programa = programa.replace(clave, valor)
-
+    # Las cifras se clavan en la plantilla: la portada es estática y legible,
+    # sin programa OpenUI de por medio (simplificación 10.10.0).
     plantilla = (ROOT / "briefs" / "portada.tmpl.html").read_text(encoding="utf-8")
     for clave, valor in claves.items():
         plantilla = plantilla.replace(clave, valor)
-    return (plantilla
-            .replace("{{PROGRAMA}}", html.escape(programa))
-            .replace("@v10/", f"@{vivo}/"))
+    return plantilla
 
 
 def main():
