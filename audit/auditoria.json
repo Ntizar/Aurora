@@ -1,11 +1,11 @@
 {
  "resumen": {
-  "objetos_declarados": 2201,
-  "familias": 413,
-  "demos": 661,
+  "objetos_declarados": 2223,
+  "familias": 417,
+  "demos": 666,
   "categorias": 18,
-  "clases_usadas_en_demos": 2201,
-  "clases_sin_demo": 0,
+  "clases_usadas_en_demos": 2220,
+  "clases_sin_demo": 3,
   "familias_sin_demo": 0,
   "fantasmas": 0,
   "duplicados": 0,
@@ -14,7 +14,7 @@
   "glass": 0,
   "gradientes": 0,
   "important": 1,
-  "familias_sin_variantes": 167,
+  "familias_sin_variantes": 168,
   "packs": 18
  },
  "packs": {
@@ -59,20 +59,20 @@
    "important": 1
   },
   "p13-charts.css": {
-   "lineas": 383,
-   "bytes": 29355,
-   "clases": 216,
-   "familias": 22,
+   "lineas": 399,
+   "bytes": 30324,
+   "clases": 220,
+   "familias": 23,
    "hex": 0,
    "gradientes": 0,
    "glass": 0,
    "important": 0
   },
   "p14-ai.css": {
-   "lineas": 298,
-   "bytes": 24958,
-   "clases": 180,
-   "familias": 28,
+   "lineas": 317,
+   "bytes": 27035,
+   "clases": 186,
+   "familias": 29,
    "hex": 0,
    "gradientes": 0,
    "glass": 0,
@@ -159,10 +159,10 @@
    "important": 0
   },
   "p6-feedback.css": {
-   "lineas": 267,
-   "bytes": 24514,
-   "clases": 153,
-   "familias": 19,
+   "lineas": 294,
+   "bytes": 26774,
+   "clases": 160,
+   "familias": 20,
    "hex": 0,
    "gradientes": 0,
    "glass": 0,
@@ -179,10 +179,10 @@
    "important": 0
   },
   "p8-data.css": {
-   "lineas": 296,
-   "bytes": 23976,
-   "clases": 145,
-   "familias": 16,
+   "lineas": 309,
+   "bytes": 24945,
+   "clases": 150,
+   "familias": 17,
    "hex": 0,
    "gradientes": 0,
    "glass": 0,
@@ -248,10 +248,13 @@
   "6": {
    "nombre": "Feedback y estados",
    "pack": "p6-feedback.css",
-   "demos": 52,
-   "objetos": 153,
-   "familias": 19,
-   "sin_demo": [],
+   "demos": 54,
+   "objetos": 160,
+   "familias": 20,
+   "sin_demo": [
+    "nz-toast--warning",
+    "nz-toast__progreso"
+   ],
    "familias_sin_demo": []
   },
   "7": {
@@ -266,10 +269,12 @@
   "8": {
    "nombre": "Datos, tablas y listas",
    "pack": "p8-data.css",
-   "demos": 40,
-   "objetos": 145,
-   "familias": 16,
-   "sin_demo": [],
+   "demos": 41,
+   "objetos": 150,
+   "familias": 17,
+   "sin_demo": [
+    "nz-contador--sm"
+   ],
    "familias_sin_demo": []
   },
   "9": {
@@ -311,18 +316,18 @@
   "13": {
    "nombre": "Gráficos y visualización",
    "pack": "p13-charts.css",
-   "demos": 38,
-   "objetos": 216,
-   "familias": 22,
+   "demos": 39,
+   "objetos": 220,
+   "familias": 23,
    "sin_demo": [],
    "familias_sin_demo": []
   },
   "14": {
    "nombre": "IA y agentes",
    "pack": "p14-ai.css",
-   "demos": 32,
-   "objetos": 180,
-   "familias": 28,
+   "demos": 33,
+   "objetos": 186,
+   "familias": 29,
    "sin_demo": [],
    "familias_sin_demo": []
   },
@@ -433,6 +438,20 @@
    "mods": [],
    "partes": [
     "item"
+   ],
+   "demostrado": true
+  },
+  "nz-actividad": {
+   "cat": 14,
+   "pack": "p14-ai.css",
+   "n_clases": 6,
+   "mods": [],
+   "partes": [
+    "cuerpo",
+    "detalle",
+    "fila",
+    "hora",
+    "texto"
    ],
    "demostrado": true
   },
@@ -1843,6 +1862,20 @@
     "icon",
     "text",
     "title"
+   ],
+   "demostrado": true
+  },
+  "nz-contador": {
+   "cat": 8,
+   "pack": "p8-data.css",
+   "n_clases": 5,
+   "mods": [
+    "lg",
+    "sm"
+   ],
+   "partes": [
+    "destino",
+    "valor"
    ],
    "demostrado": true
   },
@@ -5855,21 +5888,36 @@
   "nz-toast": {
    "cat": 6,
    "pack": "p6-feedback.css",
-   "n_clases": 11,
+   "n_clases": 15,
    "mods": [
+    "accent",
     "bottom",
     "brand",
     "error",
     "info",
     "success",
-    "top"
+    "temporal",
+    "top",
+    "warning"
    ],
    "partes": [
     "action",
     "close",
     "icon",
+    "progreso",
     "title"
    ],
+   "demostrado": true
+  },
+  "nz-toast-pila": {
+   "cat": 6,
+   "pack": "p6-feedback.css",
+   "n_clases": 3,
+   "mods": [
+    "abajo",
+    "arriba"
+   ],
+   "partes": [],
    "demostrado": true
   },
   "nz-toast-stack": {
@@ -5964,6 +6012,19 @@
     "chip",
     "chip--active"
    ],
+   "demostrado": true
+  },
+  "nz-trama": {
+   "cat": 13,
+   "pack": "p13-charts.css",
+   "n_clases": 4,
+   "mods": [
+    "cruzada",
+    "cuadros",
+    "diagonal",
+    "puntos"
+   ],
+   "partes": [],
    "demostrado": true
   },
   "nz-tray": {
@@ -6172,6 +6233,7 @@
   "nz--tracking-caps",
   "nz--tracking-tight",
   "nz-actbar",
+  "nz-actividad",
   "nz-activity",
   "nz-agenda",
   "nz-agenda-disponibilidad",

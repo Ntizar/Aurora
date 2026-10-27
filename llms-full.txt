@@ -1,6 +1,6 @@
-# Aurora — referencia completa por componente (v10.9.0)
+# Aurora — referencia completa por componente (v10.10.0)
 
-> Extiende llms.txt con la API exacta de las 413 familias:
+> Extiende llms.txt con la API exacta de las 417 familias:
 > clases, markup real, tokens, alias y anti-patrón. Generado desde
 > components.json por scripts/generar-llm-docs.py — no lo edites a mano.
 
@@ -38,6 +38,11 @@ markup: <span class="nz-a11y-badge">Auditado</span>
 clases: nz-actbar, nz-actbar__item
 tokens: --nz-accent, --nz-accent-ink, --nz-bg-inset, --nz-brand, --nz-peso-titulo, --nz-radius-full, --nz-radius-sm, --nz-shadow-xs, --nz-space-1, --nz-space-2, --nz-surface, --nz-text, --nz-text-2xs, --nz-text-md, --nz-text-mute
 markup: <div class="nz-actbar"><button class="nz-actbar__item" aria-current="page" aria-label="Explorador"><svg class="nz-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button><button class="nz-actbar__item" aria-label="Buscar"><svg class="nz-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><span>3</span></button><button class="nz-actbar__item" aria-label="Control de versiones"><svg class="nz-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="6" r="2"/><circle cx="6" cy="18" r="2"/><circle cx="18" cy="12" r="2"/><path d="M6 8v8M8 6h4a4 4 0 0 1 4 4v0"/></svg><span class="is-brand">12</span></button><button class="nz-actbar__item" aria-label="Extensiones"><svg class="nz-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg></button></div>
+
+## nz-actividad · packs/p14-ai.css
+clases: nz-actividad, nz-actividad__cuerpo, nz-actividad__detalle, nz-actividad__fila, nz-actividad__hora, nz-actividad__texto
+tokens: --nz-accent, --nz-bg, --nz-bg-soft, --nz-border-soft, --nz-brand, --nz-danger, --nz-ease-soft, --nz-peso-medio, --nz-radius-full, --nz-radius-sm, --nz-space-2, --nz-space-3, --nz-space-5, --nz-success, --nz-text-2xs, --nz-text-mute, --nz-text-sm
+markup: <div class="nz-actividad"><div class="nz-actividad__fila is-done"><span class="nz-actividad__hora">09:12</span><span class="nz-actividad__cuerpo"><span class="nz-actividad__texto">Revisión completada</span><span class="nz-actividad__detalle">2 salidas aprobadas por el revisor</span></span></div><div class="nz-actividad__fila is-active" aria-current="step"><span class="nz-actividad__hora">09:15</span><span class="nz-actividad__cuerpo"><span class="nz-actividad__texto">Generando informe</span><span class="nz-actividad__detalle">Paso 3 de 4 · plantilla mensual</span></span></div><div class="nz-actividad__fila is-error"><span class="nz-actividad__hora">08:47</span><span class="nz-actividad__cuerpo"><span class="nz-actividad__texto">Publicación fallida</span><span class="nz-actividad__detalle">El CDN rechazó el token caducado</span></span></div><div class="nz-actividad__fila"><span class="nz-actividad__hora">08:40</span><span class="nz-actividad__cuerpo"><span class="nz-actividad__texto">Datos sincronizados</span><span class="nz-actividad__detalle">1.284 filas actualizadas</span></span></div></div>
 
 ## nz-activity · packs/p11-social.css
 clases: nz-activity, nz-activity__icon, nz-activity__item, nz-activity__time
@@ -503,6 +508,11 @@ markup: <div class="nz-compare-bar"><span class="nz-compare-bar__count">2 produc
 clases: nz-confirm, nz-confirm--brand, nz-confirm--danger, nz-confirm__actions, nz-confirm__icon, nz-confirm__text, nz-confirm__title
 tokens: --nz-brand, --nz-brand-soft, --nz-danger, --nz-danger-soft, --nz-peso-fuerte, --nz-radius-full, --nz-radius-xl, --nz-shadow-xl, --nz-space-2, --nz-space-3, --nz-space-6, --nz-surface, --nz-text-lg, --nz-text-sm, --nz-text-soft, --nz-text-xl, --nz-tracking-tight
 markup: <div class="nz-confirm nz-confirm--danger"><span class="nz-confirm__icon">!</span><span class="nz-confirm__title">¿Vaciar la papelera?</span><p class="nz-confirm__text">Se perderán 14 elementos. No se puede deshacer.</p><div class="nz-confirm__actions"><button class="nz-sheet__action">Cancelar</button><button class="nz-sheet__action nz-sheet__action--danger">Vaciar</button></div></div>
+
+## nz-contador · packs/p8-data.css
+clases: nz-contador, nz-contador--lg, nz-contador--sm, nz-contador__destino, nz-contador__valor
+tokens: --nz-dur-entrada, --nz-ease-out, --nz-text-md, --nz-text-xl
+markup: <span class="nz-contador"><span class="nz-contador__valor">42.190</span><span class="nz-contador__destino" aria-hidden="true">42.190</span></span>
 
 ## nz-container · packs/p1-layout.css
 clases: nz-container, nz-container--app, nz-container--fixed, nz-container--fluid, nz-container--narrow, nz-container--wide
@@ -1938,10 +1948,15 @@ tokens: --nz-accent, --nz-accent-ink, --nz-brand, --nz-dur-base, --nz-ease-out, 
 markup: <span class="nz-tip nz-tip--brand"><button class="nz-btn nz-btn--soft" tabindex="0">Marca</button><span class="nz-tip__body">Azul de marca</span></span>
 
 ## nz-toast · packs/p6-feedback.css
-clases: nz-toast, nz-toast--bottom, nz-toast--brand, nz-toast--error, nz-toast--info, nz-toast--success, nz-toast--top, nz-toast__action, nz-toast__close, nz-toast__icon, nz-toast__title
-tokens: --nz-bg-inset, --nz-blue-300, --nz-border, --nz-border-w, --nz-brand, --nz-dur-base, --nz-ease-out, --nz-gray-50, --nz-gray-700, --nz-gray-900, --nz-green-500, --nz-orange-300, --nz-peso-fuerte, --nz-radius-full, --nz-radius-md, --nz-red-500, --nz-shadow-lg, --nz-space-3, --nz-space-4, --nz-space-6, --nz-surface, --nz-text, --nz-text-invert, --nz-text-md, --nz-text-sm, --nz-z-toast
+clases: nz-toast, nz-toast--accent, nz-toast--bottom, nz-toast--brand, nz-toast--error, nz-toast--info, nz-toast--success, nz-toast--temporal, nz-toast--top, nz-toast--warning, nz-toast__action, nz-toast__close, nz-toast__icon, nz-toast__progreso, nz-toast__title
+tokens: --nz-accent, --nz-accent-ink, --nz-amber-700, --nz-bg-inset, --nz-blue-300, --nz-border, --nz-border-w, --nz-brand, --nz-dur-base, --nz-ease-out, --nz-gray-50, --nz-gray-700, --nz-gray-900, --nz-green-500, --nz-mov-vida, --nz-orange-300, --nz-orange-500, --nz-peso-fuerte, --nz-radius-full, --nz-radius-md, --nz-red-500, --nz-shadow-lg, --nz-space-1, --nz-space-3, --nz-space-4, --nz-space-6, --nz-surface, --nz-text, --nz-text-invert, --nz-text-md, --nz-text-sm, --nz-z-toast
 markup: <div class="nz-toast nz-toast--top is-on" style="position:static;transform:none">Se actualizó el tema</div>
 noUsar: No para información que el usuario deba consultar luego: es efímero; usa `.nz-alert` o `.nz-notif`. No pongas acciones críticas (confirmar borrado) dentro de un toast.
+
+## nz-toast-pila · packs/p6-feedback.css
+clases: nz-toast-pila, nz-toast-pila--abajo, nz-toast-pila--arriba
+tokens: --nz-space-2, --nz-space-6, --nz-z-toast
+markup: <div class="nz-toast-pila nz-toast-pila--arriba"><div class="nz-toast is-on"><span class="nz-toast__title">Sincronizando</span>La agenda se actualiza en segundo plano.</div><div class="nz-toast nz-toast--accent nz-toast--temporal is-on"><span class="nz-toast__icon"><svg class="nz-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.4 7.6L22 12l-7.6 2.4L12 22l-2.4-7.6L2 12l7.6-2.4z"/></svg></span><span class="nz-toast__title">Publicado</span>El panel ya está en línea.</div></div>
 
 ## nz-toast-stack · packs/p7-overlays.css
 clases: nz-toast-stack, nz-toast-stack--end, nz-toast-stack__item, nz-toast-stack__item--err, nz-toast-stack__item--ok
@@ -1972,6 +1987,11 @@ markup: <div class="nz-toolcall is-done"><div class="nz-toolcall__head"><span cl
 clases: nz-toolrow, nz-toolrow__chip, nz-toolrow__chip--active
 tokens: --nz-bg-inset, --nz-brand, --nz-brand-soft, --nz-font-mono, --nz-peso-fuerte, --nz-radius-full, --nz-space-1, --nz-space-2, --nz-text-soft, --nz-text-xs
 markup: <div class="nz-toolrow"><span class="nz-toolrow__chip nz-toolrow__chip--active">buscar_expediente</span><span class="nz-toolrow__chip">leer_pdf</span><span class="nz-toolrow__chip">guardar_nota</span></div>
+
+## nz-trama · packs/p13-charts.css
+clases: nz-trama--cruzada, nz-trama--cuadros, nz-trama--diagonal, nz-trama--puntos
+tokens: --nz-accent, --nz-brand
+markup: <line x1="0" y1="12" x2="96" y2="12" class="nz-trama--diagonal" style="color: var(--nz-brand)" stroke-width="4"/>
 
 ## nz-tray · packs/p15-apps.css
 clases: nz-tray, nz-tray__item, nz-tray__menu

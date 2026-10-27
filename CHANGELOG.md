@@ -15,6 +15,32 @@ Versionado: [SemVer](https://semver.org/lang/es/).
 - El meta description de la portada ya recibe las cifras (antes salía con las
   claves de plantilla sin sustituir).
 
+## [10.10.0] — 2026-10-27
+
+### Añadido
+
+- **Tokens de movimiento** (tokens.css): `--nz-ease-spring`, `--nz-ease-glide`,
+  `--nz-dur-entrada`, `--nz-dur-salida`, `--nz-mov-max` y `--nz-mov-vida`.
+  Las curvas ya no se escriben a mano en los packs: son tokens como el resto.
+- **`nz-toast-pila`** (p6): pila de avisos con una sola zona fija — la más nueva
+  abajo, las viejas se apagan y el CSS fija el techo de visibles en 3. Variantes
+  `--arriba` y `--abajo`; toast temporal con línea de vida (`nz-toast--temporal`
+  + `__progreso`, vía `--vida`), tono `--warning` y `--accent` nuevos.
+- **`nz-contador`** (p8): cifra que cuenta. El valor final vive en el HTML y se
+  lee sin JS; un clon invisible (`__destino`) reserva el ancho para que el
+  recuento no baile el layout. Tamaños `--sm/--lg`, entrada opcional con `is-animado`.
+- **`nz-actividad`** (p14): acciones de agentes con hora, estado y detalle, en
+  línea temporal. Estados del léxico cerrado (`.is-done/.is-error/.is-active`,
+  `aria-current="step"` en la viva); fila entera pulsable cuando lleva destino.
+- **Tramas multi-serie** (p13): `nz-trama--diagonal/cruzada/puntos/cuadros`.
+  Distinguir series por patrón SVG y no solo por color — accesible de facto y
+  único camino en monocromo. Snippets de `<pattern>` en la demo y en LLM.md.
+- **OpenUI**: componentes nuevos `Toast`, `Contador` y `Actividad`; `Anillo` gana
+  la prop `tramas` (arco con patrón diagonal, id de patrón único por instancia).
+- **Auditor de movimiento** (`scripts/auditar-movimiento.py`): duraciones fuera
+  de token, curvas a mano, techo `--nz-mov-max` y cobertura de
+  `prefers-reduced-motion` en cada animación nueva. `--selftest` incluido.
+
 ## [10.9.0] — 2026-10-27
 
 ### Añadido

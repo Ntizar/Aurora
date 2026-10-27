@@ -104,6 +104,33 @@
 .nz-toast--success .nz-toast__icon { color: var(--nz-green-500); }
 .nz-toast--error .nz-toast__icon { color: var(--nz-red-500); }
 .nz-toast--info .nz-toast__icon { color: var(--nz-blue-300); }
+.nz-toast--warning { background: var(--nz-amber-700); }
+.nz-toast--warning .nz-toast__icon { color: var(--nz-orange-500); }
+.nz-toast--accent { background: var(--nz-accent); color: var(--nz-accent-ink); }
+.nz-toast--accent .nz-toast__icon { color: var(--nz-accent-ink); }
+.nz-toast--accent .nz-toast__action { color: inherit; }
+
+/* ---- Pila de toasts: una sola zona fija, la más nueva abajo y las viejas se apagan.
+       Sin JS: los estados son clases (.is-on para entrar). El techo de visible lo fija
+       el CSS (3); el conteo y el descarte los hace la app. ---- */
+.nz-toast-pila { position: fixed; z-index: var(--nz-z-toast); display: grid; gap: var(--nz-space-2); width: min(92vw, 26rem); max-height: calc(100dvh - var(--nz-space-6)); overflow: hidden; pointer-events: none; }
+.nz-toast-pila > .nz-toast { position: static; transform: none; opacity: 1; visibility: visible; max-width: none; width: 100%; pointer-events: auto; }
+.nz-toast-pila--abajo { left: 50%; bottom: calc(var(--nz-space-6) + env(safe-area-inset-bottom, 0px)); transform: translateX(-50%); }
+.nz-toast-pila--arriba { left: 50%; top: calc(var(--nz-space-6) + env(safe-area-inset-top, 0px)); transform: translateX(-50%); }
+.nz-toast-pila > .nz-toast:nth-last-child(n+4) { display: none; }
+.nz-toast-pila > .nz-toast:nth-last-child(3) { opacity: .55; }
+.nz-toast-pila > .nz-toast:nth-last-child(2) { opacity: .8; }
+@media (min-width: 640px) {
+  .nz-toast-pila--abajo, .nz-toast-pila--arriba { left: auto; right: var(--nz-space-6); transform: none; }
+}
+
+/* ---- Toast temporal: la línea inferior se agota con la vida del aviso.
+       La duración la pone la app con --vida; el token da el punto de partida.
+       Con movimiento reducido la línea queda fija a tope: el aviso no muere. ---- */
+.nz-toast--temporal { flex-wrap: wrap; }
+.nz-toast__progreso { flex: 1 1 100%; height: 3px; margin-top: var(--nz-space-1); border-radius: var(--nz-radius-full); background: currentColor; opacity: .45; transform-origin: left; animation: nzToastVida var(--vida, var(--nz-mov-vida)) linear forwards; }
+@keyframes nzToastVida { from { transform: scaleX(1); } to { transform: scaleX(0); } }
+@media (prefers-reduced-motion: reduce) { .nz-toast__progreso { animation: none; transform: none; } }
 .nz-toast--brand { background: var(--nz-brand); color: var(--nz-text-invert); }
 .nz-toast--brand .nz-toast__icon { color: var(--nz-text-invert); }
 .nz-toast--top { top: calc(var(--nz-space-6) + env(safe-area-inset-top, 0px)); bottom: auto; }

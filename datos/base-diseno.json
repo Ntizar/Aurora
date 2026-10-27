@@ -1,13 +1,13 @@
 {
  "name": "Aurora — base de datos de diseño",
- "version": "10.9.0",
+ "version": "10.10.0",
  "descripcion": "Índice consultable del sistema: familias, tokens, recetas, combos y marcas. Cada ficha enlaza a su demo viva y lleva el markup real.",
  "fuente": "components.json + specs/ + bloques/recetas/ + bloques/ejemplos/ + bloques/combos/ + marcas/registro.json + COMPOSICION.md",
  "explorador": "base.html",
  "resumen": {
-  "familias": 413,
-  "clases": 2201,
-  "tokens": 236,
+  "familias": 417,
+  "clases": 2223,
+  "tokens": 242,
   "categorias": 18,
   "recetas": 6,
   "ejemplos": 5,
@@ -183,9 +183,9 @@
    "descripcion": "Alertas, badges, chips, skeleton, empty/error, progreso y status. Feedback claro con tokens semánticos.",
    "pack": "p6-feedback.css",
    "pagina": "paginas/06-feedback.html",
-   "objetos": 153,
-   "familias": 19,
-   "demos": 52,
+   "objetos": 160,
+   "familias": 20,
+   "demos": 54,
    "cuandoUsar": "Cuando el sistema tenga que contar algo: alertas, badges, toasts, callouts, skeletons, empty states y progreso.",
    "tags": [
     "feedback",
@@ -224,9 +224,9 @@
    "descripcion": "Tablas (densidad, sticky, bordes, toolbar y filtros; apilable en móvil), KPIs, listas y filas de registro, timeline, definition lists, árbol, matriz de calor, comparativa y números medidores.",
    "pack": "p8-data.css",
    "pagina": "paginas/08-data.html",
-   "objetos": 145,
-   "familias": 16,
-   "demos": 40,
+   "objetos": 150,
+   "familias": 17,
+   "demos": 41,
    "cuandoUsar": "Cuando haya que leer o comparar datos: tablas, KPIs, listas, timeline, árbol, heatmap y comparativas.",
    "tags": [
     "datos",
@@ -323,9 +323,9 @@
    "descripcion": "Barras, línea, área, donut, medidor, mapa de calor, calendario, treemap, embudo, bullet, radar, dispersión, cascada y flujo. Todo con CSS y SVG estilizado por clases: sin librerías y sin una sola imagen.",
    "pack": "p13-charts.css",
    "pagina": "paginas/13-charts.html",
-   "objetos": 216,
-   "familias": 22,
-   "demos": 38,
+   "objetos": 220,
+   "familias": 23,
+   "demos": 39,
    "cuandoUsar": "Cuando haya que comunicar una magnitud o tendencia: barras, líneas, donut, gauge, sparkline, waterfall o bullet. Elige por la pregunta, no por la estética.",
    "tags": [
     "grafico",
@@ -345,9 +345,9 @@
    "descripcion": "Conversación, streaming, herramientas, aprobación humana, diferencias, citas, razonamiento, agentes, ejecuciones, evaluación y coste. La interfaz de la IA sin brillos ni humo: jerarquía, estado y control.",
    "pack": "p14-ai.css",
    "pagina": "paginas/14-ai.html",
-   "objetos": 180,
-   "familias": 28,
-   "demos": 32,
+   "objetos": 186,
+   "familias": 29,
+   "demos": 33,
    "cuandoUsar": "Cuando haya conversación, prompts, tool calls, planes de tarea o aprobación humana. Los estados del agente son parte del diseño.",
    "tags": [
     "ia",
@@ -669,6 +669,63 @@
     "kanban",
     "statusbar",
     "ventana"
+   ],
+   "alias": []
+  },
+  {
+   "id": "nz-actividad",
+   "categoria": 14,
+   "pack": "p14-ai.css",
+   "demo": "paginas/14-ai.html",
+   "titulo": "Actividad de agentes",
+   "clases": [
+    "nz-actividad",
+    "nz-actividad__cuerpo",
+    "nz-actividad__detalle",
+    "nz-actividad__fila",
+    "nz-actividad__hora",
+    "nz-actividad__texto"
+   ],
+   "modificadores": [],
+   "partes": [
+    "cuerpo",
+    "detalle",
+    "fila",
+    "hora",
+    "texto"
+   ],
+   "tokens": [
+    "--nz-accent",
+    "--nz-bg",
+    "--nz-bg-soft",
+    "--nz-border-soft",
+    "--nz-brand",
+    "--nz-danger",
+    "--nz-ease-soft",
+    "--nz-peso-medio",
+    "--nz-radius-full",
+    "--nz-radius-sm",
+    "--nz-space-2",
+    "--nz-space-3",
+    "--nz-space-5",
+    "--nz-success",
+    "--nz-text-2xs",
+    "--nz-text-mute",
+    "--nz-text-sm"
+   ],
+   "nTokens": 17,
+   "markup": "<div class=\"nz-actividad\"><div class=\"nz-actividad__fila is-done\"><span class=\"nz-actividad__hora\">09:12</span><span class=\"nz-actividad__cuerpo\"><span class=\"nz-actividad__texto\">Revisión completada</span><span class=\"nz-actividad__detalle\">2 salidas aprobadas por el revisor</span></span></div><div class=\"nz-actividad__fila is-active\" aria-current=\"step\"><span class=\"nz-actividad__hora\">09:15</span><span class=\"nz-actividad__cuerpo\"><span class=\"nz-actividad__texto\">Generando informe</span><span class=\"nz-actividad__detalle\">Paso 3 de 4 · plantilla mensual</span></span></div><div class=\"nz-actividad__fila is-error\"><span class=\"nz-actividad__hora\">08:47</span><span class=\"nz-actividad__cuerpo\"><span class=\"nz-actividad__texto\">Publicación fallida</span><span class=\"nz-actividad__detalle\">El CDN rechazó el token caducado</span></span></div><div class=\"nz-actividad__fila\"><span class=\"nz-actividad__hora\">08:40</span><span class=\"nz-actividad__cuerpo\"><span class=\"nz-actividad__texto\">Datos sincronizados</span><span class=\"nz-actividad__detalle\">1.284 filas actualizadas</span></span></div></div>",
+   "noUsar": "",
+   "cuandoUsar": "Cuando haya conversación, prompts, tool calls, planes de tarea o aprobación humana. Los estados del agente son parte del diseño.",
+   "tags": [
+    "actividad",
+    "agente",
+    "aprobacion",
+    "chat",
+    "ia",
+    "prompt",
+    "taskplan",
+    "toolcall"
    ],
    "alias": []
   },
@@ -5909,6 +5966,52 @@
    "alias": [
     "confirm-dialog"
    ]
+  },
+  {
+   "id": "nz-contador",
+   "categoria": 8,
+   "pack": "p8-data.css",
+   "demo": "paginas/08-data.html",
+   "titulo": "Cifra que cuenta",
+   "clases": [
+    "nz-contador",
+    "nz-contador--lg",
+    "nz-contador--sm",
+    "nz-contador__destino",
+    "nz-contador__valor"
+   ],
+   "modificadores": [
+    "lg",
+    "sm"
+   ],
+   "partes": [
+    "destino",
+    "valor"
+   ],
+   "tokens": [
+    "--nz-dur-entrada",
+    "--nz-ease-out",
+    "--nz-text-md",
+    "--nz-text-xl"
+   ],
+   "nTokens": 4,
+   "markup": "<span class=\"nz-contador\"><span class=\"nz-contador__valor\">42.190</span><span class=\"nz-contador__destino\" aria-hidden=\"true\">42.190</span></span>",
+   "noUsar": "",
+   "cuandoUsar": "Cuando haya que leer o comparar datos: tablas, KPIs, listas, timeline, árbol, heatmap y comparativas.",
+   "tags": [
+    "arbol",
+    "comparativa",
+    "contador",
+    "datos",
+    "heatmap",
+    "kpi",
+    "lg",
+    "lista",
+    "sm",
+    "tabla",
+    "timeline"
+   ],
+   "alias": []
   },
   {
    "id": "nz-container",
@@ -21043,32 +21146,43 @@
    "titulo": "Toast arriba y abajo con acción",
    "clases": [
     "nz-toast",
+    "nz-toast--accent",
     "nz-toast--bottom",
     "nz-toast--brand",
     "nz-toast--error",
     "nz-toast--info",
     "nz-toast--success",
+    "nz-toast--temporal",
     "nz-toast--top",
+    "nz-toast--warning",
     "nz-toast__action",
     "nz-toast__close",
     "nz-toast__icon",
+    "nz-toast__progreso",
     "nz-toast__title"
    ],
    "modificadores": [
+    "accent",
     "bottom",
     "brand",
     "error",
     "info",
     "success",
-    "top"
+    "temporal",
+    "top",
+    "warning"
    ],
    "partes": [
     "action",
     "close",
     "icon",
+    "progreso",
     "title"
    ],
    "tokens": [
+    "--nz-accent",
+    "--nz-accent-ink",
+    "--nz-amber-700",
     "--nz-bg-inset",
     "--nz-blue-300",
     "--nz-border",
@@ -21080,12 +21194,15 @@
     "--nz-gray-700",
     "--nz-gray-900",
     "--nz-green-500",
+    "--nz-mov-vida",
     "--nz-orange-300",
+    "--nz-orange-500",
     "--nz-peso-fuerte",
     "--nz-radius-full",
     "--nz-radius-md",
     "--nz-red-500",
     "--nz-shadow-lg",
+    "--nz-space-1",
     "--nz-space-3",
     "--nz-space-4",
     "--nz-space-6",
@@ -21096,7 +21213,7 @@
     "--nz-text-sm",
     "--nz-z-toast"
    ],
-   "nTokens": 26,
+   "nTokens": 32,
    "markup": "<div class=\"nz-toast nz-toast--top is-on\" style=\"position:static;transform:none\">Se actualizó el tema</div>",
    "noUsar": [
     "No para información que el usuario deba consultar luego: es efímero; usa `.nz-alert` o `.nz-notif`.",
@@ -21104,6 +21221,7 @@
    ],
    "cuandoUsar": "Cuando el sistema tenga que contar algo: alertas, badges, toasts, callouts, skeletons, empty states y progreso.",
    "tags": [
+    "accent",
     "alerta",
     "badge",
     "bottom",
@@ -21115,13 +21233,55 @@
     "info",
     "progreso",
     "success",
+    "temporal",
     "toast",
     "top",
-    "vacio"
+    "vacio",
+    "warning"
    ],
    "alias": [
     "toast"
    ]
+  },
+  {
+   "id": "nz-toast-pila",
+   "categoria": 6,
+   "pack": "p6-feedback.css",
+   "demo": "paginas/06-feedback.html",
+   "titulo": "Pila arriba y temporal",
+   "clases": [
+    "nz-toast-pila",
+    "nz-toast-pila--abajo",
+    "nz-toast-pila--arriba"
+   ],
+   "modificadores": [
+    "abajo",
+    "arriba"
+   ],
+   "partes": [],
+   "tokens": [
+    "--nz-space-2",
+    "--nz-space-6",
+    "--nz-z-toast"
+   ],
+   "nTokens": 3,
+   "markup": "<div class=\"nz-toast-pila nz-toast-pila--arriba\"><div class=\"nz-toast is-on\"><span class=\"nz-toast__title\">Sincronizando</span>La agenda se actualiza en segundo plano.</div><div class=\"nz-toast nz-toast--accent nz-toast--temporal is-on\"><span class=\"nz-toast__icon\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 2l2.4 7.6L22 12l-7.6 2.4L12 22l-2.4-7.6L2 12l7.6-2.4z\"/></svg></span><span class=\"nz-toast__title\">Publicado</span>El panel ya está en línea.</div></div>",
+   "noUsar": "",
+   "cuandoUsar": "Cuando el sistema tenga que contar algo: alertas, badges, toasts, callouts, skeletons, empty states y progreso.",
+   "tags": [
+    "abajo",
+    "alerta",
+    "arriba",
+    "badge",
+    "carga",
+    "estado",
+    "feedback",
+    "progreso",
+    "toast",
+    "toast pila",
+    "vacio"
+   ],
+   "alias": []
   },
   {
    "id": "nz-toast-stack",
@@ -21460,6 +21620,51 @@
     "taskplan",
     "toolcall",
     "toolrow"
+   ],
+   "alias": []
+  },
+  {
+   "id": "nz-trama",
+   "categoria": 13,
+   "pack": "p13-charts.css",
+   "demo": "paginas/13-charts.html",
+   "titulo": "Tramas multi-serie",
+   "clases": [
+    "nz-trama--cruzada",
+    "nz-trama--cuadros",
+    "nz-trama--diagonal",
+    "nz-trama--puntos"
+   ],
+   "modificadores": [
+    "cruzada",
+    "cuadros",
+    "diagonal",
+    "puntos"
+   ],
+   "partes": [],
+   "tokens": [
+    "--nz-accent",
+    "--nz-brand"
+   ],
+   "nTokens": 2,
+   "markup": "<line x1=\"0\" y1=\"12\" x2=\"96\" y2=\"12\" class=\"nz-trama--diagonal\" style=\"color: var(--nz-brand)\" stroke-width=\"4\"/>",
+   "noUsar": "",
+   "cuandoUsar": "Cuando haya que comunicar una magnitud o tendencia: barras, líneas, donut, gauge, sparkline, waterfall o bullet. Elige por la pregunta, no por la estética.",
+   "tags": [
+    "barra",
+    "bullet",
+    "chart",
+    "cruzada",
+    "cuadros",
+    "diagonal",
+    "donut",
+    "gauge",
+    "grafico",
+    "linea",
+    "puntos",
+    "sparkline",
+    "trama",
+    "waterfall"
    ],
    "alias": []
   },
@@ -23833,6 +24038,48 @@
   {
    "nombre": "--nz-ease-soft",
    "valor": "cubic-bezier(0.33, 1, 0.68, 1)",
+   "seccion": "Movimiento",
+   "esColor": false,
+   "dark": false
+  },
+  {
+   "nombre": "--nz-ease-spring",
+   "valor": "cubic-bezier(0.34, 1.56, 0.64, 1)",
+   "seccion": "Movimiento",
+   "esColor": false,
+   "dark": false
+  },
+  {
+   "nombre": "--nz-ease-glide",
+   "valor": "cubic-bezier(0.22, 1, 0.36, 1)",
+   "seccion": "Movimiento",
+   "esColor": false,
+   "dark": false
+  },
+  {
+   "nombre": "--nz-dur-entrada",
+   "valor": "240ms",
+   "seccion": "Movimiento",
+   "esColor": false,
+   "dark": false
+  },
+  {
+   "nombre": "--nz-dur-salida",
+   "valor": "160ms",
+   "seccion": "Movimiento",
+   "esColor": false,
+   "dark": false
+  },
+  {
+   "nombre": "--nz-mov-max",
+   "valor": "400ms",
+   "seccion": "Movimiento",
+   "esColor": false,
+   "dark": false
+  },
+  {
+   "nombre": "--nz-mov-vida",
+   "valor": "6s",
    "seccion": "Movimiento",
    "esColor": false,
    "dark": false

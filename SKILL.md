@@ -1,14 +1,14 @@
 ---
 name: aurora-design-system
 description: "Usa al construir o tocar cualquier web con Aurora (Ntizar/Aurora). El repo manda: resuelve la versión vigente y pide LLM.md + components.json antes de escribir CSS."
-version: "10.9.0"
+version: "10.10.0"
 tags: [css, design-system, aurora, ntizar, agent-ready, movil, escritorio, tipografia]
 ---
 
 # Aurora — doctrina única (el repo es la orden máxima)
 
 Design system CSS puro, sin build, sin dependencias, namespaced bajo `.nz-`.
-**v10.9.0 · 2201 objetos · 413 familias · 661 demos · 18 categorías · 189 tokens · 59 gemelas OKLch · 40 componentes generativos · 338 iconos numerados.**
+**v10.10.0 · 2223 objetos · 417 familias · 666 demos · 18 categorías · 195 tokens · 59 gemelas OKLch · 43 componentes generativos · 338 iconos numerados.**
 *(Cabecera de testigo, no de autoridad: resuélvela con el PASO 0.)*
 
 > ⚠️ `Ntizar/Aurora` **manda sobre esta skill**. Esta skill es un puntero; el repo
@@ -379,6 +379,10 @@ vender la promesa.
 | Kanban en un sidebar estrecho | `.nz-kanban-wrap` > `.nz-kanban`: en <48rem se queda en filas |
 | El dato que importa en acento (p3/p8) | `.nz-num--accent`, `.nz-kpi--accent`, `.nz-lbl--accent`, `.nz-lead--accent`, `.nz-text--accent-soft`, `.nz-highlight--accent` |
 | Énfasis sin negrita | `.nz-text--peso-medio`, `.nz-text--peso-fuerte` |
+| Pila de avisos flotantes (p6) | `.nz-toast-pila` (+ `--arriba/--abajo`) con `.nz-toast` dentro; techo de visibles 3 fijo por CSS; toast con vida con `.nz-toast--temporal` + `__progreso` (`--vida` por toast) |
+| Cifra que cuenta (p8) | `.nz-contador` con `__valor` (el dato, ya final) + `__destino` (clon invisible que reserva el ancho); tamaños `--sm/--lg`; entrada opcional con `.is-animado` |
+| Actividad de agentes (p14) | `.nz-actividad` > `.nz-actividad__fila` (estados `.is-done/.is-error/.is-active` + `aria-current`), `__hora`, `__cuerpo`, `__texto`, `__detalle` |
+| Distinguir series sin color (p13) | `.nz-trama--diagonal/cruzada/puntos/cuadros` en el trazo SVG + `<pattern>` propio por SVG (snippets en la demo y en llms-full.txt) |
 | Un icono (p9) | `.nz-icon` + SVG **del repositorio** `iconos/` (`nz-i-042`): `<svg class="nz-icon nz-icon--accent"><use href="iconos/sprite.svg#nz-i-042"/></svg>`. Tono con `--accent/--brand/--success/--warning/--danger/--info`; grosor con `--fino/--grueso`. Nunca un emoji ni un símbolo de texto |
 
 Léxico cerrado de modificadores (igual en los 18 packs): tamaño `--2xs/--xs/--sm/--lg/--xl`,

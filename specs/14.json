@@ -164,6 +164,11 @@
       "titulo": "Mensaje neutro y de éxito",
       "tag": ".nz-msg--neutral · --success",
       "markup": "<div class=\"nz-stack nz-stack--sm\"><div class=\"nz-msg nz-msg--neutral\"><div class=\"nz-msg__body\"><div class=\"nz-msg__bubble\"><span class=\"nz-msg__text\">Mensaje neutro del sistema.</span></div></div></div><div class=\"nz-msg nz-msg--success\"><div class=\"nz-msg__body\"><div class=\"nz-msg__bubble\"><span class=\"nz-msg__text\">Pago aceptado: tu pedido sale hoy.</span></div></div></div></div>"
+    },
+    {
+      "titulo": "Actividad de agentes",
+      "tag": ".nz-actividad",
+      "markup": "<div class=\"nz-actividad\"><div class=\"nz-actividad__fila is-done\"><span class=\"nz-actividad__hora\">09:12</span><span class=\"nz-actividad__cuerpo\"><span class=\"nz-actividad__texto\">Revisión completada</span><span class=\"nz-actividad__detalle\">2 salidas aprobadas por el revisor</span></span></div><div class=\"nz-actividad__fila is-active\" aria-current=\"step\"><span class=\"nz-actividad__hora\">09:15</span><span class=\"nz-actividad__cuerpo\"><span class=\"nz-actividad__texto\">Generando informe</span><span class=\"nz-actividad__detalle\">Paso 3 de 4 · plantilla mensual</span></span></div><div class=\"nz-actividad__fila is-error\"><span class=\"nz-actividad__hora\">08:47</span><span class=\"nz-actividad__cuerpo\"><span class=\"nz-actividad__texto\">Publicación fallida</span><span class=\"nz-actividad__detalle\">El CDN rechazó el token caducado</span></span></div><div class=\"nz-actividad__fila\"><span class=\"nz-actividad__hora\">08:40</span><span class=\"nz-actividad__cuerpo\"><span class=\"nz-actividad__texto\">Datos sincronizados</span><span class=\"nz-actividad__detalle\">1.284 filas actualizadas</span></span></div></div>"
     }
   ]
 }

@@ -38,7 +38,8 @@
     "Objetivo",
     "MiniTendencia",
     "Anillo",
-    "Progreso"
+    "Progreso",
+    "Contador"
    ]
   },
   {
@@ -53,7 +54,8 @@
     "Pestanas",
     "Segmentado",
     "Pasos",
-    "Navegacion"
+    "Navegacion",
+    "Toast"
    ]
   },
   {
@@ -68,6 +70,7 @@
   {
    "nombre": "Agentes",
    "componentes": [
+    "Actividad",
     "Chat",
     "Herramienta"
    ]
@@ -800,9 +803,10 @@
     "nz-chart-donut__seg--accent",
     "nz-chart-donut__center",
     "nz-chart-donut__value",
-    "nz-chart-donut__label"
+    "nz-chart-donut__label",
+    "nz-trama--diagonal"
    ],
-   "descripcion": "Progreso circular de 0 a 100 con etiqueta central. Pequeño por defecto; `lg` para un dato único a página completa.",
+   "descripcion": "Progreso circular de 0 a 100 con etiqueta central. Pequeño por defecto; `lg` para un dato único a página completa. Con tramas, el arco se distingue por patrón y no por color.",
    "props": [
     {
      "nombre": "valor",
@@ -831,6 +835,11 @@
      ],
      "opcional": true,
      "porDefecto": "sm"
+    },
+    {
+     "nombre": "tramas",
+     "tipo": "booleano",
+     "opcional": true
     }
    ]
   },
@@ -1383,6 +1392,121 @@
      ],
      "opcional": true,
      "porDefecto": "claro"
+    }
+   ]
+  },
+  {
+   "nombre": "Toast",
+   "clases": [
+    "nz-toast",
+    "nz-toast--brand",
+    "nz-toast--accent",
+    "nz-toast--success",
+    "nz-toast--error",
+    "nz-toast--warning",
+    "nz-toast--info",
+    "nz-toast__icon",
+    "nz-toast__title",
+    "nz-toast__action",
+    "nz-toast__progreso"
+   ],
+   "descripcion": "Aviso flotante de una sola pieza. Uno por página; para una pila usa el markup del censo (nz-toast-pila).",
+   "props": [
+    {
+     "nombre": "texto",
+     "tipo": "texto"
+    },
+    {
+     "nombre": "titulo",
+     "tipo": "texto",
+     "opcional": true
+    },
+    {
+     "nombre": "tono",
+     "tipo": "enum",
+     "valores": [
+      "marca",
+      "acento",
+      "exito",
+      "aviso",
+      "peligro",
+      "info"
+     ],
+     "opcional": true
+    },
+    {
+     "nombre": "temporal",
+     "tipo": "booleano",
+     "opcional": true
+    },
+    {
+     "nombre": "accion",
+     "tipo": "texto",
+     "opcional": true
+    }
+   ]
+  },
+  {
+   "nombre": "Contador",
+   "clases": [
+    "nz-contador",
+    "nz-contador--sm",
+    "nz-contador--lg",
+    "nz-contador__valor",
+    "nz-contador__destino"
+   ],
+   "descripcion": "Cifra que cuenta. El valor FINAL vive en el HTML; el recuento es adorno de la app. El clon invisible reserva el ancho para que el layout no baile.",
+   "props": [
+    {
+     "nombre": "valor",
+     "tipo": "texto"
+    },
+    {
+     "nombre": "tamano",
+     "tipo": "enum",
+     "valores": [
+      "sm",
+      "lg"
+     ],
+     "opcional": true
+    }
+   ]
+  },
+  {
+   "nombre": "Actividad",
+   "clases": [
+    "nz-actividad",
+    "nz-actividad__fila",
+    "nz-actividad__hora",
+    "nz-actividad__cuerpo",
+    "nz-actividad__texto",
+    "nz-actividad__detalle"
+   ],
+   "descripcion": "Acciones de agentes con hora, estado y detalle. estados acepta hecho, error o curso por fila.",
+   "props": [
+    {
+     "nombre": "acciones",
+     "tipo": "lista"
+    },
+    {
+     "nombre": "horas",
+     "tipo": "lista",
+     "opcional": true
+    },
+    {
+     "nombre": "detalles",
+     "tipo": "lista",
+     "opcional": true
+    },
+    {
+     "nombre": "estados",
+     "tipo": "lista",
+     "opcional": true
+    },
+    {
+     "nombre": "destinos",
+     "tipo": "lista",
+     "opcional": true
     }
    ]
   }

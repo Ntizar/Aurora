@@ -126,6 +126,19 @@
 .nz-kpi--lg { padding: var(--nz-space-6); }
 .nz-kpi--lg .nz-kpi__value { font-size: var(--nz-text-3xl); }
 .nz-kpi--bordered { box-shadow: none; border: var(--nz-border-w) solid var(--nz-border); }
+
+/* ---- Cifra que cuenta (nz-contador): el valor FINAL vive en el HTML y se lee sin JS.
+       El contador es adorno: un clon invisible (__destino) reserva el ancho del valor
+       final para que el recuento no baile el layout, y la app anima __valor.
+       La duración del recuento es lógica de la app; la entrada usa --nz-dur-entrada. ---- */
+.nz-contador { display: inline-grid; font-variant-numeric: tabular-nums; }
+.nz-contador--sm { font-size: var(--nz-text-md); }
+.nz-contador--lg { font-size: var(--nz-text-xl); }
+.nz-contador__valor { grid-area: 1 / 1; }
+.nz-contador__destino { grid-area: 1 / 1; visibility: hidden; white-space: pre; }
+.nz-contador.is-animado .nz-contador__valor { animation: nzContadorEntra var(--nz-dur-entrada) var(--nz-ease-out) backwards; }
+@keyframes nzContadorEntra { from { opacity: 0; transform: translateY(0.2em); } }
+@media (prefers-reduced-motion: reduce) { .nz-contador.is-animado .nz-contador__valor { animation: none; } }
 .nz-kpi--inline { grid-auto-flow: column; align-items: baseline; justify-content: start; gap: var(--nz-space-3); }
 .nz-kpi__icon { width: 40px; height: 40px; display: inline-grid; place-items: center; border-radius: var(--nz-radius-md); background: var(--nz-brand-soft); color: var(--nz-brand); font-size: var(--nz-text-lg); }
 .nz-kpi__target { position: relative; height: 6px; margin-top: var(--nz-space-2); border-radius: var(--nz-radius-full); background: var(--nz-bg-inset); overflow: hidden; }

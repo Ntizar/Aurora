@@ -38,7 +38,8 @@
     "Objetivo",
     "MiniTendencia",
     "Anillo",
-    "Progreso"
+    "Progreso",
+    "Contador"
    ]
   },
   {
@@ -53,7 +54,8 @@
     "Pestanas",
     "Segmentado",
     "Pasos",
-    "Navegacion"
+    "Navegacion",
+    "Toast"
    ]
   },
   {
@@ -68,6 +70,7 @@
   {
    "name": "Agentes",
    "components": [
+    "Actividad",
     "Chat",
     "Herramienta"
    ]
@@ -166,8 +169,8 @@
    "description": "Métrica compacta con variación. Para tiras de indicadores."
   },
   "Anillo": {
-   "signature": "Anillo(valor: number, etiqueta?: string, tono?: \"marca\" | \"acento\", tamano?: \"sm\" | \"lg\")",
-   "description": "Progreso circular de 0 a 100 con etiqueta central. Pequeño por defecto; `lg` para un dato único a página completa."
+   "signature": "Anillo(valor: number, etiqueta?: string, tono?: \"marca\" | \"acento\", tamano?: \"sm\" | \"lg\", tramas?: boolean)",
+   "description": "Progreso circular de 0 a 100 con etiqueta central. Pequeño por defecto; `lg` para un dato único a página completa. Con tramas, el arco se distingue por patrón y no por color."
   },
   "Progreso": {
    "signature": "Progreso(valor: number, etiqueta?: string)",
@@ -240,6 +243,18 @@
   "Slide": {
    "signature": "Slide(children: any[], titulo?: string, fondo?: \"claro\" | \"profundo\")",
    "description": "Una pantalla del deck. titulo es el rótulo de posición que se ve en la barra («portada»). fondo=\"profundo\" la pinta en negro: el cierre de la charla. Fuera de Presentacion se pinta como slide suelta, sin barra."
+  },
+  "Toast": {
+   "signature": "Toast(texto: string, titulo?: string, tono?: \"marca\" | \"acento\" | \"exito\" | \"aviso\" | \"peligro\" | \"info\", temporal?: boolean, accion?: string)",
+   "description": "Aviso flotante de una sola pieza. Uno por página; para una pila usa el markup del censo (nz-toast-pila)."
+  },
+  "Contador": {
+   "signature": "Contador(valor: string, tamano?: \"sm\" | \"lg\")",
+   "description": "Cifra que cuenta. El valor FINAL vive en el HTML; el recuento es adorno de la app. El clon invisible reserva el ancho para que el layout no baile."
+  },
+  "Actividad": {
+   "signature": "Actividad(acciones: string[], horas?: string[], detalles?: string[], estados?: string[], destinos?: string[])",
+   "description": "Acciones de agentes con hora, estado y detalle. estados acepta hecho, error o curso por fila."
   }
  },
  "schema": {
@@ -365,6 +380,15 @@
    },
    "Slide": {
     "$ref": "#/$defs/Slide"
+   },
+   "Toast": {
+    "$ref": "#/$defs/Toast"
+   },
+   "Contador": {
+    "$ref": "#/$defs/Contador"
+   },
+   "Actividad": {
+    "$ref": "#/$defs/Actividad"
    }
   },
   "required": [
@@ -407,7 +431,10 @@
    "Chat",
    "Herramienta",
    "Presentacion",
-   "Slide"
+   "Slide",
+   "Toast",
+   "Contador",
+   "Actividad"
   ],
   "additionalProperties": false,
   "$defs": {
@@ -998,13 +1025,16 @@
        "sm",
        "lg"
       ]
+     },
+     "tramas": {
+      "type": "boolean"
      }
     },
     "required": [
      "valor"
     ],
     "additionalProperties": false,
-    "description": "Progreso circular de 0 a 100 con etiqueta central. Pequeño por defecto; `lg` para un dato único a página completa."
+    "description": "Progreso circular de 0 a 100 con etiqueta central. Pequeño por defecto; `lg` para un dato único a página completa. Con tramas, el arco se distingue por patrón y no por color."
    },
    "Progreso": {
     "type": "object",
@@ -1432,6 +1462,99 @@
     ],
     "additionalProperties": false,
     "description": "Una pantalla del deck. titulo es el rótulo de posición que se ve en la barra («portada»). fondo=\"profundo\" la pinta en negro: el cierre de la charla. Fuera de Presentacion se pinta como slide suelta, sin barra."
+   },
+   "Toast": {
+    "type": "object",
+    "properties": {
+     "texto": {
+      "type": "string"
+     },
+     "titulo": {
+      "type": "string"
+     },
+     "tono": {
+      "type": "string",
+      "enum": [
+       "marca",
+       "acento",
+       "exito",
+       "aviso",
+       "peligro",
+       "info"
+      ]
+     },
+     "temporal": {
+      "type": "boolean"
+     },
+     "accion": {
+      "type": "string"
+     }
+    },
+    "required": [
+     "texto"
+    ],
+    "additionalProperties": false,
+    "description": "Aviso flotante de una sola pieza. Uno por página; para una pila usa el markup del censo (nz-toast-pila)."
+   },
+   "Contador": {
+    "type": "object",
+    "properties": {
+     "valor": {
+      "type": "string"
+     },
+     "tamano": {
+      "type": "string",
+      "enum": [
+       "sm",
+       "lg"
+      ]
+     }
+    },
+    "required": [
+     "valor"
+    ],
+    "additionalProperties": false,
+    "description": "Cifra que cuenta. El valor FINAL vive en el HTML; el recuento es adorno de la app. El clon invisible reserva el ancho para que el layout no baile."
+   },
+   "Actividad": {
+    "type": "object",
+    "properties": {
+     "acciones": {
+      "type": "array",
+      "items": {
+       "type": "string"
+      }
+     },
+     "horas": {
+      "type": "array",
+      "items": {
+       "type": "string"
+      }
+     },
+     "detalles": {
+      "type": "array",
+      "items": {
+       "type": "string"
+      }
+     },
+     "estados": {
+      "type": "array",
+      "items": {
+       "type": "string"
+      }
+     },
+     "destinos": {
+      "type": "array",
+      "items": {
+       "type": "string"
+      }
+     }
+    },
+    "required": [
+     "acciones"
+    ],
+    "additionalProperties": false,
+    "description": "Acciones de agentes con hora, estado y detalle. estados acepta hecho, error o curso por fila."
    }
   }
  }

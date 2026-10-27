@@ -264,6 +264,16 @@
       "titulo": "Barra de carga · tono",
       "tag": ".nz-loading-bar__bar--brand / --success / --warning / --danger",
       "markup": "<div class=\"nz-stack\"><div class=\"nz-loading-bar\" role=\"progressbar\"><div class=\"nz-loading-bar__bar nz-loading-bar__bar--brand\"></div></div><div class=\"nz-loading-bar\" role=\"progressbar\"><div class=\"nz-loading-bar__bar nz-loading-bar__bar--success\"></div></div><div class=\"nz-loading-bar\" role=\"progressbar\"><div class=\"nz-loading-bar__bar nz-loading-bar__bar--warning\"></div></div><div class=\"nz-loading-bar\" role=\"progressbar\"><div class=\"nz-loading-bar__bar nz-loading-bar__bar--danger\"></div></div></div>"
+    },
+    {
+      "titulo": "Pila de avisos",
+      "tag": ".nz-toast-pila",
+      "markup": "<div class=\"nz-toast-pila nz-toast-pila--abajo\"><div class=\"nz-toast is-on\"><span class=\"nz-toast__title\">Todo en orden</span>Sin incidencias en las últimas 24 horas.</div><div class=\"nz-toast is-on\"><span class=\"nz-toast__title\">Copia completada</span>3 ficheros subidos al almacén.</div><div class=\"nz-toast nz-toast--success is-on\"><span class=\"nz-toast__icon\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M20 6 9 17l-5-5\"/></svg></span><span class=\"nz-toast__title\">Guardado</span>Los cambios se aplicaron.</div></div>"
+    },
+    {
+      "titulo": "Pila arriba y temporal",
+      "tag": ".nz-toast-pila--arriba · .nz-toast--temporal",
+      "markup": "<div class=\"nz-toast-pila nz-toast-pila--arriba\"><div class=\"nz-toast is-on\"><span class=\"nz-toast__title\">Sincronizando</span>La agenda se actualiza en segundo plano.</div><div class=\"nz-toast nz-toast--accent nz-toast--temporal is-on\"><span class=\"nz-toast__icon\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 2l2.4 7.6L22 12l-7.6 2.4L12 22l-2.4-7.6L2 12l7.6-2.4z\"/></svg></span><span class=\"nz-toast__title\">Publicado</span>El panel ya está en línea.</div></div>"
     }
   ]
 }

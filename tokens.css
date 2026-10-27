@@ -319,6 +319,12 @@
   --nz-ease-out: cubic-bezier(0.16, 1, 0.3, 1);   /* expo-out: entradas */
   --nz-ease-in:  cubic-bezier(0.7, 0, 0.84, 0);   /* salidas, más cortas */
   --nz-ease-soft: cubic-bezier(0.33, 1, 0.68, 1);
+  --nz-ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);  /* resorte: contadores y entradas con rebote */
+  --nz-ease-glide: cubic-bezier(0.22, 1, 0.36, 1);      /* deslizamiento: pills, toasts y capas */
+  --nz-dur-entrada: 240ms;   /* capa que aparece (toast, contador) */
+  --nz-dur-salida: 160ms;    /* capa que desaparece: más corta que la entrada */
+  --nz-mov-max: 400ms;       /* techo de una animación de interfaz — lo vigila scripts/auditar-movimiento.py */
+  --nz-mov-vida: 6s;         /* vida por defecto de un toast temporal */
 
   /* ---- 13. FOCUS (deriva de la marca) ---- */
   --nz-focus-ring: 0 0 0 3px color-mix(in oklab, var(--nz-marca-500) 38%, transparent);

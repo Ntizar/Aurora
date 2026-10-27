@@ -119,6 +119,25 @@
 .nz-approval__actions { display: flex; gap: var(--nz-space-2); flex-wrap: wrap; }
 .nz-approval--danger { border-color: var(--nz-danger); background: var(--nz-danger-soft); }
 
+/* ---- Actividad de agentes (nz-actividad): acciones con hora, estado y detalle.
+       Fila de línea temporal: la barra y el punto salen de ::before/::after; el estado
+       usa el léxico cerrado (.is-done / .is-error / .is-active, con aria-current en la viva).
+       La fila entera es <a> o <button> cuando lleva destino (táctil 44px). ---- */
+.nz-actividad { display: grid; }
+.nz-actividad__fila { position: relative; display: grid; grid-template-columns: auto 1fr; gap: var(--nz-space-3); align-items: baseline; padding: var(--nz-space-2) var(--nz-space-2) var(--nz-space-2) var(--nz-space-5); border-radius: var(--nz-radius-sm); color: inherit; text-decoration: none; min-height: 44px; }
+a.nz-actividad__fila:hover, button.nz-actividad__fila:hover { background: var(--nz-bg-soft); }
+.nz-actividad__fila::before { content: ""; position: absolute; left: 9px; top: 0; bottom: 0; width: 2px; background: var(--nz-border-soft); }
+.nz-actividad__fila::after { content: ""; position: absolute; left: 6px; top: 50%; width: 8px; height: 8px; margin-top: -4px; border-radius: var(--nz-radius-full); background: var(--nz-brand); box-shadow: 0 0 0 2px var(--nz-bg); }
+.nz-actividad__fila.is-done::after { background: var(--nz-success); }
+.nz-actividad__fila.is-error::after { background: var(--nz-danger); }
+.nz-actividad__fila.is-active::after { background: var(--nz-accent); animation: nzActividadPulso 1.6s var(--nz-ease-soft) infinite; }
+@keyframes nzActividadPulso { 50% { box-shadow: 0 0 0 4px var(--nz-accent-soft), 0 0 0 2px var(--nz-bg); } }
+@media (prefers-reduced-motion: reduce) { .nz-actividad__fila.is-active::after { animation: none; } }
+.nz-actividad__hora { font-size: var(--nz-text-2xs); font-variant-numeric: tabular-nums; color: var(--nz-text-mute); }
+.nz-actividad__cuerpo { display: grid; gap: 2px; min-width: 0; }
+.nz-actividad__texto { font-size: var(--nz-text-sm); font-weight: var(--nz-peso-medio); }
+.nz-actividad__detalle { font-size: var(--nz-text-2xs); color: var(--nz-text-mute); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
 /* ---- Diferencias ---- */
 .nz-diff { border-radius: var(--nz-radius-md); overflow: hidden; font-family: var(--nz-font-mono); font-size: var(--nz-text-xs); background: var(--nz-gray-900); color: var(--nz-gray-100); }
 .nz-diff__line { display: grid; grid-template-columns: 2.5rem 1fr; }

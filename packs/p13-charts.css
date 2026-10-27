@@ -286,6 +286,22 @@
 .nz-chart-mini__bar--danger { background: var(--nz-danger); }
 .nz-chart-mini__bar--warning { background: var(--nz-warning); }
 
+/* ============================================================
+   Tramas multi-serie (patrones SVG): distinguen series sin depender
+   del color — accesible de facto y único camino en monocromo.
+   La clase pinta el TRAZO con el patrón: vale para paths de línea,
+   segmentos de donut y cualquier forma SVG con stroke. El color de
+   cada serie vive en su <pattern> (style="color: var(--nz-*)"), el
+   tile es geometría del markup. Cada SVG decla sus <pattern> en
+   <defs> — snippets canónicos en LLM.md y en la demo.
+   ============================================================ */
+.nz-trama--diagonal { stroke: url(#nz-trama-diagonal); }
+.nz-trama--cruzada { stroke: url(#nz-trama-cruzada); }
+.nz-trama--puntos { stroke: url(#nz-trama-puntos); }
+.nz-trama--cuadros { stroke: url(#nz-trama-cuadros); }
+.nz-chart-donut__seg--brand.nz-trama--diagonal { color: var(--nz-brand); }
+.nz-chart-donut__seg--accent.nz-trama--diagonal { color: var(--nz-accent); }
+
 /* ---- Densidad de escritorio de p13 (desde 960px) ---- */
 @media (min-width: 960px) {
   .nz-chart-range__btn { min-height: 32px; }

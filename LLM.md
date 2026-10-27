@@ -1,6 +1,6 @@
 # Aurora — guía de decisión para agentes
 
-Design system CSS puro, sin dependencias ni build. 2201 objetos en 18 categorías.
+Design system CSS puro, sin dependencias ni build. 2223 objetos en 18 categorías.
 **No pegues el CSS en el prompt**: enlaza por CDN y usa las clases de esta guía.
 
 ## 1. Mínimo obligatorio
@@ -8,8 +8,8 @@ Design system CSS puro, sin dependencias ni build. 2201 objetos en 18 categoría
 ```html
 <html lang="es" data-nz-theme="light">
 <head>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v10.9.0/tokens.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v10.9.0/packs/all.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v10.10.0/tokens.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v10.10.0/packs/all.css">
 </head>
 <body class="nz">
 ```
@@ -62,13 +62,13 @@ La lista completa de familias y su fichero está en `components.json`
 | 05 · Formularios e inputs | `p5-forms.css` | `nz-checkbox`, `nz-field`, `nz-fieldset`, `nz-filezona`… |
 | 06 · Feedback y estados | `p6-feedback.css` | `nz-alert`, `nz-badge`, `nz-banner`, `nz-callout`… |
 | 07 · Overlays y diálogo | `p7-overlays.css` | `nz-backdrop`, `nz-cmd`, `nz-confirm`, `nz-drawer`… |
-| 08 · Datos, tablas y listas | `p8-data.css` | `nz-arbol`, `nz-compare`, `nz-datagrid`, `nz-dl`… |
+| 08 · Datos, tablas y listas | `p8-data.css` | `nz-arbol`, `nz-compare`, `nz-contador`, `nz-datagrid`… |
 | 09 · Media e iconografía | `p9-media.css` | `nz-audio`, `nz-avatar`, `nz-avatar-group`, `nz-bgimg`… |
 | 10 · Comercio y producto | `p10-commerce.css` | `nz-cart`, `nz-cart-item`, `nz-checkout-steps`, `nz-compare-bar`… |
 | 11 · Social y marketing | `p11-social.css` | `nz-activity`, `nz-comment`, `nz-cta-banner`, `nz-feed`… |
 | 12 · Accesibilidad y sistema | `p12-system.css` | `nz-a11y-badge`, `nz-atajo-teclado`, `nz-contrast`, `nz-focus-accent`… |
 | 13 · Gráficos y visualización | `p13-charts.css` | `nz-bullet`, `nz-chart`, `nz-chart-bar`, `nz-chart-compare`… |
-| 14 · IA y agentes | `p14-ai.css` | `nz-agent-card`, `nz-approval`, `nz-attach`, `nz-chat`… |
+| 14 · IA y agentes | `p14-ai.css` | `nz-actividad`, `nz-agent-card`, `nz-approval`, `nz-attach`… |
 | 15 · Apps y escritorio | `p15-apps.css` | `nz-actbar`, `nz-agenda`, `nz-appempty`, `nz-appnav`… |
 | 16 · Cristal (capa de estilo) | `p16-cristal.css` | `nz-cristal`, `nz-cristal-barra` |
 | 17 · Patrones compuestos | `p17-patrones.css` | `nz-agenda-disponibilidad`, `nz-asistente-pasos`, `nz-aviso-accion`, `nz-aviso-sistema`… |
@@ -385,7 +385,7 @@ desde `tokens.css`, así que no hay que enlazar Google Fonts ni tocar `--nz-font
 }
 ```
 
-Los 236 tokens están inventariados en `components.json` (sección
+Los 242 tokens están inventariados en `components.json` (sección
 `tokens_def`, con nombre, valor y sección). Nada fuera de ese catálogo.
 
 ## 8. Anti-patrones (NO lo hagas)
@@ -407,7 +407,7 @@ Los 236 tokens están inventariados en `components.json` (sección
   El 800 no existe en el sistema y nada por debajo de 16px lleva 700.
 - ❌ Texto de interfaz a 12px: los 12px son para datos, no para etiquetas.
 - ❌ Enlazar Google Fonts (o cualquier CDN de fuentes): `tokens.css` ya sirve la fuente.
-- ❌ Enlazar `@master` en producción: pinea la versión (`@v10.9.0`) o jsDelivr te servirá CSS viejo desde su caché.
+- ❌ Enlazar `@master` en producción: pinea la versión (`@v10.10.0`) o jsDelivr te servirá CSS viejo desde su caché.
 
 ## 8b. Canales: qué versión enlazar
 
@@ -416,7 +416,7 @@ Dos canales, un sistema. La regla de oro: **nunca `@master`**.
 | Canal | URL | Cuándo |
 |---|---|---|
 | vivo | `@v10` | webs propias: recibe cada release de su serie sin tocarlas |
-| congelado | `@10.9.0` | entregas a cliente: reproducible dentro de dos años |
+| congelado | `@10.10.0` | entregas a cliente: reproducible dentro de dos años |
 
 Si el proyecto trae `aurora.lock`, respétalo: dice qué canal y qué tag está comiendo.
 Un cambio aditivo llega solo; renombrar o quitar algo exige major y migración
@@ -439,7 +439,7 @@ chat-ia, forms): cópialas como punto de partida.
 
 **Base de datos de diseño:** `base.html` es el explorador (búsqueda por lo que
 quieres construir, ficha con markup y preview) y `datos/base-diseno.json` es el
-índice machine-readable: 413 familias con su markup, 236 tokens,
+índice machine-readable: 417 familias con su markup, 242 tokens,
 recetas, combos, marcas y las 12 leyes. Consúltalo antes de leer un pack.
 
 ## 10. Interfaces generativas (OpenUI Lang)

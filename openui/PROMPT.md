@@ -16,7 +16,7 @@ sin explicaciones y sin HTML. Aurora pone el CSS; tú solo eliges componentes y 
    La sintaxis con nombre (`Kpi(etiqueta: "Ventas")`) NO existe y rompe el programa.
 7. Los opcionales se omiten desde el final.
 
-## Firmas de componentes (40)
+## Firmas de componentes (43)
 
 Los argumentos con `?` son opcionales. Los sub-componentes pueden ir en línea o por referencia
 (mejor por referencia: el streaming se ve antes).
@@ -46,8 +46,9 @@ Barras(etiquetas: string[], valores: number[], tono?: "marca" | "acento", tamano
 TablaBarras(nombres: string[], valores: number[], textos?: string[], tono?: "marca" | "acento") — Comparativa de magnitudes dispares: cada fila lleva su barra y su cifra. nombres/valores/textos van en paralelo; textos es la cifra ya formateada.
 Objetivo(etiqueta: string, real: number, meta: number, texto?: string, tono?: "marca" | "acento" | "exito") — Real frente a meta. La barra es el real y la línea es el objetivo; la pista va escalonada ×1,5.
 MiniTendencia(etiqueta: string, valor: string, delta?: string, tendencia?: "sube" | "baja" | "plano") — Métrica compacta con variación. Para tiras de indicadores.
-Anillo(valor: number, etiqueta?: string, tono?: "marca" | "acento", tamano?: "sm" | "lg") — Progreso circular de 0 a 100 con etiqueta central. Pequeño por defecto; `lg` para un dato único a página completa.
+Anillo(valor: number, etiqueta?: string, tono?: "marca" | "acento", tamano?: "sm" | "lg", tramas?: boolean) — Progreso circular de 0 a 100 con etiqueta central. Pequeño por defecto; `lg` para un dato único a página completa. Con tramas, el arco se distingue por patrón y no por color.
 Progreso(valor: number, etiqueta?: string) — Barra de avance lineal de 0 a 100.
+Contador(valor: string, tamano?: "sm" | "lg") — Cifra que cuenta. El valor FINAL vive en el HTML; el recuento es adorno de la app. El clon invisible reserva el ancho para que el layout no baile.
 
 ### Interfaz
 Icono(numero: string) — Icono del sprite numerado (iconos/sprite.svg, 338 símbolos). Decorativo: sale con aria-hidden y el significado lo lleva el texto de al lado — nunca icono solo. numero: dígitos del símbolo, con o sin ceros ("097" o "97"). Bajo subruta, el enlace del sprite se resuelve con el --base de hornear.
@@ -60,6 +61,7 @@ Pestanas(pestanas: string[], activa?: number, forma?: "linea" | "pastilla") — 
 Segmentado(opciones: string[], activa?: number) — Selector de 2 a 4 opciones excluyentes, tipo Hoy/Semana/Mes.
 Pasos(pasos: string[], actual?: number) — Proceso por etapas con la etapa actual marcada.
 Navegacion(marca: string, enlaces: string[], urls?: string[], inicio?: string) — Barra de navegación con marca y enlaces. urls va en paralelo a enlaces: la primera lleva a la primera. Sin urls, los enlaces son anclas. inicio es la ruta de inicio del producto (homeRoute): si va, la marca se pinta como enlace a ese destino; si no va, se usa el data-nz-inicio de la página (<html>) y, en su defecto, la marca queda sin enlace.
+Toast(texto: string, titulo?: string, tono?: "marca" | "acento" | "exito" | "aviso" | "peligro" | "info", temporal?: boolean, accion?: string) — Aviso flotante de una sola pieza. Uno por página; para una pila usa el markup del censo (nz-toast-pila).
 
 ### Formularios
 Campo(etiqueta: string, tipo?: "texto" | "numero" | "email" | "fecha" | "busqueda", valor?: string, ayuda?: string, error?: string, requerido?: boolean) — Campo de formulario con etiqueta, ayuda y error. Nunca un input sin etiqueta.
@@ -68,6 +70,7 @@ Interruptor(etiqueta: string, activo?: boolean) — Ajuste binario con efecto in
 Casilla(etiqueta: string, marcada?: boolean) — Selección múltiple o confirmación.
 
 ### Agentes
+Actividad(acciones: string[], horas?: string[], detalles?: string[], estados?: string[], destinos?: string[]) — Acciones de agentes con hora, estado y detalle. estados acepta hecho, error o curso por fila.
 Chat(mensajes: string[][], titulo?: string) — Conversación. mensajes = [rol, texto] con rol usuario o asistente.
 Herramienta(nombre: string, detalle?: string, estado?: "ejecutando" | "hecho" | "error") — Llamada a herramienta de un agente, con estado y resultado.
 
@@ -207,4 +210,4 @@ t3 = Titular("Gracias.", "2")
 - ¿Hay un solo titular nivel 1 y el acento está donde importa?
 - ¿Los números están formateados en castellano?
 
-<!-- aurora-openui · spec 6b032e7a1de34078 · 40 componentes · generado por scripts/generar-openui.py -->
+<!-- aurora-openui · spec 801c4672de217523 · 43 componentes · generado por scripts/generar-openui.py -->

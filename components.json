@@ -1,10 +1,10 @@
 {
  "name": "Aurora",
- "version": "10.9.0",
+ "version": "10.10.0",
  "type": "css-only design system",
  "namespace": ".nz-",
  "tokens": "tokens.css",
- "cdn": "https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v10.9.0/",
+ "cdn": "https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v10.10.0/",
  "manifiesto": {
   "gradientes": 0,
   "glass": 0,
@@ -19,16 +19,16 @@
   "objetivoTactil": "44px"
  },
  "resumen": {
-  "objetos": 2201,
-  "familias": 413,
+  "objetos": 2223,
+  "familias": 417,
   "categorias": 18,
-  "demos": 661,
-  "tokens": 236,
+  "demos": 666,
+  "tokens": 242,
   "tokensDark": 61,
   "alias": 150,
-  "familiasConMarkup": 413,
+  "familiasConMarkup": 417,
   "familiasConAntiPatron": 31,
-  "tokensConsumidosPorFamilias": 142
+  "tokensConsumidosPorFamilias": 145
  },
  "packs": {
   "p1-layout.css": {
@@ -80,9 +80,9 @@
    "categoria": 6,
    "nombre": "Feedback y estados",
    "descripcion": "Alertas, badges, chips, skeleton, empty/error, progreso y status. Feedback claro con tokens semánticos.",
-   "objetos": 153,
-   "familias": 19,
-   "demos": 52,
+   "objetos": 160,
+   "familias": 20,
+   "demos": 54,
    "pagina": "paginas/06-feedback.html"
   },
   "p7-overlays.css": {
@@ -98,9 +98,9 @@
    "categoria": 8,
    "nombre": "Datos, tablas y listas",
    "descripcion": "Tablas (densidad, sticky, bordes, toolbar y filtros; apilable en móvil), KPIs, listas y filas de registro, timeline, definition lists, árbol, matriz de calor, comparativa y números medidores.",
-   "objetos": 145,
-   "familias": 16,
-   "demos": 40,
+   "objetos": 150,
+   "familias": 17,
+   "demos": 41,
    "pagina": "paginas/08-data.html"
   },
   "p9-media.css": {
@@ -143,18 +143,18 @@
    "categoria": 13,
    "nombre": "Gráficos y visualización",
    "descripcion": "Barras, línea, área, donut, medidor, mapa de calor, calendario, treemap, embudo, bullet, radar, dispersión, cascada y flujo. Todo con CSS y SVG estilizado por clases: sin librerías y sin una sola imagen.",
-   "objetos": 216,
-   "familias": 22,
-   "demos": 38,
+   "objetos": 220,
+   "familias": 23,
+   "demos": 39,
    "pagina": "paginas/13-charts.html"
   },
   "p14-ai.css": {
    "categoria": 14,
    "nombre": "IA y agentes",
    "descripcion": "Conversación, streaming, herramientas, aprobación humana, diferencias, citas, razonamiento, agentes, ejecuciones, evaluación y coste. La interfaz de la IA sin brillos ni humo: jerarquía, estado y control.",
-   "objetos": 180,
-   "familias": 28,
-   "demos": 32,
+   "objetos": 186,
+   "familias": 29,
+   "demos": 33,
    "pagina": "paginas/14-ai.html"
   },
   "p15-apps.css": {
@@ -1734,6 +1734,36 @@
   {
    "nombre": "--nz-ease-soft",
    "valor": "cubic-bezier(0.33, 1, 0.68, 1)",
+   "seccion": "MOVIMIENTO "
+  },
+  {
+   "nombre": "--nz-ease-spring",
+   "valor": "cubic-bezier(0.34, 1.56, 0.64, 1)",
+   "seccion": "MOVIMIENTO "
+  },
+  {
+   "nombre": "--nz-ease-glide",
+   "valor": "cubic-bezier(0.22, 1, 0.36, 1)",
+   "seccion": "MOVIMIENTO "
+  },
+  {
+   "nombre": "--nz-dur-entrada",
+   "valor": "240ms",
+   "seccion": "MOVIMIENTO "
+  },
+  {
+   "nombre": "--nz-dur-salida",
+   "valor": "160ms",
+   "seccion": "MOVIMIENTO "
+  },
+  {
+   "nombre": "--nz-mov-max",
+   "valor": "400ms",
+   "seccion": "MOVIMIENTO "
+  },
+  {
+   "nombre": "--nz-mov-vida",
+   "valor": "6s",
    "seccion": "MOVIMIENTO "
   },
   {
@@ -7816,32 +7846,43 @@
    "demo": "paginas/06-feedback.html",
    "clases": [
     "nz-toast",
+    "nz-toast--accent",
     "nz-toast--bottom",
     "nz-toast--brand",
     "nz-toast--error",
     "nz-toast--info",
     "nz-toast--success",
+    "nz-toast--temporal",
     "nz-toast--top",
+    "nz-toast--warning",
     "nz-toast__action",
     "nz-toast__close",
     "nz-toast__icon",
+    "nz-toast__progreso",
     "nz-toast__title"
    ],
    "modificadores": [
+    "accent",
     "bottom",
     "brand",
     "error",
     "info",
     "success",
-    "top"
+    "temporal",
+    "top",
+    "warning"
    ],
    "partes": [
     "action",
     "close",
     "icon",
+    "progreso",
     "title"
    ],
    "tokens": [
+    "--nz-accent",
+    "--nz-accent-ink",
+    "--nz-amber-700",
     "--nz-bg-inset",
     "--nz-blue-300",
     "--nz-border",
@@ -7853,12 +7894,15 @@
     "--nz-gray-700",
     "--nz-gray-900",
     "--nz-green-500",
+    "--nz-mov-vida",
     "--nz-orange-300",
+    "--nz-orange-500",
     "--nz-peso-fuerte",
     "--nz-radius-full",
     "--nz-radius-md",
     "--nz-red-500",
     "--nz-shadow-lg",
+    "--nz-space-1",
     "--nz-space-3",
     "--nz-space-4",
     "--nz-space-6",
@@ -7869,7 +7913,7 @@
     "--nz-text-sm",
     "--nz-z-toast"
    ],
-   "nTokens": 26,
+   "nTokens": 32,
    "markup": {
     "demo": "paginas/06-feedback.html",
     "titulo": "Toast arriba y abajo con acción",
@@ -7880,10 +7924,39 @@
     "No pongas acciones críticas (confirmar borrado) dentro de un toast."
    ],
    "modificadoresLexico": [
+    "accent",
     "brand",
     "info",
-    "success"
+    "success",
+    "warning"
    ]
+  },
+  "nz-toast-pila": {
+   "pack": "p6-feedback.css",
+   "categoria": 6,
+   "demo": "paginas/06-feedback.html",
+   "clases": [
+    "nz-toast-pila",
+    "nz-toast-pila--abajo",
+    "nz-toast-pila--arriba"
+   ],
+   "modificadores": [
+    "abajo",
+    "arriba"
+   ],
+   "partes": [],
+   "tokens": [
+    "--nz-space-2",
+    "--nz-space-6",
+    "--nz-z-toast"
+   ],
+   "nTokens": 3,
+   "markup": {
+    "demo": "paginas/06-feedback.html",
+    "titulo": "Pila arriba y temporal",
+    "markup": "<div class=\"nz-toast-pila nz-toast-pila--arriba\"><div class=\"nz-toast is-on\"><span class=\"nz-toast__title\">Sincronizando</span>La agenda se actualiza en segundo plano.</div><div class=\"nz-toast nz-toast--accent nz-toast--temporal is-on\"><span class=\"nz-toast__icon\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 2l2.4 7.6L22 12l-7.6 2.4L12 22l-2.4-7.6L2 12l7.6-2.4z\"/></svg></span><span class=\"nz-toast__title\">Publicado</span>El panel ya está en línea.</div></div>"
+   },
+   "modificadoresLexico": []
   },
   "nz-backdrop": {
    "pack": "p7-overlays.css",
@@ -8722,6 +8795,42 @@
     "markup": "<table class=\"nz-compare\"><thead><tr><th class=\"nz-compare__head\">Característica</th><th class=\"nz-compare__head\">Base</th><th class=\"nz-compare__head nz-compare__col--featured\">Pro</th></tr></thead> <tbody><tr><td class=\"nz-compare__feature\">Packs CSS</td><td>6</td><td class=\"nz-compare__col--featured\">12</td></tr> <tr><td class=\"nz-compare__feature\">Tema oscuro</td><td><span class=\"nz-compare__no\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M18 6 6 18M6 6l12 12\"/></svg></span></td><td class=\"nz-compare__col--featured\"><span class=\"nz-compare__check\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M20 6 9 17l-5-5\"/></svg></span></td></tr> <tr><td class=\"nz-compare__feature\">Auditoría</td><td><span class=\"nz-compare__no\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M18 6 6 18M6 6l12 12\"/></svg></span></td><td class=\"nz-compare__col--featured\"><span class=\"nz-compare__check\"><svg class=\"nz-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M20 6 9 17l-5-5\"/></svg></span></td></tr></tbody> <tfoot><tr><td class=\"nz-compare__foot\" colspan=\"3\">Precios sin IVA · actualizado en marzo</td></tr></tfoot></table>"
    },
    "modificadoresLexico": []
+  },
+  "nz-contador": {
+   "pack": "p8-data.css",
+   "categoria": 8,
+   "demo": "paginas/08-data.html",
+   "clases": [
+    "nz-contador",
+    "nz-contador--lg",
+    "nz-contador--sm",
+    "nz-contador__destino",
+    "nz-contador__valor"
+   ],
+   "modificadores": [
+    "lg",
+    "sm"
+   ],
+   "partes": [
+    "destino",
+    "valor"
+   ],
+   "tokens": [
+    "--nz-dur-entrada",
+    "--nz-ease-out",
+    "--nz-text-md",
+    "--nz-text-xl"
+   ],
+   "nTokens": 4,
+   "markup": {
+    "demo": "paginas/08-data.html",
+    "titulo": "Cifra que cuenta",
+    "markup": "<span class=\"nz-contador\"><span class=\"nz-contador__valor\">42.190</span><span class=\"nz-contador__destino\" aria-hidden=\"true\">42.190</span></span>"
+   },
+   "modificadoresLexico": [
+    "lg",
+    "sm"
+   ]
   },
   "nz-datagrid": {
    "pack": "p8-data.css",
@@ -14266,6 +14375,35 @@
     "lg"
    ]
   },
+  "nz-trama": {
+   "pack": "p13-charts.css",
+   "categoria": 13,
+   "demo": "paginas/13-charts.html",
+   "clases": [
+    "nz-trama--cruzada",
+    "nz-trama--cuadros",
+    "nz-trama--diagonal",
+    "nz-trama--puntos"
+   ],
+   "modificadores": [
+    "cruzada",
+    "cuadros",
+    "diagonal",
+    "puntos"
+   ],
+   "partes": [],
+   "tokens": [
+    "--nz-accent",
+    "--nz-brand"
+   ],
+   "nTokens": 2,
+   "markup": {
+    "demo": "paginas/13-charts.html",
+    "titulo": "Tramas multi-serie",
+    "markup": "<line x1=\"0\" y1=\"12\" x2=\"96\" y2=\"12\" class=\"nz-trama--diagonal\" style=\"color: var(--nz-brand)\" stroke-width=\"4\"/>"
+   },
+   "modificadoresLexico": []
+  },
   "nz-treemap": {
    "pack": "p13-charts.css",
    "categoria": 13,
@@ -14318,6 +14456,53 @@
     "brand",
     "lg"
    ]
+  },
+  "nz-actividad": {
+   "pack": "p14-ai.css",
+   "categoria": 14,
+   "demo": "paginas/14-ai.html",
+   "clases": [
+    "nz-actividad",
+    "nz-actividad__cuerpo",
+    "nz-actividad__detalle",
+    "nz-actividad__fila",
+    "nz-actividad__hora",
+    "nz-actividad__texto"
+   ],
+   "modificadores": [],
+   "partes": [
+    "cuerpo",
+    "detalle",
+    "fila",
+    "hora",
+    "texto"
+   ],
+   "tokens": [
+    "--nz-accent",
+    "--nz-bg",
+    "--nz-bg-soft",
+    "--nz-border-soft",
+    "--nz-brand",
+    "--nz-danger",
+    "--nz-ease-soft",
+    "--nz-peso-medio",
+    "--nz-radius-full",
+    "--nz-radius-sm",
+    "--nz-space-2",
+    "--nz-space-3",
+    "--nz-space-5",
+    "--nz-success",
+    "--nz-text-2xs",
+    "--nz-text-mute",
+    "--nz-text-sm"
+   ],
+   "nTokens": 17,
+   "markup": {
+    "demo": "paginas/14-ai.html",
+    "titulo": "Actividad de agentes",
+    "markup": "<div class=\"nz-actividad\"><div class=\"nz-actividad__fila is-done\"><span class=\"nz-actividad__hora\">09:12</span><span class=\"nz-actividad__cuerpo\"><span class=\"nz-actividad__texto\">Revisión completada</span><span class=\"nz-actividad__detalle\">2 salidas aprobadas por el revisor</span></span></div><div class=\"nz-actividad__fila is-active\" aria-current=\"step\"><span class=\"nz-actividad__hora\">09:15</span><span class=\"nz-actividad__cuerpo\"><span class=\"nz-actividad__texto\">Generando informe</span><span class=\"nz-actividad__detalle\">Paso 3 de 4 · plantilla mensual</span></span></div><div class=\"nz-actividad__fila is-error\"><span class=\"nz-actividad__hora\">08:47</span><span class=\"nz-actividad__cuerpo\"><span class=\"nz-actividad__texto\">Publicación fallida</span><span class=\"nz-actividad__detalle\">El CDN rechazó el token caducado</span></span></div><div class=\"nz-actividad__fila\"><span class=\"nz-actividad__hora\">08:40</span><span class=\"nz-actividad__cuerpo\"><span class=\"nz-actividad__texto\">Datos sincronizados</span><span class=\"nz-actividad__detalle\">1.284 filas actualizadas</span></span></div></div>"
+   },
+   "modificadoresLexico": []
   },
   "nz-agent-card": {
    "pack": "p14-ai.css",

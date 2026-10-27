@@ -172,6 +172,51 @@
       "</div>";
   };
 
+  /* Contador de toasts/tramas: ids únicos por instancia (dos patrones con el
+     mismo id y distinto color se pisarían: el primero del documento gana). */
+  var nzTramaN = 0;
+
+  R.Toast = function (p) {
+    var tono = { "marca": "nz-toast--brand", "acento": "nz-toast--accent", "exito": "nz-toast--success", "aviso": "nz-toast--warning", "peligro": "nz-toast--error", "info": "nz-toast--info" }[p.tono] || "";
+    var icono = { "exito": "036", "peligro": "016", "aviso": "072", "marca": "150", "acento": "150", "info": "074" }[p.tono] || "074";
+    return '<div class="' + cl("nz-toast", tono, p.temporal === true && "nz-toast--temporal", "is-on") + '">' +
+      '<span class="nz-toast__icon"><svg class="nz-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="iconos/sprite.svg#nz-i-' + icono + '"></use></svg></span>' +
+      (p.titulo ? '<span class="nz-toast__title">' + esc(p.titulo) + "</span>" : "") +
+      esc(p.texto) +
+      (p.accion ? '<button class="nz-toast__action">' + esc(p.accion) + "</button>" : "") +
+      (p.temporal === true ? '<span class="nz-toast__progreso"></span>' : "") +
+      "</div>";
+  };
+
+  R.Contador = function (p) {
+    var v = String(p.valor == null ? "" : p.valor);
+    return '<span class="' + cl("nz-contador", p.tamano === "sm" && "nz-contador--sm", p.tamano === "lg" && "nz-contador--lg") + '">' +
+      '<span class="nz-contador__valor">' + esc(v) + "</span>" +
+      '<span class="nz-contador__destino" aria-hidden="true">' + esc(v) + "</span></span>";
+  };
+
+  R.Actividad = function (p) {
+    var acciones = list(p.acciones);
+    var horas = list(p.horas);
+    var detalles = list(p.detalles);
+    var estados = list(p.estados);
+    var destinos = list(p.destinos);
+    var filas = acciones.map(function (a, i) {
+      var estado = estados[i] || "";
+      var is = estado === "hecho" ? "is-done" : estado === "error" ? "is-error" : estado === "curso" ? "is-active" : "";
+      var cuerpo = '<span class="nz-actividad__cuerpo"><span class="nz-actividad__texto">' + esc(a) + "</span>" +
+        (detalles[i] ? '<span class="nz-actividad__detalle">' + esc(detalles[i]) + "</span>" : "") + "</span>";
+      var interior = (horas[i] ? '<span class="nz-actividad__hora">' + esc(horas[i]) + "</span>" : "") + cuerpo;
+      var actual = is === "is-active" ? ' aria-current="step"' : "";
+      var destino = destinos[i] && urlAdmitida(destinos[i]) ? destinos[i] : "";
+      if (destino) {
+        return '<a class="' + cl("nz-actividad__fila", is) + '" href="' + esc(destino) + '"' + actual + ">" + interior + "</a>";
+      }
+      return '<div class="' + cl("nz-actividad__fila", is) + '"' + actual + ">" + interior + "</div>";
+    }).join("");
+    return '<div class="nz-actividad">' + filas + "</div>";
+  };
+
   R.Tabla = function (p) {
     var columnas = list(p.columnas).map(function (c) { return String(c); });
     var numCols = String(p.numericas || "").split(",").map(function (s) { return s.trim(); }).filter(Boolean);
@@ -258,12 +303,23 @@
   R.Anillo = function (p) {
     var v = Math.max(0, Math.min(100, num(p.valor)));
     var tono = p.tono === "acento" ? "nz-chart-donut__seg--accent" : "nz-chart-donut__seg--brand";
+    var trama = p.tramas === true;
+    var claseSeg = tono;
+    var extra = "";
+    var pid = "";
+    if (trama) {
+      nzTramaN += 1;
+      pid = "tramaDiag-" + nzTramaN;
+      claseSeg = "nz-trama--diagonal " + tono;
+      extra = ' style="stroke: url(#' + pid + ')"';
+    }
     return '<div class="' + cl("nz-chart-donut", p.tamano === "lg" ? "nz-chart-donut--lg" : "nz-chart-donut--sm") + '">' +
       '<svg class="nz-chart-donut__svg" viewBox="0 0 42 42" role="img" aria-label="' +
       esc((p.etiqueta || "Progreso") + ": " + v + " por ciento") + '">' +
+      (trama ? '<defs><pattern id="' + pid + '" width="4" height="4" patternUnits="userSpaceOnUse"><path d="M0,4 L4,0" stroke="currentColor" stroke-width="1.2"/></pattern></defs>' : "") +
       '<circle class="nz-chart-donut__track" cx="21" cy="21" r="15.9"></circle>' +
-      '<circle class="nz-chart-donut__seg ' + tono + '" cx="21" cy="21" r="15.9" stroke-dasharray="' +
-      v + " " + (100 - v) + '"></circle></svg>' +
+      '<circle class="nz-chart-donut__seg ' + claseSeg + '" cx="21" cy="21" r="15.9" stroke-dasharray="' +
+      v + " " + (100 - v) + '"' + extra + '></circle></svg>' +
       '<div class="nz-chart-donut__center"><span class="nz-chart-donut__value">' + v + "%</span>" +
       (p.etiqueta ? '<span class="nz-chart-donut__label">' + esc(p.etiqueta) + "</span>" : "") +
       "</div></div>";

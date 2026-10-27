@@ -204,6 +204,11 @@
       "titulo": "Registro · tono y seleccion",
       "tag": ".nz-record--success / --warning / .is-selected",
       "markup": "<div class=\"nz-records\"><div class=\"nz-record nz-record--success\">Pago confirmado</div><div class=\"nz-record nz-record--warning\">Stock bajo: 3 unidades</div><div class=\"nz-record is-selected\">Factura 2026-114 seleccionada</div></div>"
+    },
+    {
+      "titulo": "Cifra que cuenta",
+      "tag": ".nz-contador",
+      "markup": "<div class=\"nz-cluster nz-cluster--compact\"><span class=\"nz-contador\"><span class=\"nz-contador__valor\">42.190</span><span class=\"nz-contador__destino\" aria-hidden=\"true\">42.190</span></span><span class=\"nz-contador nz-contador--lg is-animado\"><span class=\"nz-contador__valor\">1.284</span><span class=\"nz-contador__destino\" aria-hidden=\"true\">1.284</span></span></div>"
     }
   ]
 }
