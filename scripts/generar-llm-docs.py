@@ -42,7 +42,7 @@ sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
 bc = import_module("build-catalog")
 
 ROOT = bc.ROOT
-VERSION = "10.7.0"
+VERSION = "10.8.0"
 # El canal vivo no se copia a mano: sale de datos/canales.json (único dueño)
 _canales = json.loads((ROOT / "datos" / "canales.json").read_text(encoding="utf-8"))
 CANAL_VIVO = _canales["canales"]["vivo"]["rango"]
@@ -1076,7 +1076,10 @@ La marca **no se toca en CSS**: se elige con un atributo en el `<html>`.
 ```
 
 - Presets incluidos: `aurora` (defecto, azul + naranja), `indigo`, `esmeralda`, `violeta`,
-  `carmesi`, `ntizar` (azul eléctrico #0057ff + naranja #ff6a00). Un `data-nz-marca` desconocido cae en `aurora` sin romper nada.
+  `carmesi`, `ntizar` (azul eléctrico #0057ff + naranja #ff6a00) y `monocromo` (blanco y
+  negro: tinta #111111 de estructura + resalte #a3a3a3, estados jerarquizados por
+  luminancia y el peligro invertido a blanco en oscuro — el panel estilo ZeroLeaks;
+  se genera con `--mono`). Un `data-nz-marca` desconocido cae en `aurora` sin romper nada.
 - **Los dos colores no son intercambiables**:
   - **Marca** = estructura. Navegación activa, enlaces, foco, botón primario, 1ª serie.
   - **Acento** = **el dato que importa y la acción secundaria**: el delta de un KPI,
@@ -1246,7 +1249,7 @@ Reglas mínimas que no se negocian:
    gradientes, cero `backdrop-filter` (excepción: la capa `.nz-cristal`).
 5. Responsive first: base móvil 1 columna, se crece con `min-width`; los objetos
    responden a su contenedor. Táctil 44px.
-6. Marca con `data-nz-marca="aurora|indigo|esmeralda|violeta|carmesi|ntizar"`;
+6. Marca con `data-nz-marca="aurora|indigo|esmeralda|violeta|carmesi|ntizar|monocromo"`;
    la marca es estructura, el acento es el dato que importa.
 
 Hecho con ❤️ por David Antizar

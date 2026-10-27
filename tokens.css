@@ -466,7 +466,7 @@
 /* ---- MARCAS (presets de color) ----
    marcas/<nombre>.css redefine --nz-marca-50…900 y --nz-acento-50…700.
    Se activan con <html data-nz-marca="indigo"> (junto a data-nz-theme).
-   Incluidas: aurora (defecto) · indigo · esmeralda · violeta · carmesí · ntizar.
+   Incluidas: aurora (defecto) · indigo · esmeralda · violeta · carmesí · ntizar · monocromo.
    Un data-nz-marca desconocido cae en los defaults de :root sin romper nada.
    Genera las tuyas:  python scripts/generar-marca.py miweb "#0ea5e9" "#f43f5e"
    Hecho con ❤️ por David Antizar */

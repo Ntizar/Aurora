@@ -8,8 +8,8 @@ Design system CSS puro, sin dependencias ni build. 2201 objetos en 18 categoría
 ```html
 <html lang="es" data-nz-theme="light">
 <head>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v10.7.0/tokens.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v10.7.0/packs/all.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v10.8.0/tokens.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Ntizar/Aurora@v10.8.0/packs/all.css">
 </head>
 <body class="nz">
 ```
@@ -347,7 +347,10 @@ La marca **no se toca en CSS**: se elige con un atributo en el `<html>`.
 ```
 
 - Presets incluidos: `aurora` (defecto, azul + naranja), `indigo`, `esmeralda`, `violeta`,
-  `carmesi`, `ntizar` (azul eléctrico #0057ff + naranja #ff6a00). Un `data-nz-marca` desconocido cae en `aurora` sin romper nada.
+  `carmesi`, `ntizar` (azul eléctrico #0057ff + naranja #ff6a00) y `monocromo` (blanco y
+  negro: tinta #111111 de estructura + resalte #a3a3a3, estados jerarquizados por
+  luminancia y el peligro invertido a blanco en oscuro — el panel estilo ZeroLeaks;
+  se genera con `--mono`). Un `data-nz-marca` desconocido cae en `aurora` sin romper nada.
 - **Los dos colores no son intercambiables**:
   - **Marca** = estructura. Navegación activa, enlaces, foco, botón primario, 1ª serie.
   - **Acento** = **el dato que importa y la acción secundaria**: el delta de un KPI,
@@ -404,7 +407,7 @@ Los 236 tokens están inventariados en `components.json` (sección
   El 800 no existe en el sistema y nada por debajo de 16px lleva 700.
 - ❌ Texto de interfaz a 12px: los 12px son para datos, no para etiquetas.
 - ❌ Enlazar Google Fonts (o cualquier CDN de fuentes): `tokens.css` ya sirve la fuente.
-- ❌ Enlazar `@master` en producción: pinea la versión (`@v10.7.0`) o jsDelivr te servirá CSS viejo desde su caché.
+- ❌ Enlazar `@master` en producción: pinea la versión (`@v10.8.0`) o jsDelivr te servirá CSS viejo desde su caché.
 
 ## 8b. Canales: qué versión enlazar
 
@@ -413,7 +416,7 @@ Dos canales, un sistema. La regla de oro: **nunca `@master`**.
 | Canal | URL | Cuándo |
 |---|---|---|
 | vivo | `@v10` | webs propias: recibe cada release de su serie sin tocarlas |
-| congelado | `@10.7.0` | entregas a cliente: reproducible dentro de dos años |
+| congelado | `@10.8.0` | entregas a cliente: reproducible dentro de dos años |
 
 Si el proyecto trae `aurora.lock`, respétalo: dice qué canal y qué tag está comiendo.
 Un cambio aditivo llega solo; renombrar o quitar algo exige major y migración

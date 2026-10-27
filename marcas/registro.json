@@ -184,5 +184,36 @@
     "marca_ajustada_aa": false,
     "contraste_marca_600": 5.52,
     "contraste_ok": true
+  },
+  {
+    "nombre": "monocromo",
+    "marca": "#111111",
+    "acento": "#a3a3a3",
+    "marca_rampa": {
+      "50": "#fafafa",
+      "100": "#f0f0f0",
+      "200": "#e0e0e0",
+      "300": "#c2c2c2",
+      "400": "#969696",
+      "500": "#5c5c5c",
+      "600": "#111111",
+      "700": "#0b0b0b",
+      "800": "#070707",
+      "900": "#040404"
+    },
+    "acento_rampa": {
+      "50": "#f5f5f5",
+      "100": "#e5e5e5",
+      "200": "#c9c9c9",
+      "300": "#c4c4c4",
+      "400": "#ababab",
+      "500": "#a3a3a3",
+      "600": "#5c5c5c",
+      "700": "#454545"
+    },
+    "marca_original": "#111111",
+    "marca_ajustada_aa": false,
+    "contraste_marca_600": 18.88,
+    "contraste_ok": true
   }
 ]

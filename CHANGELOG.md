@@ -3,9 +3,26 @@
 Formato: [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/).
 Versionado: [SemVer](https://semver.org/lang/es/).
 
-## [Sin publicar]
+## [10.8.0] — 2026-10-27
 
-(sin cambios aún)
+### Añadido
+
+- **Séptima marca: `monocromo`** — la primera acromática, estilo panel ZeroLeaks:
+  tinta #111111 (estructura) + resalte #a3a3a3 (el dato que importa), grises
+  neutros sin croma en las dos rampas.
+- `scripts/generar-marca.py --mono <nombre>`: una marca monocroma no sale del
+  generador de rampas ancladas (la compresión de luz no llega nunca a los claros
+  desde una tinta oscura), así que lleva escaleras fijas calibradas y el mismo
+  informe de contraste AA que las cromáticas.
+- **Estados jerarquizados por luminancia**: success/danger/warning se reparten en
+  grises (crítico = más oscuro en claro) y **en oscuro el peligro se invierte a
+  blanco** (el chip invertido de los paneles monocromos). La marca pisa solo
+  `--nz-success/-danger/-warning` y sus softs/tints; las rampas de estado
+  (`--nz-green/red/amber`) quedan intactas para las demás marcas.
+- La demo `marcas/`, la portada (data-driven: «Marcas listas» cuenta el registro),
+  LLM.md, components.json, la base de datos y `marcas/registro.json` recogen la
+  séptima marca.
+- `--todas` ya no pierde las marcas registradas fuera de `PRESETS` (ntizar, monocromo…).
 
 ## [10.7.0] — 2026-10-26
 

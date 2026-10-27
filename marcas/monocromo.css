@@ -1,0 +1,52 @@
+/* Aurora · marca «monocromo» — monocroma, generada por scripts/generar-marca.py --mono
+   tinta #111111 (estructura) · resalte #a3a3a3 (el dato que importa)
+   Estados (success/danger/warning) en escala de grises: la jerarquia la da la
+   luminancia y en oscuro el peligro se INVERTE a blanco (chip ZeroLeaks).
+   Activa con: <html data-nz-marca="monocromo">
+   Hecho con ❤️ por David Antizar */
+
+[data-nz-marca="monocromo"] {
+  /* rampa de marca (tinta) */
+  --nz-marca-50: #fafafa;
+  --nz-marca-100: #f0f0f0;
+  --nz-marca-200: #e0e0e0;
+  --nz-marca-300: #c2c2c2;
+  --nz-marca-400: #969696;
+  --nz-marca-500: #5c5c5c;
+  --nz-marca-600: #111111;
+  --nz-marca-700: #0b0b0b;
+  --nz-marca-800: #070707;
+  --nz-marca-900: #040404;
+  /* rampa de acento (resalte) */
+  --nz-acento-50: #f5f5f5;
+  --nz-acento-100: #e5e5e5;
+  --nz-acento-200: #c9c9c9;
+  --nz-acento-300: #c4c4c4;
+  --nz-acento-400: #ababab;
+  --nz-acento-500: #a3a3a3;
+  --nz-acento-600: #5c5c5c;
+  --nz-acento-700: #454545;
+  /* estados en grises (claro) */
+  --nz-success: #444444;
+  --nz-success-soft: #ececec;
+  --nz-success-tint: #dcdcdc;
+  --nz-danger: #0a0a0a;
+  --nz-danger-soft: #e4e4e4;
+  --nz-danger-tint: #d4d4d4;
+  --nz-warning: #5c5c5c;
+  --nz-warning-soft: #f2f2f2;
+  --nz-warning-tint: #e2e2e2;
+}
+
+[data-nz-theme="dark"][data-nz-marca="monocromo"] {
+  /* estados en grises (oscuro): el peligro se invierte a blanco */
+  --nz-success: #d9d9d9;
+  --nz-success-soft: #2b2b2b;
+  --nz-success-tint: #383838;
+  --nz-danger: #ffffff;
+  --nz-danger-soft: #2e2e2e;
+  --nz-danger-tint: #3a3a3a;
+  --nz-warning: #b5b5b5;
+  --nz-warning-soft: #262626;
+  --nz-warning-tint: #333333;
+}

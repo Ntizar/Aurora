@@ -1,6 +1,6 @@
 {
  "name": "Aurora — base de datos de diseño",
- "version": "10.7.0",
+ "version": "10.8.0",
  "descripcion": "Índice consultable del sistema: familias, tokens, recetas, combos y marcas. Cada ficha enlaza a su demo viva y lleva el markup real.",
  "fuente": "components.json + specs/ + bloques/recetas/ + bloques/ejemplos/ + bloques/combos/ + marcas/registro.json + COMPOSICION.md",
  "explorador": "base.html",
@@ -13,7 +13,7 @@
   "ejemplos": 5,
   "paginas": 11,
   "combos": 9,
-  "marcas": 6,
+  "marcas": 7,
   "principios": 12,
   "alias": 150
  },
@@ -24440,6 +24440,15 @@
    "acento": "#ff6a00",
    "fichero": "marcas/ntizar.css",
    "contraste": 5.52,
+   "contrasteOk": true,
+   "ajustadaAA": false
+  },
+  {
+   "id": "monocromo",
+   "marca": "#111111",
+   "acento": "#a3a3a3",
+   "fichero": "marcas/monocromo.css",
+   "contraste": 18.88,
    "contrasteOk": true,
    "ajustadaAA": false
   }

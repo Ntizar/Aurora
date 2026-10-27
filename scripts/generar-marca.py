@@ -12,6 +12,7 @@ TODO (marca, acento, foco, sombras de color, dark mode) sin tocar una linea a ma
 Uso:
     python scripts/generar-marca.py --todas                  # regenera los presets del registro
     python scripts/generar-marca.py miweb "#0ea5e9" "#f43f5e" # crea marcas/miweb.css
+    python scripts/generar-marca.py --mono monocromo         # marca monocroma (escala de grises)
 
 Hecho con ❤️ por David Antizar
 """
@@ -43,6 +44,29 @@ PRESETS = {
     "esmeralda": ("#059669", "#f59e0b"),  # verde + ambar
     "violeta":   ("#7c3aed", "#ec4899"),  # violeta + rosa
     "carmesi":   ("#dc2626", "#0891b2"),  # rojo + cian
+}
+
+# ---- Marca monocroma: escaleras acromaticas FIJAS. No salen de un hex ancla:
+#      luz_de() comprime el reparto alrededor del ancla y una tinta oscura
+#      (#111) no llega nunca a los grises claros. Tinta = estructura (botones,
+#      enlaces), resalte = el dato que importa (el momento blanco/negro de un
+#      panel ZeroLeaks). Grises tipo Tailwind neutral, sin croma.
+MONO_MARCA = {"50": "#fafafa", "100": "#f0f0f0", "200": "#e0e0e0", "300": "#c2c2c2",
+              "400": "#969696", "500": "#5c5c5c", "600": "#111111", "700": "#0b0b0b",
+              "800": "#070707", "900": "#040404"}
+MONO_ACENTO = {"50": "#f5f5f5", "100": "#e5e5e5", "200": "#c9c9c9", "300": "#c4c4c4",
+               "400": "#ababab", "500": "#a3a3a3", "600": "#5c5c5c", "700": "#454545"}
+# Estados en grises: la jerarquia la da la luminancia (critico = mas oscuro en
+# claro; en oscuro el peligro se INVERTE a blanco, el chip ZeroLeaks). Los
+# softs/tints acompanan a cada tono para que badges/alertas sigan legibles y
+# cada estado con su par AA comprobado (medido: 5.97 a 15.57:1).
+MONO_SEMANTICOS = {
+    "claro": {"success": "#444444", "success-soft": "#ececec", "success-tint": "#dcdcdc",
+              "danger": "#0a0a0a", "danger-soft": "#e4e4e4", "danger-tint": "#d4d4d4",
+              "warning": "#5c5c5c", "warning-soft": "#f2f2f2", "warning-tint": "#e2e2e2"},
+    "oscuro": {"success": "#d9d9d9", "success-soft": "#2b2b2b", "success-tint": "#383838",
+               "danger": "#ffffff", "danger-soft": "#2e2e2e", "danger-tint": "#3a3a3a",
+               "warning": "#b5b5b5", "warning-soft": "#262626", "warning-tint": "#333333"},
 }
 
 
@@ -252,6 +276,48 @@ def informe_contraste(nombre: str, datos: dict) -> tuple[list[str], bool]:
     return filas, ok
 
 
+def generar_mono(nombre: str, verboso: bool = True) -> dict:
+    """Marca monocroma: escaleras fijas + estados grises en claro y oscuro.
+
+    El informe de contraste es el MISMO que el de las marcas cromáticas
+    (informe_contraste): con estas escaleras todos los pares pasan AA.
+    """
+    lineas = [
+        f"/* Aurora · marca «{nombre}» — monocroma, generada por scripts/generar-marca.py --mono",
+        f"   tinta {MONO_MARCA['600']} (estructura) · resalte {MONO_ACENTO['500']} (el dato que importa)",
+        "   Estados (success/danger/warning) en escala de grises: la jerarquia la da la",
+        "   luminancia y en oscuro el peligro se INVERTE a blanco (chip ZeroLeaks).",
+        f"   Activa con: <html data-nz-marca=\"{nombre}\">",
+        "   Hecho con ❤️ por David Antizar */",
+        "",
+        f"[data-nz-marca=\"{nombre}\"] {{",
+        "  /* rampa de marca (tinta) */",
+    ]
+    lineas += [f"  --nz-marca-{k}: {v};" for k, v in MONO_MARCA.items()]
+    lineas.append("  /* rampa de acento (resalte) */")
+    lineas += [f"  --nz-acento-{k}: {v};" for k, v in MONO_ACENTO.items()]
+    lineas.append("  /* estados en grises (claro) */")
+    lineas += [f"  --nz-{k}: {v};" for k, v in MONO_SEMANTICOS["claro"].items()]
+    lineas.append("}")
+    lineas.append("")
+    lineas.append(f"[data-nz-theme=\"dark\"][data-nz-marca=\"{nombre}\"] {{")
+    lineas.append("  /* estados en grises (oscuro): el peligro se invierte a blanco */")
+    lineas += [f"  --nz-{k}: {v};" for k, v in MONO_SEMANTICOS["oscuro"].items()]
+    lineas.append("}")
+    (DIR_MARCAS / f"{nombre}.css").write_text("\n".join(lineas) + "\n", encoding="utf-8")
+    datos = {"nombre": nombre, "marca": MONO_MARCA["600"], "acento": MONO_ACENTO["500"],
+             "marca_rampa": dict(MONO_MARCA), "acento_rampa": dict(MONO_ACENTO),
+             "marca_original": MONO_MARCA["600"], "marca_ajustada_aa": False,
+             "contraste_marca_600": round(contraste(MONO_MARCA["600"], "#ffffff"), 2)}
+    filas, ok = informe_contraste(nombre, datos)
+    datos["contraste_ok"] = ok
+    if verboso:
+        print(f"\n■ {nombre}  (monocroma · tinta {MONO_MARCA['600']} · resalte {MONO_ACENTO['500']})  → marcas/{nombre}.css")
+        for f in filas:
+            print(f)
+    return datos
+
+
 def generar(nombre: str, marca: str, acento: str, verboso: bool = True) -> dict:
     marca_original = marca.lower()
     marca_ajustada, contraste_marca, ajustada = ajustar_aa(marca)
@@ -284,6 +350,12 @@ def generar(nombre: str, marca: str, acento: str, verboso: bool = True) -> dict:
 def main(argv: list[str]) -> int:
     if "--todas" in argv:
         registro = [generar(n, m, a) for n, (m, a) in PRESETS.items()]
+        # Las marcas fuera de PRESETS (ntizar, monocromo, ...) NO se pierden:
+        # --todas regenera los presets y preserva las registradas a mano.
+        ruta_registro = DIR_MARCAS / "registro.json"
+        previas = json.loads(ruta_registro.read_text(encoding="utf-8")) if ruta_registro.exists() else []
+        preset_nombres = {r["nombre"] for r in registro}
+        registro += [e for e in previas if e.get("nombre") not in preset_nombres]
         (DIR_MARCAS / "registro.json").write_text(
             json.dumps(registro, ensure_ascii=False, indent=2), encoding="utf-8")
         fallos = [r["nombre"] for r in registro if not r["contraste_ok"]]
@@ -295,6 +367,20 @@ def main(argv: list[str]) -> int:
             return 1
         print("RESULTADO: VÁLIDO — todas las marcas pasan contraste AA ✅")
         return 0
+
+    if "--mono" in argv:
+        args = [a for a in argv if not a.startswith("-")]
+        if len(args) != 1:
+            print("Uso: python scripts/generar-marca.py --mono <nombre>")
+            return 2
+        d = generar_mono(args[0])
+        # Registrar en registro.json (añade o reemplaza la entrada de este nombre).
+        ruta = DIR_MARCAS / "registro.json"
+        lista = json.loads(ruta.read_text(encoding="utf-8")) if ruta.exists() else []
+        lista = [e for e in lista if e.get("nombre") != d["nombre"]]
+        lista.append(d)
+        ruta.write_text(json.dumps(lista, ensure_ascii=False, indent=2), encoding="utf-8")
+        return 0 if d["contraste_ok"] else 1
 
     args = [a for a in argv if not a.startswith("-")]
     if len(args) == 3:
