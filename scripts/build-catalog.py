@@ -224,7 +224,7 @@ def pagina(spec, censo_cat, totales, nav, packs):
     L = []
     A = L.append
     A("<!DOCTYPE html>")
-    A('<html lang="es" data-nz-theme="light">')
+    A('<html lang="es" data-nz-marca="monocromo">')
     A("<head>")
     A('<meta charset="UTF-8">')
     A('<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">')

@@ -7,6 +7,12 @@
 <meta name="description" content="{{OBJETOS}} clases CSS verificadas en {{FAMILIAS}} familias, {{PACKS}} hojas sin build y {{COMPONENTES}} componentes generativos. Design system monocromo light: blanco para el dato, negro para el lienzo, color solo donde mide.">
 <link rel="stylesheet" href="tokens.css">
 <link rel="stylesheet" href="marcas/monocromo.css">
+<link rel="stylesheet" href="marcas/aurora.css" data-marca-css="aurora">
+<link rel="stylesheet" href="marcas/indigo.css" data-marca-css="indigo">
+<link rel="stylesheet" href="marcas/esmeralda.css" data-marca-css="esmeralda">
+<link rel="stylesheet" href="marcas/violeta.css" data-marca-css="violeta">
+<link rel="stylesheet" href="marcas/carmesi.css" data-marca-css="carmesi">
+<link rel="stylesheet" href="marcas/ntizar.css" data-marca-css="ntizar">
 <link rel="stylesheet" href="packs/p1-layout.css">
 <link rel="stylesheet" href="packs/p2-navigation.css">
 <link rel="stylesheet" href="packs/p3-typography.css">
@@ -14,6 +20,20 @@
 <link rel="stylesheet" href="packs/p6-feedback.css">
 <link rel="stylesheet" href="packs/p8-data.css">
 <link rel="stylesheet" href="packs/p12-system.css">
+<link rel="stylesheet" href="packs/p13-charts.css">
+<style>
+/* Señal de la marca: barras/donut/sparkline leen los tokens (recolorean con la marca). */
+.nz-chart-tablebar__bar { background: var(--nz-mono-azul, var(--nz-brand)); }
+.nz-chart-tablebar__row:nth-of-type(2) .nz-chart-tablebar__bar { background: var(--nz-mono-naranja, var(--nz-accent)); }
+.nz-sparkline--brand .nz-sparkline__bar { background: var(--nz-mono-azul, var(--nz-brand)); }
+.punto-estado { display: inline-block; width: 8px; height: 8px; border-radius: 999px; margin-right: 6px; vertical-align: middle; background: var(--nz-signal-danger); }
+.punto-estado--danger { background: var(--nz-signal-danger); }
+.punto-estado--warning { background: var(--nz-signal-warning); }
+.punto-estado--success { background: var(--nz-signal-success); }
+/* Conmutador de marcas de la portada: el aria-pressed marca la activa. */
+[data-marca-btn][aria-pressed="true"] { border-color: var(--nz-brand); box-shadow: var(--nz-focus-ring); font-weight: var(--nz-peso-fuerte); }
+@media (min-width: 640px) { .nz-chart-tablebar__row { grid-template-columns: 14rem 1fr 3.5rem; } }
+</style>
 </head>
 <body class="nz">
 <a class="nz-skip-link" href="#contenido">Saltar al contenido</a>
@@ -89,7 +109,49 @@
       <span class="nz-chip">azul/naranja = medida</span>
       <span class="nz-chip">punto = estado</span>
     </div>
-    <div style="margin-top:var(--nz-space-4)"><a class="nz-btn nz-btn--outline nz-btn--sm" href="marcas/index.html">Ver las {{MARCAS}} marcas</a></div>
+    <div class="nz-cluster nz-cluster--compact" style="margin-top:var(--nz-space-4);align-items:center">
+      <span class="nz-lbl">Pruébala:</span>
+      <div class="nz-cluster nz-cluster--compact" id="conmutador-marcas">
+        <button class="nz-btn nz-btn--outline nz-btn--sm" data-marca-btn="monocromo" aria-pressed="true">Monocromo</button>
+        <button class="nz-btn nz-btn--outline nz-btn--sm" data-marca-btn="aurora" aria-pressed="false">Aurora</button>
+        <button class="nz-btn nz-btn--outline nz-btn--sm" data-marca-btn="indigo" aria-pressed="false">Índigo</button>
+        <button class="nz-btn nz-btn--outline nz-btn--sm" data-marca-btn="esmeralda" aria-pressed="false">Esmeralda</button>
+        <button class="nz-btn nz-btn--outline nz-btn--sm" data-marca-btn="violeta" aria-pressed="false">Violeta</button>
+        <button class="nz-btn nz-btn--outline nz-btn--sm" data-marca-btn="carmesi" aria-pressed="false">Carmesí</button>
+        <button class="nz-btn nz-btn--outline nz-btn--sm" data-marca-btn="ntizar" aria-pressed="false">Ntizar</button>
+      </div>
+      <a class="nz-btn nz-btn--outline nz-btn--sm" href="marcas/index.html">Todas las {{MARCAS}} marcas</a>
+    </div>
+    <div class="nz-alert nz-alert--info" role="status" id="aviso-marca" style="margin-top:var(--nz-space-3)" hidden>
+      <span class="nz-alert__icon" aria-hidden="true">i</span>
+      <div class="nz-alert__body"><span class="nz-alert__title">Esto no es el sistema: es un disfraz</span>
+      <span class="nz-alert__msg">La estética monocroma es la marca por defecto; las demás recolorean la misma estructura. Un botón de acento aquí se pinta del color de la marca activa — mira el botón GitHub del nav.</span></div>
+    </div>
+  </section>
+
+  <section style="margin-top:var(--nz-space-7)">
+    <span class="nz-lbl">La señal en acción</span>
+    <h2 class="nz-h2" style="margin-top:var(--nz-space-1)">Color donde mide, silencio donde no</h2>
+    <div class="nz-split" style="margin-top:var(--nz-space-4)">
+      <article class="nz-article nz-article--bordered" style="padding:var(--nz-space-4) var(--nz-space-5)">
+        <span class="nz-lbl">Riesgo por vector</span>
+        <div class="nz-chart-tablebar" style="margin-top:var(--nz-space-3)">
+          <div class="nz-chart-tablebar__row"><span class="nz-chart-tablebar__name">Barras de medida (azul)</span><span class="nz-chart-tablebar__track"><span class="nz-chart-tablebar__bar" style="width:68%"></span></span><span class="nz-chart-tablebar__num">68 %</span></div>
+          <div class="nz-chart-tablebar__row"><span class="nz-chart-tablebar__name">El dato que importa (naranja)</span><span class="nz-chart-tablebar__track"><span class="nz-chart-tablebar__bar" style="width:76%"></span></span><span class="nz-chart-tablebar__num">76 %</span></div>
+        </div>
+        <span class="nz-lbl" style="margin-top:var(--nz-space-4)">Actividad · 7 días</span>
+        <div class="nz-sparkline nz-sparkline--brand" style="margin-top:var(--nz-space-2)"><span class="nz-sparkline__bar" style="height:35%"></span><span class="nz-sparkline__bar" style="height:52%"></span><span class="nz-sparkline__bar" style="height:44%"></span><span class="nz-sparkline__bar" style="height:66%"></span><span class="nz-sparkline__bar" style="height:58%"></span><span class="nz-sparkline__bar" style="height:78%"></span><span class="nz-sparkline__bar" style="height:71%"></span></div>
+      </article>
+      <article class="nz-article nz-article--bordered" style="padding:var(--nz-space-4) var(--nz-space-5)">
+        <span class="nz-lbl">Estado en punto, nunca en chip gordo</span>
+        <div class="nz-stack nz-stack--sm" style="margin-top:var(--nz-space-3)">
+          <span class="nz-badge nz-badge--neutral"><span class="punto-estado punto-estado--danger" aria-hidden="true"></span>Crítico</span>
+          <span class="nz-badge nz-badge--neutral"><span class="punto-estado punto-estado--warning" aria-hidden="true"></span>Vulnerable</span>
+          <span class="nz-badge nz-badge--neutral"><span class="punto-estado punto-estado--success" aria-hidden="true"></span>Seguro</span>
+        </div>
+        <p class="nz-text--small" style="color:var(--nz-text-soft);margin:var(--nz-space-3) 0 0">Con la marca monocromo, estos puntos y las barras leen los tokens de señal; al cambiar de marca arriba, todo recolorea con el mismo gesto.</p>
+      </article>
+    </div>
   </section>
 
   <section style="margin-top:var(--nz-space-7)">
@@ -120,5 +182,28 @@
 
   <p style="margin-top:var(--nz-space-7);color:var(--nz-text-faint);font-size:var(--nz-text-sm)">Hecho con ❤️ por David Antizar</p>
 </div>
+<script>
+(function () {
+  var raiz = document.documentElement;
+  var botones = document.querySelectorAll('[data-marca-btn]');
+  var aviso = document.getElementById('aviso-marca');
+  botones.forEach(function (b) {
+    b.addEventListener('click', function () {
+      var n = b.getAttribute('data-marca-btn');
+      raiz.setAttribute('data-nz-marca', n);
+      botones.forEach(function (o) { o.setAttribute('aria-pressed', String(o === b)); });
+      if (aviso) aviso.hidden = (n === 'monocromo');
+      try { localStorage.setItem('nz-marca-portada', n); } catch (e) {}
+    });
+  });
+  try {
+    var g = localStorage.getItem('nz-marca-portada');
+    if (g && g !== 'monocromo') {
+      var btn = document.querySelector('[data-marca-btn="' + g + '"]');
+      if (btn) btn.click();
+    }
+  } catch (e) {}
+})();
+</script>
 </body>
 </html>
