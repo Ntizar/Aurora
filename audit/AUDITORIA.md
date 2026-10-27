@@ -6,14 +6,14 @@ Generada por `scripts/audit-catalog.py` a partir de los packs CSS y de `specs/*.
 
 | Comprobación | Valor | |
 |---|---|---|
-| Objetos declarados | 2202 |  |
+| Objetos declarados | 2201 |  |
 | Familias de objeto | 413 |  |
 | Demos en vivo | 661 |  |
 | Clases usadas en demos | 2201 |  |
 | Objetos fantasma (usados y no declarados) | 0 | 🟢 |
-| Clases declaradas sin demo | 1 | 🟡 |
-| Familias sin demo | 1 | 🟡 |
-| Duplicados entre packs | 1 | 🟡 |
+| Clases declaradas sin demo | 0 | 🟢 |
+| Familias sin demo | 0 | 🟢 |
+| Duplicados entre packs | 0 | 🟢 |
 | Tokens inexistentes en uso | 0 | 🟢 |
 | Gradientes fuera del cristal | 0 | 🟢 |
 | Glass fuera del cristal | 0 | 🟢 |
@@ -35,8 +35,8 @@ Familias sin ninguna variante (`--mod`): **167** de 413 — ahí está el margen
 | p15-apps.css | 377 | 75 | 31 | 0 | 0 | 0 | 0 |
 | p16-cristal.css | 144 | 8 | 2 | 0 | 0 | 0 | 0 |
 | p17-patrones.css | 666 | 224 | 46 | 0 | 0 | 0 | 0 |
-| p18-escenario.css | 338 | 40 | 13 | 0 | 0 | 0 | 0 |
-| p2-navigation.css | 193 | 78 | 10 | 0 | 0 | 0 | 0 |
+| p18-escenario.css | 328 | 39 | 12 | 0 | 0 | 0 | 0 |
+| p2-navigation.css | 209 | 78 | 10 | 0 | 0 | 0 | 0 |
 | p3-typography.css | 210 | 135 | 41 | 0 | 0 | 0 | 0 |
 | p4-actions.css | 178 | 78 | 7 | 0 | 0 | 0 | 0 |
 | p5-forms.css | 278 | 102 | 20 | 0 | 0 | 0 | 0 |
@@ -66,7 +66,7 @@ Familias sin ninguna variante (`--mod`): **167** de 413 — ahí está el margen
 | 15 | Apps y escritorio | p15-apps.css | 75 | 31 | 38 | 0 | 0 |
 | 16 | Cristal (capa de estilo) | p16-cristal.css | 8 | 2 | 5 | 0 | 0 |
 | 17 | Patrones compuestos | p17-patrones.css | 224 | 46 | 47 | 0 | 0 |
-| 18 | Escenario (charlas en beats) | p18-escenario.css | 40 | 13 | 20 | 1 | 1 |
+| 18 | Escenario (charlas en beats) | p18-escenario.css | 39 | 12 | 20 | 0 | 0 |
 
 ## 3. Objetos fantasma
 
@@ -74,7 +74,7 @@ Ninguno: todo lo que usan las demos existe en algún pack. ✅
 
 ## 4. Duplicados entre packs
 
-- `nz-navbar` → p2-navigation.css, p18-escenario.css
+Ninguno: cada objeto tiene un único dueño. ✅
 
 ## 5. Cumplimiento del manifiesto
 
@@ -87,7 +87,7 @@ Ninguno: todo lo que usan las demos existe en algún pack. ✅
 
 ## 6. Objetos declarados sin demo (por categoría)
 
-- **Escenario (charlas en beats)** (1): `nz-navbar`
+Ninguno. ✅
 
 ## 7. Familias sin variantes (margen de ampliación)
 
