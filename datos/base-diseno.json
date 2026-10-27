@@ -6,7 +6,7 @@
  "explorador": "base.html",
  "resumen": {
   "familias": 413,
-  "clases": 2202,
+  "clases": 2201,
   "tokens": 236,
   "categorias": 18,
   "recetas": 6,
@@ -421,8 +421,8 @@
    "descripcion": "El estilo de una charla en beats dentro del sistema: un lienzo 16:9, la escala de texto del escenario (titular, editorial, numeral, etiqueta y dato), nodos con enlaces para los diagramas que se construyen clic a clic, y el marco del QR de cierre. En móvil el escenario se apila en columna legible; el lienzo de proyector entra desde 960 px.",
    "pack": "p18-escenario.css",
    "pagina": "paginas/18-escenario.html",
-   "objetos": 40,
-   "familias": 13,
+   "objetos": 39,
+   "familias": 12,
    "demos": 20,
    "cuandoUsar": "Cuando presentes una charla o historia en beats: titular, editorial, numeral, dato, nodo y QR.",
    "tags": [
@@ -13380,8 +13380,7 @@
     "nz-navbar__brand",
     "nz-navbar__brand--lg",
     "nz-navbar__link",
-    "nz-navbar__links",
-    "nz-navbar"
+    "nz-navbar__links"
    ],
    "modificadores": [
     "bordered",
@@ -13396,8 +13395,31 @@
     "link",
     "links"
    ],
-   "tokens": [],
-   "nTokens": 0,
+   "tokens": [
+    "--nz-accent",
+    "--nz-bg-inset",
+    "--nz-border-soft",
+    "--nz-border-strong",
+    "--nz-border-w",
+    "--nz-border-w-strong",
+    "--nz-brand",
+    "--nz-brand-strong",
+    "--nz-gutter",
+    "--nz-peso-fuerte",
+    "--nz-peso-titulo",
+    "--nz-radius-full",
+    "--nz-space-1",
+    "--nz-space-2",
+    "--nz-space-3",
+    "--nz-surface",
+    "--nz-text",
+    "--nz-text-invert",
+    "--nz-text-lg",
+    "--nz-text-sm",
+    "--nz-text-soft",
+    "--nz-tracking-tight"
+   ],
+   "nTokens": 22,
    "markup": "<div class=\"nz-navbar nz-navbar--compact\"><span class=\"nz-navbar__brand\"><i></i>Compacta</span><span class=\"nz-navbar__links\"><a href=\"#contenido\" class=\"nz-navbar__link\">Docs</a></span></div>",
    "noUsar": [
     "No para navegación interna de una vista: es la barra global de la página."
