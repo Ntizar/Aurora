@@ -9,10 +9,10 @@
 
 /* ---- Ventana de aplicación (marco + barra de título con controles) ---- */
 .nz-window { position: relative; display: flex; flex-direction: column; overflow: hidden; border-radius: var(--nz-radius-lg); border: var(--nz-border-w) solid var(--nz-border); background: var(--nz-surface); box-shadow: var(--nz-shadow-lg); transition: box-shadow var(--nz-dur-base) var(--nz-ease-out), border-color var(--nz-dur-base) var(--nz-ease-out); }
-.nz-window__titlebar { display: flex; align-items: center; gap: var(--nz-space-2); min-height: 44px; padding: 0 var(--nz-space-2); background: var(--nz-bg-soft); border-bottom: var(--nz-border-w) solid var(--nz-border-soft); }
+.nz-window__titlebar { display: flex; align-items: center; gap: var(--nz-space-2); min-height: var(--nz-tactil); padding: 0 var(--nz-space-2); background: var(--nz-bg-soft); border-bottom: var(--nz-border-w) solid var(--nz-border-soft); }
 .nz-window__titlebar b { flex: 1; min-width: 0; text-align: center; font-size: var(--nz-text-sm); font-weight: var(--nz-peso-fuerte); color: var(--nz-text); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .nz-window__titlebar i { width: 11px; height: 11px; border-radius: var(--nz-radius-full); background: var(--nz-border-strong); }
-.nz-window__titlebar button { display: inline-grid; place-items: center; min-width: 44px; min-height: 44px; border: 0; border-radius: var(--nz-radius-sm); background: transparent; color: var(--nz-text-mute); font-family: inherit; font-size: var(--nz-text-sm); cursor: pointer; }
+.nz-window__titlebar button { display: inline-grid; place-items: center; min-width: var(--nz-tactil); min-height: var(--nz-tactil); border: 0; border-radius: var(--nz-radius-sm); background: transparent; color: var(--nz-text-mute); font-family: inherit; font-size: var(--nz-text-sm); cursor: pointer; }
 .nz-window__titlebar button:hover { background: var(--nz-bg-inset); color: var(--nz-text); }
 .nz-window__titlebar button.is-close:hover { background: var(--nz-danger-soft); color: var(--nz-danger); }
 .nz-window__body { flex: 1; min-height: 0; padding: var(--nz-space-4); background: var(--nz-surface); color: var(--nz-text-soft); font-size: var(--nz-text-sm); }
@@ -23,7 +23,7 @@
 
 /* ---- Barra de actividad (iconos verticales) ---- */
 .nz-actbar { display: flex; flex-direction: row; justify-content: space-around; gap: var(--nz-space-1); padding: var(--nz-space-2); background: var(--nz-bg-inset); }
-.nz-actbar__item { position: relative; display: inline-grid; place-items: center; min-width: 44px; min-height: 44px; border: 0; border-radius: var(--nz-radius-sm); background: transparent; color: var(--nz-text-mute); font-family: inherit; font-size: var(--nz-text-md); cursor: pointer; }
+.nz-actbar__item { position: relative; display: inline-grid; place-items: center; min-width: var(--nz-tactil); min-height: var(--nz-tactil); border: 0; border-radius: var(--nz-radius-sm); background: transparent; color: var(--nz-text-mute); font-family: inherit; font-size: var(--nz-text-md); cursor: pointer; }
 .nz-actbar__item:hover { background: var(--nz-surface); color: var(--nz-text); }
 .nz-actbar__item[aria-current="page"], .nz-actbar__item.is-active { background: var(--nz-surface); color: var(--nz-brand); box-shadow: var(--nz-shadow-xs); }
 .nz-actbar__item span { position: absolute; top: 4px; right: 4px; min-width: 16px; padding: 0 3px; border-radius: var(--nz-radius-full); background: var(--nz-accent); color: var(--nz-accent-ink); font-size: var(--nz-text-2xs); font-weight: var(--nz-peso-titulo); line-height: 16px; font-variant-numeric: tabular-nums; }
@@ -37,7 +37,7 @@
 .nz-appnav { display: flex; flex-direction: row; gap: var(--nz-space-1); overflow-x: auto; padding: var(--nz-space-2); background: var(--nz-surface-2); border-bottom: var(--nz-border-w) solid var(--nz-border-soft); scrollbar-width: none; }
 .nz-appnav::-webkit-scrollbar { display: none; }
 .nz-appnav h4 { display: none; }
-.nz-appnav__link { display: flex; align-items: center; gap: var(--nz-space-2); min-height: 44px; padding: 0 var(--nz-space-3); border-radius: var(--nz-radius-sm); color: var(--nz-text-soft); font-size: var(--nz-text-sm); font-weight: var(--nz-peso-fuerte); text-decoration: none; white-space: nowrap; transition: background var(--nz-dur-fast) var(--nz-ease-out), color var(--nz-dur-fast) var(--nz-ease-out); }
+.nz-appnav__link { display: flex; align-items: center; gap: var(--nz-space-2); min-height: var(--nz-tactil); padding: 0 var(--nz-space-3); border-radius: var(--nz-radius-sm); color: var(--nz-text-soft); font-size: var(--nz-text-sm); font-weight: var(--nz-peso-fuerte); text-decoration: none; white-space: nowrap; transition: background var(--nz-dur-fast) var(--nz-ease-out), color var(--nz-dur-fast) var(--nz-ease-out); }
 .nz-appnav__link:hover { background: var(--nz-bg-inset); color: var(--nz-text); }
 .nz-appnav__link[aria-current="page"] { background: var(--nz-brand-soft); color: var(--nz-brand-strong); }
 .nz-appnav__link i { width: 16px; height: 16px; border-radius: var(--nz-radius-xs); border: var(--nz-border-w) solid var(--nz-border-strong); background: var(--nz-bg-inset); }
@@ -73,7 +73,7 @@
 }
 
 /* ---- Barra de estado inferior de app ---- */
-.nz-appstatus { display: flex; flex-wrap: wrap; align-items: center; gap: var(--nz-space-3); min-height: 44px; padding: var(--nz-space-2) var(--nz-space-3); border-top: var(--nz-border-w) solid var(--nz-border-soft); background: var(--nz-bg-soft); color: var(--nz-text-mute); font-size: var(--nz-text-xs); }
+.nz-appstatus { display: flex; flex-wrap: wrap; align-items: center; gap: var(--nz-space-3); min-height: var(--nz-tactil); padding: var(--nz-space-2) var(--nz-space-3); border-top: var(--nz-border-w) solid var(--nz-border-soft); background: var(--nz-bg-soft); color: var(--nz-text-mute); font-size: var(--nz-text-xs); }
 .nz-appstatus__item { display: inline-flex; align-items: center; gap: var(--nz-space-1); }
 .nz-appstatus__item:last-child { margin-left: auto; }
 .nz-appstatus__item i { width: 8px; height: 8px; border-radius: var(--nz-radius-full); background: var(--nz-success); }
@@ -84,10 +84,10 @@
 /* ---- Lista de pestañas de documento ---- */
 .nz-docs { display: flex; gap: var(--nz-space-1); overflow-x: auto; padding: var(--nz-space-1); border-radius: var(--nz-radius-md) var(--nz-radius-md) 0 0; background: var(--nz-bg-inset); scrollbar-width: none; }
 .nz-docs::-webkit-scrollbar { display: none; }
-.nz-docs__tab { display: inline-flex; align-items: center; gap: var(--nz-space-2); min-height: 44px; padding: 0 var(--nz-space-2) 0 var(--nz-space-3); border: var(--nz-border-w) solid transparent; border-radius: var(--nz-radius-sm); background: transparent; color: var(--nz-text-mute); font-family: inherit; font-size: var(--nz-text-xs); font-weight: var(--nz-peso-fuerte); white-space: nowrap; cursor: pointer; }
+.nz-docs__tab { display: inline-flex; align-items: center; gap: var(--nz-space-2); min-height: var(--nz-tactil); padding: 0 var(--nz-space-2) 0 var(--nz-space-3); border: var(--nz-border-w) solid transparent; border-radius: var(--nz-radius-sm); background: transparent; color: var(--nz-text-mute); font-family: inherit; font-size: var(--nz-text-xs); font-weight: var(--nz-peso-fuerte); white-space: nowrap; cursor: pointer; }
 .nz-docs__tab:hover { background: var(--nz-surface-2); color: var(--nz-text); }
 .nz-docs__tab[aria-selected="true"] { border-color: var(--nz-border); background: var(--nz-surface); color: var(--nz-text); box-shadow: var(--nz-shadow-xs); }
-.nz-docs__tab button { display: inline-grid; place-items: center; min-width: 44px; min-height: 44px; border: 0; border-radius: var(--nz-radius-full); background: transparent; color: var(--nz-text-faint); font-family: inherit; font-size: var(--nz-text-sm); cursor: pointer; }
+.nz-docs__tab button { display: inline-grid; place-items: center; min-width: var(--nz-tactil); min-height: var(--nz-tactil); border: 0; border-radius: var(--nz-radius-full); background: transparent; color: var(--nz-text-faint); font-family: inherit; font-size: var(--nz-text-sm); cursor: pointer; }
 .nz-docs__tab button:hover { background: var(--nz-bg-inset); color: var(--nz-text); }
 @media (min-width: 640px) {
   .nz-docs__tab button { min-width: 28px; min-height: 28px; }
@@ -97,7 +97,7 @@
 
 /* ---- Migas de ruta de archivo ---- */
 .nz-pathbar { display: flex; flex-wrap: wrap; align-items: center; gap: var(--nz-space-1); padding: var(--nz-space-2) var(--nz-space-3); border-radius: var(--nz-radius-md); background: var(--nz-surface-2); color: var(--nz-text-mute); font-family: var(--nz-font-mono); font-size: var(--nz-text-2xs); }
-.nz-pathbar__seg { display: inline-flex; align-items: center; min-height: 44px; padding: 0 var(--nz-space-1); border-radius: var(--nz-radius-xs); color: var(--nz-text-soft); text-decoration: none; }
+.nz-pathbar__seg { display: inline-flex; align-items: center; min-height: var(--nz-tactil); padding: 0 var(--nz-space-1); border-radius: var(--nz-radius-xs); color: var(--nz-text-soft); text-decoration: none; }
 .nz-pathbar__seg:hover { background: var(--nz-bg-inset); color: var(--nz-text); }
 .nz-pathbar__seg:not(:last-child)::after { content: "/"; margin-left: var(--nz-space-1); color: var(--nz-text-faint); }
 .nz-pathbar__seg[aria-current="page"] { color: var(--nz-text); font-weight: var(--nz-peso-fuerte); }
@@ -108,7 +108,7 @@
 /* ---- Árbol de archivos y carpetas ---- */
 .nz-tree { display: grid; gap: 1px; padding: var(--nz-space-2); border-radius: var(--nz-radius-md); background: var(--nz-surface-2); font-size: var(--nz-text-sm); }
 .nz-tree ul { display: grid; gap: 1px; margin: 0; padding-left: var(--nz-space-4); list-style: none; }
-.nz-tree__item { display: flex; align-items: center; gap: var(--nz-space-2); min-height: 44px; padding: 0 var(--nz-space-2); border-radius: var(--nz-radius-sm); color: var(--nz-text-soft); cursor: pointer; }
+.nz-tree__item { display: flex; align-items: center; gap: var(--nz-space-2); min-height: var(--nz-tactil); padding: 0 var(--nz-space-2); border-radius: var(--nz-radius-sm); color: var(--nz-text-soft); cursor: pointer; }
 .nz-tree__item:hover { background: var(--nz-bg-inset); color: var(--nz-text); }
 .nz-tree__item i { width: 14px; text-align: center; color: var(--nz-text-faint); font-style: normal; }
 .nz-tree__item[aria-expanded="true"] { color: var(--nz-text); font-weight: var(--nz-peso-fuerte); }
@@ -146,15 +146,15 @@
 .nz-ribbon section:last-child { padding-right: 0; border-right: 0; }
 .nz-ribbon section b { font-size: var(--nz-text-xs); font-weight: var(--nz-peso-fuerte); letter-spacing: var(--nz-tracking-caps); text-transform: uppercase; color: var(--nz-text-faint); }
 .nz-ribbon section div { display: flex; gap: var(--nz-space-1); }
-.nz-ribbon__btn { display: inline-grid; place-items: center; min-width: 44px; min-height: 44px; border: 0; border-radius: var(--nz-radius-sm); background: transparent; color: var(--nz-text-soft); font-family: inherit; font-size: var(--nz-text-md); cursor: pointer; }
+.nz-ribbon__btn { display: inline-grid; place-items: center; min-width: var(--nz-tactil); min-height: var(--nz-tactil); border: 0; border-radius: var(--nz-radius-sm); background: transparent; color: var(--nz-text-soft); font-family: inherit; font-size: var(--nz-text-md); cursor: pointer; }
 .nz-ribbon__btn:hover { background: var(--nz-surface); color: var(--nz-text); }
 .nz-ribbon__btn[aria-pressed="true"], .nz-ribbon__btn.is-active { background: var(--nz-brand-soft); color: var(--nz-brand-strong); }
 
 /* ---- Paleta de comandos de escritorio (spotlight) ---- */
 .nz-spotlight { display: grid; gap: var(--nz-space-1); width: 100%; padding: var(--nz-space-2); border-radius: var(--nz-radius-lg); border: var(--nz-border-w) solid var(--nz-border); background: var(--nz-surface); box-shadow: var(--nz-shadow-xl); }
-.nz-spotlight__input { min-height: 44px; padding: 0 var(--nz-space-3); border: 0; border-bottom: var(--nz-border-w) solid var(--nz-border-soft); border-radius: 0; background: transparent; color: var(--nz-text); font-family: inherit; font-size: var(--nz-text-md); }
+.nz-spotlight__input { min-height: var(--nz-tactil); padding: 0 var(--nz-space-3); border: 0; border-bottom: var(--nz-border-w) solid var(--nz-border-soft); border-radius: 0; background: transparent; color: var(--nz-text); font-family: inherit; font-size: var(--nz-text-md); }
 .nz-spotlight__input::placeholder { color: var(--nz-text-faint); }
-.nz-spotlight__item { display: flex; align-items: center; gap: var(--nz-space-3); min-height: 44px; padding: 0 var(--nz-space-3); border-radius: var(--nz-radius-sm); color: var(--nz-text-soft); font-size: var(--nz-text-sm); text-decoration: none; }
+.nz-spotlight__item { display: flex; align-items: center; gap: var(--nz-space-3); min-height: var(--nz-tactil); padding: 0 var(--nz-space-3); border-radius: var(--nz-radius-sm); color: var(--nz-text-soft); font-size: var(--nz-text-sm); text-decoration: none; }
 .nz-spotlight__item:hover { background: var(--nz-bg-soft); color: var(--nz-text); }
 .nz-spotlight__item.is-active { background: var(--nz-brand); color: var(--nz-text-invert); }
 .nz-spotlight__item kbd { margin-left: auto; padding: 0 var(--nz-space-2); border-radius: var(--nz-radius-xs); border: var(--nz-border-w) solid var(--nz-border); background: var(--nz-bg-soft); color: var(--nz-text-mute); font-family: var(--nz-font-mono); font-size: var(--nz-text-2xs); line-height: 20px; }
@@ -182,7 +182,7 @@
 /* ---- Calendario mensual (rejilla de 7 columnas) ---- */
 .nz-month { display: grid; grid-template-columns: repeat(7, minmax(2.75rem, 1fr)); gap: 1px; padding: var(--nz-space-2); border-radius: var(--nz-radius-lg); border: var(--nz-border-w) solid var(--nz-border-soft); background: var(--nz-border-soft); }
 .nz-month b { display: flex; align-items: center; justify-content: center; padding: var(--nz-space-2) 0; background: var(--nz-bg-soft); color: var(--nz-text-faint); font-size: var(--nz-text-2xs); font-weight: var(--nz-peso-fuerte); letter-spacing: var(--nz-tracking-caps); text-transform: uppercase; }
-.nz-month span { display: grid; align-content: start; gap: 2px; min-height: 44px; padding: var(--nz-space-1); background: var(--nz-surface); color: var(--nz-text-soft); font-size: var(--nz-text-2xs); font-variant-numeric: tabular-nums; }
+.nz-month span { display: grid; align-content: start; gap: 2px; min-height: var(--nz-tactil); padding: var(--nz-space-1); background: var(--nz-surface); color: var(--nz-text-soft); font-size: var(--nz-text-2xs); font-variant-numeric: tabular-nums; }
 .nz-month span em { padding: 0 var(--nz-space-1); border-radius: var(--nz-radius-xs); background: var(--nz-brand-soft); color: var(--nz-brand-strong); font-style: normal; font-weight: var(--nz-peso-fuerte); overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
 .nz-month span em.is-accent { background: var(--nz-accent-soft); color: var(--nz-accent-strong); }
 .nz-month span.is-outside { background: var(--nz-bg-soft); color: var(--nz-text-faint); }
@@ -192,7 +192,7 @@
 
 /* ---- Agenda / vista de día (franjas horarias) ---- */
 .nz-agenda { display: grid; gap: 1px; padding: var(--nz-space-2); border-radius: var(--nz-radius-md); background: var(--nz-border-soft); }
-.nz-agenda__slot { display: grid; grid-template-columns: 3.5rem minmax(0, 1fr); align-items: center; gap: var(--nz-space-3); min-height: 44px; padding: var(--nz-space-1) var(--nz-space-2); background: var(--nz-surface); font-size: var(--nz-text-xs); }
+.nz-agenda__slot { display: grid; grid-template-columns: 3.5rem minmax(0, 1fr); align-items: center; gap: var(--nz-space-3); min-height: var(--nz-tactil); padding: var(--nz-space-1) var(--nz-space-2); background: var(--nz-surface); font-size: var(--nz-text-xs); }
 .nz-agenda__slot b { color: var(--nz-text-faint); font-weight: var(--nz-peso-fuerte); font-variant-numeric: tabular-nums; }
 .nz-agenda__slot span { display: flex; align-items: center; gap: var(--nz-space-2); padding: var(--nz-space-1) var(--nz-space-2); border-left: 3px solid var(--nz-brand); border-radius: var(--nz-radius-xs); background: var(--nz-brand-soft); color: var(--nz-brand-strong); font-weight: var(--nz-peso-fuerte); }
 .nz-agenda__slot span.is-accent { border-left-color: var(--nz-accent); background: var(--nz-accent-soft); color: var(--nz-accent-strong); }
@@ -205,8 +205,8 @@
 .nz-prefs__row { display: grid; gap: var(--nz-space-1); padding: var(--nz-space-3) 0; border-top: var(--nz-border-w) solid var(--nz-border-soft); }
 .nz-prefs__row b { color: var(--nz-text); font-size: var(--nz-text-sm); font-weight: var(--nz-peso-fuerte); }
 .nz-prefs__row p { color: var(--nz-text-mute); font-size: var(--nz-text-xs); }
-.nz-prefs__control { display: flex; flex-wrap: wrap; align-items: center; gap: var(--nz-space-2); min-height: 44px; }
-.nz-prefs__control select { min-height: 44px; padding: 0 var(--nz-space-3); border: var(--nz-border-w) solid var(--nz-border); border-radius: var(--nz-radius-sm); background: var(--nz-surface-2); color: var(--nz-text); font-family: inherit; font-size: var(--nz-text-sm); }
+.nz-prefs__control { display: flex; flex-wrap: wrap; align-items: center; gap: var(--nz-space-2); min-height: var(--nz-tactil); }
+.nz-prefs__control select { min-height: var(--nz-tactil); padding: 0 var(--nz-space-3); border: var(--nz-border-w) solid var(--nz-border); border-radius: var(--nz-radius-sm); background: var(--nz-surface-2); color: var(--nz-text); font-family: inherit; font-size: var(--nz-text-sm); }
 .nz-prefs__control input[type="checkbox"] { width: 20px; height: 20px; accent-color: var(--nz-brand); }
 @media (min-width: 640px) {
   .nz-prefs__row { grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: var(--nz-space-4); }
@@ -220,7 +220,7 @@
 .nz-propsheet__row b { margin-left: auto; color: var(--nz-text); font-weight: var(--nz-peso-fuerte); font-variant-numeric: tabular-nums; }
 
 /* ---- Perfil de usuario de app ---- */
-.nz-userbox { display: flex; align-items: center; gap: var(--nz-space-3); min-height: 44px; padding: var(--nz-space-2) var(--nz-space-3); border-radius: var(--nz-radius-md); background: var(--nz-surface-2); }
+.nz-userbox { display: flex; align-items: center; gap: var(--nz-space-3); min-height: var(--nz-tactil); padding: var(--nz-space-2) var(--nz-space-3); border-radius: var(--nz-radius-md); background: var(--nz-surface-2); }
 .nz-userbox__avatar { display: grid; place-items: center; width: 36px; height: 36px; border-radius: var(--nz-radius-full); background: var(--nz-brand); color: var(--nz-text-invert); font-size: var(--nz-text-xs); font-weight: var(--nz-peso-fuerte); letter-spacing: var(--nz-tracking-caps); }
 .nz-userbox div { display: grid; gap: 1px; }
 .nz-userbox b { color: var(--nz-text); font-size: var(--nz-text-sm); font-weight: var(--nz-peso-fuerte); }
@@ -233,7 +233,7 @@
 .nz-sysnotif__title { color: var(--nz-text); font-size: var(--nz-text-sm); font-weight: var(--nz-peso-fuerte); }
 .nz-sysnotif p { color: var(--nz-text-mute); font-size: var(--nz-text-xs); }
 .nz-sysnotif__actions { grid-column: 2; display: flex; gap: var(--nz-space-2); padding-top: var(--nz-space-1); }
-.nz-sysnotif__actions button { min-height: 44px; padding: 0 var(--nz-space-3); border: var(--nz-border-w) solid var(--nz-border); border-radius: var(--nz-radius-sm); background: var(--nz-surface-2); color: var(--nz-text-soft); font-family: inherit; font-size: var(--nz-text-xs); font-weight: var(--nz-peso-fuerte); cursor: pointer; }
+.nz-sysnotif__actions button { min-height: var(--nz-tactil); padding: 0 var(--nz-space-3); border: var(--nz-border-w) solid var(--nz-border); border-radius: var(--nz-radius-sm); background: var(--nz-surface-2); color: var(--nz-text-soft); font-family: inherit; font-size: var(--nz-text-xs); font-weight: var(--nz-peso-fuerte); cursor: pointer; }
 .nz-sysnotif__actions button:first-child { border-color: transparent; background: var(--nz-brand); color: var(--nz-text-invert); }
 .nz-sysnotif.is-accent { border-left-color: var(--nz-accent); }
 .nz-sysnotif.is-accent .nz-sysnotif__icon { background: var(--nz-accent-soft); color: var(--nz-accent-strong); }
@@ -243,21 +243,21 @@
 /* ---- Bandeja / menú de sistema ---- */
 .nz-tray { position: relative; display: inline-flex; }
 .nz-tray > input { position: absolute; opacity: 0; pointer-events: none; }
-.nz-tray > label { display: inline-grid; place-items: center; min-width: 44px; min-height: 44px; padding: 0 var(--nz-space-3); border: 0; border-radius: var(--nz-radius-sm); background: transparent; color: var(--nz-text-soft); font-size: var(--nz-text-md); cursor: pointer; }
+.nz-tray > label { display: inline-grid; place-items: center; min-width: var(--nz-tactil); min-height: var(--nz-tactil); padding: 0 var(--nz-space-3); border: 0; border-radius: var(--nz-radius-sm); background: transparent; color: var(--nz-text-soft); font-size: var(--nz-text-md); cursor: pointer; }
 .nz-tray > label:hover { background: var(--nz-surface-2); color: var(--nz-text); }
 .nz-tray > input:checked ~ label { background: var(--nz-bg-inset); color: var(--nz-text); }
 .nz-tray__menu { position: absolute; right: 0; top: calc(100% + var(--nz-space-2)); z-index: var(--nz-z-popover); min-width: 15rem; padding: var(--nz-space-2); border: var(--nz-border-w) solid var(--nz-border-soft); border-radius: var(--nz-radius-lg); background: var(--nz-surface); box-shadow: var(--nz-shadow-xl); opacity: 0; visibility: hidden; transform: translateY(-6px); transition: opacity var(--nz-dur-base) var(--nz-ease-out), transform var(--nz-dur-base) var(--nz-ease-out), visibility var(--nz-dur-base); }
 .nz-tray > input:checked ~ .nz-tray__menu { opacity: 1; visibility: visible; transform: none; }
 .nz-tray__menu p { padding: var(--nz-space-2) var(--nz-space-3) var(--nz-space-1); color: var(--nz-text-faint); font-size: var(--nz-text-xs); font-weight: var(--nz-peso-fuerte); letter-spacing: var(--nz-tracking-caps); text-transform: uppercase; }
 .nz-tray__menu hr { margin: var(--nz-space-1) var(--nz-space-2); border: 0; border-top: var(--nz-border-w) solid var(--nz-border-soft); }
-.nz-tray__item { display: flex; align-items: center; gap: var(--nz-space-2); width: 100%; min-height: 44px; padding: 0 var(--nz-space-3); border: 0; border-radius: var(--nz-radius-sm); background: transparent; color: var(--nz-text-soft); font-family: inherit; font-size: var(--nz-text-sm); text-align: left; text-decoration: none; cursor: pointer; }
+.nz-tray__item { display: flex; align-items: center; gap: var(--nz-space-2); width: 100%; min-height: var(--nz-tactil); padding: 0 var(--nz-space-3); border: 0; border-radius: var(--nz-radius-sm); background: transparent; color: var(--nz-text-soft); font-family: inherit; font-size: var(--nz-text-sm); text-align: left; text-decoration: none; cursor: pointer; }
 .nz-tray__item:hover { background: var(--nz-bg-soft); color: var(--nz-text); }
 .nz-tray__item span { margin-left: auto; color: var(--nz-text-faint); font-size: var(--nz-text-xs); }
 
 /* ---- Diálogo de confirmación de sistema ---- */
 .nz-sysdialog { position: relative; display: grid; justify-items: start; min-height: 15rem; }
 .nz-sysdialog > input { position: absolute; opacity: 0; pointer-events: none; }
-.nz-sysdialog > label { align-self: start; display: inline-flex; align-items: center; gap: var(--nz-space-2); min-height: 44px; padding: 0 var(--nz-space-4); border: var(--nz-border-w) solid var(--nz-border); border-radius: var(--nz-radius-sm); background: var(--nz-surface-2); color: var(--nz-text); font-size: var(--nz-text-sm); font-weight: var(--nz-peso-fuerte); cursor: pointer; }
+.nz-sysdialog > label { align-self: start; display: inline-flex; align-items: center; gap: var(--nz-space-2); min-height: var(--nz-tactil); padding: 0 var(--nz-space-4); border: var(--nz-border-w) solid var(--nz-border); border-radius: var(--nz-radius-sm); background: var(--nz-surface-2); color: var(--nz-text); font-size: var(--nz-text-sm); font-weight: var(--nz-peso-fuerte); cursor: pointer; }
 .nz-sysdialog > label:hover { background: var(--nz-bg-inset); }
 .nz-sysdialog__scrim { position: absolute; inset: 0; z-index: var(--nz-z-modal); display: grid; place-items: center; padding: var(--nz-gutter); border-radius: inherit; background: var(--nz-overlay); opacity: 0; visibility: hidden; transition: opacity var(--nz-dur-base) var(--nz-ease-out), visibility var(--nz-dur-base); }
 .nz-sysdialog > input:checked ~ .nz-sysdialog__scrim { opacity: 1; visibility: visible; }
@@ -266,7 +266,7 @@
 .nz-sysdialog__panel h4 { color: var(--nz-text); font-size: var(--nz-text-lg); font-weight: var(--nz-peso-titulo); letter-spacing: var(--nz-tracking-tight); }
 .nz-sysdialog__panel p { color: var(--nz-text-soft); font-size: var(--nz-text-sm); }
 .nz-sysdialog__panel footer { display: flex; flex-direction: column; gap: var(--nz-space-2); padding-top: var(--nz-space-2); }
-.nz-sysdialog__panel button, .nz-sysdialog__panel label { display: inline-grid; place-items: center; min-height: 44px; padding: 0 var(--nz-space-4); border: var(--nz-border-w) solid var(--nz-border); border-radius: var(--nz-radius-sm); background: var(--nz-surface-2); color: var(--nz-text-soft); font-family: inherit; font-size: var(--nz-text-sm); font-weight: var(--nz-peso-fuerte); cursor: pointer; }
+.nz-sysdialog__panel button, .nz-sysdialog__panel label { display: inline-grid; place-items: center; min-height: var(--nz-tactil); padding: 0 var(--nz-space-4); border: var(--nz-border-w) solid var(--nz-border); border-radius: var(--nz-radius-sm); background: var(--nz-surface-2); color: var(--nz-text-soft); font-family: inherit; font-size: var(--nz-text-sm); font-weight: var(--nz-peso-fuerte); cursor: pointer; }
 .nz-sysdialog__panel button.is-primary, .nz-sysdialog__panel label.is-primary { border-color: transparent; background: var(--nz-brand); color: var(--nz-text-invert); }
 .nz-sysdialog__panel button.is-danger, .nz-sysdialog__panel label.is-danger { border-color: transparent; background: var(--nz-danger); color: var(--nz-text-invert); }
 @media (min-width: 640px) {
@@ -309,9 +309,9 @@
 
 /* ---- Lanzador en rejilla (grid de apps) ---- */
 .nz-launcher { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--nz-space-2); padding: var(--nz-space-4); border-radius: var(--nz-radius-xl); background: var(--nz-bg-soft); }
-.nz-launcher__app { display: grid; justify-items: center; gap: var(--nz-space-2); min-height: 44px; padding: var(--nz-space-2) var(--nz-space-1); border-radius: var(--nz-radius-md); color: var(--nz-text-soft); font-size: var(--nz-text-xs); font-weight: var(--nz-peso-fuerte); text-align: center; text-decoration: none; }
+.nz-launcher__app { display: grid; justify-items: center; gap: var(--nz-space-2); min-height: var(--nz-tactil); padding: var(--nz-space-2) var(--nz-space-1); border-radius: var(--nz-radius-md); color: var(--nz-text-soft); font-size: var(--nz-text-xs); font-weight: var(--nz-peso-fuerte); text-align: center; text-decoration: none; }
 .nz-launcher__app:hover { background: var(--nz-surface); color: var(--nz-text); box-shadow: var(--nz-shadow-xs); }
-.nz-launcher__app i { display: grid; place-items: center; width: 44px; height: 44px; border-radius: var(--nz-radius-lg); background: var(--nz-brand); color: var(--nz-text-invert); box-shadow: var(--nz-shadow-brand); font-size: var(--nz-text-md); font-style: normal; }
+.nz-launcher__app i { display: grid; place-items: center; width: var(--nz-tactil); height: var(--nz-tactil); border-radius: var(--nz-radius-lg); background: var(--nz-brand); color: var(--nz-text-invert); box-shadow: var(--nz-shadow-brand); font-size: var(--nz-text-md); font-style: normal; }
 .nz-launcher__app.is-accent i { background: var(--nz-accent); box-shadow: var(--nz-shadow-accent); }
 @media (min-width: 640px) {
   .nz-launcher { grid-template-columns: repeat(4, minmax(0, 1fr)); }
@@ -323,7 +323,7 @@
 /* ---- Dock inferior ---- */
 .nz-dock { display: flex; align-items: center; gap: var(--nz-space-2); overflow-x: auto; padding: var(--nz-space-2); border: var(--nz-border-w) solid var(--nz-border-soft); border-radius: var(--nz-radius-xl); background: var(--nz-surface); box-shadow: var(--nz-shadow-lg); scrollbar-width: none; }
 .nz-dock::-webkit-scrollbar { display: none; }
-.nz-dock__item { position: relative; display: grid; place-items: center; min-width: 44px; min-height: 44px; border-radius: var(--nz-radius-md); background: var(--nz-bg-inset); color: var(--nz-text-soft); font-size: var(--nz-text-md); text-decoration: none; transition: transform var(--nz-dur-base) var(--nz-ease-out), background var(--nz-dur-fast) var(--nz-ease-out), color var(--nz-dur-fast) var(--nz-ease-out); }
+.nz-dock__item { position: relative; display: grid; place-items: center; min-width: var(--nz-tactil); min-height: var(--nz-tactil); border-radius: var(--nz-radius-md); background: var(--nz-bg-inset); color: var(--nz-text-soft); font-size: var(--nz-text-md); text-decoration: none; transition: transform var(--nz-dur-base) var(--nz-ease-out), background var(--nz-dur-fast) var(--nz-ease-out), color var(--nz-dur-fast) var(--nz-ease-out); }
 .nz-dock__item:hover { transform: translateY(-4px); background: var(--nz-brand-soft); color: var(--nz-brand-strong); }
 .nz-dock__item[aria-current="page"], .nz-dock__item.is-active { background: var(--nz-brand); color: var(--nz-text-invert); box-shadow: var(--nz-shadow-brand); }
 .nz-dock__item[aria-current="page"]::after, .nz-dock__item.is-active::after { content: ""; position: absolute; bottom: -6px; width: 4px; height: 4px; border-radius: var(--nz-radius-full); background: var(--nz-brand); }
@@ -336,10 +336,10 @@
 .nz-appempty i { display: grid; place-items: center; width: 56px; height: 56px; border-radius: var(--nz-radius-lg); background: var(--nz-surface-2); color: var(--nz-text-faint); font-size: var(--nz-text-xl); font-style: normal; }
 .nz-appempty b { color: var(--nz-text); font-size: var(--nz-text-md); font-weight: var(--nz-peso-fuerte); }
 .nz-appempty p { max-width: 32rem; color: var(--nz-text-mute); font-size: var(--nz-text-sm); }
-.nz-appempty button { min-height: 44px; padding: 0 var(--nz-space-4); border: 0; border-radius: var(--nz-radius-sm); background: var(--nz-brand); color: var(--nz-text-invert); font-family: inherit; font-size: var(--nz-text-sm); font-weight: var(--nz-peso-fuerte); cursor: pointer; }
+.nz-appempty button { min-height: var(--nz-tactil); padding: 0 var(--nz-space-4); border: 0; border-radius: var(--nz-radius-sm); background: var(--nz-brand); color: var(--nz-text-invert); font-family: inherit; font-size: var(--nz-text-sm); font-weight: var(--nz-peso-fuerte); cursor: pointer; }
 
 /* ---- Pie de ventana con contadores ---- */
-.nz-winfoot { display: flex; flex-wrap: wrap; align-items: center; gap: var(--nz-space-2); min-height: 44px; padding: 0 var(--nz-space-3); border-top: var(--nz-border-w) solid var(--nz-border-soft); background: var(--nz-bg-soft); color: var(--nz-text-mute); font-size: var(--nz-text-2xs); font-variant-numeric: tabular-nums; }
+.nz-winfoot { display: flex; flex-wrap: wrap; align-items: center; gap: var(--nz-space-2); min-height: var(--nz-tactil); padding: 0 var(--nz-space-3); border-top: var(--nz-border-w) solid var(--nz-border-soft); background: var(--nz-bg-soft); color: var(--nz-text-mute); font-size: var(--nz-text-2xs); font-variant-numeric: tabular-nums; }
 .nz-winfoot__count { display: inline-flex; align-items: center; gap: var(--nz-space-1); min-height: 28px; padding: 0 var(--nz-space-2); border-radius: var(--nz-radius-sm); background: var(--nz-bg-inset); color: var(--nz-text-soft); font-weight: var(--nz-peso-fuerte); }
 .nz-winfoot__count:last-child { margin-left: auto; background: var(--nz-brand-soft); color: var(--nz-brand-strong); }
 .nz-winfoot i { color: var(--nz-text-faint); font-style: normal; }

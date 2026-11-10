@@ -36,12 +36,12 @@ markup: <span class="nz-a11y-badge">Auditado</span>
 
 ## nz-actbar · packs/p15-apps.css
 clases: nz-actbar, nz-actbar__item
-tokens: --nz-accent, --nz-accent-ink, --nz-bg-inset, --nz-brand, --nz-peso-titulo, --nz-radius-full, --nz-radius-sm, --nz-shadow-xs, --nz-space-1, --nz-space-2, --nz-surface, --nz-text, --nz-text-2xs, --nz-text-md, --nz-text-mute
+tokens: --nz-accent, --nz-accent-ink, --nz-bg-inset, --nz-brand, --nz-peso-titulo, --nz-radius-full, --nz-radius-sm, --nz-shadow-xs, --nz-space-1, --nz-space-2, --nz-surface, --nz-tactil, --nz-text, --nz-text-2xs, --nz-text-md, --nz-text-mute
 markup: <div class="nz-actbar"><button class="nz-actbar__item" aria-current="page" aria-label="Explorador"><svg class="nz-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button><button class="nz-actbar__item" aria-label="Buscar"><svg class="nz-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><span>3</span></button><button class="nz-actbar__item" aria-label="Control de versiones"><svg class="nz-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="6" r="2"/><circle cx="6" cy="18" r="2"/><circle cx="18" cy="12" r="2"/><path d="M6 8v8M8 6h4a4 4 0 0 1 4 4v0"/></svg><span class="is-brand">12</span></button><button class="nz-actbar__item" aria-label="Extensiones"><svg class="nz-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg></button></div>
 
 ## nz-actividad · packs/p14-ai.css
 clases: nz-actividad, nz-actividad__cuerpo, nz-actividad__detalle, nz-actividad__fila, nz-actividad__hora, nz-actividad__texto
-tokens: --nz-accent, --nz-bg, --nz-bg-soft, --nz-border-soft, --nz-brand, --nz-danger, --nz-ease-soft, --nz-peso-medio, --nz-radius-full, --nz-radius-sm, --nz-space-2, --nz-space-3, --nz-space-5, --nz-success, --nz-text-2xs, --nz-text-mute, --nz-text-sm
+tokens: --nz-accent, --nz-bg, --nz-bg-soft, --nz-border-soft, --nz-brand, --nz-danger, --nz-ease-soft, --nz-peso-medio, --nz-radius-full, --nz-radius-sm, --nz-space-2, --nz-space-3, --nz-space-5, --nz-success, --nz-tactil, --nz-text-2xs, --nz-text-mute, --nz-text-sm
 markup: <div class="nz-actividad"><div class="nz-actividad__fila is-done"><span class="nz-actividad__hora">09:12</span><span class="nz-actividad__cuerpo"><span class="nz-actividad__texto">Revisión completada</span><span class="nz-actividad__detalle">2 salidas aprobadas por el revisor</span></span></div><div class="nz-actividad__fila is-active" aria-current="step"><span class="nz-actividad__hora">09:15</span><span class="nz-actividad__cuerpo"><span class="nz-actividad__texto">Generando informe</span><span class="nz-actividad__detalle">Paso 3 de 4 · plantilla mensual</span></span></div><div class="nz-actividad__fila is-error"><span class="nz-actividad__hora">08:47</span><span class="nz-actividad__cuerpo"><span class="nz-actividad__texto">Publicación fallida</span><span class="nz-actividad__detalle">El CDN rechazó el token caducado</span></span></div><div class="nz-actividad__fila"><span class="nz-actividad__hora">08:40</span><span class="nz-actividad__cuerpo"><span class="nz-actividad__texto">Datos sincronizados</span><span class="nz-actividad__detalle">1.284 filas actualizadas</span></span></div></div>
 
 ## nz-activity · packs/p11-social.css
@@ -51,12 +51,12 @@ markup: <div class="nz-activity"><div class="nz-activity__item"><span class="nz-
 
 ## nz-agenda · packs/p15-apps.css
 clases: nz-agenda, nz-agenda__slot
-tokens: --nz-accent, --nz-accent-soft, --nz-accent-strong, --nz-bg-soft, --nz-border-soft, --nz-brand, --nz-brand-soft, --nz-brand-strong, --nz-peso-fuerte, --nz-peso-normal, --nz-radius-md, --nz-radius-xs, --nz-space-1, --nz-space-2, --nz-space-3, --nz-surface, --nz-text-faint, --nz-text-xs
+tokens: --nz-accent, --nz-accent-soft, --nz-accent-strong, --nz-bg-soft, --nz-border-soft, --nz-brand, --nz-brand-soft, --nz-brand-strong, --nz-peso-fuerte, --nz-peso-normal, --nz-radius-md, --nz-radius-xs, --nz-space-1, --nz-space-2, --nz-space-3, --nz-surface, --nz-tactil, --nz-text-faint, --nz-text-xs
 markup: <div class="nz-agenda"><div class="nz-agenda__slot is-busy"><span>09:00</span><div>Reunion de equipo</div></div><div class="nz-agenda__slot is-now"><span>10:00</span><div>Ahora mismo</div></div><div class="nz-agenda__slot"><span>11:00</span><div>Libre</div></div></div>
 
 ## nz-agenda-disponibilidad · packs/p17-patrones.css
 clases: nz-agenda-disponibilidad, nz-agenda-disponibilidad__dia, nz-agenda-disponibilidad__fecha, nz-agenda-disponibilidad__franja, nz-agenda-disponibilidad__franjas
-tokens: --nz-border, --nz-border-strong, --nz-border-w, --nz-brand, --nz-peso-fuerte, --nz-radius-full, --nz-space-2, --nz-space-4, --nz-surface, --nz-text, --nz-text-faint, --nz-text-invert, --nz-text-sm, --nz-text-soft
+tokens: --nz-border, --nz-border-strong, --nz-border-w, --nz-brand, --nz-peso-fuerte, --nz-radius-full, --nz-space-2, --nz-space-4, --nz-surface, --nz-tactil, --nz-text, --nz-text-faint, --nz-text-invert, --nz-text-sm, --nz-text-soft
 markup: <div class="nz-agenda-disponibilidad" style="max-width:34rem"><div class="nz-agenda-disponibilidad__dia"><span class="nz-agenda-disponibilidad__fecha">Lunes, 6 de octubre</span><div class="nz-agenda-disponibilidad__franjas"><button class="nz-agenda-disponibilidad__franja is-selected" type="button">09:00 – 10:00</button><button class="nz-agenda-disponibilidad__franja" type="button">10:30 – 11:30</button><button class="nz-agenda-disponibilidad__franja is-ocupada" type="button" disabled>12:00 – 13:00</button></div></div><div class="nz-agenda-disponibilidad__dia"><span class="nz-agenda-disponibilidad__fecha">Martes, 7 de octubre</span><div class="nz-agenda-disponibilidad__franjas"><button class="nz-agenda-disponibilidad__franja" type="button">16:00 – 17:00</button><button class="nz-agenda-disponibilidad__franja" type="button">17:30 – 18:30</button></div></div></div>
 
 ## nz-agent-card · packs/p14-ai.css
@@ -66,7 +66,7 @@ markup: <div class="nz-agent-card"><div class="nz-agent-card__row"><span class="
 
 ## nz-alert · packs/p6-feedback.css
 clases: nz-alert, nz-alert--brand, nz-alert--danger, nz-alert--dismissible, nz-alert--floating, nz-alert--info, nz-alert--lg, nz-alert--neutral, nz-alert--outline, nz-alert--sm, nz-alert--success, nz-alert--warning, nz-alert__action, nz-alert__body, nz-alert__close, nz-alert__icon, nz-alert__msg, nz-alert__title
-tokens: --nz-bg-inset, --nz-bg-soft, --nz-border, --nz-border-soft, --nz-border-strong, --nz-border-w, --nz-brand, --nz-brand-soft, --nz-brand-tint, --nz-danger, --nz-danger-soft, --nz-danger-tint, --nz-info, --nz-info-soft, --nz-peso-fuerte, --nz-radius-full, --nz-radius-lg, --nz-radius-md, --nz-radius-sm, --nz-shadow-lg, --nz-space-1, --nz-space-2, --nz-space-3, --nz-space-4, --nz-space-5, --nz-success, --nz-success-soft, --nz-surface, --nz-text, --nz-text-lg, --nz-text-md, --nz-text-mute, --nz-text-sm, --nz-text-soft, --nz-text-xl, --nz-text-xs, --nz-warning, --nz-warning-soft, --nz-z-toast
+tokens: --nz-bg-inset, --nz-bg-soft, --nz-border, --nz-border-soft, --nz-border-strong, --nz-border-w, --nz-brand, --nz-brand-soft, --nz-brand-tint, --nz-danger, --nz-danger-soft, --nz-danger-tint, --nz-info, --nz-info-soft, --nz-peso-fuerte, --nz-radius-full, --nz-radius-lg, --nz-radius-md, --nz-radius-sm, --nz-shadow-lg, --nz-space-1, --nz-space-2, --nz-space-3, --nz-space-4, --nz-space-5, --nz-success, --nz-success-soft, --nz-surface, --nz-tactil, --nz-text, --nz-text-lg, --nz-text-md, --nz-text-mute, --nz-text-sm, --nz-text-soft, --nz-text-xl, --nz-text-xs, --nz-warning, --nz-warning-soft, --nz-z-toast
 markup: <div class="nz-alert nz-alert--info"><span class="nz-alert__icon">ℹ</span><div class="nz-alert__body"><span class="nz-alert__title">Información</span><span class="nz-alert__msg">Mensaje informativo.</span></div></div>
 noUsar: No lo uses como decoración: cada alerta visible es un momento de color de los ≤5 por página.
 
@@ -84,12 +84,12 @@ markup: <p class="nz-align-right">A la derecha, para importes y firmas.</p>
 
 ## nz-appempty · packs/p15-apps.css
 clases: nz-appempty
-tokens: --nz-bg-soft, --nz-border, --nz-border-w, --nz-brand, --nz-peso-fuerte, --nz-radius-lg, --nz-radius-sm, --nz-space-3, --nz-space-4, --nz-space-8, --nz-surface-2, --nz-text, --nz-text-faint, --nz-text-invert, --nz-text-md, --nz-text-mute, --nz-text-sm, --nz-text-xl
+tokens: --nz-bg-soft, --nz-border, --nz-border-w, --nz-brand, --nz-peso-fuerte, --nz-radius-lg, --nz-radius-sm, --nz-space-3, --nz-space-4, --nz-space-8, --nz-surface-2, --nz-tactil, --nz-text, --nz-text-faint, --nz-text-invert, --nz-text-md, --nz-text-mute, --nz-text-sm, --nz-text-xl
 markup: <div class="nz-appempty"><i aria-hidden="true"><svg class="nz-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="2"/></svg></i><b>No hay documentos abiertos</b><p>Abre un archivo del explorador o crea uno nuevo para empezar a trabajar.</p><button>Crear documento</button></div>
 
 ## nz-appnav · packs/p15-apps.css
 clases: nz-appnav, nz-appnav__link
-tokens: --nz-accent-soft, --nz-accent-strong, --nz-bg-inset, --nz-border-soft, --nz-border-strong, --nz-border-w, --nz-brand, --nz-brand-soft, --nz-brand-strong, --nz-brand-tint, --nz-dur-fast, --nz-ease-out, --nz-peso-fuerte, --nz-radius-full, --nz-radius-sm, --nz-radius-xs, --nz-space-1, --nz-space-2, --nz-space-3, --nz-surface-2, --nz-text, --nz-text-mute, --nz-text-sm, --nz-text-soft, --nz-text-xs
+tokens: --nz-accent-soft, --nz-accent-strong, --nz-bg-inset, --nz-border-soft, --nz-border-strong, --nz-border-w, --nz-brand, --nz-brand-soft, --nz-brand-strong, --nz-brand-tint, --nz-dur-fast, --nz-ease-out, --nz-peso-fuerte, --nz-radius-full, --nz-radius-sm, --nz-radius-xs, --nz-space-1, --nz-space-2, --nz-space-3, --nz-surface-2, --nz-tactil, --nz-text, --nz-text-mute, --nz-text-sm, --nz-text-soft, --nz-text-xs
 markup: <nav class="nz-appnav" aria-label="Secciones de la aplicación"><h4>Proyecto</h4><a href="#contenido" class="nz-appnav__link" aria-current="page"><i aria-hidden="true"></i>Resumen</a><a class="nz-appnav__link" href="#"><i aria-hidden="true"></i>Tareas<span>18</span></a><a class="nz-appnav__link" href="#"><i aria-hidden="true"></i>Incidencias<span class="is-accent">4</span></a><h4>Archivo</h4><a class="nz-appnav__link" href="#"><i aria-hidden="true"></i>Histórico</a></nav>
 
 ## nz-approval · packs/p14-ai.css
@@ -104,12 +104,12 @@ markup: <div class="nz-appshell nz-appshell--compact"><div class="demo-box">shel
 
 ## nz-appstatus · packs/p15-apps.css
 clases: nz-appstatus, nz-appstatus__item
-tokens: --nz-bg-soft, --nz-border-soft, --nz-border-w, --nz-danger, --nz-peso-fuerte, --nz-radius-full, --nz-space-1, --nz-space-2, --nz-space-3, --nz-success, --nz-text-mute, --nz-text-soft, --nz-text-xs, --nz-warning
+tokens: --nz-bg-soft, --nz-border-soft, --nz-border-w, --nz-danger, --nz-peso-fuerte, --nz-radius-full, --nz-space-1, --nz-space-2, --nz-space-3, --nz-success, --nz-tactil, --nz-text-mute, --nz-text-soft, --nz-text-xs, --nz-warning
 markup: <div class="nz-appstatus"><span class="nz-appstatus__item"><i aria-hidden="true"></i>Sincronizado</span><span class="nz-appstatus__item is-warn"><i aria-hidden="true"></i>2 avisos de estilo</span><span class="nz-appstatus__item"><b>Línea 128, columna 24</b></span></div>
 
 ## nz-arbol · packs/p8-data.css
 clases: nz-arbol, nz-arbol__group, nz-arbol__leaf, nz-arbol__node, nz-arbol__toggle
-tokens: --nz-bg-soft, --nz-border-soft, --nz-border-w, --nz-brand, --nz-brand-soft, --nz-danger, --nz-peso-fuerte, --nz-radius-sm, --nz-space-1, --nz-space-2, --nz-space-3, --nz-space-5, --nz-success, --nz-text, --nz-text-faint, --nz-text-sm, --nz-text-soft, --nz-text-xs
+tokens: --nz-bg-soft, --nz-border-soft, --nz-border-w, --nz-brand, --nz-brand-soft, --nz-danger, --nz-peso-fuerte, --nz-radius-sm, --nz-space-1, --nz-space-2, --nz-space-3, --nz-space-5, --nz-success, --nz-tactil, --nz-text, --nz-text-faint, --nz-text-sm, --nz-text-soft, --nz-text-xs
 markup: <ul class="nz-arbol"><li class="nz-arbol__node is-selected"><span class="nz-arbol__toggle">Proyecto</span><ul class="nz-arbol__group"><li><a class="nz-arbol__leaf" href="#">docs</a></li><li><a class="nz-arbol__leaf is-done" href="#">CHANGELOG.md</a></li><li><a class="nz-arbol__leaf is-error" href="#">secreto.env</a></li></ul></li></ul>
 noUsar: No para jerarquías de 2 niveles planas: una lista o el nav basta.
 
@@ -143,12 +143,12 @@ markup: <div class="nz-attach"><span class="nz-attach__item"><span class="nz-att
 
 ## nz-audio · packs/p9-media.css
 clases: nz-audio, nz-audio--accent, nz-audio__play, nz-audio__time, nz-audio__track
-tokens: --nz-accent, --nz-accent-ink, --nz-bg-inset, --nz-brand, --nz-radius-full, --nz-radius-lg, --nz-shadow-sm, --nz-space-3, --nz-space-4, --nz-surface, --nz-text-invert, --nz-text-md, --nz-text-mute, --nz-text-xs
+tokens: --nz-accent, --nz-accent-ink, --nz-bg-inset, --nz-brand, --nz-radius-full, --nz-radius-lg, --nz-shadow-sm, --nz-space-3, --nz-space-4, --nz-surface, --nz-tactil, --nz-text-invert, --nz-text-md, --nz-text-mute, --nz-text-xs
 markup: <div class="nz-audio" style="max-width:22rem"><button class="nz-audio__play" aria-label="reproducir"><svg class="nz-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m8 5 11 7-11 7z"/></svg></button><span class="nz-audio__track"><i style="width:46%"></i></span><span class="nz-audio__time">2:18 / 5:02</span></div>
 
 ## nz-avatar · packs/p9-media.css
 clases: nz-avatar, nz-avatar--2xl, nz-avatar--accent, nz-avatar--busy, nz-avatar--dark, nz-avatar--lg, nz-avatar--md, nz-avatar--offline, nz-avatar--ring, nz-avatar--sm, nz-avatar--square, nz-avatar--status, nz-avatar--xl, nz-avatar--xs, nz-avatar__bar
-tokens: --nz-accent-soft, --nz-accent-text, --nz-border-w, --nz-brand, --nz-brand-soft, --nz-peso-titulo, --nz-radius-md, --nz-space-2, --nz-success, --nz-surface, --nz-text-2xl, --nz-text-2xs, --nz-text-3xl, --nz-text-faint, --nz-text-invert, --nz-text-sm, --nz-text-xl, --nz-text-xs, --nz-warning
+tokens: --nz-accent-soft, --nz-accent-text, --nz-border-w, --nz-brand, --nz-brand-soft, --nz-peso-titulo, --nz-radius-md, --nz-space-2, --nz-success, --nz-surface, --nz-tactil, --nz-text-2xl, --nz-text-2xs, --nz-text-3xl, --nz-text-faint, --nz-text-invert, --nz-text-sm, --nz-text-xl, --nz-text-xs, --nz-warning
 markup: <span class="nz-avatar nz-avatar--sm">A</span>
 noUsar: No para logotipos de marca: usa `.nz-logomark` / `.nz-logo-nube`.
 
@@ -189,7 +189,7 @@ markup: <div class="nz-bandeja-avisos" style="max-width:32rem"><div class="nz-ba
 
 ## nz-banner · packs/p6-feedback.css
 clases: nz-banner, nz-banner--accent, nz-banner--brand, nz-banner__action, nz-banner__body, nz-banner__close
-tokens: --nz-accent, --nz-accent-ink, --nz-accent-strong, --nz-bg-inset, --nz-bg-soft, --nz-border, --nz-border-w, --nz-brand, --nz-brand-strong, --nz-gray-0, --nz-peso-fuerte, --nz-radius-full, --nz-space-2, --nz-space-3, --nz-space-4, --nz-text, --nz-text-invert, --nz-text-sm, --nz-text-xs
+tokens: --nz-accent, --nz-accent-ink, --nz-accent-strong, --nz-bg-inset, --nz-bg-soft, --nz-border, --nz-border-w, --nz-brand, --nz-brand-strong, --nz-gray-0, --nz-peso-fuerte, --nz-radius-full, --nz-space-2, --nz-space-3, --nz-space-4, --nz-tactil, --nz-text, --nz-text-invert, --nz-text-sm, --nz-text-xs
 markup: <div class="nz-banner nz-banner--brand"><div class="nz-banner__body">Nuevo pack de gráficos incluido</div></div>
 
 ## nz-barra-filtros · packs/p17-patrones.css
@@ -239,18 +239,18 @@ markup: <span class="nz-brand"><span class="nz-brand__mark">A</span> Aurora</spa
 
 ## nz-breadcrumb · packs/p2-navigation.css
 clases: nz-breadcrumb, nz-breadcrumb--chevron, nz-breadcrumb--compact, nz-breadcrumb--slash, nz-breadcrumb__sep
-tokens: --nz-brand, --nz-peso-fuerte, --nz-space-1, --nz-space-2, --nz-text, --nz-text-faint, --nz-text-sm, --nz-text-soft, --nz-text-xs
+tokens: --nz-brand, --nz-peso-fuerte, --nz-space-1, --nz-space-2, --nz-tactil, --nz-text, --nz-text-faint, --nz-text-sm, --nz-text-soft, --nz-text-xs
 markup: <nav class="nz-breadcrumb" aria-label="Migas de pan"><a href="#">Panel</a><span class="nz-breadcrumb__sep">/</span><a href="#">Clientes</a><span class="nz-breadcrumb__sep">/</span><span aria-current="page">Ficha</span></nav>
 
 ## nz-btn · packs/p4-actions.css
 clases: nz-btn, nz-btn--2xl, nz-btn--2xs, nz-btn--accent, nz-btn--auto, nz-btn--badged, nz-btn--block, nz-btn--danger, nz-btn--danger-text, nz-btn--full, nz-btn--ghost, nz-btn--icon, nz-btn--icon-lg, nz-btn--icon-sm, nz-btn--icon-square, nz-btn--info, nz-btn--lg, nz-btn--link, nz-btn--neutral, nz-btn--outline, nz-btn--pill, nz-btn--primary, nz-btn--progress, nz-btn--rounded, nz-btn--sm, nz-btn--soft, nz-btn--soft-accent, nz-btn--soft-danger, nz-btn--soft-success, nz-btn--square, nz-btn--success, nz-btn--text, nz-btn--warning, nz-btn--xl, nz-btn--xs, nz-btn__arrow, nz-btn__arrow--left, nz-btn__arrow--right, nz-btn__badge, nz-btn__icon, nz-btn__progress
-tokens: --nz-accent, --nz-accent-ink, --nz-accent-soft, --nz-accent-strong, --nz-amber-700, --nz-bg-inset, --nz-blue-300, --nz-border, --nz-border-w, --nz-border-w-strong, --nz-brand, --nz-brand-soft, --nz-brand-strong, --nz-brand-tint, --nz-danger, --nz-danger-soft, --nz-dur-base, --nz-dur-fast, --nz-ease-out, --nz-green-700, --nz-info, --nz-peso-fuerte, --nz-radius-full, --nz-radius-md, --nz-radius-sm, --nz-radius-xs, --nz-red-700, --nz-shadow-accent, --nz-shadow-brand, --nz-space-1, --nz-space-2, --nz-space-3, --nz-space-4, --nz-space-5, --nz-space-6, --nz-space-7, --nz-space-8, --nz-success, --nz-success-soft, --nz-text, --nz-text-2xs, --nz-text-base, --nz-text-invert, --nz-text-lg, --nz-text-md, --nz-text-sm, --nz-text-soft, --nz-text-xs, --nz-warning
+tokens: --nz-accent, --nz-accent-ink, --nz-accent-soft, --nz-accent-strong, --nz-amber-700, --nz-bg-inset, --nz-blue-300, --nz-border, --nz-border-w, --nz-border-w-strong, --nz-brand, --nz-brand-soft, --nz-brand-strong, --nz-brand-tint, --nz-danger, --nz-danger-soft, --nz-dur-base, --nz-dur-fast, --nz-ease-out, --nz-green-700, --nz-info, --nz-peso-fuerte, --nz-radius-full, --nz-radius-md, --nz-radius-sm, --nz-radius-xs, --nz-red-700, --nz-shadow-accent, --nz-shadow-brand, --nz-space-1, --nz-space-2, --nz-space-3, --nz-space-4, --nz-space-5, --nz-space-6, --nz-space-7, --nz-space-8, --nz-success, --nz-success-soft, --nz-tactil, --nz-text, --nz-text-2xs, --nz-text-base, --nz-text-invert, --nz-text-lg, --nz-text-md, --nz-text-sm, --nz-text-soft, --nz-text-xs, --nz-warning
 markup: <a class="nz-btn" href="#">Apuntarme</a>
 noUsar: No lo uses para navegación entre páginas: usa `.nz-link` o un elemento del nav. No hagas un botón por cada tono del léxico en la misma barra: ≤ 2 momentos de color por grupo.
 
 ## nz-btn-group · packs/p4-actions.css
 clases: nz-btn-group, nz-btn-group--joined, nz-btn-group--split, nz-btn-group--vertical, nz-btn-group__caret
-tokens: --nz-border, --nz-radius-full, --nz-radius-md, --nz-space-1, --nz-space-3
+tokens: --nz-border, --nz-radius-full, --nz-radius-md, --nz-space-1, --nz-space-3, --nz-tactil
 markup: <div class="nz-btn-group"><button class="nz-btn nz-btn--ghost">Uno</button><button class="nz-btn nz-btn--ghost">Dos</button><button class="nz-btn nz-btn--ghost">Tres</button></div>
 
 ## nz-bullet · packs/p13-charts.css
@@ -290,12 +290,12 @@ markup: <p class="nz-caps">Versalitas con tracking</p>
 
 ## nz-cart · packs/p10-commerce.css
 clases: nz-cart, nz-cart--drawer, nz-cart--mini, nz-cart__count, nz-cart__empty, nz-cart__foot, nz-cart__head, nz-cart__items, nz-cart__line, nz-cart__qty, nz-cart__total
-tokens: --nz-bg-inset, --nz-border, --nz-border-soft, --nz-border-w, --nz-brand, --nz-brand-soft, --nz-peso-fuerte, --nz-peso-titulo, --nz-radius-full, --nz-radius-lg, --nz-radius-sm, --nz-shadow-sm, --nz-space-1, --nz-space-2, --nz-space-3, --nz-space-4, --nz-space-8, --nz-surface, --nz-text, --nz-text-2xs, --nz-text-invert, --nz-text-lg, --nz-text-md, --nz-text-mute, --nz-text-sm, --nz-text-soft
+tokens: --nz-bg-inset, --nz-border, --nz-border-soft, --nz-border-w, --nz-brand, --nz-brand-soft, --nz-peso-fuerte, --nz-peso-titulo, --nz-radius-full, --nz-radius-lg, --nz-radius-sm, --nz-shadow-sm, --nz-space-1, --nz-space-2, --nz-space-3, --nz-space-4, --nz-space-8, --nz-surface, --nz-tactil, --nz-text, --nz-text-2xs, --nz-text-invert, --nz-text-lg, --nz-text-md, --nz-text-mute, --nz-text-sm, --nz-text-soft
 markup: <div class="nz-cart nz-cart--mini"><div class="nz-cart__head"><span class="nz-cart__count">2</span><span>2 artículos</span></div><div class="nz-cart__items"><div class="nz-cart__line"><span>Manta térmica</span><b>24 €</b></div></div><div class="nz-cart__foot"><span class="nz-cart__total">24 €</span><button class="nz-btn nz-btn--soft nz-btn--sm">Ver carrito</button></div></div>
 
 ## nz-cart-item · packs/p10-commerce.css
 clases: nz-cart-item, nz-cart-item--compact, nz-cart-item__body, nz-cart-item__meta, nz-cart-item__name, nz-cart-item__price, nz-cart-item__remove, nz-cart-item__right, nz-cart-item__thumb, nz-cart-item__variant
-tokens: --nz-bg-inset, --nz-border-soft, --nz-border-w, --nz-danger, --nz-peso-fuerte, --nz-radius-sm, --nz-space-1, --nz-space-2, --nz-space-3, --nz-text, --nz-text-faint, --nz-text-mute, --nz-text-sm, --nz-text-xs
+tokens: --nz-bg-inset, --nz-border-soft, --nz-border-w, --nz-danger, --nz-peso-fuerte, --nz-radius-sm, --nz-space-1, --nz-space-2, --nz-space-3, --nz-tactil, --nz-text, --nz-text-faint, --nz-text-mute, --nz-text-sm, --nz-text-xs
 markup: <div class="nz-cart-item is-error"><span class="nz-cart-item__thumb"></span><div class="nz-cart-item__body"><span class="nz-cart-item__name">Manta térmica</span><span class="nz-cart-item__meta">sin stock</span><span class="nz-cart-item__variant">Talla M · azul</span></div><div class="nz-cart-item__right"><span class="nz-cart-item__price">48 €</span><button class="nz-cart-item__remove">Quitar</button></div></div>
 
 ## nz-center · packs/p3-typography.css
@@ -369,7 +369,7 @@ markup: <div class="nz-chart-radar"><svg class="nz-chart-radar__svg" viewBox="0 
 
 ## nz-chart-range · packs/p13-charts.css
 clases: nz-chart-range, nz-chart-range__btn
-tokens: --nz-bg-inset, --nz-peso-fuerte, --nz-radius-full, --nz-shadow-xs, --nz-space-3, --nz-surface, --nz-text, --nz-text-soft, --nz-text-xs
+tokens: --nz-bg-inset, --nz-peso-fuerte, --nz-radius-full, --nz-shadow-xs, --nz-space-3, --nz-surface, --nz-tactil, --nz-text, --nz-text-soft, --nz-text-xs
 markup: <div class="nz-chart-range" role="group" aria-label="Rango temporal"><button class="nz-chart-range__btn" aria-pressed="true">7 días</button><button class="nz-chart-range__btn" aria-pressed="false">30 días</button><button class="nz-chart-range__btn" aria-pressed="false">12 meses</button><button class="nz-chart-range__btn" aria-pressed="false">Todo</button></div>
 
 ## nz-chart-scatter · packs/p13-charts.css
@@ -415,7 +415,7 @@ markup: <div class="nz-chat-history"><span class="nz-chat-history__title">Recien
 
 ## nz-checkbox · packs/p5-forms.css
 clases: nz-checkbox, nz-checkbox--card, nz-checkbox--sm, nz-checkbox__box, nz-checkbox__box--indeterminate
-tokens: --nz-border, --nz-border-strong, --nz-border-w, --nz-border-w-strong, --nz-brand, --nz-brand-soft, --nz-dur-fast, --nz-ease-out, --nz-focus-ring, --nz-peso-fuerte, --nz-peso-titulo, --nz-radius-md, --nz-radius-xs, --nz-space-2, --nz-space-3, --nz-space-4, --nz-surface, --nz-text, --nz-text-base, --nz-text-invert, --nz-text-sm
+tokens: --nz-border, --nz-border-strong, --nz-border-w, --nz-border-w-strong, --nz-brand, --nz-brand-soft, --nz-dur-fast, --nz-ease-out, --nz-focus-ring, --nz-peso-fuerte, --nz-peso-titulo, --nz-radius-md, --nz-radius-xs, --nz-space-2, --nz-space-3, --nz-space-4, --nz-surface, --nz-tactil, --nz-text, --nz-text-base, --nz-text-invert, --nz-text-sm
 markup: <label class="nz-checkbox"><input type="checkbox" checked><span class="nz-checkbox__box"></span>Recordarme</label>
 
 ## nz-checklist-entrega · packs/p17-patrones.css
@@ -430,7 +430,7 @@ markup: <ol class="nz-checkout-steps nz-checkout-steps--vertical"><li class="nz-
 
 ## nz-chip · packs/p6-feedback.css
 clases: nz-chip, nz-chip--accent, nz-chip--brand, nz-chip--danger, nz-chip--lg, nz-chip--removable, nz-chip--sm, nz-chip--success, nz-chip__dot, nz-chip__x
-tokens: --nz-accent-soft, --nz-accent-strong, --nz-bg-soft, --nz-border, --nz-border-w, --nz-brand, --nz-brand-soft, --nz-brand-strong, --nz-danger, --nz-danger-soft, --nz-dur-fast, --nz-ease-out, --nz-peso-fuerte, --nz-radius-full, --nz-space-1, --nz-space-2, --nz-space-3, --nz-space-4, --nz-space-5, --nz-success, --nz-success-soft, --nz-surface, --nz-text, --nz-text-base, --nz-text-invert, --nz-text-sm, --nz-text-soft, --nz-text-xs
+tokens: --nz-accent-soft, --nz-accent-strong, --nz-bg-soft, --nz-border, --nz-border-w, --nz-brand, --nz-brand-soft, --nz-brand-strong, --nz-danger, --nz-danger-soft, --nz-dur-fast, --nz-ease-out, --nz-peso-fuerte, --nz-radius-full, --nz-space-1, --nz-space-2, --nz-space-3, --nz-space-4, --nz-space-5, --nz-success, --nz-success-soft, --nz-surface, --nz-tactil, --nz-text, --nz-text-base, --nz-text-invert, --nz-text-sm, --nz-text-soft, --nz-text-xs
 markup: <span class="nz-chip">Pagadas</span>
 
 ## nz-cite · packs/p14-ai.css
@@ -445,7 +445,7 @@ markup: <div class="nz-cluster nz-cluster--spacious"><span class="nz-spinner"></
 
 ## nz-cmd · packs/p7-overlays.css
 clases: nz-cmd, nz-cmd--sm, nz-cmd--with-preview, nz-cmd__empty, nz-cmd__foot, nz-cmd__group, nz-cmd__icon, nz-cmd__input, nz-cmd__item, nz-cmd__item--active, nz-cmd__kbd, nz-cmd__list, nz-cmd__panel, nz-cmd__preview, nz-cmd__preview-title, nz-cmd__scrim
-tokens: --nz-bg-inset, --nz-bg-soft, --nz-border, --nz-border-soft, --nz-border-w, --nz-brand, --nz-dur-base, --nz-ease-out, --nz-font-mono, --nz-overlay, --nz-peso-fuerte, --nz-radius-sm, --nz-radius-xl, --nz-radius-xs, --nz-shadow-xl, --nz-space-1, --nz-space-2, --nz-space-3, --nz-space-4, --nz-space-5, --nz-space-6, --nz-surface, --nz-text, --nz-text-2xs, --nz-text-faint, --nz-text-invert, --nz-text-md, --nz-text-mute, --nz-text-sm, --nz-text-soft, --nz-text-xs, --nz-tracking-caps, --nz-z-modal
+tokens: --nz-bg-inset, --nz-bg-soft, --nz-border, --nz-border-soft, --nz-border-w, --nz-brand, --nz-dur-base, --nz-ease-out, --nz-font-mono, --nz-overlay, --nz-peso-fuerte, --nz-radius-sm, --nz-radius-xl, --nz-radius-xs, --nz-shadow-xl, --nz-space-1, --nz-space-2, --nz-space-3, --nz-space-4, --nz-space-5, --nz-space-6, --nz-surface, --nz-tactil, --nz-text, --nz-text-2xs, --nz-text-faint, --nz-text-invert, --nz-text-md, --nz-text-mute, --nz-text-sm, --nz-text-soft, --nz-text-xs, --nz-tracking-caps, --nz-z-modal
 markup: <div class="nz-cmd nz-cmd--sm"><input class="nz-vh" type="checkbox" id="cm-b"> <label class="nz-cmd__scrim" for="cm-b"></label> <div class="nz-cmd__panel"><input class="nz-cmd__input" placeholder="Ir a…" aria-label="Ir a"> <div class="nz-cmd__list"><span class="nz-cmd__group">Recientes</span><div class="nz-cmd__item">Panel de flota</div><div class="nz-cmd__empty">Sin resultados para «xyz»</div></div></div></div>
 
 ## nz-code · packs/p3-typography.css
@@ -481,7 +481,7 @@ markup: <div class="nz-columns-3"><p>Tres columnas desde 960px, dos a partir de 
 
 ## nz-comment · packs/p11-social.css
 clases: nz-comment, nz-comment--deleted, nz-comment--highlight, nz-comment--indent, nz-comment--reply, nz-comment__actions, nz-comment__author, nz-comment__body, nz-comment__head, nz-comment__reactions, nz-comment__reply, nz-comment__root, nz-comment__text, nz-comment__time
-tokens: --nz-bg-soft, --nz-border-soft, --nz-border-w-strong, --nz-brand, --nz-brand-soft, --nz-peso-fuerte, --nz-radius-md, --nz-space-1, --nz-space-2, --nz-space-3, --nz-space-4, --nz-space-6, --nz-text, --nz-text-2xs, --nz-text-faint, --nz-text-mute, --nz-text-sm, --nz-text-soft, --nz-text-xs
+tokens: --nz-bg-soft, --nz-border-soft, --nz-border-w-strong, --nz-brand, --nz-brand-soft, --nz-peso-fuerte, --nz-radius-md, --nz-space-1, --nz-space-2, --nz-space-3, --nz-space-4, --nz-space-6, --nz-tactil, --nz-text, --nz-text-2xs, --nz-text-faint, --nz-text-mute, --nz-text-sm, --nz-text-soft, --nz-text-xs
 markup: <div class="nz-comment nz-comment--highlight"><span class="nz-avatar nz-avatar--sm">AM</span><div class="nz-comment__body"><span class="nz-comment__author">Ana</span><p class="nz-comment__text">Comentario fijado por el autor del post.</p></div></div>
 
 ## nz-comparador-planes · packs/p17-patrones.css
@@ -501,7 +501,7 @@ markup: <table class="nz-compare"><thead><tr><th class="nz-compare__head">Caract
 
 ## nz-compare-bar · packs/p10-commerce.css
 clases: nz-compare-bar, nz-compare-bar--compact, nz-compare-bar__actions, nz-compare-bar__clear, nz-compare-bar__count
-tokens: --nz-danger, --nz-peso-fuerte, --nz-radius-lg, --nz-shadow-lg, --nz-space-2, --nz-space-3, --nz-space-4, --nz-surface, --nz-text-mute, --nz-text-sm, --nz-text-xs, --nz-z-sticky
+tokens: --nz-danger, --nz-peso-fuerte, --nz-radius-lg, --nz-shadow-lg, --nz-space-2, --nz-space-3, --nz-space-4, --nz-surface, --nz-tactil, --nz-text-mute, --nz-text-sm, --nz-text-xs, --nz-z-sticky
 markup: <div class="nz-compare-bar"><span class="nz-compare-bar__count">2 productos en el comparador</span><span class="nz-compare-bar__actions"><button class="nz-btn nz-btn--primary nz-btn--sm">Comparar</button><button class="nz-compare-bar__clear">Vaciar</button></span></div>
 
 ## nz-confirm · packs/p7-overlays.css
@@ -526,7 +526,7 @@ markup: <div class="nz-context-meter" style="min-width:12rem"><div class="nz-con
 
 ## nz-contrast · packs/p12-system.css
 clases: nz-contrast, nz-contrast--lg, nz-contrast__badge, nz-contrast__chip, nz-contrast__chip--accent, nz-contrast__chip--brand, nz-contrast__chip--soft, nz-contrast__chip--surface, nz-contrast__pair, nz-contrast__ratio, nz-contrast__ratio--ok, nz-contrast__status, nz-contrast__status--aa, nz-contrast__status--fail
-tokens: --nz-accent, --nz-accent-soft, --nz-bg-soft, --nz-border, --nz-border-w, --nz-brand, --nz-danger, --nz-danger-soft, --nz-peso-fuerte, --nz-radius-full, --nz-radius-md, --nz-radius-xs, --nz-space-2, --nz-space-3, --nz-space-4, --nz-space-5, --nz-success, --nz-success-soft, --nz-surface, --nz-text-2xs, --nz-text-mute, --nz-text-sm, --nz-text-xs, --nz-tracking-caps
+tokens: --nz-accent, --nz-accent-soft, --nz-bg-soft, --nz-border, --nz-border-w, --nz-brand, --nz-danger, --nz-danger-soft, --nz-peso-fuerte, --nz-radius-full, --nz-radius-md, --nz-radius-xs, --nz-space-2, --nz-space-3, --nz-space-4, --nz-space-5, --nz-success, --nz-success-soft, --nz-surface, --nz-tactil, --nz-text-2xs, --nz-text-mute, --nz-text-sm, --nz-text-xs, --nz-tracking-caps
 markup: <div class="nz-contrast"><span class="nz-contrast__pair"><span class="nz-contrast__chip nz-contrast__chip--soft"></span><span class="nz-contrast__chip nz-contrast__chip--surface"></span>Suave / superficie</span><span class="nz-contrast__ratio">1,4:1</span><span class="nz-contrast__status nz-contrast__status--fail">No apto</span></div>
 
 ## nz-countdown · packs/p6-feedback.css
@@ -536,7 +536,7 @@ markup: <span class="nz-countdown nz-countdown--flat"><strong>12:45</strong></sp
 
 ## nz-coupon · packs/p10-commerce.css
 clases: nz-coupon, nz-coupon--inline, nz-coupon__btn, nz-coupon__hint, nz-coupon__input, nz-coupon__msg
-tokens: --nz-bg, --nz-border, --nz-border-strong, --nz-border-w, --nz-danger, --nz-peso-fuerte, --nz-radius-md, --nz-radius-sm, --nz-space-2, --nz-space-3, --nz-space-4, --nz-success, --nz-surface, --nz-text, --nz-text-mute, --nz-text-sm, --nz-text-xs, --nz-tracking-caps
+tokens: --nz-bg, --nz-border, --nz-border-strong, --nz-border-w, --nz-danger, --nz-peso-fuerte, --nz-radius-md, --nz-radius-sm, --nz-space-2, --nz-space-3, --nz-space-4, --nz-success, --nz-surface, --nz-tactil, --nz-text, --nz-text-mute, --nz-text-sm, --nz-text-xs, --nz-tracking-caps
 markup: <form class="nz-coupon is-error"><label class="nz-text--muted" for="cupon12">Código</label><input class="nz-coupon__input" id="cupon12" value="CADUCADO"><span class="nz-coupon__msg">Este cupón ha caducado.</span><button class="nz-btn nz-btn--soft nz-coupon__btn" type="button">Probar otro</button></form>
 
 ## nz-cover · packs/p9-media.css
@@ -565,7 +565,7 @@ markup: <a class="nz-cta nz-cta--lg" href="#">Grande</a>
 
 ## nz-cta-banner · packs/p11-social.css
 clases: nz-cta-banner, nz-cta-banner--accent, nz-cta-banner--bordered, nz-cta-banner--brand, nz-cta-banner--sm, nz-cta-banner__actions, nz-cta-banner__body, nz-cta-banner__close, nz-cta-banner__eyebrow, nz-cta-banner__title
-tokens: --nz-accent, --nz-accent-ink, --nz-accent-strong, --nz-blue-100, --nz-blue-200, --nz-border, --nz-border-w, --nz-border-w-strong, --nz-brand, --nz-brand-strong, --nz-peso-fuerte, --nz-peso-titulo, --nz-radius-full, --nz-radius-lg, --nz-radius-xl, --nz-space-2, --nz-space-4, --nz-space-5, --nz-space-6, --nz-space-8, --nz-surface, --nz-text, --nz-text-2xl, --nz-text-invert, --nz-text-lg, --nz-text-md, --nz-text-soft, --nz-text-xs, --nz-tracking-caps, --nz-tracking-tight
+tokens: --nz-accent, --nz-accent-ink, --nz-accent-strong, --nz-blue-100, --nz-blue-200, --nz-border, --nz-border-w, --nz-border-w-strong, --nz-brand, --nz-brand-strong, --nz-peso-fuerte, --nz-peso-titulo, --nz-radius-full, --nz-radius-lg, --nz-radius-xl, --nz-space-2, --nz-space-4, --nz-space-5, --nz-space-6, --nz-space-8, --nz-surface, --nz-tactil, --nz-text, --nz-text-2xl, --nz-text-invert, --nz-text-lg, --nz-text-md, --nz-text-soft, --nz-text-xs, --nz-tracking-caps, --nz-tracking-tight
 markup: <div class="nz-cta-banner nz-cta-banner--sm"><h3 class="nz-cta-banner__title">Suscríbete</h3><div class="nz-cta-banner__actions"><a class="nz-btn" href="#">Al boletín</a></div></div>
 
 ## nz-cuota · packs/p14-ai.css
@@ -621,12 +621,12 @@ markup: <div class="nz-dl nz-dl--2col" style="max-width:22rem"><div class="nz-dl
 
 ## nz-dock · packs/p15-apps.css
 clases: nz-dock, nz-dock--lg, nz-dock--sm, nz-dock__item
-tokens: --nz-bg-inset, --nz-border-soft, --nz-border-w, --nz-brand, --nz-brand-soft, --nz-brand-strong, --nz-dur-base, --nz-dur-fast, --nz-ease-out, --nz-radius-full, --nz-radius-md, --nz-radius-xl, --nz-shadow-brand, --nz-shadow-lg, --nz-space-2, --nz-surface, --nz-text-invert, --nz-text-lg, --nz-text-md, --nz-text-sm, --nz-text-soft
+tokens: --nz-bg-inset, --nz-border-soft, --nz-border-w, --nz-brand, --nz-brand-soft, --nz-brand-strong, --nz-dur-base, --nz-dur-fast, --nz-ease-out, --nz-radius-full, --nz-radius-md, --nz-radius-xl, --nz-shadow-brand, --nz-shadow-lg, --nz-space-2, --nz-surface, --nz-tactil, --nz-text-invert, --nz-text-lg, --nz-text-md, --nz-text-sm, --nz-text-soft
 markup: <div class="nz-dock nz-dock--sm"><a class="nz-dock__item" href="#">A</a><a class="nz-dock__item is-active" href="#">B</a><a class="nz-dock__item" href="#">C</a></div>
 
 ## nz-docs · packs/p15-apps.css
 clases: nz-docs, nz-docs__dot, nz-docs__tab
-tokens: --nz-accent, --nz-accent-soft, --nz-bg-inset, --nz-border, --nz-border-w, --nz-peso-fuerte, --nz-radius-full, --nz-radius-md, --nz-radius-sm, --nz-shadow-xs, --nz-space-1, --nz-space-2, --nz-space-3, --nz-surface, --nz-surface-2, --nz-text, --nz-text-faint, --nz-text-mute, --nz-text-sm, --nz-text-xs
+tokens: --nz-accent, --nz-accent-soft, --nz-bg-inset, --nz-border, --nz-border-w, --nz-peso-fuerte, --nz-radius-full, --nz-radius-md, --nz-radius-sm, --nz-shadow-xs, --nz-space-1, --nz-space-2, --nz-space-3, --nz-surface, --nz-surface-2, --nz-tactil, --nz-text, --nz-text-faint, --nz-text-mute, --nz-text-sm, --nz-text-xs
 markup: <div class="nz-docs" role="tablist" aria-label="Documentos abiertos"><span class="nz-docs__tab" role="tab" tabindex="0" aria-selected="true"><span class="nz-docs__dot" aria-hidden="true"></span>presupuesto.nz<button aria-label="Cerrar presupuesto.nz"><svg class="nz-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg></button></span><span class="nz-docs__tab" role="tab" tabindex="0" aria-selected="false">memoria.md<button aria-label="Cerrar memoria.md"><svg class="nz-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg></button></span><span class="nz-docs__tab" role="tab" tabindex="0" aria-selected="false">pliego.txt<button aria-label="Cerrar pliego.txt"><svg class="nz-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg></button></span></div>
 
 ## nz-drawer · packs/p7-overlays.css
@@ -641,7 +641,7 @@ markup: <div class="nz-drawer-layout demo-box" style="min-height:8rem;gap:var(--
 
 ## nz-dropdown · packs/p2-navigation.css
 clases: nz-dropdown, nz-dropdown--end, nz-dropdown--wide, nz-dropdown__btn, nz-dropdown__btn--icon, nz-dropdown__list, nz-dropdown__list--divided
-tokens: --nz-border, --nz-border-soft, --nz-border-w, --nz-dur-base, --nz-ease-out, --nz-peso-fuerte, --nz-radius-full, --nz-radius-lg, --nz-shadow-lg, --nz-space-2, --nz-space-4, --nz-surface, --nz-text, --nz-text-faint, --nz-text-sm, --nz-text-xs
+tokens: --nz-border, --nz-border-soft, --nz-border-w, --nz-dur-base, --nz-ease-out, --nz-peso-fuerte, --nz-radius-full, --nz-radius-lg, --nz-shadow-lg, --nz-space-2, --nz-space-4, --nz-surface, --nz-tactil, --nz-text, --nz-text-faint, --nz-text-sm, --nz-text-xs
 markup: <div class="nz-dropdown" style="padding-bottom:var(--nz-space-8)"><input class="nz-vh" type="checkbox" id="dropN1"><label class="nz-dropdown__btn" for="dropN1">País</label><div class="nz-dropdown__list"><a href="#contenido" class="nz-menu__item">España</a><a href="#contenido" class="nz-menu__item">Francia</a><a href="#contenido" class="nz-menu__item">Italia</a></div></div>
 
 ## nz-editor-campos · packs/p17-patrones.css
@@ -722,7 +722,7 @@ markup: <p class="nz-eyebrow">Administración</p>
 
 ## nz-fab · packs/p4-actions.css
 clases: nz-fab, nz-fab--accent, nz-fab--bottom-left, nz-fab--extended, nz-fab--lg, nz-fab--sm
-tokens: --nz-accent, --nz-brand, --nz-brand-strong, --nz-dur-fast, --nz-ease-out, --nz-peso-fuerte, --nz-radius-full, --nz-shadow-accent, --nz-shadow-brand, --nz-space-2, --nz-space-5, --nz-text-base, --nz-text-invert, --nz-text-md, --nz-z-drawer
+tokens: --nz-accent, --nz-brand, --nz-brand-strong, --nz-dur-fast, --nz-ease-out, --nz-peso-fuerte, --nz-radius-full, --nz-shadow-accent, --nz-shadow-brand, --nz-space-2, --nz-space-5, --nz-tactil, --nz-text-base, --nz-text-invert, --nz-text-md, --nz-z-drawer
 markup: <button class="nz-fab" aria-label="Nuevo"><svg class="nz-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></button>
 
 ## nz-facturacion-estados · packs/p17-patrones.css
@@ -772,7 +772,7 @@ markup: <figure class="nz-figure nz-figure--sm"><div class="nz-figure__img"><img
 
 ## nz-filezona · packs/p5-forms.css
 clases: nz-filezona, nz-filezona__icono, nz-filezona__input, nz-filezona__texto
-tokens: --nz-bg-soft, --nz-border-strong, --nz-border-w-strong, --nz-brand, --nz-brand-soft, --nz-danger, --nz-danger-soft, --nz-dur-fast, --nz-ease-out, --nz-radius-md, --nz-space-2, --nz-space-4, --nz-space-6, --nz-success, --nz-success-soft, --nz-text, --nz-text-2xl, --nz-text-sm, --nz-text-soft
+tokens: --nz-bg-soft, --nz-border-strong, --nz-border-w-strong, --nz-brand, --nz-brand-soft, --nz-danger, --nz-danger-soft, --nz-dur-fast, --nz-ease-out, --nz-radius-md, --nz-space-2, --nz-space-4, --nz-space-6, --nz-success, --nz-success-soft, --nz-tactil, --nz-text, --nz-text-2xl, --nz-text-sm, --nz-text-soft
 markup: <div class="nz-filezona is-success"><span class="nz-filezona__icono" aria-hidden="true">OK</span><span class="nz-filezona__texto">plan.pdf cargado</span></div>
 
 ## nz-filtro-rango · packs/p17-patrones.css
@@ -883,7 +883,7 @@ markup: <a class="nz-hashtag" href="#">#designsystem</a>
 
 ## nz-header · packs/p1-layout.css
 clases: nz-header, nz-header--bordered, nz-header--compact, nz-header--sticky, nz-header--tall
-tokens: --nz-border-soft, --nz-border-strong, --nz-border-w, --nz-border-w-strong, --nz-gutter, --nz-space-1, --nz-space-3, --nz-space-6, --nz-surface, --nz-z-header
+tokens: --nz-border-soft, --nz-border-strong, --nz-border-w, --nz-border-w-strong, --nz-gutter, --nz-space-1, --nz-space-3, --nz-space-6, --nz-surface, --nz-tactil, --nz-z-header
 markup: <div class="nz-header--sticky demo-box demo-box--brand">header--sticky · se queda arriba</div>
 
 ## nz-heatcalendar · packs/p13-charts.css
@@ -942,7 +942,7 @@ markup: <svg class="nz-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 
 
 ## nz-icon-tile · packs/p9-media.css
 clases: nz-icon-tile, nz-icon-tile--accent, nz-icon-tile--brand, nz-icon-tile--circle, nz-icon-tile--danger, nz-icon-tile--lg, nz-icon-tile--outline, nz-icon-tile--sm, nz-icon-tile--success, nz-icon-tile--xl
-tokens: --nz-accent-soft, --nz-accent-text, --nz-border, --nz-border-w-strong, --nz-brand, --nz-brand-soft, --nz-danger, --nz-danger-soft, --nz-radius-md, --nz-success, --nz-success-soft, --nz-text-2xl, --nz-text-invert, --nz-text-lg, --nz-text-sm, --nz-text-soft, --nz-text-xl
+tokens: --nz-accent-soft, --nz-accent-text, --nz-border, --nz-border-w-strong, --nz-brand, --nz-brand-soft, --nz-danger, --nz-danger-soft, --nz-radius-md, --nz-success, --nz-success-soft, --nz-tactil, --nz-text-2xl, --nz-text-invert, --nz-text-lg, --nz-text-sm, --nz-text-soft, --nz-text-xl
 markup: <span class="nz-icon-tile nz-icon-tile--danger">!</span>
 
 ## nz-img · packs/p9-media.css
@@ -972,7 +972,7 @@ markup: <span class="nz-inlinestat nz-inlinestat--warn"><i></i>Aviso</span>
 
 ## nz-input · packs/p5-forms.css
 clases: nz-input, nz-input--brand, nz-input--clear, nz-input--error, nz-input--lg, nz-input--pill, nz-input--search, nz-input--sm, nz-input--square, nz-input--success, nz-input--warning
-tokens: --nz-amber-100, --nz-bg-inset, --nz-bg-soft, --nz-border, --nz-border-strong, --nz-border-w, --nz-brand, --nz-danger, --nz-danger-soft, --nz-dur-fast, --nz-ease-out, --nz-focus-ring, --nz-green-100, --nz-radius-full, --nz-radius-sm, --nz-radius-xs, --nz-red-100, --nz-space-10, --nz-space-3, --nz-space-4, --nz-space-5, --nz-space-8, --nz-space-9, --nz-success, --nz-surface, --nz-text, --nz-text-base, --nz-text-faint, --nz-text-md, --nz-text-mute, --nz-text-sm, --nz-text-soft, --nz-warning
+tokens: --nz-amber-100, --nz-bg-inset, --nz-bg-soft, --nz-border, --nz-border-strong, --nz-border-w, --nz-brand, --nz-danger, --nz-danger-soft, --nz-dur-fast, --nz-ease-out, --nz-focus-ring, --nz-green-100, --nz-radius-full, --nz-radius-sm, --nz-radius-xs, --nz-red-100, --nz-space-10, --nz-space-3, --nz-space-4, --nz-space-5, --nz-space-8, --nz-space-9, --nz-success, --nz-surface, --nz-tactil, --nz-text, --nz-text-base, --nz-text-faint, --nz-text-md, --nz-text-mute, --nz-text-sm, --nz-text-soft, --nz-warning
 markup: <input class="nz-input" id="c2">
 
 ## nz-input-icon · packs/p5-forms.css
@@ -1028,7 +1028,7 @@ markup: <nav class="nz-landmark nz-landmark--nav">Navegación lateral</nav>
 
 ## nz-launcher · packs/p15-apps.css
 clases: nz-launcher, nz-launcher__app
-tokens: --nz-accent, --nz-bg-soft, --nz-brand, --nz-peso-fuerte, --nz-radius-lg, --nz-radius-md, --nz-radius-xl, --nz-shadow-accent, --nz-shadow-brand, --nz-shadow-xs, --nz-space-1, --nz-space-2, --nz-space-4, --nz-surface, --nz-text, --nz-text-invert, --nz-text-md, --nz-text-soft, --nz-text-xs
+tokens: --nz-accent, --nz-bg-soft, --nz-brand, --nz-peso-fuerte, --nz-radius-lg, --nz-radius-md, --nz-radius-xl, --nz-shadow-accent, --nz-shadow-brand, --nz-shadow-xs, --nz-space-1, --nz-space-2, --nz-space-4, --nz-surface, --nz-tactil, --nz-text, --nz-text-invert, --nz-text-md, --nz-text-soft, --nz-text-xs
 markup: <a class="nz-launcher__app" href="#"><i aria-hidden="true"><svg class="nz-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg></i>Panel</a>
 
 ## nz-lbl · packs/p3-typography.css
@@ -1048,7 +1048,7 @@ markup: <div class="nz-legend nz-legend--vertical"><span class="nz-legend__item"
 
 ## nz-lightbox · packs/p7-overlays.css
 clases: nz-lightbox, nz-lightbox--compact, nz-lightbox__caption, nz-lightbox__close, nz-lightbox__img, nz-lightbox__nav, nz-lightbox__nav--next, nz-lightbox__nav--prev
-tokens: --nz-gray-0, --nz-gray-900, --nz-overlay, --nz-radius-full, --nz-radius-lg, --nz-shadow-md, --nz-space-3, --nz-space-4, --nz-surface, --nz-text, --nz-text-md, --nz-text-sm
+tokens: --nz-gray-0, --nz-gray-900, --nz-overlay, --nz-radius-full, --nz-radius-lg, --nz-shadow-md, --nz-space-3, --nz-space-4, --nz-surface, --nz-tactil, --nz-text, --nz-text-md, --nz-text-sm
 markup: <div class="nz-lightbox" style="max-width:20rem"><div class="nz-backdrop nz-backdrop--soft"></div><span class="nz-lightbox__caption">Fondo suave: deja ver el contenido</span></div>
 
 ## nz-linea-pasos · packs/p17-patrones.css
@@ -1088,7 +1088,7 @@ markup: <div class="nz-loading-bar" style="position:static"><div class="nz-loadi
 
 ## nz-logo-nube · packs/p9-media.css
 clases: nz-logo-nube, nz-logo-nube--lg, nz-logo-nube--sm, nz-logo-nube__item, nz-logo-nube__item--muted
-tokens: --nz-bg-soft, --nz-peso-fuerte, --nz-radius-md, --nz-shadow-xs, --nz-space-3, --nz-space-4, --nz-surface, --nz-text-faint, --nz-text-lg, --nz-text-mute, --nz-text-sm
+tokens: --nz-bg-soft, --nz-peso-fuerte, --nz-radius-md, --nz-shadow-xs, --nz-space-3, --nz-space-4, --nz-surface, --nz-tactil, --nz-text-faint, --nz-text-lg, --nz-text-mute, --nz-text-sm
 markup: <div class="nz-logo-nube" style="max-width:20rem"><span class="nz-logo-nube__item">Marca uno</span><span class="nz-logo-nube__item">Marca dos</span><span class="nz-logo-nube__item nz-logo-nube__item--muted">Marca tres</span><span class="nz-logo-nube__item">Marca cuatro</span></div>
 
 ## nz-logomark · packs/p9-media.css
@@ -1132,7 +1132,7 @@ markup: <p class="nz-measure nz-measure--narrow">Medida estrecha, ~52ch: para co
 
 ## nz-media · packs/p9-media.css
 clases: nz-media, nz-media--bordered, nz-media--brand, nz-media--center, nz-media--reverse, nz-media--sm, nz-media__body, nz-media__desc, nz-media__fig, nz-media__link, nz-media__title
-tokens: --nz-border-soft, --nz-border-w, --nz-brand, --nz-peso-fuerte, --nz-radius-md, --nz-space-1, --nz-space-3, --nz-text, --nz-text-base, --nz-text-sm, --nz-text-soft, --nz-text-xs
+tokens: --nz-border-soft, --nz-border-w, --nz-brand, --nz-peso-fuerte, --nz-radius-md, --nz-space-1, --nz-space-3, --nz-tactil, --nz-text, --nz-text-base, --nz-text-sm, --nz-text-soft, --nz-text-xs
 markup: <div class="nz-media"><span class="nz-avatar nz-avatar--md nz-media__fig">AM</span><div class="nz-media__body"><span class="nz-media__title">Ana Martín</span><span class="nz-media__desc">Diseñadora de producto.</span></div></div>
 
 ## nz-media-badge · packs/p9-media.css
@@ -1147,7 +1147,7 @@ markup: <a class="nz-mention" href="#">@ana</a>
 
 ## nz-menu · packs/p2-navigation.css
 clases: nz-menu, nz-menu--right, nz-menu__btn, nz-menu__drop, nz-menu__item, nz-menu__item--danger, nz-menu__item--disabled, nz-menu__sep
-tokens: --nz-bg-inset, --nz-bg-soft, --nz-border-soft, --nz-brand, --nz-danger, --nz-danger-soft, --nz-dur-base, --nz-ease-out, --nz-peso-fuerte, --nz-radius-full, --nz-radius-lg, --nz-radius-sm, --nz-shadow-lg, --nz-space-1, --nz-space-2, --nz-space-3, --nz-surface, --nz-text, --nz-text-faint, --nz-text-sm, --nz-text-soft
+tokens: --nz-bg-inset, --nz-bg-soft, --nz-border-soft, --nz-brand, --nz-danger, --nz-danger-soft, --nz-dur-base, --nz-ease-out, --nz-peso-fuerte, --nz-radius-full, --nz-radius-lg, --nz-radius-sm, --nz-shadow-lg, --nz-space-1, --nz-space-2, --nz-space-3, --nz-surface, --nz-tactil, --nz-text, --nz-text-faint, --nz-text-sm, --nz-text-soft
 markup: <div class="nz-menu"><input class="nz-vh" type="checkbox" id="menuN1"><label class="nz-menu__btn" for="menuN1"><svg class="nz-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg></label><div class="nz-menu__drop"><a href="#contenido" class="nz-menu__item" aria-current="page">Inicio</a><a href="#contenido" class="nz-menu__item">Perfil</a><a href="#contenido" class="nz-menu__item">Ajustes</a></div></div>
 
 ## nz-menu-cuenta · packs/p17-patrones.css
@@ -1157,7 +1157,7 @@ markup: <div class="nz-menu-cuenta"><div class="nz-menu-cuenta__cabecera"><span 
 
 ## nz-menu-pop · packs/p7-overlays.css
 clases: nz-menu-pop, nz-menu-pop--compact, nz-menu-pop--context, nz-menu-pop__group-title, nz-menu-pop__item, nz-menu-pop__item--danger, nz-menu-pop__item--disabled, nz-menu-pop__list, nz-menu-pop__list--left, nz-menu-pop__sep
-tokens: --nz-bg-soft, --nz-border-soft, --nz-danger, --nz-danger-soft, --nz-dur-base, --nz-ease-out, --nz-font-mono, --nz-peso-fuerte, --nz-radius-lg, --nz-radius-md, --nz-radius-sm, --nz-shadow-lg, --nz-space-1, --nz-space-2, --nz-space-3, --nz-surface, --nz-text, --nz-text-2xs, --nz-text-faint, --nz-text-sm, --nz-text-soft, --nz-text-xs, --nz-tracking-caps, --nz-z-popover
+tokens: --nz-bg-soft, --nz-border-soft, --nz-danger, --nz-danger-soft, --nz-dur-base, --nz-ease-out, --nz-font-mono, --nz-peso-fuerte, --nz-radius-lg, --nz-radius-md, --nz-radius-sm, --nz-shadow-lg, --nz-space-1, --nz-space-2, --nz-space-3, --nz-surface, --nz-tactil, --nz-text, --nz-text-2xs, --nz-text-faint, --nz-text-sm, --nz-text-soft, --nz-text-xs, --nz-tracking-caps, --nz-z-popover
 markup: <div class="nz-menu-pop nz-menu-pop--compact"><input class="nz-vh" type="checkbox" id="mc-d"> <label class="nz-btn nz-btn--ghost" for="mc-d">Compacto</label> <div class="nz-menu-pop__list"><button class="nz-menu-pop__item">Renombrar</button><button class="nz-menu-pop__item nz-menu-pop__item--disabled">Mover a carpeta</button><button class="nz-menu-pop__item">Descargar</button></div></div>
 
 ## nz-meter · packs/p6-feedback.css
@@ -1173,11 +1173,12 @@ markup: <div class="nz-metrica-tendencia" style="max-width:20rem"><div class="nz
 
 ## nz-min-target · packs/p12-system.css
 clases: nz-min-target
+tokens: --nz-tactil
 markup: <button class="nz-btn nz-btn--soft nz-btn--sm nz-min-target">Guardar</button>
 
 ## nz-modal · packs/p7-overlays.css
 clases: nz-modal, nz-modal--centrado, nz-modal--full, nz-modal--lg, nz-modal--sheet-movil, nz-modal--sm, nz-modal__body, nz-modal__body--scroll, nz-modal__close, nz-modal__dialog, nz-modal__foot, nz-modal__foot--between, nz-modal__head, nz-modal__icon, nz-modal__icon--danger, nz-modal__meta, nz-modal__scrim, nz-modal__title
-tokens: --nz-bg-inset, --nz-bg-soft, --nz-brand, --nz-brand-soft, --nz-danger, --nz-danger-soft, --nz-dur-base, --nz-ease-out, --nz-overlay, --nz-peso-fuerte, --nz-radius-full, --nz-radius-xl, --nz-shadow-xl, --nz-space-2, --nz-space-3, --nz-space-4, --nz-space-5, --nz-space-6, --nz-surface, --nz-text, --nz-text-base, --nz-text-lg, --nz-text-mute, --nz-text-soft, --nz-text-xs, --nz-tracking-tight, --nz-z-modal
+tokens: --nz-bg-inset, --nz-bg-soft, --nz-brand, --nz-brand-soft, --nz-danger, --nz-danger-soft, --nz-dur-base, --nz-ease-out, --nz-overlay, --nz-peso-fuerte, --nz-radius-full, --nz-radius-xl, --nz-shadow-xl, --nz-space-2, --nz-space-3, --nz-space-4, --nz-space-5, --nz-space-6, --nz-surface, --nz-tactil, --nz-text, --nz-text-base, --nz-text-lg, --nz-text-mute, --nz-text-soft, --nz-text-xs, --nz-tracking-tight, --nz-z-modal
 markup: <div class="nz-modal nz-modal--sheet-movil"><input class="nz-vh" type="checkbox" id="mo-e"> <label class="nz-modal__scrim" for="mo-e"></label> <div class="nz-modal__dialog"><div class="nz-modal__head"><h3 class="nz-modal__title">Filtros rápidos</h3><label class="nz-modal__close" for="mo-e"><svg class="nz-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg></label></div> <p class="nz-modal__body">En móvil sube desde abajo; desde 640px se centra.</p></div></div>
 noUsar: No lo uses para contenido de lectura larga: es una decisión, no una página. No lo anides: un diálogo modal dentro de otro rompe el foco.
 
@@ -1188,12 +1189,12 @@ markup: <div class="nz-model-compare"><div class="nz-model-compare__side nz-mode
 
 ## nz-modelpick · packs/p14-ai.css
 clases: nz-modelpick, nz-modelpick__btn, nz-modelpick__item, nz-modelpick__item--active, nz-modelpick__list, nz-modelpick__meta
-tokens: --nz-border, --nz-border-w, --nz-brand, --nz-brand-soft, --nz-peso-fuerte, --nz-radius-full, --nz-radius-md, --nz-radius-sm, --nz-shadow-lg, --nz-space-1, --nz-space-2, --nz-space-3, --nz-surface, --nz-text, --nz-text-faint, --nz-text-soft, --nz-text-xs, --nz-z-popover
+tokens: --nz-border, --nz-border-w, --nz-brand, --nz-brand-soft, --nz-peso-fuerte, --nz-radius-full, --nz-radius-md, --nz-radius-sm, --nz-shadow-lg, --nz-space-1, --nz-space-2, --nz-space-3, --nz-surface, --nz-tactil, --nz-text, --nz-text-faint, --nz-text-soft, --nz-text-xs, --nz-z-popover
 markup: <div class="nz-modelpick"><button class="nz-modelpick__btn">modelo: qwen3.8-flash <svg class="nz-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 9 7 7 7-7"/></svg></button><div class="nz-modelpick__list"><span class="nz-modelpick__item nz-modelpick__item--active">qwen3.8-flash<span class="nz-modelpick__meta">rápido</span></span><span class="nz-modelpick__item">glm5.3-flash<span class="nz-modelpick__meta">preciso</span></span><span class="nz-modelpick__item">qwen3-vl<span class="nz-modelpick__meta">visión</span></span></div></div>
 
 ## nz-month · packs/p15-apps.css
 clases: nz-month
-tokens: --nz-accent-soft, --nz-accent-strong, --nz-bg-soft, --nz-border-soft, --nz-border-w, --nz-brand, --nz-brand-soft, --nz-brand-strong, --nz-peso-fuerte, --nz-peso-titulo, --nz-radius-lg, --nz-radius-xs, --nz-space-1, --nz-space-2, --nz-surface, --nz-text-2xs, --nz-text-faint, --nz-text-invert, --nz-text-soft, --nz-tracking-caps
+tokens: --nz-accent-soft, --nz-accent-strong, --nz-bg-soft, --nz-border-soft, --nz-border-w, --nz-brand, --nz-brand-soft, --nz-brand-strong, --nz-peso-fuerte, --nz-peso-titulo, --nz-radius-lg, --nz-radius-xs, --nz-space-1, --nz-space-2, --nz-surface, --nz-tactil, --nz-text-2xs, --nz-text-faint, --nz-text-invert, --nz-text-soft, --nz-tracking-caps
 markup: <div class="nz-month" role="grid" aria-label="Marzo de 2025"><b>Lu</b><b>Ma</b><b>Mi</b><b>Ju</b><b>Vi</b><b>Sá</b><b>Do</b><span class="is-outside">24</span><span class="is-outside">25</span><span class="is-outside">26</span><span class="is-outside">27</span><span class="is-outside">28</span><span>1</span><span>2</span><span>3</span><span class="is-today">4</span><span class="is-selected">5<em>Sprint</em></span><span>6</span><span>7<em class="is-accent">Demo</em></span><span>8</span><span>9</span></div>
 
 ## nz-motion-badge · packs/p12-system.css
@@ -1212,13 +1213,13 @@ markup: <nav class="nz-nav-landmark demo-box" aria-label="demo">landmark nav</na
 
 ## nz-navbar · packs/p2-navigation.css
 clases: nz-navbar, nz-navbar--bordered, nz-navbar--brand, nz-navbar--compact, nz-navbar--transparent, nz-navbar__brand, nz-navbar__brand--lg, nz-navbar__link, nz-navbar__links
-tokens: --nz-accent, --nz-bg-inset, --nz-border-soft, --nz-border-strong, --nz-border-w, --nz-border-w-strong, --nz-brand, --nz-brand-strong, --nz-gutter, --nz-peso-fuerte, --nz-peso-titulo, --nz-radius-full, --nz-space-1, --nz-space-2, --nz-space-3, --nz-surface, --nz-text, --nz-text-invert, --nz-text-lg, --nz-text-sm, --nz-text-soft, --nz-tracking-tight
+tokens: --nz-accent, --nz-bg-inset, --nz-border-soft, --nz-border-strong, --nz-border-w, --nz-border-w-strong, --nz-brand, --nz-brand-strong, --nz-gutter, --nz-peso-fuerte, --nz-peso-titulo, --nz-radius-full, --nz-space-1, --nz-space-2, --nz-space-3, --nz-surface, --nz-tactil, --nz-text, --nz-text-invert, --nz-text-lg, --nz-text-sm, --nz-text-soft, --nz-tracking-tight
 markup: <div class="nz-navbar nz-navbar--compact"><span class="nz-navbar__brand"><i></i>Compacta</span><span class="nz-navbar__links"><a href="#contenido" class="nz-navbar__link">Docs</a></span></div>
 noUsar: No para navegación interna de una vista: es la barra global de la página.
 
 ## nz-navfooter · packs/p2-navigation.css
 clases: nz-navfooter, nz-navfooter--2col, nz-navfooter--3col, nz-navfooter--compact, nz-navfooter__bottom, nz-navfooter__col, nz-navfooter__title, nz-navfooter__title--brand
-tokens: --nz-border-soft, --nz-border-w, --nz-brand, --nz-peso-fuerte, --nz-space-1, --nz-space-2, --nz-space-3, --nz-space-4, --nz-space-6, --nz-text-faint, --nz-text-mute, --nz-text-sm, --nz-text-soft, --nz-text-xs, --nz-tracking-caps
+tokens: --nz-border-soft, --nz-border-w, --nz-brand, --nz-peso-fuerte, --nz-space-1, --nz-space-2, --nz-space-3, --nz-space-4, --nz-space-6, --nz-tactil, --nz-text-faint, --nz-text-mute, --nz-text-sm, --nz-text-soft, --nz-text-xs, --nz-tracking-caps
 markup: <div class="nz-navfooter nz-navfooter--2col"><div class="nz-navfooter__col"><span class="nz-navfooter__title">Dos columnas</span><a href="#">Uno</a></div><div class="nz-navfooter__col"><span class="nz-navfooter__title">móvil 1 · ≥640 2</span><a href="#">Dos</a></div></div>
 
 ## nz-nodo · packs/p18-escenario.css
@@ -1281,7 +1282,7 @@ markup: <div class="nz-overflow-y demo-box" style="max-height:5rem;padding:var(-
 
 ## nz-pagination · packs/p2-navigation.css
 clases: nz-pagination, nz-pagination--lg, nz-pagination--simple, nz-pagination--sm, nz-pagination__ellipsis, nz-pagination__status
-tokens: --nz-bg-inset, --nz-brand, --nz-peso-fuerte, --nz-radius-sm, --nz-space-1, --nz-space-2, --nz-space-3, --nz-space-4, --nz-text, --nz-text-base, --nz-text-faint, --nz-text-invert, --nz-text-mute, --nz-text-sm, --nz-text-soft, --nz-text-xs
+tokens: --nz-bg-inset, --nz-brand, --nz-peso-fuerte, --nz-radius-sm, --nz-space-1, --nz-space-2, --nz-space-3, --nz-space-4, --nz-tactil, --nz-text, --nz-text-base, --nz-text-faint, --nz-text-invert, --nz-text-mute, --nz-text-sm, --nz-text-soft, --nz-text-xs
 markup: <nav class="nz-pagination nz-pagination--lg" aria-label="páginas grandes"><a href="#">‹</a><a href="#" aria-current="page">1</a><a href="#">2</a><a href="#">›</a></nav>
 noUsar: No para un scroll infinito o feed: la paginación es para conjuntos acotados.
 
@@ -1302,12 +1303,12 @@ markup: <div class="nz-panel-filtros" style="max-width:16rem"><div class="nz-pan
 
 ## nz-password · packs/p5-forms.css
 clases: nz-password, nz-password__toggle
-tokens: --nz-bg-inset, --nz-brand, --nz-radius-full, --nz-space-1, --nz-space-10, --nz-text, --nz-text-mute
+tokens: --nz-bg-inset, --nz-brand, --nz-radius-full, --nz-space-1, --nz-space-10, --nz-tactil, --nz-text, --nz-text-mute
 markup: <div class="nz-password is-revealed"><input class="nz-input" type="text" aria-label="Contrasena" value="Secreta-1234"><button class="nz-password__toggle" type="button" aria-label="Ocultar">Ocultar</button></div>
 
 ## nz-pathbar · packs/p15-apps.css
 clases: nz-pathbar, nz-pathbar__seg
-tokens: --nz-bg-inset, --nz-font-mono, --nz-peso-fuerte, --nz-radius-md, --nz-radius-xs, --nz-space-1, --nz-space-2, --nz-space-3, --nz-surface-2, --nz-text, --nz-text-2xs, --nz-text-faint, --nz-text-mute, --nz-text-soft
+tokens: --nz-bg-inset, --nz-font-mono, --nz-peso-fuerte, --nz-radius-md, --nz-radius-xs, --nz-space-1, --nz-space-2, --nz-space-3, --nz-surface-2, --nz-tactil, --nz-text, --nz-text-2xs, --nz-text-faint, --nz-text-mute, --nz-text-soft
 markup: <nav class="nz-pathbar" aria-label="Ruta del archivo"><a class="nz-pathbar__seg" href="#">inicio</a><a class="nz-pathbar__seg" href="#">proyectos</a><a class="nz-pathbar__seg" href="#">aurora-7</a><span class="nz-pathbar__seg" aria-current="page">p15-apps.css</span></nav>
 
 ## nz-pay · packs/p10-commerce.css
@@ -1317,7 +1318,7 @@ markup: <div class="nz-pay"><span class="nz-pay__icon">VISA</span><div class="nz
 
 ## nz-payment · packs/p10-commerce.css
 clases: nz-payment, nz-payment--grid, nz-payment__icon, nz-payment__label, nz-payment__method, nz-payment__method--selected, nz-payment__note
-tokens: --nz-bg-inset, --nz-border, --nz-border-strong, --nz-border-w, --nz-border-w-strong, --nz-brand, --nz-brand-soft, --nz-peso-fuerte, --nz-radius-md, --nz-radius-xs, --nz-space-2, --nz-space-3, --nz-space-4, --nz-surface, --nz-text, --nz-text-mute, --nz-text-sm, --nz-text-xs
+tokens: --nz-bg-inset, --nz-border, --nz-border-strong, --nz-border-w, --nz-border-w-strong, --nz-brand, --nz-brand-soft, --nz-peso-fuerte, --nz-radius-md, --nz-radius-xs, --nz-space-2, --nz-space-3, --nz-space-4, --nz-surface, --nz-tactil, --nz-text, --nz-text-mute, --nz-text-sm, --nz-text-xs
 markup: <div class="nz-payment"><div class="nz-payment__method nz-payment__method--selected"><span class="nz-payment__icon">VISA</span><span class="nz-payment__label">Visa •••• 4242</span><span class="nz-payment__note">Caduca 04/28</span></div><div class="nz-payment__method"><span class="nz-payment__icon">Bizum</span><span class="nz-payment__label">Bizum</span><span class="nz-payment__note">Al móvil</span></div></div>
 
 ## nz-perfil-pestanas · packs/p17-patrones.css
@@ -1342,28 +1343,28 @@ markup: <div class="nz-plans nz-plans--2"><div class="nz-plan"><span class="nz-p
 
 ## nz-popover · packs/p7-overlays.css
 clases: nz-popover, nz-popover--arrow, nz-popover--brand, nz-popover--end, nz-popover--rich, nz-popover__arrow, nz-popover__body, nz-popover__item, nz-popover__item--danger, nz-popover__sep, nz-popover__title
-tokens: --nz-bg-soft, --nz-border-soft, --nz-brand, --nz-danger, --nz-danger-soft, --nz-dur-base, --nz-ease-out, --nz-peso-fuerte, --nz-radius-lg, --nz-radius-sm, --nz-shadow-brand, --nz-shadow-lg, --nz-space-2, --nz-space-3, --nz-space-4, --nz-space-5, --nz-surface, --nz-text, --nz-text-faint, --nz-text-invert, --nz-text-sm, --nz-text-soft, --nz-text-xs, --nz-tracking-caps, --nz-z-popover
+tokens: --nz-bg-soft, --nz-border-soft, --nz-brand, --nz-danger, --nz-danger-soft, --nz-dur-base, --nz-ease-out, --nz-peso-fuerte, --nz-radius-lg, --nz-radius-sm, --nz-shadow-brand, --nz-shadow-lg, --nz-space-2, --nz-space-3, --nz-space-4, --nz-space-5, --nz-surface, --nz-tactil, --nz-text, --nz-text-faint, --nz-text-invert, --nz-text-sm, --nz-text-soft, --nz-text-xs, --nz-tracking-caps, --nz-z-popover
 markup: <span class="nz-popover nz-popover--brand"><input class="nz-vh" type="checkbox" id="po-c"> <label class="nz-btn nz-btn--primary" for="po-c">Ayuda</label> <div class="nz-popover__body"><a href="#contenido" class="nz-popover__item">Atajos de teclado</a><a href="#contenido" class="nz-popover__item">Contactar soporte</a></div></span>
 noUsar: No para contenido crítico ni interactivo complejo: es información contextual al vuelo.
 
 ## nz-post · packs/p11-social.css
 clases: nz-post, nz-post--bordered, nz-post--compact, nz-post--pinned, nz-post__actions, nz-post__author, nz-post__body, nz-post__byline, nz-post__foot, nz-post__handle, nz-post__head, nz-post__media, nz-post__more, nz-post__pin, nz-post__reactions, nz-post__time
-tokens: --nz-accent, --nz-accent-strong, --nz-bg-inset, --nz-bg-soft, --nz-border, --nz-border-soft, --nz-border-w, --nz-border-w-strong, --nz-brand, --nz-leading-normal, --nz-peso-fuerte, --nz-radius-full, --nz-radius-lg, --nz-radius-md, --nz-shadow-sm, --nz-space-1, --nz-space-2, --nz-space-3, --nz-space-4, --nz-surface, --nz-text, --nz-text-2xs, --nz-text-faint, --nz-text-mute, --nz-text-sm, --nz-text-soft, --nz-text-xs, --nz-tracking-caps
+tokens: --nz-accent, --nz-accent-strong, --nz-bg-inset, --nz-bg-soft, --nz-border, --nz-border-soft, --nz-border-w, --nz-border-w-strong, --nz-brand, --nz-leading-normal, --nz-peso-fuerte, --nz-radius-full, --nz-radius-lg, --nz-radius-md, --nz-shadow-sm, --nz-space-1, --nz-space-2, --nz-space-3, --nz-space-4, --nz-surface, --nz-tactil, --nz-text, --nz-text-2xs, --nz-text-faint, --nz-text-mute, --nz-text-sm, --nz-text-soft, --nz-text-xs, --nz-tracking-caps
 markup: <article class="nz-post nz-post--compact"><p class="nz-post__body">Columna derecha.</p></article>
 
 ## nz-preferencias · packs/p12-system.css
 clases: nz-preferencias, nz-preferencias__control, nz-preferencias__desc, nz-preferencias__fila, nz-preferencias__label
-tokens: --nz-border-soft, --nz-border-w, --nz-peso-fuerte, --nz-peso-medio, --nz-radius-lg, --nz-space-1, --nz-space-2, --nz-space-3, --nz-space-4, --nz-surface, --nz-text, --nz-text-mute, --nz-text-sm, --nz-text-xs
+tokens: --nz-border-soft, --nz-border-w, --nz-peso-fuerte, --nz-peso-medio, --nz-radius-lg, --nz-space-1, --nz-space-2, --nz-space-3, --nz-space-4, --nz-surface, --nz-tactil, --nz-text, --nz-text-mute, --nz-text-sm, --nz-text-xs
 markup: <div class="nz-preferencias"><div class="nz-preferencias__fila"><span class="nz-preferencias__label">Movimiento reducido<span class="nz-preferencias__desc">Congela animaciones y transiciones.</span></span><span class="nz-preferencias__control"><label class="nz-switch"><input type="checkbox" checked><span class="nz-switch__track"><span class="nz-switch__thumb"></span></span><span class="nz-switch__label">Activo</span></label></span></div><div class="nz-preferencias__fila"><span class="nz-preferencias__label">Objetivos táctiles grandes<span class="nz-preferencias__desc">Mínimo 44 px en todo lo pulsable.</span></span><span class="nz-preferencias__control"><label class="nz-switch"><input type="checkbox"><span class="nz-switch__track"><span class="nz-switch__thumb"></span></span><span class="nz-switch__label">Inactivo</span></label></span></div></div>
 
 ## nz-prefs · packs/p15-apps.css
 clases: nz-prefs, nz-prefs__control, nz-prefs__row
-tokens: --nz-border, --nz-border-soft, --nz-border-w, --nz-brand, --nz-peso-fuerte, --nz-radius-lg, --nz-radius-sm, --nz-space-1, --nz-space-2, --nz-space-3, --nz-space-4, --nz-surface, --nz-surface-2, --nz-text, --nz-text-faint, --nz-text-mute, --nz-text-sm, --nz-text-xs, --nz-tracking-caps
+tokens: --nz-border, --nz-border-soft, --nz-border-w, --nz-brand, --nz-peso-fuerte, --nz-radius-lg, --nz-radius-sm, --nz-space-1, --nz-space-2, --nz-space-3, --nz-space-4, --nz-surface, --nz-surface-2, --nz-tactil, --nz-text, --nz-text-faint, --nz-text-mute, --nz-text-sm, --nz-text-xs, --nz-tracking-caps
 markup: <div class="nz-prefs"><h4>Apariencia</h4><div class="nz-prefs__row"><div><b>Tema</b><p>Claro u oscuro según el sistema.</p></div><div class="nz-prefs__control"><select aria-label="Tema"><option>Sistema</option><option>Claro</option><option>Oscuro</option></select></div></div><div class="nz-prefs__row"><div><b>Números de línea</b><p>Muestra el gutter en el editor de código.</p></div><div class="nz-prefs__control"><label><input type="checkbox" checked> Activado</label></div></div><div class="nz-prefs__row"><div><b>Autoguardado</b><p>Guarda al cambiar de pestaña.</p></div><div class="nz-prefs__control"><label><input type="checkbox"> Desactivado</label></div></div></div>
 
 ## nz-preguntas-frecuentes · packs/p17-patrones.css
 clases: nz-preguntas-frecuentes, nz-preguntas-frecuentes__item, nz-preguntas-frecuentes__pregunta, nz-preguntas-frecuentes__respuesta
-tokens: --nz-border-soft, --nz-border-w, --nz-peso-fuerte, --nz-radius-md, --nz-space-2, --nz-space-3, --nz-space-4, --nz-surface, --nz-text, --nz-text-sm, --nz-text-soft
+tokens: --nz-border-soft, --nz-border-w, --nz-peso-fuerte, --nz-radius-md, --nz-space-2, --nz-space-3, --nz-space-4, --nz-surface, --nz-tactil, --nz-text, --nz-text-sm, --nz-text-soft
 markup: <div class="nz-preguntas-frecuentes" style="max-width:40rem"><details class="nz-preguntas-frecuentes__item" open><summary class="nz-preguntas-frecuentes__pregunta">¿Cómo cambio de plan?</summary><div class="nz-preguntas-frecuentes__respuesta">Desde Ajustes → Facturación, elige el nuevo plan y el cambio es inmediato.</div></details><details class="nz-preguntas-frecuentes__item"><summary class="nz-preguntas-frecuentes__pregunta">¿Puedo exportar mis datos?</summary><div class="nz-preguntas-frecuentes__respuesta">Sí, en CSV o JSON desde el menú de cada tabla.</div></details><details class="nz-preguntas-frecuentes__item"><summary class="nz-preguntas-frecuentes__pregunta">¿Qué pasa si supero los asientos?</summary><div class="nz-preguntas-frecuentes__respuesta">Se factura el exceso a 12 € por asiento y mes.</div></details></div>
 
 ## nz-presentacion · packs/p18-escenario.css
@@ -1390,7 +1391,7 @@ markup: <div class="nz-print-hide demo-box demo-box--accent">.nz-print-hide · n
 
 ## nz-product · packs/p10-commerce.css
 clases: nz-product, nz-product--bordered, nz-product--compact, nz-product--horizontal, nz-product--sold-out, nz-product__badge, nz-product__body, nz-product__cat, nz-product__cta, nz-product__media, nz-product__name, nz-product__price, nz-product__quick, nz-product__rate, nz-product__ribbon, nz-product__variant
-tokens: --nz-accent, --nz-accent-ink, --nz-bg-inset, --nz-border, --nz-border-w, --nz-brand, --nz-dur-base, --nz-ease-out, --nz-leading-snug, --nz-peso-fuerte, --nz-radius-full, --nz-radius-lg, --nz-radius-md, --nz-radius-sm, --nz-shadow-lg, --nz-shadow-md, --nz-shadow-sm, --nz-space-1, --nz-space-2, --nz-space-3, --nz-space-4, --nz-surface, --nz-text, --nz-text-base, --nz-text-faint, --nz-text-invert, --nz-text-mute, --nz-text-sm, --nz-text-soft, --nz-text-xs, --nz-tracking-caps
+tokens: --nz-accent, --nz-accent-ink, --nz-bg-inset, --nz-border, --nz-border-w, --nz-brand, --nz-dur-base, --nz-ease-out, --nz-leading-snug, --nz-peso-fuerte, --nz-radius-full, --nz-radius-lg, --nz-radius-md, --nz-radius-sm, --nz-shadow-lg, --nz-shadow-md, --nz-shadow-sm, --nz-space-1, --nz-space-2, --nz-space-3, --nz-space-4, --nz-surface, --nz-tactil, --nz-text, --nz-text-base, --nz-text-faint, --nz-text-invert, --nz-text-mute, --nz-text-sm, --nz-text-soft, --nz-text-xs, --nz-tracking-caps
 markup: <article class="nz-product nz-product--compact"><div class="nz-product__media"></div><div class="nz-product__body"><h3 class="nz-product__name">Artículo uno</h3></div></article>
 
 ## nz-products · packs/p10-commerce.css
@@ -1406,7 +1407,7 @@ noUsar: No para operaciones indeterminadas: para eso existe el spinner/`.nz-spin
 
 ## nz-prompt · packs/p14-ai.css
 clases: nz-prompt, nz-prompt__attach, nz-prompt__hint, nz-prompt__input, nz-prompt__send
-tokens: --nz-bg-inset, --nz-border, --nz-border-w-strong, --nz-brand, --nz-focus-ring, --nz-peso-fuerte, --nz-radius-lg, --nz-radius-md, --nz-space-1, --nz-space-2, --nz-space-3, --nz-space-4, --nz-surface, --nz-text, --nz-text-faint, --nz-text-invert, --nz-text-sm, --nz-text-soft, --nz-text-xs
+tokens: --nz-bg-inset, --nz-border, --nz-border-w-strong, --nz-brand, --nz-focus-ring, --nz-peso-fuerte, --nz-radius-lg, --nz-radius-md, --nz-space-1, --nz-space-2, --nz-space-3, --nz-space-4, --nz-surface, --nz-tactil, --nz-text, --nz-text-faint, --nz-text-invert, --nz-text-sm, --nz-text-soft, --nz-text-xs
 markup: <div class="nz-prompt"><button class="nz-prompt__attach" aria-label="Adjuntar">+</button><textarea class="nz-prompt__input" rows="1" placeholder="Escribe tu pregunta…" aria-label="Escribe tu pregunta"></textarea><button class="nz-prompt__send">Enviar</button></div>
 noUsar: No lo uses como input de formulario normal: es la entrada de un asistente IA.
 
@@ -1437,22 +1438,22 @@ markup: <div class="nz-qr"><span class="nz-qr__marco"><svg viewBox="0 0 21 21" r
 
 ## nz-qty · packs/p5-forms.css
 clases: nz-qty, nz-qty--lg, nz-qty--sm, nz-qty--vertical
-tokens: --nz-bg-soft, --nz-border, --nz-border-w, --nz-peso-fuerte, --nz-radius-full, --nz-radius-lg, --nz-surface, --nz-text, --nz-text-lg, --nz-text-md, --nz-text-xl
+tokens: --nz-bg-soft, --nz-border, --nz-border-w, --nz-peso-fuerte, --nz-radius-full, --nz-radius-lg, --nz-surface, --nz-tactil, --nz-text, --nz-text-lg, --nz-text-md, --nz-text-xl
 markup: <div class="nz-qty"><button aria-label="menos">−</button><input value="2" aria-label="cantidad"><button aria-label="más">+</button></div>
 
 ## nz-quote · packs/p11-social.css
 clases: nz-quote, nz-quote--accent, nz-quote--brand, nz-quote--sm, nz-quote__avatar, nz-quote__byline, nz-quote__logo, nz-quote__name, nz-quote__role, nz-quote__who
-tokens: --nz-accent, --nz-accent-tint, --nz-blue-100, --nz-blue-200, --nz-border-w-strong, --nz-brand, --nz-brand-soft, --nz-leading-snug, --nz-peso-fuerte, --nz-peso-titulo, --nz-radius-lg, --nz-shadow-sm, --nz-space-2, --nz-space-3, --nz-space-4, --nz-space-5, --nz-space-6, --nz-surface, --nz-text, --nz-text-faint, --nz-text-invert, --nz-text-md, --nz-text-mute, --nz-text-sm, --nz-text-xs
+tokens: --nz-accent, --nz-accent-tint, --nz-blue-100, --nz-blue-200, --nz-border-w-strong, --nz-brand, --nz-brand-soft, --nz-leading-snug, --nz-peso-fuerte, --nz-peso-titulo, --nz-radius-lg, --nz-shadow-sm, --nz-space-2, --nz-space-3, --nz-space-4, --nz-space-5, --nz-space-6, --nz-surface, --nz-tactil, --nz-text, --nz-text-faint, --nz-text-invert, --nz-text-md, --nz-text-mute, --nz-text-sm, --nz-text-xs
 markup: <figure class="nz-quote nz-quote--sm"><p>“Corta, clara y en un tercio del espacio.”</p><figcaption class="nz-quote__who"><span class="nz-quote__byline"><span class="nz-quote__name">Marta</span><span class="nz-quote__role">Soporte</span></span></figcaption></figure>
 
 ## nz-radio · packs/p5-forms.css
 clases: nz-radio, nz-radio--card, nz-radio__dot, nz-radio__dot--lg
-tokens: --nz-border, --nz-border-strong, --nz-border-w, --nz-border-w-strong, --nz-brand, --nz-brand-soft, --nz-dur-fast, --nz-ease-out, --nz-focus-ring, --nz-radius-full, --nz-radius-md, --nz-space-2, --nz-space-3, --nz-space-4, --nz-surface, --nz-text
+tokens: --nz-border, --nz-border-strong, --nz-border-w, --nz-border-w-strong, --nz-brand, --nz-brand-soft, --nz-dur-fast, --nz-ease-out, --nz-focus-ring, --nz-radius-full, --nz-radius-md, --nz-space-2, --nz-space-3, --nz-space-4, --nz-surface, --nz-tactil, --nz-text
 markup: <label class="nz-radio"><input type="radio" name="disp"><span class="nz-radio__dot"></span>Todos</label>
 
 ## nz-range · packs/p5-forms.css
 clases: nz-range, nz-range--accent, nz-range--brand, nz-range--sm, nz-range__marks
-tokens: --nz-accent, --nz-bg-inset, --nz-brand, --nz-radius-full, --nz-shadow-accent, --nz-shadow-brand, --nz-surface, --nz-text-2xs, --nz-text-faint
+tokens: --nz-accent, --nz-bg-inset, --nz-brand, --nz-radius-full, --nz-shadow-accent, --nz-shadow-brand, --nz-surface, --nz-tactil, --nz-text-2xs, --nz-text-faint
 markup: <input class="nz-range" id="fr1" type="range" min="0" max="1000" value="450">
 
 ## nz-reason · packs/p14-ai.css
@@ -1462,7 +1463,7 @@ markup: <details class="nz-reason"><summary class="nz-reason__summary">Ver razon
 
 ## nz-record · packs/p8-data.css
 clases: nz-record, nz-record--brand, nz-record--danger, nz-record--success, nz-record--warning, nz-record__actions, nz-record__avatar, nz-record__body, nz-record__meta, nz-record__meta--brand, nz-record__meta--error, nz-record__tag, nz-record__thumb, nz-record__title, nz-record__value, nz-record__value--brand
-tokens: --nz-bg-inset, --nz-brand, --nz-brand-soft, --nz-danger, --nz-peso-fuerte, --nz-radius-md, --nz-radius-sm, --nz-shadow-sm, --nz-space-1, --nz-space-3, --nz-space-4, --nz-success, --nz-surface, --nz-text, --nz-text-mute, --nz-text-sm, --nz-text-xs, --nz-tracking-caps, --nz-warning
+tokens: --nz-bg-inset, --nz-brand, --nz-brand-soft, --nz-danger, --nz-peso-fuerte, --nz-radius-md, --nz-radius-sm, --nz-shadow-sm, --nz-space-1, --nz-space-3, --nz-space-4, --nz-success, --nz-surface, --nz-tactil, --nz-text, --nz-text-mute, --nz-text-sm, --nz-text-xs, --nz-tracking-caps, --nz-warning
 markup: <div class="nz-record">Densa · fila 1</div>
 
 ## nz-records · packs/p8-data.css
@@ -1517,7 +1518,7 @@ markup: <div class="nz-resumen-pedido" style="max-width:24rem"><div class="nz-re
 
 ## nz-ribbon · packs/p15-apps.css
 clases: nz-ribbon, nz-ribbon__btn
-tokens: --nz-bg-soft, --nz-border-soft, --nz-border-w, --nz-brand-soft, --nz-brand-strong, --nz-peso-fuerte, --nz-radius-md, --nz-radius-sm, --nz-space-1, --nz-space-2, --nz-space-3, --nz-surface, --nz-text, --nz-text-faint, --nz-text-md, --nz-text-soft, --nz-text-xs, --nz-tracking-caps
+tokens: --nz-bg-soft, --nz-border-soft, --nz-border-w, --nz-brand-soft, --nz-brand-strong, --nz-peso-fuerte, --nz-radius-md, --nz-radius-sm, --nz-space-1, --nz-space-2, --nz-space-3, --nz-surface, --nz-tactil, --nz-text, --nz-text-faint, --nz-text-md, --nz-text-soft, --nz-text-xs, --nz-tracking-caps
 markup: <div class="nz-ribbon" role="toolbar" aria-label="Cinta de opciones"><section><b>Archivo</b><div><button class="nz-ribbon__btn" aria-label="Nuevo"><svg class="nz-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></button><button class="nz-ribbon__btn" aria-label="Guardar"><svg class="nz-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12"/><path d="m7 12 5 5 5-5"/><path d="M5 21h14"/></svg></button></div></section><section><b>Vista</b><div><button class="nz-ribbon__btn" aria-pressed="true" aria-label="Cuadrícula"><svg class="nz-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg></button><button class="nz-ribbon__btn" aria-pressed="false" aria-label="Reglas"><svg class="nz-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 3v18M15 3v18M3 9h18M3 15h18"/></svg></button></div></section></div>
 
 ## nz-ring · packs/p6-feedback.css
@@ -1574,7 +1575,7 @@ markup: <div class="nz-scrim is-open" style="position:absolute;border-radius:inh
 
 ## nz-search · packs/p5-forms.css
 clases: nz-search, nz-search--full, nz-search--sm, nz-search__clear, nz-search__icon
-tokens: --nz-bg-inset, --nz-radius-full, --nz-space-1, --nz-space-3, --nz-space-8, --nz-space-9, --nz-text, --nz-text-faint, --nz-text-md, --nz-text-sm
+tokens: --nz-bg-inset, --nz-radius-full, --nz-space-1, --nz-space-3, --nz-space-8, --nz-space-9, --nz-tactil, --nz-text, --nz-text-faint, --nz-text-md, --nz-text-sm
 markup: <div class="nz-search" style="max-width:16rem"><span class="nz-search__icon"><svg class="nz-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></span><input class="nz-input" placeholder="Buscar…" aria-label="Buscar"></div>
 
 ## nz-section · packs/p1-layout.css
@@ -1584,32 +1585,32 @@ markup: <div class="nz-section demo-box" style="padding:var(--nz-space-3)">secti
 
 ## nz-segmented · packs/p4-actions.css
 clases: nz-segmented, nz-segmented--accent, nz-segmented--brand, nz-segmented--full, nz-segmented--lg, nz-segmented--sm, nz-segmented--vertical
-tokens: --nz-accent, --nz-accent-ink, --nz-bg-inset, --nz-brand, --nz-dur-fast, --nz-ease-out, --nz-peso-fuerte, --nz-radius-full, --nz-radius-lg, --nz-radius-md, --nz-shadow-sm, --nz-space-1, --nz-space-3, --nz-space-4, --nz-space-5, --nz-surface, --nz-text, --nz-text-base, --nz-text-invert, --nz-text-sm, --nz-text-soft, --nz-text-xs
+tokens: --nz-accent, --nz-accent-ink, --nz-bg-inset, --nz-brand, --nz-dur-fast, --nz-ease-out, --nz-peso-fuerte, --nz-radius-full, --nz-radius-lg, --nz-radius-md, --nz-shadow-sm, --nz-space-1, --nz-space-3, --nz-space-4, --nz-space-5, --nz-surface, --nz-tactil, --nz-text, --nz-text-base, --nz-text-invert, --nz-text-sm, --nz-text-soft, --nz-text-xs
 markup: <div class="nz-segmented nz-segmented--sm"><button aria-selected="true">Hoy</button><button aria-selected="false">Semana</button></div>
 
 ## nz-select · packs/p5-forms.css
 clases: nz-select, nz-select--group, nz-select--lg, nz-select--multiple, nz-select--pill, nz-select--sm
-tokens: --nz-bg-inset, --nz-border, --nz-border-strong, --nz-border-w, --nz-brand, --nz-dur-fast, --nz-ease-out, --nz-focus-ring, --nz-radius-full, --nz-radius-sm, --nz-radius-xs, --nz-space-2, --nz-space-3, --nz-space-4, --nz-space-5, --nz-space-7, --nz-space-8, --nz-space-9, --nz-surface, --nz-text, --nz-text-base, --nz-text-md, --nz-text-mute, --nz-text-sm
+tokens: --nz-bg-inset, --nz-border, --nz-border-strong, --nz-border-w, --nz-brand, --nz-dur-fast, --nz-ease-out, --nz-focus-ring, --nz-radius-full, --nz-radius-sm, --nz-radius-xs, --nz-space-2, --nz-space-3, --nz-space-4, --nz-space-5, --nz-space-7, --nz-space-8, --nz-space-9, --nz-surface, --nz-tactil, --nz-text, --nz-text-base, --nz-text-md, --nz-text-mute, --nz-text-sm
 markup: <select class="nz-select nz-select--pill" aria-label="Selecciona una opción"><option>Todas las categorías</option></select>
 
 ## nz-selector-vista · packs/p17-patrones.css
 clases: nz-selector-vista, nz-selector-vista__opcion
-tokens: --nz-bg-inset, --nz-peso-fuerte, --nz-radius-full, --nz-shadow-sm, --nz-space-1, --nz-space-3, --nz-surface, --nz-text, --nz-text-sm, --nz-text-soft
+tokens: --nz-bg-inset, --nz-peso-fuerte, --nz-radius-full, --nz-shadow-sm, --nz-space-1, --nz-space-3, --nz-surface, --nz-tactil, --nz-text, --nz-text-sm, --nz-text-soft
 markup: <div class="nz-selector-vista" role="group" aria-label="Modo de vista"><button class="nz-selector-vista__opcion is-active" type="button"><svg class="nz-icon nz-icon--sm" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="7" height="7"/><rect x="13" y="4" width="7" height="7"/><rect x="4" y="13" width="7" height="7"/><rect x="13" y="13" width="7" height="7"/></svg>Rejilla</button><button class="nz-selector-vista__opcion" type="button"><svg class="nz-icon nz-icon--sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/></svg>Lista</button></div>
 
 ## nz-share · packs/p11-social.css
 clases: nz-share, nz-share--brand, nz-share--copy, nz-share--vertical, nz-share__count, nz-share__label
-tokens: --nz-bg-inset, --nz-brand, --nz-brand-strong, --nz-dur-fast, --nz-ease-out, --nz-peso-fuerte, --nz-radius-md, --nz-space-1, --nz-space-2, --nz-space-3, --nz-text-faint, --nz-text-invert, --nz-text-mute, --nz-text-sm, --nz-text-soft, --nz-text-xs, --nz-tracking-caps
+tokens: --nz-bg-inset, --nz-brand, --nz-brand-strong, --nz-dur-fast, --nz-ease-out, --nz-peso-fuerte, --nz-radius-md, --nz-space-1, --nz-space-2, --nz-space-3, --nz-tactil, --nz-text-faint, --nz-text-invert, --nz-text-mute, --nz-text-sm, --nz-text-soft, --nz-text-xs, --nz-tracking-caps
 markup: <div class="nz-share nz-share--brand"><button aria-label="Compartir en X">𝕏</button><button aria-label="Compartir en LinkedIn">in</button><span class="nz-share__count">24</span></div>
 
 ## nz-sheet · packs/p7-overlays.css
 clases: nz-sheet, nz-sheet--scroll, nz-sheet--tall, nz-sheet__action, nz-sheet__action--danger, nz-sheet__body, nz-sheet__foot, nz-sheet__grab, nz-sheet__handle, nz-sheet__head, nz-sheet__panel, nz-sheet__scrim, nz-sheet__title
-tokens: --nz-border, --nz-border-strong, --nz-brand, --nz-brand-soft, --nz-brand-tint, --nz-danger, --nz-danger-soft, --nz-danger-tint, --nz-dur-base, --nz-ease-out, --nz-overlay, --nz-peso-fuerte, --nz-radius-full, --nz-radius-md, --nz-radius-xl, --nz-shadow-xl, --nz-space-1, --nz-space-2, --nz-space-3, --nz-space-4, --nz-space-5, --nz-surface, --nz-text-md, --nz-text-sm, --nz-text-soft, --nz-z-drawer
+tokens: --nz-border, --nz-border-strong, --nz-brand, --nz-brand-soft, --nz-brand-tint, --nz-danger, --nz-danger-soft, --nz-danger-tint, --nz-dur-base, --nz-ease-out, --nz-overlay, --nz-peso-fuerte, --nz-radius-full, --nz-radius-md, --nz-radius-xl, --nz-shadow-xl, --nz-space-1, --nz-space-2, --nz-space-3, --nz-space-4, --nz-space-5, --nz-surface, --nz-tactil, --nz-text-md, --nz-text-sm, --nz-text-soft, --nz-z-drawer
 markup: <div class="nz-sheet"><input class="nz-vh" type="checkbox" id="sh-a"> <label class="nz-sheet__scrim" for="sh-a"></label> <div class="nz-sheet__panel"><div class="nz-sheet__grab"></div><div class="nz-sheet__head"><span class="nz-sheet__title">Compartir</span></div><p class="nz-sheet__body">Elige un destino para el enlace.</p></div></div>
 
 ## nz-shipping-option · packs/p10-commerce.css
 clases: nz-shipping-option, nz-shipping-option--disabled, nz-shipping-option--selected, nz-shipping-option__eta, nz-shipping-option__label, nz-shipping-option__price
-tokens: --nz-border, --nz-border-w, --nz-border-w-strong, --nz-brand, --nz-brand-soft, --nz-peso-fuerte, --nz-peso-titulo, --nz-radius-md, --nz-space-3, --nz-space-4, --nz-surface, --nz-text-mute, --nz-text-sm, --nz-text-xs
+tokens: --nz-border, --nz-border-w, --nz-border-w-strong, --nz-brand, --nz-brand-soft, --nz-peso-fuerte, --nz-peso-titulo, --nz-radius-md, --nz-space-3, --nz-space-4, --nz-surface, --nz-tactil, --nz-text-mute, --nz-text-sm, --nz-text-xs
 markup: <div class="nz-shipping-option"><span class="nz-shipping-option__label">Express</span><span class="nz-shipping-option__eta">24 h</span><span class="nz-shipping-option__price">4,95 €</span></div>
 
 ## nz-show-escritorio · packs/p1-layout.css
@@ -1622,28 +1623,28 @@ markup: <div class="nz-show-movil demo-box demo-box--accent">show-movil · solo 
 
 ## nz-sidebar · packs/p2-navigation.css
 clases: nz-sidebar, nz-sidebar--bordered, nz-sidebar--brand, nz-sidebar--compact, nz-sidebar--sticky, nz-sidebar__group, nz-sidebar__heading, nz-sidebar__link, nz-sidebar__link--count, nz-sidebar__link--icon
-tokens: --nz-bg-soft, --nz-border-soft, --nz-border-w, --nz-brand, --nz-brand-soft, --nz-peso-fuerte, --nz-radius-lg, --nz-radius-sm, --nz-space-1, --nz-space-2, --nz-space-3, --nz-space-4, --nz-surface, --nz-text, --nz-text-2xs, --nz-text-faint, --nz-text-invert, --nz-text-mute, --nz-text-sm, --nz-text-soft, --nz-text-xs, --nz-tracking-caps
+tokens: --nz-bg-soft, --nz-border-soft, --nz-border-w, --nz-brand, --nz-brand-soft, --nz-peso-fuerte, --nz-radius-lg, --nz-radius-sm, --nz-space-1, --nz-space-2, --nz-space-3, --nz-space-4, --nz-surface, --nz-tactil, --nz-text, --nz-text-2xs, --nz-text-faint, --nz-text-invert, --nz-text-mute, --nz-text-sm, --nz-text-soft, --nz-text-xs, --nz-tracking-caps
 markup: <div class="nz-sidebar nz-sidebar--bordered"><a href="#contenido" class="nz-sidebar__link">Bordered</a><a href="#contenido" class="nz-sidebar__link">Ajustes</a></div>
 
 ## nz-skeleton · packs/p6-feedback.css
 clases: nz-skeleton, nz-skeleton--avatar, nz-skeleton--button, nz-skeleton--chart, nz-skeleton--text, nz-skeleton__block, nz-skeleton__card, nz-skeleton__line, nz-skeleton__line--muted, nz-skeleton__line--title, nz-skeleton__line--wide
-tokens: --nz-bg-inset, --nz-bg-soft, --nz-radius-full, --nz-radius-md, --nz-radius-xs, --nz-shadow-sm, --nz-space-2, --nz-space-3, --nz-surface, --nz-text-base
+tokens: --nz-bg-inset, --nz-bg-soft, --nz-radius-full, --nz-radius-md, --nz-radius-xs, --nz-shadow-sm, --nz-space-2, --nz-space-3, --nz-surface, --nz-tactil, --nz-text-base
 markup: <div class="nz-skeleton nz-skeleton--chart"><div class="nz-skeleton__block"></div></div>
 noUsar: No para cargas < 300ms: parpadea y estorba. Solo esperas perceptibles.
 
 ## nz-skip-link · packs/p12-system.css
 clases: nz-skip-link, nz-skip-link--inline
-tokens: --nz-brand, --nz-dur-fast, --nz-ease-out, --nz-peso-fuerte, --nz-radius-sm, --nz-space-3, --nz-space-4, --nz-text-invert, --nz-z-tooltip
+tokens: --nz-brand, --nz-dur-fast, --nz-ease-out, --nz-peso-fuerte, --nz-radius-sm, --nz-space-3, --nz-space-4, --nz-tactil, --nz-text-invert, --nz-z-tooltip
 markup: <a class="nz-skip-link nz-skip-link--inline" href="#contenido">Saltar al contenido</a>
 
 ## nz-skip-links-group · packs/p12-system.css
 clases: nz-skip-links-group, nz-skip-links-group__link
-tokens: --nz-brand, --nz-brand-soft, --nz-peso-fuerte, --nz-radius-sm, --nz-space-2, --nz-space-3, --nz-text-invert, --nz-text-sm
+tokens: --nz-brand, --nz-brand-soft, --nz-peso-fuerte, --nz-radius-sm, --nz-space-2, --nz-space-3, --nz-tactil, --nz-text-invert, --nz-text-sm
 markup: <nav class="nz-skip-links-group" aria-label="Enlaces de salto"><a class="nz-skip-links-group__link" href="#contenido">Ir al contenido</a><a class="nz-skip-links-group__link" href="#menu">Ir al menú</a><a class="nz-skip-links-group__link" href="#pie">Ir al pie</a></nav>
 
 ## nz-social · packs/p11-social.css
 clases: nz-social, nz-social--count, nz-social--liked, nz-social--loading, nz-social--saved
-tokens: --nz-bg-soft, --nz-brand, --nz-danger, --nz-peso-fuerte, --nz-peso-titulo, --nz-radius-full, --nz-space-1, --nz-space-2, --nz-text, --nz-text-faint, --nz-text-mute, --nz-text-xs
+tokens: --nz-bg-soft, --nz-brand, --nz-danger, --nz-peso-fuerte, --nz-peso-titulo, --nz-radius-full, --nz-space-1, --nz-space-2, --nz-tactil, --nz-text, --nz-text-faint, --nz-text-mute, --nz-text-xs
 markup: <button class="nz-social nz-social--count">1.240</button>
 
 ## nz-social-proof · packs/p11-social.css
@@ -1740,7 +1741,7 @@ markup: <div class="nz-splitview"><div><h4>Explorador</h4>Selecciona un archivo 
 
 ## nz-spotlight · packs/p15-apps.css
 clases: nz-spotlight, nz-spotlight__input, nz-spotlight__item
-tokens: --nz-bg-soft, --nz-border, --nz-border-soft, --nz-border-w, --nz-brand, --nz-brand-strong, --nz-font-mono, --nz-radius-lg, --nz-radius-sm, --nz-radius-xs, --nz-shadow-xl, --nz-space-1, --nz-space-2, --nz-space-3, --nz-surface, --nz-text, --nz-text-2xs, --nz-text-faint, --nz-text-invert, --nz-text-md, --nz-text-mute, --nz-text-sm, --nz-text-soft, --nz-text-xs
+tokens: --nz-bg-soft, --nz-border, --nz-border-soft, --nz-border-w, --nz-brand, --nz-brand-strong, --nz-font-mono, --nz-radius-lg, --nz-radius-sm, --nz-radius-xs, --nz-shadow-xl, --nz-space-1, --nz-space-2, --nz-space-3, --nz-surface, --nz-tactil, --nz-text, --nz-text-2xs, --nz-text-faint, --nz-text-invert, --nz-text-md, --nz-text-mute, --nz-text-sm, --nz-text-soft, --nz-text-xs
 markup: <div class="nz-spotlight" role="dialog" aria-label="Paleta de comandos"><input class="nz-spotlight__input" type="search" placeholder="Escribe un comando o un archivo…" aria-label="Buscar comando"><a class="nz-spotlight__item is-active" href="#">Abrir panel de ajustes<kbd>↵</kbd></a><a class="nz-spotlight__item" href="#">Buscar en el proyecto<kbd>Ctrl P</kbd></a><a class="nz-spotlight__item" href="#">Cerrar todas las pestañas<kbd>⇧ ⌘ W</kbd></a><footer>↑↓ para moverte · Esc para salir</footer></div>
 
 ## nz-sr-only-focusable · packs/p12-system.css
@@ -1770,7 +1771,7 @@ markup: <div class="nz-statusbar nz-statusbar--info"><span>Sincronizado hace 2 m
 
 ## nz-stepper · packs/p2-navigation.css
 clases: nz-stepper, nz-stepper--compact, nz-stepper--vertical, nz-stepper__link, nz-stepper__num, nz-stepper__step, nz-stepper__step--error
-tokens: --nz-bg-inset, --nz-brand, --nz-danger, --nz-peso-fuerte, --nz-radius-full, --nz-space-1, --nz-space-2, --nz-space-3, --nz-success, --nz-text, --nz-text-faint, --nz-text-invert, --nz-text-mute, --nz-text-sm, --nz-text-xs
+tokens: --nz-bg-inset, --nz-brand, --nz-danger, --nz-peso-fuerte, --nz-radius-full, --nz-space-1, --nz-space-2, --nz-space-3, --nz-success, --nz-tactil, --nz-text, --nz-text-faint, --nz-text-invert, --nz-text-mute, --nz-text-sm, --nz-text-xs
 markup: <ol class="nz-stepper"><li class="nz-stepper__step is-done"><span class="nz-stepper__num">1</span>Cuenta</li><li class="nz-stepper__step is-active"><span class="nz-stepper__num">2</span>Empresa</li><li class="nz-stepper__step"><span class="nz-stepper__num">3</span>Pago</li></ol>
 noUsar: No para navegación libre entre secciones: los pasos tienen orden; eso es `.nz-tabs`.
 
@@ -1801,7 +1802,7 @@ markup: <div class="nz-summary nz-summary--brand"><div class="nz-summary__row"><
 
 ## nz-switch · packs/p5-forms.css
 clases: nz-switch, nz-switch--accent, nz-switch--brand, nz-switch--lg, nz-switch--sm, nz-switch__label, nz-switch__label--left, nz-switch__thumb, nz-switch__track
-tokens: --nz-accent, --nz-border-strong, --nz-brand, --nz-brand-strong, --nz-dur-base, --nz-ease-out, --nz-focus-ring, --nz-gray-0, --nz-radius-full, --nz-shadow-sm, --nz-space-2, --nz-text, --nz-text-base
+tokens: --nz-accent, --nz-border-strong, --nz-brand, --nz-brand-strong, --nz-dur-base, --nz-ease-out, --nz-focus-ring, --nz-gray-0, --nz-radius-full, --nz-shadow-sm, --nz-space-2, --nz-tactil, --nz-text, --nz-text-base
 markup: <label class="nz-switch"><input type="checkbox"><span class="nz-switch__track"><span class="nz-switch__thumb"></span></span><span class="nz-switch__label">Inactivo</span></label>
 noUsar: No para acciones (guardar, aplicar): un switch es un estado persistente, no un botón.
 
@@ -1812,7 +1813,7 @@ markup: <span class="nz-syn--num">44</span>
 
 ## nz-sysdialog · packs/p15-apps.css
 clases: nz-sysdialog, nz-sysdialog__panel, nz-sysdialog__scrim
-tokens: --nz-bg-inset, --nz-border, --nz-border-w, --nz-brand, --nz-danger, --nz-dur-base, --nz-ease-out, --nz-gutter, --nz-overlay, --nz-peso-fuerte, --nz-peso-titulo, --nz-radius-lg, --nz-radius-sm, --nz-shadow-xl, --nz-space-2, --nz-space-4, --nz-space-5, --nz-surface, --nz-surface-2, --nz-text, --nz-text-invert, --nz-text-lg, --nz-text-sm, --nz-text-soft, --nz-tracking-tight, --nz-z-modal
+tokens: --nz-bg-inset, --nz-border, --nz-border-w, --nz-brand, --nz-danger, --nz-dur-base, --nz-ease-out, --nz-gutter, --nz-overlay, --nz-peso-fuerte, --nz-peso-titulo, --nz-radius-lg, --nz-radius-sm, --nz-shadow-xl, --nz-space-2, --nz-space-4, --nz-space-5, --nz-surface, --nz-surface-2, --nz-tactil, --nz-text, --nz-text-invert, --nz-text-lg, --nz-text-sm, --nz-text-soft, --nz-tracking-tight, --nz-z-modal
 markup: <div class="nz-sysdialog"><input class="nz-vh" type="checkbox" id="sd15"><label for="sd15"><svg class="nz-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 2 20h20Z"/><path d="M12 9.5v4.5M12 17h.01"/></svg> Probar el diálogo de confirmación</label><div class="nz-sysdialog__scrim"><div class="nz-sysdialog__panel" role="alertdialog" aria-labelledby="sd15t"><h4 id="sd15t">¿Cerrar sin guardar?</h4><p>Los cambios en presupuesto.nz se perderán.</p><footer><label for="sd15" class="is-primary">Cancelar</label><button class="is-danger">Cerrar sin guardar</button></footer></div></div></div>
 
 ## nz-sysinfo · packs/p12-system.css
@@ -1822,7 +1823,7 @@ markup: <dl class="nz-sysinfo"><div class="nz-sysinfo__row"><dt class="nz-sysinf
 
 ## nz-sysnotif · packs/p15-apps.css
 clases: nz-sysnotif, nz-sysnotif__actions, nz-sysnotif__icon, nz-sysnotif__title
-tokens: --nz-accent, --nz-accent-soft, --nz-accent-strong, --nz-border, --nz-border-w, --nz-brand, --nz-brand-soft, --nz-danger, --nz-danger-soft, --nz-peso-fuerte, --nz-radius-lg, --nz-radius-sm, --nz-shadow-lg, --nz-space-1, --nz-space-2, --nz-space-3, --nz-surface, --nz-surface-2, --nz-text, --nz-text-invert, --nz-text-mute, --nz-text-sm, --nz-text-soft, --nz-text-xs
+tokens: --nz-accent, --nz-accent-soft, --nz-accent-strong, --nz-border, --nz-border-w, --nz-brand, --nz-brand-soft, --nz-danger, --nz-danger-soft, --nz-peso-fuerte, --nz-radius-lg, --nz-radius-sm, --nz-shadow-lg, --nz-space-1, --nz-space-2, --nz-space-3, --nz-surface, --nz-surface-2, --nz-tactil, --nz-text, --nz-text-invert, --nz-text-mute, --nz-text-sm, --nz-text-soft, --nz-text-xs
 markup: <div class="nz-sysnotif" role="status"><i class="nz-sysnotif__icon" aria-hidden="true">⟳</i><span class="nz-sysnotif__title">Actualizaciones listas</span><p>Hay 3 mejoras disponibles para tu espacio de trabajo.</p><div class="nz-sysnotif__actions"><button>Instalar</button><button>Más tarde</button></div></div>
 
 ## nz-sysstatus · packs/p12-system.css
@@ -1832,7 +1833,7 @@ markup: <span class="nz-sysstatus nz-sysstatus--err"><i></i>Caído</span>
 
 ## nz-tabfocus-visible · packs/p12-system.css
 clases: nz-tabfocus-visible
-tokens: --nz-focus-ring, --nz-radius-sm, --nz-space-2, --nz-space-3, --nz-surface, --nz-text, --nz-text-sm
+tokens: --nz-focus-ring, --nz-radius-sm, --nz-space-2, --nz-space-3, --nz-surface, --nz-tactil, --nz-text, --nz-text-sm
 markup: <span class="nz-tabfocus-visible">⇥ Así se ve el foco al llegar con Tab</span>
 
 ## nz-tabla-lote · packs/p17-patrones.css
@@ -1847,7 +1848,7 @@ markup: <div class="nz-tabla-resumen" style="max-width:46rem"><div class="nz-tab
 
 ## nz-table · packs/p8-data.css
 clases: nz-table, nz-table--apilable, nz-table--bordered, nz-table--borderless, nz-table--comfortable, nz-table--compact, nz-table--hover, nz-table--sm, nz-table--sticky-head, nz-table--striped, nz-table__caption, nz-table__cell--actions, nz-table__cell--checkbox, nz-table__cell--num, nz-table__cell--wide, nz-table__empty, nz-table__filters, nz-table__foot, nz-table__muted, nz-table__num, nz-table__right, nz-table__row--clickable, nz-table__row--selected, nz-table__sort, nz-table__status, nz-table__status--brand, nz-table__status--err, nz-table__status--ok, nz-table__status--warn, nz-table__strong, nz-table__toolbar, nz-table__toolbar-spacer
-tokens: --nz-bg-soft, --nz-border, --nz-border-soft, --nz-border-w, --nz-brand, --nz-brand-soft, --nz-danger, --nz-dur-fast, --nz-ease-out, --nz-peso-fuerte, --nz-radius-md, --nz-shadow-xs, --nz-space-1, --nz-space-2, --nz-space-3, --nz-space-4, --nz-space-5, --nz-space-8, --nz-success, --nz-surface, --nz-text, --nz-text-2xs, --nz-text-faint, --nz-text-mute, --nz-text-sm, --nz-text-soft, --nz-text-xs, --nz-tracking-caps, --nz-warning, --nz-z-raised
+tokens: --nz-bg-soft, --nz-border, --nz-border-soft, --nz-border-w, --nz-brand, --nz-brand-soft, --nz-danger, --nz-dur-fast, --nz-ease-out, --nz-peso-fuerte, --nz-radius-md, --nz-shadow-xs, --nz-space-1, --nz-space-2, --nz-space-3, --nz-space-4, --nz-space-5, --nz-space-8, --nz-success, --nz-surface, --nz-tactil, --nz-text, --nz-text-2xs, --nz-text-faint, --nz-text-mute, --nz-text-sm, --nz-text-soft, --nz-text-xs, --nz-tracking-caps, --nz-warning, --nz-z-raised
 markup: <table class="nz-table nz-table--comfortable"><tbody><tr><td>C-03</td><td class="nz-table__num">31</td></tr><tr><td>C-04</td><td class="nz-table__num">27</td></tr></tbody></table>
 noUsar: Si la tabla no cabe y no apilas con `.nz-table-wrap--apilable` + `data-etiqueta`, se corta en móvil.
 
@@ -1858,12 +1859,13 @@ markup: <div class="nz-table-wrap"><table class="nz-table nz-table--comfortable"
 
 ## nz-tabs · packs/p2-navigation.css
 clases: nz-tabs, nz-tabs--center, nz-tabs--full, nz-tabs--pill, nz-tabs--scroll, nz-tabs--underline, nz-tabs--vertical, nz-tabs__badge, nz-tabs__panel, nz-tabs__tab, nz-tabs__tab--count, nz-tabs__tab--disabled
-tokens: --nz-bg-inset, --nz-border-soft, --nz-border-strong, --nz-border-w, --nz-brand, --nz-peso-fuerte, --nz-radius-full, --nz-space-1, --nz-space-2, --nz-space-3, --nz-space-4, --nz-text, --nz-text-2xs, --nz-text-faint, --nz-text-invert, --nz-text-mute, --nz-text-sm, --nz-text-soft, --nz-text-xs
+tokens: --nz-bg-inset, --nz-border-soft, --nz-border-strong, --nz-border-w, --nz-brand, --nz-peso-fuerte, --nz-radius-full, --nz-space-1, --nz-space-2, --nz-space-3, --nz-space-4, --nz-tactil, --nz-text, --nz-text-2xs, --nz-text-faint, --nz-text-invert, --nz-text-mute, --nz-text-sm, --nz-text-soft, --nz-text-xs
 markup: <div class="nz-tabs nz-tabs--center"><button class="nz-tabs__tab" aria-selected="true">Centradas</button><button class="nz-tabs__tab">Otra</button></div>
 noUsar: No para pasos secuenciales de un proceso: eso es `.nz-stepper`.
 
 ## nz-tap-44 · packs/p12-system.css
 clases: nz-tap-44
+tokens: --nz-tactil
 markup: <span class="nz-tap-44"><span class="nz-badge nz-badge--brand">44 px de caja</span></span>
 
 ## nz-tarjeta-contenido · packs/p17-patrones.css
@@ -1903,7 +1905,7 @@ markup: <div class="nz-taskwin"><header>3 tareas en curso</header><div class="nz
 
 ## nz-team · packs/p11-social.css
 clases: nz-team, nz-team--lg, nz-team--sm, nz-team__avatar, nz-team__bio, nz-team__member, nz-team__name, nz-team__role, nz-team__social
-tokens: --nz-bg-inset, --nz-brand, --nz-peso-fuerte, --nz-radius-full, --nz-radius-lg, --nz-shadow-sm, --nz-space-1, --nz-space-2, --nz-space-4, --nz-space-5, --nz-surface, --nz-text, --nz-text-invert, --nz-text-md, --nz-text-mute, --nz-text-sm, --nz-text-soft, --nz-text-xs
+tokens: --nz-bg-inset, --nz-brand, --nz-peso-fuerte, --nz-radius-full, --nz-radius-lg, --nz-shadow-sm, --nz-space-1, --nz-space-2, --nz-space-4, --nz-space-5, --nz-surface, --nz-tactil, --nz-text, --nz-text-invert, --nz-text-md, --nz-text-mute, --nz-text-sm, --nz-text-soft, --nz-text-xs
 markup: <div class="nz-team"><div class="nz-team__member"><span class="nz-avatar nz-avatar--xl nz-team__avatar">DA</span><span class="nz-team__name">David Antizar</span><span class="nz-team__role">Diseño y sistema</span><span class="nz-team__bio">Autor de Aurora.</span><span class="nz-team__social"><a href="#" aria-label="Perfil uno">in</a><a href="#" aria-label="Perfil dos">𝕏</a></span></div><div class="nz-team__member"><span class="nz-avatar nz-avatar--xl nz-team__avatar">AM</span><span class="nz-team__name">Ana Molina</span><span class="nz-team__role">Frontend</span><span class="nz-team__bio">Tokens y accesibilidad.</span><span class="nz-team__social"><a href="#" aria-label="Perfil tres">in</a></span></div></div>
 
 ## nz-tema-badge · packs/p12-system.css
@@ -1923,7 +1925,7 @@ markup: <span class="nz-text--small">Éxito</span>
 
 ## nz-textarea · packs/p5-forms.css
 clases: nz-textarea, nz-textarea--auto, nz-textarea--lg, nz-textarea--pill, nz-textarea--sm, nz-textarea__counter
-tokens: --nz-bg-inset, --nz-bg-soft, --nz-border, --nz-border-strong, --nz-border-w, --nz-brand, --nz-dur-fast, --nz-ease-out, --nz-focus-ring, --nz-leading-normal, --nz-radius-full, --nz-radius-sm, --nz-space-1, --nz-space-3, --nz-space-4, --nz-surface, --nz-text, --nz-text-base, --nz-text-faint, --nz-text-mute, --nz-text-sm, --nz-text-soft, --nz-text-xs
+tokens: --nz-bg-inset, --nz-bg-soft, --nz-border, --nz-border-strong, --nz-border-w, --nz-brand, --nz-dur-fast, --nz-ease-out, --nz-focus-ring, --nz-leading-normal, --nz-radius-full, --nz-radius-sm, --nz-space-1, --nz-space-3, --nz-space-4, --nz-surface, --nz-tactil, --nz-text, --nz-text-base, --nz-text-faint, --nz-text-mute, --nz-text-sm, --nz-text-soft, --nz-text-xs
 markup: <textarea class="nz-textarea" id="ec2" rows="3">Taller naval fundado en 1974.</textarea>
 
 ## nz-thinking · packs/p14-ai.css
@@ -1949,7 +1951,7 @@ markup: <span class="nz-tip nz-tip--brand"><button class="nz-btn nz-btn--soft" t
 
 ## nz-toast · packs/p6-feedback.css
 clases: nz-toast, nz-toast--accent, nz-toast--bottom, nz-toast--brand, nz-toast--error, nz-toast--info, nz-toast--success, nz-toast--temporal, nz-toast--top, nz-toast--warning, nz-toast__action, nz-toast__close, nz-toast__icon, nz-toast__progreso, nz-toast__title
-tokens: --nz-accent, --nz-accent-ink, --nz-amber-700, --nz-bg-inset, --nz-blue-300, --nz-border, --nz-border-w, --nz-brand, --nz-dur-base, --nz-ease-out, --nz-gray-50, --nz-gray-700, --nz-gray-900, --nz-green-500, --nz-mov-vida, --nz-orange-300, --nz-orange-500, --nz-peso-fuerte, --nz-radius-full, --nz-radius-md, --nz-red-500, --nz-shadow-lg, --nz-space-1, --nz-space-3, --nz-space-4, --nz-space-6, --nz-surface, --nz-text, --nz-text-invert, --nz-text-md, --nz-text-sm, --nz-z-toast
+tokens: --nz-accent, --nz-accent-ink, --nz-amber-700, --nz-bg-inset, --nz-blue-300, --nz-border, --nz-border-w, --nz-brand, --nz-dur-base, --nz-ease-out, --nz-gray-50, --nz-gray-700, --nz-gray-900, --nz-green-500, --nz-mov-vida, --nz-orange-300, --nz-orange-500, --nz-peso-fuerte, --nz-radius-full, --nz-radius-md, --nz-red-500, --nz-shadow-lg, --nz-space-1, --nz-space-3, --nz-space-4, --nz-space-6, --nz-surface, --nz-tactil, --nz-text, --nz-text-invert, --nz-text-md, --nz-text-sm, --nz-z-toast
 markup: <div class="nz-toast nz-toast--top is-on" style="position:static;transform:none">Se actualizó el tema</div>
 noUsar: No para información que el usuario deba consultar luego: es efímero; usa `.nz-alert` o `.nz-notif`. No pongas acciones críticas (confirmar borrado) dentro de un toast.
 
@@ -1965,7 +1967,7 @@ markup: <div class="nz-toast-stack nz-toast-stack--end"><div class="nz-toast-sta
 
 ## nz-toc · packs/p2-navigation.css
 clases: nz-toc, nz-toc--compact, nz-toc--level2, nz-toc--sticky, nz-toc__title, nz-toc__title--brand
-tokens: --nz-bg-soft, --nz-brand, --nz-peso-fuerte, --nz-radius-lg, --nz-radius-sm, --nz-shadow-sm, --nz-space-1, --nz-space-2, --nz-space-4, --nz-space-5, --nz-space-6, --nz-surface, --nz-text, --nz-text-faint, --nz-text-sm, --nz-text-soft, --nz-text-xs, --nz-tracking-caps
+tokens: --nz-bg-soft, --nz-brand, --nz-peso-fuerte, --nz-radius-lg, --nz-radius-sm, --nz-shadow-sm, --nz-space-1, --nz-space-2, --nz-space-4, --nz-space-5, --nz-space-6, --nz-surface, --nz-tactil, --nz-text, --nz-text-faint, --nz-text-sm, --nz-text-soft, --nz-text-xs, --nz-tracking-caps
 markup: <a href="#" class="nz-toc--level2">Tokens</a>
 
 ## nz-tokens · packs/p14-ai.css
@@ -1995,12 +1997,12 @@ markup: <line x1="0" y1="12" x2="96" y2="12" class="nz-trama--diagonal" style="c
 
 ## nz-tray · packs/p15-apps.css
 clases: nz-tray, nz-tray__item, nz-tray__menu
-tokens: --nz-bg-inset, --nz-bg-soft, --nz-border-soft, --nz-border-w, --nz-dur-base, --nz-ease-out, --nz-peso-fuerte, --nz-radius-lg, --nz-radius-sm, --nz-shadow-xl, --nz-space-1, --nz-space-2, --nz-space-3, --nz-surface, --nz-surface-2, --nz-text, --nz-text-faint, --nz-text-md, --nz-text-sm, --nz-text-soft, --nz-text-xs, --nz-tracking-caps, --nz-z-popover
+tokens: --nz-bg-inset, --nz-bg-soft, --nz-border-soft, --nz-border-w, --nz-dur-base, --nz-ease-out, --nz-peso-fuerte, --nz-radius-lg, --nz-radius-sm, --nz-shadow-xl, --nz-space-1, --nz-space-2, --nz-space-3, --nz-surface, --nz-surface-2, --nz-tactil, --nz-text, --nz-text-faint, --nz-text-md, --nz-text-sm, --nz-text-soft, --nz-text-xs, --nz-tracking-caps, --nz-z-popover
 markup: <div class="nz-tray"><input class="nz-vh" type="checkbox" id="tray15"><label for="tray15"><svg class="nz-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h9"/></svg> Bandeja del sistema</label><div class="nz-tray__menu"><p>Sistema</p><button class="nz-tray__item">Sincronizar ahora<span>Ctrl S</span></button><button class="nz-tray__item">Modo concentración<span>Off</span></button><hr><button class="nz-tray__item">Cerrar sesión<span>Ctrl Q</span></button></div></div>
 
 ## nz-tree · packs/p15-apps.css
 clases: nz-tree, nz-tree__item
-tokens: --nz-bg-inset, --nz-brand, --nz-brand-soft, --nz-brand-strong, --nz-peso-fuerte, --nz-radius-md, --nz-radius-sm, --nz-space-2, --nz-space-4, --nz-surface-2, --nz-text, --nz-text-faint, --nz-text-sm, --nz-text-soft, --nz-text-xs
+tokens: --nz-bg-inset, --nz-brand, --nz-brand-soft, --nz-brand-strong, --nz-peso-fuerte, --nz-radius-md, --nz-radius-sm, --nz-space-2, --nz-space-4, --nz-surface-2, --nz-tactil, --nz-text, --nz-text-faint, --nz-text-sm, --nz-text-soft, --nz-text-xs
 markup: <div class="nz-tree" role="tree" aria-label="Explorador de archivos"><div class="nz-tree__item" role="treeitem" tabindex="0" aria-expanded="true"><i aria-hidden="true"><svg class="nz-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 9 7 7 7-7"/></svg></i>src<small>4 archivos</small></div><ul role="group"><li class="nz-tree__item" role="none"><span class="nz-tree__item" role="treeitem" tabindex="0"><i aria-hidden="true">·</i>main.css<small>2 KB</small></span></li><li class="nz-tree__item" role="none"><span class="nz-tree__item" role="treeitem" tabindex="0" aria-current="page"><i aria-hidden="true">·</i>tokens.css<small>6 KB</small></span></li></ul><div class="nz-tree__item" role="treeitem" tabindex="0" aria-expanded="false"><i aria-hidden="true"><svg class="nz-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg></i>dist</div></div>
 
 ## nz-treemap · packs/p13-charts.css
@@ -2014,7 +2016,7 @@ markup: <p class="nz-truncate" style="max-width:12rem">Texto muy largo que se co
 
 ## nz-trust · packs/p11-social.css
 clases: nz-trust, nz-trust--bordered, nz-trust--sm, nz-trust__logo, nz-trust__stars
-tokens: --nz-bg-inset, --nz-border-soft, --nz-border-w, --nz-peso-fuerte, --nz-radius-lg, --nz-radius-sm, --nz-space-1, --nz-space-2, --nz-space-3, --nz-space-4, --nz-space-5, --nz-space-8, --nz-surface, --nz-text-faint, --nz-text-sm, --nz-text-soft, --nz-text-xs, --nz-warning
+tokens: --nz-bg-inset, --nz-border-soft, --nz-border-w, --nz-peso-fuerte, --nz-radius-lg, --nz-radius-sm, --nz-space-1, --nz-space-2, --nz-space-3, --nz-space-4, --nz-space-5, --nz-space-8, --nz-surface, --nz-tactil, --nz-text-faint, --nz-text-sm, --nz-text-soft, --nz-text-xs, --nz-warning
 markup: <div class="nz-trust"><span class="nz-trust__logo"><svg class="nz-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l2.7 5.9 6.3.8-4.6 4.4 1.2 6.4L12 17.4 6.4 20.5l1.2-6.4L3 9.7l6.3-.8z"/></svg> Cliente A</span><span class="nz-trust__logo"><svg class="nz-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8 21.2 12 12 21.2 2.8 12Z"/></svg> Cliente B</span><span class="nz-trust__logo"><svg class="nz-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="6.5"/></svg> Cliente C</span></div>
 
 ## nz-underline · packs/p3-typography.css
@@ -2024,7 +2026,7 @@ markup: <span class="nz-underline--accent">subrayado naranja de 2px</span>
 
 ## nz-userbox · packs/p15-apps.css
 clases: nz-userbox, nz-userbox__avatar
-tokens: --nz-brand, --nz-peso-fuerte, --nz-radius-full, --nz-radius-md, --nz-space-2, --nz-space-3, --nz-surface-2, --nz-text, --nz-text-faint, --nz-text-invert, --nz-text-mute, --nz-text-sm, --nz-text-xs, --nz-tracking-caps
+tokens: --nz-brand, --nz-peso-fuerte, --nz-radius-full, --nz-radius-md, --nz-space-2, --nz-space-3, --nz-surface-2, --nz-tactil, --nz-text, --nz-text-faint, --nz-text-invert, --nz-text-mute, --nz-text-sm, --nz-text-xs, --nz-tracking-caps
 markup: <div class="nz-userbox"><span class="nz-userbox__avatar" aria-hidden="true">DA</span><div><b>David Antizar</b><span>Sesión de trabajo · plan Pro</span></div><i aria-hidden="true"><svg class="nz-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 9 7 7 7-7"/></svg></i></div>
 
 ## nz-username · packs/p11-social.css
@@ -2057,17 +2059,17 @@ markup: <div class="nz-widget is-accent"><h4>Energía hoy</h4><span class="nz-wi
 
 ## nz-window · packs/p15-apps.css
 clases: nz-window, nz-window--lg, nz-window--sm, nz-window__body, nz-window__titlebar
-tokens: --nz-bg-inset, --nz-bg-soft, --nz-border, --nz-border-soft, --nz-border-strong, --nz-border-w, --nz-brand, --nz-danger, --nz-danger-soft, --nz-dur-base, --nz-ease-out, --nz-peso-fuerte, --nz-radius-full, --nz-radius-lg, --nz-radius-sm, --nz-shadow-lg, --nz-shadow-xl, --nz-shadow-xs, --nz-space-2, --nz-space-4, --nz-surface, --nz-surface-2, --nz-text, --nz-text-mute, --nz-text-sm, --nz-text-soft
+tokens: --nz-bg-inset, --nz-bg-soft, --nz-border, --nz-border-soft, --nz-border-strong, --nz-border-w, --nz-brand, --nz-danger, --nz-danger-soft, --nz-dur-base, --nz-ease-out, --nz-peso-fuerte, --nz-radius-full, --nz-radius-lg, --nz-radius-sm, --nz-shadow-lg, --nz-shadow-xl, --nz-shadow-xs, --nz-space-2, --nz-space-4, --nz-surface, --nz-surface-2, --nz-tactil, --nz-text, --nz-text-mute, --nz-text-sm, --nz-text-soft
 markup: <div class="nz-window"><div class="nz-window__titlebar"><strong>Normal</strong></div><div class="nz-window__body"><p>Contenido de la ventana.</p></div></div>
 
 ## nz-winfoot · packs/p15-apps.css
 clases: nz-winfoot, nz-winfoot__count
-tokens: --nz-bg-inset, --nz-bg-soft, --nz-border-soft, --nz-border-w, --nz-brand-soft, --nz-brand-strong, --nz-peso-fuerte, --nz-radius-sm, --nz-space-1, --nz-space-2, --nz-space-3, --nz-text-2xs, --nz-text-faint, --nz-text-mute, --nz-text-soft
+tokens: --nz-bg-inset, --nz-bg-soft, --nz-border-soft, --nz-border-w, --nz-brand-soft, --nz-brand-strong, --nz-peso-fuerte, --nz-radius-sm, --nz-space-1, --nz-space-2, --nz-space-3, --nz-tactil, --nz-text-2xs, --nz-text-faint, --nz-text-mute, --nz-text-soft
 markup: <div class="nz-winfoot"><span class="nz-winfoot__count">12 archivos</span><i aria-hidden="true">·</i><span class="nz-winfoot__count">3 modificados</span><span class="nz-winfoot__count">UTF-8</span></div>
 
 ## nz-wishlist · packs/p10-commerce.css
 clases: nz-wishlist, nz-wishlist__btn, nz-wishlist__count
-tokens: --nz-border, --nz-border-w, --nz-danger, --nz-dur-fast, --nz-ease-out, --nz-peso-fuerte, --nz-radius-full, --nz-space-1, --nz-surface, --nz-text-md, --nz-text-mute, --nz-text-xs
+tokens: --nz-border, --nz-border-w, --nz-danger, --nz-dur-fast, --nz-ease-out, --nz-peso-fuerte, --nz-radius-full, --nz-space-1, --nz-surface, --nz-tactil, --nz-text-md, --nz-text-mute, --nz-text-xs
 markup: <span class="nz-wishlist"><button class="nz-wishlist__btn" aria-label="Añadir a la lista de deseos"><svg class="nz-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.3 4.6 13a4.6 4.6 0 0 1 6.5-6.5l.9.9.9-.9A4.6 4.6 0 0 1 19.4 13Z"/></svg></button><span class="nz-wishlist__count">12</span></span>
 
 ## nz-with-sidebar · packs/p1-layout.css

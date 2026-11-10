@@ -240,7 +240,7 @@
 
 /* ---- Selector de rango temporal ---- */
 .nz-chart-range { display: inline-flex; gap: 2px; padding: 2px; border-radius: var(--nz-radius-full); background: var(--nz-bg-inset); }
-.nz-chart-range__btn { min-height: 44px; padding: 0 var(--nz-space-3); border: 0; border-radius: var(--nz-radius-full); background: transparent; color: var(--nz-text-soft); font: inherit; font-size: var(--nz-text-xs); font-weight: var(--nz-peso-fuerte); cursor: pointer; }
+.nz-chart-range__btn { min-height: var(--nz-tactil); padding: 0 var(--nz-space-3); border: 0; border-radius: var(--nz-radius-full); background: transparent; color: var(--nz-text-soft); font: inherit; font-size: var(--nz-text-xs); font-weight: var(--nz-peso-fuerte); cursor: pointer; }
 .nz-chart-range__btn[aria-pressed="true"] { background: var(--nz-surface); color: var(--nz-text); box-shadow: var(--nz-shadow-xs); }
 
 /* ---- Cifra con sparkline ---- */

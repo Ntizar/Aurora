@@ -25,11 +25,11 @@
 .nz-modal--sheet-movil .nz-modal__dialog { width: 100%; border-radius: var(--nz-radius-xl) var(--nz-radius-xl) 0 0; padding-bottom: calc(var(--nz-space-6) + env(safe-area-inset-bottom, 0px)); }
 @media (min-width: 640px) { .nz-modal--sheet-movil { align-items: center; padding-bottom: var(--nz-space-4); } .nz-modal--sheet-movil .nz-modal__dialog { width: min(100%, 32rem); border-radius: var(--nz-radius-xl); } }
 .nz-modal__head { display: flex; align-items: flex-start; gap: var(--nz-space-3); margin-bottom: var(--nz-space-3); }
-.nz-modal__icon { width: 44px; height: 44px; flex: none; display: inline-grid; place-items: center; border-radius: var(--nz-radius-full); background: var(--nz-brand-soft); color: var(--nz-brand); font-size: var(--nz-text-lg); }
+.nz-modal__icon { width: var(--nz-tactil); height: var(--nz-tactil); flex: none; display: inline-grid; place-items: center; border-radius: var(--nz-radius-full); background: var(--nz-brand-soft); color: var(--nz-brand); font-size: var(--nz-text-lg); }
 .nz-modal__icon--danger { background: var(--nz-danger-soft); color: var(--nz-danger); }
 .nz-modal__title { font-size: var(--nz-text-lg); font-weight: var(--nz-peso-fuerte); letter-spacing: var(--nz-tracking-tight); flex: 1; }
 .nz-modal__meta { font-size: var(--nz-text-xs); font-weight: var(--nz-peso-fuerte); color: var(--nz-text-mute); }
-.nz-modal__close { width: 44px; height: 44px; flex: none; display: inline-flex; align-items: center; justify-content: center; border: 0; border-radius: 50%; background: var(--nz-bg-inset); color: var(--nz-text-mute); cursor: pointer; }
+.nz-modal__close { width: var(--nz-tactil); height: var(--nz-tactil); flex: none; display: inline-flex; align-items: center; justify-content: center; border: 0; border-radius: 50%; background: var(--nz-bg-inset); color: var(--nz-text-mute); cursor: pointer; }
 .nz-modal__close:hover { background: var(--nz-bg-soft); color: var(--nz-text); }
 .nz-modal__body { font-size: var(--nz-text-base); color: var(--nz-text-soft); }
 .nz-modal__body--scroll { max-height: 44vh; overflow-y: auto; padding-right: var(--nz-space-2); }
@@ -71,7 +71,7 @@
 .nz-sheet > input:checked ~ .nz-sheet__scrim { opacity: 1; visibility: visible; }
 .nz-sheet > input:checked ~ .nz-sheet__panel { transform: none; visibility: visible; }
 .nz-sheet__grab { width: 2.5rem; height: 4px; border-radius: var(--nz-radius-full); background: var(--nz-border); margin: 0 auto var(--nz-space-3); }
-.nz-sheet__handle { min-height: 44px; display: grid; place-items: center; margin: calc(var(--nz-space-2) * -1) 0 var(--nz-space-1); cursor: grab; }
+.nz-sheet__handle { min-height: var(--nz-tactil); display: grid; place-items: center; margin: calc(var(--nz-space-2) * -1) 0 var(--nz-space-1); cursor: grab; }
 .nz-sheet__handle::after { content: ""; width: 3rem; height: 4px; border-radius: var(--nz-radius-full); background: var(--nz-border-strong); }
 .nz-sheet__head { display: flex; align-items: center; gap: var(--nz-space-3); margin-bottom: var(--nz-space-3); }
 .nz-sheet__title { flex: 1; font-weight: var(--nz-peso-fuerte); font-size: var(--nz-text-md); }
@@ -97,7 +97,7 @@
 .nz-popover--end .nz-popover__arrow { left: auto; right: var(--nz-space-5); transform: rotate(45deg); }
 .nz-popover__arrow { position: absolute; top: -6px; left: 50%; transform: translateX(-50%) rotate(45deg); width: 12px; height: 12px; background: var(--nz-surface); }
 .nz-popover__title { font-size: var(--nz-text-xs); font-weight: var(--nz-peso-fuerte); letter-spacing: var(--nz-tracking-caps); text-transform: uppercase; color: var(--nz-text-faint); }
-.nz-popover__item { display: flex; align-items: center; gap: var(--nz-space-2); min-height: 44px; padding: 0 var(--nz-space-3); border-radius: var(--nz-radius-sm); color: var(--nz-text-soft); font-size: var(--nz-text-sm); text-decoration: none; cursor: pointer; }
+.nz-popover__item { display: flex; align-items: center; gap: var(--nz-space-2); min-height: var(--nz-tactil); padding: 0 var(--nz-space-3); border-radius: var(--nz-radius-sm); color: var(--nz-text-soft); font-size: var(--nz-text-sm); text-decoration: none; cursor: pointer; }
 .nz-popover__item:hover { background: var(--nz-bg-soft); color: var(--nz-text); }
 .nz-popover__item--danger { color: var(--nz-danger); }
 .nz-popover__item--danger:hover { background: var(--nz-danger-soft); }
@@ -124,7 +124,7 @@
 .nz-menu-pop--compact .nz-menu-pop__list { min-width: 10rem; padding: var(--nz-space-1); }
 .nz-menu-pop--compact .nz-menu-pop__item { padding: 0 var(--nz-space-2); font-size: var(--nz-text-xs); }
 .nz-menu-pop__group-title { padding: var(--nz-space-2) var(--nz-space-3) var(--nz-space-1); font-size: var(--nz-text-xs); font-weight: var(--nz-peso-fuerte); letter-spacing: var(--nz-tracking-caps); text-transform: uppercase; color: var(--nz-text-faint); }
-.nz-menu-pop__item { display: flex; align-items: center; gap: var(--nz-space-2); min-height: 44px; padding: 0 var(--nz-space-3); border-radius: var(--nz-radius-sm); color: var(--nz-text-soft); font-size: var(--nz-text-sm); text-decoration: none; cursor: pointer; border: 0; width: 100%; background: transparent; font-family: inherit; }
+.nz-menu-pop__item { display: flex; align-items: center; gap: var(--nz-space-2); min-height: var(--nz-tactil); padding: 0 var(--nz-space-3); border-radius: var(--nz-radius-sm); color: var(--nz-text-soft); font-size: var(--nz-text-sm); text-decoration: none; cursor: pointer; border: 0; width: 100%; background: transparent; font-family: inherit; }
 .nz-menu-pop__item:hover { background: var(--nz-bg-soft); color: var(--nz-text); }
 .nz-menu-pop__item kbd { margin-left: auto; font-family: var(--nz-font-mono); font-size: var(--nz-text-2xs); color: var(--nz-text-faint); }
 .nz-menu-pop__item--danger { color: var(--nz-danger); }
@@ -146,7 +146,7 @@
 .nz-cmd__input { width: 100%; min-height: 56px; padding: 0 var(--nz-space-5); border: 0; border-bottom: var(--nz-border-w) solid var(--nz-border-soft); background: transparent; font: inherit; font-size: var(--nz-text-md); color: var(--nz-text); outline: none; }
 .nz-cmd__list { max-height: 18rem; overflow-y: auto; padding: var(--nz-space-2); }
 .nz-cmd__group { padding: var(--nz-space-2) var(--nz-space-3) var(--nz-space-1); font-size: var(--nz-text-xs); font-weight: var(--nz-peso-fuerte); letter-spacing: var(--nz-tracking-caps); text-transform: uppercase; color: var(--nz-text-faint); }
-.nz-cmd__item { display: flex; align-items: center; gap: var(--nz-space-3); min-height: 44px; padding: 0 var(--nz-space-3); border-radius: var(--nz-radius-sm); color: var(--nz-text-soft); font-size: var(--nz-text-sm); cursor: pointer; }
+.nz-cmd__item { display: flex; align-items: center; gap: var(--nz-space-3); min-height: var(--nz-tactil); padding: 0 var(--nz-space-3); border-radius: var(--nz-radius-sm); color: var(--nz-text-soft); font-size: var(--nz-text-sm); cursor: pointer; }
 .nz-cmd__item:hover, .nz-cmd__item.is-active { background: var(--nz-bg-soft); color: var(--nz-text); }
 .nz-cmd__item--active { background: var(--nz-brand); color: var(--nz-text-invert); }
 .nz-cmd__icon { width: 32px; height: 32px; display: inline-flex; align-items: center; justify-content: center; border-radius: var(--nz-radius-sm); background: var(--nz-bg-inset); color: var(--nz-brand); }
@@ -174,9 +174,9 @@
 /* ---- Lightbox (imagen ampliada con navegación) ---- */
 .nz-lightbox { position: relative; aspect-ratio: 16 / 9; width: min(100%, 40rem); margin-inline: auto; border-radius: var(--nz-radius-lg); overflow: hidden; background: var(--nz-gray-900); }
 .nz-lightbox__img { width: 100%; height: 100%; object-fit: cover; }
-.nz-lightbox__close { position: absolute; top: var(--nz-space-3); right: var(--nz-space-3); width: 44px; height: 44px; display: inline-grid; place-items: center; border: 0; border-radius: var(--nz-radius-full); background: var(--nz-surface); color: var(--nz-text); font-size: var(--nz-text-md); cursor: pointer; box-shadow: var(--nz-shadow-md); }
+.nz-lightbox__close { position: absolute; top: var(--nz-space-3); right: var(--nz-space-3); width: var(--nz-tactil); height: var(--nz-tactil); display: inline-grid; place-items: center; border: 0; border-radius: var(--nz-radius-full); background: var(--nz-surface); color: var(--nz-text); font-size: var(--nz-text-md); cursor: pointer; box-shadow: var(--nz-shadow-md); }
 .nz-lightbox__caption { position: absolute; left: 0; right: 0; bottom: 0; padding: var(--nz-space-4); background: var(--nz-overlay); color: var(--nz-gray-0); font-size: var(--nz-text-sm); }
-.nz-lightbox__nav { position: absolute; top: 50%; transform: translateY(-50%); width: 44px; height: 44px; display: inline-grid; place-items: center; border: 0; border-radius: var(--nz-radius-full); background: var(--nz-surface); color: var(--nz-text); font-size: var(--nz-text-md); cursor: pointer; box-shadow: var(--nz-shadow-md); }
+.nz-lightbox__nav { position: absolute; top: 50%; transform: translateY(-50%); width: var(--nz-tactil); height: var(--nz-tactil); display: inline-grid; place-items: center; border: 0; border-radius: var(--nz-radius-full); background: var(--nz-surface); color: var(--nz-text); font-size: var(--nz-text-md); cursor: pointer; box-shadow: var(--nz-shadow-md); }
 .nz-lightbox__nav--prev { left: var(--nz-space-3); }
 .nz-lightbox__nav--next { right: var(--nz-space-3); }
 

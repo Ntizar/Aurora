@@ -22,7 +22,7 @@
   "objetos": 2223,
   "familias": 417,
   "categorias": 18,
-  "demos": 666,
+  "demos": 667,
   "tokens": 242,
   "tokensDark": 61,
   "alias": 150,
@@ -82,7 +82,7 @@
    "descripcion": "Alertas, badges, chips, skeleton, empty/error, progreso y status. Feedback claro con tokens semánticos.",
    "objetos": 160,
    "familias": 20,
-   "demos": 54,
+   "demos": 55,
    "pagina": "paginas/06-feedback.html"
   },
   "p7-overlays.css": {
@@ -2473,9 +2473,10 @@
     "--nz-space-3",
     "--nz-space-6",
     "--nz-surface",
+    "--nz-tactil",
     "--nz-z-header"
    ],
-   "nTokens": 10,
+   "nTokens": 11,
    "markup": {
     "demo": "paginas/01-layout.html",
     "titulo": "Sticky: header, top, bottom y footer",
@@ -3635,13 +3636,14 @@
     "--nz-peso-fuerte",
     "--nz-space-1",
     "--nz-space-2",
+    "--nz-tactil",
     "--nz-text",
     "--nz-text-faint",
     "--nz-text-sm",
     "--nz-text-soft",
     "--nz-text-xs"
    ],
-   "nTokens": 9,
+   "nTokens": 10,
    "markup": {
     "demo": "paginas/17-patrones.html",
     "titulo": "Cabecera de página con migas y acciones",
@@ -3689,12 +3691,13 @@
     "--nz-space-2",
     "--nz-space-4",
     "--nz-surface",
+    "--nz-tactil",
     "--nz-text",
     "--nz-text-faint",
     "--nz-text-sm",
     "--nz-text-xs"
    ],
-   "nTokens": 16,
+   "nTokens": 17,
    "markup": {
     "demo": "paginas/02-navigation.html",
     "titulo": "Dropdown select (sin JS)",
@@ -3749,12 +3752,13 @@
     "--nz-space-2",
     "--nz-space-3",
     "--nz-surface",
+    "--nz-tactil",
     "--nz-text",
     "--nz-text-faint",
     "--nz-text-sm",
     "--nz-text-soft"
    ],
-   "nTokens": 21,
+   "nTokens": 22,
    "markup": {
     "demo": "paginas/02-navigation.html",
     "titulo": "Menú con hamburguesa (sin JS)",
@@ -3809,6 +3813,7 @@
     "--nz-space-2",
     "--nz-space-3",
     "--nz-surface",
+    "--nz-tactil",
     "--nz-text",
     "--nz-text-invert",
     "--nz-text-lg",
@@ -3816,7 +3821,7 @@
     "--nz-text-soft",
     "--nz-tracking-tight"
    ],
-   "nTokens": 22,
+   "nTokens": 23,
    "markup": {
     "demo": "paginas/02-navigation.html",
     "titulo": "Navbar compacta, bordered y transparent",
@@ -3867,6 +3872,7 @@
     "--nz-space-3",
     "--nz-space-4",
     "--nz-space-6",
+    "--nz-tactil",
     "--nz-text-faint",
     "--nz-text-mute",
     "--nz-text-sm",
@@ -3874,7 +3880,7 @@
     "--nz-text-xs",
     "--nz-tracking-caps"
    ],
-   "nTokens": 15,
+   "nTokens": 16,
    "markup": {
     "demo": "paginas/02-navigation.html",
     "titulo": "Nav footer en 2 y 3 columnas",
@@ -3915,6 +3921,7 @@
     "--nz-space-2",
     "--nz-space-3",
     "--nz-space-4",
+    "--nz-tactil",
     "--nz-text",
     "--nz-text-base",
     "--nz-text-faint",
@@ -3924,7 +3931,7 @@
     "--nz-text-soft",
     "--nz-text-xs"
    ],
-   "nTokens": 16,
+   "nTokens": 17,
    "markup": {
     "demo": "paginas/02-navigation.html",
     "titulo": "Paginación pequeña y grande",
@@ -3983,6 +3990,7 @@
     "--nz-space-3",
     "--nz-space-4",
     "--nz-surface",
+    "--nz-tactil",
     "--nz-text",
     "--nz-text-2xs",
     "--nz-text-faint",
@@ -3993,7 +4001,7 @@
     "--nz-text-xs",
     "--nz-tracking-caps"
    ],
-   "nTokens": 22,
+   "nTokens": 23,
    "markup": {
     "demo": "paginas/02-navigation.html",
     "titulo": "Sidebar compacta, bordered y brand",
@@ -4038,6 +4046,7 @@
     "--nz-space-2",
     "--nz-space-3",
     "--nz-success",
+    "--nz-tactil",
     "--nz-text",
     "--nz-text-faint",
     "--nz-text-invert",
@@ -4045,7 +4054,7 @@
     "--nz-text-sm",
     "--nz-text-xs"
    ],
-   "nTokens": 15,
+   "nTokens": 16,
    "markup": {
     "demo": "paginas/17-patrones.html",
     "titulo": "Asistente por pasos (wizard)",
@@ -4106,6 +4115,7 @@
     "--nz-space-2",
     "--nz-space-3",
     "--nz-space-4",
+    "--nz-tactil",
     "--nz-text",
     "--nz-text-2xs",
     "--nz-text-faint",
@@ -4115,7 +4125,7 @@
     "--nz-text-soft",
     "--nz-text-xs"
    ],
-   "nTokens": 19,
+   "nTokens": 20,
    "markup": {
     "demo": "paginas/02-navigation.html",
     "titulo": "Tabs centradas y a todo lo ancho",
@@ -4165,6 +4175,7 @@
     "--nz-space-5",
     "--nz-space-6",
     "--nz-surface",
+    "--nz-tactil",
     "--nz-text",
     "--nz-text-faint",
     "--nz-text-sm",
@@ -4172,7 +4183,7 @@
     "--nz-text-xs",
     "--nz-tracking-caps"
    ],
-   "nTokens": 18,
+   "nTokens": 19,
    "markup": {
     "demo": "paginas/02-navigation.html",
     "titulo": "Índice de contenidos (TOC)",
@@ -5611,6 +5622,7 @@
     "--nz-space-8",
     "--nz-success",
     "--nz-success-soft",
+    "--nz-tactil",
     "--nz-text",
     "--nz-text-2xs",
     "--nz-text-base",
@@ -5622,7 +5634,7 @@
     "--nz-text-xs",
     "--nz-warning"
    ],
-   "nTokens": 49,
+   "nTokens": 50,
    "markup": {
     "demo": "paginas/11-social.html",
     "titulo": "CTA banner con borde",
@@ -5677,9 +5689,10 @@
     "--nz-radius-full",
     "--nz-radius-md",
     "--nz-space-1",
-    "--nz-space-3"
+    "--nz-space-3",
+    "--nz-tactil"
    ],
-   "nTokens": 5,
+   "nTokens": 6,
    "markup": {
     "demo": "paginas/04-actions.html",
     "titulo": "Grupo de botones",
@@ -5769,12 +5782,13 @@
     "--nz-shadow-brand",
     "--nz-space-2",
     "--nz-space-5",
+    "--nz-tactil",
     "--nz-text-base",
     "--nz-text-invert",
     "--nz-text-md",
     "--nz-z-drawer"
    ],
-   "nTokens": 15,
+   "nTokens": 16,
    "markup": {
     "demo": "paginas/04-actions.html",
     "titulo": "Botones flotantes (FAB)",
@@ -5825,6 +5839,7 @@
     "--nz-space-4",
     "--nz-space-5",
     "--nz-surface",
+    "--nz-tactil",
     "--nz-text",
     "--nz-text-base",
     "--nz-text-invert",
@@ -5832,7 +5847,7 @@
     "--nz-text-soft",
     "--nz-text-xs"
    ],
-   "nTokens": 22,
+   "nTokens": 23,
    "markup": {
     "demo": "paginas/04-actions.html",
     "titulo": "Selector segmentado",
@@ -5968,12 +5983,13 @@
     "--nz-space-3",
     "--nz-space-4",
     "--nz-surface",
+    "--nz-tactil",
     "--nz-text",
     "--nz-text-base",
     "--nz-text-invert",
     "--nz-text-sm"
    ],
-   "nTokens": 21,
+   "nTokens": 22,
    "markup": {
     "demo": "paginas/05-forms.html",
     "titulo": "Checkbox compacto, parcial y en tarjeta",
@@ -6125,12 +6141,13 @@
     "--nz-space-6",
     "--nz-success",
     "--nz-success-soft",
+    "--nz-tactil",
     "--nz-text",
     "--nz-text-2xl",
     "--nz-text-sm",
     "--nz-text-soft"
    ],
-   "nTokens": 19,
+   "nTokens": 20,
    "markup": {
     "demo": "paginas/05-forms.html",
     "titulo": "Zona de archivos · resultado",
@@ -6249,6 +6266,7 @@
     "--nz-space-9",
     "--nz-success",
     "--nz-surface",
+    "--nz-tactil",
     "--nz-text",
     "--nz-text-base",
     "--nz-text-faint",
@@ -6258,7 +6276,7 @@
     "--nz-text-soft",
     "--nz-warning"
    ],
-   "nTokens": 33,
+   "nTokens": 34,
    "markup": {
     "demo": "paginas/05-forms.html",
     "titulo": "Fieldset · densidad y disposicion",
@@ -6446,10 +6464,11 @@
     "--nz-radius-full",
     "--nz-space-1",
     "--nz-space-10",
+    "--nz-tactil",
     "--nz-text",
     "--nz-text-mute"
    ],
-   "nTokens": 7,
+   "nTokens": 8,
    "markup": {
     "demo": "paginas/05-forms.html",
     "titulo": "Contrasena · revelada",
@@ -6481,12 +6500,13 @@
     "--nz-radius-full",
     "--nz-radius-lg",
     "--nz-surface",
+    "--nz-tactil",
     "--nz-text",
     "--nz-text-lg",
     "--nz-text-md",
     "--nz-text-xl"
    ],
-   "nTokens": 11,
+   "nTokens": 12,
    "markup": {
     "demo": "paginas/05-forms.html",
     "titulo": "Cantidad",
@@ -6532,9 +6552,10 @@
     "--nz-space-3",
     "--nz-space-4",
     "--nz-surface",
+    "--nz-tactil",
     "--nz-text"
    ],
-   "nTokens": 16,
+   "nTokens": 17,
    "markup": {
     "demo": "paginas/17-patrones.html",
     "titulo": "Panel de filtros lateral",
@@ -6571,10 +6592,11 @@
     "--nz-shadow-accent",
     "--nz-shadow-brand",
     "--nz-surface",
+    "--nz-tactil",
     "--nz-text-2xs",
     "--nz-text-faint"
    ],
-   "nTokens": 9,
+   "nTokens": 10,
    "markup": {
     "demo": "paginas/17-patrones.html",
     "titulo": "Filtro por rango",
@@ -6637,12 +6659,13 @@
     "--nz-space-3",
     "--nz-space-8",
     "--nz-space-9",
+    "--nz-tactil",
     "--nz-text",
     "--nz-text-faint",
     "--nz-text-md",
     "--nz-text-sm"
    ],
-   "nTokens": 10,
+   "nTokens": 11,
    "markup": {
     "demo": "paginas/05-forms.html",
     "titulo": "Búsqueda",
@@ -6692,13 +6715,14 @@
     "--nz-space-8",
     "--nz-space-9",
     "--nz-surface",
+    "--nz-tactil",
     "--nz-text",
     "--nz-text-base",
     "--nz-text-md",
     "--nz-text-mute",
     "--nz-text-sm"
    ],
-   "nTokens": 24,
+   "nTokens": 25,
    "markup": {
     "demo": "paginas/05-forms.html",
     "titulo": "Select múltiple, pastilla y grande",
@@ -6750,10 +6774,11 @@
     "--nz-radius-full",
     "--nz-shadow-sm",
     "--nz-space-2",
+    "--nz-tactil",
     "--nz-text",
     "--nz-text-base"
    ],
-   "nTokens": 13,
+   "nTokens": 14,
    "markup": {
     "demo": "paginas/12-system.html",
     "titulo": "Preferencias de accesibilidad",
@@ -6807,6 +6832,7 @@
     "--nz-space-3",
     "--nz-space-4",
     "--nz-surface",
+    "--nz-tactil",
     "--nz-text",
     "--nz-text-base",
     "--nz-text-faint",
@@ -6815,7 +6841,7 @@
     "--nz-text-soft",
     "--nz-text-xs"
    ],
-   "nTokens": 23,
+   "nTokens": 24,
    "markup": {
     "demo": "paginas/17-patrones.html",
     "titulo": "Editor de campos con etiqueta y ayuda",
@@ -6901,6 +6927,7 @@
     "--nz-success",
     "--nz-success-soft",
     "--nz-surface",
+    "--nz-tactil",
     "--nz-text",
     "--nz-text-lg",
     "--nz-text-md",
@@ -6913,7 +6940,7 @@
     "--nz-warning-soft",
     "--nz-z-toast"
    ],
-   "nTokens": 39,
+   "nTokens": 40,
    "markup": {
     "demo": "paginas/06-feedback.html",
     "titulo": "Alertas",
@@ -7053,12 +7080,13 @@
     "--nz-space-2",
     "--nz-space-3",
     "--nz-space-4",
+    "--nz-tactil",
     "--nz-text",
     "--nz-text-invert",
     "--nz-text-sm",
     "--nz-text-xs"
    ],
-   "nTokens": 19,
+   "nTokens": 20,
    "markup": {
     "demo": "paginas/06-feedback.html",
     "titulo": "Banner a ancho completo",
@@ -7178,6 +7206,7 @@
     "--nz-success",
     "--nz-success-soft",
     "--nz-surface",
+    "--nz-tactil",
     "--nz-text",
     "--nz-text-base",
     "--nz-text-invert",
@@ -7185,7 +7214,7 @@
     "--nz-text-soft",
     "--nz-text-xs"
    ],
-   "nTokens": 28,
+   "nTokens": 29,
    "markup": {
     "demo": "paginas/08-data.html",
     "titulo": "Barra de herramientas y filtros de tabla",
@@ -7729,9 +7758,10 @@
     "--nz-space-2",
     "--nz-space-3",
     "--nz-surface",
+    "--nz-tactil",
     "--nz-text-base"
    ],
-   "nTokens": 10,
+   "nTokens": 11,
    "markup": {
     "demo": "paginas/06-feedback.html",
     "titulo": "Skeleton de texto, avatar, botón y gráfico",
@@ -7907,13 +7937,14 @@
     "--nz-space-4",
     "--nz-space-6",
     "--nz-surface",
+    "--nz-tactil",
     "--nz-text",
     "--nz-text-invert",
     "--nz-text-md",
     "--nz-text-sm",
     "--nz-z-toast"
    ],
-   "nTokens": 32,
+   "nTokens": 33,
    "markup": {
     "demo": "paginas/06-feedback.html",
     "titulo": "Toast arriba y abajo con acción",
@@ -8051,6 +8082,7 @@
     "--nz-space-5",
     "--nz-space-6",
     "--nz-surface",
+    "--nz-tactil",
     "--nz-text",
     "--nz-text-2xs",
     "--nz-text-faint",
@@ -8063,7 +8095,7 @@
     "--nz-tracking-caps",
     "--nz-z-modal"
    ],
-   "nTokens": 33,
+   "nTokens": 34,
    "markup": {
     "demo": "paginas/07-overlays.html",
     "titulo": "Command pequeño con grupo y estado vacío",
@@ -8239,11 +8271,12 @@
     "--nz-space-3",
     "--nz-space-4",
     "--nz-surface",
+    "--nz-tactil",
     "--nz-text",
     "--nz-text-md",
     "--nz-text-sm"
    ],
-   "nTokens": 12,
+   "nTokens": 13,
    "markup": {
     "demo": "paginas/07-overlays.html",
     "titulo": "Backdrop suave",
@@ -8302,6 +8335,7 @@
     "--nz-space-2",
     "--nz-space-3",
     "--nz-surface",
+    "--nz-tactil",
     "--nz-text",
     "--nz-text-2xs",
     "--nz-text-faint",
@@ -8311,7 +8345,7 @@
     "--nz-tracking-caps",
     "--nz-z-popover"
    ],
-   "nTokens": 24,
+   "nTokens": 25,
    "markup": {
     "demo": "paginas/07-overlays.html",
     "titulo": "Menú compacto con ítem deshabilitado",
@@ -8390,6 +8424,7 @@
     "--nz-space-5",
     "--nz-space-6",
     "--nz-surface",
+    "--nz-tactil",
     "--nz-text",
     "--nz-text-base",
     "--nz-text-lg",
@@ -8399,7 +8434,7 @@
     "--nz-tracking-tight",
     "--nz-z-modal"
    ],
-   "nTokens": 27,
+   "nTokens": 28,
    "markup": {
     "demo": "paginas/07-overlays.html",
     "titulo": "Modal que se comporta como sheet en móvil",
@@ -8510,6 +8545,7 @@
     "--nz-space-4",
     "--nz-space-5",
     "--nz-surface",
+    "--nz-tactil",
     "--nz-text",
     "--nz-text-faint",
     "--nz-text-invert",
@@ -8519,7 +8555,7 @@
     "--nz-tracking-caps",
     "--nz-z-popover"
    ],
-   "nTokens": 25,
+   "nTokens": 26,
    "markup": {
     "demo": "paginas/07-overlays.html",
     "titulo": "Popover rico y popover de marca",
@@ -8593,12 +8629,13 @@
     "--nz-space-4",
     "--nz-space-5",
     "--nz-surface",
+    "--nz-tactil",
     "--nz-text-md",
     "--nz-text-sm",
     "--nz-text-soft",
     "--nz-z-drawer"
    ],
-   "nTokens": 26,
+   "nTokens": 27,
    "markup": {
     "demo": "paginas/07-overlays.html",
     "titulo": "Bottom-sheet",
@@ -8730,13 +8767,14 @@
     "--nz-space-3",
     "--nz-space-5",
     "--nz-success",
+    "--nz-tactil",
     "--nz-text",
     "--nz-text-faint",
     "--nz-text-sm",
     "--nz-text-soft",
     "--nz-text-xs"
    ],
-   "nTokens": 18,
+   "nTokens": 19,
    "markup": {
     "demo": "paginas/08-data.html",
     "titulo": "Arbol · estados de nodo y hoja",
@@ -9269,6 +9307,7 @@
     "--nz-space-4",
     "--nz-success",
     "--nz-surface",
+    "--nz-tactil",
     "--nz-text",
     "--nz-text-mute",
     "--nz-text-sm",
@@ -9276,7 +9315,7 @@
     "--nz-tracking-caps",
     "--nz-warning"
    ],
-   "nTokens": 19,
+   "nTokens": 20,
    "markup": {
     "demo": "paginas/08-data.html",
     "titulo": "Registros · densidad",
@@ -9492,6 +9531,7 @@
     "--nz-space-8",
     "--nz-success",
     "--nz-surface",
+    "--nz-tactil",
     "--nz-text",
     "--nz-text-2xs",
     "--nz-text-faint",
@@ -9503,7 +9543,7 @@
     "--nz-warning",
     "--nz-z-raised"
    ],
-   "nTokens": 30,
+   "nTokens": 31,
    "markup": {
     "demo": "paginas/08-data.html",
     "titulo": "Tabla compacta y tabla confortable",
@@ -9659,12 +9699,13 @@
     "--nz-space-3",
     "--nz-space-4",
     "--nz-surface",
+    "--nz-tactil",
     "--nz-text-invert",
     "--nz-text-md",
     "--nz-text-mute",
     "--nz-text-xs"
    ],
-   "nTokens": 14,
+   "nTokens": 15,
    "markup": {
     "demo": "paginas/09-media.html",
     "titulo": "Reproductor de audio",
@@ -9724,6 +9765,7 @@
     "--nz-space-2",
     "--nz-success",
     "--nz-surface",
+    "--nz-tactil",
     "--nz-text-2xl",
     "--nz-text-2xs",
     "--nz-text-3xl",
@@ -9734,7 +9776,7 @@
     "--nz-text-xs",
     "--nz-warning"
    ],
-   "nTokens": 19,
+   "nTokens": 20,
    "markup": {
     "demo": "paginas/09-media.html",
     "titulo": "Grupo de avatares",
@@ -10095,6 +10137,7 @@
     "--nz-radius-md",
     "--nz-success",
     "--nz-success-soft",
+    "--nz-tactil",
     "--nz-text-2xl",
     "--nz-text-invert",
     "--nz-text-lg",
@@ -10102,7 +10145,7 @@
     "--nz-text-soft",
     "--nz-text-xl"
    ],
-   "nTokens": 17,
+   "nTokens": 18,
    "markup": {
     "demo": "paginas/09-media.html",
     "titulo": "Icono en caja",
@@ -10193,12 +10236,13 @@
     "--nz-space-3",
     "--nz-space-4",
     "--nz-surface",
+    "--nz-tactil",
     "--nz-text-faint",
     "--nz-text-lg",
     "--nz-text-mute",
     "--nz-text-sm"
    ],
-   "nTokens": 11,
+   "nTokens": 12,
    "markup": {
     "demo": "paginas/09-media.html",
     "titulo": "Logotipo y logos fluidos: escalan y no desbordan",
@@ -10360,13 +10404,14 @@
     "--nz-radius-md",
     "--nz-space-1",
     "--nz-space-3",
+    "--nz-tactil",
     "--nz-text",
     "--nz-text-base",
     "--nz-text-sm",
     "--nz-text-soft",
     "--nz-text-xs"
    ],
-   "nTokens": 12,
+   "nTokens": 13,
    "markup": {
     "demo": "paginas/09-media.html",
     "titulo": "Media object",
@@ -10517,6 +10562,7 @@
     "--nz-space-4",
     "--nz-space-8",
     "--nz-surface",
+    "--nz-tactil",
     "--nz-text",
     "--nz-text-2xs",
     "--nz-text-invert",
@@ -10526,7 +10572,7 @@
     "--nz-text-sm",
     "--nz-text-soft"
    ],
-   "nTokens": 26,
+   "nTokens": 27,
    "markup": {
     "demo": "paginas/10-commerce.html",
     "titulo": "Carrito mini",
@@ -10573,13 +10619,14 @@
     "--nz-space-1",
     "--nz-space-2",
     "--nz-space-3",
+    "--nz-tactil",
     "--nz-text",
     "--nz-text-faint",
     "--nz-text-mute",
     "--nz-text-sm",
     "--nz-text-xs"
    ],
-   "nTokens": 14,
+   "nTokens": 15,
    "markup": {
     "demo": "paginas/10-commerce.html",
     "titulo": "Carrito: sin stock y compacto",
@@ -10662,12 +10709,13 @@
     "--nz-space-3",
     "--nz-space-4",
     "--nz-surface",
+    "--nz-tactil",
     "--nz-text-mute",
     "--nz-text-sm",
     "--nz-text-xs",
     "--nz-z-sticky"
    ],
-   "nTokens": 12,
+   "nTokens": 13,
    "markup": {
     "demo": "paginas/10-commerce.html",
     "titulo": "Barra de comparación",
@@ -10712,13 +10760,14 @@
     "--nz-space-4",
     "--nz-success",
     "--nz-surface",
+    "--nz-tactil",
     "--nz-text",
     "--nz-text-mute",
     "--nz-text-sm",
     "--nz-text-xs",
     "--nz-tracking-caps"
    ],
-   "nTokens": 18,
+   "nTokens": 19,
    "markup": {
     "demo": "paginas/10-commerce.html",
     "titulo": "Cupón no válido",
@@ -10992,12 +11041,13 @@
     "--nz-space-3",
     "--nz-space-4",
     "--nz-surface",
+    "--nz-tactil",
     "--nz-text",
     "--nz-text-mute",
     "--nz-text-sm",
     "--nz-text-xs"
    ],
-   "nTokens": 18,
+   "nTokens": 19,
    "markup": {
     "demo": "paginas/10-commerce.html",
     "titulo": "Métodos de pago",
@@ -11299,6 +11349,7 @@
     "--nz-space-3",
     "--nz-space-4",
     "--nz-surface",
+    "--nz-tactil",
     "--nz-text",
     "--nz-text-base",
     "--nz-text-faint",
@@ -11309,7 +11360,7 @@
     "--nz-text-xs",
     "--nz-tracking-caps"
    ],
-   "nTokens": 31,
+   "nTokens": 32,
    "markup": {
     "demo": "paginas/10-commerce.html",
     "titulo": "Rejilla de productos",
@@ -11376,11 +11427,12 @@
     "--nz-space-3",
     "--nz-space-4",
     "--nz-surface",
+    "--nz-tactil",
     "--nz-text-mute",
     "--nz-text-sm",
     "--nz-text-xs"
    ],
-   "nTokens": 14,
+   "nTokens": 15,
    "markup": {
     "demo": "paginas/10-commerce.html",
     "titulo": "Opciones de envío",
@@ -11564,11 +11616,12 @@
     "--nz-radius-full",
     "--nz-space-1",
     "--nz-surface",
+    "--nz-tactil",
     "--nz-text-md",
     "--nz-text-mute",
     "--nz-text-xs"
    ],
-   "nTokens": 12,
+   "nTokens": 13,
    "markup": {
     "demo": "paginas/10-commerce.html",
     "titulo": "Lista de deseos",
@@ -11665,6 +11718,7 @@
     "--nz-space-3",
     "--nz-space-4",
     "--nz-space-6",
+    "--nz-tactil",
     "--nz-text",
     "--nz-text-2xs",
     "--nz-text-faint",
@@ -11673,7 +11727,7 @@
     "--nz-text-soft",
     "--nz-text-xs"
    ],
-   "nTokens": 19,
+   "nTokens": 20,
    "markup": {
     "demo": "paginas/11-social.html",
     "titulo": "Comentario destacado",
@@ -11732,6 +11786,7 @@
     "--nz-space-6",
     "--nz-space-8",
     "--nz-surface",
+    "--nz-tactil",
     "--nz-text",
     "--nz-text-2xl",
     "--nz-text-invert",
@@ -11742,7 +11797,7 @@
     "--nz-tracking-caps",
     "--nz-tracking-tight"
    ],
-   "nTokens": 30,
+   "nTokens": 31,
    "markup": {
     "demo": "paginas/11-social.html",
     "titulo": "CTA banner compacto",
@@ -11979,6 +12034,7 @@
     "--nz-space-3",
     "--nz-space-4",
     "--nz-surface",
+    "--nz-tactil",
     "--nz-text",
     "--nz-text-2xs",
     "--nz-text-faint",
@@ -11988,7 +12044,7 @@
     "--nz-text-xs",
     "--nz-tracking-caps"
    ],
-   "nTokens": 28,
+   "nTokens": 29,
    "markup": {
     "demo": "paginas/11-social.html",
     "titulo": "Feed a dos columnas",
@@ -12046,6 +12102,7 @@
     "--nz-space-5",
     "--nz-space-6",
     "--nz-surface",
+    "--nz-tactil",
     "--nz-text",
     "--nz-text-faint",
     "--nz-text-invert",
@@ -12054,7 +12111,7 @@
     "--nz-text-sm",
     "--nz-text-xs"
    ],
-   "nTokens": 25,
+   "nTokens": 26,
    "markup": {
     "demo": "paginas/11-social.html",
     "titulo": "Testimonio compacto",
@@ -12098,6 +12155,7 @@
     "--nz-space-1",
     "--nz-space-2",
     "--nz-space-3",
+    "--nz-tactil",
     "--nz-text-faint",
     "--nz-text-invert",
     "--nz-text-mute",
@@ -12106,7 +12164,7 @@
     "--nz-text-xs",
     "--nz-tracking-caps"
    ],
-   "nTokens": 17,
+   "nTokens": 18,
    "markup": {
     "demo": "paginas/11-social.html",
     "titulo": "Compartir en marca",
@@ -12144,12 +12202,13 @@
     "--nz-radius-full",
     "--nz-space-1",
     "--nz-space-2",
+    "--nz-tactil",
     "--nz-text",
     "--nz-text-faint",
     "--nz-text-mute",
     "--nz-text-xs"
    ],
-   "nTokens": 12,
+   "nTokens": 13,
    "markup": {
     "demo": "paginas/11-social.html",
     "titulo": "Métricas sociales",
@@ -12226,6 +12285,7 @@
     "--nz-space-4",
     "--nz-space-5",
     "--nz-surface",
+    "--nz-tactil",
     "--nz-text",
     "--nz-text-invert",
     "--nz-text-md",
@@ -12234,7 +12294,7 @@
     "--nz-text-soft",
     "--nz-text-xs"
    ],
-   "nTokens": 18,
+   "nTokens": 19,
    "markup": {
     "demo": "paginas/11-social.html",
     "titulo": "Equipo",
@@ -12278,13 +12338,14 @@
     "--nz-space-5",
     "--nz-space-8",
     "--nz-surface",
+    "--nz-tactil",
     "--nz-text-faint",
     "--nz-text-sm",
     "--nz-text-soft",
     "--nz-text-xs",
     "--nz-warning"
    ],
-   "nTokens": 18,
+   "nTokens": 19,
    "markup": {
     "demo": "paginas/11-social.html",
     "titulo": "Logos de confianza",
@@ -12469,13 +12530,14 @@
     "--nz-success",
     "--nz-success-soft",
     "--nz-surface",
+    "--nz-tactil",
     "--nz-text-2xs",
     "--nz-text-mute",
     "--nz-text-sm",
     "--nz-text-xs",
     "--nz-tracking-caps"
    ],
-   "nTokens": 24,
+   "nTokens": 25,
    "markup": {
     "demo": "paginas/12-system.html",
     "titulo": "Pares de token, uno a uno",
@@ -12751,8 +12813,10 @@
    ],
    "modificadores": [],
    "partes": [],
-   "tokens": [],
-   "nTokens": 0,
+   "tokens": [
+    "--nz-tactil"
+   ],
+   "nTokens": 1,
    "markup": {
     "demo": "paginas/12-system.html",
     "titulo": "Zona táctil mínima de 44 px",
@@ -12817,12 +12881,13 @@
     "--nz-space-3",
     "--nz-space-4",
     "--nz-surface",
+    "--nz-tactil",
     "--nz-text",
     "--nz-text-mute",
     "--nz-text-sm",
     "--nz-text-xs"
    ],
-   "nTokens": 14,
+   "nTokens": 15,
    "markup": {
     "demo": "paginas/12-system.html",
     "titulo": "Preferencias de accesibilidad",
@@ -12874,10 +12939,11 @@
     "--nz-radius-sm",
     "--nz-space-3",
     "--nz-space-4",
+    "--nz-tactil",
     "--nz-text-invert",
     "--nz-z-tooltip"
    ],
-   "nTokens": 9,
+   "nTokens": 10,
    "markup": {
     "demo": "paginas/12-system.html",
     "titulo": "Enlace de salto al contenido",
@@ -12906,10 +12972,11 @@
     "--nz-radius-sm",
     "--nz-space-2",
     "--nz-space-3",
+    "--nz-tactil",
     "--nz-text-invert",
     "--nz-text-sm"
    ],
-   "nTokens": 8,
+   "nTokens": 9,
    "markup": {
     "demo": "paginas/12-system.html",
     "titulo": "Grupo de enlaces de salto",
@@ -13040,10 +13107,11 @@
     "--nz-space-2",
     "--nz-space-3",
     "--nz-surface",
+    "--nz-tactil",
     "--nz-text",
     "--nz-text-sm"
    ],
-   "nTokens": 7,
+   "nTokens": 8,
    "markup": {
     "demo": "paginas/12-system.html",
     "titulo": "Foco de teclado",
@@ -13060,8 +13128,10 @@
    ],
    "modificadores": [],
    "partes": [],
-   "tokens": [],
-   "nTokens": 0,
+   "tokens": [
+    "--nz-tactil"
+   ],
+   "nTokens": 1,
    "markup": {
     "demo": "paginas/12-system.html",
     "titulo": "Zona táctil mínima de 44 px",
@@ -13857,11 +13927,12 @@
     "--nz-shadow-xs",
     "--nz-space-3",
     "--nz-surface",
+    "--nz-tactil",
     "--nz-text",
     "--nz-text-soft",
     "--nz-text-xs"
    ],
-   "nTokens": 9,
+   "nTokens": 10,
    "markup": {
     "demo": "paginas/13-charts.html",
     "titulo": "Selector de rango temporal",
@@ -14492,11 +14563,12 @@
     "--nz-space-3",
     "--nz-space-5",
     "--nz-success",
+    "--nz-tactil",
     "--nz-text-2xs",
     "--nz-text-mute",
     "--nz-text-sm"
    ],
-   "nTokens": 17,
+   "nTokens": 18,
    "markup": {
     "demo": "paginas/14-ai.html",
     "titulo": "Actividad de agentes",
@@ -15211,13 +15283,14 @@
     "--nz-space-2",
     "--nz-space-3",
     "--nz-surface",
+    "--nz-tactil",
     "--nz-text",
     "--nz-text-faint",
     "--nz-text-soft",
     "--nz-text-xs",
     "--nz-z-popover"
    ],
-   "nTokens": 18,
+   "nTokens": 19,
    "markup": {
     "demo": "paginas/14-ai.html",
     "titulo": "Selector de modelo",
@@ -15340,6 +15413,7 @@
     "--nz-space-3",
     "--nz-space-4",
     "--nz-surface",
+    "--nz-tactil",
     "--nz-text",
     "--nz-text-faint",
     "--nz-text-invert",
@@ -15347,7 +15421,7 @@
     "--nz-text-soft",
     "--nz-text-xs"
    ],
-   "nTokens": 19,
+   "nTokens": 20,
    "markup": {
     "demo": "paginas/14-ai.html",
     "titulo": "Panel de conversación completo",
@@ -15791,12 +15865,13 @@
     "--nz-space-1",
     "--nz-space-2",
     "--nz-surface",
+    "--nz-tactil",
     "--nz-text",
     "--nz-text-2xs",
     "--nz-text-md",
     "--nz-text-mute"
    ],
-   "nTokens": 15,
+   "nTokens": 16,
    "markup": {
     "demo": "paginas/15-apps.html",
     "titulo": "Barra de actividad vertical",
@@ -15833,10 +15908,11 @@
     "--nz-space-2",
     "--nz-space-3",
     "--nz-surface",
+    "--nz-tactil",
     "--nz-text-faint",
     "--nz-text-xs"
    ],
-   "nTokens": 18,
+   "nTokens": 19,
    "markup": {
     "demo": "paginas/15-apps.html",
     "titulo": "Agenda · franja actual y ocupada",
@@ -15865,6 +15941,7 @@
     "--nz-space-4",
     "--nz-space-8",
     "--nz-surface-2",
+    "--nz-tactil",
     "--nz-text",
     "--nz-text-faint",
     "--nz-text-invert",
@@ -15873,7 +15950,7 @@
     "--nz-text-sm",
     "--nz-text-xl"
    ],
-   "nTokens": 18,
+   "nTokens": 19,
    "markup": {
     "demo": "paginas/15-apps.html",
     "titulo": "Estado vacío de aplicación",
@@ -15914,13 +15991,14 @@
     "--nz-space-2",
     "--nz-space-3",
     "--nz-surface-2",
+    "--nz-tactil",
     "--nz-text",
     "--nz-text-mute",
     "--nz-text-sm",
     "--nz-text-soft",
     "--nz-text-xs"
    ],
-   "nTokens": 25,
+   "nTokens": 26,
    "markup": {
     "demo": "paginas/15-apps.html",
     "titulo": "Barra lateral de app con secciones y badges",
@@ -15951,12 +16029,13 @@
     "--nz-space-2",
     "--nz-space-3",
     "--nz-success",
+    "--nz-tactil",
     "--nz-text-mute",
     "--nz-text-soft",
     "--nz-text-xs",
     "--nz-warning"
    ],
-   "nTokens": 14,
+   "nTokens": 15,
    "markup": {
     "demo": "paginas/15-apps.html",
     "titulo": "Barra de estado inferior de app",
@@ -16036,13 +16115,14 @@
     "--nz-shadow-lg",
     "--nz-space-2",
     "--nz-surface",
+    "--nz-tactil",
     "--nz-text-invert",
     "--nz-text-lg",
     "--nz-text-md",
     "--nz-text-sm",
     "--nz-text-soft"
    ],
-   "nTokens": 21,
+   "nTokens": 22,
    "markup": {
     "demo": "paginas/15-apps.html",
     "titulo": "Dock · tamaño y elemento activo",
@@ -16083,13 +16163,14 @@
     "--nz-space-3",
     "--nz-surface",
     "--nz-surface-2",
+    "--nz-tactil",
     "--nz-text",
     "--nz-text-faint",
     "--nz-text-mute",
     "--nz-text-sm",
     "--nz-text-xs"
    ],
-   "nTokens": 20,
+   "nTokens": 21,
    "markup": {
     "demo": "paginas/15-apps.html",
     "titulo": "Pestañas de documento (activa, modificada, cerrable)",
@@ -16235,13 +16316,14 @@
     "--nz-space-2",
     "--nz-space-4",
     "--nz-surface",
+    "--nz-tactil",
     "--nz-text",
     "--nz-text-invert",
     "--nz-text-md",
     "--nz-text-soft",
     "--nz-text-xs"
    ],
-   "nTokens": 19,
+   "nTokens": 20,
    "markup": {
     "demo": "paginas/15-apps.html",
     "titulo": "Lanzador en rejilla (grid de apps)",
@@ -16274,13 +16356,14 @@
     "--nz-space-1",
     "--nz-space-2",
     "--nz-surface",
+    "--nz-tactil",
     "--nz-text-2xs",
     "--nz-text-faint",
     "--nz-text-invert",
     "--nz-text-soft",
     "--nz-tracking-caps"
    ],
-   "nTokens": 20,
+   "nTokens": 21,
    "markup": {
     "demo": "paginas/15-apps.html",
     "titulo": "Calendario mensual",
@@ -16310,13 +16393,14 @@
     "--nz-space-2",
     "--nz-space-3",
     "--nz-surface-2",
+    "--nz-tactil",
     "--nz-text",
     "--nz-text-2xs",
     "--nz-text-faint",
     "--nz-text-mute",
     "--nz-text-soft"
    ],
-   "nTokens": 14,
+   "nTokens": 15,
    "markup": {
     "demo": "paginas/15-apps.html",
     "titulo": "Migas de ruta de archivo",
@@ -16352,6 +16436,7 @@
     "--nz-space-4",
     "--nz-surface",
     "--nz-surface-2",
+    "--nz-tactil",
     "--nz-text",
     "--nz-text-faint",
     "--nz-text-mute",
@@ -16359,7 +16444,7 @@
     "--nz-text-xs",
     "--nz-tracking-caps"
    ],
-   "nTokens": 19,
+   "nTokens": 20,
    "markup": {
     "demo": "paginas/15-apps.html",
     "titulo": "Ajustes de aplicación",
@@ -16465,6 +16550,7 @@
     "--nz-space-2",
     "--nz-space-3",
     "--nz-surface",
+    "--nz-tactil",
     "--nz-text",
     "--nz-text-faint",
     "--nz-text-md",
@@ -16472,7 +16558,7 @@
     "--nz-text-xs",
     "--nz-tracking-caps"
    ],
-   "nTokens": 18,
+   "nTokens": 19,
    "markup": {
     "demo": "paginas/15-apps.html",
     "titulo": "Cinta de opciones de app",
@@ -16551,6 +16637,7 @@
     "--nz-space-2",
     "--nz-space-3",
     "--nz-surface",
+    "--nz-tactil",
     "--nz-text",
     "--nz-text-2xs",
     "--nz-text-faint",
@@ -16561,7 +16648,7 @@
     "--nz-text-soft",
     "--nz-text-xs"
    ],
-   "nTokens": 24,
+   "nTokens": 25,
    "markup": {
     "demo": "paginas/15-apps.html",
     "titulo": "Paleta de comandos de escritorio (spotlight)",
@@ -16635,6 +16722,7 @@
     "--nz-space-5",
     "--nz-surface",
     "--nz-surface-2",
+    "--nz-tactil",
     "--nz-text",
     "--nz-text-invert",
     "--nz-text-lg",
@@ -16643,7 +16731,7 @@
     "--nz-tracking-tight",
     "--nz-z-modal"
    ],
-   "nTokens": 26,
+   "nTokens": 27,
    "markup": {
     "demo": "paginas/15-apps.html",
     "titulo": "Diálogo de confirmación de sistema",
@@ -16686,6 +16774,7 @@
     "--nz-space-3",
     "--nz-surface",
     "--nz-surface-2",
+    "--nz-tactil",
     "--nz-text",
     "--nz-text-invert",
     "--nz-text-mute",
@@ -16693,7 +16782,7 @@
     "--nz-text-soft",
     "--nz-text-xs"
    ],
-   "nTokens": 24,
+   "nTokens": 25,
    "markup": {
     "demo": "paginas/15-apps.html",
     "titulo": "Notificación de sistema con acciones",
@@ -16810,6 +16899,7 @@
     "--nz-space-3",
     "--nz-surface",
     "--nz-surface-2",
+    "--nz-tactil",
     "--nz-text",
     "--nz-text-faint",
     "--nz-text-md",
@@ -16819,7 +16909,7 @@
     "--nz-tracking-caps",
     "--nz-z-popover"
    ],
-   "nTokens": 23,
+   "nTokens": 24,
    "markup": {
     "demo": "paginas/15-apps.html",
     "titulo": "Bandeja / menú de sistema (sin JS)",
@@ -16850,13 +16940,14 @@
     "--nz-space-2",
     "--nz-space-4",
     "--nz-surface-2",
+    "--nz-tactil",
     "--nz-text",
     "--nz-text-faint",
     "--nz-text-sm",
     "--nz-text-soft",
     "--nz-text-xs"
    ],
-   "nTokens": 15,
+   "nTokens": 16,
    "markup": {
     "demo": "paginas/15-apps.html",
     "titulo": "Árbol de archivos y carpetas",
@@ -16884,6 +16975,7 @@
     "--nz-space-2",
     "--nz-space-3",
     "--nz-surface-2",
+    "--nz-tactil",
     "--nz-text",
     "--nz-text-faint",
     "--nz-text-invert",
@@ -16892,7 +16984,7 @@
     "--nz-text-xs",
     "--nz-tracking-caps"
    ],
-   "nTokens": 14,
+   "nTokens": 15,
    "markup": {
     "demo": "paginas/15-apps.html",
     "titulo": "Perfil de usuario de app",
@@ -16982,12 +17074,13 @@
     "--nz-space-4",
     "--nz-surface",
     "--nz-surface-2",
+    "--nz-tactil",
     "--nz-text",
     "--nz-text-mute",
     "--nz-text-sm",
     "--nz-text-soft"
    ],
-   "nTokens": 26,
+   "nTokens": 27,
    "markup": {
     "demo": "paginas/15-apps.html",
     "titulo": "Ventana · estados y tamaño",
@@ -17022,12 +17115,13 @@
     "--nz-space-1",
     "--nz-space-2",
     "--nz-space-3",
+    "--nz-tactil",
     "--nz-text-2xs",
     "--nz-text-faint",
     "--nz-text-mute",
     "--nz-text-soft"
    ],
-   "nTokens": 15,
+   "nTokens": 16,
    "markup": {
     "demo": "paginas/15-apps.html",
     "titulo": "Pie de ventana con contadores",
@@ -17137,13 +17231,14 @@
     "--nz-space-2",
     "--nz-space-4",
     "--nz-surface",
+    "--nz-tactil",
     "--nz-text",
     "--nz-text-faint",
     "--nz-text-invert",
     "--nz-text-sm",
     "--nz-text-soft"
    ],
-   "nTokens": 14,
+   "nTokens": 15,
    "markup": {
     "demo": "paginas/17-patrones.html",
     "titulo": "Agenda de disponibilidad",
@@ -18449,11 +18544,12 @@
     "--nz-space-3",
     "--nz-space-4",
     "--nz-surface",
+    "--nz-tactil",
     "--nz-text",
     "--nz-text-sm",
     "--nz-text-soft"
    ],
-   "nTokens": 11,
+   "nTokens": 12,
    "markup": {
     "demo": "paginas/17-patrones.html",
     "titulo": "Sección de preguntas frecuentes",
@@ -18560,11 +18656,12 @@
     "--nz-space-1",
     "--nz-space-3",
     "--nz-surface",
+    "--nz-tactil",
     "--nz-text",
     "--nz-text-sm",
     "--nz-text-soft"
    ],
-   "nTokens": 10,
+   "nTokens": 11,
    "markup": {
     "demo": "paginas/17-patrones.html",
     "titulo": "Selector de vista (rejilla / lista)",

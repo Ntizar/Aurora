@@ -8,10 +8,10 @@ Generada por `scripts/audit-catalog.py` a partir de los packs CSS y de `specs/*.
 |---|---|---|
 | Objetos declarados | 2223 |  |
 | Familias de objeto | 417 |  |
-| Demos en vivo | 666 |  |
-| Clases usadas en demos | 2220 |  |
+| Demos en vivo | 667 |  |
+| Clases usadas en demos | 2223 |  |
 | Objetos fantasma (usados y no declarados) | 0 | 🟢 |
-| Clases declaradas sin demo | 3 | 🟡 |
+| Clases declaradas sin demo | 0 | 🟢 |
 | Familias sin demo | 0 | 🟢 |
 | Duplicados entre packs | 0 | 🟢 |
 | Tokens inexistentes en uso | 0 | 🟢 |
@@ -54,9 +54,9 @@ Familias sin ninguna variante (`--mod`): **168** de 417 — ahí está el margen
 | 03 | Tipografía | p3-typography.css | 135 | 41 | 44 | 0 | 0 |
 | 04 | Acciones y botones | p4-actions.css | 78 | 7 | 17 | 0 | 0 |
 | 05 | Formularios e inputs | p5-forms.css | 102 | 20 | 44 | 0 | 0 |
-| 06 | Feedback y estados | p6-feedback.css | 160 | 20 | 54 | 2 | 0 |
+| 06 | Feedback y estados | p6-feedback.css | 160 | 20 | 55 | 0 | 0 |
 | 07 | Overlays y diálogo | p7-overlays.css | 118 | 12 | 34 | 0 | 0 |
-| 08 | Datos, tablas y listas | p8-data.css | 150 | 17 | 41 | 1 | 0 |
+| 08 | Datos, tablas y listas | p8-data.css | 150 | 17 | 41 | 0 | 0 |
 | 09 | Media e iconografía | p9-media.css | 127 | 18 | 44 | 0 | 0 |
 | 10 | Comercio y producto | p10-commerce.css | 156 | 22 | 48 | 0 | 0 |
 | 11 | Social y marketing | p11-social.css | 107 | 15 | 39 | 0 | 0 |
@@ -87,8 +87,7 @@ Ninguno: cada objeto tiene un único dueño. ✅
 
 ## 6. Objetos declarados sin demo (por categoría)
 
-- **Feedback y estados** (2): `nz-toast--warning`, `nz-toast__progreso`
-- **Datos, tablas y listas** (1): `nz-contador--sm`
+Ninguno. ✅
 
 ## 7. Familias sin variantes (margen de ampliación)
 

@@ -129,7 +129,7 @@
 
 /* ---- 14 Header / cabecera ---- */
 .nz-header { display: flex; align-items: center; justify-content: space-between; gap: var(--nz-space-3); padding: var(--nz-space-3) var(--nz-gutter); background: var(--nz-surface); border-bottom: var(--nz-border-w) solid var(--nz-border-soft); }
-.nz-header--compact { padding-block: var(--nz-space-1); min-height: 44px; }
+.nz-header--compact { padding-block: var(--nz-space-1); min-height: var(--nz-tactil); }
 .nz-header--tall { padding-block: var(--nz-space-6); }
 .nz-header--bordered { border-bottom: var(--nz-border-w-strong) solid var(--nz-border-strong); }
 

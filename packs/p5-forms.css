@@ -31,7 +31,7 @@
 }
 
 /* ---- Inputs base ---- */
-.nz-input, .nz-select, .nz-textarea { width: 100%; min-height: 44px; padding: 0 var(--nz-space-4); border: var(--nz-border-w) solid var(--nz-border); border-radius: var(--nz-radius-sm); background: var(--nz-surface); color: var(--nz-text); font: inherit; font-size: var(--nz-text-base); transition: border-color var(--nz-dur-fast) var(--nz-ease-out), box-shadow var(--nz-dur-fast) var(--nz-ease-out); }
+.nz-input, .nz-select, .nz-textarea { width: 100%; min-height: var(--nz-tactil); padding: 0 var(--nz-space-4); border: var(--nz-border-w) solid var(--nz-border); border-radius: var(--nz-radius-sm); background: var(--nz-surface); color: var(--nz-text); font: inherit; font-size: var(--nz-text-base); transition: border-color var(--nz-dur-fast) var(--nz-ease-out), box-shadow var(--nz-dur-fast) var(--nz-ease-out); }
 .nz-input::placeholder, .nz-textarea::placeholder { color: var(--nz-text-faint); }
 .nz-input:hover, .nz-select:hover, .nz-textarea:hover { border-color: var(--nz-border-strong); }
 .nz-input:focus, .nz-select:focus, .nz-textarea:focus { outline: none; border-color: var(--nz-brand); box-shadow: var(--nz-focus-ring); }
@@ -79,7 +79,7 @@
 .nz-textarea__counter { display: block; margin-top: var(--nz-space-1); text-align: right; font-size: var(--nz-text-xs); font-variant-numeric: tabular-nums; color: var(--nz-text-faint); }
 
 /* ---- Checkbox (custom accesible) ---- */
-.nz-checkbox { display: inline-flex; align-items: center; gap: var(--nz-space-2); min-height: 44px; cursor: pointer; font-size: var(--nz-text-base); color: var(--nz-text); }
+.nz-checkbox { display: inline-flex; align-items: center; gap: var(--nz-space-2); min-height: var(--nz-tactil); cursor: pointer; font-size: var(--nz-text-base); color: var(--nz-text); }
 .nz-checkbox input { position: absolute; opacity: 0; width: 1px; height: 1px; }
 .nz-checkbox__box { width: 22px; height: 22px; flex: none; display: inline-grid; place-items: center; border-radius: var(--nz-radius-xs); border: var(--nz-border-w-strong) solid var(--nz-border-strong); background: var(--nz-surface); transition: background var(--nz-dur-fast) var(--nz-ease-out), border-color var(--nz-dur-fast) var(--nz-ease-out); }
 .nz-checkbox__box::after { content: "✓"; color: var(--nz-text-invert); font-size: var(--nz-text-sm); font-weight: var(--nz-peso-fuerte); opacity: 0; transform: scale(.5); transition: opacity var(--nz-dur-fast) var(--nz-ease-out), transform var(--nz-dur-fast) var(--nz-ease-out); }
@@ -100,7 +100,7 @@
 .nz-checkbox--card .nz-checkbox__box { margin-top: 1px; }
 
 /* ---- Radio (custom) ---- */
-.nz-radio { display: inline-flex; align-items: center; gap: var(--nz-space-2); min-height: 44px; cursor: pointer; color: var(--nz-text); }
+.nz-radio { display: inline-flex; align-items: center; gap: var(--nz-space-2); min-height: var(--nz-tactil); cursor: pointer; color: var(--nz-text); }
 .nz-radio input { position: absolute; opacity: 0; width: 1px; height: 1px; }
 .nz-radio__dot { width: 22px; height: 22px; flex: none; display: inline-grid; place-items: center; border-radius: var(--nz-radius-full); border: var(--nz-border-w-strong) solid var(--nz-border-strong); background: var(--nz-surface); transition: border-color var(--nz-dur-fast) var(--nz-ease-out), background var(--nz-dur-fast) var(--nz-ease-out); }
 .nz-radio__dot::after { content: ""; width: 10px; height: 10px; border-radius: var(--nz-radius-full); background: var(--nz-brand); transform: scale(0); transition: transform var(--nz-dur-fast) var(--nz-ease-out); }
@@ -116,7 +116,7 @@
 .nz-radio--card .nz-radio__dot { margin-top: 1px; }
 
 /* ---- Switch (toggle) ---- */
-.nz-switch { position: relative; display: inline-flex; align-items: center; gap: var(--nz-space-2); min-height: 44px; cursor: pointer; }
+.nz-switch { position: relative; display: inline-flex; align-items: center; gap: var(--nz-space-2); min-height: var(--nz-tactil); cursor: pointer; }
 .nz-switch input { position: absolute; opacity: 0; width: 1px; height: 1px; }
 .nz-switch__track { position: relative; width: 48px; height: 28px; flex: none; border-radius: var(--nz-radius-full); background: var(--nz-border-strong); transition: background var(--nz-dur-base) var(--nz-ease-out); }
 .nz-switch__thumb { position: absolute; top: 50%; left: 3px; transform: translateY(-50%); width: 22px; height: 22px; border-radius: var(--nz-radius-full); background: var(--nz-gray-0); box-shadow: var(--nz-shadow-sm); transition: transform var(--nz-dur-base) var(--nz-ease-out); }
@@ -136,7 +136,7 @@
 .nz-switch--lg input:checked ~ .nz-switch__track .nz-switch__thumb { transform: translate(24px, -50%); }
 
 /* ---- Range/slider ---- */
-.nz-range { -webkit-appearance: none; appearance: none; width: 100%; height: 44px; background: transparent; cursor: pointer; }
+.nz-range { -webkit-appearance: none; appearance: none; width: 100%; height: var(--nz-tactil); background: transparent; cursor: pointer; }
 .nz-range::-webkit-slider-runnable-track { height: 6px; border-radius: var(--nz-radius-full); background: var(--nz-bg-inset); }
 .nz-range::-webkit-slider-thumb { -webkit-appearance: none; width: 22px; height: 22px; margin-top: -8px; border-radius: var(--nz-radius-full); background: var(--nz-brand); box-shadow: var(--nz-shadow-brand); border: 3px solid var(--nz-surface); }
 .nz-range::-moz-range-track { height: 6px; border-radius: var(--nz-radius-full); background: var(--nz-bg-inset); }
@@ -145,7 +145,7 @@
 .nz-range--brand::-moz-range-thumb { background: var(--nz-brand); }
 .nz-range--accent::-webkit-slider-thumb { background: var(--nz-accent); box-shadow: var(--nz-shadow-accent); }
 .nz-range--accent::-moz-range-thumb { background: var(--nz-accent); box-shadow: var(--nz-shadow-accent); }
-.nz-range--sm { height: 44px; }
+.nz-range--sm { height: var(--nz-tactil); }
 .nz-range--sm::-webkit-slider-thumb { width: 18px; height: 18px; margin-top: -6px; }
 .nz-range__marks { display: flex; justify-content: space-between; font-size: var(--nz-text-2xs); color: var(--nz-text-faint); }
 
@@ -166,11 +166,11 @@
 .nz-search { position: relative; display: block; }
 .nz-search .nz-input { padding-left: var(--nz-space-9); }
 .nz-search__icon { position: absolute; left: var(--nz-space-3); top: 50%; transform: translateY(-50%); color: var(--nz-text-faint); font-size: var(--nz-text-md); pointer-events: none; }
-.nz-search__clear { position: absolute; right: var(--nz-space-1); top: 50%; transform: translateY(-50%); display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border: 0; border-radius: var(--nz-radius-full); background: transparent; color: var(--nz-text-faint); font: inherit; cursor: pointer; }
+.nz-search__clear { position: absolute; right: var(--nz-space-1); top: 50%; transform: translateY(-50%); display: inline-flex; align-items: center; justify-content: center; width: var(--nz-tactil); height: var(--nz-tactil); border: 0; border-radius: var(--nz-radius-full); background: transparent; color: var(--nz-text-faint); font: inherit; cursor: pointer; }
 .nz-search__clear:hover { background: var(--nz-bg-inset); color: var(--nz-text); }
 .nz-search--sm .nz-input { padding-left: var(--nz-space-8); font-size: var(--nz-text-sm); }
 .nz-search--sm .nz-search__icon { font-size: var(--nz-text-sm); }
-.nz-search--sm .nz-search__clear { width: 44px; height: 44px; }
+.nz-search--sm .nz-search__clear { width: var(--nz-tactil); height: var(--nz-tactil); }
 .nz-search--full { display: flex; flex: 1; min-width: 0; }
 @media (min-width: 640px) {
   .nz-search__clear { width: 32px; height: 32px; }
@@ -184,7 +184,7 @@
 /* ---- Contraseña con ver/ocultar ---- */
 .nz-password { position: relative; display: block; }
 .nz-password .nz-input { padding-right: var(--nz-space-10); }
-.nz-password__toggle { position: absolute; right: var(--nz-space-1); top: 50%; transform: translateY(-50%); display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border: 0; border-radius: var(--nz-radius-full); background: transparent; color: var(--nz-text-mute); font: inherit; cursor: pointer; }
+.nz-password__toggle { position: absolute; right: var(--nz-space-1); top: 50%; transform: translateY(-50%); display: inline-flex; align-items: center; justify-content: center; width: var(--nz-tactil); height: var(--nz-tactil); border: 0; border-radius: var(--nz-radius-full); background: transparent; color: var(--nz-text-mute); font: inherit; cursor: pointer; }
 .nz-password__toggle:hover { background: var(--nz-bg-inset); color: var(--nz-text); }
 @media (min-width: 640px) {
   .nz-password__toggle { width: 34px; height: 34px; }
@@ -202,9 +202,9 @@
 
 /* ---- Selector de cantidad ---- */
 .nz-qty { display: inline-flex; align-items: center; border: var(--nz-border-w) solid var(--nz-border); border-radius: var(--nz-radius-full); overflow: hidden; background: var(--nz-surface); }
-.nz-qty button { min-width: 44px; width: 44px; height: 44px; border: 0; background: transparent; color: var(--nz-text); font-size: var(--nz-text-lg); cursor: pointer; font-family: inherit; }
+.nz-qty button { min-width: var(--nz-tactil); width: var(--nz-tactil); height: var(--nz-tactil); border: 0; background: transparent; color: var(--nz-text); font-size: var(--nz-text-lg); cursor: pointer; font-family: inherit; }
 .nz-qty button:hover { background: var(--nz-bg-soft); }
-.nz-qty input { width: 2.5rem; min-width: 44px; min-height: 44px; text-align: center; border: 0; background: transparent; font: inherit; font-weight: var(--nz-peso-fuerte); font-variant-numeric: tabular-nums; color: var(--nz-text); }
+.nz-qty input { width: 2.5rem; min-width: var(--nz-tactil); min-height: var(--nz-tactil); text-align: center; border: 0; background: transparent; font: inherit; font-weight: var(--nz-peso-fuerte); font-variant-numeric: tabular-nums; color: var(--nz-text); }
 .nz-qty input:focus { outline: none; }
 .nz-qty--sm button { font-size: var(--nz-text-md); }
 .nz-qty--lg button { width: 52px; height: 52px; font-size: var(--nz-text-xl); }
@@ -217,7 +217,7 @@
 }
 
 /* ---- Zona de arrastrar y soltar ficheros ---- */
-.nz-filezona { position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: var(--nz-space-2); min-height: 44px; padding: var(--nz-space-6) var(--nz-space-4); text-align: center; border: var(--nz-border-w-strong) dashed var(--nz-border-strong); border-radius: var(--nz-radius-md); background: var(--nz-bg-soft); color: var(--nz-text-soft); cursor: pointer; transition: border-color var(--nz-dur-fast) var(--nz-ease-out), background var(--nz-dur-fast) var(--nz-ease-out), color var(--nz-dur-fast) var(--nz-ease-out); }
+.nz-filezona { position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: var(--nz-space-2); min-height: var(--nz-tactil); padding: var(--nz-space-6) var(--nz-space-4); text-align: center; border: var(--nz-border-w-strong) dashed var(--nz-border-strong); border-radius: var(--nz-radius-md); background: var(--nz-bg-soft); color: var(--nz-text-soft); cursor: pointer; transition: border-color var(--nz-dur-fast) var(--nz-ease-out), background var(--nz-dur-fast) var(--nz-ease-out), color var(--nz-dur-fast) var(--nz-ease-out); }
 .nz-filezona:hover { border-color: var(--nz-brand); color: var(--nz-text); }
 .nz-filezona.is-active { border-color: var(--nz-brand); background: var(--nz-brand-soft); color: var(--nz-text); }
 .nz-filezona__icono { font-size: var(--nz-text-2xl); line-height: 1; color: var(--nz-brand); }

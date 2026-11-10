@@ -6,7 +6,7 @@
    ============================================================ */
 
 /* ---- Botón base ---- */
-.nz-btn { min-height: 44px; min-width: 44px; display: inline-flex; align-items: center; justify-content: center; gap: var(--nz-space-2); padding: 0 var(--nz-space-5); border: var(--nz-border-w) solid transparent; border-radius: var(--nz-radius-full); font: inherit; font-weight: var(--nz-peso-fuerte); font-size: var(--nz-text-base); cursor: pointer; text-decoration: none; white-space: normal; text-wrap: balance; max-width: 100%; transition: transform var(--nz-dur-fast) var(--nz-ease-out), box-shadow var(--nz-dur-fast) var(--nz-ease-out), background var(--nz-dur-fast) var(--nz-ease-out), color var(--nz-dur-fast) var(--nz-ease-out), border-color var(--nz-dur-fast) var(--nz-ease-out); }
+.nz-btn { min-height: var(--nz-tactil); min-width: var(--nz-tactil); display: inline-flex; align-items: center; justify-content: center; gap: var(--nz-space-2); padding: 0 var(--nz-space-5); border: var(--nz-border-w) solid transparent; border-radius: var(--nz-radius-full); font: inherit; font-weight: var(--nz-peso-fuerte); font-size: var(--nz-text-base); cursor: pointer; text-decoration: none; white-space: normal; text-wrap: balance; max-width: 100%; transition: transform var(--nz-dur-fast) var(--nz-ease-out), box-shadow var(--nz-dur-fast) var(--nz-ease-out), background var(--nz-dur-fast) var(--nz-ease-out), color var(--nz-dur-fast) var(--nz-ease-out), border-color var(--nz-dur-fast) var(--nz-ease-out); }
 .nz-btn:hover { transform: translateY(-2px); }
 .nz-btn:active { transform: translateY(0); }
 .nz-btn:disabled, .nz-btn.is-disabled, .nz-btn[aria-disabled="true"] { opacity: .5; pointer-events: none; }
@@ -36,7 +36,7 @@
 .nz-btn--ghost:hover { background: var(--nz-bg-inset); color: var(--nz-text); }
 .nz-btn--outline { background: transparent; color: var(--nz-brand); box-shadow: inset 0 0 0 var(--nz-border-w-strong) var(--nz-brand); }
 .nz-btn--outline:hover { background: var(--nz-brand-soft); }
-.nz-btn--link { background: none; color: var(--nz-brand); padding: 0; min-height: 44px; border-radius: var(--nz-radius-xs); text-decoration: underline; text-underline-offset: 3px; }
+.nz-btn--link { background: none; color: var(--nz-brand); padding: 0; min-height: var(--nz-tactil); border-radius: var(--nz-radius-xs); text-decoration: underline; text-underline-offset: 3px; }
 .nz-btn--link:hover { color: var(--nz-brand-strong); transform: none; }
 .nz-btn--text { background: none; color: var(--nz-brand); padding: 0 var(--nz-space-2); }
 .nz-btn--text:hover { background: var(--nz-brand-soft); color: var(--nz-brand-strong); transform: none; }
@@ -46,7 +46,7 @@
 /* ---- Tamaños ---- */
 .nz-btn--2xs { min-height: 28px; padding: 0 var(--nz-space-2); font-size: var(--nz-text-2xs); gap: var(--nz-space-1); }
 .nz-btn--xs { min-height: 32px; padding: 0 var(--nz-space-3); font-size: var(--nz-text-xs); }
-.nz-btn--sm { min-height: 44px; padding: 0 var(--nz-space-4); font-size: var(--nz-text-sm); }
+.nz-btn--sm { min-height: var(--nz-tactil); padding: 0 var(--nz-space-4); font-size: var(--nz-text-sm); }
 .nz-btn--lg { min-height: 52px; padding: 0 var(--nz-space-6); font-size: var(--nz-text-md); }
 .nz-btn--xl { min-height: 60px; padding: 0 var(--nz-space-7); font-size: var(--nz-text-lg); }
 .nz-btn--2xl { min-height: 68px; padding: 0 var(--nz-space-8); font-size: var(--nz-text-lg); }
@@ -64,10 +64,10 @@
 .nz-btn__arrow { transition: transform var(--nz-dur-base) var(--nz-ease-out); }
 .nz-btn:hover .nz-btn__arrow--right { transform: translateX(4px); }
 .nz-btn:hover .nz-btn__arrow--left { transform: translateX(-4px); }
-.nz-btn--icon { width: 44px; padding: 0; }
-.nz-btn--icon-sm { width: 44px; min-height: 44px; padding: 0; }
+.nz-btn--icon { width: var(--nz-tactil); padding: 0; }
+.nz-btn--icon-sm { width: var(--nz-tactil); min-height: var(--nz-tactil); padding: 0; }
 .nz-btn--icon-lg { width: 52px; min-height: 52px; padding: 0; }
-.nz-btn--icon-square { width: 44px; padding: 0; border-radius: var(--nz-radius-md); }
+.nz-btn--icon-square { width: var(--nz-tactil); padding: 0; border-radius: var(--nz-radius-md); }
 .nz-btn__badge { position: absolute; top: -4px; right: -4px; min-width: 18px; height: 18px; padding: 0 var(--nz-space-1); display: inline-flex; align-items: center; justify-content: center; border-radius: var(--nz-radius-full); background: var(--nz-accent); color: var(--nz-accent-ink); font-size: var(--nz-text-2xs); font-weight: var(--nz-peso-fuerte); }
 .nz-btn--badged { position: relative; overflow: visible; }
 
@@ -92,15 +92,15 @@
 .nz-btn-group--vertical { flex-direction: column; }
 .nz-btn-group--vertical .nz-btn { width: 100%; justify-content: flex-start; }
 .nz-btn-group--split { gap: 0; }
-.nz-btn-group__caret { min-width: 44px; padding: 0 var(--nz-space-3); border-radius: 0 var(--nz-radius-full) var(--nz-radius-full) 0; }
+.nz-btn-group__caret { min-width: var(--nz-tactil); padding: 0 var(--nz-space-3); border-radius: 0 var(--nz-radius-full) var(--nz-radius-full) 0; }
 .nz-btn-group--split .nz-btn:first-child { border-radius: var(--nz-radius-full) 0 0 var(--nz-radius-full); }
 
 /* ---- Selector segmentado ---- */
 .nz-segmented { display: inline-flex; padding: var(--nz-space-1); gap: var(--nz-space-1); background: var(--nz-bg-inset); border-radius: var(--nz-radius-full); }
-.nz-segmented button, .nz-segmented a { min-height: 44px; padding: 0 var(--nz-space-4); border-radius: var(--nz-radius-full); border: 0; background: transparent; color: var(--nz-text-soft); font: inherit; font-size: var(--nz-text-sm); font-weight: var(--nz-peso-fuerte); text-decoration: none; cursor: pointer; transition: background var(--nz-dur-fast) var(--nz-ease-out), color var(--nz-dur-fast) var(--nz-ease-out), box-shadow var(--nz-dur-fast) var(--nz-ease-out); }
+.nz-segmented button, .nz-segmented a { min-height: var(--nz-tactil); padding: 0 var(--nz-space-4); border-radius: var(--nz-radius-full); border: 0; background: transparent; color: var(--nz-text-soft); font: inherit; font-size: var(--nz-text-sm); font-weight: var(--nz-peso-fuerte); text-decoration: none; cursor: pointer; transition: background var(--nz-dur-fast) var(--nz-ease-out), color var(--nz-dur-fast) var(--nz-ease-out), box-shadow var(--nz-dur-fast) var(--nz-ease-out); }
 .nz-segmented [aria-selected="true"], .nz-segmented button.is-active, .nz-segmented a.is-active { background: var(--nz-surface); color: var(--nz-text); box-shadow: var(--nz-shadow-sm); }
-.nz-segmented--sm button, .nz-segmented--sm a { min-height: 44px; padding: 0 var(--nz-space-3); font-size: var(--nz-text-xs); }
-.nz-segmented--lg button, .nz-segmented--lg a { min-height: 44px; padding: 0 var(--nz-space-5); font-size: var(--nz-text-base); }
+.nz-segmented--sm button, .nz-segmented--sm a { min-height: var(--nz-tactil); padding: 0 var(--nz-space-3); font-size: var(--nz-text-xs); }
+.nz-segmented--lg button, .nz-segmented--lg a { min-height: var(--nz-tactil); padding: 0 var(--nz-space-5); font-size: var(--nz-text-base); }
 .nz-segmented--vertical { flex-direction: column; border-radius: var(--nz-radius-lg); }
 .nz-segmented--vertical button, .nz-segmented--vertical a { border-radius: var(--nz-radius-md); text-align: left; }
 .nz-segmented--full { display: flex; width: 100%; }
@@ -113,7 +113,7 @@
 .nz-fab:hover { transform: scale(1.08) rotate(-4deg); background: var(--nz-brand-strong); }
 .nz-fab--accent { background: var(--nz-accent); box-shadow: var(--nz-shadow-accent); }
 .nz-fab--lg { width: 64px; height: 64px; }
-.nz-fab--sm { width: 44px; height: 44px; font-size: var(--nz-text-md); }
+.nz-fab--sm { width: var(--nz-tactil); height: var(--nz-tactil); font-size: var(--nz-text-md); }
 .nz-fab--extended { width: auto; padding: 0 var(--nz-space-5); gap: var(--nz-space-2); font-size: var(--nz-text-base); font-weight: var(--nz-peso-fuerte); }
 .nz-fab--bottom-left { right: auto; left: var(--nz-space-5); }
 

@@ -13,8 +13,8 @@
 .nz-alert__title { font-weight: var(--nz-peso-fuerte); font-size: var(--nz-text-sm); color: var(--nz-text); }
 .nz-alert__msg { font-size: var(--nz-text-sm); color: var(--nz-text-soft); }
 .nz-alert__msg a { color: var(--nz-brand); font-weight: var(--nz-peso-fuerte); }
-.nz-alert__action { align-self: flex-start; min-height: 44px; display: inline-flex; align-items: center; margin-top: var(--nz-space-1); padding: 0; border: 0; background: none; color: var(--nz-brand); font: inherit; font-size: var(--nz-text-xs); font-weight: var(--nz-peso-fuerte); cursor: pointer; }
-.nz-alert__close { flex: none; margin-left: auto; align-self: flex-start; display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border: 0; border-radius: var(--nz-radius-full); background: transparent; color: inherit; font: inherit; cursor: pointer; opacity: .7; }
+.nz-alert__action { align-self: flex-start; min-height: var(--nz-tactil); display: inline-flex; align-items: center; margin-top: var(--nz-space-1); padding: 0; border: 0; background: none; color: var(--nz-brand); font: inherit; font-size: var(--nz-text-xs); font-weight: var(--nz-peso-fuerte); cursor: pointer; }
+.nz-alert__close { flex: none; margin-left: auto; align-self: flex-start; display: inline-flex; align-items: center; justify-content: center; width: var(--nz-tactil); height: var(--nz-tactil); border: 0; border-radius: var(--nz-radius-full); background: transparent; color: inherit; font: inherit; cursor: pointer; opacity: .7; }
 .nz-alert__close:hover { opacity: 1; background: var(--nz-bg-inset); }
 .nz-alert--brand .nz-alert__close:hover { background: var(--nz-brand-tint); }
 .nz-alert--danger .nz-alert__close:hover { background: var(--nz-danger-tint); }
@@ -74,10 +74,10 @@
 .nz-badge--counter { min-width: 22px; justify-content: center; padding: 0 var(--nz-space-1); background: var(--nz-accent); color: var(--nz-accent-ink); letter-spacing: 0; }
 
 /* ---- Chip ---- */
-.nz-chip { min-height: 44px; display: inline-flex; align-items: center; gap: var(--nz-space-1); padding: 0 var(--nz-space-4); border-radius: var(--nz-radius-full); border: var(--nz-border-w) solid var(--nz-border); background: var(--nz-surface); color: var(--nz-text-soft); font: inherit; font-size: var(--nz-text-sm); font-weight: var(--nz-peso-fuerte); cursor: pointer; transition: background var(--nz-dur-fast) var(--nz-ease-out), color var(--nz-dur-fast) var(--nz-ease-out), border-color var(--nz-dur-fast) var(--nz-ease-out); }
+.nz-chip { min-height: var(--nz-tactil); display: inline-flex; align-items: center; gap: var(--nz-space-1); padding: 0 var(--nz-space-4); border-radius: var(--nz-radius-full); border: var(--nz-border-w) solid var(--nz-border); background: var(--nz-surface); color: var(--nz-text-soft); font: inherit; font-size: var(--nz-text-sm); font-weight: var(--nz-peso-fuerte); cursor: pointer; transition: background var(--nz-dur-fast) var(--nz-ease-out), color var(--nz-dur-fast) var(--nz-ease-out), border-color var(--nz-dur-fast) var(--nz-ease-out); }
 .nz-chip:hover { background: var(--nz-bg-soft); color: var(--nz-text); }
 .nz-chip.is-active, .nz-chip[aria-pressed="true"] { background: var(--nz-brand); border-color: var(--nz-brand); color: var(--nz-text-invert); }
-.nz-chip__x { width: 44px; height: 44px; display: inline-flex; align-items: center; justify-content: center; margin-right: calc(var(--nz-space-2) * -1); border-radius: var(--nz-radius-full); font-size: var(--nz-text-xs); cursor: pointer; }
+.nz-chip__x { width: var(--nz-tactil); height: var(--nz-tactil); display: inline-flex; align-items: center; justify-content: center; margin-right: calc(var(--nz-space-2) * -1); border-radius: var(--nz-radius-full); font-size: var(--nz-text-xs); cursor: pointer; }
 .nz-chip.is-active .nz-chip__x:hover { background: var(--nz-brand-strong); }
 .nz-chip__dot { width: 8px; height: 8px; flex: none; border-radius: var(--nz-radius-full); background: currentColor; }
 .nz-chip--brand { background: var(--nz-brand-soft); border-color: var(--nz-brand-soft); color: var(--nz-brand); }
@@ -98,8 +98,8 @@
 .nz-toast.is-on { transform: translateX(-50%); opacity: 1; visibility: visible; }
 .nz-toast__icon { font-size: var(--nz-text-md); line-height: 1; }
 .nz-toast__title { font-weight: var(--nz-peso-fuerte); }
-.nz-toast__action { min-height: 44px; display: inline-flex; align-items: center; margin-left: auto; padding: 0; border: 0; background: none; color: var(--nz-orange-300); font: inherit; font-weight: var(--nz-peso-fuerte); cursor: pointer; }
-.nz-toast__close { margin-left: auto; width: 44px; height: 44px; flex: none; border: 0; border-radius: var(--nz-radius-full); background: transparent; color: inherit; font: inherit; cursor: pointer; opacity: .7; }
+.nz-toast__action { min-height: var(--nz-tactil); display: inline-flex; align-items: center; margin-left: auto; padding: 0; border: 0; background: none; color: var(--nz-orange-300); font: inherit; font-weight: var(--nz-peso-fuerte); cursor: pointer; }
+.nz-toast__close { margin-left: auto; width: var(--nz-tactil); height: var(--nz-tactil); flex: none; border: 0; border-radius: var(--nz-radius-full); background: transparent; color: inherit; font: inherit; cursor: pointer; opacity: .7; }
 .nz-toast__close:hover { opacity: 1; background: var(--nz-gray-700); }
 .nz-toast--success .nz-toast__icon { color: var(--nz-green-500); }
 .nz-toast--error .nz-toast__icon { color: var(--nz-red-500); }
@@ -146,8 +146,8 @@
 /* ---- Banner (aviso a ancho completo) ---- */
 .nz-banner { display: flex; align-items: center; gap: var(--nz-space-3); padding: var(--nz-space-3) var(--nz-space-4); background: var(--nz-bg-soft); border-bottom: var(--nz-border-w) solid var(--nz-border); color: var(--nz-text); font-size: var(--nz-text-sm); }
 .nz-banner__body { display: flex; align-items: center; gap: var(--nz-space-2); min-width: 0; }
-.nz-banner__action { min-height: 44px; display: inline-flex; align-items: center; margin-left: auto; padding: 0 var(--nz-space-4); border: 0; border-radius: var(--nz-radius-full); background: var(--nz-brand); color: var(--nz-text-invert); font: inherit; font-size: var(--nz-text-xs); font-weight: var(--nz-peso-fuerte); cursor: pointer; }
-.nz-banner__close { flex-shrink: 0; min-width: 44px; width: 44px; min-height: 44px; display: inline-flex; align-items: center; justify-content: center; border: 0; border-radius: var(--nz-radius-full); background: transparent; color: inherit; font: inherit; cursor: pointer; opacity: .7; }
+.nz-banner__action { min-height: var(--nz-tactil); display: inline-flex; align-items: center; margin-left: auto; padding: 0 var(--nz-space-4); border: 0; border-radius: var(--nz-radius-full); background: var(--nz-brand); color: var(--nz-text-invert); font: inherit; font-size: var(--nz-text-xs); font-weight: var(--nz-peso-fuerte); cursor: pointer; }
+.nz-banner__close { flex-shrink: 0; min-width: var(--nz-tactil); width: var(--nz-tactil); min-height: var(--nz-tactil); display: inline-flex; align-items: center; justify-content: center; border: 0; border-radius: var(--nz-radius-full); background: transparent; color: inherit; font: inherit; cursor: pointer; opacity: .7; }
 .nz-banner__close:hover { opacity: 1; background: var(--nz-bg-inset); }
 .nz-banner--brand { background: var(--nz-brand); border-bottom-color: var(--nz-brand-strong); color: var(--nz-text-invert); }
 .nz-banner--brand .nz-banner__action { background: var(--nz-gray-0); color: var(--nz-brand-strong); }
@@ -205,7 +205,7 @@
 @keyframes nzSkel { 0%, 100% { opacity: 1; } 50% { opacity: .5; } }
 .nz-skeleton--text .nz-skeleton__line { height: var(--nz-text-base); border-radius: var(--nz-radius-xs); }
 .nz-skeleton--avatar .nz-skeleton__block { width: 48px; height: 48px; aspect-ratio: 1 / 1; border-radius: var(--nz-radius-full); }
-.nz-skeleton--button .nz-skeleton__block { width: 8rem; height: 44px; aspect-ratio: auto; border-radius: var(--nz-radius-full); }
+.nz-skeleton--button .nz-skeleton__block { width: 8rem; height: var(--nz-tactil); aspect-ratio: auto; border-radius: var(--nz-radius-full); }
 .nz-skeleton--chart .nz-skeleton__block { aspect-ratio: 21 / 9; }
 
 /* ---- Empty state ---- */

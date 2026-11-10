@@ -258,7 +258,7 @@
 .nz-agenda-disponibilidad__fecha { font-size: var(--nz-text-sm); font-weight: var(--nz-peso-fuerte); color: var(--nz-text); }
 .nz-agenda-disponibilidad__franjas { display: flex; flex-wrap: wrap; gap: var(--nz-space-2); }
 .nz-agenda-disponibilidad__franja {
-  min-height: 44px;
+  min-height: var(--nz-tactil);
   display: inline-flex;
   align-items: center;
   padding: 0 var(--nz-space-4);
@@ -431,7 +431,7 @@
 /* ---- P28 Sección de preguntas frecuentes ---- */
 .nz-preguntas-frecuentes { display: grid; gap: var(--nz-space-2); }
 .nz-preguntas-frecuentes__item { padding: 0 var(--nz-space-4); border: var(--nz-border-w) solid var(--nz-border-soft); border-radius: var(--nz-radius-md); background: var(--nz-surface); }
-.nz-preguntas-frecuentes__pregunta { display: flex; align-items: center; gap: var(--nz-space-2); min-height: 44px; padding: var(--nz-space-3) 0; font-size: var(--nz-text-sm); font-weight: var(--nz-peso-fuerte); color: var(--nz-text); cursor: pointer; }
+.nz-preguntas-frecuentes__pregunta { display: flex; align-items: center; gap: var(--nz-space-2); min-height: var(--nz-tactil); padding: var(--nz-space-3) 0; font-size: var(--nz-text-sm); font-weight: var(--nz-peso-fuerte); color: var(--nz-text); cursor: pointer; }
 .nz-preguntas-frecuentes__respuesta { padding-bottom: var(--nz-space-3); font-size: var(--nz-text-sm); color: var(--nz-text-soft); }
 
 /* ---- P29 Tarjeta de suscripción ---- */
@@ -502,8 +502,8 @@
 /* ---- P34 Selector de vista (lista / rejilla) ---- */
 .nz-selector-vista { display: inline-flex; gap: var(--nz-space-1); padding: var(--nz-space-1); border-radius: var(--nz-radius-full); background: var(--nz-bg-inset); }
 .nz-selector-vista__opcion {
-  min-width: 44px;
-  min-height: 44px;
+  min-width: var(--nz-tactil);
+  min-height: var(--nz-tactil);
   display: inline-flex;
   align-items: center;
   justify-content: center;
