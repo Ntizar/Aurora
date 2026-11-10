@@ -42,12 +42,12 @@
 /* ---- Validación del control ---- */
 .nz-input--brand { border-color: var(--nz-brand); }
 .nz-input--error, .nz-input[aria-invalid="true"] { border-color: var(--nz-danger); }
-.nz-input--error:focus, .nz-input[aria-invalid="true"]:focus { box-shadow: 0 0 0 3px var(--nz-red-100); }
-[data-nz-theme="dark"] .nz-input--error:focus, [data-nz-theme="dark"] .nz-input[aria-invalid="true"]:focus { box-shadow: 0 0 0 3px var(--nz-danger-soft); }
+.nz-input--error:focus, .nz-input[aria-invalid="true"]:focus { box-shadow: var(--nz-focus-ring-danger); }
+
 .nz-input--success { border-color: var(--nz-success); }
-.nz-input--success:focus { box-shadow: 0 0 0 3px var(--nz-green-100); }
+.nz-input--success:focus { box-shadow: var(--nz-focus-ring-success); }
 .nz-input--warning { border-color: var(--nz-warning); }
-.nz-input--warning:focus { box-shadow: 0 0 0 3px var(--nz-amber-100); }
+.nz-input--warning:focus { box-shadow: var(--nz-focus-ring-warning); }
 .nz-input:disabled, .nz-select:disabled { opacity: .7; }
 
 /* ---- Tamaños y forma del control ---- */
@@ -119,7 +119,7 @@
 .nz-switch { position: relative; display: inline-flex; align-items: center; gap: var(--nz-space-2); min-height: var(--nz-tactil); cursor: pointer; }
 .nz-switch input { position: absolute; opacity: 0; width: 1px; height: 1px; }
 .nz-switch__track { position: relative; width: 48px; height: 28px; flex: none; border-radius: var(--nz-radius-full); background: var(--nz-border-strong); transition: background var(--nz-dur-base) var(--nz-ease-out); }
-.nz-switch__thumb { position: absolute; top: 50%; left: 3px; transform: translateY(-50%); width: 22px; height: 22px; border-radius: var(--nz-radius-full); background: var(--nz-gray-0); box-shadow: var(--nz-shadow-sm); transition: transform var(--nz-dur-base) var(--nz-ease-out); }
+.nz-switch__thumb { position: absolute; top: 50%; left: 3px; transform: translateY(-50%); width: 22px; height: 22px; border-radius: var(--nz-radius-full); background: var(--nz-gray-0); box-shadow: none; transition: transform var(--nz-dur-base) var(--nz-ease-out); }
 .nz-switch input:checked ~ .nz-switch__track { background: var(--nz-brand); }
 .nz-switch input:checked ~ .nz-switch__track .nz-switch__thumb { transform: translate(20px, -50%); }
 .nz-switch input:focus-visible ~ .nz-switch__track { box-shadow: var(--nz-focus-ring); }
@@ -138,13 +138,13 @@
 /* ---- Range/slider ---- */
 .nz-range { -webkit-appearance: none; appearance: none; width: 100%; height: var(--nz-tactil); background: transparent; cursor: pointer; }
 .nz-range::-webkit-slider-runnable-track { height: 6px; border-radius: var(--nz-radius-full); background: var(--nz-bg-inset); }
-.nz-range::-webkit-slider-thumb { -webkit-appearance: none; width: 22px; height: 22px; margin-top: -8px; border-radius: var(--nz-radius-full); background: var(--nz-brand); box-shadow: var(--nz-shadow-brand); border: 3px solid var(--nz-surface); }
+.nz-range::-webkit-slider-thumb { -webkit-appearance: none; width: 22px; height: 22px; margin-top: -8px; border-radius: var(--nz-radius-full); background: var(--nz-brand); box-shadow: none; border: 3px solid var(--nz-surface); }
 .nz-range::-moz-range-track { height: 6px; border-radius: var(--nz-radius-full); background: var(--nz-bg-inset); }
-.nz-range::-moz-range-thumb { width: 16px; height: 16px; border-radius: var(--nz-radius-full); background: var(--nz-brand); box-shadow: var(--nz-shadow-brand); border: 3px solid var(--nz-surface); }
+.nz-range::-moz-range-thumb { width: 16px; height: 16px; border-radius: var(--nz-radius-full); background: var(--nz-brand); box-shadow: none; border: 3px solid var(--nz-surface); }
 .nz-range--brand::-webkit-slider-thumb { background: var(--nz-brand); }
 .nz-range--brand::-moz-range-thumb { background: var(--nz-brand); }
-.nz-range--accent::-webkit-slider-thumb { background: var(--nz-accent); box-shadow: var(--nz-shadow-accent); }
-.nz-range--accent::-moz-range-thumb { background: var(--nz-accent); box-shadow: var(--nz-shadow-accent); }
+.nz-range--accent::-webkit-slider-thumb { background: var(--nz-accent); box-shadow: none; }
+.nz-range--accent::-moz-range-thumb { background: var(--nz-accent); box-shadow: none; }
 .nz-range--sm { height: var(--nz-tactil); }
 .nz-range--sm::-webkit-slider-thumb { width: 18px; height: 18px; margin-top: -6px; }
 .nz-range__marks { display: flex; justify-content: space-between; font-size: var(--nz-text-2xs); color: var(--nz-text-faint); }
@@ -158,7 +158,7 @@
 .nz-inputgroup--pill { border-radius: var(--nz-radius-full); }
 .nz-inputgroup--pill .nz-inputgroup__addon:first-child { padding-left: var(--nz-space-4); }
 .nz-inputgroup--error { border-color: var(--nz-danger); }
-.nz-inputgroup--error:focus-within { border-color: var(--nz-danger); box-shadow: 0 0 0 3px var(--nz-red-100); }
+.nz-inputgroup--error:focus-within { border-color: var(--nz-danger); box-shadow: var(--nz-focus-ring-danger); }
 .nz-inputgroup__addon--brand { background: var(--nz-brand); color: var(--nz-text-invert); font-weight: var(--nz-peso-fuerte); }
 .nz-inputgroup__addon--accent { background: var(--nz-accent); color: var(--nz-accent-ink); font-weight: var(--nz-peso-fuerte); }
 
@@ -257,7 +257,6 @@
 @media (forced-colors: active) {
   .nz-input, .nz-select, .nz-textarea, .nz-checkbox__box, .nz-radio__dot, .nz-switch__track { border: var(--nz-border-w) solid CanvasText; }
 }
-
 
 /* ============================================================
    Variantes de fieldset y estado de subida (lexico cerrado)    */

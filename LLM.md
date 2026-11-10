@@ -385,7 +385,7 @@ desde `tokens.css`, así que no hay que enlazar Google Fonts ni tocar `--nz-font
 }
 ```
 
-Los 242 tokens están inventariados en `components.json` (sección
+Los 248 tokens están inventariados en `components.json` (sección
 `tokens_def`, con nombre, valor y sección). Nada fuera de ese catálogo.
 
 ## 8. Anti-patrones (NO lo hagas)
@@ -439,7 +439,7 @@ chat-ia, forms): cópialas como punto de partida.
 
 **Base de datos de diseño:** `base.html` es el explorador (búsqueda por lo que
 quieres construir, ficha con markup y preview) y `datos/base-diseno.json` es el
-índice machine-readable: 417 familias con su markup, 242 tokens,
+índice machine-readable: 417 familias con su markup, 248 tokens,
 recetas, combos, marcas y las 12 leyes. Consúltalo antes de leer un pack.
 
 ## 10. Interfaces generativas (OpenUI Lang)

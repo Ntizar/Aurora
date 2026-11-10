@@ -9,7 +9,7 @@
 
 /* ---- Tabla ---- */
 .nz-table-wrap { overflow-x: auto; border-radius: var(--nz-radius-md); border: var(--nz-border-w) solid var(--nz-border-soft); }
-.nz-table { width: 100%; border-collapse: collapse; background: var(--nz-surface); font-size: var(--nz-text-sm); min-width: 30rem; }
+.nz-table { width: 100%; border-collapse: collapse; background: var(--nz-surface); font-size: var(--nz-text-sm); min-width: 30rem; border: var(--nz-border-w) solid var(--nz-border); }
 .nz-table thead th { background: var(--nz-bg-soft); color: var(--nz-text-mute); font-size: var(--nz-text-xs); font-weight: var(--nz-peso-fuerte); text-transform: uppercase; letter-spacing: var(--nz-tracking-caps); text-align: left; padding: var(--nz-space-3) var(--nz-space-4); white-space: nowrap; }
 .nz-table tbody td { padding: var(--nz-space-3) var(--nz-space-4); border-top: var(--nz-border-w) solid var(--nz-border-soft); color: var(--nz-text-soft); }
 .nz-table tbody tr { transition: background var(--nz-dur-fast) var(--nz-ease-out); }
@@ -65,7 +65,7 @@
 .nz-table--apilable tbody tr, .nz-table--apilable tfoot tr {
   display: block; padding: var(--nz-space-2) var(--nz-space-3);
   border: var(--nz-border-w) solid var(--nz-border-soft); border-radius: var(--nz-radius-md);
-  background: var(--nz-surface); box-shadow: var(--nz-shadow-xs);
+  background: var(--nz-surface); box-shadow: none;
 }
 .nz-table--apilable tbody tr + tr, .nz-table--apilable tfoot tr + tr { margin-top: var(--nz-space-2); }
 .nz-table--apilable tbody th, .nz-table--apilable tbody td, .nz-table--apilable tfoot td {
@@ -108,7 +108,7 @@
 .nz-table__status--brand i { background: var(--nz-brand); }
 
 /* ---- KPI / tarjeta de dato ---- */
-.nz-kpi { display: grid; gap: var(--nz-space-1); padding: var(--nz-space-5); border-radius: var(--nz-radius-lg); background: var(--nz-surface); box-shadow: var(--nz-shadow-sm); }
+.nz-kpi { display: grid; gap: var(--nz-space-1); padding: var(--nz-space-5); border-radius: var(--nz-radius-lg); background: var(--nz-surface); box-shadow: none; border: var(--nz-border-w) solid var(--nz-border); }
 .nz-kpi__label { font-size: var(--nz-text-xs); font-weight: var(--nz-peso-fuerte); letter-spacing: var(--nz-tracking-caps); text-transform: uppercase; color: var(--nz-text-mute); }
 .nz-kpi__value { font-size: var(--nz-text-2xl); font-weight: var(--nz-peso-titulo); letter-spacing: var(--nz-tracking-tight); font-variant-numeric: tabular-nums; color: var(--nz-text); }
 .nz-kpi__value--brand { color: var(--nz-brand); }
@@ -156,7 +156,7 @@
 .nz-spark--lg { height: 4rem; }
 
 /* ---- Fila de lista (avatar + texto + acciones) ---- */
-.nz-list-row { display: flex; align-items: center; gap: var(--nz-space-3); min-height: 56px; padding: var(--nz-space-3) var(--nz-space-4); border-radius: var(--nz-radius-md); background: var(--nz-surface); box-shadow: var(--nz-shadow-xs); }
+.nz-list-row { display: flex; align-items: center; gap: var(--nz-space-3); min-height: 56px; padding: var(--nz-space-3) var(--nz-space-4); border-radius: var(--nz-radius-md); background: var(--nz-surface); box-shadow: none; }
 .nz-list-row + .nz-list-row { margin-top: var(--nz-space-2); }
 .nz-list-row--brand { border-left: 3px solid var(--nz-brand); }
 .nz-list-row__body { flex: 1; min-width: 0; display: grid; gap: 2px; }
@@ -166,7 +166,7 @@
 
 /* ---- Lista de registros (vertical, más rica que la de layout) ---- */
 .nz-records { display: grid; gap: var(--nz-space-2); }
-.nz-record { display: flex; align-items: center; gap: var(--nz-space-3); padding: var(--nz-space-3) var(--nz-space-4); border-radius: var(--nz-radius-md); background: var(--nz-surface); box-shadow: var(--nz-shadow-sm); }
+.nz-record { display: flex; align-items: center; gap: var(--nz-space-3); padding: var(--nz-space-3) var(--nz-space-4); border-radius: var(--nz-radius-md); background: var(--nz-surface); box-shadow: none; }
 .nz-record--brand { border-left: 3px solid var(--nz-brand); }
 .nz-record--danger { border-left: 3px solid var(--nz-danger); }
 .nz-record__body { flex: 1; min-width: 0; display: grid; gap: 2px; }
@@ -185,7 +185,7 @@
 .nz-timeline { position: relative; display: flex; flex-direction: column; gap: var(--nz-space-4); padding-left: var(--nz-space-5); }
 .nz-timeline::before { content: ""; position: absolute; left: 7px; top: 4px; bottom: 4px; width: 2px; background: var(--nz-border); border-radius: var(--nz-radius-full); }
 .nz-timeline__item { position: relative; }
-.nz-timeline__dot { position: absolute; left: calc(-1 * var(--nz-space-5) - 1px); top: 3px; width: 16px; height: 16px; border-radius: 50%; background: var(--nz-brand); border: 3px solid var(--nz-surface); box-shadow: var(--nz-shadow-sm); }
+.nz-timeline__dot { position: absolute; left: calc(-1 * var(--nz-space-5) - 1px); top: 3px; width: 16px; height: 16px; border-radius: 50%; background: var(--nz-brand); border: 3px solid var(--nz-surface); box-shadow: none; }
 .nz-timeline__dot--brand { box-shadow: 0 0 0 4px var(--nz-brand-soft); }
 .nz-timeline__dot--accent { background: var(--nz-accent); }
 .nz-timeline__dot--success { background: var(--nz-success); }
@@ -194,7 +194,7 @@
 .nz-timeline__time { font-size: var(--nz-text-xs); font-weight: var(--nz-peso-fuerte); letter-spacing: var(--nz-tracking-caps); text-transform: uppercase; color: var(--nz-text-faint); }
 .nz-timeline__title { font-weight: var(--nz-peso-fuerte); font-size: var(--nz-text-sm); color: var(--nz-text); }
 .nz-timeline__desc { font-size: var(--nz-text-xs); color: var(--nz-text-mute); }
-.nz-timeline__card { margin-top: var(--nz-space-2); padding: var(--nz-space-3); border-radius: var(--nz-radius-md); background: var(--nz-surface); box-shadow: var(--nz-shadow-sm); font-size: var(--nz-text-xs); color: var(--nz-text-soft); }
+.nz-timeline__card { margin-top: var(--nz-space-2); padding: var(--nz-space-3); border-radius: var(--nz-radius-md); background: var(--nz-surface); box-shadow: none; font-size: var(--nz-text-xs); color: var(--nz-text-soft); }
 .nz-timeline--brand::before { background: var(--nz-brand-soft); }
 .nz-timeline--compact { gap: var(--nz-space-3); padding-left: var(--nz-space-4); }
 .nz-timeline--compact .nz-timeline__dot { left: calc(-1 * var(--nz-space-4) - 1px); width: 12px; height: 12px; border-width: 2px; }
@@ -293,9 +293,9 @@
 .nz-arbol__leaf.is-done { color: var(--nz-success); }
 .nz-records--dense { gap: var(--nz-space-1); }
 .nz-records--spacious { gap: var(--nz-space-4); }
-.nz-record--success { box-shadow: inset 3px 0 0 var(--nz-success), var(--nz-shadow-sm); }
-.nz-record--warning { box-shadow: inset 3px 0 0 var(--nz-warning), var(--nz-shadow-sm); }
-.nz-record.is-selected { box-shadow: 0 0 0 2px var(--nz-brand), var(--nz-shadow-sm); }
+.nz-record--success { box-shadow: inset 3px 0 0 var(--nz-success); }
+.nz-record--warning { box-shadow: inset 3px 0 0 var(--nz-warning); }
+.nz-record.is-selected { box-shadow: 0 0 0 2px var(--nz-brand); }
 
 /* ---- v9.2 · tabla por contenedor (sin declarar container-type propio:
    el contexto lo pone .nz-dash-grid / .nz-split, y así el sticky-head no se toca) ---- */

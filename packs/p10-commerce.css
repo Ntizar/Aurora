@@ -44,13 +44,13 @@
 .nz-stock--out.nz-stock--badge { background: var(--nz-danger-soft); color: var(--nz-danger); }
 
 /* ---- Tarjeta de producto ---- */
-.nz-product { position: relative; display: flex; flex-direction: column; gap: var(--nz-space-3); padding: var(--nz-space-4); border-radius: var(--nz-radius-lg); background: var(--nz-surface); box-shadow: var(--nz-shadow-sm); transition: transform var(--nz-dur-base) var(--nz-ease-out), box-shadow var(--nz-dur-base) var(--nz-ease-out); }
-.nz-product:hover { transform: translateY(-3px); box-shadow: var(--nz-shadow-lg); }
+.nz-product { position: relative; display: flex; flex-direction: column; gap: var(--nz-space-3); padding: var(--nz-space-4); border-radius: var(--nz-radius-lg); background: var(--nz-surface); box-shadow: none; transition: transform var(--nz-dur-base) var(--nz-ease-out), box-shadow var(--nz-dur-base) var(--nz-ease-out); border: var(--nz-border-w) solid var(--nz-border); }
+.nz-product:hover { transform: translateY(-3px); box-shadow: none; }
 .nz-product__media { position: relative; aspect-ratio: 1; border-radius: var(--nz-radius-md); overflow: hidden; background: var(--nz-bg-inset); }
 .nz-product__media img { display: block; width: 100%; height: 100%; object-fit: cover; }
 .nz-product__badge { position: absolute; top: var(--nz-space-2); left: var(--nz-space-2); }
 .nz-product__ribbon { position: absolute; top: var(--nz-space-2); right: var(--nz-space-2); padding: var(--nz-space-1) var(--nz-space-3); border-radius: var(--nz-radius-full); background: var(--nz-accent); color: var(--nz-accent-ink); font-size: var(--nz-text-xs); font-weight: var(--nz-peso-fuerte); letter-spacing: var(--nz-tracking-caps); text-transform: uppercase; }
-.nz-product__quick { position: absolute; left: var(--nz-space-2); right: var(--nz-space-2); bottom: var(--nz-space-2); min-height: var(--nz-tactil); display: inline-flex; align-items: center; justify-content: center; gap: var(--nz-space-2); border: var(--nz-border-w) solid var(--nz-border); border-radius: var(--nz-radius-md); background: var(--nz-surface); color: var(--nz-text); font: inherit; font-size: var(--nz-text-sm); font-weight: var(--nz-peso-fuerte); box-shadow: var(--nz-shadow-md); cursor: pointer; }
+.nz-product__quick { position: absolute; left: var(--nz-space-2); right: var(--nz-space-2); bottom: var(--nz-space-2); min-height: var(--nz-tactil); display: inline-flex; align-items: center; justify-content: center; gap: var(--nz-space-2); border: var(--nz-border-w) solid var(--nz-border); border-radius: var(--nz-radius-md); background: var(--nz-surface); color: var(--nz-text); font: inherit; font-size: var(--nz-text-sm); font-weight: var(--nz-peso-fuerte); box-shadow: var(--nz-shadow-xl); cursor: pointer; }
 .nz-product__body { display: grid; gap: var(--nz-space-1); min-width: 0; }
 .nz-product__cat { font-size: var(--nz-text-xs); font-weight: var(--nz-peso-fuerte); letter-spacing: var(--nz-tracking-caps); text-transform: uppercase; color: var(--nz-text-faint); }
 .nz-product__name { font-weight: var(--nz-peso-fuerte); font-size: var(--nz-text-base); color: var(--nz-text); line-height: var(--nz-leading-snug); }
@@ -77,7 +77,7 @@
 @media (min-width: 960px) { .nz-products { grid-template-columns: repeat(auto-fill, minmax(14rem, 1fr)); } .nz-products--2 { grid-template-columns: repeat(2, 1fr); } }
 
 /* ---- Plan (comparador de precios) ---- */
-.nz-plan { position: relative; display: flex; flex-direction: column; gap: var(--nz-space-4); padding: var(--nz-space-6); border: var(--nz-border-w) solid var(--nz-border-soft); border-radius: var(--nz-radius-xl); background: var(--nz-surface); box-shadow: var(--nz-shadow-sm); }
+.nz-plan { position: relative; display: flex; flex-direction: column; gap: var(--nz-space-4); padding: var(--nz-space-6); border: var(--nz-border-w) solid var(--nz-border-soft); border-radius: var(--nz-radius-xl); background: var(--nz-surface); box-shadow: none; }
 .nz-plan__flag { position: absolute; top: calc(-1 * var(--nz-space-3)); left: 50%; transform: translateX(-50%); }
 .nz-plan__name { font-size: var(--nz-text-md); font-weight: var(--nz-peso-titulo); }
 .nz-plan__desc { font-size: var(--nz-text-xs); color: var(--nz-text-mute); }
@@ -92,7 +92,7 @@
 .nz-plan__feature--off { color: var(--nz-text-faint); text-decoration: line-through; }
 .nz-plan__cta { margin-top: auto; }
 .nz-plan__cta .nz-btn { width: 100%; }
-.nz-plan--featured { border-color: var(--nz-brand); box-shadow: var(--nz-shadow-lg); }
+.nz-plan--featured { border-color: var(--nz-brand); box-shadow: none; }
 .nz-plan--brand { background: var(--nz-brand); border-color: var(--nz-brand); color: var(--nz-text-invert); }
 .nz-plan--brand .nz-plan__name, .nz-plan--brand .nz-plan__price { color: var(--nz-text-invert); }
 .nz-plan--brand .nz-plan__desc, .nz-plan--brand .nz-plan__feature { color: var(--nz-blue-100); }
@@ -133,7 +133,7 @@
 .nz-cart-item__remove:hover { color: var(--nz-danger); }
 
 /* ---- Carrito ---- */
-.nz-cart { display: grid; gap: var(--nz-space-3); padding: var(--nz-space-4); border-radius: var(--nz-radius-lg); background: var(--nz-surface); box-shadow: var(--nz-shadow-sm); }
+.nz-cart { display: grid; gap: var(--nz-space-3); padding: var(--nz-space-4); border-radius: var(--nz-radius-lg); background: var(--nz-surface); box-shadow: none; }
 .nz-cart__head { display: flex; align-items: center; justify-content: space-between; gap: var(--nz-space-3); }
 .nz-cart__items { display: grid; }
 .nz-cart__line { display: flex; align-items: center; gap: var(--nz-space-2); padding: var(--nz-space-2) 0; border-bottom: var(--nz-border-w) solid var(--nz-border-soft); font-size: var(--nz-text-sm); color: var(--nz-text-soft); }
@@ -199,7 +199,7 @@
 .nz-pay__meta { font-size: var(--nz-text-xs); color: var(--nz-text-mute); }
 
 /* ---- Pedido ---- */
-.nz-order { display: grid; gap: var(--nz-space-3); padding: var(--nz-space-5); border-radius: var(--nz-radius-lg); background: var(--nz-surface); box-shadow: var(--nz-shadow-sm); }
+.nz-order { display: grid; gap: var(--nz-space-3); padding: var(--nz-space-5); border-radius: var(--nz-radius-lg); background: var(--nz-surface); box-shadow: none; }
 .nz-order__head { display: flex; flex-wrap: wrap; align-items: center; gap: var(--nz-space-2) var(--nz-space-3); }
 .nz-order__id { font-family: var(--nz-font-mono); font-size: var(--nz-text-xs); color: var(--nz-text-mute); }
 .nz-order__date { font-size: var(--nz-text-xs); color: var(--nz-text-faint); }
@@ -226,7 +226,7 @@
 .nz-wishlist.is-active .nz-wishlist__btn { color: var(--nz-danger); border-color: var(--nz-danger); }
 
 /* ---- Barra de comparación ---- */
-.nz-compare-bar { position: sticky; bottom: 0; z-index: var(--nz-z-sticky); display: flex; flex-wrap: wrap; align-items: center; gap: var(--nz-space-3); padding: var(--nz-space-3) var(--nz-space-4); border-radius: var(--nz-radius-lg); background: var(--nz-surface); box-shadow: var(--nz-shadow-lg); }
+.nz-compare-bar { position: sticky; bottom: 0; z-index: var(--nz-z-sticky); display: flex; flex-wrap: wrap; align-items: center; gap: var(--nz-space-3); padding: var(--nz-space-3) var(--nz-space-4); border-radius: var(--nz-radius-lg); background: var(--nz-surface); box-shadow: var(--nz-shadow-xl); }
 .nz-compare-bar__count { font-size: var(--nz-text-sm); font-weight: var(--nz-peso-fuerte); }
 .nz-compare-bar__actions { display: flex; gap: var(--nz-space-2); margin-left: auto; }
 .nz-compare-bar__clear { min-height: var(--nz-tactil); border: 0; background: transparent; color: var(--nz-text-mute); font: inherit; font-size: var(--nz-text-xs); font-weight: var(--nz-peso-fuerte); cursor: pointer; }

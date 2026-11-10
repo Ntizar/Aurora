@@ -23,6 +23,9 @@ jobs:
       - name: Validar el sistema (manifiesto + cobertura + HTML)
         run: python scripts/validar-css.py
 
+      - name: Ley de elevación (un solo nivel; nada flota si no se superpone)
+        run: python scripts/auditar-elevacion.py
+
       - name: Auditor de movimiento (duraciones, curvas, techo y reduced-motion)
         run: |
           python scripts/auditar-movimiento.py --selftest

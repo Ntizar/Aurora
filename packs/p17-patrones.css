@@ -371,7 +371,7 @@
   border: var(--nz-border-w-strong) solid var(--nz-brand);
   border-radius: var(--nz-radius-xl);
   background: var(--nz-surface);
-  box-shadow: var(--nz-shadow-lg);
+  box-shadow: none;
 }
 .nz-bloque-precios__cabecera { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: var(--nz-space-2); }
 .nz-bloque-precios__importe { font-size: var(--nz-text-3xl); font-weight: var(--nz-peso-titulo); letter-spacing: var(--nz-tracking-tight); font-variant-numeric: tabular-nums; }
@@ -497,7 +497,7 @@
 .nz-tarjeta-contenido__texto { font-size: var(--nz-text-sm); color: var(--nz-text-soft); }
 .nz-tarjeta-contenido__pie { display: flex; align-items: center; gap: var(--nz-space-2); }
 .nz-tarjeta-contenido--interactiva { transition: box-shadow var(--nz-dur-base) var(--nz-ease-out); }
-.nz-tarjeta-contenido--interactiva:hover { box-shadow: var(--nz-shadow-lg); }
+.nz-tarjeta-contenido--interactiva:hover { box-shadow: none; }
 
 /* ---- P34 Selector de vista (lista / rejilla) ---- */
 .nz-selector-vista { display: inline-flex; gap: var(--nz-space-1); padding: var(--nz-space-1); border-radius: var(--nz-radius-full); background: var(--nz-bg-inset); }
@@ -518,7 +518,7 @@
   font-weight: var(--nz-peso-fuerte);
   cursor: pointer;
 }
-.nz-selector-vista__opcion.is-active { background: var(--nz-surface); color: var(--nz-text); box-shadow: var(--nz-shadow-sm); }
+.nz-selector-vista__opcion.is-active { background: var(--nz-surface); color: var(--nz-text); box-shadow: none; }
 @media (min-width: 960px) { .nz-selector-vista__opcion { min-height: 36px; } }
 
 /* ---- P35 Tabla de resumen con pie ---- */
@@ -651,7 +651,7 @@
   border: var(--nz-border-w) solid var(--nz-border);
   border-radius: var(--nz-radius-lg);
   background: var(--nz-surface);
-  box-shadow: var(--nz-shadow-lg);
+  box-shadow: var(--nz-shadow-xl);
 }
 .nz-menu-cuenta__cabecera { display: flex; align-items: center; gap: var(--nz-space-3); padding: var(--nz-space-2); }
 .nz-menu-cuenta__nombre { font-size: var(--nz-text-sm); font-weight: var(--nz-peso-fuerte); }

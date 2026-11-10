@@ -14,9 +14,9 @@
 .nz-btn:disabled, .nz-btn.is-disabled, .nz-btn[aria-disabled="true"] { opacity: .5; pointer-events: none; }
 
 /* ---- Tonos ---- */
-.nz-btn--primary { background: var(--nz-brand); color: var(--nz-text-invert); box-shadow: var(--nz-shadow-brand); }
+.nz-btn--primary { background: var(--nz-brand); color: var(--nz-text-invert); box-shadow: none; }
 .nz-btn--primary:hover { background: var(--nz-brand-strong); }
-.nz-btn--accent { background: var(--nz-accent); color: var(--nz-accent-ink); box-shadow: var(--nz-shadow-accent); }
+.nz-btn--accent { background: var(--nz-accent); color: var(--nz-accent-ink); box-shadow: none; }
 .nz-btn--accent:hover { background: var(--nz-accent-strong); }
 .nz-btn--success { background: var(--nz-success); color: var(--nz-text-invert); }
 .nz-btn--success:hover { background: var(--nz-green-700); }
@@ -100,7 +100,7 @@
 /* ---- Selector segmentado ---- */
 .nz-segmented { display: inline-flex; padding: var(--nz-space-1); gap: var(--nz-space-1); background: var(--nz-bg-inset); border-radius: var(--nz-radius-full); }
 .nz-segmented button, .nz-segmented a { min-height: var(--nz-tactil); padding: 0 var(--nz-space-4); border-radius: var(--nz-radius-full); border: 0; background: transparent; color: var(--nz-text-soft); font: inherit; font-size: var(--nz-text-sm); font-weight: var(--nz-peso-fuerte); text-decoration: none; cursor: pointer; transition: background var(--nz-dur-fast) var(--nz-ease-out), color var(--nz-dur-fast) var(--nz-ease-out), box-shadow var(--nz-dur-fast) var(--nz-ease-out); }
-.nz-segmented [aria-selected="true"], .nz-segmented button.is-active, .nz-segmented a.is-active { background: var(--nz-surface); color: var(--nz-text); box-shadow: var(--nz-shadow-sm); }
+.nz-segmented [aria-selected="true"], .nz-segmented button.is-active, .nz-segmented a.is-active { background: var(--nz-surface); color: var(--nz-text); box-shadow: none; }
 .nz-segmented--sm button, .nz-segmented--sm a { min-height: var(--nz-tactil); padding: 0 var(--nz-space-3); font-size: var(--nz-text-xs); }
 .nz-segmented--lg button, .nz-segmented--lg a { min-height: var(--nz-tactil); padding: 0 var(--nz-space-5); font-size: var(--nz-text-base); }
 .nz-segmented--vertical { flex-direction: column; border-radius: var(--nz-radius-lg); }
@@ -111,9 +111,9 @@
 .nz-segmented--accent [aria-selected="true"] { background: var(--nz-accent); color: var(--nz-accent-ink); }
 
 /* ---- FAB ---- */
-.nz-fab { position: fixed; right: var(--nz-space-5); bottom: calc(var(--nz-space-5) + env(safe-area-inset-bottom, 0px)); z-index: var(--nz-z-drawer); width: 56px; height: 56px; display: inline-flex; align-items: center; justify-content: center; border-radius: var(--nz-radius-full); border: 0; background: var(--nz-brand); color: var(--nz-text-invert); font-size: 1.5rem; box-shadow: var(--nz-shadow-brand); cursor: pointer; transition: transform var(--nz-dur-fast) var(--nz-ease-out), background var(--nz-dur-fast) var(--nz-ease-out); }
+.nz-fab { position: fixed; right: var(--nz-space-5); bottom: calc(var(--nz-space-5) + env(safe-area-inset-bottom, 0px)); z-index: var(--nz-z-drawer); width: 56px; height: 56px; display: inline-flex; align-items: center; justify-content: center; border-radius: var(--nz-radius-full); border: 0; background: var(--nz-brand); color: var(--nz-text-invert); font-size: 1.5rem; box-shadow: var(--nz-shadow-xl); cursor: pointer; transition: transform var(--nz-dur-fast) var(--nz-ease-out), background var(--nz-dur-fast) var(--nz-ease-out); }
 .nz-fab:hover { transform: scale(1.08) rotate(-4deg); background: var(--nz-brand-strong); }
-.nz-fab--accent { background: var(--nz-accent); box-shadow: var(--nz-shadow-accent); }
+.nz-fab--accent { background: var(--nz-accent); box-shadow: var(--nz-shadow-xl); }
 .nz-fab--lg { width: 64px; height: 64px; }
 .nz-fab--sm { width: var(--nz-tactil); height: var(--nz-tactil); font-size: var(--nz-text-md); }
 .nz-fab--extended { width: auto; padding: 0 var(--nz-space-5); gap: var(--nz-space-2); font-size: var(--nz-text-base); font-weight: var(--nz-peso-fuerte); }
@@ -139,7 +139,7 @@
 .nz-cta--underline { text-decoration: underline; text-underline-offset: 3px; }
 
 /* ---- Toolbar de acciones ---- */
-.nz-toolbar { display: flex; align-items: center; gap: var(--nz-space-2); flex-wrap: wrap; padding: var(--nz-space-3); border-radius: var(--nz-radius-lg); background: var(--nz-surface); box-shadow: var(--nz-shadow-sm); }
+.nz-toolbar { display: flex; align-items: center; gap: var(--nz-space-2); flex-wrap: wrap; padding: var(--nz-space-3); border-radius: var(--nz-radius-lg); background: var(--nz-surface); box-shadow: none; }
 .nz-toolbar__spacer { flex: 1; }
 .nz-toolbar__group { display: inline-flex; gap: var(--nz-space-1); }
 .nz-toolbar__divider { align-self: stretch; width: 1px; background: var(--nz-border); margin-inline: var(--nz-space-1); }

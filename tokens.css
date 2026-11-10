@@ -291,15 +291,18 @@
 
   /* ---- 10. SOMBRAS. Las de marca/acento se derivan del color elegido:
      cambian solas con la marca. ---- */
-  --nz-shadow-xs: 0 1px 2px rgba(17, 24, 39, 0.05);
-  --nz-shadow-sm: 0 1px 2px rgba(17, 24, 39, 0.05), 0 2px 6px rgba(17, 24, 39, 0.04);
-  --nz-shadow-md: 0 2px 4px rgba(17, 24, 39, 0.04), 0 6px 16px rgba(17, 24, 39, 0.07);
-  --nz-shadow-lg: 0 4px 8px rgba(17, 24, 39, 0.04), 0 14px 32px rgba(17, 24, 39, 0.10);
-  --nz-shadow-xl: 0 8px 16px rgba(17, 24, 39, 0.06), 0 24px 56px rgba(17, 24, 39, 0.14);
-  --nz-shadow-brand: 0 2px 4px color-mix(in oklab, var(--nz-marca-600) 12%, transparent),
-                     0 8px 20px color-mix(in oklab, var(--nz-marca-600) 18%, transparent);
-  --nz-shadow-accent: 0 2px 4px color-mix(in oklab, var(--nz-acento-500) 12%, transparent),
-                      0 8px 20px color-mix(in oklab, var(--nz-acento-500) 18%, transparent);
+  /* LEY A · editorial de archivo: en el flujo no se proyecta sombra.
+     Un solo nivel de elevación, y solo para lo que se superpone de verdad
+     (modal, menú, toast, spotlight, ventana). Los nombres xs/sm/md/lg se
+     conservan como no-ops para no romper consumidores. */
+  --nz-shadow-xs: none;
+  --nz-shadow-sm: none;
+  --nz-shadow-md: none;
+  --nz-shadow-lg: none;
+  --nz-shadow-xl: 0 10px 24px rgba(17, 24, 39, 0.10), 0 32px 64px rgba(17, 24, 39, 0.14);
+  --nz-shadow-float: var(--nz-shadow-xl);
+  --nz-shadow-brand: none;
+  --nz-shadow-accent: none;
 
   /* ---- 11. Z-INDEX ---- */
   --nz-z-base: 0;
@@ -329,6 +332,9 @@
   /* ---- 13. FOCUS (deriva de la marca) ---- */
   --nz-focus-ring: 0 0 0 3px color-mix(in oklab, var(--nz-marca-500) 38%, transparent);
   --nz-focus-ring-accent: 0 0 0 3px color-mix(in oklab, var(--nz-acento-500) 42%, transparent);
+  --nz-focus-ring-danger: 0 0 0 3px color-mix(in oklab, var(--nz-danger) 34%, transparent);
+  --nz-focus-ring-success: 0 0 0 3px color-mix(in oklab, var(--nz-success) 34%, transparent);
+  --nz-focus-ring-warning: 0 0 0 3px color-mix(in oklab, var(--nz-warning) 34%, transparent);
 
   /* ---- 14. CRISTAL · capa de estilo opt-in (packs/p16-cristal.css)
      El vidrio es translúcido por definición: se apoya en el fondo, nunca lo tapa.
@@ -398,15 +404,14 @@
   --nz-info-soft:   color-mix(in oklab, var(--nz-marca-500) 14%, transparent);
   --nz-info-tint:   color-mix(in oklab, var(--nz-marca-500) 24%, transparent);
   --nz-overlay:     rgba(3, 7, 18, 0.62);
-  --nz-shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.35);
-  --nz-shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.35), 0 2px 6px rgba(0, 0, 0, 0.30);
-  --nz-shadow-md: 0 2px 4px rgba(0, 0, 0, 0.30), 0 6px 16px rgba(0, 0, 0, 0.38);
-  --nz-shadow-lg: 0 4px 8px rgba(0, 0, 0, 0.30), 0 14px 32px rgba(0, 0, 0, 0.45);
-  --nz-shadow-xl: 0 8px 16px rgba(0, 0, 0, 0.35), 0 24px 56px rgba(0, 0, 0, 0.55);
-  --nz-shadow-brand: 0 2px 4px rgba(0, 0, 0, 0.30),
-                     0 8px 20px color-mix(in oklab, var(--nz-marca-400) 22%, transparent);
-  --nz-shadow-accent: 0 2px 4px rgba(0, 0, 0, 0.30),
-                      0 8px 20px color-mix(in oklab, var(--nz-acento-400) 22%, transparent);
+  --nz-shadow-xs: none;
+  --nz-shadow-sm: none;
+  --nz-shadow-md: none;
+  --nz-shadow-lg: none;
+  --nz-shadow-xl: 0 10px 24px rgba(0, 0, 0, 0.45), 0 32px 64px rgba(0, 0, 0, 0.60);
+  --nz-shadow-float: var(--nz-shadow-xl);
+  --nz-shadow-brand: none;
+  --nz-shadow-accent: none;
   --nz-focus-ring: 0 0 0 3px color-mix(in oklab, var(--nz-marca-400) 45%, transparent);
   --nz-focus-ring-accent: 0 0 0 3px color-mix(in oklab, var(--nz-acento-400) 45%, transparent);
 }

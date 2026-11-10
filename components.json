@@ -23,12 +23,12 @@
   "familias": 417,
   "categorias": 18,
   "demos": 667,
-  "tokens": 242,
-  "tokensDark": 61,
+  "tokens": 248,
+  "tokensDark": 62,
   "alias": 150,
   "familiasConMarkup": 417,
   "familiasConAntiPatron": 31,
-  "tokensConsumidosPorFamilias": 145
+  "tokensConsumidosPorFamilias": 141
  },
  "packs": {
   "p1-layout.css": {
@@ -1638,27 +1638,42 @@
   },
   {
    "nombre": "--nz-shadow-xs",
-   "valor": "0 1px 2px rgba(17, 24, 39, 0.05)",
+   "valor": "none",
    "seccion": "GEOMETRÍA · radios, objetivo táctil y alturas de control "
   },
   {
    "nombre": "--nz-shadow-sm",
-   "valor": "0 1px 2px rgba(17, 24, 39, 0.05), 0 2px 6px rgba(17, 24, 39, 0.04)",
+   "valor": "none",
    "seccion": "GEOMETRÍA · radios, objetivo táctil y alturas de control "
   },
   {
    "nombre": "--nz-shadow-md",
-   "valor": "0 2px 4px rgba(17, 24, 39, 0.04), 0 6px 16px rgba(17, 24, 39, 0.07)",
+   "valor": "none",
    "seccion": "GEOMETRÍA · radios, objetivo táctil y alturas de control "
   },
   {
    "nombre": "--nz-shadow-lg",
-   "valor": "0 4px 8px rgba(17, 24, 39, 0.04), 0 14px 32px rgba(17, 24, 39, 0.10)",
+   "valor": "none",
    "seccion": "GEOMETRÍA · radios, objetivo táctil y alturas de control "
   },
   {
    "nombre": "--nz-shadow-xl",
-   "valor": "0 8px 16px rgba(17, 24, 39, 0.06), 0 24px 56px rgba(17, 24, 39, 0.14)",
+   "valor": "0 10px 24px rgba(17, 24, 39, 0.10), 0 32px 64px rgba(17, 24, 39, 0.14)",
+   "seccion": "GEOMETRÍA · radios, objetivo táctil y alturas de control "
+  },
+  {
+   "nombre": "--nz-shadow-float",
+   "valor": "var(--nz-shadow-xl)",
+   "seccion": "GEOMETRÍA · radios, objetivo táctil y alturas de control "
+  },
+  {
+   "nombre": "--nz-shadow-brand",
+   "valor": "none",
+   "seccion": "GEOMETRÍA · radios, objetivo táctil y alturas de control "
+  },
+  {
+   "nombre": "--nz-shadow-accent",
+   "valor": "none",
    "seccion": "GEOMETRÍA · radios, objetivo táctil y alturas de control "
   },
   {
@@ -1777,6 +1792,21 @@
    "seccion": "FOCUS (deriva de la marca) "
   },
   {
+   "nombre": "--nz-focus-ring-danger",
+   "valor": "0 0 0 3px color-mix(in oklab, var(--nz-danger) 34%, transparent)",
+   "seccion": "FOCUS (deriva de la marca) "
+  },
+  {
+   "nombre": "--nz-focus-ring-success",
+   "valor": "0 0 0 3px color-mix(in oklab, var(--nz-success) 34%, transparent)",
+   "seccion": "FOCUS (deriva de la marca) "
+  },
+  {
+   "nombre": "--nz-focus-ring-warning",
+   "valor": "0 0 0 3px color-mix(in oklab, var(--nz-warning) 34%, transparent)",
+   "seccion": "FOCUS (deriva de la marca) "
+  },
+  {
    "nombre": "--nz-cristal-blur",
    "valor": "18px",
    "seccion": "FOCUS (deriva de la marca) "
@@ -1875,6 +1905,7 @@
   "--nz-shadow-md",
   "--nz-shadow-lg",
   "--nz-shadow-xl",
+  "--nz-shadow-float",
   "--nz-shadow-brand",
   "--nz-shadow-accent",
   "--nz-focus-ring",
@@ -1931,12 +1962,10 @@
     "--nz-dur-base",
     "--nz-ease-out",
     "--nz-radius-lg",
-    "--nz-shadow-lg",
-    "--nz-shadow-sm",
     "--nz-space-5",
     "--nz-surface"
    ],
-   "nTokens": 9,
+   "nTokens": 7,
    "markup": {
     "demo": "paginas/01-layout.html",
     "titulo": "Article: base, flush, bordered e interactive",
@@ -2848,7 +2877,7 @@
     "--nz-brand",
     "--nz-peso-fuerte",
     "--nz-radius-full",
-    "--nz-shadow-brand",
+    "--nz-shadow-xl",
     "--nz-space-3",
     "--nz-space-4",
     "--nz-text-invert",
@@ -2881,7 +2910,7 @@
    "partes": [],
    "tokens": [
     "--nz-radius-lg",
-    "--nz-shadow-lg",
+    "--nz-shadow-xl",
     "--nz-space-2",
     "--nz-space-3",
     "--nz-space-4",
@@ -2916,7 +2945,7 @@
    "tokens": [
     "--nz-bg-soft",
     "--nz-radius-md",
-    "--nz-shadow-lg",
+    "--nz-shadow-xl",
     "--nz-space-2",
     "--nz-space-3",
     "--nz-space-6",
@@ -3687,7 +3716,7 @@
     "--nz-peso-fuerte",
     "--nz-radius-full",
     "--nz-radius-lg",
-    "--nz-shadow-lg",
+    "--nz-shadow-xl",
     "--nz-space-2",
     "--nz-space-4",
     "--nz-surface",
@@ -3747,7 +3776,7 @@
     "--nz-radius-full",
     "--nz-radius-lg",
     "--nz-radius-sm",
-    "--nz-shadow-lg",
+    "--nz-shadow-xl",
     "--nz-space-1",
     "--nz-space-2",
     "--nz-space-3",
@@ -4168,7 +4197,6 @@
     "--nz-peso-fuerte",
     "--nz-radius-lg",
     "--nz-radius-sm",
-    "--nz-shadow-sm",
     "--nz-space-1",
     "--nz-space-2",
     "--nz-space-4",
@@ -4183,7 +4211,7 @@
     "--nz-text-xs",
     "--nz-tracking-caps"
    ],
-   "nTokens": 19,
+   "nTokens": 18,
    "markup": {
     "demo": "paginas/02-navigation.html",
     "titulo": "Índice de contenidos (TOC)",
@@ -5610,8 +5638,6 @@
     "--nz-radius-sm",
     "--nz-radius-xs",
     "--nz-red-700",
-    "--nz-shadow-accent",
-    "--nz-shadow-brand",
     "--nz-space-1",
     "--nz-space-2",
     "--nz-space-3",
@@ -5634,7 +5660,7 @@
     "--nz-text-xs",
     "--nz-warning"
    ],
-   "nTokens": 50,
+   "nTokens": 48,
    "markup": {
     "demo": "paginas/11-social.html",
     "titulo": "CTA banner con borde",
@@ -5778,8 +5804,7 @@
     "--nz-ease-out",
     "--nz-peso-fuerte",
     "--nz-radius-full",
-    "--nz-shadow-accent",
-    "--nz-shadow-brand",
+    "--nz-shadow-xl",
     "--nz-space-2",
     "--nz-space-5",
     "--nz-tactil",
@@ -5788,7 +5813,7 @@
     "--nz-text-md",
     "--nz-z-drawer"
    ],
-   "nTokens": 16,
+   "nTokens": 15,
    "markup": {
     "demo": "paginas/04-actions.html",
     "titulo": "Botones flotantes (FAB)",
@@ -5833,7 +5858,6 @@
     "--nz-radius-full",
     "--nz-radius-lg",
     "--nz-radius-md",
-    "--nz-shadow-sm",
     "--nz-space-1",
     "--nz-space-3",
     "--nz-space-4",
@@ -5847,7 +5871,7 @@
     "--nz-text-soft",
     "--nz-text-xs"
    ],
-   "nTokens": 23,
+   "nTokens": 22,
    "markup": {
     "demo": "paginas/04-actions.html",
     "titulo": "Selector segmentado",
@@ -5926,7 +5950,6 @@
     "--nz-border-w-strong",
     "--nz-brand",
     "--nz-radius-lg",
-    "--nz-shadow-sm",
     "--nz-space-1",
     "--nz-space-2",
     "--nz-space-3",
@@ -5934,7 +5957,7 @@
     "--nz-text-invert",
     "--nz-z-sticky"
    ],
-   "nTokens": 12,
+   "nTokens": 11,
    "markup": {
     "demo": "paginas/04-actions.html",
     "titulo": "Barra de herramientas",
@@ -6241,7 +6264,6 @@
    ],
    "partes": [],
    "tokens": [
-    "--nz-amber-100",
     "--nz-bg-inset",
     "--nz-bg-soft",
     "--nz-border",
@@ -6249,15 +6271,15 @@
     "--nz-border-w",
     "--nz-brand",
     "--nz-danger",
-    "--nz-danger-soft",
     "--nz-dur-fast",
     "--nz-ease-out",
     "--nz-focus-ring",
-    "--nz-green-100",
+    "--nz-focus-ring-danger",
+    "--nz-focus-ring-success",
+    "--nz-focus-ring-warning",
     "--nz-radius-full",
     "--nz-radius-sm",
     "--nz-radius-xs",
-    "--nz-red-100",
     "--nz-space-10",
     "--nz-space-3",
     "--nz-space-4",
@@ -6276,7 +6298,7 @@
     "--nz-text-soft",
     "--nz-warning"
    ],
-   "nTokens": 34,
+   "nTokens": 33,
    "markup": {
     "demo": "paginas/05-forms.html",
     "titulo": "Fieldset · densidad y disposicion",
@@ -6351,10 +6373,10 @@
     "--nz-dur-fast",
     "--nz-ease-out",
     "--nz-focus-ring",
+    "--nz-focus-ring-danger",
     "--nz-peso-fuerte",
     "--nz-radius-full",
     "--nz-radius-sm",
-    "--nz-red-100",
     "--nz-space-3",
     "--nz-space-4",
     "--nz-surface",
@@ -6589,14 +6611,12 @@
     "--nz-bg-inset",
     "--nz-brand",
     "--nz-radius-full",
-    "--nz-shadow-accent",
-    "--nz-shadow-brand",
     "--nz-surface",
     "--nz-tactil",
     "--nz-text-2xs",
     "--nz-text-faint"
    ],
-   "nTokens": 10,
+   "nTokens": 8,
    "markup": {
     "demo": "paginas/17-patrones.html",
     "titulo": "Filtro por rango",
@@ -6772,13 +6792,12 @@
     "--nz-focus-ring",
     "--nz-gray-0",
     "--nz-radius-full",
-    "--nz-shadow-sm",
     "--nz-space-2",
     "--nz-tactil",
     "--nz-text",
     "--nz-text-base"
    ],
-   "nTokens": 14,
+   "nTokens": 13,
    "markup": {
     "demo": "paginas/12-system.html",
     "titulo": "Preferencias de accesibilidad",
@@ -6918,7 +6937,7 @@
     "--nz-radius-lg",
     "--nz-radius-md",
     "--nz-radius-sm",
-    "--nz-shadow-lg",
+    "--nz-shadow-xl",
     "--nz-space-1",
     "--nz-space-2",
     "--nz-space-3",
@@ -7754,14 +7773,13 @@
     "--nz-radius-full",
     "--nz-radius-md",
     "--nz-radius-xs",
-    "--nz-shadow-sm",
     "--nz-space-2",
     "--nz-space-3",
     "--nz-surface",
     "--nz-tactil",
     "--nz-text-base"
    ],
-   "nTokens": 11,
+   "nTokens": 10,
    "markup": {
     "demo": "paginas/06-feedback.html",
     "titulo": "Skeleton de texto, avatar, botón y gráfico",
@@ -7931,7 +7949,7 @@
     "--nz-radius-full",
     "--nz-radius-md",
     "--nz-red-500",
-    "--nz-shadow-lg",
+    "--nz-shadow-xl",
     "--nz-space-1",
     "--nz-space-3",
     "--nz-space-4",
@@ -8208,7 +8226,6 @@
     "--nz-overlay",
     "--nz-peso-fuerte",
     "--nz-radius-xl",
-    "--nz-shadow-lg",
     "--nz-shadow-xl",
     "--nz-space-1",
     "--nz-space-2",
@@ -8220,7 +8237,7 @@
     "--nz-tracking-caps",
     "--nz-z-drawer"
    ],
-   "nTokens": 18,
+   "nTokens": 17,
    "markup": {
     "demo": "paginas/07-overlays.html",
     "titulo": "Drawer estrecho y drawer ancho",
@@ -8267,7 +8284,7 @@
     "--nz-overlay",
     "--nz-radius-full",
     "--nz-radius-lg",
-    "--nz-shadow-md",
+    "--nz-shadow-xl",
     "--nz-space-3",
     "--nz-space-4",
     "--nz-surface",
@@ -8330,7 +8347,7 @@
     "--nz-radius-lg",
     "--nz-radius-md",
     "--nz-radius-sm",
-    "--nz-shadow-lg",
+    "--nz-shadow-xl",
     "--nz-space-1",
     "--nz-space-2",
     "--nz-space-3",
@@ -8477,14 +8494,13 @@
     "--nz-border-w",
     "--nz-brand",
     "--nz-radius-lg",
-    "--nz-shadow-lg",
     "--nz-shadow-xl",
     "--nz-space-2",
     "--nz-space-3",
     "--nz-space-4",
     "--nz-surface"
    ],
-   "nTokens": 10,
+   "nTokens": 9,
    "markup": {
     "demo": "paginas/07-overlays.html",
     "titulo": "Offcanvas elevado",
@@ -8538,8 +8554,7 @@
     "--nz-peso-fuerte",
     "--nz-radius-lg",
     "--nz-radius-sm",
-    "--nz-shadow-brand",
-    "--nz-shadow-lg",
+    "--nz-shadow-xl",
     "--nz-space-2",
     "--nz-space-3",
     "--nz-space-4",
@@ -8555,7 +8570,7 @@
     "--nz-tracking-caps",
     "--nz-z-popover"
    ],
-   "nTokens": 26,
+   "nTokens": 25,
    "markup": {
     "demo": "paginas/07-overlays.html",
     "titulo": "Popover rico y popover de marca",
@@ -8717,7 +8732,7 @@
    "tokens": [
     "--nz-danger",
     "--nz-radius-md",
-    "--nz-shadow-lg",
+    "--nz-shadow-xl",
     "--nz-space-2",
     "--nz-space-3",
     "--nz-space-4",
@@ -9118,7 +9133,6 @@
     "--nz-radius-full",
     "--nz-radius-lg",
     "--nz-radius-md",
-    "--nz-shadow-sm",
     "--nz-space-1",
     "--nz-space-2",
     "--nz-space-3",
@@ -9138,7 +9152,7 @@
     "--nz-tracking-caps",
     "--nz-tracking-tight"
    ],
-   "nTokens": 33,
+   "nTokens": 32,
    "markup": {
     "demo": "paginas/01-layout.html",
     "titulo": "Contenedor de consulta: la rejilla responde a su sitio",
@@ -9183,7 +9197,6 @@
     "--nz-brand",
     "--nz-peso-fuerte",
     "--nz-radius-md",
-    "--nz-shadow-xs",
     "--nz-space-1",
     "--nz-space-2",
     "--nz-space-3",
@@ -9194,7 +9207,7 @@
     "--nz-text-sm",
     "--nz-text-xs"
    ],
-   "nTokens": 13,
+   "nTokens": 12,
    "markup": {
     "demo": "paginas/08-data.html",
     "titulo": "Filas de lista",
@@ -9301,7 +9314,6 @@
     "--nz-peso-fuerte",
     "--nz-radius-md",
     "--nz-radius-sm",
-    "--nz-shadow-sm",
     "--nz-space-1",
     "--nz-space-3",
     "--nz-space-4",
@@ -9315,7 +9327,7 @@
     "--nz-tracking-caps",
     "--nz-warning"
    ],
-   "nTokens": 20,
+   "nTokens": 19,
    "markup": {
     "demo": "paginas/08-data.html",
     "titulo": "Registros · densidad",
@@ -9522,7 +9534,6 @@
     "--nz-ease-out",
     "--nz-peso-fuerte",
     "--nz-radius-md",
-    "--nz-shadow-xs",
     "--nz-space-1",
     "--nz-space-2",
     "--nz-space-3",
@@ -9543,7 +9554,7 @@
     "--nz-warning",
     "--nz-z-raised"
    ],
-   "nTokens": 31,
+   "nTokens": 30,
    "markup": {
     "demo": "paginas/08-data.html",
     "titulo": "Tabla compacta y tabla confortable",
@@ -9636,7 +9647,6 @@
     "--nz-peso-fuerte",
     "--nz-radius-full",
     "--nz-radius-md",
-    "--nz-shadow-sm",
     "--nz-space-2",
     "--nz-space-3",
     "--nz-space-4",
@@ -9651,7 +9661,7 @@
     "--nz-text-xs",
     "--nz-tracking-caps"
    ],
-   "nTokens": 22,
+   "nTokens": 21,
    "markup": {
     "demo": "paginas/08-data.html",
     "titulo": "Timeline",
@@ -9695,7 +9705,6 @@
     "--nz-brand",
     "--nz-radius-full",
     "--nz-radius-lg",
-    "--nz-shadow-sm",
     "--nz-space-3",
     "--nz-space-4",
     "--nz-surface",
@@ -9705,7 +9714,7 @@
     "--nz-text-mute",
     "--nz-text-xs"
    ],
-   "nTokens": 15,
+   "nTokens": 14,
    "markup": {
     "demo": "paginas/09-media.html",
     "titulo": "Reproductor de audio",
@@ -10196,7 +10205,7 @@
     "--nz-dur-slow",
     "--nz-ease-out",
     "--nz-radius-md",
-    "--nz-shadow-md"
+    "--nz-shadow-xl"
    ],
    "nTokens": 6,
    "markup": {
@@ -10232,7 +10241,6 @@
     "--nz-bg-soft",
     "--nz-peso-fuerte",
     "--nz-radius-md",
-    "--nz-shadow-xs",
     "--nz-space-3",
     "--nz-space-4",
     "--nz-surface",
@@ -10242,7 +10250,7 @@
     "--nz-text-mute",
     "--nz-text-sm"
    ],
-   "nTokens": 12,
+   "nTokens": 11,
    "markup": {
     "demo": "paginas/09-media.html",
     "titulo": "Logotipo y logos fluidos: escalan y no desbordan",
@@ -10345,7 +10353,6 @@
     "--nz-peso-fuerte",
     "--nz-radius-lg",
     "--nz-radius-sm",
-    "--nz-shadow-accent",
     "--nz-space-1",
     "--nz-space-2",
     "--nz-space-3",
@@ -10354,7 +10361,7 @@
     "--nz-text-soft",
     "--nz-text-xs"
    ],
-   "nTokens": 15,
+   "nTokens": 14,
    "markup": {
     "demo": "paginas/09-media.html",
     "titulo": "Hueco de mapa",
@@ -10555,7 +10562,6 @@
     "--nz-radius-full",
     "--nz-radius-lg",
     "--nz-radius-sm",
-    "--nz-shadow-sm",
     "--nz-space-1",
     "--nz-space-2",
     "--nz-space-3",
@@ -10572,7 +10578,7 @@
     "--nz-text-sm",
     "--nz-text-soft"
    ],
-   "nTokens": 27,
+   "nTokens": 26,
    "markup": {
     "demo": "paginas/10-commerce.html",
     "titulo": "Carrito mini",
@@ -10704,7 +10710,7 @@
     "--nz-danger",
     "--nz-peso-fuerte",
     "--nz-radius-lg",
-    "--nz-shadow-lg",
+    "--nz-shadow-xl",
     "--nz-space-2",
     "--nz-space-3",
     "--nz-space-4",
@@ -10932,7 +10938,6 @@
     "--nz-peso-titulo",
     "--nz-radius-full",
     "--nz-radius-lg",
-    "--nz-shadow-sm",
     "--nz-space-1",
     "--nz-space-2",
     "--nz-space-3",
@@ -10949,7 +10954,7 @@
     "--nz-warning",
     "--nz-warning-soft"
    ],
-   "nTokens": 25,
+   "nTokens": 24,
    "markup": {
     "demo": "paginas/10-commerce.html",
     "titulo": "Estados de pedido",
@@ -11107,8 +11112,6 @@
     "--nz-radius-full",
     "--nz-radius-lg",
     "--nz-radius-xl",
-    "--nz-shadow-lg",
-    "--nz-shadow-sm",
     "--nz-space-2",
     "--nz-space-3",
     "--nz-space-4",
@@ -11126,7 +11129,7 @@
     "--nz-tracking-caps",
     "--nz-tracking-tight"
    ],
-   "nTokens": 30,
+   "nTokens": 28,
    "markup": {
     "demo": "paginas/10-commerce.html",
     "titulo": "Planes en 4 columnas",
@@ -11341,9 +11344,7 @@
     "--nz-radius-lg",
     "--nz-radius-md",
     "--nz-radius-sm",
-    "--nz-shadow-lg",
-    "--nz-shadow-md",
-    "--nz-shadow-sm",
+    "--nz-shadow-xl",
     "--nz-space-1",
     "--nz-space-2",
     "--nz-space-3",
@@ -11360,7 +11361,7 @@
     "--nz-text-xs",
     "--nz-tracking-caps"
    ],
-   "nTokens": 32,
+   "nTokens": 30,
    "markup": {
     "demo": "paginas/10-commerce.html",
     "titulo": "Rejilla de productos",
@@ -11947,7 +11948,6 @@
     "--nz-danger",
     "--nz-peso-fuerte",
     "--nz-radius-md",
-    "--nz-shadow-md",
     "--nz-space-1",
     "--nz-space-3",
     "--nz-space-4",
@@ -11959,7 +11959,7 @@
     "--nz-text-xs",
     "--nz-warning"
    ],
-   "nTokens": 18,
+   "nTokens": 17,
    "markup": {
     "demo": "paginas/11-social.html",
     "titulo": "Notificacion · tono semantico",
@@ -12028,7 +12028,6 @@
     "--nz-radius-full",
     "--nz-radius-lg",
     "--nz-radius-md",
-    "--nz-shadow-sm",
     "--nz-space-1",
     "--nz-space-2",
     "--nz-space-3",
@@ -12044,7 +12043,7 @@
     "--nz-text-xs",
     "--nz-tracking-caps"
    ],
-   "nTokens": 29,
+   "nTokens": 28,
    "markup": {
     "demo": "paginas/11-social.html",
     "titulo": "Feed a dos columnas",
@@ -12095,7 +12094,6 @@
     "--nz-peso-fuerte",
     "--nz-peso-titulo",
     "--nz-radius-lg",
-    "--nz-shadow-sm",
     "--nz-space-2",
     "--nz-space-3",
     "--nz-space-4",
@@ -12111,7 +12109,7 @@
     "--nz-text-sm",
     "--nz-text-xs"
    ],
-   "nTokens": 26,
+   "nTokens": 25,
    "markup": {
     "demo": "paginas/11-social.html",
     "titulo": "Testimonio compacto",
@@ -12279,7 +12277,6 @@
     "--nz-peso-fuerte",
     "--nz-radius-full",
     "--nz-radius-lg",
-    "--nz-shadow-sm",
     "--nz-space-1",
     "--nz-space-2",
     "--nz-space-4",
@@ -12294,7 +12291,7 @@
     "--nz-text-soft",
     "--nz-text-xs"
    ],
-   "nTokens": 19,
+   "nTokens": 18,
    "markup": {
     "demo": "paginas/11-social.html",
     "titulo": "Equipo",
@@ -13367,7 +13364,6 @@
     "--nz-peso-fuerte",
     "--nz-radius-lg",
     "--nz-radius-xs",
-    "--nz-shadow-sm",
     "--nz-space-1",
     "--nz-space-2",
     "--nz-space-3",
@@ -13384,7 +13380,7 @@
     "--nz-text-xs",
     "--nz-tracking-tight"
    ],
-   "nTokens": 26,
+   "nTokens": 25,
    "markup": {
     "demo": "paginas/13-charts.html",
     "titulo": "Tamaños y estilos de tarjeta",
@@ -13924,7 +13920,6 @@
     "--nz-bg-inset",
     "--nz-peso-fuerte",
     "--nz-radius-full",
-    "--nz-shadow-xs",
     "--nz-space-3",
     "--nz-surface",
     "--nz-tactil",
@@ -13932,7 +13927,7 @@
     "--nz-text-soft",
     "--nz-text-xs"
    ],
-   "nTokens": 10,
+   "nTokens": 9,
    "markup": {
     "demo": "paginas/13-charts.html",
     "titulo": "Selector de rango temporal",
@@ -14105,7 +14100,7 @@
     "--nz-leading-snug",
     "--nz-peso-fuerte",
     "--nz-radius-md",
-    "--nz-shadow-md",
+    "--nz-shadow-xl",
     "--nz-space-2",
     "--nz-space-3",
     "--nz-surface",
@@ -14615,7 +14610,6 @@
     "--nz-peso-fuerte",
     "--nz-radius-full",
     "--nz-radius-lg",
-    "--nz-shadow-sm",
     "--nz-space-1",
     "--nz-space-2",
     "--nz-space-3",
@@ -14628,7 +14622,7 @@
     "--nz-text-xs",
     "--nz-warning"
    ],
-   "nTokens": 18,
+   "nTokens": 17,
    "markup": {
     "demo": "paginas/14-ai.html",
     "titulo": "Tarjeta de agente",
@@ -14762,7 +14756,6 @@
     "--nz-peso-fuerte",
     "--nz-radius-full",
     "--nz-radius-lg",
-    "--nz-shadow-sm",
     "--nz-space-2",
     "--nz-space-3",
     "--nz-space-4",
@@ -14773,7 +14766,7 @@
     "--nz-text-soft",
     "--nz-text-xs"
    ],
-   "nTokens": 18,
+   "nTokens": 17,
    "markup": {
     "demo": "paginas/14-ai.html",
     "titulo": "Tamaños y variantes del panel",
@@ -15278,7 +15271,7 @@
     "--nz-radius-full",
     "--nz-radius-md",
     "--nz-radius-sm",
-    "--nz-shadow-lg",
+    "--nz-shadow-xl",
     "--nz-space-1",
     "--nz-space-2",
     "--nz-space-3",
@@ -15861,7 +15854,6 @@
     "--nz-peso-titulo",
     "--nz-radius-full",
     "--nz-radius-sm",
-    "--nz-shadow-xs",
     "--nz-space-1",
     "--nz-space-2",
     "--nz-surface",
@@ -15871,7 +15863,7 @@
     "--nz-text-md",
     "--nz-text-mute"
    ],
-   "nTokens": 16,
+   "nTokens": 15,
    "markup": {
     "demo": "paginas/15-apps.html",
     "titulo": "Barra de actividad vertical",
@@ -16111,8 +16103,7 @@
     "--nz-radius-full",
     "--nz-radius-md",
     "--nz-radius-xl",
-    "--nz-shadow-brand",
-    "--nz-shadow-lg",
+    "--nz-shadow-xl",
     "--nz-space-2",
     "--nz-surface",
     "--nz-tactil",
@@ -16122,7 +16113,7 @@
     "--nz-text-sm",
     "--nz-text-soft"
    ],
-   "nTokens": 22,
+   "nTokens": 21,
    "markup": {
     "demo": "paginas/15-apps.html",
     "titulo": "Dock · tamaño y elemento activo",
@@ -16157,7 +16148,6 @@
     "--nz-radius-full",
     "--nz-radius-md",
     "--nz-radius-sm",
-    "--nz-shadow-xs",
     "--nz-space-1",
     "--nz-space-2",
     "--nz-space-3",
@@ -16170,7 +16160,7 @@
     "--nz-text-sm",
     "--nz-text-xs"
    ],
-   "nTokens": 21,
+   "nTokens": 20,
    "markup": {
     "demo": "paginas/15-apps.html",
     "titulo": "Pestañas de documento (activa, modificada, cerrable)",
@@ -16244,8 +16234,7 @@
     "--nz-radius-full",
     "--nz-radius-lg",
     "--nz-radius-md",
-    "--nz-shadow-lg",
-    "--nz-shadow-xs",
+    "--nz-shadow-xl",
     "--nz-space-1",
     "--nz-space-2",
     "--nz-space-3",
@@ -16260,7 +16249,7 @@
     "--nz-warning",
     "--nz-warning-soft"
    ],
-   "nTokens": 30,
+   "nTokens": 29,
    "markup": {
     "demo": "paginas/15-apps.html",
     "titulo": "Kanban en un contenedor estrecho",
@@ -16309,9 +16298,6 @@
     "--nz-radius-lg",
     "--nz-radius-md",
     "--nz-radius-xl",
-    "--nz-shadow-accent",
-    "--nz-shadow-brand",
-    "--nz-shadow-xs",
     "--nz-space-1",
     "--nz-space-2",
     "--nz-space-4",
@@ -16323,7 +16309,7 @@
     "--nz-text-soft",
     "--nz-text-xs"
    ],
-   "nTokens": 20,
+   "nTokens": 17,
    "markup": {
     "demo": "paginas/15-apps.html",
     "titulo": "Lanzador en rejilla (grid de apps)",
@@ -16588,7 +16574,6 @@
     "--nz-radius-full",
     "--nz-radius-lg",
     "--nz-radius-md",
-    "--nz-shadow-xs",
     "--nz-space-1",
     "--nz-space-2",
     "--nz-space-3",
@@ -16599,7 +16584,7 @@
     "--nz-text-xs",
     "--nz-tracking-caps"
    ],
-   "nTokens": 19,
+   "nTokens": 18,
    "markup": {
     "demo": "paginas/15-apps.html",
     "titulo": "Panel dividido redimensionable",
@@ -16768,7 +16753,7 @@
     "--nz-peso-fuerte",
     "--nz-radius-lg",
     "--nz-radius-sm",
-    "--nz-shadow-lg",
+    "--nz-shadow-xl",
     "--nz-space-1",
     "--nz-space-2",
     "--nz-space-3",
@@ -16856,12 +16841,11 @@
     "--nz-peso-fuerte",
     "--nz-radius-md",
     "--nz-red-500",
-    "--nz-shadow-sm",
     "--nz-space-2",
     "--nz-space-3",
     "--nz-text-xs"
    ],
-   "nTokens": 12,
+   "nTokens": 11,
    "markup": {
     "demo": "paginas/15-apps.html",
     "titulo": "Terminal (prompt, salida, error, cursor)",
@@ -17011,8 +16995,6 @@
     "--nz-peso-fuerte",
     "--nz-peso-titulo",
     "--nz-radius-xl",
-    "--nz-shadow-accent",
-    "--nz-shadow-md",
     "--nz-space-1",
     "--nz-space-4",
     "--nz-surface",
@@ -17024,7 +17006,7 @@
     "--nz-tracking-caps",
     "--nz-tracking-tight"
    ],
-   "nTokens": 18,
+   "nTokens": 16,
    "markup": {
     "demo": "paginas/15-apps.html",
     "titulo": "Widget de escritorio",
@@ -17067,9 +17049,7 @@
     "--nz-radius-full",
     "--nz-radius-lg",
     "--nz-radius-sm",
-    "--nz-shadow-lg",
     "--nz-shadow-xl",
-    "--nz-shadow-xs",
     "--nz-space-2",
     "--nz-space-4",
     "--nz-surface",
@@ -17080,7 +17060,7 @@
     "--nz-text-sm",
     "--nz-text-soft"
    ],
-   "nTokens": 27,
+   "nTokens": 25,
    "markup": {
     "demo": "paginas/15-apps.html",
     "titulo": "Ventana · estados y tamaño",
@@ -17504,7 +17484,6 @@
     "--nz-brand",
     "--nz-peso-titulo",
     "--nz-radius-xl",
-    "--nz-shadow-lg",
     "--nz-space-2",
     "--nz-space-3",
     "--nz-space-5",
@@ -17512,7 +17491,7 @@
     "--nz-text-3xl",
     "--nz-tracking-tight"
    ],
-   "nTokens": 11,
+   "nTokens": 10,
    "markup": {
     "demo": "paginas/17-patrones.html",
     "titulo": "Bloque de precios",
@@ -18272,7 +18251,7 @@
     "--nz-border-w",
     "--nz-peso-fuerte",
     "--nz-radius-lg",
-    "--nz-shadow-lg",
+    "--nz-shadow-xl",
     "--nz-space-1",
     "--nz-space-2",
     "--nz-space-3",
@@ -18652,7 +18631,6 @@
     "--nz-bg-inset",
     "--nz-peso-fuerte",
     "--nz-radius-full",
-    "--nz-shadow-sm",
     "--nz-space-1",
     "--nz-space-3",
     "--nz-surface",
@@ -18661,7 +18639,7 @@
     "--nz-text-sm",
     "--nz-text-soft"
    ],
-   "nTokens": 11,
+   "nTokens": 10,
    "markup": {
     "demo": "paginas/17-patrones.html",
     "titulo": "Selector de vista (rejilla / lista)",
@@ -18761,7 +18739,6 @@
     "--nz-leading-snug",
     "--nz-peso-fuerte",
     "--nz-radius-lg",
-    "--nz-shadow-lg",
     "--nz-space-2",
     "--nz-space-4",
     "--nz-surface",
@@ -18772,7 +18749,7 @@
     "--nz-text-xs",
     "--nz-tracking-caps"
    ],
-   "nTokens": 18,
+   "nTokens": 17,
    "markup": {
     "demo": "paginas/17-patrones.html",
     "titulo": "Tarjeta de contenido con media",

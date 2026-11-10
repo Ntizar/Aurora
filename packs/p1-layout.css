@@ -151,11 +151,11 @@
 .nz-section--compact { padding-block: var(--nz-space-4); }
 .nz-section--spacious { padding-block: var(--nz-space-16); }
 .nz-section--bordered { border-block: var(--nz-border-w) solid var(--nz-border-soft); }
-.nz-article { background: var(--nz-surface); border-radius: var(--nz-radius-lg); padding: var(--nz-space-5); box-shadow: var(--nz-shadow-sm); }
+.nz-article { background: var(--nz-surface); border-radius: var(--nz-radius-lg); padding: var(--nz-space-5); box-shadow: none; border: var(--nz-border-w) solid var(--nz-border-soft); }
 .nz-article--flush { padding: 0; }
 .nz-article--bordered { border: var(--nz-border-w) solid var(--nz-border-soft); box-shadow: none; }
 .nz-article--interactive { cursor: pointer; transition: transform var(--nz-dur-base) var(--nz-ease-out), box-shadow var(--nz-dur-base) var(--nz-ease-out); }
-.nz-article--interactive:hover { transform: translateY(-3px); box-shadow: var(--nz-shadow-lg); }
+.nz-article--interactive:hover { transform: translateY(-3px); box-shadow: none; }
 
 /* ---- 18 App shell con filas auto/1fr/auto ---- */
 .nz-appshell { display: grid; grid-template-rows: auto 1fr auto; min-height: 100dvh; }
@@ -307,19 +307,19 @@
 .nz-region-ad--sidebar { max-width: 10rem; min-height: 16rem; }
 
 /* ---- 39 Región de cookies ---- */
-.nz-region-cookies { position: fixed; bottom: 0; inset-inline: 0; z-index: var(--nz-z-toast); padding: var(--nz-space-4); background: var(--nz-surface); box-shadow: var(--nz-shadow-lg); }
+.nz-region-cookies { position: fixed; bottom: 0; inset-inline: 0; z-index: var(--nz-z-toast); padding: var(--nz-space-4); background: var(--nz-surface); box-shadow: var(--nz-shadow-xl); }
 .nz-region-cookies--compact { padding: var(--nz-space-2) var(--nz-space-3); font-size: var(--nz-text-xs); }
 .nz-region-cookies--esquina { inset-inline: var(--nz-space-4) auto; bottom: var(--nz-space-4); max-width: 24rem; border-radius: var(--nz-radius-lg); }
 
 /* ---- 40 Región de chat ---- */
 .nz-region-chat { position: fixed; right: var(--nz-space-4); bottom: var(--nz-space-4); z-index: var(--nz-z-popover); }
 .nz-region-chat--left { right: auto; left: var(--nz-space-4); }
-.nz-region-chat--sm { padding: var(--nz-space-3); border-radius: var(--nz-radius-full); background: var(--nz-brand); color: var(--nz-text-invert); font-size: var(--nz-text-sm); font-weight: var(--nz-peso-fuerte); box-shadow: var(--nz-shadow-brand); }
+.nz-region-chat--sm { padding: var(--nz-space-3); border-radius: var(--nz-radius-full); background: var(--nz-brand); color: var(--nz-text-invert); font-size: var(--nz-text-sm); font-weight: var(--nz-peso-fuerte); box-shadow: var(--nz-shadow-xl); }
 
 /* ---- 41 Región de toolbar ---- */
 .nz-region-toolbar { display: flex; align-items: center; gap: var(--nz-space-2); padding: var(--nz-space-2) var(--nz-space-3); background: var(--nz-bg-soft); border-radius: var(--nz-radius-md); }
 .nz-region-toolbar--sticky { position: sticky; top: 0; z-index: var(--nz-z-sticky); }
-.nz-region-toolbar--flotante { position: fixed; left: 50%; bottom: var(--nz-space-6); transform: translateX(-50%); box-shadow: var(--nz-shadow-lg); }
+.nz-region-toolbar--flotante { position: fixed; left: 50%; bottom: var(--nz-space-6); transform: translateX(-50%); box-shadow: var(--nz-shadow-xl); }
 
 /* ---- 42 Safe-area inset (móvil) ---- */
 .nz-safe { padding-bottom: env(safe-area-inset-bottom, 0); }

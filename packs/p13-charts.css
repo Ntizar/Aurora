@@ -9,7 +9,7 @@
    ============================================================ */
 
 /* ---- Tarjeta de gráfico ---- */
-.nz-chart { display: flex; flex-direction: column; gap: var(--nz-space-3); margin: 0; padding: var(--nz-space-4); border-radius: var(--nz-radius-lg); background: var(--nz-surface); box-shadow: var(--nz-shadow-sm); }
+.nz-chart { display: flex; flex-direction: column; gap: var(--nz-space-3); margin: 0; padding: var(--nz-space-4); border-radius: var(--nz-radius-lg); background: var(--nz-surface); box-shadow: none; border: var(--nz-border-w) solid var(--nz-border); }
 .nz-chart--bordered { box-shadow: none; border: var(--nz-border-w) solid var(--nz-border); }
 .nz-chart--flat { box-shadow: none; background: var(--nz-bg-soft); }
 .nz-chart--sm { padding: var(--nz-space-3); gap: var(--nz-space-2); }
@@ -241,7 +241,7 @@
 /* ---- Selector de rango temporal ---- */
 .nz-chart-range { display: inline-flex; gap: 2px; padding: 2px; border-radius: var(--nz-radius-full); background: var(--nz-bg-inset); }
 .nz-chart-range__btn { min-height: var(--nz-tactil); padding: 0 var(--nz-space-3); border: 0; border-radius: var(--nz-radius-full); background: transparent; color: var(--nz-text-soft); font: inherit; font-size: var(--nz-text-xs); font-weight: var(--nz-peso-fuerte); cursor: pointer; }
-.nz-chart-range__btn[aria-pressed="true"] { background: var(--nz-surface); color: var(--nz-text); box-shadow: var(--nz-shadow-xs); }
+.nz-chart-range__btn[aria-pressed="true"] { background: var(--nz-surface); color: var(--nz-text); box-shadow: none; }
 
 /* ---- Cifra con sparkline ---- */
 .nz-chart-stat { display: grid; gap: var(--nz-space-1); }
@@ -338,7 +338,7 @@
 .nz-chart--interactivo .nz-legend__item:focus-visible { outline: none; box-shadow: var(--nz-focus-ring); }
 
 /* ---- Tooltip flotante (lo crea el JS; estilo por tokens) ---- */
-.nz-chart-tip { position: fixed; z-index: var(--nz-z-tooltip); max-width: 16rem; padding: var(--nz-space-2) var(--nz-space-3); border-radius: var(--nz-radius-md); background: var(--nz-surface); color: var(--nz-text); box-shadow: var(--nz-shadow-md); border: var(--nz-border-w) solid var(--nz-border); font-size: var(--nz-text-xs); line-height: var(--nz-leading-snug); pointer-events: none; opacity: 0; transform: translateY(2px); transition: opacity var(--nz-dur-fast) var(--nz-ease-out), transform var(--nz-dur-fast) var(--nz-ease-out); }
+.nz-chart-tip { position: fixed; z-index: var(--nz-z-tooltip); max-width: 16rem; padding: var(--nz-space-2) var(--nz-space-3); border-radius: var(--nz-radius-md); background: var(--nz-surface); color: var(--nz-text); box-shadow: var(--nz-shadow-xl); border: var(--nz-border-w) solid var(--nz-border); font-size: var(--nz-text-xs); line-height: var(--nz-leading-snug); pointer-events: none; opacity: 0; transform: translateY(2px); transition: opacity var(--nz-dur-fast) var(--nz-ease-out), transform var(--nz-dur-fast) var(--nz-ease-out); }
 .nz-chart-tip--arriba { transform: translateY(-2px); }
 .nz-chart-tip.is-active { opacity: 1; transform: translateY(0); }
 .nz-chart-tip--inline { position: static; opacity: 1; transform: none; }

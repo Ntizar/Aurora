@@ -32,7 +32,7 @@
 .nz-menu { position: relative; }
 .nz-menu > input { position: absolute; opacity: 0; pointer-events: none; }
 .nz-menu__btn { min-width: var(--nz-tactil); min-height: var(--nz-tactil); display: inline-flex; align-items: center; justify-content: center; border-radius: var(--nz-radius-full); border: 0; background: var(--nz-bg-inset); color: var(--nz-text); cursor: pointer; font-size: 1.25rem; }
-.nz-menu__drop { position: absolute; right: 0; top: calc(100% + var(--nz-space-2)); min-width: 13rem; padding: var(--nz-space-2); border-radius: var(--nz-radius-lg); background: var(--nz-surface); box-shadow: var(--nz-shadow-lg); transform: translateY(-6px); opacity: 0; visibility: hidden; transition: transform var(--nz-dur-base) var(--nz-ease-out), opacity var(--nz-dur-base) var(--nz-ease-out), visibility var(--nz-dur-base); }
+.nz-menu__drop { position: absolute; right: 0; top: calc(100% + var(--nz-space-2)); min-width: 13rem; padding: var(--nz-space-2); border-radius: var(--nz-radius-lg); background: var(--nz-surface); box-shadow: var(--nz-shadow-xl); transform: translateY(-6px); opacity: 0; visibility: hidden; transition: transform var(--nz-dur-base) var(--nz-ease-out), opacity var(--nz-dur-base) var(--nz-ease-out), visibility var(--nz-dur-base); }
 .nz-menu > input:checked ~ .nz-menu__drop { transform: none; opacity: 1; visibility: visible; }
 .nz-menu__item { display: flex; align-items: center; gap: var(--nz-space-2); min-height: var(--nz-tactil); padding: 0 var(--nz-space-3); border-radius: var(--nz-radius-sm); color: var(--nz-text-soft); font-size: var(--nz-text-sm); text-decoration: none; }
 .nz-menu__item:hover { background: var(--nz-bg-soft); color: var(--nz-text); }
@@ -44,7 +44,7 @@
 .nz-menu__item--disabled { color: var(--nz-text-faint); pointer-events: none; }
 
 /* ---- 04 Sidebar de navegación ---- */
-.nz-sidebar { display: flex; flex-direction: column; gap: var(--nz-space-2); padding: var(--nz-space-4); background: var(--nz-surface); border-radius: var(--nz-radius-lg); min-width: 13rem; }
+.nz-sidebar { display: flex; flex-direction: column; gap: var(--nz-space-2); padding: var(--nz-space-4); background: var(--nz-surface); border-radius: var(--nz-radius-lg); min-width: 13rem; border: var(--nz-border-w) solid var(--nz-border-soft); }
 .nz-sidebar__heading { font-size: var(--nz-text-xs); font-weight: var(--nz-peso-fuerte); letter-spacing: var(--nz-tracking-caps); text-transform: uppercase; color: var(--nz-text-mute); padding: var(--nz-space-2) var(--nz-space-3); }
 .nz-sidebar__link { display: flex; align-items: center; gap: var(--nz-space-2); min-height: var(--nz-tactil); padding: 0 var(--nz-space-3); border-radius: var(--nz-radius-sm); color: var(--nz-text-soft); font-size: var(--nz-text-sm); text-decoration: none; }
 .nz-sidebar__link:hover { background: var(--nz-bg-soft); color: var(--nz-text); }
@@ -127,7 +127,7 @@
 }
 
 /* ---- 09 Índice de contenidos (TOC) ---- */
-.nz-toc { display: flex; flex-direction: column; gap: var(--nz-space-1); padding: var(--nz-space-4); background: var(--nz-surface); border-radius: var(--nz-radius-lg); box-shadow: var(--nz-shadow-sm); }
+.nz-toc { display: flex; flex-direction: column; gap: var(--nz-space-1); padding: var(--nz-space-4); background: var(--nz-surface); border-radius: var(--nz-radius-lg); box-shadow: none; }
 .nz-toc__title { font-size: var(--nz-text-xs); font-weight: var(--nz-peso-fuerte); letter-spacing: var(--nz-tracking-caps); text-transform: uppercase; color: var(--nz-text-faint); margin-bottom: var(--nz-space-2); }
 .nz-toc__title--brand { color: var(--nz-brand); }
 .nz-toc a { display: flex; min-height: var(--nz-tactil); align-items: center; color: var(--nz-text-soft); text-decoration: none; padding: var(--nz-space-2) var(--nz-space-2); border-left: 3px solid transparent; border-radius: var(--nz-radius-sm); font-size: var(--nz-text-sm); }
@@ -145,7 +145,7 @@
 .nz-dropdown__btn { min-height: var(--nz-tactil); display: inline-flex; align-items: center; gap: var(--nz-space-2); padding: 0 var(--nz-space-4); border-radius: var(--nz-radius-full); border: var(--nz-border-w) solid var(--nz-border); background: var(--nz-surface); color: var(--nz-text); font-weight: var(--nz-peso-fuerte); font-family: inherit; cursor: pointer; font-size: var(--nz-text-sm); }
 .nz-dropdown__btn::after { content: "▾"; font-size: var(--nz-text-xs); color: var(--nz-text-faint); }
 .nz-dropdown__btn--icon { padding: 0; min-width: var(--nz-tactil); justify-content: center; gap: 0; }
-.nz-dropdown__list { position: absolute; top: calc(100% + var(--nz-space-2)); left: 0; min-width: 12rem; padding: var(--nz-space-2); border-radius: var(--nz-radius-lg); background: var(--nz-surface); box-shadow: var(--nz-shadow-lg); opacity: 0; visibility: hidden; transform: translateY(-6px); transition: transform var(--nz-dur-base) var(--nz-ease-out), opacity var(--nz-dur-base) var(--nz-ease-out), visibility var(--nz-dur-base); }
+.nz-dropdown__list { position: absolute; top: calc(100% + var(--nz-space-2)); left: 0; min-width: 12rem; padding: var(--nz-space-2); border-radius: var(--nz-radius-lg); background: var(--nz-surface); box-shadow: var(--nz-shadow-xl); opacity: 0; visibility: hidden; transform: translateY(-6px); transition: transform var(--nz-dur-base) var(--nz-ease-out), opacity var(--nz-dur-base) var(--nz-ease-out), visibility var(--nz-dur-base); }
 .nz-dropdown > input:checked ~ .nz-dropdown__list { opacity: 1; visibility: visible; transform: none; }
 .nz-dropdown__list--divided > * + * { border-top: var(--nz-border-w) solid var(--nz-border-soft); border-radius: 0; }
 .nz-dropdown--end .nz-dropdown__list { left: auto; right: 0; }

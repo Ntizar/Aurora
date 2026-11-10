@@ -38,7 +38,7 @@
 .nz-alert--lg .nz-alert__title { font-size: var(--nz-text-md); }
 .nz-alert--lg .nz-alert__icon { font-size: var(--nz-text-xl); }
 .nz-alert--dismissible { padding-right: var(--nz-space-2); }
-.nz-alert--floating { position: fixed; left: var(--nz-space-4); right: var(--nz-space-4); bottom: calc(var(--nz-space-4) + env(safe-area-inset-bottom, 0px)); z-index: var(--nz-z-toast); margin: 0; box-shadow: var(--nz-shadow-lg); }
+.nz-alert--floating { position: fixed; left: var(--nz-space-4); right: var(--nz-space-4); bottom: calc(var(--nz-space-4) + env(safe-area-inset-bottom, 0px)); z-index: var(--nz-z-toast); margin: 0; box-shadow: var(--nz-shadow-xl); }
 @media (min-width: 640px) {
   .nz-alert__close { width: 32px; height: 32px; }
   .nz-alert__action { min-height: 32px; }
@@ -94,7 +94,7 @@
 }
 
 /* ---- Toast ---- */
-.nz-toast { position: fixed; left: 50%; bottom: calc(var(--nz-space-6) + env(safe-area-inset-bottom, 0px)); z-index: var(--nz-z-toast); transform: translateX(-50%) translateY(16px); opacity: 0; visibility: hidden; display: inline-flex; align-items: center; gap: var(--nz-space-3); max-width: min(92vw, 26rem); padding: var(--nz-space-3) var(--nz-space-4); border-radius: var(--nz-radius-md); background: var(--nz-gray-900); color: var(--nz-gray-50); font-size: var(--nz-text-sm); box-shadow: var(--nz-shadow-lg); transition: transform var(--nz-dur-base) var(--nz-ease-out), opacity var(--nz-dur-base) var(--nz-ease-out), visibility var(--nz-dur-base); }
+.nz-toast { position: fixed; left: 50%; bottom: calc(var(--nz-space-6) + env(safe-area-inset-bottom, 0px)); z-index: var(--nz-z-toast); transform: translateX(-50%) translateY(16px); opacity: 0; visibility: hidden; display: inline-flex; align-items: center; gap: var(--nz-space-3); max-width: min(92vw, 26rem); padding: var(--nz-space-3) var(--nz-space-4); border-radius: var(--nz-radius-md); background: var(--nz-gray-900); color: var(--nz-gray-50); font-size: var(--nz-text-sm); box-shadow: var(--nz-shadow-xl); transition: transform var(--nz-dur-base) var(--nz-ease-out), opacity var(--nz-dur-base) var(--nz-ease-out), visibility var(--nz-dur-base); }
 .nz-toast.is-on { transform: translateX(-50%); opacity: 1; visibility: visible; }
 .nz-toast__icon { font-size: var(--nz-text-md); line-height: 1; }
 .nz-toast__title { font-weight: var(--nz-peso-fuerte); }
@@ -200,7 +200,7 @@
 .nz-skeleton__line--title { height: 1.375rem; width: 55%; }
 .nz-skeleton__line--muted { width: 40%; background: var(--nz-bg-soft); }
 .nz-skeleton__line--wide { width: 90%; }
-.nz-skeleton__card { padding: var(--nz-space-3); border-radius: var(--nz-radius-md); background: var(--nz-surface); box-shadow: var(--nz-shadow-sm); display: grid; gap: var(--nz-space-3); }
+.nz-skeleton__card { padding: var(--nz-space-3); border-radius: var(--nz-radius-md); background: var(--nz-surface); box-shadow: none; display: grid; gap: var(--nz-space-3); }
 .nz-skeleton__block { aspect-ratio: 16 / 9; border-radius: var(--nz-radius-md); background: var(--nz-bg-inset); animation: nzSkel 1.4s ease-in-out infinite; }
 @keyframes nzSkel { 0%, 100% { opacity: 1; } 50% { opacity: .5; } }
 .nz-skeleton--text .nz-skeleton__line { height: var(--nz-text-base); border-radius: var(--nz-radius-xs); }
@@ -209,7 +209,7 @@
 .nz-skeleton--chart .nz-skeleton__block { aspect-ratio: 21 / 9; }
 
 /* ---- Empty state ---- */
-.nz-empty { display: flex; flex-direction: column; align-items: center; gap: var(--nz-space-3); padding: var(--nz-space-10) var(--nz-space-6); text-align: center; border-radius: var(--nz-radius-lg); background: var(--nz-surface); }
+.nz-empty { display: flex; flex-direction: column; align-items: center; gap: var(--nz-space-3); padding: var(--nz-space-10) var(--nz-space-6); text-align: center; border-radius: var(--nz-radius-lg); background: var(--nz-surface); border: var(--nz-border-w-strong) dashed var(--nz-border-strong); }
 .nz-empty__icon { font-size: 2.5rem; line-height: 1; }
 .nz-empty__title { font-size: var(--nz-text-lg); font-weight: var(--nz-peso-fuerte); color: var(--nz-text); margin: 0; }
 .nz-empty__body { max-width: 36ch; font-size: var(--nz-text-sm); color: var(--nz-text-soft); margin: 0; }

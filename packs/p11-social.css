@@ -7,7 +7,7 @@
    ============================================================ */
 
 /* ---- Tarjeta de post (feed) ---- */
-.nz-post { position: relative; display: flex; flex-direction: column; gap: var(--nz-space-3); padding: var(--nz-space-4); border-radius: var(--nz-radius-lg); background: var(--nz-surface); box-shadow: var(--nz-shadow-sm); }
+.nz-post { position: relative; display: flex; flex-direction: column; gap: var(--nz-space-3); padding: var(--nz-space-4); border-radius: var(--nz-radius-lg); background: var(--nz-surface); box-shadow: none; border: var(--nz-border-w) solid var(--nz-border); }
 .nz-post__head { display: flex; align-items: center; gap: var(--nz-space-3); }
 .nz-post__byline { flex: 1; min-width: 0; display: grid; gap: 1px; }
 .nz-post__author { display: flex; align-items: center; gap: var(--nz-space-1); font-weight: var(--nz-peso-fuerte); font-size: var(--nz-text-sm); color: var(--nz-text); }
@@ -67,7 +67,7 @@
 @media (min-width: 640px) { .nz-comment--indent { margin-left: var(--nz-space-12); } }
 
 /* ---- Testimonio ---- */
-.nz-quote { position: relative; display: flex; flex-direction: column; gap: var(--nz-space-3); padding: var(--nz-space-6); border-radius: var(--nz-radius-lg); background: var(--nz-surface); box-shadow: var(--nz-shadow-sm); }
+.nz-quote { position: relative; display: flex; flex-direction: column; gap: var(--nz-space-3); padding: var(--nz-space-6); border-radius: var(--nz-radius-lg); background: var(--nz-surface); box-shadow: none; }
 .nz-quote::before { content: "“"; position: absolute; top: var(--nz-space-2); right: var(--nz-space-5); font-size: 5rem; line-height: 1; font-weight: var(--nz-peso-titulo); color: var(--nz-brand-soft); }
 .nz-quote p { position: relative; z-index: 1; font-size: var(--nz-text-md); color: var(--nz-text); line-height: var(--nz-leading-snug); }
 .nz-quote__who { display: flex; align-items: center; gap: var(--nz-space-3); margin-top: var(--nz-space-2); }
@@ -88,7 +88,7 @@
 .nz-quote--sm::before { font-size: 3rem; }
 
 /* ---- CTA banner ---- */
-.nz-cta-banner { position: relative; display: flex; flex-direction: column; align-items: flex-start; gap: var(--nz-space-4); padding: var(--nz-space-8) var(--nz-space-6); border-radius: var(--nz-radius-xl); background: var(--nz-brand); color: var(--nz-text-invert); }
+.nz-cta-banner { position: relative; display: flex; flex-direction: column; align-items: flex-start; gap: var(--nz-space-4); padding: var(--nz-space-8) var(--nz-space-6); border-radius: var(--nz-radius-xl); background: var(--nz-brand); color: var(--nz-text-invert); border: var(--nz-border-w) solid var(--nz-border); }
 .nz-cta-banner__eyebrow { font-size: var(--nz-text-xs); font-weight: var(--nz-peso-fuerte); letter-spacing: var(--nz-tracking-caps); text-transform: uppercase; color: var(--nz-blue-100); }
 .nz-cta-banner__title { font-size: var(--nz-text-2xl); font-weight: var(--nz-peso-titulo); letter-spacing: var(--nz-tracking-tight); }
 .nz-cta-banner__body { max-width: 44ch; font-size: var(--nz-text-md); color: var(--nz-blue-100); }
@@ -112,7 +112,7 @@
 
 /* ---- Equipo (rejilla de miembros) ---- */
 .nz-team { display: grid; gap: var(--nz-space-4); grid-template-columns: 1fr; }
-.nz-team__member { display: flex; flex-direction: column; align-items: center; gap: var(--nz-space-2); padding: var(--nz-space-5); border-radius: var(--nz-radius-lg); background: var(--nz-surface); box-shadow: var(--nz-shadow-sm); text-align: center; }
+.nz-team__member { display: flex; flex-direction: column; align-items: center; gap: var(--nz-space-2); padding: var(--nz-space-5); border-radius: var(--nz-radius-lg); background: var(--nz-surface); box-shadow: none; text-align: center; }
 .nz-team__avatar { width: 80px; height: 80px; }
 .nz-team__name { font-weight: var(--nz-peso-fuerte); font-size: var(--nz-text-md); color: var(--nz-text); }
 .nz-team__role { font-size: var(--nz-text-xs); color: var(--nz-text-mute); }
@@ -124,7 +124,7 @@
 @media (min-width: 960px) { .nz-team { grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr)); } }
 
 /* ---- Logotipos de confianza ---- */
-.nz-trust { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: var(--nz-space-4) var(--nz-space-8); font-size: var(--nz-text-sm); font-weight: var(--nz-peso-fuerte); color: var(--nz-text-faint); }
+.nz-trust { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: var(--nz-space-4) var(--nz-space-8); font-size: var(--nz-text-sm); font-weight: var(--nz-peso-fuerte); color: var(--nz-text-faint); border: var(--nz-border-w) solid var(--nz-border-soft); }
 .nz-trust__stars { display: inline-flex; align-items: center; gap: var(--nz-space-1); color: var(--nz-warning); }
 .nz-trust__logo { min-height: var(--nz-tactil); display: inline-flex; align-items: center; gap: var(--nz-space-2); padding: 0 var(--nz-space-2); border-radius: var(--nz-radius-sm); background: var(--nz-bg-inset); color: var(--nz-text-soft); font-size: var(--nz-text-sm); font-weight: var(--nz-peso-fuerte); }
 .nz-trust--bordered { padding: var(--nz-space-4); border: var(--nz-border-w) solid var(--nz-border-soft); border-radius: var(--nz-radius-lg); background: var(--nz-surface); }
@@ -169,7 +169,7 @@
 .nz-activity__time { margin-left: auto; font-size: var(--nz-text-2xs); color: var(--nz-text-faint); white-space: nowrap; }
 
 /* ---- Notificación (toast social) ---- */
-.nz-notif { display: flex; align-items: center; gap: var(--nz-space-3); padding: var(--nz-space-3) var(--nz-space-4); border-radius: var(--nz-radius-md); background: var(--nz-surface); box-shadow: var(--nz-shadow-md); }
+.nz-notif { display: flex; align-items: center; gap: var(--nz-space-3); padding: var(--nz-space-3) var(--nz-space-4); border-radius: var(--nz-radius-md); background: var(--nz-surface); box-shadow: none; }
 .nz-notif__icon { width: 40px; height: 40px; flex: none; display: grid; place-items: center; border-radius: 50%; background: var(--nz-accent-soft); color: var(--nz-accent-text); }
 .nz-notif__body { flex: 1; min-width: 0; display: grid; gap: 1px; }
 .nz-notif__title { font-weight: var(--nz-peso-fuerte); font-size: var(--nz-text-sm); color: var(--nz-text); }
@@ -181,8 +181,8 @@
 /* ============================================================
    Destacados y tono de notificaciones (lexico cerrado)         */
 .nz-activity__item.is-highlight { background: var(--nz-brand-soft); border-radius: var(--nz-radius-md); padding-inline: var(--nz-space-3); }
-.nz-notif--success { box-shadow: inset 3px 0 0 var(--nz-success), var(--nz-shadow-md); }
-.nz-notif--danger { box-shadow: inset 3px 0 0 var(--nz-danger), var(--nz-shadow-md); }
-.nz-notif--warning { box-shadow: inset 3px 0 0 var(--nz-warning), var(--nz-shadow-md); }
+.nz-notif--success { box-shadow: inset 3px 0 0 var(--nz-success); }
+.nz-notif--danger { box-shadow: inset 3px 0 0 var(--nz-danger); }
+.nz-notif--warning { box-shadow: inset 3px 0 0 var(--nz-warning); }
 .nz-team--sm .nz-team__avatar { width: 48px; height: 48px; }
 .nz-team--lg .nz-team__avatar { width: 112px; height: 112px; }
