@@ -153,7 +153,7 @@
 
 /* ---- 11 Nav footer ---- */
 .nz-navfooter { display: flex; flex-wrap: wrap; gap: var(--nz-space-2) var(--nz-space-6); padding: var(--nz-space-6) 0; }
-.nz-navfooter__col { min-width: 7rem; display: flex; flex-direction: column; gap: var(--nz-space-2); }
+.nz-navfooter__col { min-width: min(7rem, 100%); display: flex; flex-direction: column; gap: var(--nz-space-2); }
 .nz-navfooter__title { font-size: var(--nz-text-xs); font-weight: var(--nz-peso-fuerte); letter-spacing: var(--nz-tracking-caps); text-transform: uppercase; color: var(--nz-text-faint); }
 .nz-navfooter__title--brand { color: var(--nz-brand); }
 .nz-navfooter a { min-height: var(--nz-tactil); display: inline-flex; align-items: center; color: var(--nz-text-soft); text-decoration: none; font-size: var(--nz-text-sm); }
@@ -164,7 +164,7 @@
 @media (min-width: 640px) {
   .nz-navfooter--2col, .nz-navfooter--3col { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
-@media (min-width: 960px) { .nz-navfooter--3col { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+/* rejilla auto-ajustable: se adapta a su contenedor, no al viewport */
 
 /* ---- 12 Stepper de navegación (proceso) ---- */
 /* Base móvil: los pasos ENVUELVEN. Un carrusel horizontal esconde etapas y el

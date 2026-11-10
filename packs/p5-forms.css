@@ -227,12 +227,8 @@
 /* ---- Rejilla de formulario ---- */
 .nz-formgrid { display: grid; gap: var(--nz-space-3); grid-template-columns: 1fr; }
 .nz-formgrid--wide { gap: var(--nz-space-5); }
-@media (min-width: 640px) {
-  .nz-formgrid--2, .nz-formgrid--3 { grid-template-columns: 1fr 1fr; }
-}
-@media (min-width: 960px) {
-  .nz-formgrid--3 { grid-template-columns: 1fr 1fr 1fr; }
-}
+.nz-formgrid--2 { grid-template-columns: repeat(auto-fit, minmax(min(100%, 12rem), 1fr)); }
+.nz-formgrid--3 { grid-template-columns: repeat(auto-fit, minmax(min(100%, 10rem), 1fr)); }
 
 /* ---- Fieldset (agrupación con leyenda) ---- */
 .nz-fieldset { display: flex; flex-direction: column; gap: var(--nz-space-3); margin: 0; padding: var(--nz-space-4); border: var(--nz-border-w) solid var(--nz-border); border-radius: var(--nz-radius-md); background: var(--nz-surface); }

@@ -142,8 +142,8 @@
 .nz-comparador-planes { display: grid; gap: var(--nz-space-4); }
 .nz-comparador-planes__planes { display: grid; gap: var(--nz-space-4); grid-template-columns: 1fr; align-items: stretch; }
 .nz-comparador-planes__nota { font-size: var(--nz-text-xs); color: var(--nz-text-mute); text-align: center; }
-@media (min-width: 640px) { .nz-comparador-planes__planes { grid-template-columns: repeat(2, 1fr); } }
-@media (min-width: 960px) { .nz-comparador-planes__planes { grid-template-columns: repeat(3, 1fr); } }
+/* rejilla auto-ajustable: se adapta a su contenedor, no al viewport */
+/* rejilla auto-ajustable: se adapta a su contenedor, no al viewport */
 
 /* ---- P09 Resumen de pedido con totales ---- */
 .nz-resumen-pedido {
@@ -300,12 +300,12 @@
 
 /* ---- P18 Editor de campos con etiqueta y ayuda ---- */
 .nz-editor-campos { display: grid; gap: var(--nz-space-4); }
-.nz-editor-campos__campo { display: grid; gap: var(--nz-space-1); grid-template-columns: minmax(0, 1fr); }
+.nz-editor-campos__campo { display: grid; gap: var(--nz-space-1); grid-template-columns: repeat(auto-fit, minmax(min(100%, 11rem), 1fr)); }
 .nz-editor-campos__cabecera { display: flex; align-items: center; justify-content: space-between; gap: var(--nz-space-2); }
 .nz-editor-campos__etiqueta { font-size: var(--nz-text-sm); font-weight: var(--nz-peso-fuerte); color: var(--nz-text); }
 .nz-editor-campos__ayuda { font-size: var(--nz-text-xs); color: var(--nz-text-mute); }
 .nz-editor-campos__acciones { display: flex; gap: var(--nz-space-1); }
-@media (min-width: 640px) { .nz-editor-campos__campo { grid-template-columns: 14rem minmax(0, 1fr); align-items: start; gap: var(--nz-space-4); } }
+@media (min-width: 640px) { .nz-editor-campos__campo { align-items: start; gap: var(--nz-space-4); } }
 
 /* ---- P19 Bloque de carga (esqueleto) ---- */
 .nz-bloque-carga {
@@ -460,8 +460,8 @@
 }
 .nz-rejilla-estadisticas__valor { font-size: var(--nz-text-2xl); font-weight: var(--nz-peso-titulo); font-variant-numeric: tabular-nums; }
 .nz-rejilla-estadisticas__etiqueta { font-size: var(--nz-text-xs); color: var(--nz-text-mute); }
-@media (min-width: 640px) { .nz-rejilla-estadisticas { grid-template-columns: repeat(2, 1fr); } }
-@media (min-width: 960px) { .nz-rejilla-estadisticas { grid-template-columns: repeat(4, 1fr); } }
+/* rejilla auto-ajustable: se adapta a su contenedor, no al viewport */
+/* rejilla auto-ajustable: se adapta a su contenedor, no al viewport */
 
 /* ---- P31 Ficha de producto con variantes ---- */
 .nz-ficha-producto { display: grid; gap: var(--nz-space-4); grid-template-columns: minmax(0, 1fr); }
@@ -557,8 +557,8 @@
 }
 .nz-tarjeta-equipo__nombre { font-size: var(--nz-text-base); font-weight: var(--nz-peso-fuerte); }
 .nz-tarjeta-equipo__rol { font-size: var(--nz-text-xs); color: var(--nz-text-mute); }
-@media (min-width: 640px) { .nz-tarjeta-equipo { grid-template-columns: repeat(2, 1fr); } }
-@media (min-width: 960px) { .nz-tarjeta-equipo { grid-template-columns: repeat(3, 1fr); } }
+/* rejilla auto-ajustable: se adapta a su contenedor, no al viewport */
+/* rejilla auto-ajustable: se adapta a su contenedor, no al viewport */
 
 /* ---- P39 Comparativa de productos ---- */
 .nz-comparativa-productos { display: grid; gap: var(--nz-space-3); }
@@ -663,3 +663,6 @@
   .nz-comparador-planes__planes { gap: var(--nz-space-5); }
   .nz-rejilla-estadisticas { gap: var(--nz-space-5); }
 }
+
+/* Las rejillas de este pack nunca empujan a su contenido mínimo. */
+.nz-rejilla-estadisticas > *, .nz-tarjeta-equipo > * { min-width: 0; }

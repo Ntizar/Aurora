@@ -427,9 +427,13 @@
   text-rendering: optimizeLegibility;
 }
 
-.nz *, [data-nz-theme] * { box-sizing: border-box; }
+/* El reset alcanza al objeto mismo y a sus descendientes: sin esto, un .nz-input
+   con width:100% y padding propio se sale de su caja (34px de más a 320px). */
+.nz, .nz *, [class^="nz-"], [class^="nz-"] *, [class*=" nz-"], [class*=" nz-"] *,
+[data-nz-theme], [data-nz-theme] * { box-sizing: border-box; }
 
-.nz :focus-visible, [data-nz-theme] :focus-visible {
+.nz :focus-visible, .nz:focus-visible, [data-nz-theme] :focus-visible,
+[class^="nz-"]:focus-visible, [class*=" nz-"]:focus-visible {
   outline: none;
   box-shadow: var(--nz-focus-ring);
   border-radius: var(--nz-radius-sm);

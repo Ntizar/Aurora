@@ -120,7 +120,7 @@
 .nz-team__social { display: inline-flex; gap: var(--nz-space-1); margin-top: var(--nz-space-1); }
 .nz-team__social a { width: var(--nz-tactil); height: var(--nz-tactil); display: inline-grid; place-items: center; border-radius: var(--nz-radius-full); background: var(--nz-bg-inset); color: var(--nz-text-soft); font-size: var(--nz-text-sm); text-decoration: none; }
 .nz-team__social a:hover { background: var(--nz-brand); color: var(--nz-text-invert); }
-@media (min-width: 640px) { .nz-team { grid-template-columns: repeat(2, 1fr); } }
+/* rejilla auto-ajustable: se adapta a su contenedor, no al viewport */
 @media (min-width: 960px) { .nz-team { grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr)); } }
 
 /* ---- Logotipos de confianza ---- */

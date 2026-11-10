@@ -106,7 +106,8 @@
 .nz-plans--table { gap: 0; }
 .nz-plans--table .nz-plan { flex-direction: row; align-items: center; gap: var(--nz-space-3); padding: var(--nz-space-3) var(--nz-space-2); border: 0; border-bottom: var(--nz-border-w) solid var(--nz-border-soft); border-radius: 0; box-shadow: none; }
 .nz-plans--table .nz-plan__cta { margin: 0 0 0 auto; }
-@media (min-width: 640px) { .nz-plans--2 { grid-template-columns: repeat(2, 1fr); } .nz-plans--4 { grid-template-columns: repeat(2, 1fr); } }
+.nz-plans--2 { grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr)); }
+.nz-plans--4 { grid-template-columns: repeat(auto-fit, minmax(9.5rem, 1fr)); }
 @media (min-width: 960px) { .nz-plans { grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr)); } .nz-plans--2 { grid-template-columns: repeat(2, 1fr); } .nz-plans--3 { grid-template-columns: repeat(3, 1fr); } .nz-plans--4 { grid-template-columns: repeat(4, 1fr); } }
 
 /* ---- Tabla de precios ---- */
@@ -159,7 +160,7 @@
 .nz-checkout-steps__step--done { color: var(--nz-text); }
 .nz-checkout-steps__step--done .nz-checkout-steps__num { background: var(--nz-success); color: var(--nz-text-invert); }
 .nz-checkout-steps--vertical { gap: var(--nz-space-4); }
-@media (min-width: 960px) { .nz-checkout-steps { grid-auto-flow: column; grid-auto-columns: 1fr; align-items: center; } .nz-checkout-steps--vertical { grid-auto-flow: row; } }
+@media (min-width: 960px) { .nz-checkout-steps { grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr)); align-items: center; } .nz-checkout-steps--vertical { grid-auto-flow: row; } }
 
 /* ---- Resumen de compra ---- */
 .nz-summary { display: grid; gap: var(--nz-space-1); padding: var(--nz-space-5); border-radius: var(--nz-radius-lg); background: var(--nz-bg-soft); }
@@ -255,3 +256,9 @@
 .nz-pay.is-error { border-color: var(--nz-danger); }
 .nz-pay.is-error .nz-pay__icon { background: var(--nz-danger-soft); color: var(--nz-danger); }
 .nz-gift-note--sm { padding: var(--nz-space-2) var(--nz-space-3); font-size: var(--nz-text-sm); }
+
+/* Las rejillas de este pack nunca empujan a su contenido mínimo. */
+.nz-plans > *, .nz-payment--grid > * { min-width: 0; }
+
+/* Pasos de compra: no empujan a su contenido mínimo. */
+.nz-checkout-steps > * { min-width: 0; }

@@ -108,14 +108,11 @@
 }
 
 /* ---- 12 Sidebar + contenido ---- */
-.nz-with-sidebar { display: grid; gap: var(--nz-space-6); grid-template-columns: 1fr; }
+.nz-with-sidebar { display: grid; gap: var(--nz-space-6); grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr)); }
 .nz-with-sidebar > * { min-width: 0; }
-.nz-with-sidebar--right { grid-template-columns: 1fr; }
-.nz-with-sidebar--wide { grid-template-columns: 1fr; }
+.nz-with-sidebar--right { grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr)); }
+.nz-with-sidebar--wide { grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr)); }
 @media (min-width: 960px) {
-  .nz-with-sidebar { grid-template-columns: 15rem minmax(0, 1fr); }
-  .nz-with-sidebar--right { grid-template-columns: minmax(0, 1fr) 15rem; }
-  .nz-with-sidebar--wide { grid-template-columns: 20rem minmax(0, 1fr); }
   .nz-with-sidebar--right > :last-child { grid-column: 1; grid-row: 1; }
   .nz-with-sidebar--right > :first-child { grid-column: 2; grid-row: 1; }
 }
@@ -124,8 +121,8 @@
 .nz-thirds { display: grid; gap: var(--nz-space-4); grid-template-columns: 1fr; container-type: inline-size; }
 .nz-thirds--compact { gap: var(--nz-space-2); }
 .nz-thirds--spacious { gap: var(--nz-space-6); }
-@media (min-width: 640px) { .nz-thirds { grid-template-columns: repeat(2, 1fr); } }
-@media (min-width: 960px) { .nz-thirds { grid-template-columns: repeat(3, 1fr); } }
+/* rejilla auto-ajustable: se adapta a su contenedor, no al viewport */
+/* rejilla auto-ajustable: se adapta a su contenedor, no al viewport */
 
 /* ---- 14 Header / cabecera ---- */
 .nz-header { display: flex; align-items: center; justify-content: space-between; gap: var(--nz-space-3); padding: var(--nz-space-3) var(--nz-gutter); background: var(--nz-surface); border-bottom: var(--nz-border-w) solid var(--nz-border-soft); }
@@ -204,7 +201,7 @@
 @media (min-width: 960px) { .nz-masonry { columns: 3; } .nz-masonry--4 { columns: 4; } }
 
 /* ---- 25 Bento grid ---- */
-.nz-bento { display: grid; gap: var(--nz-space-4); grid-template-columns: repeat(2, 1fr); container-type: inline-size; }
+.nz-bento { display: grid; gap: var(--nz-space-4); grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr)); container-type: inline-size; }
 .nz-bento > .nz-bento__wide { grid-column: span 2; }
 .nz-bento > .nz-bento__tall { grid-row: span 2; }
 @media (min-width: 960px) { .nz-bento { grid-template-columns: repeat(4, 1fr); } .nz-bento > .nz-bento__wide { grid-column: span 2; } }
@@ -217,10 +214,7 @@
 .nz-dash-grid--sidebar { grid-template-columns: 1fr; }
 
 .nz-grid-auto > * { min-width: 0; }
-@media (min-width: 640px) {
-  .nz-dash-grid--2 { grid-template-columns: repeat(2, 1fr); }
-  .nz-dash-grid--4 { grid-template-columns: repeat(2, 1fr); }
-}
+/* rejilla auto-ajustable: se adapta a su contenedor, no al viewport */
 @media (min-width: 960px) {
   .nz-dash-grid { grid-template-columns: repeat(3, 1fr); }
   .nz-dash-grid--4 { grid-template-columns: repeat(4, 1fr); }
@@ -228,7 +222,7 @@
 }
 
 /* ---- 27 Holy grail layout ---- */
-.nz-holy { display: grid; min-height: 100dvh; gap: var(--nz-space-4); grid-template-areas: "header" "main" "footer"; grid-template-rows: auto 1fr auto; }
+.nz-holy { display: grid; min-height: 100dvh; gap: var(--nz-space-4); grid-template-areas: "header" "nav" "main" "aside" "footer"; grid-template-rows: auto 1fr auto; }
 .nz-holy__header { grid-area: header; } .nz-holy__main { grid-area: main; } .nz-holy__footer { grid-area: footer; }
 @media (min-width: 960px) {
   .nz-holy { grid-template-areas: "nav header aside" "nav main aside" "nav footer footer"; grid-template-columns: 14rem minmax(0, 1fr) 12rem; }
@@ -391,3 +385,8 @@
   .nz-dash-grid--4 { grid-template-columns: repeat(4, 1fr); }
   .nz-dash-grid--sidebar { grid-template-columns: 18rem minmax(0, 1fr); }
 }
+
+/* Ningún hijo de estas primitivas se queda por debajo de su contenido mínimo:
+   sin esto, a 320 px el texto empuja y el objeto se sale de su caja. */
+.nz-hstack > *, .nz-stack > *, .nz-cluster > *, .nz-row > *,
+.nz-dash-grid > *, .nz-holy > *, .nz-bento > * { min-width: 0; }

@@ -10,7 +10,7 @@
 /* ---- Ventana de aplicación (marco + barra de título con controles) ---- */
 .nz-window { position: relative; display: flex; flex-direction: column; overflow: hidden; border-radius: var(--nz-radius-lg); border: var(--nz-border-w) solid var(--nz-border); background: var(--nz-surface); box-shadow: var(--nz-shadow-xl); transition: box-shadow var(--nz-dur-base) var(--nz-ease-out), border-color var(--nz-dur-base) var(--nz-ease-out); }
 .nz-window__titlebar { display: flex; align-items: center; gap: var(--nz-space-2); min-height: var(--nz-tactil); padding: 0 var(--nz-space-2); background: var(--nz-bg-soft); border-bottom: var(--nz-border-w) solid var(--nz-border-soft); }
-.nz-window__titlebar b { flex: 1; min-width: 0; text-align: center; font-size: var(--nz-text-sm); font-weight: var(--nz-peso-fuerte); color: var(--nz-text); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.nz-window__titlebar b { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; text-align: center; font-size: var(--nz-text-sm); font-weight: var(--nz-peso-fuerte); color: var(--nz-text); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .nz-window__titlebar i { width: 11px; height: 11px; border-radius: var(--nz-radius-full); background: var(--nz-border-strong); }
 .nz-window__titlebar button { display: inline-grid; place-items: center; min-width: var(--nz-tactil); min-height: var(--nz-tactil); border: 0; border-radius: var(--nz-radius-sm); background: transparent; color: var(--nz-text-mute); font-family: inherit; font-size: var(--nz-text-sm); cursor: pointer; }
 .nz-window__titlebar button:hover { background: var(--nz-bg-inset); color: var(--nz-text); }
@@ -180,7 +180,7 @@
 }
 
 /* ---- Calendario mensual (rejilla de 7 columnas) ---- */
-.nz-month { display: grid; grid-template-columns: repeat(7, minmax(2.75rem, 1fr)); gap: 1px; padding: var(--nz-space-2); border-radius: var(--nz-radius-lg); border: var(--nz-border-w) solid var(--nz-border-soft); background: var(--nz-border-soft); }
+.nz-month { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 1px; padding: var(--nz-space-1); border-radius: var(--nz-radius-lg); border: var(--nz-border-w) solid var(--nz-border-soft); background: var(--nz-border-soft); }
 .nz-month b { display: flex; align-items: center; justify-content: center; padding: var(--nz-space-2) 0; background: var(--nz-bg-soft); color: var(--nz-text-faint); font-size: var(--nz-text-2xs); font-weight: var(--nz-peso-fuerte); letter-spacing: var(--nz-tracking-caps); text-transform: uppercase; }
 .nz-month span { display: grid; align-content: start; gap: 2px; min-height: var(--nz-tactil); padding: var(--nz-space-1); background: var(--nz-surface); color: var(--nz-text-soft); font-size: var(--nz-text-2xs); font-variant-numeric: tabular-nums; }
 .nz-month span em { padding: 0 var(--nz-space-1); border-radius: var(--nz-radius-xs); background: var(--nz-brand-soft); color: var(--nz-brand-strong); font-style: normal; font-weight: var(--nz-peso-fuerte); overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
@@ -365,7 +365,7 @@
 /* ---- v9.2 · kanban por contenedor ----
    El kanban no decide por el ancho de la ventana: decide por el ancho del sitio
    donde vive. En un drawer de 480px se queda en filas aunque el monitor sea 4K. */
-.nz-kanban-wrap { container-type: inline-size; }
+.nz-kanban-wrap { container-type: inline-size; overflow-x: auto; }
 @container (max-width: 47.99rem) {
   .nz-kanban { grid-auto-flow: row; grid-auto-columns: auto; overflow: visible; }
 }

@@ -215,7 +215,7 @@
 .nz-dl--3col { grid-template-columns: 1fr 1fr; gap: var(--nz-space-3); }
 .nz-dl--3col .nz-dl__row { flex-direction: column; gap: var(--nz-space-1); padding: 0; border-bottom: 0; }
 .nz-dl--3col .nz-dl__dd { text-align: left; }
-@media (min-width: 640px) { .nz-dl--3col { grid-template-columns: repeat(3, 1fr); } }
+/* rejilla auto-ajustable: se adapta a su contenedor, no al viewport */
 .nz-dl--inline { display: flex; flex-wrap: wrap; gap: var(--nz-space-2) var(--nz-space-5); }
 .nz-dl--inline .nz-dl__row { flex: none; padding: 0; gap: var(--nz-space-2); border-bottom: 0; }
 .nz-dl--striped .nz-dl__row { padding-inline: var(--nz-space-3); border-radius: var(--nz-radius-sm); border-bottom: 0; }

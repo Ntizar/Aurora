@@ -135,8 +135,8 @@
 
 /* ---- Portada: señales de vida ---- */
 .cat-livegrid { display: grid; gap: var(--nz-space-3); grid-template-columns: 1fr; }
-@media (min-width: 640px) { .cat-livegrid { grid-template-columns: repeat(2, 1fr); } }
-@media (min-width: 960px) { .cat-livegrid { grid-template-columns: repeat(4, 1fr); } }
+/* rejilla auto-ajustable: se adapta a su contenedor, no al viewport */
+/* rejilla auto-ajustable: se adapta a su contenedor, no al viewport */
 .cat-live-card { padding: var(--nz-space-4); border-radius: var(--nz-radius-lg); background: var(--nz-surface); box-shadow: none; display: flex; flex-direction: column; gap: var(--nz-space-3); min-height: 8rem; }
 .cat-live-card h3 { font-size: var(--nz-text-xs); font-weight: var(--nz-peso-fuerte); letter-spacing: var(--nz-tracking-caps); text-transform: uppercase; color: var(--nz-text-mute); }
 .cat-live-slot { margin-top: auto; display: flex; align-items: center; gap: var(--nz-space-2); min-height: var(--nz-tactil); flex-wrap: wrap; }

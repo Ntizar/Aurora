@@ -26,6 +26,14 @@ jobs:
       - name: Ley de elevación (un solo nivel; nada flota si no se superpone)
         run: python scripts/auditar-elevacion.py
 
+      - name: Desborde horizontal (los 667 objetos a 320 px)
+        run: |
+          if command -v chromium >/dev/null 2>&1 || [ -x "$HOME/.local/bin/chromium" ]; then
+            python scripts/auditar-desborde.py
+          else
+            echo "chromium no disponible: auditor omitido"
+          fi
+
       - name: Auditor de movimiento (duraciones, curvas, techo y reduced-motion)
         run: |
           python scripts/auditar-movimiento.py --selftest

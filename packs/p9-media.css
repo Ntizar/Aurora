@@ -130,8 +130,8 @@
 
 /* ---- Galería de imágenes ---- */
 .nz-galeria { display: grid; gap: var(--nz-space-2); grid-template-columns: 1fr; }
-.nz-galeria--2 { grid-template-columns: repeat(2, 1fr); }
-.nz-galeria--3 { grid-template-columns: repeat(2, 1fr); }
+.nz-galeria--2 { grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr)); }
+.nz-galeria--3 { grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr)); }
 @media (min-width: 960px) { .nz-galeria--3 { grid-template-columns: repeat(3, 1fr); } }
 .nz-galeria--masonry { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 5rem; }
 .nz-galeria--masonry > *:nth-child(3n) { grid-row: span 2; }
@@ -220,3 +220,6 @@
    para los diminutos, que a 16 px se quedan en un pelo. */
 .nz-icon--fino { stroke-width: var(--nz-icon-stroke-fino); }
 .nz-icon--grueso { stroke-width: var(--nz-icon-stroke-grueso); }
+
+/* Las galerías nunca empujan a su contenido mínimo. */
+.nz-galeria > * { min-width: 0; }

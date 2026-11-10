@@ -26,24 +26,24 @@ Familias sin ninguna variante (`--mod`): **168** de 417 — ahí está el margen
 
 | pack | líneas | objetos | familias | hex | grad. | glass | !imp. |
 |---|---|---|---|---|---|---|---|
-| p1-layout.css | 394 | 180 | 67 | 0 | 0 | 0 | 0 |
-| p10-commerce.css | 258 | 156 | 22 | 0 | 0 | 0 | 0 |
+| p1-layout.css | 393 | 180 | 67 | 0 | 0 | 0 | 0 |
+| p10-commerce.css | 265 | 156 | 22 | 0 | 0 | 0 | 0 |
 | p11-social.css | 189 | 107 | 15 | 0 | 0 | 0 | 0 |
 | p12-system.css | 143 | 80 | 25 | 0 | 0 | 0 | 1 |
 | p13-charts.css | 399 | 220 | 23 | 0 | 0 | 0 | 0 |
 | p14-ai.css | 317 | 186 | 29 | 0 | 0 | 0 | 0 |
 | p15-apps.css | 377 | 75 | 31 | 0 | 0 | 0 | 0 |
 | p16-cristal.css | 144 | 8 | 2 | 0 | 0 | 0 | 0 |
-| p17-patrones.css | 666 | 224 | 46 | 0 | 0 | 0 | 0 |
+| p17-patrones.css | 669 | 224 | 46 | 0 | 0 | 0 | 0 |
 | p18-escenario.css | 328 | 39 | 12 | 0 | 0 | 0 | 0 |
 | p2-navigation.css | 209 | 78 | 10 | 0 | 0 | 0 | 0 |
 | p3-typography.css | 210 | 135 | 41 | 0 | 0 | 0 | 0 |
 | p4-actions.css | 180 | 78 | 7 | 0 | 0 | 0 | 0 |
-| p5-forms.css | 277 | 102 | 20 | 0 | 0 | 0 | 0 |
+| p5-forms.css | 273 | 102 | 20 | 0 | 0 | 0 | 0 |
 | p6-feedback.css | 294 | 160 | 20 | 0 | 0 | 0 | 0 |
 | p7-overlays.css | 207 | 118 | 12 | 0 | 0 | 0 | 0 |
 | p8-data.css | 309 | 150 | 17 | 0 | 0 | 0 | 0 |
-| p9-media.css | 223 | 127 | 18 | 0 | 0 | 0 | 0 |
+| p9-media.css | 226 | 127 | 18 | 0 | 0 | 0 | 0 |
 
 ## 2. Por categoría
 

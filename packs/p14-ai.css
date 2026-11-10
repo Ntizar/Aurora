@@ -163,7 +163,7 @@ a.nz-actividad__fila:hover, button.nz-actividad__fila:hover { background: var(--
 
 /* ---- Tarjeta de agente ---- */
 .nz-agent-card { display: grid; gap: var(--nz-space-2); padding: var(--nz-space-4); border-radius: var(--nz-radius-lg); background: var(--nz-surface); box-shadow: none; }
-.nz-agent-card__row { display: flex; align-items: center; gap: var(--nz-space-3); }
+.nz-agent-card__row { display: flex; flex-wrap: wrap; align-items: center; gap: var(--nz-space-3); min-width: 0; }
 .nz-agent-card__name { font-weight: var(--nz-peso-fuerte); font-size: var(--nz-text-sm); }
 .nz-agent-card__role { font-size: var(--nz-text-xs); color: var(--nz-text-mute); }
 .nz-agent-card__state { margin-left: auto; display: inline-flex; align-items: center; gap: var(--nz-space-1); font-size: var(--nz-text-xs); font-weight: var(--nz-peso-fuerte); color: var(--nz-text-mute); }

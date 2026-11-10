@@ -154,7 +154,7 @@
 .nz-heatcalendar__legend { display: flex; align-items: center; gap: var(--nz-space-1); font-size: var(--nz-text-2xs); color: var(--nz-text-faint); }
 
 /* ---- Treemap ---- */
-.nz-treemap { display: grid; grid-template-columns: repeat(4, 1fr); grid-auto-rows: 4rem; gap: 3px; }
+.nz-treemap { display: grid; grid-template-columns: repeat(auto-fit, minmax(6.5rem, 1fr)); grid-auto-rows: 4rem; gap: 3px; }
 .nz-treemap__cell { display: flex; flex-direction: column; justify-content: flex-end; gap: 2px; padding: var(--nz-space-2); border-radius: var(--nz-radius-sm); background: var(--nz-brand); color: var(--nz-text-invert); overflow: hidden; }
 .nz-treemap__cell--lg { grid-column: span 2; grid-row: span 2; }
 .nz-treemap__cell--brand { background: var(--nz-brand); color: var(--nz-text-invert); }
@@ -230,7 +230,7 @@
 .nz-chart-waterfall__label { max-width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: var(--nz-text-2xs); color: var(--nz-text-faint); }
 
 /* ---- Diagrama de flujo (sankey simple) ---- */
-.nz-chart-flow { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--nz-space-4); align-items: center; }
+.nz-chart-flow { display: grid; grid-template-columns: repeat(auto-fit, minmax(7rem, 1fr)); gap: var(--nz-space-4); align-items: center; }
 .nz-chart-flow__node { padding: var(--nz-space-2) var(--nz-space-3); border-radius: var(--nz-radius-md); background: var(--nz-brand-soft); color: var(--nz-brand); font-size: var(--nz-text-xs); font-weight: var(--nz-peso-fuerte); text-align: center; }
 .nz-chart-flow__node--brand { background: var(--nz-brand); color: var(--nz-text-invert); }
 .nz-chart-flow__node--accent { background: var(--nz-accent-soft); color: var(--nz-accent-strong); }

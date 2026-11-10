@@ -19,8 +19,8 @@
  },
  "packs": {
   "p1-layout.css": {
-   "lineas": 394,
-   "bytes": 23263,
+   "lineas": 393,
+   "bytes": 23389,
    "clases": 180,
    "familias": 67,
    "hex": 0,
@@ -29,8 +29,8 @@
    "important": 0
   },
   "p10-commerce.css": {
-   "lineas": 258,
-   "bytes": 27344,
+   "lineas": 265,
+   "bytes": 27597,
    "clases": 156,
    "familias": 22,
    "hex": 0,
@@ -40,7 +40,7 @@
   },
   "p11-social.css": {
    "lineas": 189,
-   "bytes": 18897,
+   "bytes": 18887,
    "clases": 107,
    "familias": 15,
    "hex": 0,
@@ -60,7 +60,7 @@
   },
   "p13-charts.css": {
    "lineas": 399,
-   "bytes": 30357,
+   "bytes": 30401,
    "clases": 220,
    "familias": 23,
    "hex": 0,
@@ -70,7 +70,7 @@
   },
   "p14-ai.css": {
    "lineas": 317,
-   "bytes": 27128,
+   "bytes": 27159,
    "clases": 186,
    "familias": 29,
    "hex": 0,
@@ -80,7 +80,7 @@
   },
   "p15-apps.css": {
    "lineas": 377,
-   "bytes": 43363,
+   "bytes": 43439,
    "clases": 75,
    "familias": 31,
    "hex": 0,
@@ -99,8 +99,8 @@
    "important": 0
   },
   "p17-patrones.css": {
-   "lineas": 666,
-   "bytes": 35086,
+   "lineas": 669,
+   "bytes": 35062,
    "clases": 224,
    "familias": 46,
    "hex": 0,
@@ -120,7 +120,7 @@
   },
   "p2-navigation.css": {
    "lineas": 209,
-   "bytes": 20035,
+   "bytes": 20014,
    "clases": 78,
    "familias": 10,
    "hex": 0,
@@ -149,8 +149,8 @@
    "important": 0
   },
   "p5-forms.css": {
-   "lineas": 277,
-   "bytes": 23189,
+   "lineas": 273,
+   "bytes": 23184,
    "clases": 102,
    "familias": 20,
    "hex": 0,
@@ -180,7 +180,7 @@
   },
   "p8-data.css": {
    "lineas": 309,
-   "bytes": 24954,
+   "bytes": 24940,
    "clases": 150,
    "familias": 17,
    "hex": 0,
@@ -189,8 +189,8 @@
    "important": 0
   },
   "p9-media.css": {
-   "lineas": 223,
-   "bytes": 16635,
+   "lineas": 226,
+   "bytes": 16771,
    "clases": 127,
    "familias": 18,
    "hex": 0,
