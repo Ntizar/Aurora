@@ -8,7 +8,7 @@ tags: [css, design-system, aurora, ntizar, agent-ready, movil, escritorio, tipog
 # Aurora — doctrina única (el repo es la orden máxima)
 
 Design system CSS puro, sin build, sin dependencias, namespaced bajo `.nz-`.
-**v10.10.0 · 2223 objetos · 417 familias · 666 demos · 18 categorías · 195 tokens · 59 gemelas OKLch · 43 componentes generativos · 338 iconos numerados.**
+**v10.10.0 · 2223 objetos · 417 familias · 667 demos · 18 categorías · 248 tokens · 43 componentes generativos · 338 iconos numerados.**
 *(Cabecera de testigo, no de autoridad: resuélvela con el PASO 0.)*
 
 > ⚠️ `Ntizar/Aurora` **manda sobre esta skill**. Esta skill es un puntero; el repo
@@ -270,7 +270,7 @@ paquete ni generar `DESIGN.md`/`.impeccable/` — duplicarían `LLM.md` + `compo
 
 ### 6c. Vía generativa: el modelo escribe el diseño (openui-lang)
 
-El programa usa los 40 componentes de `openui/PROMPT.md` (argumentos POSICIONALES, sin nombrados;
+El programa usa los 43 componentes de `openui/PROMPT.md` (argumentos POSICIONALES, sin nombrados;
 `root = Pagina([...])` en la primera línea). Se compila desde el repo:
 
 `python scripts/programa-a-html.py mi-programa.openui --salida out.html --marca ntizar --tema light --canal congelado --titulo "..." [--firma full|subtle|none] [--inicio ruta.html] [--modo producto]`
@@ -294,10 +294,10 @@ Compila, sirve el repo por HTTP local (el runtime carga la spec con `fetch`, que
 falla por CORS), pinta en Chrome/Edge headless con `--virtual-time-budget`, extrae el `<main>`
 ya pintado y escribe el estático. **Nunca escribas el HTML a mano a partir del programa**: es
 cómo la portada de Aurora llegó a prometer «el programa se muestra abajo» sin nada abajo, y
-cuesta el doble de tokens en cada retoque. En la portada del sistema la cadena es
-`briefs/portada.openui` → `hornear.py --plantilla-base` → `briefs/portada.tmpl.html` →
-`build-catalog.py` (clava `{{OBJETOS}}`, `{{FAMILIAS}}`, `{{PACKS}}`, `{{MARCAS}}` y el
-programa entero en un `<pre>` para que la promesa sea verificable). Las páginas de producto de
+cuesta el doble de tokens en cada retoque. En la portada del sistema ya no se hornea desde un programa: `briefs/portada.tmpl.html` se
+escribe a mano con los marcadores (`{{OBJETOS}}`, `{{FAMILIAS}}`, `{{PACKS}}`, `{{MARCAS}}`) y
+`build-catalog.py` los clava con las cifras reales del censo (la portada nunca inventa un
+número; el pipeline `briefs/portada.openui` se jubiló al pasar la portada a HTML legible). Las páginas de producto de
 referencia (`examples/golden/`) se hornean con `scripts/hornear-golden.py` — única definición,
 `--check` detecta HTML desfasado de su `.openui`.
 
@@ -663,7 +663,7 @@ LLM → OpenUI Lang (8-20 líneas) → parser → runtime vanilla → markup .nz
 
 | Necesito | De dónde |
 |---|---|
-| System prompt para el modelo | `openui/PROMPT.md` (36 firmas + reglas de diseño + 3 ejemplos) |
+| System prompt para el modelo | `openui/PROMPT.md` (43 firmas + reglas de diseño + 3 ejemplos) |
 | Biblioteca machine-readable | `openui/aurora.spec.json` (firmas + JSON Schema para el parser) |
 | Pintar el resultado en el navegador | `openui/aurora-openui.js` → `AuroraOpenUI.iniciar()` + `.stream(texto, "#lienzo")` |
 | Añadir un objeto al lenguaje | `openui/componentes.json` (a mano) → `python3 scripts/generar-openui.py` |
@@ -671,7 +671,7 @@ LLM → OpenUI Lang (8-20 líneas) → parser → runtime vanilla → markup .nz
 | Empezar por un arquetipo | `openui/plantillas/` + `scripts/plantilla.py` (panel, informe, landing, ajustes, agente, presentación) |
 | De un encargo a una página | `scripts/generar-web.py --brief encargo.json` (modelo + validación + lint) |
 | Que un agente consulte Aurora sin bajar el censo | `scripts/mcp-aurora.py` (MCP en stdio, stdlib pura): `estado_del_sistema`, `buscar_por_necesidad`, `leer_componente`, `validar_html`, `compilar_programa`. Conexión: `claude mcp add aurora -- python scripts/mcp-aurora.py`; autochequeo `--test` (está en la CI) |
-| API exacta de UNA familia en texto plano | `llms-full.txt` (411 familias: clases, markup, tokens, alias, noUsar) — generado por `generar-llm-docs.py` |
+| API exacta de UNA familia en texto plano | `llms-full.txt` (417 familias: clases, markup, tokens, alias, noUsar) — generado por `generar-llm-docs.py` |
 | De un programa a una página estática (0 JS) | `scripts/hornear.py prog.openui --salida x.html`: compila, pinta en Chrome headless y extrae el `<main>` ya horneado |
 
 ```js
@@ -716,7 +716,7 @@ AuroraOpenUI.stream(respuestaDelModelo, "#lienzo");    // streaming; cae a parse
 - **`openui/`** — capa generativa: `componentes.json` (fuente), `PROMPT.md`, `aurora.spec.json`, `aurora-openui.js`, `index.html` (probador), `plantillas/`, `ejemplos.json`.
 - Este mismo `SKILL.md` **dentro del repo** (la CI valida que no se separe).
 - El caso de migración v6→v7 y la auditoría de coherencia, en la skill `design-system-coherence-audit`.
-- `references/portada-y-canal.md` — horneado estático de páginas openui-lang (portada del sistema), pipeline `briefs/portada.openui` → `portada.tmpl.html` → `index.html`, y doctrina de canales/release.
+- `references/portada-y-canal.md` — horneado estático de páginas openui-lang (páginas de producto, no la portada del sistema: esa se escribe a mano en `briefs/portada.tmpl.html`), y doctrina de canales/release.
 - `references/navegacion-del-sitio.md` — la barra de sitio: marca «Aurora» arriba a la izquierda, las cinco secciones, variante del catálogo, tabla de profundidad → prefijo relativo, y receta de arreglo masivo de rutas.
 - `references/metodo-diseno.md` — checklists del método de diseño (brief → critique → harden → polish).
 - `references/paginas-herramienta.md` — patrón inspector para páginas-herramienta y playgrounds: layout una vista, fit puro del lienzo, pickers y paletas en vivo, guía generada del mismo módulo.

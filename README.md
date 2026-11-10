@@ -6,7 +6,7 @@
 marcas por preset y una capa generativa para que el diseño lo escriba el modelo — sin salirse
 nunca del sistema.
 
-2.201 objetos · 413 familias · 661 demos en vivo · 18 categorías · 40 componentes generativos · 338 iconos numerados
+2.223 objetos · 417 familias · 667 demos en vivo · 18 categorías · 43 componentes generativos · 338 iconos numerados
 
 [![CI](https://github.com/Ntizar/Aurora/actions/workflows/validar.yml/badge.svg)](https://github.com/Ntizar/Aurora/actions/workflows/validar.yml)
 [![Pages](https://github.com/Ntizar/Aurora/actions/workflows/pages.yml/badge.svg)](https://github.com/Ntizar/Aurora/actions/workflows/pages.yml)
@@ -53,7 +53,7 @@ El detalle completo está en **[CONTRATO.md](CONTRATO.md)**.
 ```
 L0  marcas/      presets de tokens: identidad (datos, no código)
 L1  packs/       18 hojas CSS: la implementación
-L2  openui/      40 componentes: el vocabulario que usa el modelo
+L2  openui/      43 componentes: el vocabulario que usa el modelo
 L3  (plantillas) arquetipos: panel, informe, landing, ajustes, agente, presentación
 ```
 
@@ -76,7 +76,7 @@ claude mcp add aurora -- python scripts/mcp-aurora.py   # Claude Code
 Cinco herramientas: `estado_del_sistema` (versión y canales, nunca de memoria),
 `buscar_por_necesidad`, `leer_componente`, `validar_html` y `compilar_programa`.
 Autochequeo: `python scripts/mcp-aurora.py --test`. Sin MCP a mano, la vía clásica es
-`LLM.md` (guía) + `components.json` (API) + `llms-full.txt` (las 411 familias con su
+`LLM.md` (guía) + `components.json` (API) + `llms-full.txt` (las 417 familias con su
 markup) y el juez:
 
 ```bash
@@ -128,9 +128,9 @@ el presupuesto de color ya vienen resueltos — el modelo pone contenido, no arq
 
 | Pieza | Qué es |
 |---|---|
-| `tokens.css` | 234 tokens (más 61 en oscuro) con gemela OKLch y contraste auditado |
+| `tokens.css` | 248 tokens (más 62 en oscuro) con gemela OKLch y contraste auditado |
 | `packs/p1…p18.css` | Los 18 packs, uno por categoría (recuento vivo en `components.json` y `audit/AUDITORIA.md`; una sola fuente) |
-| `marcas/` | 6 presets (aurora, indigo, esmeralda, violeta, carmesí, ntizar) + generador OKLCH |
+| `marcas/` | 7 presets (aurora, indigo, esmeralda, violeta, carmesí, monocromo, ntizar) + generador OKLCH |
 | `specs/NN.json` | **Fuente de verdad** de las demos: el catálogo se genera de aquí |
 | `base.html` + `datos/base-diseno.json` | Base de datos consultable: familias, tokens, recetas, combos, marcas y leyes |
 | `bloques/recetas/` · `bloques/ejemplos/` · `bloques/combos/` | Recetas canónicas, páginas completas y esqueletos por tipo, listos para copiar |

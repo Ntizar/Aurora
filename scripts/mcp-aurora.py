@@ -164,7 +164,7 @@ class Aurora:
         programa = str(args.get("programa", ""))
         if "root = Pagina(" not in programa:
             return ("El programa debe empezar por `root = Pagina([...])` con argumentos "
-                    "posicionales (ver openui/PROMPT.md, 36 firmas).")
+                    "posicionales (ver openui/PROMPT.md, 43 firmas).")
         with tempfile.NamedTemporaryFile("w", suffix=".openui", delete=False,
                                          encoding="utf-8") as fh:
             fh.write(programa)

@@ -4,25 +4,28 @@
 Por qué existe: una página generada se pintaba en el navegador (runtime) o se
 copiaba a mano al HTML para que fuera estática. Copiarla a mano significa mantener
 dos veces lo mismo (el `.openui` y el HTML), y ahí se van los tokens y aparecen
-las divergencias: la portada prometía «el programa se muestra abajo» y no había
-nada abajo, porque el HTML se había escrito a mano.
+las divergencias.
 
 Esto cierra el círculo: el programa es la única fuente. Se compila, se pinta en un
 Chrome headless con la red servida por HTTP local (el runtime carga la spec por
 `fetch`, que en `file://` falla por CORS) y se extrae el `<main>` ya pintado.
 
-  briefs/portada.openui ──programa-a-html.py──► página con runtime
-                        ──chrome --dump-dom────► DOM final
-                        ──este script──────────► HTML estático (0 JS)
+  prog.openui ──programa-a-html.py──► página con runtime
+              ──chrome --dump-dom────► DOM final
+              ──este script──────────► HTML estático (0 JS)
 
 Uso:
-  python3 scripts/hornear.py briefs/portada.openui --salida briefs/portada.tmpl.html
   python3 scripts/hornear.py prog.openui --salida out.html --plantilla-base
   python3 scripts/hornear.py prog.openui --salida out.html --navegador "C:/.../chrome.exe"
 
-`--plantilla-base` deja `{{OBJETOS}}` y `{{PROGRAMA}}` sin sustituir para que
-`build-catalog.py` los clave con los datos reales del censo (así la portada nunca
-inventa un número). Sin esa bandera, el HTML sale cerrado y listo para servir.
+`--plantilla-base` deja `{{OBJETOS}}` y `{{PROGRAMA}}` sin sustituir para que otro
+paso los clave con los datos reales del censo. Sin esa bandera, el HTML sale cerrado
+y listo para servir.
+
+La portada del sistema (`index.html`) ya no se hornea: `briefs/portada.tmpl.html` se
+escribe a mano con marcadores y `build-catalog.py` clava las cifras reales. Este script
+queda para las páginas de producto (`examples/golden/`) y cualquier `.openui` que deba
+servirse estático.
 """
 import argparse
 import functools

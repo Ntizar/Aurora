@@ -52,8 +52,7 @@ Si eres un agente (o una persona con prisa), lee esto antes de tocar nada.
 | `specs/NN.json` | **Fuente de verdad de las demos** (titulo, tag, markup) | Sí |
 | `paginas/*.html` | Catálogo generado | **No** — se regenera |
 | `index.html` | Portada generada | **No** — se regenera |
-| `briefs/portada.openui` | **Fuente de la portada**: programa openui-lang | Sí |
-| `briefs/portada.tmpl.html` | Portada horneada (`{{OBJETOS}}`, `{{PROGRAMA}}` sin clavar) | **No** — `scripts/hornear.py` |
+| `briefs/portada.tmpl.html` | **Fuente de la portada**: HTML escrito a mano con marcadores (`{{OBJETOS}}`, `{{FAMILIAS}}`, `{{PACKS}}`, `{{MARCAS}}`) que `build-catalog.py` clava | Sí |
 | `datos/objetos.json` | Índice para el buscador | **No** — se regenera |
 | `datos/base-diseno.json` | Base de datos de diseño (familias, tokens, recetas, combos, marcas) | **No** — se regenera |
 | `base.html` | Explorador de la base de datos (vista) | Sí |
@@ -104,7 +103,7 @@ python scripts/auditar-openui.py       # censo, deriva, runtime, enums y ejemplo
 python scripts/canal.py --check        # canales y versiones en orden
 python scripts/plantilla.py --validar-todas
 python scripts/generar-web.py --brief briefs/panel-ferroviaria.json --dry-run
-python scripts/hornear.py briefs/portada.openui --salida briefs/portada.tmpl.html --plantilla-base
+# (la portada ya no se hornea: briefs/portada.tmpl.html se edita a mano y build-catalog.py clava las cifras)
 python scripts/iconos.py --check              # sprite y catálogo de iconos, byte a byte
 python scripts/auditar-iconos.py --check      # numeración, fichas, licencia e higiene del SVG
 ```

@@ -27,7 +27,7 @@ Verificación: `python scripts/auditar-uso.py tu-pagina.html` comprueba estas re
 
 > Por qué la ley 1 y la 10: los emojis no son iconos. Cambian de forma en cada sistema
 > operativo, no heredan el color del texto, no se alinean ópticamente y restan seriedad.
-> En el sistema hay **0 emojis en 576 demos**; los ponía el generador. Se acabó.
+> En el sistema hay **0 emojis en 667 demos**; los ponía el generador. Se acabó.
 
 ---
 

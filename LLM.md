@@ -449,7 +449,7 @@ documento ni le pidas HTML: dale el lenguaje y la biblioteca.
 
 | Pieza | Qué es |
 |---|---|
-| `openui/PROMPT.md` | System prompt listo: sintaxis, las 36 firmas y las reglas de diseño |
+| `openui/PROMPT.md` | System prompt listo: sintaxis, las 43 firmas y las reglas de diseño |
 | `openui/aurora.spec.json` | Biblioteca machine-readable (firmas + JSON Schema) |
 | `openui/aurora-openui.js` | Runtime vanilla: OpenUI Lang → markup `.nz-*` (sin React, sin build) |
 | `openui/index.html` | Probador en vivo: editas el programa y ves el render |
