@@ -117,9 +117,10 @@ El repo manda; la skill se reescribe en el mismo ciclo. La CI lo exige:
    no, `canal.py --check` pone la CI en rojo. Procedimiento y horneado estático:
    `references/portada-y-canal.md`.
 
-Consecuencia práctica: **la versión de esta cabecera es lo único que caduca.** Todo lo
-demás (objetos, clases, cifras, móvil) se lee del repo en el PASO 0, así que una versión
-nueva del sistema no te deja ciego: solo obliga a refrescar la cabecera.
+Consecuencia práctica: **la versión y las cifras de la cabecera caducan.** Los objetos,
+las clases y el móvil se leen del repo en el PASO 0, pero las cifras del primer bloque
+(demos, tokens, familias) se escriben a mano y se desincronizan del censo: verifícalas
+contra el resumen de `components.json` en el mismo ciclo que la versión, nunca de memoria.
 
 ## 3. CDN pineado (nunca @master para servir CSS en producción)
 
