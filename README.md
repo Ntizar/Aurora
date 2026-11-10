@@ -43,7 +43,7 @@ catálogo lo enseña, funciona; si algo se rompe, el push se pone en rojo antes 
 ```
 
 `@v10` es el **canal vivo**: se mueve con cada release 10.x, así que un cambio en Aurora llega
-solo a todas las webs que lo usan. Para una entrega congelada, el tag exacto (`@v10.2.0`).
+solo a todas las webs que lo usan. Para una entrega congelada, el tag exacto (`@v10.10.0`).
 Los consumidores fijados en `@v9` o en un tag exacto de la serie 9 no cambian: `@v9` sigue
 resolviendo su major para siempre.
 El detalle completo está en **[CONTRATO.md](CONTRATO.md)**.

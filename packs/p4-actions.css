@@ -2,7 +2,9 @@
    AURORA — p4-actions.css · Categoría 04 · Acciones y botones
    Botones (variantes, tonos, tamaños y formas), grupos, segmentado,
    FAB, enlaces-acción, toolbar, spinners y estados de carga.
-   Estilo: sólido, radios pill, sombra de marca al hover. Táctil 44px.
+   Estilo: sólido, radios rectos (los tokens --nz-radius-* valen 0px por decisión de
+   marca; --pill se conserva como alias que resuelve al token, no pinta nada extra),
+   sombra de marca al hover. Táctil 44px.
    ============================================================ */
 
 /* ---- Botón base ---- */
