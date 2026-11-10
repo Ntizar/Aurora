@@ -34,7 +34,7 @@
 }
 
 /* ---- Barra lateral de app (secciones + badges) ---- */
-.nz-appnav { display: flex; flex-direction: row; gap: var(--nz-space-1); overflow-x: auto; padding: var(--nz-space-2); background: var(--nz-surface-2); border-bottom: var(--nz-border-w) solid var(--nz-border-soft); scrollbar-width: none; }
+.nz-appnav { display: flex; flex-direction: row; gap: var(--nz-space-1); overflow-x: auto; padding: var(--nz-space-2); background: var(--nz-surface-2); border-bottom: var(--nz-border-w) solid var(--nz-border-soft); scrollbar-width: thin; }
 .nz-appnav::-webkit-scrollbar { display: none; }
 .nz-appnav h4 { display: none; }
 .nz-appnav__link { display: flex; align-items: center; gap: var(--nz-space-2); min-height: var(--nz-tactil); padding: 0 var(--nz-space-3); border-radius: var(--nz-radius-sm); color: var(--nz-text-soft); font-size: var(--nz-text-sm); font-weight: var(--nz-peso-fuerte); text-decoration: none; white-space: nowrap; transition: background var(--nz-dur-fast) var(--nz-ease-out), color var(--nz-dur-fast) var(--nz-ease-out); }
@@ -82,7 +82,7 @@
 .nz-appstatus__item b { color: var(--nz-text-soft); font-weight: var(--nz-peso-fuerte); font-variant-numeric: tabular-nums; }
 
 /* ---- Lista de pestañas de documento ---- */
-.nz-docs { display: flex; gap: var(--nz-space-1); overflow-x: auto; padding: var(--nz-space-1); border-radius: var(--nz-radius-md) var(--nz-radius-md) 0 0; background: var(--nz-bg-inset); scrollbar-width: none; }
+.nz-docs { display: flex; gap: var(--nz-space-1); overflow-x: auto; padding: var(--nz-space-1); border-radius: var(--nz-radius-md) var(--nz-radius-md) 0 0; background: var(--nz-bg-inset); scrollbar-width: thin; }
 .nz-docs::-webkit-scrollbar { display: none; }
 .nz-docs__tab { display: inline-flex; align-items: center; gap: var(--nz-space-2); min-height: var(--nz-tactil); padding: 0 var(--nz-space-2) 0 var(--nz-space-3); border: var(--nz-border-w) solid transparent; border-radius: var(--nz-radius-sm); background: transparent; color: var(--nz-text-mute); font-family: inherit; font-size: var(--nz-text-xs); font-weight: var(--nz-peso-fuerte); white-space: nowrap; cursor: pointer; }
 .nz-docs__tab:hover { background: var(--nz-surface-2); color: var(--nz-text); }
@@ -140,7 +140,7 @@
 }
 
 /* ---- Cinta de opciones / toolbar de app ---- */
-.nz-ribbon { display: flex; align-items: stretch; gap: var(--nz-space-3); overflow-x: auto; padding: var(--nz-space-2); border-bottom: var(--nz-border-w) solid var(--nz-border-soft); border-radius: var(--nz-radius-md) var(--nz-radius-md) 0 0; background: var(--nz-bg-soft); scrollbar-width: none; }
+.nz-ribbon { display: flex; align-items: stretch; gap: var(--nz-space-3); overflow-x: auto; padding: var(--nz-space-2); border-bottom: var(--nz-border-w) solid var(--nz-border-soft); border-radius: var(--nz-radius-md) var(--nz-radius-md) 0 0; background: var(--nz-bg-soft); scrollbar-width: thin; }
 .nz-ribbon::-webkit-scrollbar { display: none; }
 .nz-ribbon section { display: flex; flex-direction: column; gap: var(--nz-space-1); padding-right: var(--nz-space-3); border-right: var(--nz-border-w) solid var(--nz-border-soft); }
 .nz-ribbon section:last-child { padding-right: 0; border-right: 0; }
@@ -321,7 +321,7 @@
 }
 
 /* ---- Dock inferior ---- */
-.nz-dock { display: flex; align-items: center; gap: var(--nz-space-2); overflow-x: auto; padding: var(--nz-space-2); border: var(--nz-border-w) solid var(--nz-border-soft); border-radius: var(--nz-radius-xl); background: var(--nz-surface); box-shadow: var(--nz-shadow-xl); scrollbar-width: none; }
+.nz-dock { display: flex; align-items: center; gap: var(--nz-space-2); overflow-x: auto; padding: var(--nz-space-2); border: var(--nz-border-w) solid var(--nz-border-soft); border-radius: var(--nz-radius-xl); background: var(--nz-surface); box-shadow: var(--nz-shadow-xl); scrollbar-width: thin; }
 .nz-dock::-webkit-scrollbar { display: none; }
 .nz-dock__item { position: relative; display: grid; place-items: center; min-width: var(--nz-tactil); min-height: var(--nz-tactil); border-radius: var(--nz-radius-md); background: var(--nz-bg-inset); color: var(--nz-text-soft); font-size: var(--nz-text-md); text-decoration: none; transition: transform var(--nz-dur-base) var(--nz-ease-out), background var(--nz-dur-fast) var(--nz-ease-out), color var(--nz-dur-fast) var(--nz-ease-out); }
 .nz-dock__item:hover { transform: translateY(-4px); background: var(--nz-brand-soft); color: var(--nz-brand-strong); }

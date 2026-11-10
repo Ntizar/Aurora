@@ -172,7 +172,7 @@
    solo se alcanzaban arrastrando). Desde 640 vuelve a la fila de siempre. */
 .nz-stepper { display: flex; align-items: center; gap: var(--nz-space-2); flex-wrap: wrap; }
 @media (min-width: 640px) {
-  .nz-stepper { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; }
+  .nz-stepper { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: thin; }
   .nz-stepper::-webkit-scrollbar { display: none; }
 }
 .nz-stepper__step { display: flex; align-items: center; gap: var(--nz-space-2); min-width: 0; color: var(--nz-text-faint); font-size: var(--nz-text-sm); font-weight: var(--nz-peso-fuerte); }

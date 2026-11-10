@@ -87,6 +87,17 @@ def construir(ancho: int) -> str:
     )
 
 
+
+def revisar_ocultos():
+    """Ninguna fila oculta su scroll: si algo desborda, barra visible o envolver."""
+    malos = []
+    for f in sorted(RAIZ.glob("packs/*.css")) + [RAIZ / "tokens.css"]:
+        for n, linea in enumerate(f.read_text().splitlines(), 1):
+            if "scrollbar-width: none" in linea:
+                malos.append(f"{f.name}:{n}")
+    return malos
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--ancho", type=int, default=320)
